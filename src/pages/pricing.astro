@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const comparisonFeatures = [
+  { feature: 'ISO-frameworks', starter: '1', pro: 'Tot 3', enterprise: 'Onbeperkt' },
+  { feature: 'Teamleden', starter: 'Tot 5', pro: 'Tot 25', enterprise: 'Onbeperkt' },
+  { feature: 'Implementatiecoach', starter: true, pro: true, enterprise: true },
+  { feature: 'Documentbeheer', starter: true, pro: true, enterprise: true },
+  { feature: 'Risicoregister', starter: 'Basis', pro: 'Uitgebreid', enterprise: 'Uitgebreid' },
+  { feature: 'Interne audits', starter: false, pro: true, enterprise: true },
+  { feature: 'Leveranciersbeheer', starter: false, pro: true, enterprise: true },
+  { feature: 'Directiebeoordelingen', starter: false, pro: true, enterprise: true },
+  { feature: 'Verklaring van Toepasselijkheid', starter: false, pro: true, enterprise: true },
+  { feature: 'Kennisbank', starter: true, pro: true, enterprise: true },
+  { feature: 'SSO / SAML', starter: false, pro: false, enterprise: true },
+  { feature: 'Aangepaste integraties', starter: false, pro: false, enterprise: true },
+  { feature: 'Dedicated accountmanager', starter: false, pro: false, enterprise: true },
+  { feature: 'SLA-garantie', starter: false, pro: false, enterprise: true },
+  { feature: 'Support', starter: 'E-mail', pro: 'Prioriteit', enterprise: 'Dedicated' },
+];
+---
+
+<Layout title="Prijzen — Control One">
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-32 pb-8 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-400/10"></div>
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-primary-950 leading-[1.1]">
+            Prijzen
+          </h1>
+          <p class="mt-4 text-lg text-primary-900/60">
+            Kies het plan dat past bij uw organisatie. Altijd 14 dagen gratis uitproberen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Pricing />
+
+    <!-- Feature comparison table -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl font-bold text-primary-950 mb-8 text-center">Vergelijk alle functies</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-primary-200">
+                <th class="text-left py-4 pr-4 font-semibold text-primary-950">Functie</th>
+                <th class="text-center py-4 px-4 font-semibold text-primary-950">Starter</th>
+                <th class="text-center py-4 px-4 font-semibold text-primary-600">Professional</th>
+                <th class="text-center py-4 px-4 font-semibold text-primary-950">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonFeatures.map(row => (
+                <tr class="border-b border-primary-100">
+                  <td class="py-3 pr-4 text-primary-900/70">{row.feature}</td>
+                  {[row.starter, row.pro, row.enterprise].map(val => (
+                    <td class="text-center py-3 px-4">
+                      {val === true ? (
+                        <svg class="w-5 h-5 text-primary-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                      ) : val === false ? (
+                        <svg class="w-5 h-5 text-primary-200 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                      ) : (
+                        <span class="text-primary-900/60">{val}</span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+  </main>
+  <Footer />
+</Layout>

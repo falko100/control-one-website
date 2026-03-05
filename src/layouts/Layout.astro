@@ -1,0 +1,26 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Control One — ISO Management Eenvoudig Gemaakt' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Control One helpt bedrijven bij het implementeren, bijhouden en beheren van ISO-compliance met begeleide workflows, risicobeheer, audits en documentbeheer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-primary-950 antialiased">
+    <slot />
+  </body>
+</html>

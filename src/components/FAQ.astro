@@ -1,0 +1,53 @@
+---
+const faqs = [
+  {
+    question: 'Welke ISO-normen ondersteunt Control One?',
+    answer: 'Control One ondersteunt momenteel ISO 27001 (Informatiebeveiliging) en ISO 9001 (Kwaliteitsmanagement), met regelmatig nieuwe frameworks die worden toegevoegd. Elk framework bevat de volledige eisenstructuur en een begeleid implementatiepad.',
+  },
+  {
+    question: 'Hoe lang duurt het om gecertificeerd te worden?',
+    answer: 'De tijdlijn verschilt per organisatiegrootte en complexiteit, maar de meeste teams bereiken audit-gereedheid binnen 3-6 maanden met onze begeleide coach. Control One versnelt het proces aanzienlijk vergeleken met spreadsheets of generieke tools.',
+  },
+  {
+    question: 'Kan ik meerdere frameworks tegelijk beheren?',
+    answer: 'Ja! Professional- en Enterprise-plannen ondersteunen meerdere ISO-frameworks. Beheersmaatregelen en bewijs kunnen worden gedeeld tussen frameworks om dubbel werk te voorkomen.',
+  },
+  {
+    question: 'Is mijn data veilig?',
+    answer: 'Absoluut. Wij doen wat we prediken — Control One is gebouwd op een secure-by-design architectuur met encryptie in rust en in transit, rolgebaseerde toegangscontrole en regelmatige beveiligingsaudits.',
+  },
+  {
+    question: 'Bieden jullie migratie van bestaande tools?',
+    answer: 'Ja, ons team kan helpen bij het migreren van uw bestaande compliance-documentatie, risicoregisters en bewijs. Neem contact met ons op voor een migratieplan op maat.',
+  },
+  {
+    question: 'Wat voor support bieden jullie?',
+    answer: 'Alle plannen bevatten e-mailsupport. Professional-plannen krijgen prioriteitsresponstijden, en Enterprise-klanten ontvangen een dedicated accountmanager met telefonische support en SLA-garanties.',
+  },
+];
+---
+
+<section id="faq" class="py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">FAQ</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+        Veelgestelde vragen
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <details class="group border border-primary-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-left font-semibold text-primary-950 hover:bg-primary-50/50 transition-colors">
+            {faq.question}
+            <svg class="w-5 h-5 text-primary-400 shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-primary-900/60 leading-relaxed">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

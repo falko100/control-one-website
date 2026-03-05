@@ -1,0 +1,51 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Kies Uw Framework',
+    description: 'Selecteer ISO 27001, ISO 9001 of een ander ondersteund framework. Control One laadt automatisch de volledige eisenstructuur.',
+  },
+  {
+    number: '02',
+    title: 'Volg de Coach',
+    description: 'Onze implementatiecoach leidt u stap voor stap door elk hoofdstuk en elke eis, met ingebouwde voortgangsregistratie.',
+  },
+  {
+    number: '03',
+    title: 'Bouw Uw Bewijs',
+    description: 'Maak beleidsdocumenten, beheer risico\'s, voer interne audits uit en volg leverancierscompliance — allemaal gekoppeld aan uw framework-eisen.',
+  },
+  {
+    number: '04',
+    title: 'Behaal Certificering',
+    description: 'Exporteer uw Verklaring van Toepasselijkheid, genereer auditrapportages en presenteer uw complete compliance-bewijs aan auditors.',
+  },
+];
+---
+
+<section id="hoe-het-werkt" class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Hoe Het Werkt</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+        Van nul tot gecertificeerd in vier stappen
+      </h2>
+      <p class="mt-4 text-lg text-primary-900/60">
+        Control One structureert het hele compliance-traject zodat u altijd weet wat de volgende stap is.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, i) => (
+        <div class="relative">
+          {i < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-primary-300 to-primary-100 -translate-x-4"></div>
+          )}
+          <div class="text-5xl font-bold text-primary-100 mb-4">{step.number}</div>
+          <h3 class="text-lg font-semibold text-primary-950 mb-2">{step.title}</h3>
+          <p class="text-sm text-primary-900/60 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

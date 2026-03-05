@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const upcoming = [
+  {
+    quarter: 'Q2 2026',
+    items: [
+      { title: 'AI-gestuurde risicobeoordeling', description: 'Automatische suggesties voor risico-identificatie op basis van uw branche en organisatieprofiel.', status: 'in-development' },
+      { title: 'NIS2-framework', description: 'Volledige ondersteuning voor de NIS2-richtlijn met gap-analyse en implementatiebegeleiding.', status: 'in-development' },
+      { title: 'Verbeterde rapportages', description: 'Uitgebreidere dashboards en exportmogelijkheden voor managementreviews.', status: 'planned' },
+    ],
+  },
+  {
+    quarter: 'Q3 2026',
+    items: [
+      { title: 'Multi-framework mapping', description: 'Automatisch beheersmaatregelen mappen tussen ISO 27001, ISO 9001, NIS2 en andere frameworks.', status: 'planned' },
+      { title: 'Leveranciersbeheer', description: 'Beheer leveranciersrisico\'s en voer leveranciersbeoordelingen uit vanuit het platform.', status: 'planned' },
+      { title: 'API & integraties', description: 'REST API en integraties met tools als Jira, Microsoft 365 en Slack.', status: 'planned' },
+    ],
+  },
+  {
+    quarter: 'Q4 2026',
+    items: [
+      { title: 'Audit management 2.0', description: 'Geavanceerd auditbeheer met auditplanning, sampling en bevindingen-workflow.', status: 'planned' },
+      { title: 'Training & awareness module', description: 'Bewustwordingstrainingen toewijzen, voortgang bijhouden en certificaten genereren.', status: 'planned' },
+      { title: 'SOC 2 framework', description: 'Ondersteuning voor SOC 2 Trust Services Criteria met volledige begeleiding.', status: 'exploring' },
+    ],
+  },
+];
+
+const completed = [
+  { title: 'ISO 27001:2022 volledige dekking', description: 'Alle hoofdstukken en 93 Annex A beheersmaatregelen.' },
+  { title: 'ISO 9001:2015 ondersteuning', description: 'Kwaliteitsmanagementsysteem met PDCA-cyclus.' },
+  { title: 'ISO 14001:2015 ondersteuning', description: 'Milieumanagementsysteem met aspecten en impactanalyse.' },
+  { title: 'Documentbeheer', description: 'Versiebeheer, goedkeuringsworkflows en sjablonen.' },
+  { title: 'Risicobeoordeling', description: 'Risicoregister met impact/waarschijnlijkheid matrix.' },
+  { title: 'Verklaring van Toepasselijkheid', description: 'Automatisch gegenereerde VvT met PDF-export.' },
+];
+
+const statusLabels: Record<string, { label: string; color: string }> = {
+  'in-development': { label: 'In ontwikkeling', color: 'bg-accent-500 text-white' },
+  'planned': { label: 'Gepland', color: 'bg-primary-100 text-primary-700' },
+  'exploring': { label: 'Verkenning', color: 'bg-amber-100 text-amber-700' },
+};
+---
+
+<Layout title="Roadmap — Control One">
+  <Header />
+  <main>
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-accent-400 bg-white/10 rounded-full">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
+            Roadmap
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+            Wat we aan het
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-300">bouwen</span> zijn
+          </h1>
+          <p class="mt-6 text-lg text-primary-300/80 max-w-2xl mx-auto leading-relaxed">
+            Transparantie is een kernwaarde. Bekijk wat we hebben opgeleverd, waar we aan werken en wat er nog komt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-8">Aankomend</p>
+        <div class="space-y-16">
+          {upcoming.map(q => (
+            <div>
+              <h2 class="text-2xl font-bold text-primary-950 mb-6">{q.quarter}</h2>
+              <div class="space-y-4">
+                {q.items.map(item => (
+                  <div class="p-6 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+                    <div class="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 class="font-semibold text-primary-950 mb-1">{item.title}</h3>
+                        <p class="text-sm text-primary-900/60 leading-relaxed">{item.description}</p>
+                      </div>
+                      <span class:list={['shrink-0 px-3 py-1 text-xs font-medium rounded-full', statusLabels[item.status].color]}>
+                        {statusLabels[item.status].label}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Opgeleverd</p>
+        <h2 class="text-3xl font-bold text-primary-950 mb-8">Recent afgerond</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {completed.map(item => (
+            <div class="flex items-start gap-3 p-5 rounded-2xl bg-white border border-primary-100">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary-950 text-sm">{item.title}</h3>
+                <p class="text-xs text-primary-900/50 leading-relaxed mt-1">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>

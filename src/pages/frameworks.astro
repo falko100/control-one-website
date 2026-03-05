@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const frameworks = [
+  {
+    name: 'ISO 27001',
+    subtitle: 'Informatiebeveiliging',
+    description: 'De internationale norm voor informatiebeveiliging. Bescherm uw data met een systematisch ISMS.',
+    href: '/iso-27001',
+    color: 'from-primary-600 to-primary-800',
+    status: 'Beschikbaar',
+    chapters: 7,
+    controls: 93,
+  },
+  {
+    name: 'ISO 9001',
+    subtitle: 'Kwaliteitsmanagement',
+    description: 'Verbeter klanttevredenheid en procesefficiëntie met een kwaliteitsmanagementsysteem.',
+    href: '/iso-9001',
+    color: 'from-emerald-500 to-teal-700',
+    status: 'Beschikbaar',
+    chapters: 7,
+    controls: null,
+  },
+  {
+    name: 'ISO 14001',
+    subtitle: 'Milieumanagement',
+    description: 'Verklein uw ecologische voetafdruk en voldoe aan milieuwetgeving.',
+    href: '/iso-14001',
+    color: 'from-green-500 to-emerald-700',
+    status: 'Beschikbaar',
+    chapters: 7,
+    controls: null,
+  },
+  {
+    name: 'NIS2',
+    subtitle: 'Cybersecurity richtlijn',
+    description: 'Voldoe aan de Europese NIS2-richtlijn voor netwerk- en informatiebeveiliging.',
+    href: '#',
+    color: 'from-violet-500 to-purple-700',
+    status: 'Binnenkort',
+    chapters: null,
+    controls: null,
+  },
+  {
+    name: 'SOC 2',
+    subtitle: 'Trust Services Criteria',
+    description: 'Demonstreer betrouwbaarheid aan klanten met SOC 2 Type I en Type II rapportages.',
+    href: '#',
+    color: 'from-amber-500 to-orange-700',
+    status: 'Gepland',
+    chapters: null,
+    controls: null,
+  },
+  {
+    name: 'AVG / GDPR',
+    subtitle: 'Privacywetgeving',
+    description: 'Beheer verwerkingsregisters, DPIA\'s en datalekprocedures conform de AVG.',
+    href: '#',
+    color: 'from-rose-500 to-pink-700',
+    status: 'Gepland',
+    chapters: null,
+    controls: null,
+  },
+];
+---
+
+<Layout title="Frameworks — Control One">
+  <Header />
+  <main>
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-accent-400 bg-white/10 rounded-full">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
+            Frameworks
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+            Eén platform, meerdere
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-300">frameworks</span>
+          </h1>
+          <p class="mt-6 text-lg text-primary-300/80 max-w-2xl mx-auto leading-relaxed">
+            Control One ondersteunt de belangrijkste compliance-frameworks. Implementeer er één of combineer meerdere — met gedeelde beheersmaatregelen en documenten.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {frameworks.map(fw => (
+            <div class="group relative rounded-2xl border border-primary-100 overflow-hidden hover:shadow-xl hover:shadow-primary-100/50 transition-all">
+              <div class:list={['h-2 bg-gradient-to-r', fw.color]}></div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-primary-950">{fw.name}</h3>
+                    <p class="text-sm text-primary-900/50">{fw.subtitle}</p>
+                  </div>
+                  <span class:list={[
+                    'px-3 py-1 text-xs font-medium rounded-full',
+                    fw.status === 'Beschikbaar' ? 'bg-emerald-100 text-emerald-700' : fw.status === 'Binnenkort' ? 'bg-amber-100 text-amber-700' : 'bg-primary-100 text-primary-600',
+                  ]}>
+                    {fw.status}
+                  </span>
+                </div>
+                <p class="text-sm text-primary-900/60 leading-relaxed mb-6">{fw.description}</p>
+                {(fw.chapters || fw.controls) && (
+                  <div class="flex gap-4 mb-6">
+                    {fw.chapters && (
+                      <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-700">{fw.chapters}</div>
+                        <div class="text-xs text-primary-900/40">Hoofdstukken</div>
+                      </div>
+                    )}
+                    {fw.controls && (
+                      <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-700">{fw.controls}</div>
+                        <div class="text-xs text-primary-900/40">Maatregelen</div>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {fw.status === 'Beschikbaar' ? (
+                  <a href={fw.href} class="inline-flex items-center text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
+                    Meer informatie
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                  </a>
+                ) : (
+                  <span class="text-sm text-primary-900/40">Komt binnenkort beschikbaar</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="p-8 sm:p-12 rounded-3xl bg-white border border-primary-100 shadow-sm">
+          <h2 class="text-2xl font-bold text-primary-950 mb-4">Multi-framework ondersteuning</h2>
+          <div class="space-y-4 text-primary-900/60 leading-relaxed">
+            <p>Veel organisaties werken met meerdere frameworks tegelijk. ISO 27001 en ISO 9001 delen bijvoorbeeld vergelijkbare eisen rondom documentbeheer, interne audits en directiebeoordeling.</p>
+            <p>Control One herkent deze overlap automatisch. Implementeer een beheersmaatrgel één keer en wij mappen deze naar alle relevante frameworks. Dat bespaart tijd en voorkomt dubbel werk.</p>
+            <p>Heeft u een framework nodig dat nog niet wordt ondersteund? <a href="/contact" class="text-primary-600 hover:underline">Laat het ons weten</a> — we breiden continu uit op basis van klantvraag.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
