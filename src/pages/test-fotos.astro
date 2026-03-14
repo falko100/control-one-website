@@ -1,0 +1,913 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Test: Foto-opties">
+  <Header />
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════
+         PAGE HEADER
+    ════════════════════════════════════════════════════ -->
+    <section class="pt-32 pb-10 bg-primary-950">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-bold tracking-widest uppercase text-amber-300 bg-amber-400/10 rounded-full border border-amber-400/20">
+          <span class="w-1.5 h-1.5 bg-amber-300 rounded-full animate-pulse"></span>
+          Tijdelijke testpagina
+        </div>
+        <h1 class="text-4xl font-bold text-white tracking-tight">Foto-opties homepage</h1>
+        <p class="mt-3 text-primary-300/70 text-lg">Vier uitwerkingen — kies welke richting aansluit</p>
+        <!-- Quick nav -->
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          {['Optie 1 · Tussensectie', 'Optie 2 · Hero accent', 'Optie 3 · Collage strip', 'Optie 4 · Testimonials', 'Optie 5 · 3-foto blok'].map((label, i) => (
+            <a href={`#optie-${i + 1}`} class="px-4 py-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg transition-all">
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OPTIE 1 — "Gebouwd in Twente" Tussensectie
+    ════════════════════════════════════════════════════ -->
+    <div id="optie-1" class="bg-primary-50 py-8 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+          <div>
+            <p class="font-bold text-primary-950 text-lg">"Gebouwd in Twente" Tussensectie</p>
+            <p class="text-sm text-primary-600">Tussen Testimonials en WhyControlOne · Full-bleed kantoorfoto met overlay + portretcollage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optie 1: Variant A — Donkere overlay + portret-rij -->
+    <section class="relative overflow-hidden" style="min-height: 520px;">
+      <!-- Background office photo -->
+      <img
+        src="/team/office-2.webp"
+        alt="Control One kantoor"
+        class="absolute inset-0 w-full h-full object-cover"
+        style="object-position: center 40%;"
+      />
+      <!-- Gradient overlay -->
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26,63,122,0.92) 0%, rgba(15,40,90,0.85) 60%, rgba(26,63,122,0.75) 100%);"></div>
+      <!-- Subtle noise/grain texture overlay -->
+      <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 stitchTiles=%22stitch%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>');"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+          <!-- Left: text -->
+          <div class="lg:w-1/2">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-bold tracking-widest uppercase text-accent-400 bg-white/10 rounded-full border border-white/15">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+              Enschede, Twente
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+              Gebouwd door mensen<br />die ISO <em class="not-italic text-accent-400">kennen</em>
+            </h2>
+            <p class="mt-5 text-lg text-blue-100/80 leading-relaxed max-w-lg">
+              Control One is gemaakt door een team van compliance-professionals en software-ontwikkelaars uit Twente. Geen consultants, geen tussenpersonen — gewoon een platform dat werkt.
+            </p>
+
+            <!-- Stats -->
+            <div class="mt-8 grid grid-cols-3 gap-6">
+              <div>
+                <p class="text-3xl font-bold text-white">4+</p>
+                <p class="text-sm text-blue-200/70 mt-0.5">ISO-frameworks</p>
+              </div>
+              <div class="border-l border-white/15 pl-6">
+                <p class="text-3xl font-bold text-white">28</p>
+                <p class="text-sm text-blue-200/70 mt-0.5">Coaching-stappen</p>
+              </div>
+              <div class="border-l border-white/15 pl-6">
+                <p class="text-3xl font-bold text-accent-400">100%</p>
+                <p class="text-sm text-blue-200/70 mt-0.5">Nederlands team</p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-10">
+              <a href="/over-ons" class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg shadow-accent-400/25">
+                Leer ons kennen
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: portrait grid -->
+          <div class="lg:w-1/2 flex flex-col gap-4">
+            <!-- 2 large + 1 small layout -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-xl shadow-black/30 ring-1 ring-white/10">
+                <img src="/team/office-1.webp" alt="Control One team" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-xl shadow-black/30 ring-1 ring-white/10">
+                <img src="/team/office-3.webp" alt="Control One kantoor" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" style="object-position: center 30%;" />
+              </div>
+            </div>
+            <!-- Portrait strip -->
+            <div class="flex items-center gap-3">
+              <div class="flex -space-x-3">
+                {[1,2,3,4,5,6].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-10 h-10 rounded-full object-cover border-2 border-white/30 shadow-md" style="object-position: center 15%;" />
+                ))}
+              </div>
+              <p class="text-sm text-white/70">+ ons hele team</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 1B: Variant met horizontale brede foto + tekst eronder -->
+    <div class="bg-primary-50 py-4 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 1B — Alternatiefe layout: breed beeld + tekst eronder</p>
+      </div>
+    </div>
+
+    <section class="bg-white py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Full-width photo with overlay text -->
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/20" style="min-height: 400px;">
+          <img src="/team/office-4.webp" alt="Control One kantoor" class="absolute inset-0 w-full h-full object-cover" style="object-position: center 35%;" />
+          <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(26,63,122,0.90) 0%, rgba(26,63,122,0.60) 50%, rgba(26,63,122,0.10) 100%);"></div>
+          <div class="relative p-10 sm:p-14 flex flex-col justify-end h-full" style="min-height: 400px;">
+            <p class="text-xs font-bold tracking-widest uppercase text-accent-400 mb-3">📍 Enschede, Twente</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight max-w-xl leading-snug">
+              Een Twents team dat ISO toegankelijk maakt voor iedereen
+            </h2>
+            <p class="mt-4 text-blue-100/80 max-w-lg">Van idee tot certificering — wij begrijpen het traject omdat we het zelf hebben doorlopen.</p>
+            <div class="mt-7 flex items-center gap-4">
+              <div class="flex -space-x-3">
+                {[1,2,3,4].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-10 h-10 rounded-full object-cover border-2 border-white/40" style="object-position: center 15%;" />
+                ))}
+              </div>
+              <a href="/over-ons" class="text-sm font-semibold text-white underline underline-offset-4 hover:text-accent-400 transition-colors">Leer ons kennen →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OPTIE 2 — Hero accent (foto naast screenshot-fan)
+    ════════════════════════════════════════════════════ -->
+    <div id="optie-2" class="bg-primary-50 py-8 px-6 border-t-4 border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+          <div>
+            <p class="font-bold text-primary-950 text-lg">Hero accent — Kantoorsfeer in de Hero</p>
+            <p class="text-sm text-primary-600">Kantoor- of teamfoto als visueel accent ín de Hero, naast of boven de screenshot-fan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2A: Hero met foto als rechter kolom -->
+    <div class="bg-primary-50/30 py-4 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 2A — Tekst links, kantoor/team foto rechts (split hero)</p>
+      </div>
+    </div>
+
+    <section class="relative overflow-hidden bg-white" style="min-height: 80vh;">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-primary-50/10 pointer-events-none"></div>
+      <div class="absolute top-0 left-1/2 w-[700px] h-[700px] bg-accent-400/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 py-28">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          <!-- Left: text (same as current hero) -->
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-7">
+              <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-primary-700 bg-primary-50 rounded-full border border-primary-200">
+                <span class="w-1.5 h-1.5 bg-accent-500 rounded-full animate-pulse"></span>
+                ISO Compliance Platform
+              </div>
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-primary-950 leading-[1.05]">
+              Werken aan impact
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-primary-600">Control One Portal</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-primary-700/70 max-w-xl leading-relaxed">
+              Van risicoanalyse tot certificering: Control One begeleidt jouw organisatie stap voor stap. Alles op één plek, voor iedereen begrijpelijk.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-white bg-primary-950 hover:bg-primary-900 rounded-full transition-all shadow-lg shadow-primary-950/20">
+                Gratis starten · 14 dagen
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+              <a href="#" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-primary-800 border border-primary-200 hover:border-primary-400 hover:bg-primary-50 rounded-full transition-all">
+                Bekijk een demo
+              </a>
+            </div>
+            <!-- Trust -->
+            <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-primary-500">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-accent-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                ISO 27001 &amp; 9001
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-accent-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                Nederlands bedrijf · EU-hosting
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: office/team photo with frame -->
+          <div class="lg:w-1/2 relative">
+            <!-- Main photo card -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/15 ring-1 ring-primary-100">
+              <img
+                src="/team/office-1.webp"
+                alt="Control One team aan het werk"
+                class="w-full object-cover"
+                style="height: 440px; object-position: center 30%;"
+              />
+              <!-- Subtle gradient bottom -->
+              <div class="absolute bottom-0 left-0 right-0 h-32" style="background: linear-gradient(to top, rgba(248,250,252,0.8), transparent);"></div>
+              <!-- Team badge overlay -->
+              <div class="absolute bottom-5 left-5 right-5 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
+                <div class="flex -space-x-2.5">
+                  {[1,2,3,4].map(n => (
+                    <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-8 h-8 rounded-full object-cover border-2 border-white" style="object-position: center 15%;" />
+                  ))}
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-primary-950">Ons team staat voor je klaar</p>
+                  <p class="text-[11px] text-primary-500">Reactie binnen 1 werkdag · Enschede</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating accent card (top-right) -->
+            <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl border border-primary-100 px-4 py-3 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-primary-950">Nederlands bedrijf</p>
+                <p class="text-[11px] text-primary-500">100% eigen team</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2B: Hero met team-fotostrook bovenin als menselijk element -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 2B — Subtiele team-foto strip bovenaan de hero (boven de headline)</p>
+      </div>
+    </div>
+
+    <section class="relative overflow-hidden bg-white pt-24 pb-16">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-primary-50/10 pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-6">
+
+        <!-- Team photo strip ABOVE headline -->
+        <div class="max-w-3xl mx-auto text-center mb-8">
+          <!-- Overlapping portraits + badge -->
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="flex -space-x-3">
+              {[1,2,3,4,5].map(n => (
+                <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md" style="object-position: center 15%;" />
+              ))}
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1 text-xs font-semibold text-primary-700 bg-primary-50 rounded-full border border-primary-200">
+              <span class="w-1.5 h-1.5 bg-accent-500 rounded-full animate-pulse"></span>
+              ISO Compliance Platform · Twente
+            </div>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-primary-950 leading-[1.05]">
+            Werken aan impact
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-primary-600">Control One Portal</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-primary-700/70 max-w-2xl mx-auto leading-relaxed">
+            Van risicoanalyse tot certificering: Control One begeleidt jouw organisatie stap voor stap.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-white bg-primary-950 hover:bg-primary-900 rounded-full transition-all shadow-lg shadow-primary-950/20">
+              Gratis starten · 14 dagen
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+            <a href="#" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-primary-800 border border-primary-200 hover:border-primary-400 hover:bg-primary-50 rounded-full transition-all">
+              Bekijk een demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Office photo below CTA buttons, above screenshot fan -->
+        <div class="mt-10 grid grid-cols-3 gap-3 max-w-2xl mx-auto">
+          <div class="rounded-2xl overflow-hidden aspect-[3/2] shadow-lg ring-1 ring-primary-100">
+            <img src="/team/office-3.webp" alt="Kantoor" class="w-full h-full object-cover" style="object-position: center 35%;" />
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/2] shadow-lg ring-1 ring-primary-100">
+            <img src="/team/office-1.webp" alt="Team" class="w-full h-full object-cover" style="object-position: center 30%;" />
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/2] shadow-lg ring-1 ring-primary-100">
+            <img src="/team/office-4.webp" alt="Kantoor" class="w-full h-full object-cover" style="object-position: center 35%;" />
+          </div>
+        </div>
+        <p class="text-center text-xs text-primary-400 mt-3">📍 Control One HQ · Enschede, Twente</p>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OPTIE 3 — Collage strip (3 foto's naast elkaar)
+    ════════════════════════════════════════════════════ -->
+    <div id="optie-3" class="bg-primary-50 py-8 px-6 border-t-4 border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">3</span>
+          <div>
+            <p class="font-bold text-primary-950 text-lg">Compacte fotocollage strip</p>
+            <p class="text-sm text-primary-600">Lichte sectie met 3–4 foto's naast elkaar · past goed boven of onder de CTA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3A: RADICAAL NIEUWE versie — Editoriaal portret-split -->
+    <div class="bg-primary-50/30 py-4 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 3A — Editoriaal portret-split (nieuw) ✦</p>
+      </div>
+    </div>
+
+    <section class="overflow-hidden bg-white">
+      <div class="flex flex-col lg:flex-row" style="min-height: 580px;">
+
+        <!-- Left: Donker content panel -->
+        <div class="relative flex flex-col justify-between px-10 sm:px-14 py-14 lg:py-16 lg:w-[44%] shrink-0" style="background: linear-gradient(160deg, #1e4b8f 0%, #152e68 100%);">
+          <!-- Decoratief stippelpatroon -->
+          <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 22px 22px;"></div>
+
+          <!-- Bovenkant content -->
+          <div class="relative z-10">
+            <!-- Location badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-8 text-xs font-bold tracking-widest uppercase text-blue-200 bg-white/10 rounded-full border border-white/20 w-fit">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+              Enschede, Twente
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-3xl sm:text-4xl xl:text-[2.6rem] font-bold text-white tracking-tight leading-[1.1]">
+              Gebouwd in Twente.<br />
+              Ingezet door<br />
+              <em class="not-italic text-accent-400">heel Nederland.</em>
+            </h2>
+
+            <!-- Subtiele lijn -->
+            <div class="mt-8 w-10 h-0.5 rounded-full bg-white/20"></div>
+
+            <!-- Omschrijving -->
+            <p class="mt-6 text-blue-100/70 leading-relaxed max-w-sm text-[15px]">
+              Een team van compliance-professionals en software-ontwikkelaars. Geen consultants, geen tussenpersonen — gewoon software die werkt.
+            </p>
+
+            <!-- Feature bullets -->
+            <ul class="mt-7 space-y-2.5">
+              {['100% Nederlands eigendom', 'EU-hosting · AVG-compliant', 'Opgericht vanuit eigen ISO-ervaring'].map(item => (
+                <li class="flex items-center gap-2.5 text-sm text-white/75">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-400 shrink-0 mt-px"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Onderkant: stats + teamstrip -->
+          <div class="relative z-10 mt-12">
+            <!-- Stats row -->
+            <div class="flex gap-7 mb-9 pb-9 border-b border-white/10">
+              <div>
+                <p class="text-2xl font-bold text-white leading-none">28</p>
+                <p class="text-[11px] text-blue-300/60 mt-1 uppercase tracking-wide">coaching-stappen</p>
+              </div>
+              <div class="border-l border-white/15 pl-7">
+                <p class="text-2xl font-bold text-white leading-none">4+</p>
+                <p class="text-[11px] text-blue-300/60 mt-1 uppercase tracking-wide">ISO-frameworks</p>
+              </div>
+              <div class="border-l border-white/15 pl-7">
+                <p class="text-2xl font-bold text-accent-400 leading-none">100%</p>
+                <p class="text-[11px] text-blue-300/60 mt-1 uppercase tracking-wide">NL-team</p>
+              </div>
+            </div>
+
+            <!-- Teamstrip + CTA -->
+            <a href="/over-ons#team" class="flex items-center gap-3.5 group cursor-pointer no-underline">
+              <div class="flex -space-x-3 shrink-0">
+                {[1,2,3,4,5].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-9 h-9 rounded-full object-cover border-2 border-white/40 shadow-md group-hover:border-white/70 transition-all" style="object-position: center 15%;" />
+                ))}
+              </div>
+              <div>
+                <p class="text-sm text-white font-semibold group-hover:underline leading-tight">Leer ons kennen</p>
+                <p class="text-xs text-blue-300/55 mt-0.5">Ons volledige team →</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Portretfoto dominant -->
+        <div class="relative flex-1 overflow-hidden" style="min-height: 420px;">
+          <!-- Linker-rand fade (aansluitend op het donkere panel) -->
+          <div class="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none" style="background: linear-gradient(to right, #152e68, transparent);"></div>
+          <!-- Onder-rand fade -->
+          <div class="absolute bottom-0 left-0 right-0 h-28 z-10 pointer-events-none" style="background: linear-gradient(to top, rgba(255,255,255,0.12), transparent);"></div>
+
+          <!-- Portretfoto — vervang src met jouw nieuwe foto -->
+          <img
+            src="/team/portrait-cta.webp"
+            alt="Control One teamlid"
+            class="w-full h-full object-cover"
+            style="object-position: center top; min-height: 580px; filter: brightness(1.08) contrast(0.97);"
+          />
+
+          <!-- Badge rechtsonder -->
+          <div class="absolute bottom-6 right-6 z-20">
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl ring-1 ring-primary-100/50">
+              <div class="flex items-center gap-2.5">
+                <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></div>
+                <div>
+                  <p class="text-xs font-bold text-primary-950 leading-tight">100% Nederlands bedrijf</p>
+                  <p class="text-[11px] text-primary-500">Opgericht in Enschede</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3B: Donkere achtergrond, asymmetrische masonry-stijl -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 3B — Donker, asymmetrisch: 1 grote foto + 2 kleine + tekst</p>
+      </div>
+    </div>
+
+    <section class="py-20" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a6e 100%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+
+          <!-- Left: text -->
+          <div class="lg:w-2/5 flex flex-col justify-center">
+            <p class="text-xs font-bold tracking-widest uppercase text-accent-400 mb-4">📍 Enschede</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+              Een Twents team<br />met een missie
+            </h2>
+            <p class="mt-5 text-lg text-blue-200/70 leading-relaxed">
+              Wij geloven dat ISO-certificering toegankelijk moet zijn voor iedere organisatie — groot of klein, tech of productie.
+            </p>
+            <div class="mt-8 space-y-3">
+              {['100% Nederlands eigendom', 'EU-hosting in Amsterdam', 'Geen consultants, gewoon software', 'Opgericht vanuit eigen ervaring'].map(item => (
+                <div class="flex items-center gap-3 text-sm text-white/75">
+                  <span class="w-5 h-5 rounded-full bg-accent-400/20 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-accent-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            <a href="/over-ons" class="mt-10 inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all w-fit">
+              Over ons team
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+
+          <!-- Right: asymmetric photo grid -->
+          <div class="lg:w-3/5 grid grid-cols-2 gap-4">
+            <!-- Large photo top-left spanning 2 rows -->
+            <div class="row-span-2 rounded-3xl overflow-hidden shadow-xl ring-1 ring-white/10" style="min-height: 340px;">
+              <img src="/team/office-4.webp" alt="Control One kantoor" class="w-full h-full object-cover" style="object-position: center 35%;" />
+            </div>
+            <!-- Small top-right -->
+            <div class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-white/10" style="height: 160px;">
+              <img src="/team/office-2.webp" alt="Control One team" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            </div>
+            <!-- Portrait grid bottom-right -->
+            <div class="rounded-3xl overflow-hidden shadow-xl ring-1 ring-white/10 bg-white/5 flex items-center justify-center gap-3 p-4" style="height: 160px;">
+              <div class="grid grid-cols-3 gap-2">
+                {[1,2,3,4,5,6].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-10 h-10 rounded-xl object-cover ring-1 ring-white/20" style="object-position: center 15%;" />
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OPTIE 4 — Echte portretfoto's in Testimonials
+    ════════════════════════════════════════════════════ -->
+    <div id="optie-4" class="bg-primary-50 py-8 px-6 border-t-4 border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">4</span>
+          <div>
+            <p class="font-bold text-primary-950 text-lg">Testimonials verrijken met echte portretfoto's</p>
+            <p class="text-sm text-primary-600">Portretfoto's i.p.v. <code class="bg-primary-100 px-1 rounded text-xs">pravatar.cc</code> placeholders · grotere kaarten met foto-achtergrond variant</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4A: Verbeterde testimonials met portretfoto's (kleine cirkel, huidige stijl) -->
+    <div class="bg-primary-50/30 py-4 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 4A — Huidige kaart-stijl met echte portretfoto's</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-gradient-to-b from-white to-primary-50/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Ervaringen</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Organisaties die zelf de regie pakken</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { quote: 'Dankzij de coach wisten we altijd precies wat de volgende stap was. Binnen 5 maanden gecertificeerd.', author: 'Sarah van den Berg', role: 'Operations Manager', company: 'DataGuard Solutions', framework: 'ISO 27001', photo: '/team/portrait-6.webp' },
+            { quote: 'De risicoanalyse en de VvT zijn eindelijk niet meer iets waar je maanden over doet. Alles staat op één plek.', author: 'Mark de Vries', role: 'Kwaliteitsmanager', company: 'TechFlow BV', framework: 'ISO 9001', photo: '/team/portrait-7.webp' },
+            { quote: 'Leveranciersbeheer was altijd een chaos van Excel-sheets. Nu hebben we een actueel register.', author: 'Linda Bakker', role: 'Compliance Officer', company: 'SecureNow Group', framework: 'ISO 27001', photo: '/team/portrait-8.webp' },
+          ].map(t => (
+            <div class="bg-white rounded-2xl border border-primary-100 p-6 flex flex-col shadow-sm hover:shadow-lg hover:shadow-primary-100/50 transition-shadow">
+              <div class="flex items-center justify-between mb-5">
+                <span class="text-xs font-semibold text-primary-600 bg-primary-50 px-2.5 py-1 rounded-full border border-primary-100">{t.framework}</span>
+              </div>
+              <div class="flex gap-0.5 mb-4">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                ))}
+              </div>
+              <blockquote class="text-primary-900/70 leading-relaxed flex-1 text-sm">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <div class="mt-5 pt-4 border-t border-primary-100 flex items-center gap-3">
+                <img src={t.photo} alt={t.author} class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-primary-100" style="object-position: center 15%;" loading="lazy" />
+                <div>
+                  <p class="font-semibold text-primary-950 text-sm leading-tight">{t.author}</p>
+                  <p class="text-[11px] text-primary-900/45 leading-tight">{t.role} · {t.company}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4B: Grote testimonial kaarten met foto als achtergrond bovenin -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Optie 4B — Grote kaarten met portret én kantoorfoto boven de quote</p>
+      </div>
+    </div>
+
+    <section class="py-20 bg-primary-50/30">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Ervaringen</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Organisaties die zelf de regie pakken</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { quote: 'Dankzij de coach wisten we altijd precies wat de volgende stap was. Binnen 5 maanden gecertificeerd, zonder consultant.', author: 'Sarah van den Berg', role: 'Operations Manager', company: 'DataGuard Solutions', framework: 'ISO 27001', portrait: '/team/portrait-6.webp', office: '/team/office-1.webp' },
+            { quote: 'De risicoanalyse en de VvT zijn eindelijk niet meer iets waar je maanden over doet. Alles staat op één plek, exporteerbaar voor de auditor.', author: 'Mark de Vries', role: 'Kwaliteitsmanager', company: 'TechFlow BV', framework: 'ISO 9001', portrait: '/team/portrait-7.webp', office: '/team/office-2.webp' },
+            { quote: 'Wij werken met ISO 27001 én 14001. Het feit dat je dat binnen één portaal beheert, met gedeelde documenten en één dashboard, scheelt enorm.', author: 'Fatima El-Amin', role: 'QHSE Manager', company: 'Greenleaf Logistics', framework: 'ISO 27001 & 14001', portrait: '/team/portrait-9.webp', office: '/team/office-3.webp' },
+          ].map(t => (
+            <div class="bg-white rounded-2xl overflow-hidden border border-primary-100 shadow-sm hover:shadow-xl hover:shadow-primary-100/60 transition-all group">
+              <!-- Office photo header -->
+              <div class="relative h-36 overflow-hidden">
+                <img src={t.office} alt="Kantoor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 35%;" />
+                <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(26,63,122,0.3), rgba(26,63,122,0.6));"></div>
+                <!-- Framework badge -->
+                <span class="absolute top-3 right-3 text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20">{t.framework}</span>
+              </div>
+
+              <!-- Portrait overlapping photo ↔ content (outside overflow-hidden) -->
+              <div class="px-5 -mt-7 mb-1">
+                <img src={t.portrait} alt={t.author} class="w-14 h-14 rounded-full object-cover shadow-xl ring-2 ring-white" style="object-position: center 15%; border: 3px solid white;" loading="lazy" />
+              </div>
+
+              <!-- Content -->
+              <div class="px-5 pb-5">
+                <div class="flex gap-0.5 mb-3 mt-1">
+                  {[1,2,3,4,5].map(() => (
+                    <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  ))}
+                </div>
+                <blockquote class="text-primary-900/70 leading-relaxed text-sm mb-4">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <div class="border-t border-primary-100 pt-3">
+                  <p class="font-semibold text-primary-950 text-sm">{t.author}</p>
+                  <p class="text-[11px] text-primary-900/45">{t.role} · {t.company}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SAMENVATTING / KEUZE
+    ════════════════════════════════════════════════════ -->
+    <section class="py-16 bg-primary-950">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-8">Wat past het best bij Control One?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+          {[
+            { num: '1', title: 'Tussensectie', sub: '"Gebouwd in Twente"', desc: 'Sterk verhaal, veel impact, aparte sectie tussen testimonials en why.' },
+            { num: '2', title: 'Hero accent', sub: 'Split of strip', desc: 'Menselijker hero. Goed als de productfan minder prominent wordt.' },
+            { num: '3', title: 'Collage strip', sub: 'Licht of donker', desc: 'Compact, versatiel — past overal als los blok.' },
+            { num: '4', title: 'Testimonials', sub: 'Echte foto\'s', desc: 'Grootste geloofwaardigheidsboost voor minste moeite.' },
+          ].map(o => (
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <span class="w-7 h-7 rounded-full bg-accent-400 text-primary-950 text-xs font-bold flex items-center justify-center mb-3">{o.num}</span>
+              <p class="text-white font-semibold text-sm">{o.title}</p>
+              <p class="text-accent-400 text-xs mb-2">{o.sub}</p>
+              <p class="text-white/50 text-xs leading-relaxed">{o.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-8 text-primary-400 text-sm">Laat weten welke optie(s) je aanspreken, dan verwerk ik het direct op de echte homepage.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OPTIE 5 — 3 kantoorfotos als 1 element (5 varianten)
+         Sla de 3 foto's op als:
+           office-5.webp = team vergadering (landschap)
+           office-6.webp = vrouw aan bureau (portret)
+           office-7.webp = man staand bureau (landschap)
+    ════════════════════════════════════════════════════ -->
+    <div id="optie-5" class="bg-primary-50 py-8 px-6 border-t-4 border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="w-8 h-8 rounded-full bg-primary-700 text-white text-sm font-bold flex items-center justify-center shrink-0">5</span>
+          <div>
+            <p class="font-bold text-primary-950 text-lg">3 kantoorfotos als 1 element · 5 varianten</p>
+            <p class="text-sm text-primary-600">office-5 (vergadering) · office-6 (vrouw aan bureau) · office-7 (man staand)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Variant 1: Triptiek — 3 gelijke tegels ─── -->
+    <div class="bg-primary-50/30 py-4 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Variant 1 — Triptiek: 3 gelijke tegels + slogan boven</p>
+      </div>
+    </div>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-4 text-xs font-bold tracking-widest uppercase text-primary-600 bg-primary-100 rounded-full border border-primary-200">
+            📍 Enschede, Twente
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-[1.1]">
+            Compliance als cultuur,<br />niet als taak
+          </h2>
+          <p class="mt-4 text-primary-700/60 max-w-xl mx-auto">
+            Een team van compliance-professionals dat ISO-certificering toegankelijk maakt voor elke organisatie.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { src: '/team/office-5.webp', pos: 'center 30%', label: 'Ons team', sub: 'Samen aan het werk' },
+            { src: '/team/office-6.webp', pos: 'center 15%', label: 'Elke dag', sub: 'Gefocust & betrokken' },
+            { src: '/team/office-7.webp', pos: 'center 30%', label: 'Eigen platform', sub: 'Gebouwd met expertise' },
+          ].map(item => (
+            <div class="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" style="aspect-ratio: 3/4;">
+              <img src={item.src} alt="Control One team" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style={`object-position: ${item.pos};`} />
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,30,70,0.72) 0%, transparent 55%);"></div>
+              <div class="absolute bottom-4 left-4">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-accent-400 mb-1">{item.label}</p>
+                <p class="text-sm font-semibold text-white">{item.sub}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-primary-500">
+          {['100% Nederlands eigendom', 'EU-hosting · AVG-compliant', 'Opgericht vanuit eigen ISO-ervaring'].map(t => (
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-300"></span>{t}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Variant 2: Hero + Pair — groot links, 2 rechts ─── -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Variant 2 — Hero + pair: groot links, 2 gestapeld rechts</p>
+      </div>
+    </div>
+
+    <section class="py-16" style="background: linear-gradient(180deg, #f4f7ff 0%, #ffffff 80%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-600 mb-3 flex items-center gap-2">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+              Enschede, Twente
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-[1.1]">
+              Gebouwd door mensen die<br />ISO snappen van binnenuit
+            </h2>
+          </div>
+          <div class="lg:max-w-xs">
+            <p class="text-primary-700/60 text-sm leading-relaxed">Geen consultants, geen tussenpersonen. Ons team bestaat uit compliance-professionals die het ISO-traject zelf hebben doorlopen.</p>
+            <a href="/over-ons" class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 hover:text-primary-950 transition-colors">
+              Over ons team
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-3" style="height: 440px;">
+          <div class="col-span-12 lg:col-span-7 group relative rounded-2xl overflow-hidden shadow-lg">
+            <img src="/team/office-5.webp" alt="Control One team vergadering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 35%;" />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,30,70,0.55) 0%, transparent 45%);"></div>
+            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-md flex items-center gap-2.5">
+              <div class="flex -space-x-2">
+                {[1,2,3].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} class="w-7 h-7 rounded-full object-cover border-2 border-white" style="object-position: center 15%;" />
+                ))}
+              </div>
+              <p class="text-xs font-bold text-primary-950">Ons Twentse team</p>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-5 flex flex-col gap-3">
+            <div class="group relative rounded-2xl overflow-hidden shadow-md flex-1 min-h-0">
+              <img src="/team/office-6.webp" alt="Teamlid aan het werk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 15%;" />
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,30,70,0.35) 0%, transparent 60%);"></div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden shadow-md flex-1 min-h-0">
+              <img src="/team/office-7.webp" alt="Developer aan het werk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 30%;" />
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(15,30,70,0.35) 0%, transparent 60%);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Variant 3: Portrait centraal — vrouw highlight ─── -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Variant 3 — Portrait centraal: vrouwenfoto dominant in het midden</p>
+      </div>
+    </div>
+
+    <section class="py-16 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary-500 mb-4">Onze mensen</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Wij zijn <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">Control One</span>
+          </h2>
+          <p class="mt-4 text-primary-700/60 max-w-lg mx-auto text-sm">
+            Een team vanuit Twente dat ISO-certificering toegankelijk en beheersbaar maakt voor heel Nederland.
+          </p>
+        </div>
+        <div class="flex items-end gap-3 lg:gap-4">
+          <div class="group flex-1 relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" style="height: 280px;">
+            <img src="/team/office-5.webp" alt="Team vergadering" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 30%;" />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(26,63,122,0.50) 0%, transparent 60%);"></div>
+            <div class="absolute bottom-3 left-3"><p class="text-xs font-semibold text-white/80 leading-tight">Het team</p></div>
+          </div>
+          <div class="group flex-1 relative rounded-2xl overflow-hidden shadow-xl ring-2 ring-primary-200" style="height: 410px;">
+            <img src="/team/office-6.webp" alt="Teamlid aan het werk" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 15%;" />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(26,63,122,0.60) 0%, transparent 55%);"></div>
+            <div class="absolute top-4 left-4">
+              <div class="bg-primary-700/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border border-white/20">📍 Enschede</div>
+            </div>
+            <div class="absolute bottom-3 left-3"><p class="text-xs font-semibold text-white/80">Altijd gefocust</p></div>
+          </div>
+          <div class="group flex-1 relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow" style="height: 280px;">
+            <img src="/team/office-7.webp" alt="Developer aan het werk" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style="object-position: center 30%;" />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(26,63,122,0.50) 0%, transparent 60%);"></div>
+            <div class="absolute bottom-3 left-3"><p class="text-xs font-semibold text-white/80">Eigen platform</p></div>
+          </div>
+        </div>
+        <div class="mt-8 flex items-center justify-center gap-3">
+          <div class="flex -space-x-3">
+            {[1,2,3,4,5].map(n => (
+              <img src={`/team/portrait-${n}.webp`} class="w-9 h-9 rounded-full object-cover border-2 border-white shadow-sm" style="object-position: center 15%;" />
+            ))}
+          </div>
+          <a href="/over-ons" class="text-sm font-semibold text-primary-700 hover:text-primary-950 transition-colors">Leer ons team kennen →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Variant 4: Film strip — horizontale balk ─── -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Variant 4 — Film strip: 3 foto's naadloos in één balk, stats onder</p>
+      </div>
+    </div>
+
+    <section class="py-16" style="background: linear-gradient(180deg, #f8faff 0%, #ffffff 70%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-[1.1]">
+            De mensen achter<br /><em class="not-italic text-primary-600">het platform</em>
+          </h2>
+          <div class="sm:text-right">
+            <p class="text-sm text-primary-700/60 max-w-xs">Vanuit Enschede werken we elke dag aan betere ISO-software voor Nederland.</p>
+            <a href="/over-ons" class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary-700">Over ons →</a>
+          </div>
+        </div>
+        <div class="flex gap-0.5 rounded-3xl overflow-hidden shadow-xl shadow-primary-200/40" style="height: 380px;">
+          <div class="relative flex-1 overflow-hidden">
+            <img src="/team/office-5.webp" alt="Vergadering" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="object-position: center 30%;" />
+          </div>
+          <div class="relative overflow-hidden shrink-0" style="width: 250px;">
+            <img src="/team/office-6.webp" alt="Teamlid" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="object-position: center 15%;" />
+          </div>
+          <div class="relative flex-1 overflow-hidden">
+            <img src="/team/office-7.webp" alt="Developer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="object-position: center 30%;" />
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center gap-6 sm:gap-10">
+          {[['28', 'coaching-stappen'], ['4+', 'ISO-frameworks'], ['100%', 'NL-team']].map(([num, label], i) => (
+            <div class:list={[i > 0 ? 'border-l border-primary-100 pl-6 sm:pl-10' : '']}>
+              <p class:list={['text-2xl font-bold leading-none', i === 2 ? 'text-accent-500' : 'text-primary-950']}>{num}</p>
+              <p class="text-xs text-primary-500 mt-1 uppercase tracking-wide">{label}</p>
+            </div>
+          ))}
+          <div class="sm:ml-auto flex items-center gap-2 text-xs text-primary-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            100% Nederlands · EU-hosting
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Variant 5: Dark scattered — roterende kaarten op donker ─── -->
+    <div class="bg-primary-50/30 py-4 px-6 border-t border-primary-100">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary-400">Variant 5 — Dark scattered: donker, kaarten met rotatie-effect</p>
+      </div>
+    </div>
+
+    <section class="py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-bold tracking-widest uppercase text-blue-200 bg-white/10 rounded-full border border-white/20">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
+            Enschede, Twente
+          </div>
+          <h2 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-white tracking-tight leading-[1.1]">
+            Een team met een missie
+          </h2>
+          <p class="mt-5 text-blue-100/55 max-w-lg mx-auto">
+            Wij geloven dat compliance eenvoudig moet zijn. Niet als obstakel, maar als fundament voor groei van je organisatie.
+          </p>
+        </div>
+        <!-- Gespreide kaarten met rotatie -->
+        <div class="relative flex justify-center items-center" style="height: 420px;">
+          <div class="absolute shadow-2xl" style="left: 3%; top: 50%; transform: translateY(-42%) rotate(-6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-8.jpg" alt="Vergadering" class="w-full h-full object-cover" style="object-position: center 40%; transform: scale(1.4); transform-origin: center center;" />
+            </div>
+          </div>
+          <div class="relative shadow-2xl" style="width: 28%; z-index: 3;">
+            <div class="rounded-2xl overflow-hidden ring-4 ring-accent-400/25" style="aspect-ratio: 3/4;">
+              <img src="/team/office-6.webp" alt="Teamlid" class="w-full h-full object-cover" style="object-position: center 15%;" />
+            </div>
+          </div>
+          <div class="absolute shadow-2xl" style="right: 3%; top: 50%; transform: translateY(-42%) rotate(6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-7.webp" alt="Developer" class="w-full h-full object-cover" style="object-position: center 30%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

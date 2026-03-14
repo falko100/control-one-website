@@ -1,0 +1,537 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const chapters = [
+  {
+    number: '4',
+    title: 'Context van de organisatie',
+    description: "Breng de interne en externe context in kaart en identificeer gevaren in je werkomgeving. Stel de scope van je OHSMS vast en bepaal welke werknemers en externe partijen betrokken zijn.",
+    vereist: 'Interne en externe context analyseren, werknemers en andere belanghebbenden en hun eisen identificeren, scope van het OHSMS vaststellen.',
+    documenten: ['Scope document', 'Contextanalyse', 'Register van belanghebbenden', 'Proceskaart werkomgevingen'],
+    platform: 'Scopebepaling wizard, contextanalyse template en automatisch gegenereerd scope document met belanghebbendenoverzicht.',
+  },
+  {
+    number: '5',
+    title: 'Leiderschap',
+    description: "Toon managementbetrokkenheid via een helder OH&S-beleid en zorg voor actieve participatie van werknemers. Wijs rollen en verantwoordelijkheden toe en borg voldoende middelen voor veiligheid.",
+    vereist: "OH&S-beleid vaststellen en communiceren, rollen en verantwoordelijkheden toewijzen, overleg en participatie van werknemers borgen.",
+    documenten: ["OH&S-beleid", 'Verantwoordelijkheidsmatrix', 'Organogram', 'Participatieregister'],
+    platform: 'Beleidsgenerator met goedkeuringsworkflow, verantwoordelijkheidsmatrix en participatieregistratie voor je OHSMS-team.',
+  },
+  {
+    number: '6',
+    title: 'Planning',
+    description: "Identificeer systematisch alle gevaren, beoordeel OH&S-risico's en benut kansen voor verbetering. Stel doelstellingen vast, houd wettelijke vereisten bij en plan gerichte beheersmaatregelen.",
+    vereist: "Gevaren identificeren, risico's beoordelen en beheersingsmaatregelen bepalen, wettelijke vereisten bijhouden, OH&S-doelstellingen vaststellen met actieplan.",
+    documenten: ['Gevaaridentificatierapport', 'Risicobeoordeling en beheersingsblad', 'Wettelijke vereistenregister', 'Doelstellingenregister'],
+    platform: "Geïntegreerde gevaar- en risicobeoordelingsmodule, wettelijke vereistetracker, beheershiërarchie en doelstellingenbeheer.",
+  },
+  {
+    number: '7',
+    title: 'Ondersteuning',
+    description: 'Zorg voor competente medewerkers, voldoende middelen en een gezonde veiligheidscultuur. Regel interne en externe communicatie over OH&S en beheer alle gedocumenteerde informatie centraal.',
+    vereist: "OH&S-bewustzijn creëren via trainingen, competenties borgen, interne en externe communicatie regelen, documentatie beheersen.",
+    documenten: ['Competentiematrix', 'Opleidingskalender', 'Trainingsregister', 'Communicatieplan', 'Documentbeheerbeleid'],
+    platform: 'Centraal documentbeheer, competentieregister, trainingsregistratie en communicatiemodule voor intern en extern.',
+  },
+  {
+    number: '8',
+    title: 'Uitvoering',
+    description: 'Implementeer beheersmaatregelen voor gevaarlijke taken en beheer aannemers en leveranciers op de werkvloer. Stel noodprocedures op, oefen ze regelmatig en pas ze aan na incidenten.',
+    vereist: 'Beheersmaatregelen implementeren via de beheershiërarchie, aannemers en leveranciers beheren, noodprocedures opstellen en oefenen, verandermanagement toepassen.',
+    documenten: ['Operationele beheersprocedures', 'Noodprocedure', 'Preventief onderhoudsplan', 'Aannemersregister'],
+    platform: 'Procedure-bibliotheek, machineonderhoudsbeheer, noodplanregistratie en aannemers/leveranciersbeheer.',
+  },
+  {
+    number: '9',
+    title: 'Evaluatie van prestaties',
+    description: "Meet OH&S-prestaties met KPI's en incidentstatistieken, voer nalevingsevaluaties uit en houd interne audits. Directiebeoordelingen geven richting aan prioriteiten en verbeteringen.",
+    vereist: "OH&S-prestaties meten en analyseren, nalevingsevaluaties uitvoeren, intern auditprogramma uitvoeren en directiebeoordelingen houden.",
+    documenten: ['Nalevingsevaluatierapport', 'Auditplan & auditrapport', 'KPI-register', 'Directiebeoordelingsverslag'],
+    platform: 'Auditworkflow met geautomatiseerde reminders, nalevingstracker, incidentstatistieken en directiebeoordelingstemplates.',
+  },
+  {
+    number: '10',
+    title: 'Verbetering',
+    description: 'Meld en onderzoek alle incidenten en near-misses, pak non-conformiteiten aan met gerichte corrigerende maatregelen. Documenteer verbeteringen structureel om een veiliger werkomgeving te waarborgen.',
+    vereist: 'Incidenten melden, onderzoeken en lessen documenteren, non-conformiteiten aanpakken, corrigerende maatregelen treffen en continue verbetering van het OHSMS documenteren.',
+    documenten: ['Incidentrapport', 'Non-conformiteitenregister', 'Corrigerende maatregelenplan', 'Verbeterregister'],
+    platform: 'Incidentregistratie en -onderzoeksmodule, CPAR-beheer met vierstaps-verbeterproces en verbeterdashboard.',
+  },
+];
+
+const ohmsSections = [
+  {
+    id: 'h4h10',
+    label: 'H4–H10',
+    name: 'Hoofdstukken',
+    colorClass: 'text-amber-400',
+    items: [
+      { num: '4.1',  title: 'Scope document' },
+      { num: '4.2',  title: 'Contextanalyse' },
+      { num: '4.3',  title: 'Register van belanghebbenden' },
+      { num: '4.4',  title: 'Proceskaart werkomgevingen' },
+      { num: '5.1',  title: 'OH&S-beleid' },
+      { num: '5.2',  title: 'Verantwoordelijkheidsmatrix' },
+      { num: '5.3',  title: 'Organogram' },
+      { num: '5.4',  title: 'Participatieregister' },
+      { num: '6.1',  title: 'Gevaaridentificatierapport' },
+      { num: '6.2',  title: 'Risicobeoordeling en beheersingsblad' },
+      { num: '6.3',  title: 'Wettelijke vereistenregister' },
+      { num: '6.4',  title: 'Doelstellingenregister' },
+      { num: '7.1',  title: 'Competentiematrix' },
+      { num: '7.2',  title: 'Opleidingskalender' },
+      { num: '7.3',  title: 'Communicatieplan' },
+      { num: '7.4',  title: 'Documentbeheerbeleid' },
+      { num: '8.1',  title: 'Operationele beheersprocedures' },
+      { num: '8.2',  title: 'Noodprocedure' },
+      { num: '8.3',  title: 'Preventief onderhoudsplan' },
+      { num: '8.4',  title: 'Aannemersregister' },
+      { num: '9.1',  title: 'Nalevingsevaluatierapport' },
+      { num: '9.2',  title: 'Auditplan & auditrapport' },
+      { num: '9.3',  title: 'KPI-register' },
+      { num: '9.4',  title: 'Directiebeoordelingsverslag' },
+      { num: '10.1', title: 'Incidentrapport' },
+      { num: '10.2', title: 'Non-conformiteitenregister' },
+      { num: '10.3', title: 'Corrigerende maatregelenplan' },
+      { num: '10.4', title: 'Verbeterregister' },
+    ],
+  },
+];
+
+const ohmsExtras = [
+  {
+    id: 'algemeen',
+    title: 'Algemeen',
+    items: [
+      'OHSMS Handboek',
+      'Beheer van Management Systeem Documentatie Procedure',
+      'Document Wijziging Verzoek Formulier',
+      'Beheer van Management Systeem Gegevens Procedure',
+      'Overzicht van Verantwoordelijkheden en autoriteiten',
+      'Documentatiematrix',
+      'ISO 45001 Checklist',
+      'OHSMS Beheerd Gegevens Register',
+      'OHSMS Beheerd Documenten Register',
+      'Verandermanagementprocedure',
+    ],
+  },
+  {
+    id: 'audit',
+    title: 'Interne Audit',
+    items: [
+      'Auditeren Stap-voor-Stap',
+      'Gedragscode voor Interne Auditors',
+      'Interne Audit Feedback Formulier',
+      'Interne Audit Rapport Template',
+      'Interne Audit Checklist Vragen – OHSMS',
+      'Interne Audit Checklist Vragen – Werkplekken',
+      'Interne Audit Checklist Vragen – Naleving',
+      'Vaardigheden en Kennis Vereisten voor OH&S Auditoren',
+    ],
+  },
+];
+
+const benefits = [
+  { title: 'Verminder arbeidsongevallen', description: "Identificeer gevaren, beoordeel risico's en implementeer beheersmaatregelen proactief." },
+  { title: 'Voldoe aan arbowetgeving', description: 'Aantoon naleving van de Arbowet, Risico-Inventarisatie & -Evaluatie (RI&E) en andere verplichtingen.' },
+  { title: 'Verbeter werknemerswelzijn', description: 'Betrek medewerkers bij veiligheid en creëer een cultuur van continue verbetering.' },
+  { title: 'Verlaag verzuimkosten', description: 'Structureel veiligheidsmanagement leidt tot minder incidenten en lager ziekteverzuim.' },
+];
+---
+
+<Layout title="ISO 45001 Arbo & Veiligheid: Control One">
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          <!-- Left: text content -->
+          <div class="flex-1 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-amber-400 bg-white/10 rounded-full backdrop-blur-sm">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Arbo &amp; Veiligheid
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+              ISO 45001
+            </h1>
+            <p class="mt-2 text-xl sm:text-2xl font-medium text-primary-200">
+              Occupational Health &amp; Safety Management System
+            </p>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Implementeer een OHSMS volgens de internationale norm voor arbo en veiligheid. Control One begeleidt je van gevaaridentificatie tot incidentonderzoek, stap voor stap.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
+                Start met ISO 45001
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+              <a href="/features" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
+                Bekijk alle functies
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: iMac mockup -->
+          <div class="hidden lg:block flex-shrink-0">
+            <img src="/images/imac-mockup.png" alt="Control One platform op iMac" style="width: 560px; max-width: 100%;" loading="eager" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- What is ISO 45001 -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Wat is ISO 45001?</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-6">
+              De internationale norm voor arbo en veiligheid
+            </h2>
+            <div class="text-primary-900/60 leading-relaxed space-y-4">
+              <p>
+                ISO 45001 is de internationale norm voor managementsystemen voor arbeidsomstandigheden en veiligheid. Het biedt een systematische aanpak voor het identificeren van gevaren, het beheersen van risico's en het verbeteren van de veiligheidsprestaties van je organisatie.
+              </p>
+              <p>
+                Certificering toont aan werknemers, opdrachtgevers en toezichthouders dat je organisatie veiligheid en gezondheid op de werkvloer structureel aanpakt en continu verbetert.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {benefits.map(b => (
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-100">
+                <h3 class="font-semibold text-primary-950 mb-2 text-sm">{b.title}</h3>
+                <p class="text-xs text-primary-900/50 leading-relaxed">{b.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team element -->
+    <section class="py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-bold tracking-widest uppercase text-blue-200 bg-white/10 rounded-full border border-white/20">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
+            Enschede, Twente
+          </div>
+          <h2 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-white tracking-tight leading-[1.1]">
+            Een team met een missie
+          </h2>
+          <p class="mt-5 text-blue-100/55 max-w-lg mx-auto">
+            Wij geloven dat compliance eenvoudig moet zijn. Niet als obstakel, maar als fundament voor groei van je organisatie.
+          </p>
+        </div>
+        <div class="relative flex justify-center items-center" style="height: 420px;">
+          <div class="absolute shadow-2xl" style="left: 3%; top: 50%; transform: translateY(-42%) rotate(-6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-8.jpg" alt="Vergadering" class="w-full h-full object-cover" style="object-position: center 40%; transform: scale(1.4); transform-origin: center center;" />
+            </div>
+          </div>
+          <div class="relative shadow-2xl" style="width: 28%; z-index: 3;">
+            <div class="rounded-2xl overflow-hidden ring-4 ring-accent-400/25" style="aspect-ratio: 3/4;">
+              <img src="/team/office-6.webp" alt="Teamlid" class="w-full h-full object-cover" style="object-position: center 15%;" />
+            </div>
+          </div>
+          <div class="absolute shadow-2xl" style="right: 3%; top: 50%; transform: translateY(-42%) rotate(6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-7.webp" alt="Developer" class="w-full h-full object-cover" style="object-position: center 30%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Normstructuur</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Hoofdstukken 1–10
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60">
+            Control One begeleidt je door elk hoofdstuk met een stapsgewijze coach, voortgangsregistratie en directe koppeling naar je documenten.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+
+          <!-- Hoofdstukken 1–3: inleiding -->
+          <div class="relative rounded-2xl border border-dashed border-primary-200 bg-primary-50/50 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between">
+              <div class="w-10 h-10 rounded-xl bg-primary-100 text-primary-500 flex items-center justify-center font-bold text-sm shrink-0">
+                1–3
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-primary-400 bg-primary-100 px-2 py-1 rounded-full">Inleiding</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary-950 mb-1 leading-snug">Inleiding van de norm</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">Hoofdstukken 1 t/m 3 vormen de algemene inleiding van de norm en bevatten geen implementatievereisten.</p>
+            </div>
+            <ul class="space-y-2 pt-1 border-t border-primary-100">
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
+                <span><strong class="text-primary-800">Toepassingsgebied</strong> — De scope en het doel van de norm.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
+                <span><strong class="text-primary-800">Normatieve verwijzingen</strong> — Verwijzingen naar andere normen.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">3</span>
+                <span><strong class="text-primary-800">Termen en definities</strong> — Verklaringen van gebruikte begrippen.</span>
+              </li>
+            </ul>
+          </div>
+
+          {chapters.map((ch, i) => (
+            <div
+              class:list={[
+                'chapter-card group relative rounded-2xl border bg-white transition-all duration-200 cursor-pointer overflow-hidden',
+                i === 0 ? 'border-primary-200 shadow-md' : 'border-primary-100 hover:border-primary-200 hover:shadow-md hover:shadow-primary-100/50',
+              ]}
+              data-chapter={ch.number}
+            >
+              <!-- Card trigger (always visible) -->
+              <div class="chapter-trigger p-6 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                  <div class:list={[
+                    'w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0',
+                    i === 0 ? 'bg-primary-600 text-white' : 'bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors',
+                  ]}>
+                    {ch.number}
+                  </div>
+                  <span class="chapter-expand-icon w-7 h-7 rounded-full bg-primary-50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-primary-100">
+                    <svg class="w-3.5 h-3.5 text-primary-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" class="chapter-plus"></path>
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="font-semibold text-primary-950 mb-2 leading-snug">{ch.title}</h3>
+                <p class="text-sm text-primary-900/50 leading-relaxed">{ch.description}</p>
+              </div>
+
+              <!-- Expandable details -->
+              <div class="chapter-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+                <div class="px-6 pb-6 border-t border-primary-100 space-y-4 pt-4">
+                  <!-- What the norm requires -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Wat de norm vereist</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.vereist}</p>
+                  </div>
+                  <!-- Key documents -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Sleuteldocumenten</p>
+                    <ul class="space-y-1">
+                      {ch.documenten.map(doc => (
+                        <li class="flex items-center gap-2 text-xs text-primary-900/65">
+                          <svg class="w-3.5 h-3.5 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                          {doc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <!-- In Control One -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">In Control One</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.platform}</p>
+                  </div>
+                  <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-1 text-xs font-semibold text-primary-700 hover:text-primary-900 transition-colors mt-1">
+                    Start met dit hoofdstuk
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+          <!-- Extra card: 100% coverage -->
+          <div class="relative p-6 rounded-2xl bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden flex flex-col justify-between">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="relative">
+              <div class="text-4xl font-bold mb-1">100%</div>
+              <div class="text-primary-200 text-sm font-semibold mb-4">Normdekking</div>
+              <p class="text-primary-300/80 text-sm leading-relaxed">
+                Control One dekt alle 7 hoofdstukken en alle vereisten van ISO 45001:2018, inclusief gevaaridentificatie, risicobeoordelingen en incidentregistratie.
+              </p>
+            </div>
+            <a href="/demo" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white transition-colors">
+              Bekijk het platform
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OHSMS Documents (interactive) -->
+    <section class="py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%)">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-800/30 rounded-full blur-[80px]"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20">
+            OHSMS Documentatie: ISO 45001:2018
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Alle OHSMS-documenten in één overzicht
+          </h2>
+          <p class="mt-4 text-lg text-primary-300/75 max-w-xl mx-auto leading-relaxed">
+            Klik op een categorie om alle OHSMS-documenten te bekijken. Control One koppelt procedures, registraties en risicobeoordelingen direct aan de ISO 45001-clausules.
+          </p>
+        </div>
+
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10">
+          {ohmsSections.map((sec, i) => (
+            <button
+              data-annex-tab={sec.id}
+              class:list={[
+                'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
+                i === 0
+                  ? 'bg-white text-primary-950 border-transparent shadow-lg'
+                  : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
+              ]}
+            >
+              <span class:list={['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
+                {sec.label}
+              </span>
+              {sec.name}
+              <span class:list={['annex-count text-xs font-semibold px-2 py-0.5 rounded-full', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
+                {sec.items.length}
+              </span>
+            </button>
+          ))}
+          {ohmsExtras.map(extra => (
+            <button
+              data-annex-tab={extra.id}
+              class="annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white"
+            >
+              {extra.title}
+              <span class="annex-count text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-primary-400">
+                {extra.items.length}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <!-- Document panels -->
+        <div class="min-h-64">
+          {ohmsSections.map((sec, i) => (
+            <div data-annex-panel={sec.id} class:list={[i !== 0 && 'hidden']}>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {sec.items.map(item => (
+                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
+                    <span class:list={['text-xs font-mono font-bold shrink-0 w-9', sec.colorClass]}>
+                      {item.num}
+                    </span>
+                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">
+                      {item.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          {ohmsExtras.map(extra => (
+            <div data-annex-panel={extra.id} class="hidden">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {extra.items.map(item => (
+                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
+                    <svg class="w-4 h-4 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Callout box -->
+        <div class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-white/5 border border-white/10">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Risicobeoordeling &amp; Incidentregistratie</h3>
+              <p class="text-primary-300/75 leading-relaxed">
+                Registreer gevaren, voer risicobeoordeling uit en leg beheersmaatregelen vast per locatie of afdeling. Meld en onderzoek incidenten, genereer CPAR's en exporteer alle documentatie als PDF voor je certificeringsauditor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // OHSMS tab switching
+  const annexBtns = document.querySelectorAll<HTMLButtonElement>('[data-annex-tab]');
+  const annexPanels = document.querySelectorAll<HTMLElement>('[data-annex-panel]');
+
+  function activateAnnexTab(targetId: string) {
+    annexBtns.forEach(btn => {
+      const isActive = btn.dataset.annexTab === targetId;
+      btn.className = [
+        'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
+        isActive
+          ? 'bg-white text-primary-950 border-transparent shadow-lg'
+          : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
+      ].join(' ');
+      const letter = btn.querySelector<HTMLElement>('.annex-letter');
+      const count  = btn.querySelector<HTMLElement>('.annex-count');
+      if (letter) letter.className = ['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
+      if (count)  count.className  = ['annex-count text-xs font-semibold px-2 py-0.5 rounded-full',   isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
+    });
+    annexPanels.forEach(panel => {
+      panel.dataset.annexPanel === targetId ? panel.classList.remove('hidden') : panel.classList.add('hidden');
+    });
+  }
+
+  annexBtns.forEach(btn => btn.addEventListener('click', () => activateAnnexTab(btn.dataset.annexTab!)));
+
+  document.querySelectorAll<HTMLElement>('.chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const body = card.querySelector<HTMLElement>('.chapter-body')!;
+      const icon = card.querySelector<SVGElement>('.chapter-expand-icon svg')!;
+      const iconWrap = card.querySelector<HTMLElement>('.chapter-expand-icon')!;
+      const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
+
+      if (isOpen) {
+        body.style.maxHeight = '0';
+        icon.style.transform = '';
+        iconWrap.style.backgroundColor = '';
+        card.style.borderColor = '';
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        icon.style.transform = 'rotate(45deg)';
+        iconWrap.style.backgroundColor = 'var(--color-primary-600, #2563eb)';
+        const paths = iconWrap.querySelectorAll('path');
+        paths.forEach(p => (p as SVGPathElement).style.stroke = 'white');
+        card.style.borderColor = 'var(--color-primary-300, #93c5fd)';
+      }
+    });
+  });
+</script>

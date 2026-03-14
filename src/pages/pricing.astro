@@ -2,86 +2,229 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Pricing from '../components/Pricing.astro';
-import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
-const comparisonFeatures = [
-  { feature: 'ISO-frameworks', starter: '1', pro: 'Tot 3', enterprise: 'Onbeperkt' },
-  { feature: 'Teamleden', starter: 'Tot 5', pro: 'Tot 25', enterprise: 'Onbeperkt' },
-  { feature: 'Implementatiecoach', starter: true, pro: true, enterprise: true },
-  { feature: 'Documentbeheer', starter: true, pro: true, enterprise: true },
-  { feature: 'Risicoregister', starter: 'Basis', pro: 'Uitgebreid', enterprise: 'Uitgebreid' },
-  { feature: 'Interne audits', starter: false, pro: true, enterprise: true },
-  { feature: 'Leveranciersbeheer', starter: false, pro: true, enterprise: true },
-  { feature: 'Directiebeoordelingen', starter: false, pro: true, enterprise: true },
-  { feature: 'Verklaring van Toepasselijkheid', starter: false, pro: true, enterprise: true },
-  { feature: 'Kennisbank', starter: true, pro: true, enterprise: true },
-  { feature: 'SSO / SAML', starter: false, pro: false, enterprise: true },
-  { feature: 'Aangepaste integraties', starter: false, pro: false, enterprise: true },
-  { feature: 'Dedicated accountmanager', starter: false, pro: false, enterprise: true },
-  { feature: 'SLA-garantie', starter: false, pro: false, enterprise: true },
-  { feature: 'Support', starter: 'E-mail', pro: 'Prioriteit', enterprise: 'Dedicated' },
+const featureCategories = [
+  {
+    label: 'Licentie',
+    rows: [
+      { feature: 'Inbegrepen frameworks', starter: '1', pro: '1', enterprise: '1' },
+      { feature: 'Extra frameworks (add-on)', starter: '€39/mnd', pro: '€39/mnd', enterprise: '€39/mnd' },
+      { feature: 'Teamleden', starter: 'Tot 5', pro: 'Tot 25', enterprise: 'Tot 100' },
+    ],
+  },
+  {
+    label: 'Platform (alle plannen)',
+    rows: [
+      { feature: 'Implementatiecoach (28 stappen)', starter: true, pro: true, enterprise: true },
+      { feature: 'Documentbeheer & sjablonen', starter: true, pro: true, enterprise: true },
+      { feature: 'Risicoanalyse & VvT', starter: true, pro: true, enterprise: true },
+      { feature: 'Interne audit module', starter: true, pro: true, enterprise: true },
+      { feature: 'Leveranciersbeheer', starter: true, pro: true, enterprise: true },
+      { feature: 'CPAR & incidentenbeheer', starter: true, pro: true, enterprise: true },
+      { feature: 'Directiebeoordelingen', starter: true, pro: true, enterprise: true },
+      { feature: 'PDF-export voor auditor', starter: true, pro: true, enterprise: true },
+    ],
+  },
+  {
+    label: 'Support & onboarding',
+    rows: [
+      { feature: 'Supportkanaal', starter: 'E-mail', pro: 'Priority e-mail & chat', enterprise: 'Dedicated' },
+      { feature: 'Reactietijd', starter: '2 werkdagen', pro: 'Volgende werkdag', enterprise: 'Binnen 4 uur' },
+      { feature: 'Onboarding', starter: 'Self-service', pro: 'Self-service', enterprise: 'Self-service' },
+      { feature: 'SLA 99.9% uptime', starter: false, pro: false, enterprise: true },
+    ],
+  },
 ];
 ---
 
-<Layout title="Prijzen — Control One">
+<Layout title="Prijzen: Control One">
   <Header />
   <main>
     <!-- Hero -->
-    <section class="relative pt-32 pb-8 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-400/10"></div>
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
       <div class="relative max-w-7xl mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-primary-950 leading-[1.1]">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-accent-400 bg-white/10 rounded-full border border-white/10">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
             Prijzen
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+            Eén platform,<br /><span class="text-accent-400">ontelbare functies</span>
           </h1>
-          <p class="mt-4 text-lg text-primary-900/60">
-            Kies het plan dat past bij uw organisatie. Altijd 14 dagen gratis uitproberen.
+          <p class="mt-5 text-lg text-primary-300/80 max-w-xl mx-auto leading-relaxed">
+            Kies de teamgrootte die bij je past. Altijd 14 dagen gratis uitproberen, geen creditcard vereist.
           </p>
+          <!-- Stats row -->
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-primary-400">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Alle functies inbegrepen
+            </span>
+            <span class="text-primary-600">·</span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z"/></svg>
+              4 ISO-frameworks beschikbaar
+            </span>
+            <span class="text-primary-600">·</span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              EU-hosting · AVG-compliant
+            </span>
+          </div>
         </div>
       </div>
     </section>
 
     <Pricing />
 
+    <!-- Team banner: tussen prijzen en vergelijk -->
+    <section class="bg-white py-10 sm:py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/20" style="min-height: 380px;">
+          <!-- Achtergrond foto -->
+          <img
+            src="/team/office-1.webp"
+            alt="Control One team"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="object-position: center 30%;"
+          />
+          <!-- Gradient overlay: donker links, transparant rechts -->
+          <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(26,63,122,0.92) 0%, rgba(26,63,122,0.65) 45%, rgba(26,63,122,0.15) 100%);"></div>
+          <!-- Content -->
+          <div class="relative p-10 sm:p-14 flex flex-col justify-end h-full" style="min-height: 380px;">
+            <p class="text-xs font-bold tracking-widest uppercase text-accent-400 mb-4 flex items-center gap-2">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+              Enschede, Twente
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight max-w-xl leading-snug">
+              Een Twents team dat ISO toegankelijk maakt voor iedereen
+            </h2>
+            <p class="mt-4 text-blue-100/80 max-w-lg leading-relaxed">
+              Van idee tot certificering — wij begrijpen het traject omdat we het zelf hebben doorlopen.
+            </p>
+            <div class="mt-7 flex items-center gap-4">
+              <div class="flex -space-x-3">
+                {[1,2,3,4].map(n => (
+                  <img src={`/team/portrait-${n}.webp`} alt="Teamlid" class="w-10 h-10 rounded-full object-cover border-2 border-white/50 shadow-md" style="object-position: center 15%;" />
+                ))}
+              </div>
+              <a href="/over-ons" class="text-sm font-semibold text-white underline underline-offset-4 hover:text-accent-400 transition-colors">
+                Leer ons kennen →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Feature comparison table -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white">
       <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-2xl font-bold text-primary-950 mb-8 text-center">Vergelijk alle functies</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
+        <div class="max-w-xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 mb-3">Vergelijking</p>
+          <h2 class="text-3xl font-bold text-primary-950 tracking-tight">Vergelijk alle functies</h2>
+          <p class="mt-3 text-primary-900/55">Kies het plan dat aansluit bij uw organisatie en schaal mee.</p>
+        </div>
+
+        <div class="rounded-2xl border border-primary-100 overflow-hidden shadow-sm">
+          <table class="w-full text-sm border-collapse">
+
+            <!-- Sticky plan name row -->
             <thead>
-              <tr class="border-b border-primary-200">
-                <th class="text-left py-4 pr-4 font-semibold text-primary-950">Functie</th>
-                <th class="text-center py-4 px-4 font-semibold text-primary-950">Starter</th>
-                <th class="text-center py-4 px-4 font-semibold text-primary-600">Professional</th>
-                <th class="text-center py-4 px-4 font-semibold text-primary-950">Enterprise</th>
+              <tr class="bg-white border-b-2 border-primary-100">
+                <th class="text-left py-5 px-6 font-semibold text-primary-950" style="width: 40%;">Functie</th>
+                <th class="text-center py-5 px-5" style="width: 20%;">
+                  <div class="flex flex-col items-center gap-1">
+                    <span class="text-sm font-semibold text-primary-900">Starter</span>
+                    <span class="text-xs text-primary-500 font-normal">€49 / mnd</span>
+                    <span class="text-[10px] text-primary-400">Tot 5 teamleden</span>
+                  </div>
+                </th>
+                <th class="text-center py-5 px-5 bg-primary-700/5 border-x border-primary-200/50" style="width: 20%;">
+                  <div class="flex flex-col items-center gap-1">
+                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-primary-800">
+                      <span class="w-1.5 h-1.5 bg-primary-600 rounded-full"></span>
+                      Team
+                    </span>
+                    <span class="text-xs text-primary-600 font-semibold">€149 / mnd</span>
+                    <span class="text-[10px] text-primary-400">Tot 25 teamleden</span>
+                  </div>
+                </th>
+                <th class="text-center py-5 px-5" style="width: 20%;">
+                  <div class="flex flex-col items-center gap-1">
+                    <span class="text-sm font-semibold text-primary-900">Business</span>
+                    <span class="text-xs text-primary-500 font-normal">€299 / mnd</span>
+                    <span class="text-[10px] text-primary-400">Tot 100 teamleden</span>
+                  </div>
+                </th>
               </tr>
             </thead>
+
             <tbody>
-              {comparisonFeatures.map(row => (
-                <tr class="border-b border-primary-100">
-                  <td class="py-3 pr-4 text-primary-900/70">{row.feature}</td>
-                  {[row.starter, row.pro, row.enterprise].map(val => (
-                    <td class="text-center py-3 px-4">
-                      {val === true ? (
-                        <svg class="w-5 h-5 text-primary-500 mx-auto" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                      ) : val === false ? (
-                        <svg class="w-5 h-5 text-primary-200 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
-                      ) : (
-                        <span class="text-primary-900/60">{val}</span>
-                      )}
-                    </td>
+              {featureCategories.map(cat => (
+                <>
+                  <!-- Category header row -->
+                  <tr class="bg-primary-50/70 border-y border-primary-100">
+                    <td colspan="4" class="py-3 px-6 text-[11px] font-bold uppercase tracking-widest text-primary-500">{cat.label}</td>
+                  </tr>
+                  <!-- Feature rows -->
+                  {cat.rows.map(row => (
+                    <tr class="border-b border-primary-100/60 hover:bg-primary-50/20 transition-colors">
+                      <td class="py-4 px-6 text-primary-800 font-medium">{row.feature}</td>
+                      {[row.starter, row.pro, row.enterprise].map((val, idx) => (
+                        <td class:list={[
+                          'text-center py-4 px-5',
+                          idx === 1 ? 'bg-primary-700/[0.04] border-x border-primary-200/40' : '',
+                        ]}>
+                          {val === true ? (
+                            <svg class="w-5 h-5 text-primary-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                          ) : val === false ? (
+                            <svg class="w-4 h-4 text-primary-200 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                          ) : (
+                            <span class:list={[
+                              'text-sm font-medium',
+                              idx === 1 ? 'text-primary-700' : 'text-primary-900/60',
+                            ]}>{val}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
                   ))}
-                </tr>
+                </>
               ))}
             </tbody>
+          </table>
+
+          <!-- CTA footer row -->
+          <table class="w-full border-t-2 border-primary-100 bg-primary-50/30">
+            <tr>
+              <td class="py-5 px-6 text-xs text-primary-900/50" style="width: 40%;">14 dagen gratis uitproberen</td>
+              <td class="py-5 px-5 text-center border-l border-primary-100" style="width: 20%;">
+                <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-primary-700 bg-white hover:bg-primary-50 border border-primary-200 rounded-lg transition-all">
+                  Starten
+                </a>
+              </td>
+              <td class="py-5 px-5 text-center bg-primary-700/[0.04] border-x border-primary-200/40" style="width: 20%;">
+                <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-lg transition-all shadow-md shadow-primary-700/20">
+                  Starten
+                </a>
+              </td>
+              <td class="py-5 px-5 text-center border-l border-primary-100" style="width: 20%;">
+                <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-primary-700 bg-white hover:bg-primary-50 border border-primary-200 rounded-lg transition-all">
+                  Starten
+                </a>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
     </section>
 
-    <FAQ />
+    <CTA />
   </main>
   <Footer />
 </Layout>

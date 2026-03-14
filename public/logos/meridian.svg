@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179 36" fill="none">
+  <!-- Icon mark -->
+  <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#334155"/>
+  <!-- Diamond target -->
+  <path d="M18 8.5L26.5 18L18 27.5L9.5 18Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+  <circle cx="18" cy="18" r="3.5" fill="white"/>
+  <circle cx="18" cy="18" r="1.2" fill="#334155"/>
+  <!-- Wordmark -->
+  <text x="44" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="14.5" font-weight="700" fill="#0f172a" letter-spacing="1.5">MERIDIAN</text>
+</svg>

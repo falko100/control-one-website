@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 36" fill="none">
+  <!-- Icon mark -->
+  <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#1e40af"/>
+  <!-- Shield outline + check -->
+  <path d="M18 5.5L9 9.5V17C9 22.5 12.8 27.5 18 29.5C23.2 27.5 27 22.5 27 17V9.5L18 5.5Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M13.5 18L16.5 21L22.5 13.5" stroke="white" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="44" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a" letter-spacing="-0.4">DataGuard</text>
+</svg>

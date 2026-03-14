@@ -2,27 +2,63 @@
 const faqs = [
   {
     question: 'Welke ISO-normen ondersteunt Control One?',
-    answer: 'Control One ondersteunt momenteel ISO 27001 (Informatiebeveiliging) en ISO 9001 (Kwaliteitsmanagement), met regelmatig nieuwe frameworks die worden toegevoegd. Elk framework bevat de volledige eisenstructuur en een begeleid implementatiepad.',
+    answer: 'Control One ondersteunt meerdere ISO-frameworks, waaronder ISO 27001 (Informatiebeveiliging), ISO 9001 (Kwaliteitsmanagement), ISO 14001 (Milieumanagement) en ISO 45001 (Arbo & Veiligheid). Je kunt meerdere frameworks tegelijkertijd beheren binnen één portaal, elk met een eigen coach, risicoanalyse en documentstructuur.',
+  },
+  {
+    question: 'Moet ik een ISO-expert zijn om met Control One te werken?',
+    answer: 'Nee. Control One is juist ontworpen voor organisaties die zelf aan de slag willen zonder dure consultants. De coach legt bij elke stap uit wat ISO vereist en wat je precies moet doen. De kennisbank, sjablonen en het vooraf ingevulde handboek verlagen de drempel enorm. Basiskennis van je eigen organisatie is voldoende om te starten.',
   },
   {
     question: 'Hoe lang duurt het om gecertificeerd te worden?',
-    answer: 'De tijdlijn verschilt per organisatiegrootte en complexiteit, maar de meeste teams bereiken audit-gereedheid binnen 3-6 maanden met onze begeleide coach. Control One versnelt het proces aanzienlijk vergeleken met spreadsheets of generieke tools.',
+    answer: 'De meeste organisaties bereiken certificeringsgereedheid binnen 3 tot 5 maanden. Kleinere organisaties soms sneller; complexere of grotere organisaties kunnen iets langer nodig hebben. De implementatiecoach en de gap analyse-checklist helpen je de huidige situatie snel in kaart te brengen en gericht aan de slag te gaan.',
+  },
+  {
+    question: 'Hoe werkt de implementatiecoach?',
+    answer: 'De coach begeleidt je langs 28 stappen die de volledige PDCA-cyclus doorlopen, van kennisopbouw en scopebepaling tot risicoanalyse, documentatie en uiteindelijk de externe certificeringsaudit. Elke stap bevat uitleg over wat ISO vereist, concrete actiepunten in het platform en best practices. Je markeert stappen als afgerond en houdt zo je voortgang bij.',
+  },
+  {
+    question: 'Hoe werkt de gap analyse?',
+    answer: 'De gap analyse bestaat uit een gestructureerde checklist van 150 vragen die alle eisen van de gekozen ISO-norm doorlopen. Per vraag geef je aan in hoeverre je organisatie al aan de eis voldoet. Het platform genereert vervolgens een overzicht van sterke punten en verbeterpunten, inclusief een prioriteitenmatrix, zodat je gericht aan de slag kunt.',
+  },
+  {
+    question: 'Wat is de Verklaring van Toepasselijkheid (VvT)?',
+    answer: 'De Verklaring van Toepasselijkheid (ook wel Statement of Applicability) is een verplicht ISO 27001-document. Hierin leg je voor alle 93 Annex A-maatregelen vast of ze van toepassing zijn op jouw organisatie, waarom, en hoe je ze implementeert. Control One biedt een interactieve VvT-tabel die direct als PDF kan worden geëxporteerd, precies wat jouw auditor wil zien.',
   },
   {
     question: 'Kan ik meerdere frameworks tegelijk beheren?',
-    answer: 'Ja! Professional- en Enterprise-plannen ondersteunen meerdere ISO-frameworks. Beheersmaatregelen en bewijs kunnen worden gedeeld tussen frameworks om dubbel werk te voorkomen.',
+    answer: 'Ja. Binnen één Control One-portaal kun je meerdere ISO-frameworks beheren, elk met een eigen dashboard, coach, risicoanalyse en documentenregister. Documenten en maatregelen die overlappen tussen frameworks hoef je maar één keer op te stellen.',
   },
   {
-    question: 'Is mijn data veilig?',
-    answer: 'Absoluut. Wij doen wat we prediken — Control One is gebouwd op een secure-by-design architectuur met encryptie in rust en in transit, rolgebaseerde toegangscontrole en regelmatige beveiligingsaudits.',
+    question: 'Kan ik documenten exporteren voor mijn auditor?',
+    answer: 'Ja. Vrijwel alle documenten in Control One zijn exporteerbaar als PDF of Word-bestand, inclusief het ISMS-handboek, de risicoanalyse, de Verklaring van Toepasselijkheid, het auditplan en het leveranciersregister. Veel klanten exporteren de volledige documentatieset in één klik als auditorpakket, rechtstreeks vanuit het dashboard.',
   },
   {
-    question: 'Bieden jullie migratie van bestaande tools?',
-    answer: 'Ja, ons team kan helpen bij het migreren van uw bestaande compliance-documentatie, risicoregisters en bewijs. Neem contact met ons op voor een migratieplan op maat.',
+    question: 'Hoe bereid ik mij voor op de externe certificeringsaudit?',
+    answer: 'Control One begeleidt je via de implementatiecoach stap voor stap naar de audit. Wanneer alle stappen zijn afgerond en je documentatie op orde is, genereer je een auditorpakket met alle vereiste documenten. Wij adviseren ook om vooraf een interne audit te doen via de auditmodule, zodat je eventuele hiaten nog voor de externe auditor arriveert ontdekt.',
   },
   {
-    question: 'Wat voor support bieden jullie?',
-    answer: 'Alle plannen bevatten e-mailsupport. Professional-plannen krijgen prioriteitsresponstijden, en Enterprise-klanten ontvangen een dedicated accountmanager met telefonische support en SLA-garanties.',
+    question: 'Hoe lang is een ISO-certificaat geldig?',
+    answer: 'Een ISO-certificaat is drie jaar geldig. Gedurende die periode vindt jaarlijks een surveillance-audit plaats. Na drie jaar volgt een hercertificeringsaudit. Control One ondersteunt je ook na de eerste certificering met het onderhoud van je managementsysteem via de jaarlijkse PDCA-cyclus.',
+  },
+  {
+    question: 'Is mijn data veilig bij Control One?',
+    answer: 'Absoluut. Control One is gebouwd op een secure-by-design architectuur met encryptie in rust en in transit, rolgebaseerde toegangscontrole en regelmatige beveiligingsaudits. Alle data wordt opgeslagen op EU-servers en het platform voldoet volledig aan de AVG. Wij doen wat we zeggen: ons platform voldoet aan de beveiligingseisen die wij ook aan onze klanten adviseren.',
+  },
+  {
+    question: 'Ondersteunt Control One tweefactorauthenticatie (2FA)?',
+    answer: 'Ja. Tweefactorauthenticatie is beschikbaar voor alle gebruikers en kan verplicht worden gesteld door de portaalbeheerder. Wij ondersteunen authenticator-apps (TOTP) en e-mailverificatie. Voor Enterprise-klanten is SSO (Single Sign-On) via SAML beschikbaar.',
+  },
+  {
+    question: 'Kan ik op elk moment opzeggen?',
+    answer: 'Ja. Maandelijkse abonnementen kun je per maand opzeggen. Jaarlijkse abonnementen lopen af aan het einde van de contractperiode. Er zijn geen verborgen kosten of opzegboetes. Na opzegging houd je 14 dagen toegang om je data te exporteren.',
+  },
+  {
+    question: 'Wat zit er allemaal in het abonnement?',
+    answer: 'Het abonnement geeft toegang tot het volledige platform: implementatiecoach, risicoanalyse, documentbeheer, VvT, gap analyse checklist (150 vragen), audit management, leveranciersbeheer, incidentenbeheer, directiebeoordelingen, kennisbank, personeelsregister en het ISMS-handboek. Je betaalt per framework dat je activeert.',
+  },
+  {
+    question: 'Bieden jullie ook een Enterprise-plan?',
+    answer: 'Ja. Voor grotere organisaties bieden wij maatwerk Enterprise-abonnementen met onbeperkt gebruikers, dedicated onboarding, SLA-garanties, SSO-integratie, aanpasbare rapportages en een eigen accountmanager. Neem contact op met ons sales-team voor een persoonlijk gesprek.',
   },
 ];
 ---
@@ -34,6 +70,9 @@ const faqs = [
       <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
         Veelgestelde vragen
       </h2>
+      <p class="mt-4 text-lg text-primary-900/60">
+        Heb je een andere vraag? <a href="/contact" class="text-primary-600 hover:underline">Neem contact op</a>, we helpen je graag.
+      </p>
     </div>
 
     <div class="space-y-4">
@@ -43,7 +82,7 @@ const faqs = [
             {faq.question}
             <svg class="w-5 h-5 text-primary-400 shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </summary>
-          <div class="px-6 pb-5 text-sm text-primary-900/60 leading-relaxed">
+          <div class="px-6 pb-5 text-sm text-primary-900/60 leading-relaxed border-t border-primary-100 pt-4">
             {faq.answer}
           </div>
         </details>

@@ -5,182 +5,471 @@ import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
 const chapters = [
-  { number: '4', title: 'Context van de organisatie', description: 'Bepaal de interne en externe factoren, belanghebbenden en het toepassingsgebied van uw QMS.' },
-  { number: '5', title: 'Leiderschap', description: 'Zorg voor betrokkenheid van de directie, kwaliteitsbeleid en organisatorische rollen.' },
-  { number: '6', title: 'Planning', description: 'Adresseer risico\'s en kansen, stel kwaliteitsdoelstellingen en plan wijzigingen.' },
-  { number: '7', title: 'Ondersteuning', description: 'Beheer middelen, competenties, bewustzijn, communicatie en gedocumenteerde informatie.' },
-  { number: '8', title: 'Uitvoering', description: 'Plan en beheers processen voor producten en diensten, inclusief ontwerp, productie en levering.' },
-  { number: '9', title: 'Evaluatie van prestaties', description: 'Monitor klanttevredenheid, voer interne audits uit en houd directiebeoordelingen.' },
-  { number: '10', title: 'Verbetering', description: 'Pak afwijkingen aan, neem corrigerende maatregelen en streef naar continue verbetering.' },
+  {
+    number: '4',
+    title: 'Context van de organisatie',
+    description: 'Breng je organisatie in kaart: analyseer de interne en externe context, identificeer belanghebbenden en hun eisen. Bepaal de scope van je QMS en begrijp de wisselwerking tussen processen.',
+    vereist: 'Interne en externe context analyseren, belanghebbenden identificeren, scope van het QMS vaststellen en de wisselwerking tussen processen begrijpen.',
+    documenten: ['Scope document', 'Contextanalyse', 'Register van belanghebbenden', 'Processenkaart'],
+    platform: 'Interactieve scopebepaling wizard, SWOT/PESTLE-analysetemplate, contextanalyse en automatisch gegenereerd scope document.',
+  },
+  {
+    number: '5',
+    title: 'Leiderschap',
+    description: 'Zorg voor aantoonbare betrokkenheid van het management bij kwaliteit en stel een helder kwaliteitsbeleid vast. Wijs rollen en verantwoordelijkheden toe en bevorder klantgerichtheid in de hele organisatie.',
+    vereist: 'Kwaliteitsbeleid vaststellen en communiceren, rollen en verantwoordelijkheden toewijzen, klantgerichtheid bevorderen.',
+    documenten: ['Kwaliteitsbeleid', 'Verantwoordelijkheidsmatrix', 'Functiebeschrijvingen'],
+    platform: 'Beleidsgenerator met goedkeuringsworkflow, verantwoordelijkheidsmatrix en rollenregister voor je QMS-team.',
+  },
+  {
+    number: '6',
+    title: 'Planning',
+    description: "Identificeer risico's en kansen die van invloed zijn op het behalen van je kwaliteitsdoelstellingen. Stel meetbare doelstellingen vast, maak concrete actieplannen en wijs de benodigde resources toe.",
+    vereist: "Risico's en kansen identificeren, kwaliteitsdoelstellingen vaststellen en wijzigingen plannen.",
+    documenten: ['Risicoregister', 'CPAR-formulier', 'Doelstellingenregister'],
+    platform: 'Risicobeheermodule met behandelingsplan, CPAR-workflow en voortgangsregistratie van kwaliteitsdoelstellingen.',
+  },
+  {
+    number: '7',
+    title: 'Ondersteuning',
+    description: 'Stel de juiste middelen beschikbaar, borg competenties en stimuleer kwaliteitsbewustzijn in de organisatie. Beheer alle gedocumenteerde informatie centraal en regel interne en externe communicatie.',
+    vereist: 'Middelen beschikbaar stellen, competenties borgen, bewustzijn creëren, gedocumenteerde informatie beheren en communicatie regelen.',
+    documenten: ['Competentiematrix', 'Bewustwordingsprogramma', 'Kalibratielog', 'Documentbeheerbeleid'],
+    platform: 'Centraal documentbeheer, competentieregister, kalibratie- en onderhoudsmodule en trainingsregistratie.',
+  },
+  {
+    number: '8',
+    title: 'Uitvoering',
+    description: 'Plan en beheer operationele processen, eisen voor producten/diensten.',
+    vereist: 'Operationele processen plannen en beheersen, klanteisen vastleggen, ontwerp en ontwikkeling beheersen, leveranciers beoordelen, productie vrijgeven en non-conforme outputs beheersen.',
+    documenten: ['Klanteisenregister', 'Leveranciersevaluatie', 'Ontvangstinspectielog', 'Non-conformiteitsrapport'],
+    platform: 'Leveranciersbeheer met evaluatiecyclus, non-conformiteitsregistratie, ontvangstinspectie en vrijgaveworkflow.',
+  },
+  {
+    number: '9',
+    title: 'Evaluatie van prestaties',
+    description: 'Monitor, meet, analyseer en evalueer de prestaties van je QMS.',
+    vereist: 'Klanttevredenheid meten, interne audits uitvoeren en directiebeoordelingen houden.',
+    documenten: ['Klanttevredenheidsrapport', 'Auditplan & auditrapport', 'Directiebeoordelingsverslag'],
+    platform: 'Auditworkflow met geautomatiseerde reminders, directiebeoordelingstemplates en KPI-dashboard voor kwaliteitsprestaties.',
+  },
+  {
+    number: '10',
+    title: 'Verbetering',
+    description: 'Pak afwijkingen aan en streef naar continue verbetering van je QMS.',
+    vereist: 'Non-conformiteiten identificeren, corrigerende maatregelen treffen en continue verbetering documenteren.',
+    documenten: ['Non-conformiteitenregister', 'Corrigerende maatregelenplan', 'Klantfeedbackformulier'],
+    platform: 'CPAR-beheer met vierstaps-verbeterproces, klantfeedbackregistratie en verbeterdashboard.',
+  },
+];
+
+const qmsSections = [
+  {
+    id: 'h4h10',
+    label: 'H4–H10',
+    name: 'Hoofdstukken',
+    colorClass: 'text-emerald-400',
+    items: [
+      { num: '4.1',  title: 'Scope document' },
+      { num: '4.2',  title: 'Contextanalyse' },
+      { num: '4.3',  title: 'Register van belanghebbenden' },
+      { num: '4.4',  title: 'Processenkaart' },
+      { num: '5.1',  title: 'Kwaliteitsbeleid' },
+      { num: '5.2',  title: 'Verantwoordelijkheidsmatrix' },
+      { num: '5.3',  title: 'Functiebeschrijvingen' },
+      { num: '6.1',  title: 'Risicoregister' },
+      { num: '6.2',  title: 'CPAR-formulier' },
+      { num: '6.3',  title: 'Doelstellingenregister' },
+      { num: '7.1',  title: 'Competentiematrix' },
+      { num: '7.2',  title: 'Bewustwordingsprogramma' },
+      { num: '7.3',  title: 'Kalibratielog' },
+      { num: '7.4',  title: 'Documentbeheerbeleid' },
+      { num: '8.1',  title: 'Klanteisenregister' },
+      { num: '8.2',  title: 'Leveranciersevaluatie' },
+      { num: '8.3',  title: 'Ontvangstinspectielog' },
+      { num: '8.4',  title: 'Non-conformiteitsrapport' },
+      { num: '9.1',  title: 'Klanttevredenheidsrapport' },
+      { num: '9.2',  title: 'Auditplan & auditrapport' },
+      { num: '9.3',  title: 'Directiebeoordelingsverslag' },
+      { num: '10.1', title: 'Non-conformiteitenregister' },
+      { num: '10.2', title: 'Corrigerende maatregelenplan' },
+      { num: '10.3', title: 'Klantfeedbackformulier' },
+    ],
+  },
+];
+
+const qmsExtras = [
+  {
+    id: 'algemeen',
+    title: 'Algemeen',
+    items: [
+      'Kwaliteitshandboek',
+      'Beheer van Management Systeem Documentatie Procedure',
+      'Document Wijziging Verzoek Formulier',
+      'Beheer van Management Systeem Gegevens Procedure',
+      'Overzicht van Verantwoordelijkheden en autoriteiten',
+      'Documentatie Matrix',
+      'Project Planning',
+      'ISO Checklist',
+      'QMS Beheerd Gegevens Register',
+      'QMS Beheerd documenten Register',
+    ],
+  },
+  {
+    id: 'audit',
+    title: 'Interne Audit',
+    items: [
+      'Auditeren Stap-voor-Stap',
+      'Gedragscode voor Interne Auditors',
+      'Interne Audit Feedback Formulier',
+      'Interne Audit Rapport Template',
+      'Interne Audit Checklist Vragen – Leverancier',
+      'Interne Audit Checklist Vragen – Proces',
+      'Interne Audit Checklist Vragen – QMS',
+      'Vaardigheden en Kennis Vereisten voor QMS Auditoren',
+    ],
+  },
 ];
 
 const benefits = [
-  {
-    title: 'Klanttevredenheid',
-    description: 'Verbeter klanttevredenheid door consistent kwalitatieve producten en diensten te leveren.',
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"></path></svg>`,
-    gradient: 'from-emerald-500 to-teal-600',
-  },
-  {
-    title: 'Procesoptimalisatie',
-    description: 'Stroomlijn bedrijfsprocessen, verminder verspilling en verhoog de operationele efficiëntie.',
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg>`,
-    gradient: 'from-primary-500 to-primary-700',
-  },
-  {
-    title: 'Marktvoordeel',
-    description: 'Versterk uw marktpositie met een internationaal erkend kwaliteitskeurmerk.',
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-7.54 0"></path></svg>`,
-    gradient: 'from-amber-500 to-orange-600',
-  },
-  {
-    title: 'Risicovermindering',
-    description: 'Identificeer en beheer risico\'s voordat ze problemen worden, met een proactieve aanpak.',
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>`,
-    gradient: 'from-violet-500 to-purple-600',
-  },
-];
-
-const pdcaCycle = [
-  { phase: 'Plan', description: 'Bepaal doelen, identificeer risico\'s en plan processen.', color: 'bg-primary-600' },
-  { phase: 'Do', description: 'Implementeer de geplande processen en beheersmaatregelen.', color: 'bg-accent-500' },
-  { phase: 'Check', description: 'Monitor en meet resultaten tegen beleid en doelen.', color: 'bg-emerald-500' },
-  { phase: 'Act', description: 'Neem corrigerende maatregelen voor continue verbetering.', color: 'bg-amber-500' },
+  { title: 'Verbeter klanttevredenheid', description: 'Aantoon dat je consequent voldoet aan klanteneisen en toepasselijke wet- en regelgeving.' },
+  { title: 'Verhoog operationele efficiëntie', description: 'Identificeer en verbeter processen, verminder fouten en verspilling.' },
+  { title: 'Win nieuwe opdrachten', description: 'ISO 9001-certificering is een vereiste bij steeds meer aanbestedingen en inkoopprocessen.' },
+  { title: 'Continue verbetering', description: 'Gebruik de PDCA-cyclus om je kwaliteitsmanagementsysteem voortdurend te verbeteren.' },
 ];
 ---
 
-<Layout title="ISO 9001 Kwaliteitsmanagement — Control One">
+<Layout title="ISO 9001 Kwaliteitsmanagement: Control One">
   <Header />
   <main>
     <!-- Hero -->
     <section class="relative pt-32 pb-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);"></div>
       <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
 
       <div class="relative max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-emerald-300 bg-white/10 rounded-full backdrop-blur-sm">
-            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-            Kwaliteitsmanagement
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          <!-- Left: text content -->
+          <div class="flex-1 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-emerald-400 bg-white/10 rounded-full backdrop-blur-sm">
+              <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+              Kwaliteitsmanagement
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+              ISO 9001
+            </h1>
+            <p class="mt-2 text-xl sm:text-2xl font-medium text-primary-200">
+              Quality Management System
+            </p>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Implementeer een QMS volgens de internationale norm voor kwaliteitsmanagement. Control One begeleidt je van contextanalyse tot continue verbetering, stap voor stap.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
+                Start met ISO 9001
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+              <a href="/features" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
+                Bekijk alle functies
+              </a>
+            </div>
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-            ISO 9001
-          </h1>
-          <p class="mt-2 text-xl sm:text-2xl font-medium text-emerald-200">
-            Quality Management System
-          </p>
-          <p class="mt-6 text-lg text-emerald-300/80 max-w-2xl leading-relaxed">
-            Implementeer een QMS dat uw processen stroomlijnt, klanttevredenheid verhoogt en continue verbetering stimuleert — begeleid door Control One.
-          </p>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/demo" class="inline-flex items-center px-6 py-3 text-base font-semibold text-emerald-900 bg-white hover:bg-emerald-50 rounded-lg transition-all shadow-lg">
-              Start met ISO 9001
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-            </a>
-            <a href="/features" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
-              Bekijk alle functies
-            </a>
+
+          <!-- Right: iMac mockup -->
+          <div class="hidden lg:block flex-shrink-0">
+            <img src="/images/imac-mockup.png" alt="Control One platform op iMac" style="width: 560px; max-width: 100%;" loading="eager" />
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- What is ISO 9001 -->
     <section class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Voordelen</p>
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
-            Waarom ISO 9001 certificering?
-          </h2>
-          <p class="mt-4 text-lg text-primary-900/60">
-            Een kwaliteitsmanagementsysteem volgens ISO 9001 levert meetbare voordelen voor uw organisatie.
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map(b => (
-            <div class="group relative rounded-2xl overflow-hidden">
-              <div class:list={['absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300', b.gradient]}></div>
-              <div class="relative p-6 rounded-2xl border border-primary-100 group-hover:border-transparent transition-colors bg-white group-hover:bg-transparent">
-                <div class="w-12 h-12 rounded-xl bg-primary-50 group-hover:bg-white/20 text-primary-600 group-hover:text-white flex items-center justify-center mb-4 transition-colors">
-                  <Fragment set:html={b.icon} />
-                </div>
-                <h3 class="font-semibold text-primary-950 group-hover:text-white mb-2 transition-colors">{b.title}</h3>
-                <p class="text-sm text-primary-900/60 group-hover:text-white/80 leading-relaxed transition-colors">{b.description}</p>
-              </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Wat is ISO 9001?</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-6">
+              De internationale norm voor kwaliteitsmanagement
+            </h2>
+            <div class="text-primary-900/60 leading-relaxed space-y-4">
+              <p>
+                ISO 9001 is de meest toegepaste norm voor kwaliteitsmanagementsystemen wereldwijd. Het biedt een systematische aanpak voor het beheersen van processen, het voldoen aan klanteisen en het aantonen van consistente productkwaliteit.
+              </p>
+              <p>
+                Certificering toont aan klanten, partners en aanbestedende diensten dat je organisatie kwaliteit serieus neemt en internationaal erkende best practices volgt via de PDCA-cyclus.
+              </p>
             </div>
-          ))}
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {benefits.map(b => (
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-100">
+                <h3 class="font-semibold text-primary-950 mb-2 text-sm">{b.title}</h3>
+                <p class="text-xs text-primary-900/50 leading-relaxed">{b.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PDCA Cycle -->
-    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+    <!-- Team element -->
+    <section class="py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Methodiek</p>
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
-            Plan-Do-Check-Act cyclus
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-bold tracking-widest uppercase text-blue-200 bg-white/10 rounded-full border border-white/20">
+            <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
+            Enschede, Twente
+          </div>
+          <h2 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-white tracking-tight leading-[1.1]">
+            Een team met een missie
           </h2>
-          <p class="mt-4 text-lg text-primary-900/60">
-            ISO 9001 is gebouwd op de PDCA-cyclus voor continue verbetering. Control One structureert elke fase.
+          <p class="mt-5 text-blue-100/55 max-w-lg mx-auto">
+            Wij geloven dat compliance eenvoudig moet zijn. Niet als obstakel, maar als fundament voor groei van je organisatie.
           </p>
         </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {pdcaCycle.map((step, i) => (
-            <div class="relative text-center">
-              {i < pdcaCycle.length - 1 && (
-                <div class="hidden lg:block absolute top-10 left-full w-full h-px bg-gradient-to-r from-primary-300 to-primary-100 -translate-x-6 z-0"></div>
-              )}
-              <div class:list={['relative z-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold', step.color]}>
-                {step.phase}
-              </div>
-              <p class="text-sm text-primary-900/60 leading-relaxed">{step.description}</p>
+        <div class="relative flex justify-center items-center" style="height: 420px;">
+          <div class="absolute shadow-2xl" style="left: 3%; top: 50%; transform: translateY(-42%) rotate(-6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-8.jpg" alt="Vergadering" class="w-full h-full object-cover" style="object-position: center 40%; transform: scale(1.4); transform-origin: center center;" />
             </div>
-          ))}
+          </div>
+          <div class="relative shadow-2xl" style="width: 28%; z-index: 3;">
+            <div class="rounded-2xl overflow-hidden ring-4 ring-accent-400/25" style="aspect-ratio: 3/4;">
+              <img src="/team/office-6.webp" alt="Teamlid" class="w-full h-full object-cover" style="object-position: center 15%;" />
+            </div>
+          </div>
+          <div class="absolute shadow-2xl" style="right: 3%; top: 50%; transform: translateY(-42%) rotate(6deg); width: 40%; z-index: 1;">
+            <div class="rounded-2xl overflow-hidden ring-2 ring-white/15" style="aspect-ratio: 4/3;">
+              <img src="/team/office-7.webp" alt="Developer" class="w-full h-full object-cover" style="object-position: center 30%;" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Chapters -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center mb-16">
           <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Normstructuur</p>
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
-            Hoofdstukken 4–10
+            Hoofdstukken 1–10
           </h2>
           <p class="mt-4 text-lg text-primary-900/60">
-            Control One begeleidt u door elk hoofdstuk met voortgangsregistratie en directe koppeling naar uw documenten.
+            Control One begeleidt je door elk hoofdstuk met een stapsgewijze coach, voortgangsregistratie en directe koppeling naar je documenten.
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {chapters.map((ch, i) => (
-            <div class:list={[
-              'group relative p-6 rounded-2xl border bg-white hover:shadow-lg hover:shadow-primary-100/50 transition-all',
-              i === 0 ? 'border-emerald-200 shadow-md' : 'border-primary-100',
-            ]}>
-              <div class:list={[
-                'w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm mb-4',
-                i === 0 ? 'bg-emerald-500 text-white' : 'bg-primary-50 text-primary-600',
-              ]}>
-                {ch.number}
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+
+          <!-- Hoofdstukken 1–3: inleiding -->
+          <div class="relative rounded-2xl border border-dashed border-primary-200 bg-primary-50/50 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between">
+              <div class="w-10 h-10 rounded-xl bg-primary-100 text-primary-500 flex items-center justify-center font-bold text-sm shrink-0">
+                1–3
               </div>
-              <h3 class="font-semibold text-primary-950 mb-2">{ch.title}</h3>
-              <p class="text-sm text-primary-900/50 leading-relaxed">{ch.description}</p>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-primary-400 bg-primary-100 px-2 py-1 rounded-full">Inleiding</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary-950 mb-1 leading-snug">Inleiding van de norm</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">Hoofdstukken 1 t/m 3 vormen de algemene inleiding van de norm en bevatten geen implementatievereisten.</p>
+            </div>
+            <ul class="space-y-2 pt-1 border-t border-primary-100">
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
+                <span><strong class="text-primary-800">Toepassingsgebied</strong> — De scope en het doel van de norm.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
+                <span><strong class="text-primary-800">Normatieve verwijzingen</strong> — Verwijzingen naar andere normen.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">3</span>
+                <span><strong class="text-primary-800">Termen en definities</strong> — Verklaringen van gebruikte begrippen.</span>
+              </li>
+            </ul>
+          </div>
+
+          {chapters.map((ch, i) => (
+            <div
+              class:list={[
+                'chapter-card group relative rounded-2xl border bg-white transition-all duration-200 cursor-pointer overflow-hidden',
+                i === 0 ? 'border-primary-200 shadow-md' : 'border-primary-100 hover:border-primary-200 hover:shadow-md hover:shadow-primary-100/50',
+              ]}
+              data-chapter={ch.number}
+            >
+              <!-- Card trigger (always visible) -->
+              <div class="chapter-trigger p-6 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                  <div class:list={[
+                    'w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0',
+                    i === 0 ? 'bg-primary-600 text-white' : 'bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors',
+                  ]}>
+                    {ch.number}
+                  </div>
+                  <span class="chapter-expand-icon w-7 h-7 rounded-full bg-primary-50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-primary-100">
+                    <svg class="w-3.5 h-3.5 text-primary-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" class="chapter-plus"></path>
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="font-semibold text-primary-950 mb-2 leading-snug">{ch.title}</h3>
+                <p class="text-sm text-primary-900/50 leading-relaxed">{ch.description}</p>
+              </div>
+
+              <!-- Expandable details -->
+              <div class="chapter-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+                <div class="px-6 pb-6 border-t border-primary-100 space-y-4 pt-4">
+                  <!-- What the norm requires -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Wat de norm vereist</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.vereist}</p>
+                  </div>
+                  <!-- Key documents -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Sleuteldocumenten</p>
+                    <ul class="space-y-1">
+                      {ch.documenten.map(doc => (
+                        <li class="flex items-center gap-2 text-xs text-primary-900/65">
+                          <svg class="w-3.5 h-3.5 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                          {doc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <!-- In Control One -->
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">In Control One</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.platform}</p>
+                  </div>
+                  <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-1 text-xs font-semibold text-primary-700 hover:text-primary-900 transition-colors mt-1">
+                    Start met dit hoofdstuk
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
-          <div class="relative p-6 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+          <!-- Extra card: 100% coverage -->
+          <div class="relative p-6 rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-900 text-white overflow-hidden flex flex-col justify-between">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
             <div class="relative">
-              <div class="text-3xl font-bold mb-2">PDCA</div>
-              <div class="text-emerald-200 text-sm font-medium mb-4">Continue verbetering</div>
-              <p class="text-emerald-100/80 text-sm leading-relaxed">
-                Alle hoofdstukken volgen de Plan-Do-Check-Act cyclus voor continue procesverbetering.
+              <div class="text-4xl font-bold mb-1">100%</div>
+              <div class="text-emerald-200 text-sm font-semibold mb-4">Normdekking</div>
+              <p class="text-emerald-300/80 text-sm leading-relaxed">
+                Control One dekt alle 7 hoofdstukken en alle vereisten van ISO 9001:2015, inclusief CPAR-beheer en klanttevredenheidsmeting.
+              </p>
+            </div>
+            <a href="/demo" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white transition-colors">
+              Bekijk het platform
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QMS Documents (interactive) -->
+    <section class="py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%)">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-800/30 rounded-full blur-[80px]"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+            QMS Documentatie: ISO 9001:2015
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Alle QMS-documenten in één overzicht
+          </h2>
+          <p class="mt-4 text-lg text-primary-300/75 max-w-xl mx-auto leading-relaxed">
+            Klik op een categorie om alle QMS-documenten te bekijken. In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 9001-clausules.
+          </p>
+        </div>
+
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10">
+          {qmsSections.map((sec, i) => (
+            <button
+              data-annex-tab={sec.id}
+              class:list={[
+                'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
+                i === 0
+                  ? 'bg-white text-primary-950 border-transparent shadow-lg'
+                  : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
+              ]}
+            >
+              <span class:list={['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
+                {sec.label}
+              </span>
+              {sec.name}
+              <span class:list={['annex-count text-xs font-semibold px-2 py-0.5 rounded-full', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
+                {sec.items.length}
+              </span>
+            </button>
+          ))}
+          {qmsExtras.map(extra => (
+            <button
+              data-annex-tab={extra.id}
+              class="annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white"
+            >
+              {extra.title}
+              <span class="annex-count text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-primary-400">
+                {extra.items.length}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <!-- Document panels -->
+        <div class="min-h-64">
+          {qmsSections.map((sec, i) => (
+            <div data-annex-panel={sec.id} class:list={[i !== 0 && 'hidden']}>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {sec.items.map(item => (
+                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
+                    <span class:list={['text-xs font-mono font-bold shrink-0 w-9', sec.colorClass]}>
+                      {item.num}
+                    </span>
+                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">
+                      {item.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          {qmsExtras.map(extra => (
+            <div data-annex-panel={extra.id} class="hidden">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {extra.items.map(item => (
+                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
+                    <svg class="w-4 h-4 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Callout box -->
+        <div class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-white/5 border border-white/10">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white mb-1">Kwaliteitshandboek &amp; CPAR-beheer</h3>
+              <p class="text-primary-300/75 leading-relaxed">
+                Genereer automatisch je kwaliteitshandboek op basis van je QMS-implementatie. Registreer CPAR's vanuit audits en incidenten en doorloop het vierstaps-verbeterproces tot volledige afsluiting. Exporteer als PDF voor je auditor.
               </p>
             </div>
           </div>
@@ -192,3 +481,53 @@ const pdcaCycle = [
   </main>
   <Footer />
 </Layout>
+
+<script>
+  // QMS tab switching
+  const annexBtns = document.querySelectorAll<HTMLButtonElement>('[data-annex-tab]');
+  const annexPanels = document.querySelectorAll<HTMLElement>('[data-annex-panel]');
+
+  function activateAnnexTab(targetId: string) {
+    annexBtns.forEach(btn => {
+      const isActive = btn.dataset.annexTab === targetId;
+      btn.className = [
+        'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
+        isActive
+          ? 'bg-white text-primary-950 border-transparent shadow-lg'
+          : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
+      ].join(' ');
+      const letter = btn.querySelector<HTMLElement>('.annex-letter');
+      const count  = btn.querySelector<HTMLElement>('.annex-count');
+      if (letter) letter.className = ['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
+      if (count)  count.className  = ['annex-count text-xs font-semibold px-2 py-0.5 rounded-full',   isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
+    });
+    annexPanels.forEach(panel => {
+      panel.dataset.annexPanel === targetId ? panel.classList.remove('hidden') : panel.classList.add('hidden');
+    });
+  }
+
+  annexBtns.forEach(btn => btn.addEventListener('click', () => activateAnnexTab(btn.dataset.annexTab!)));
+
+  document.querySelectorAll<HTMLElement>('.chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const body = card.querySelector<HTMLElement>('.chapter-body')!;
+      const icon = card.querySelector<SVGElement>('.chapter-expand-icon svg')!;
+      const iconWrap = card.querySelector<HTMLElement>('.chapter-expand-icon')!;
+      const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
+
+      if (isOpen) {
+        body.style.maxHeight = '0';
+        icon.style.transform = '';
+        iconWrap.style.backgroundColor = '';
+        card.style.borderColor = '';
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        icon.style.transform = 'rotate(45deg)';
+        iconWrap.style.backgroundColor = 'var(--color-primary-600, #2563eb)';
+        const paths = iconWrap.querySelectorAll('path');
+        paths.forEach(p => (p as SVGPathElement).style.stroke = 'white');
+        card.style.borderColor = 'var(--color-primary-300, #93c5fd)';
+      }
+    });
+  });
+</script>

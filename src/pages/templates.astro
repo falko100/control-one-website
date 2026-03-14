@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const templateCategories = [
+  {
+    id: 'handboek',
+    label: 'Handboek',
+    color: 'bg-primary-600',
+    badge: 'bg-primary-50 text-primary-700 border-primary-100',
+    dot: 'bg-primary-500',
+    items: [
+      { name: 'ISMS Handboek', meta: '42 pagina\'s' },
+      { name: 'Scope & toepassingsgebied', meta: 'H4 conform' },
+    ],
+  },
+  {
+    id: 'beleid',
+    label: 'Beleid',
+    color: 'bg-emerald-600',
+    badge: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+    dot: 'bg-emerald-500',
+    items: [
+      { name: 'Informatiebeveiligingsbeleid', meta: '8 pagina\'s' },
+      { name: 'Toegangsbeheer beleid', meta: '5 pagina\'s' },
+      { name: 'Leveranciersbeleid', meta: '5 pagina\'s' },
+      { name: 'Aanvaardbaar Gebruik Beleid', meta: '4 pagina\'s' },
+      { name: 'Cloud Services Beleid', meta: '4 pagina\'s' },
+      { name: 'Wachtwoord Beleid', meta: '3 pagina\'s' },
+      { name: 'Draadloos Netwerk Beleid', meta: '3 pagina\'s' },
+      { name: 'BYOD Beleid', meta: '4 pagina\'s' },
+      { name: 'Social Media Beleid', meta: '3 pagina\'s' },
+      { name: 'Netwerk Connectie Beleid', meta: '3 pagina\'s' },
+    ],
+  },
+  {
+    id: 'procedures',
+    label: 'Procedures',
+    color: 'bg-amber-600',
+    badge: 'bg-amber-50 text-amber-700 border-amber-100',
+    dot: 'bg-amber-500',
+    items: [
+      { name: 'Toegangsbeheer procedure', meta: '6 pagina\'s' },
+      { name: 'Risicobeheer procedure', meta: '9 pagina\'s' },
+      { name: 'Incidentbeheer procedure', meta: '7 pagina\'s' },
+      { name: 'Wijzigingsbeheer procedure', meta: '5 pagina\'s' },
+      { name: 'Back-up procedure', meta: '4 pagina\'s' },
+      { name: 'Business Continuity procedure', meta: '8 pagina\'s' },
+    ],
+  },
+  {
+    id: 'analyse',
+    label: 'Analyse & VvT',
+    color: 'bg-violet-600',
+    badge: 'bg-violet-50 text-violet-700 border-violet-100',
+    dot: 'bg-violet-500',
+    items: [
+      { name: 'Gap Analyse: 150 vragen', meta: 'H4 t/m H10 + Annex A' },
+      { name: 'Verklaring van Toepasselijkheid', meta: '93 maatregelen' },
+      { name: 'Risicobeoordeling sjabloon', meta: '5×5 risicomatrix' },
+    ],
+  },
+  {
+    id: 'audit',
+    label: 'Interne Audit',
+    color: 'bg-orange-600',
+    badge: 'bg-orange-50 text-orange-700 border-orange-100',
+    dot: 'bg-orange-500',
+    items: [
+      { name: 'Gedragscode voor Interne Auditors', meta: 'Professionele standaard' },
+      { name: 'Interne Audit Rapport Template', meta: 'Rapportageformat' },
+      { name: 'Audit Checklist: ISMS', meta: 'Clausule H4–H10' },
+      { name: 'Audit Checklist: Leverancier', meta: 'Vendor assessment' },
+      { name: 'Audit Checklist: Proces', meta: 'Procesaudit' },
+      { name: 'Audit Feedback Formulier', meta: 'Bevindingen vastleggen' },
+      { name: 'ISMS Auditeren Stap-voor-Stap', meta: 'Handleiding' },
+    ],
+  },
+];
+
+const totalDocs = templateCategories.reduce((acc, cat) => acc + cat.items.length, 0);
+
+const benefits = [
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 12.75l6 6 9-13.5"/></svg>`,
+    title: 'Opgesteld door ISO-experts',
+    desc: 'Alle templates zijn geschreven door gecertificeerde ISO-auditors en direct bruikbaar als auditbewijs.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>`,
+    title: 'Alleen aanvullen, niet schrijven',
+    desc: 'De structuur, ISO-inhoud en juridische vereisten staan er al in. Je vult alleen aan wat specifiek is voor jouw organisatie.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>`,
+    title: 'Direct klaar voor de auditor',
+    desc: 'Elk document is geformatteerd en gestructureerd zoals auditors van een Stage 1 of Stage 2 audit verwachten.',
+  },
+  {
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>`,
+    title: 'Altijd up-to-date met ISO 27001:2022',
+    desc: 'Templates worden bijgehouden conform de meest recente editie van de norm. Nooit verouderd materiaal.',
+  },
+];
+---
+
+<Layout title="Templates: Control One">
+  <Header />
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-400/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-400/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Klaar om te gebruiken
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+            Nooit meer beginnen<br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-accent-400">met een lege pagina</span>
+          </h1>
+          <p class="mt-6 text-lg text-primary-300/80 max-w-2xl mx-auto leading-relaxed">
+            Alle {totalDocs} templates in Control One zijn volledig vooraf ingevuld door ISO-experts. Je hoeft alleen aan te vullen wat uniek is voor jouw organisatie. De kennis, structuur en ISO-inhoud staan er al in.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg shadow-accent-400/20">
+              Gratis uitproberen
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="/features" class="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-lg transition-all">
+              Bekijk de portal
+            </a>
+          </div>
+        </div>
+
+        <!-- Stat pills -->
+        <div class="mt-14 flex flex-wrap items-center justify-center gap-3">
+          {[
+            { value: `${totalDocs}+`, label: 'Templates vooraf ingevuld' },
+            { value: '150', label: 'Gap-analyse vragen' },
+            { value: '93', label: 'Annex A maatregelen in VvT' },
+            { value: '28', label: 'Coach stappen' },
+          ].map(stat => (
+            <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/8 border border-white/10">
+              <span class="text-xl font-bold text-white">{stat.value}</span>
+              <span class="text-sm text-primary-300/70">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How it works: 3 steps ── -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Hoe het werkt</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Van template naar certificering</h2>
+          <p class="mt-4 text-lg text-primary-900/55 leading-relaxed">
+            Geen formatteren, geen uitzoekwerk, geen consultants. Gewoon openen, aanvullen en inleveren.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              step: '01',
+              color: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+              dot: 'bg-emerald-500',
+              title: 'Templates staan klaar',
+              desc: 'Zodra u inlogt staan alle documenten, procedures en beleidsstukken voor u klaar, volledig vooraf ingevuld met ISO-kennis en best practices.',
+              icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
+            },
+            {
+              step: '02',
+              color: 'bg-primary-50 text-primary-700 border-primary-100',
+              dot: 'bg-primary-500',
+              title: 'Aanpassen aan je organisatie',
+              desc: 'Vul je bedrijfsnaam, processen, verantwoordelijken en specifieke context in. De ISO-structuur, normeisen en richtlijnen blijven intact.',
+              icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/></svg>`,
+            },
+            {
+              step: '03',
+              color: 'bg-accent-400/10 text-accent-600 border-accent-400/20',
+              dot: 'bg-accent-500',
+              title: 'Klaar voor de auditor',
+              desc: 'Exporteer als PDF of deel direct met uw auditor. Elk document voldoet aan de eisen van ISO 27001:2022 Stage 1 en Stage 2 audits.',
+              icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+            },
+          ].map((s, i) => (
+            <div class="relative">
+              {i < 2 && (
+                <div class="hidden md:block absolute top-8 left-full w-8 -translate-x-4 z-10">
+                  <svg class="w-8 h-8 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </div>
+              )}
+              <div class="p-7 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+                <div class:list={['w-12 h-12 rounded-xl flex items-center justify-center mb-5 border', s.color]}>
+                  <Fragment set:html={s.icon} />
+                </div>
+                <div class:list={['inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-bold mb-3 border', s.color]}>
+                  <span class:list={['w-1.5 h-1.5 rounded-full', s.dot]}></span>
+                  Stap {s.step}
+                </div>
+                <h3 class="text-lg font-bold text-primary-950 mb-2">{s.title}</h3>
+                <p class="text-sm text-primary-900/60 leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Document catalogue ── -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Volledige bibliotheek</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Alle templates in één oogopslag</h2>
+          <p class="mt-4 text-lg text-primary-900/55 leading-relaxed">
+            Van ISMS handboek tot interne auditchecklist: alles staat klaar, alles is vooraf ingevuld.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {templateCategories.map(cat => (
+            <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+              <!-- Category header -->
+              <div class="flex items-center gap-3 px-6 py-4 bg-primary-50/60 border-b border-primary-100">
+                <span class:list={['w-2.5 h-2.5 rounded-full shrink-0', cat.dot]}></span>
+                <h3 class="text-sm font-bold text-primary-950">{cat.label}</h3>
+                <span class:list={['ml-auto text-xs font-semibold px-2 py-0.5 rounded-full border', cat.badge]}>
+                  {cat.items.length} {cat.items.length === 1 ? 'template' : 'templates'}
+                </span>
+              </div>
+              <!-- Items grid -->
+              <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {cat.items.map(item => (
+                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50/40 hover:bg-primary-50 transition-colors group">
+                    <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-semibold text-primary-950 truncate">{item.name}</p>
+                      <p class="text-xs text-primary-900/45 mt-0.5">{item.meta}</p>
+                    </div>
+                    <span class:list={['text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 hidden sm:block', cat.badge]}>
+                      Vooringevuld
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Total count -->
+        <div class="mt-8 text-center">
+          <p class="text-sm text-primary-900/50">
+            <span class="font-bold text-primary-700">{totalDocs} templates</span> in {templateCategories.length} categorieën, allemaal inbegrepen in elk abonnement
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Benefits ── -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Waarom templates</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Maanden werk in uren gedaan</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {benefits.map(b => (
+            <div class="p-6 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 mb-4 group-hover:bg-primary-100 transition-colors">
+                <Fragment set:html={b.icon} />
+              </div>
+              <h3 class="text-sm font-bold text-primary-950 mb-2">{b.title}</h3>
+              <p class="text-sm text-primary-900/55 leading-relaxed">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Screenshot showcase ── -->
+    <section class="py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%)">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+              In de portal
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+              Alle documenten direct toegankelijk
+            </h2>
+            <p class="mt-5 text-lg text-primary-300/75 leading-relaxed">
+              In het documentenregister van Control One ziet u in één oogopslag welke documenten beschikbaar zijn, wat de status is en wat er nog aangevuld moet worden.
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                'Zoek en filter op categorie, status of type',
+                'Bewerk direct in de portal, exporteer als PDF',
+                'Versiegeschiedenis en goedkeuringsworkflow',
+                'Koppeling met de Coach en VvT',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-sm text-primary-200/80">
+                  <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-10 flex gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg">
+                Gratis uitproberen
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Screenshot -->
+          <div class="relative">
+            <div class="absolute -inset-4 bg-primary-800/30 rounded-3xl -z-10 blur-xl"></div>
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+              <!-- Browser chrome -->
+              <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-900/80 border-b border-white/10">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span>
+                </div>
+                <div class="flex-1 max-w-[200px] mx-auto">
+                  <div class="bg-white/10 rounded px-3 py-0.5 text-xs text-primary-300 text-center">
+                    app.control-one.nl/documenten
+                  </div>
+                </div>
+              </div>
+              <!-- Document library inline mockup -->
+              <div class="bg-white p-5">
+                <!-- Toolbar -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-primary-950">Documentenregister</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">{totalDocs} docs</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-700">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span class="text-xs font-semibold">Nieuw</span>
+                  </div>
+                </div>
+                <!-- Document rows -->
+                <div class="space-y-2">
+                  {[
+                    { name: 'Informatiebeveiligingsbeleid', cat: 'Beleid', status: 'Goedgekeurd', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+                    { name: 'ISMS Handboek', cat: 'Handboek', status: 'Goedgekeurd', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+                    { name: 'Risicobeoordeling sjabloon', cat: 'Analyse & VvT', status: 'Concept', statusColor: 'bg-amber-50 text-amber-700 border-amber-100' },
+                    { name: 'Toegangsbeheer procedure', cat: 'Procedures', status: 'Review', statusColor: 'bg-blue-50 text-blue-700 border-blue-100' },
+                    { name: 'Interne Audit Rapport Template', cat: 'Interne Audit', status: 'Goedgekeurd', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+                  ].map(doc => (
+                    <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-50/50 hover:bg-primary-50 transition-colors">
+                      <svg class="w-4 h-4 text-primary-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                      <span class="flex-1 text-xs font-semibold text-primary-950 truncate">{doc.name}</span>
+                      <span class="text-[10px] text-primary-400 hidden sm:block">{doc.cat}</span>
+                      <span class:list={['text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0', doc.statusColor]}>{doc.status}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>

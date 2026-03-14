@@ -1,0 +1,695 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+
+const categories = [
+  {
+    id: 'aan-de-slag',
+    title: 'Aan de slag',
+    iconPath: 'M13 10V3L4 14h7v7l9-11h-7z',
+    faqs: [
+      {
+        q: 'Moet ik een ISO-expert zijn om met Control One te werken?',
+        a: 'Nee. Control One is juist ontworpen voor organisaties die zelf aan de slag willen zonder dure consultants. De coach legt bij elke stap uit wat ISO vereist en wat u precies moet doen. De kennisbank, sjablonen en het vooraf ingevulde handboek verlagen de drempel enorm. Basiskennis van uw eigen organisatie is voldoende om te starten.',
+        popular: false,
+      },
+      {
+        q: 'Hoe lang duurt het om gecertificeerd te worden?',
+        a: 'De meeste organisaties bereiken certificeringsgereedheid binnen 3 tot 5 maanden. Kleinere organisaties soms sneller; complexere of grotere organisaties kunnen iets langer nodig hebben (tot 9 maanden). De implementatiecoach en de gap analyse-checklist helpen u de huidige situatie snel in kaart te brengen en gericht aan de slag te gaan.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik Control One 14 dagen gratis uitproberen?',
+        a: 'Ja. U start met een gratis proefperiode van 14 dagen. U kunt direct starten met de gap analyse en de eerste stappen van de coach doorlopen. Na de proefperiode kiest u het abonnement dat het beste bij uw organisatie past.',
+        popular: true,
+      },
+      {
+        q: 'Wat heb ik nodig om te starten?',
+        a: 'Alleen een e-mailadres en basiskennis van uw organisatie. U heeft geen ISO-kennis, externe consultant of bestaande documentatie nodig. Control One levert sjablonen, een vooraf ingevuld handboek en stap-voor-stap begeleiding vanuit het platform zelf.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik Control One gebruiken als ik al een bestaand managementsysteem heb?',
+        a: 'Ja. Control One is ook zeer geschikt als uw organisatie al stappen heeft gezet richting certificering of al een managementsysteem onderhoudt. U importeert uw bestaande documenten, configureert de gap analyse op basis van uw huidige situatie en gebruikt de coach om de resterende lacunes in kaart te brengen. Zo sluit het platform naadloos aan op wat u al heeft.',
+        popular: false,
+      },
+      {
+        q: 'Is er ondersteuning beschikbaar tijdens het implementatietraject?',
+        a: 'Ja. Naast de in-app implementatiecoach bieden wij e-mailsupport en, afhankelijk van uw abonnement, persoonlijke onboarding via videogesprek. In de kennisbank vindt u videowalkthroughs, uitleg per ISO-clausule en voorbeelddocumenten. Ons team reageert gemiddeld binnen één werkdag op uw vragen.',
+        popular: false,
+      },
+      {
+        q: 'Hoeveel medewerkers kunnen het platform gebruiken?',
+        a: 'Dat hangt af van uw abonnement. Het Starter-abonnement bevat standaard twee gebruikers; het Business- en Enterprise-abonnement bieden ruimte voor meer gebruikers. Rolgebaseerde toegangscontrole zorgt ervoor dat medewerkers alleen de modules zien die voor hen relevant zijn. Extra gebruikers zijn altijd bij te boeken.',
+        popular: false,
+      },
+      {
+        q: 'Werkt Control One ook voor grotere organisaties of meerdere locaties?',
+        a: 'Ja. Control One is schaalbaar: van eenpersoonsbedrijven tot organisaties met honderden medewerkers en meerdere locaties. Voor organisaties met meerdere entiteiten of dochtermaatschappijen bieden wij een multi-entiteit structuur waarbij u meerdere portalen kunt koppelen aan één beheerdersaccount.',
+        popular: false,
+      },
+      {
+        q: 'In welke talen is het platform beschikbaar?',
+        a: 'Control One is momenteel volledig beschikbaar in het Nederlands. Een Engelse versie is in ontwikkeling voor internationale klanten en organisaties met een internationale scope. Sjablonen en het ISMS-handboek zijn op verzoek beschikbaar in het Engels.',
+        popular: false,
+      },
+    ],
+  },
+  {
+    id: 'het-platform',
+    title: 'Het platform',
+    iconPath: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+    faqs: [
+      {
+        q: 'Welke ISO-normen ondersteunt Control One?',
+        a: 'Control One ondersteunt ISO 27001 (Informatiebeveiliging / ISMS), ISO 9001 (Kwaliteitsmanagement / QMS), ISO 14001 (Milieumanagement / EMS) en ISO 45001 (Arbo & Veiligheid / OHSMS). U kunt meerdere frameworks tegelijkertijd beheren binnen één portaal, elk met een eigen coach, risicoanalyse en documentstructuur.',
+        popular: true,
+      },
+      {
+        q: 'Hoe werkt de implementatiecoach?',
+        a: 'De coach begeleidt u langs 28 stappen die de volledige PDCA-cyclus doorlopen, van kennisopbouw en scopebepaling tot risicoanalyse, documentatie en uiteindelijk de externe certificeringsaudit. Elke stap bevat uitleg over wat ISO vereist, concrete actiepunten in het platform en best practices. U markeert stappen als afgerond en houdt zo uw voortgang bij.',
+        popular: false,
+      },
+      {
+        q: 'Hoe werkt de gap analyse?',
+        a: 'De gap analyse bestaat uit een gestructureerde checklist van 150 vragen die alle eisen van de gekozen ISO-norm doorlopen. Per vraag geeft u aan in hoeverre uw organisatie al aan de eis voldoet. Het platform genereert een overzicht van sterke punten en verbeterpunten, inclusief een prioriteitenmatrix. Zo heeft u in één middag een helder beeld van waar u staat.',
+        popular: true,
+      },
+      {
+        q: 'Kan ik meerdere frameworks tegelijk beheren?',
+        a: 'Ja. Binnen één Control One-portaal kunt u meerdere ISO-frameworks beheren, elk met een eigen dashboard, coach, risicoanalyse en documentenregister. Documenten en maatregelen die overlappen tussen frameworks (bijv. tussen ISO 27001 en ISO 9001) hoeft u maar één keer op te stellen.',
+        popular: false,
+      },
+      {
+        q: 'Wat is de Verklaring van Toepasselijkheid (VvT)?',
+        a: 'De Verklaring van Toepasselijkheid (ook wel Statement of Applicability) is een verplicht ISO 27001-document. Hierin legt u voor alle 93 Annex A-maatregelen vast of ze van toepassing zijn op uw organisatie, waarom, en hoe u ze implementeert. Control One biedt een interactieve VvT-tabel die direct als PDF kan worden geëxporteerd, precies wat uw auditor wil zien.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik documenten exporteren voor mijn auditor?',
+        a: 'Ja. Vrijwel alle documenten zijn exporteerbaar als PDF of Word-bestand, inclusief het ISMS-handboek, de risicoanalyse, de VvT, het auditplan en het leveranciersregister. Veel klanten exporteren de volledige documentatieset in één klik als auditorpakket, rechtstreeks vanuit het dashboard.',
+        popular: false,
+      },
+      {
+        q: 'Hoe werkt leveranciersbeheer in het platform?',
+        a: 'In de leveranciersmodule registreert u alle externe partijen die toegang hebben tot uw data of kritieke diensten leveren. Per leverancier legt u vast: classificatie (kritiek/niet-kritiek), contactgegevens, contractdatum, beoordelingsfrequentie en bijbehorende documenten (zoals verwerkersovereenkomsten of SLA\'s). Het platform herinnert u automatisch wanneer een beoordeling vervalt.',
+        popular: false,
+      },
+      {
+        q: 'Hoe werkt het incidentenbeheer?',
+        a: 'De incidentenmodule stelt u in staat om beveiligingsincidenten, datalekkens en near-misses te registreren, classificeren en op te volgen. Per incident legt u de oorzaak, impact, getroffen maatregelen en tijdlijn vast. Alle incidenten worden bijgehouden in een register dat aantoonbaar maakt hoe uw organisatie omgaat met beveiligingsgebeurtenissen, een vereiste voor de auditor.',
+        popular: false,
+      },
+      {
+        q: 'Ondersteunt Control One ook interne audits?',
+        a: 'Ja. De auditmodule biedt een volledig intern auditprogramma: u plant audits, stelt auditscopes en checklists op, registreert bevindingen en verbeterpunten, en volgt corrigerende acties op. Het auditregister biedt een historisch overzicht van alle uitgevoerde audits, dat u kunt exporteren voor de externe certificeerder.',
+        popular: false,
+      },
+      {
+        q: 'Hoe werkt de directiebeoordeling in het platform?',
+        a: 'De directiebeoordelingsmodule structureert de jaarlijkse managementreview die ISO vereist. Het platform verzamelt automatisch de benodigde input (auditresultaten, incidenten, KPI\'s, klanttevredenheid) en genereert een gestructureerd agenda en verslag. Het definitieve document is exporteerbaar als PDF en direct archiveerbaar in het documentenregister.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik taken toewijzen aan collega\'s?',
+        a: 'Ja. Vanuit de coach, het auditprogramma en de incidentenmodule kunt u actiepunten toewijzen aan collega\'s met een deadline. Zij ontvangen een e-mailnotificatie en kunnen de voortgang bijwerken vanuit hun eigen account. De beheerder ziet in een overzicht welke taken open staan en wie waarvoor verantwoordelijk is.',
+        popular: false,
+      },
+      {
+        q: 'Is er een mobiele versie beschikbaar?',
+        a: 'Control One is volledig responsief en werkt goed op smartphones en tablets via de browser, ideaal voor het registreren van bevindingen tijdens een interne audit op locatie. Een dedicated native app voor iOS en Android is in ontwikkeling.',
+        popular: false,
+      },
+      {
+        q: 'Wat zit er allemaal in het abonnement?',
+        a: 'Het abonnement geeft toegang tot het volledige platform: implementatiecoach, risicoanalyse, documentbeheer, Verklaring van Toepasselijkheid, gap analyse checklist (150 vragen), audit management, leveranciersbeheer, incidentenbeheer, directiebeoordelingen, kennisbank, personeelsregister en het ISMS-handboek. U betaalt per framework dat u activeert.',
+        popular: false,
+      },
+    ],
+  },
+  {
+    id: 'beveiliging-data',
+    title: 'Beveiliging & data',
+    iconPath: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+    faqs: [
+      {
+        q: 'Is mijn data veilig bij Control One?',
+        a: 'Absoluut. Control One is gebouwd op een secure-by-design architectuur met encryptie in rust en in transit, rolgebaseerde toegangscontrole en regelmatige beveiligingsaudits. Wij doen wat we zeggen: ons platform voldoet aan de beveiligingseisen die wij ook aan onze klanten adviseren. Meer informatie vindt u op onze beveiligingspagina.',
+        popular: true,
+      },
+      {
+        q: 'Waar worden mijn gegevens opgeslagen?',
+        a: 'Alle data wordt opgeslagen op EU-gebaseerde servers. Control One is een Nederlands bedrijf (gevestigd in Enschede) en werkt uitsluitend met hosting- en infrastructuurpartners die binnen de Europese Unie opereren. Dit is volledig in lijn met de AVG.',
+        popular: false,
+      },
+      {
+        q: 'Heeft Control One een verwerkersovereenkomst (AVG/DPA)?',
+        a: 'Ja. Als klant ontvangt u automatisch een verwerkersovereenkomst (Data Processing Agreement) conform de AVG. Hierin leggen wij vast hoe wij uw persoonsgegevens verwerken, welke beveiligingsmaatregelen van toepassing zijn en hoe wij omgaan met datalekken. De overeenkomst is beschikbaar via uw accountinstellingen.',
+        popular: false,
+      },
+      {
+        q: 'Ondersteunt Control One tweefactorauthenticatie (2FA)?',
+        a: 'Ja. Tweefactorauthenticatie is beschikbaar voor alle gebruikers en kan verplicht worden gesteld door uw portaalbeheerder. Wij ondersteunen authenticator-apps (TOTP) en e-mailverificatie. Voor Enterprise-klanten is SSO (Single Sign-On) via SAML beschikbaar.',
+        popular: false,
+      },
+      {
+        q: 'Hoe gaat Control One om met back-ups en herstel?',
+        a: 'Uw data wordt dagelijks automatisch geback-upt op meerdere geografisch gescheiden EU-locaties. Back-ups worden 14 dagen bewaard. In het geval van een incident of gegevensverlies kunnen wij uw data herstellen naar een willekeurig herstelpunt binnen de retentieperiode. De uptime-garantie bedraagt 99,9%.',
+        popular: false,
+      },
+      {
+        q: 'Wie heeft toegang tot mijn data binnen Control One?',
+        a: 'Alleen geautoriseerde medewerkers van Control One hebben toegang tot klantdata, uitsluitend voor support- en onderhoudsdoeleinden, en altijd conform een strict need-to-know principe. Klantdata wordt nooit gedeeld met of verkocht aan derden. Alle toegang wordt gelogd en geauditeerd.',
+        popular: false,
+      },
+      {
+        q: 'Is Control One zelf ISO 27001-gecertificeerd?',
+        a: 'Wij streven ernaar zelf de norm te leven die wij onze klanten adviseren. Control One werkt actief aan ISO 27001-certificering voor de eigen organisatie. Op onze beveiligingspagina vindt u de actuele status en een overzicht van onze beveiligingsmaatregelen.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik mijn data exporteren als ik stop?',
+        a: 'Ja. Bij beëindiging van uw abonnement kunt u al uw data exporteren in gangbare formaten (PDF, CSV, Word). U heeft hiervoor 14 dagen de tijd na afloop van de overeenkomst. Uw data wordt daarna definitief en veilig verwijderd conform onze bewaartermijnen en de AVG.',
+        popular: false,
+      },
+    ],
+  },
+  {
+    id: 'audits-certificering',
+    title: 'Audits & certificering',
+    iconPath: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+    faqs: [
+      {
+        q: 'Hoe bereid ik mij voor op de externe certificeringsaudit?',
+        a: 'Control One begeleidt u via de implementatiecoach stap voor stap naar de audit. Wanneer alle stappen zijn afgerond en uw documentatie op orde is, genereert u een auditorpakket met alle vereiste documenten. Wij adviseren ook om vooraf een interne audit te doen via de auditmodule, zodat u eventuele hiaten nog voor de externe auditor arriveert ontdekt.',
+        popular: true,
+      },
+      {
+        q: 'Wat is het verschil tussen een Stage 1 en Stage 2 audit?',
+        a: 'Bij ISO-certificering doorloopt u doorgaans twee auditfasen. De Stage 1 audit is een documentenreview: de auditor controleert of uw managementsysteem correct is opgezet en gedocumenteerd. De Stage 2 audit is de implementatieaudit: de auditor bezoekt uw organisatie en toetst of het systeem ook in de praktijk werkt. Control One helpt u bij de voorbereiding op beide fasen.',
+        popular: false,
+      },
+      {
+        q: 'Hoe lang is een ISO-certificaat geldig?',
+        a: 'Een ISO-certificaat is drie jaar geldig. Gedurende die periode vindt jaarlijks een surveillance-audit plaats om te controleren of u het systeem blijft onderhouden. Na drie jaar volgt een hercertificeringsaudit. Control One ondersteunt u ook na de eerste certificering met het onderhoud van uw managementsysteem via de jaarlijkse PDCA-cyclus.',
+        popular: false,
+      },
+      {
+        q: 'Wat is een surveillance-audit en hoe bereid ik mij voor?',
+        a: 'Een surveillance-audit is een jaarlijkse tussentijdse controle door uw certificerende instelling. De auditor controleert of verbeterpunten zijn opgepakt, of het interne auditprogramma loopt en of directiebeoordelingen plaatsvinden. Control One helpt u dit bij te houden via de auditmodule en de directiebeoordelingsmodule, zodat u altijd auditklaar bent.',
+        popular: false,
+      },
+      {
+        q: 'Welke certificerende instellingen kan ik gebruiken?',
+        a: 'Control One is certificeringsonafhankelijk: u kiest zelf uw accrediteerde certificerende instelling (CI). In Nederland zijn bekende certificeerders onder andere Bureau Veritas, SGS, DNV, Lloyd\'s Register en TÜV Rheinland. Het platform genereert documentatie die voldoet aan de eisen van alle geaccrediteerde certificeerders.',
+        popular: false,
+      },
+      {
+        q: 'Wat is een corrigerende maatregel en hoe registreer ik die?',
+        a: 'Een corrigerende maatregel (CAPA: Corrective and Preventive Action) is een aantoonbare actie die u onderneemt naar aanleiding van een afwijking, incident of auditbevinding. In Control One registreert u CAPA\'s direct vanuit de audit- of incidentenmodule. Elke CAPA heeft een omschrijving, verantwoordelijke, deadline en status. De auditor ziet zo dat u systematisch verbetert.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik ook interne auditors aanwijzen en opleiden via het platform?',
+        a: 'Ja. Via de personeelsmodule legt u vast welke medewerkers als interne auditor zijn aangewezen en welke opleiding zij hebben gevolgd. De auditmodule ondersteunt het opstellen van auditchecklists per clausule of annex-maatregel. Zo bouwt u een gedocumenteerd en herhaalbaar intern auditproces op.',
+        popular: false,
+      },
+      {
+        q: 'Hoe ga ik om met non-conformiteiten die de auditor constateert?',
+        a: 'Non-conformiteiten registreert u direct in de auditmodule van Control One. Per bevinding legt u de categorie (mineur/major), omschrijving, oorzaakanalyse en corrigerende maatregel vast. Het platform bewaakt de voortgang en stuurt reminders. U exporteert het complete bevindingen- en actierapport voor de follow-up met uw certificerende instelling.',
+        popular: false,
+      },
+    ],
+  },
+  {
+    id: 'abonnement-betaling',
+    title: 'Abonnement & betaling',
+    iconPath: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z',
+    faqs: [
+      {
+        q: 'Hoe werkt de gratis proefperiode?',
+        a: 'U start met een gratis proefperiode van 14 dagen en krijgt volledige toegang tot alle functies van het platform. Na de proefperiode kiest u een abonnement. Als u niet upgradet, wordt uw account automatisch bevroren; u verliest geen data.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik op elk moment opzeggen?',
+        a: 'Ja. Maandelijkse abonnementen kunt u per maand opzeggen. Jaarlijkse abonnementen lopen af aan het einde van de contractperiode. Er zijn geen verborgen kosten of opzegboetes.',
+        popular: false,
+      },
+      {
+        q: 'Is er een korting voor jaarlijkse betaling?',
+        a: 'Ja. Bij jaarlijkse betaling ontvangt u twee maanden gratis ten opzichte van de maandelijkse prijs. Dit is de meest kosteneffectieve optie voor organisaties die een volledig implementatietraject doorlopen.',
+        popular: false,
+      },
+      {
+        q: 'Bieden jullie kortingen voor non-profits of het onderwijs?',
+        a: 'We kijken graag mee naar passende tarieven voor non-profit organisaties, scholen en overheidsinstellingen. Neem contact op via sales@control-one.nl voor een maatwerkofferte.',
+        popular: false,
+      },
+      {
+        q: 'Bieden jullie ook een Enterprise-plan?',
+        a: 'Ja. Voor grotere organisaties bieden wij maatwerk Enterprise-abonnementen met onbeperkt gebruikers, dedicated onboarding, SLA-garanties, SSO-integratie, aanpasbare rapportages en een eigen accountmanager. Neem contact op met ons sales-team voor een persoonlijk gesprek.',
+        popular: false,
+      },
+      {
+        q: 'Zijn er kosten voor extra gebruikers?',
+        a: 'Het Starter-abonnement bevat twee gebruikerslicenties. Extra gebruikers kunnen worden bijgeboekt per licentie per maand. Het Business-abonnement biedt standaard vijf gebruikers; het Enterprise-abonnement bevat onbeperkt gebruikers. Bekijk de prijzenpagina voor een actueel overzicht.',
+        popular: false,
+      },
+      {
+        q: 'Kan ik upgraden of downgraden tussen abonnementen?',
+        a: 'Ja. Upgraden kan op elk moment, de nieuwe functies zijn direct beschikbaar en u betaalt pro-rata voor de resterende periode. Downgraden is mogelijk aan het einde van de huidige looptijd. Ons support-team helpt u bij elke wijziging.',
+        popular: false,
+      },
+      {
+        q: 'Zijn er integraties met andere tools beschikbaar?',
+        a: 'Control One biedt een REST API waarmee u het platform kunt integreren met uw eigen systemen, zoals SIEM-tools, ITSM-platformen of HR-systemen. Kant-en-klare integraties voor populaire tools zijn in ontwikkeling. Neem contact op voor de actuele integratiemogelijkheden en een API-sleutel.',
+        popular: false,
+      },
+      {
+        q: 'Welke betaalmethoden accepteren jullie?',
+        a: 'Control One accepteert betaling via iDEAL, creditcard (Visa, Mastercard) en SEPA-overboeking. Jaarlijkse abonnementen kunnen ook worden gefactureerd op rekening met een betalingstermijn van 14 dagen. Voor Enterprise-contracten zijn maatwerkafspraken mogelijk.',
+        popular: false,
+      },
+    ],
+  },
+];
+
+const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0);
+---
+
+<Layout title="Veelgestelde vragen: Control One">
+  <Header />
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="relative pt-32 pb-28 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-accent-400 bg-white/10 rounded-full border border-white/10">
+          <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
+          Veelgestelde vragen
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+          Alles wat je wil weten over<br /><span class="text-accent-400">Control One</span>
+        </h1>
+        <p class="mt-5 text-lg text-primary-300/80 max-w-xl mx-auto leading-relaxed">
+          Van de eerste stap tot certificering.<br />
+          Staat je vraag er niet bij? <a href="/contact" class="text-accent-400 hover:text-accent-300 underline underline-offset-2 transition-colors">Neem contact op</a>.
+        </p>
+
+        <!-- Stats row -->
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-primary-400">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <strong class="text-primary-300 font-semibold">1485</strong> vragen beantwoord
+          </span>
+          <span class="text-primary-600">·</span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+            <strong class="text-primary-300 font-semibold">{categories.length}</strong> categorieën
+          </span>
+          <span class="text-primary-600">·</span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            Altijd actueel
+          </span>
+        </div>
+
+        <!-- Search bar -->
+        <div class="mt-9 relative max-w-xl mx-auto">
+          <div class="relative">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input
+              id="faq-search"
+              type="text"
+              placeholder="Zoek een vraag..."
+              autocomplete="off"
+              class="w-full px-5 py-4 pl-12 pr-12 bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl text-white placeholder-white/35 focus:outline-none focus:ring-2 focus:ring-accent-400/50 focus:border-accent-400/40 focus:bg-white/15 transition-all text-sm shadow-lg"
+            />
+            <button id="search-clear" class="hidden absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 text-white/40 hover:text-white/70 transition-colors flex items-center justify-center rounded-full hover:bg-white/10">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SEARCH RESULTS (hidden by default) ═══ -->
+    <div id="search-results" class="hidden bg-white border-b border-primary-100">
+      <div class="max-w-4xl mx-auto px-6 py-14">
+        <div class="flex items-center justify-between mb-7">
+          <p id="search-label" class="text-sm font-semibold text-primary-700"></p>
+          <button id="search-reset" class="text-sm text-primary-500 hover:text-primary-700 flex items-center gap-1.5 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            Wis zoekopdracht
+          </button>
+        </div>
+        <div id="search-items" class="space-y-3"></div>
+        <div id="search-empty" class="hidden text-center py-16">
+          <div class="w-16 h-16 rounded-3xl bg-primary-100 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <p class="text-primary-950 font-semibold mb-1">Geen resultaten gevonden</p>
+          <p class="text-sm text-primary-900/50 mb-6">Stel uw vraag direct aan ons team.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-lg transition-colors shadow-sm">
+            Contact opnemen
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MAIN: mobile tabs + sidebar + accordions ═══ -->
+    <div id="faq-main">
+
+      <!-- Mobile sticky category tabs -->
+      <div class="lg:hidden bg-white border-b border-primary-100 sticky top-20 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+          <div class="flex gap-2 overflow-x-auto" style="scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+            {categories.map(cat => (
+              <a
+                href={`#${cat.id}`}
+                data-cat={cat.id}
+                class="cat-pill shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-primary-50 text-primary-900/60 hover:bg-primary-100 hover:text-primary-900 transition-all whitespace-nowrap"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
+                </svg>
+                {cat.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex gap-14">
+
+            <!-- ── Desktop sidebar ── -->
+            <aside class="hidden lg:block w-56 shrink-0">
+              <div class="sticky top-28">
+                <p class="text-xs font-bold uppercase tracking-widest text-primary-500 mb-3 px-1">Categorieën</p>
+                <nav id="cat-nav" class="space-y-0.5">
+                  {categories.map(cat => (
+                    <a
+                      href={`#${cat.id}`}
+                      data-cat={cat.id}
+                      class="cat-nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-primary-700 hover:text-primary-900 hover:bg-primary-50 transition-all group"
+                    >
+                      <span class="cat-icon w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center shrink-0 transition-colors">
+                        <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
+                        </svg>
+                      </span>
+                      <span class="flex-1 leading-snug">{cat.title}</span>
+                      <span class="cat-count text-xs font-semibold bg-primary-100 text-primary-600 rounded-full w-6 h-6 flex items-center justify-center tabular-nums shrink-0">{cat.faqs.length}</span>
+                    </a>
+                  ))}
+                </nav>
+
+                <!-- Contact card -->
+                <div class="mt-6 p-4 rounded-2xl bg-primary-50 border border-primary-200">
+                  <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                  </div>
+                  <p class="text-sm font-semibold text-primary-900 mb-1 leading-snug">Staat je vraag er niet bij?</p>
+                  <p class="text-xs text-primary-700/70 mb-4 leading-relaxed">Ons team helpt je graag persoonlijk verder.</p>
+                  <a href="/contact" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary-600 hover:bg-primary-700 px-3 py-1.5 rounded-lg transition-colors">
+                    Contact opnemen
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </aside>
+
+            <!-- ── FAQ accordion sections ── -->
+            <div class="flex-1 min-w-0 space-y-20">
+              {categories.map(cat => (
+                <div id={cat.id} class="faq-category scroll-mt-36">
+
+                  <!-- Category header -->
+                  <div class="flex items-center gap-4 mb-8 pb-6 border-b border-primary-100">
+                    <div class="w-12 h-12 rounded-2xl bg-primary-100 flex items-center justify-center shrink-0">
+                      <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 class="text-xl font-bold text-primary-950 leading-tight">{cat.title}</h2>
+                      <p class="text-xs text-primary-900/40 mt-0.5">{cat.faqs.length} vragen</p>
+                    </div>
+                  </div>
+
+                  <!-- Accordion items -->
+                  <div class="space-y-3">
+                    {cat.faqs.map(faq => (
+                      <div
+                        class="faq-item border border-primary-200 rounded-2xl overflow-hidden transition-all duration-200 shadow-sm hover:shadow-md bg-white"
+                        data-q={faq.q.toLowerCase()}
+                        data-a={faq.a.toLowerCase()}
+                      >
+                        <button class="faq-trigger w-full flex items-start justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-primary-50 transition-colors">
+                          <div class="flex items-start gap-3 flex-1 min-w-0">
+                            {faq.popular && (
+                              <span class="shrink-0 mt-0.5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700 bg-primary-100 rounded-md border border-primary-200 leading-tight">
+                                Populair
+                              </span>
+                            )}
+                            <span class="font-semibold text-primary-900 text-[0.9rem] leading-snug">{faq.q}</span>
+                          </div>
+                          <span class="faq-icon-wrap shrink-0 w-7 h-7 rounded-full bg-primary-100 flex items-center justify-center mt-0.5 transition-all duration-300">
+                            <svg class="w-3.5 h-3.5 text-primary-600 faq-icon-svg" style="transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"></path>
+                            </svg>
+                          </span>
+                        </button>
+                        <div class="faq-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+                          <div class="px-6 pb-6 border-t border-primary-100 bg-primary-50/40">
+                            <p class="text-sm text-primary-900/75 leading-relaxed pt-5">{faq.a}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══ BOTTOM CONTACT STRIP ═══ -->
+    <section class="py-24 bg-gradient-to-br from-primary-50 via-white to-primary-50/30 border-t border-primary-100">
+      <div class="max-w-2xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-primary-100 mb-6 shadow-sm">
+          <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+        </div>
+        <h2 class="text-2xl font-bold text-primary-950 mb-3">Staat uw vraag er niet bij?</h2>
+        <p class="text-primary-900/60 max-w-md mx-auto mb-8">Ons team helpt u graag persoonlijk verder, via e-mail, telefoon of een korte demo.</p>
+
+        <!-- Team portraits -->
+        <div class="flex items-center justify-center gap-3 mb-9">
+          <div class="flex -space-x-3">
+            {[1,2,3,4,5].map(i => (
+              <img
+                src={`/team/portrait-${i}.webp`}
+                alt="Teamlid"
+                class="w-10 h-10 rounded-full object-cover object-top border-2 border-white shadow-sm"
+              />
+            ))}
+          </div>
+          <p class="text-sm text-primary-900/55">We reageren binnen 1 werkdag</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-lg transition-all shadow-sm">
+            Stel uw vraag
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </a>
+          <a href="/demo" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-primary-700 bg-white hover:bg-primary-50 border border-primary-200 rounded-lg transition-all">
+            Bekijk een demo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // ═══ ACCORDION ═══
+  document.querySelectorAll<HTMLElement>('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest<HTMLElement>('.faq-item')!;
+      const body = item.querySelector<HTMLElement>('.faq-body')!;
+      const iconWrap = item.querySelector<HTMLElement>('.faq-icon-wrap')!;
+      const iconSvg = item.querySelector<HTMLElement>('.faq-icon-svg')!;
+      const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
+
+      if (isOpen) {
+        body.style.maxHeight = '0';
+        iconSvg.style.transform = '';
+        iconWrap.style.backgroundColor = '';
+        item.style.boxShadow = '';
+        item.style.borderColor = '';
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        iconSvg.style.transform = 'rotate(45deg)';
+        iconWrap.style.backgroundColor = 'var(--color-primary-700, #1e40af)';
+        const iconPath = iconWrap.querySelector('path');
+        if (iconPath) iconPath.style.stroke = 'white';
+        item.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+        item.style.borderColor = 'var(--color-primary-200, #bfdbfe)';
+      }
+    });
+  });
+
+  // ═══ SEARCH ═══
+  const searchInput = document.getElementById('faq-search') as HTMLInputElement | null;
+  const searchResults = document.getElementById('search-results')!;
+  const searchItems = document.getElementById('search-items')!;
+  const searchEmpty = document.getElementById('search-empty')!;
+  const searchLabel = document.getElementById('search-label')!;
+  const searchClear = document.getElementById('search-clear')!;
+  const searchReset = document.getElementById('search-reset')!;
+  const faqMain = document.getElementById('faq-main')!;
+
+  // Build search index from DOM
+  interface FaqEntry { question: string; answer: string; ql: string; al: string; }
+  const allFaqs: FaqEntry[] = Array.from(document.querySelectorAll<HTMLElement>('.faq-item')).map(item => {
+    const question = item.querySelector<HTMLElement>('.faq-trigger .font-semibold')?.textContent?.trim() ?? '';
+    const answer = item.querySelector<HTMLElement>('.faq-body p')?.textContent?.trim() ?? '';
+    return { question, answer, ql: question.toLowerCase(), al: answer.toLowerCase() };
+  });
+
+  function buildResultHTML(faq: FaqEntry): string {
+    return `<div class="border border-primary-100 rounded-2xl overflow-hidden">
+      <button class="search-result-trigger w-full flex items-start justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-primary-50/50 transition-colors">
+        <span class="font-semibold text-primary-950 text-sm leading-snug flex-1">${faq.question.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
+        <span class="shrink-0 w-7 h-7 rounded-full bg-primary-100 flex items-center justify-center mt-0.5">
+          <svg class="w-3.5 h-3.5 text-primary-600 result-icon" style="transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"></path>
+          </svg>
+        </span>
+      </button>
+      <div class="search-result-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+        <div class="px-6 pb-6 border-t border-primary-100">
+          <p class="text-sm text-primary-900/65 leading-relaxed pt-5">${faq.answer.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</p>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function attachResultAccordions() {
+    searchItems.querySelectorAll<HTMLElement>('.search-result-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const body = trigger.nextElementSibling as HTMLElement;
+        const icon = trigger.querySelector<HTMLElement>('.result-icon');
+        const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
+        body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
+        if (icon) icon.style.transform = isOpen ? '' : 'rotate(45deg)';
+      });
+    });
+  }
+
+  function performSearch(query: string) {
+    const q = query.toLowerCase().trim();
+
+    if (!q) {
+      searchResults.classList.add('hidden');
+      faqMain.classList.remove('hidden');
+      searchClear.classList.add('hidden');
+      searchClear.style.display = '';
+      return;
+    }
+
+    searchResults.classList.remove('hidden');
+    faqMain.classList.add('hidden');
+    searchClear.classList.remove('hidden');
+    searchClear.style.display = 'flex';
+
+    const matches = allFaqs.filter(f => f.ql.includes(q) || f.al.includes(q));
+
+    if (matches.length === 0) {
+      searchItems.innerHTML = '';
+      searchEmpty.classList.remove('hidden');
+      searchLabel.textContent = '';
+    } else {
+      searchEmpty.classList.add('hidden');
+      searchLabel.textContent = `${matches.length} resultaat${matches.length !== 1 ? 'en' : ''} voor "${query}"`;
+      searchItems.innerHTML = matches.map(buildResultHTML).join('');
+      attachResultAccordions();
+    }
+  }
+
+  function clearSearch() {
+    if (searchInput) searchInput.value = '';
+    performSearch('');
+    searchInput?.focus();
+  }
+
+  searchInput?.addEventListener('input', (e) => performSearch((e.target as HTMLInputElement).value));
+  searchInput?.addEventListener('keydown', (e) => { if (e.key === 'Escape') clearSearch(); });
+  searchClear?.addEventListener('click', clearSearch);
+  searchReset?.addEventListener('click', clearSearch);
+
+  // ═══ SIDEBAR ACTIVE STATE (IntersectionObserver) ═══
+  const catNavItems = document.querySelectorAll<HTMLElement>('.cat-nav-item');
+  const catPills = document.querySelectorAll<HTMLElement>('.cat-pill');
+
+  function setActiveCategory(id: string) {
+    catNavItems.forEach(item => {
+      const active = item.dataset.cat === id;
+      item.classList.toggle('bg-primary-100', active);
+      item.classList.toggle('border', active);
+      item.classList.toggle('border-primary-200', active);
+      item.classList.toggle('text-primary-900', active);
+      item.classList.toggle('font-semibold', active);
+      item.classList.toggle('text-primary-700', !active);
+      const icon = item.querySelector<HTMLElement>('.cat-icon');
+      if (icon) {
+        icon.classList.toggle('bg-primary-600', active);
+        icon.classList.toggle('bg-primary-100', !active);
+        const svg = icon.querySelector('svg');
+        if (svg) {
+          svg.classList.toggle('text-white', active);
+          svg.classList.toggle('text-primary-600', !active);
+        }
+      }
+      const count = item.querySelector<HTMLElement>('.cat-count');
+      if (count) {
+        count.classList.toggle('bg-white', active);
+        count.classList.toggle('text-primary-700', active);
+        count.classList.toggle('bg-primary-100', !active);
+        count.classList.toggle('text-primary-600', !active);
+      }
+    });
+    catPills.forEach(pill => {
+      const active = pill.dataset.cat === id;
+      pill.classList.toggle('bg-primary-700', active);
+      pill.classList.toggle('text-white', active);
+      pill.classList.toggle('bg-primary-50', !active);
+      pill.classList.toggle('text-primary-900/60', !active);
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActiveCategory(entry.target.id);
+    });
+  }, { rootMargin: '-15% 0px -75% 0px', threshold: 0 });
+
+  document.querySelectorAll('.faq-category').forEach(cat => observer.observe(cat));
+</script>

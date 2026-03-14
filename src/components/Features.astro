@@ -1,60 +1,872 @@
 ---
 const features = [
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>`,
-    title: 'Begeleide Implementatie',
-    description: 'Stap-voor-stap coach die u door elke eis van uw ISO-framework leidt — van start tot certificering.',
+    id: 'coach',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    title: 'Implementatiecoach',
+    description: 'Geen lege database, maar een gestructureerde coach die je bij de hand neemt. Elke stap legt uit wat ISO vereist, waarom het ertoe doet en wat je concreet moet doen.',
+    bullets: [
+      '28 begeleide stappen langs de volledige PDCA-cyclus',
+      'Elke stap met ISO-uitleg, actiepunten en best practices',
+      'Voortgangsregistratie: je ziet altijd precies waar je staat',
+      'Direct gekoppeld aan je risico\'s, documenten en audits',
+    ],
+    tags: ['28 stappen', 'PDCA-cyclus', 'ISO-uitleg'],
+    iconBg: 'bg-blue-50', iconColor: 'text-blue-600',
+    tagStyle: 'bg-blue-50 text-blue-700 border-blue-100',
+    borderActive: 'border-blue-500', textActive: 'text-blue-700', bgActive: 'bg-blue-50/50',
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>`,
+    id: 'risico',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
+    title: 'Risicoanalyse',
+    description: 'Volledig risicoregister met een configureerbare 5×5 risicomatrix, kans- en impactscoring, behandelingsopties en historische snapshots voor trendanalyse.',
+    bullets: [
+      'Configureerbare 5×5 matrix met kans- en impactscoring',
+      'Behandelingsopties: accepteren, mitigeren, overdragen of vermijden',
+      'Historische snapshots voor trendanalyse over meerdere periodes',
+      'Directe koppeling met Annex A-maatregelen en CPAR\'s',
+    ],
+    tags: ['5×5 matrix', 'Behandelingsplan', 'Snapshots'],
+    iconBg: 'bg-amber-50', iconColor: 'text-amber-600',
+    tagStyle: 'bg-amber-50 text-amber-700 border-amber-100',
+    borderActive: 'border-amber-500', textActive: 'text-amber-700', bgActive: 'bg-amber-50/30',
+  },
+  {
+    id: 'documenten',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
     title: 'Documentbeheer',
-    description: 'Gecentraliseerd documentbeheer met versiebeheer, beoordelingsworkflows, sjablonen en geautomatiseerde goedkeuringsprocessen.',
+    description: 'Gecentraliseerd beheer van al je beleidsdocumenten, procedures en richtlijnen. Met versiebeheer, goedkeuringsworkflows en kant-en-klare sjablonen per ISO-clausule.',
+    bullets: [
+      'Gecentraliseerd beheer van alle beleidsdocumenten en procedures',
+      'Versiebeheer met wijzigingshistorie en goedkeuringsworkflows',
+      'Kant-en-klare sjablonen per ISO-clausule, direct bewerkbaar',
+      'Exporteer elk document als PDF voor je auditor',
+    ],
+    tags: ['Versiebeheer', 'Workflows', 'Sjablonen'],
+    iconBg: 'bg-violet-50', iconColor: 'text-violet-600',
+    tagStyle: 'bg-violet-50 text-violet-700 border-violet-100',
+    borderActive: 'border-violet-500', textActive: 'text-violet-700', bgActive: 'bg-violet-50/30',
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path></svg>`,
-    title: 'Risicobeheer',
-    description: 'Uitgebreide risicobeoordeling met kans- en impactscoring, beoordelingscycli en historische snapshots voor trendanalyse.',
+    id: 'vvt',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
+    title: 'Verklaring van Toepasselijkheid',
+    description: 'Hét kernstuk van ISO 27001: alle 93 Annex A-maatregelen in één overzicht. Leg per maatregel vast of deze van toepassing is en exporteer direct als PDF voor je auditor.',
+    bullets: [
+      'Alle 93 Annex A-maatregelen (A5–A8) in één gestructureerd overzicht',
+      'Per maatregel: van toepassing, implementatiestatus en eigenaar vastleggen',
+      'Exporteer de VvT direct als auditklaar PDF, in minuten gereed',
+      'Koppeling aan risicobehandelingsplan en beheermaatregelen',
+    ],
+    tags: ['93 maatregelen', 'PDF-export', 'Annex A'],
+    iconBg: 'bg-indigo-50', iconColor: 'text-indigo-600',
+    tagStyle: 'bg-indigo-50 text-indigo-700 border-indigo-100',
+    borderActive: 'border-indigo-500', textActive: 'text-indigo-700', bgActive: 'bg-indigo-50/30',
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>`,
-    title: 'Interne Audits',
-    description: 'Compleet audit-traject met scopedefinitie, vragenlijsten, afwijkingenbeheer, CPAR-management en PDF-rapportages.',
+    id: 'gap',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
+    title: 'Gap Analyse Checklist',
+    description: '150 gerichte vragen langs alle ISO-clausules en Annex A-categorieën. Voer een nulmeting uit bij de start, een pre-audit check vlak voor de audit en periodieke herbeoordelingen.',
+    bullets: [
+      '150 vragen langs alle ISO-clausules (H4–H10) en Annex A',
+      'Nulmeting bij de start, pre-audit check vlak voor certificering',
+      'Rapportage per clausule met automatische score en prioriteiten',
+      'Voortgangsvergelijking tussen meerdere meetmomenten',
+    ],
+    tags: ['150 vragen', 'Pre-audit check', 'Nulmeting'],
+    iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600',
+    tagStyle: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+    borderActive: 'border-emerald-500', textActive: 'text-emerald-700', bgActive: 'bg-emerald-50/30',
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>`,
+    id: 'audit',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+    title: 'Audit Management',
+    description: 'Beheer interne en externe audits in één module. Plan audits, registreer bevindingen, koppel non-conformiteiten aan CPAR\'s en volg de voortgang tot afronding.',
+    bullets: [
+      'Plan interne en externe audits met 7-stappen wizard',
+      'Registreer bevindingen direct per auditpunt tijdens de audit',
+      'Koppel non-conformiteiten automatisch aan CPAR\'s',
+      'Volg de voortgang van alle acties tot volledige afronding',
+    ],
+    tags: ['7-stappen wizard', 'Bevindingen', 'CPAR-koppeling'],
+    iconBg: 'bg-teal-50', iconColor: 'text-teal-600',
+    tagStyle: 'bg-teal-50 text-teal-700 border-teal-100',
+    borderActive: 'border-teal-500', textActive: 'text-teal-700', bgActive: 'bg-teal-50/30',
+  },
+  {
+    id: 'leveranciers',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
     title: 'Leveranciersbeheer',
-    description: 'Volg leveranciers, beheer certificaten en compliance-documentatie, en plan periodieke leveranciersbeoordelingen.',
+    description: 'Registreer leveranciers, classificeer ze op risico, volg ISO-certificaten en plan periodieke beoordelingen. Dashboards geven je direct inzicht in jouw leverancierslandschap.',
+    bullets: [
+      'Registreer alle leveranciers met contactgegevens en scope',
+      'Classificeer op risico: kritisch, hoog, midden of laag',
+      'Volg ISO-certificaten en plan periodieke beoordelingscycli',
+      'Dashboard met classificatietrends en vervaldatumwaarschuwingen',
+    ],
+    tags: ['Risicoklassificatie', 'Certificaatbeheer', 'Beoordelingscycli'],
+    iconBg: 'bg-cyan-50', iconColor: 'text-cyan-600',
+    tagStyle: 'bg-cyan-50 text-cyan-700 border-cyan-100',
+    borderActive: 'border-cyan-500', textActive: 'text-cyan-700', bgActive: 'bg-cyan-50/30',
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"></path></svg>`,
-    title: 'Directiebeoordelingen',
-    description: 'Gestructureerd beoordelingsproces met agendapunten, actiepunten, besluitregistratie en samenwerkingstools.',
+    id: 'incidenten',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
+    title: "Incidenten & CPAR's",
+    description: "Registreer beveiligingsincidenten met prioriteit, type en verantwoordelijke. Maak vanuit incidenten of audits direct CPAR's aan en doorloop het vierstaps-verbeterproces.",
+    bullets: [
+      'Registreer incidenten met prioriteit, type en verantwoordelijke',
+      "Maak vanuit incidenten of audits direct CPAR's aan",
+      'Doorloop het vierstaps-verbeterproces (plan, do, check, act)',
+      'Incidentlog met tijdlijn en volledige audittrail',
+    ],
+    tags: ['Prioriteiten', 'Vierstaps-proces', 'Incidentlog'],
+    iconBg: 'bg-rose-50', iconColor: 'text-rose-600',
+    tagStyle: 'bg-rose-50 text-rose-700 border-rose-100',
+    borderActive: 'border-rose-500', textActive: 'text-rose-700', bgActive: 'bg-rose-50/30',
   },
+  {
+    id: 'dashboard',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>`,
+    title: 'Dashboard & Inzicht',
+    description: "Realtime compliance-dashboard met widgets voor risico's, leveranciers, CPAR's, audits en voortgang richting certificering. Met heatmap zie je direct waar actie nodig is.",
+    bullets: [
+      "Realtime widgets voor risico's, CPAR's, audits en leveranciers",
+      'Visuele risicoheatmap: zie direct waar actie nodig is',
+      'Voortgangsmeter richting certificering per ISO-clausule',
+      'Vervaldatumwaarschuwingen voor audits en certificaten',
+    ],
+    tags: ['Heatmap', 'Realtime widgets', 'Voortgang'],
+    iconBg: 'bg-primary-50', iconColor: 'text-primary-600',
+    tagStyle: 'bg-primary-50 text-primary-700 border-primary-100',
+    borderActive: 'border-primary-500', textActive: 'text-primary-700', bgActive: 'bg-primary-50/30',
+  },
+  {
+    id: 'templates',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
+    title: 'Templates',
+    description: 'Meer dan 28 volledig vooraf ingevulde documenten, beleidsstukken en procedures, opgesteld door ISO-experts. Je vult alleen aan wat uniek is voor jouw organisatie.',
+    bullets: [
+      '28+ templates: beleid, procedures, handboeken en auditrapporten',
+      'Volledig vooraf ingevuld met ISO-kennis en best practices',
+      'Versiegeschiedenis en goedkeuringsworkflow per document',
+      'Direct exporteerbaar als auditklare PDF',
+    ],
+    tags: ['28+ documenten', 'Vooraf ingevuld', 'PDF-export'],
+    iconBg: 'bg-green-50', iconColor: 'text-green-600',
+    tagStyle: 'bg-green-50 text-green-700 border-green-100',
+    borderActive: 'border-green-500', textActive: 'text-green-700', bgActive: 'bg-green-50/30',
+    pageHref: '/templates',
+  },
+  {
+    id: 'kennisbank',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
+    title: 'Kennisbank',
+    description: 'Meer dan 100 artikelen, richtlijnen en stappenplannen voor ISO 27001, AVG, NIS2 en meer, in begrijpelijk Nederlands, direct toepasbaar en gekoppeld aan je ISMS.',
+    bullets: [
+      '100+ artikelen over ISO 27001, AVG, NIS2 en aanverwante normen',
+      'Contextgevoelig zoeken in gewone taal, geen ISO-jargon',
+      'Gekoppeld aan maatregelen, templates en coach-stappen in je ISMS',
+      'Altijd actueel bij wijzigingen in wet- en regelgeving',
+    ],
+    tags: ['100+ artikelen', 'ISO & AVG & NIS2', 'Coach-integratie'],
+    iconBg: 'bg-teal-50', iconColor: 'text-teal-600',
+    tagStyle: 'bg-teal-50 text-teal-700 border-teal-100',
+    borderActive: 'border-teal-500', textActive: 'text-teal-700', bgActive: 'bg-teal-50/30',
+    pageHref: '/kennisbank',
+  },
+  {
+    id: 'directiebeoordeling',
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
+    tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
+    title: 'Directiebeoordeling',
+    description: 'Bereid directiebeoordelingen voor met alle verplichte inputpunten conform ISO 9.3. Leg besluiten en actiepunten vast en exporteer een kant-en-klaar verslag voor je auditor.',
+    bullets: [
+      'Alle verplichte inputpunten conform ISO 27001 clausule 9.3',
+      'Notulen, besluiten en actiepunten in één gestructureerd overzicht',
+      'Actiepunten direct doorgezet als taken met eigenaar en deadline',
+      'PDF-export van het volledige verslag, auditklaar in één klik',
+    ],
+    tags: ['Clausule 9.3', 'PDF-export', 'Actiepunten'],
+    iconBg: 'bg-violet-50', iconColor: 'text-violet-600',
+    tagStyle: 'bg-violet-50 text-violet-700 border-violet-100',
+    borderActive: 'border-violet-500', textActive: 'text-violet-700', bgActive: 'bg-violet-50/30',
+    pageHref: '/directiebeoordeling',
+  },
+];
+
+const extraFeatures = [
+  { title: 'Personeelsregister', description: 'Medewerkersregister met competentieregistratie en koppeling aan portaalrollen.' },
+  { title: 'ISMS Handboek', description: 'Vooraf ingevuld handboek op basis van ISO 27001:2022, direct bewerkbaar.' },
+  { title: 'Multi-framework', description: 'Beheer ISO 27001, 9001 en 14001 binnen één organisatie en één dashboard.' },
+  { title: 'PDF Export', description: 'Exporteer VvT, auditrapportages en documenten direct als auditklare PDF.' },
+  { title: 'Bewustwordingstraining', description: 'Trainingsmateriaal en quizzes voor medewerkers, koppelbaar aan competentieregistratie.' },
+  { title: 'Normencomparator', description: 'Vergelijk overlappende eisen tussen ISO 27001, 9001 en 14001 voor efficiënt beheer.' },
 ];
 ---
 
 <section id="functies" class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-2xl mx-auto text-center mb-16">
-      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Alles Wat U Nodig Heeft</p>
+
+    <!-- Section header -->
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Alles wat je nodig hebt</p>
       <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
-        Eén platform voor volledige ISO-compliance
+        Eén platform<br />voor jouw volledige ISO-traject
       </h2>
       <p class="mt-4 text-lg text-primary-900/60">
-        Van begeleide implementatie tot certificeringsgereedheid — Control One dekt elk aspect van uw compliance-traject.
+        Van de eerste gap analyse tot aan de certificeringsaudit: Control One dekt elk onderdeel van ISO-compliance, zonder dat je specialist hoeft te zijn.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {features.map(feature => (
-        <div class="group p-6 rounded-2xl border border-primary-100 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:bg-primary-100 transition-colors">
-            <Fragment set:html={feature.icon} />
+    <!-- Tabbed interface -->
+    <div class="flex items-center gap-3">
+
+      <!-- Prev arrow -->
+      <button id="features-prev" disabled aria-label="Vorig tabblad" class="shrink-0 w-10 h-10 rounded-full bg-white border border-primary-200 shadow-sm flex items-center justify-center text-primary-500 hover:text-primary-800 hover:shadow-md transition-all disabled:opacity-25 disabled:pointer-events-none">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+
+      <div class="rounded-3xl border border-primary-100 overflow-hidden shadow-sm bg-white flex-1 min-w-0">
+
+      <!-- Tab bar -->
+      <div class="border-b border-primary-100 bg-primary-50/40">
+        <div class="overflow-x-auto scrollbar-none" id="features-tab-bar">
+          <div class="flex min-w-max">
+          {features.map((f, i) => (
+            <button
+              data-tab-idx={i}
+              class:list={[
+                'features-tab group flex items-center gap-2 px-5 py-4 text-sm font-medium border-b-2 transition-all duration-200 whitespace-nowrap',
+                i === 0
+                  ? `${f.borderActive} ${f.textActive} bg-white`
+                  : 'border-transparent text-primary-900/50 hover:text-primary-800 hover:bg-white/70',
+              ]}
+            >
+              <span class:list={[
+                'w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-200',
+                i === 0 ? f.iconBg : 'bg-primary-100/60 group-hover:bg-primary-100',
+              ]}>
+                <span class:list={[i === 0 ? f.iconColor : 'text-primary-400 group-hover:text-primary-600']}>
+                  <Fragment set:html={f.tabIcon} />
+                </span>
+              </span>
+              {f.title}
+            </button>
+          ))}
           </div>
-          <h3 class="text-lg font-semibold text-primary-950 mb-2">{feature.title}</h3>
-          <p class="text-sm text-primary-900/60 leading-relaxed">{feature.description}</p>
         </div>
-      ))}
+      </div>
+
+      <!-- Content panels -->
+      <div id="features-panels">
+        {features.map((f, i) => (
+          <div
+            data-panel-idx={i}
+            class:list={['features-panel', i !== 0 && 'hidden']}
+          >
+            <div class="grid lg:grid-cols-[1fr_1.1fr] items-stretch min-h-[420px]">
+
+              <!-- Left: text content -->
+              <div class="p-8 lg:p-12 flex flex-col justify-center border-r border-primary-50">
+                <div class="flex items-center gap-3 mb-5">
+                  <div class:list={['w-10 h-10 rounded-xl flex items-center justify-center shrink-0', f.iconBg, f.iconColor]}>
+                    <Fragment set:html={f.icon} />
+                  </div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-primary-400">
+                    Functie {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-bold text-primary-950 tracking-tight mb-3">{f.title}</h3>
+                <p class="text-base text-primary-900/60 leading-relaxed mb-6">{f.description}</p>
+                <ul class="space-y-2.5 mb-7">
+                  {f.bullets.map(b => (
+                    <li class="flex items-start gap-3">
+                      <svg class:list={['w-5 h-5 shrink-0 mt-0.5', f.iconColor]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span class="text-sm text-primary-900/70 leading-relaxed">{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="flex flex-wrap gap-1.5 mb-7">
+                  {f.tags.map(tag => (
+                    <span class:list={['text-xs font-semibold px-2.5 py-1 rounded-full border', f.tagStyle]}>{tag}</span>
+                  ))}
+                </div>
+                <a href={(f as any).pageHref ?? '/features'} class:list={['inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group/link', f.iconColor]}>
+                  Meer over {f.title}
+                  <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Right: mockup -->
+              <div class:list={['flex items-center justify-center p-8 lg:p-12', f.bgActive]}>
+                <!-- Coach mockup -->
+                {i === 0 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Implementatiecoach: Stap 3 van 28</span>
+                        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">11% gereed</span>
+                      </div>
+                      <div class="p-4 space-y-2">
+                        {[
+                          { num: 1, label: 'Context van de organisatie', done: true },
+                          { num: 2, label: 'Scopebepaling', done: true },
+                          { num: 3, label: 'Gap analyse uitvoeren', done: false, active: true },
+                          { num: 4, label: 'Risicobeoordeling opzetten', done: false },
+                          { num: 5, label: 'Behandelingsplan opstellen', done: false },
+                          { num: 6, label: 'VvT invullen', done: false },
+                        ].map(step => (
+                          <div class:list={[
+                            'flex items-center gap-3 p-2.5 rounded-lg text-sm',
+                            step.done ? 'opacity-60' : step.active ? 'bg-blue-50 border border-blue-200' : 'bg-primary-50/50',
+                          ]}>
+                            <div class:list={[
+                              'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0',
+                              step.done ? 'bg-blue-500 text-white' : step.active ? 'bg-blue-500 text-white' : 'bg-primary-200 text-primary-600',
+                            ]}>
+                              {step.done
+                                ? <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                : step.num
+                              }
+                            </div>
+                            <span class:list={['leading-tight', step.active ? 'font-semibold text-primary-950' : 'text-primary-700']}>{step.label}</span>
+                            {step.active && <span class="ml-auto text-xs font-semibold text-blue-600 shrink-0">Actief</span>}
+                          </div>
+                        ))}
+                      </div>
+                      <div class="px-4 pb-4">
+                        <div class="w-full bg-primary-100 rounded-full h-1.5">
+                          <div class="bg-blue-500 h-1.5 rounded-full" style="width: 11%"></div>
+                        </div>
+                        <p class="text-xs text-primary-500 mt-1.5">3 van 28 stappen afgerond</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Risicoanalyse mockup -->
+                {i === 1 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Risicomatrix: 18 risico's</span>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-semibold">3 hoog</span>
+                      </div>
+                      <div class="p-4">
+                        <div class="grid grid-cols-[auto_1fr_1fr_1fr_1fr_1fr] gap-1 mb-1">
+                          <div class="w-5"></div>
+                          {['1','2','3','4','5'].map(n => <div class="text-center text-[10px] text-primary-400 font-medium">{n}</div>)}
+                        </div>
+                        {[
+                          { label:'5', cells:['bg-amber-200','bg-orange-300','bg-red-300','bg-red-400','bg-red-500'], counts:[null,null,2,null,null] },
+                          { label:'4', cells:['bg-green-200','bg-amber-200','bg-amber-300','bg-orange-300','bg-red-400'], counts:[null,null,5,3,null] },
+                          { label:'3', cells:['bg-green-100','bg-green-200','bg-amber-200','bg-amber-300','bg-orange-300'], counts:[null,null,null,4,null] },
+                          { label:'2', cells:['bg-green-100','bg-green-100','bg-green-200','bg-amber-200','bg-amber-300'], counts:[null,null,null,null,null] },
+                          { label:'1', cells:['bg-green-100','bg-green-100','bg-green-100','bg-green-200','bg-amber-200'], counts:[null,null,null,null,null] },
+                        ].map(row => (
+                          <div class="grid grid-cols-[auto_1fr_1fr_1fr_1fr_1fr] gap-1 mb-1">
+                            <div class="w-5 text-right text-[10px] text-primary-400 font-medium flex items-center justify-end pr-1">{row.label}</div>
+                            {row.cells.map((bg, ci) => (
+                              <div class:list={['h-8 rounded flex items-center justify-center', bg]}>
+                                {row.counts[ci] && <span class="text-[11px] font-bold text-white drop-shadow-sm">{row.counts[ci]}</span>}
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                        <div class="flex items-center justify-between mt-3 pt-3 border-t border-primary-50">
+                          <div class="flex gap-3">
+                            <span class="flex items-center gap-1 text-[11px] text-primary-500"><span class="w-2.5 h-2.5 rounded-sm bg-green-200 inline-block"></span>Laag</span>
+                            <span class="flex items-center gap-1 text-[11px] text-primary-500"><span class="w-2.5 h-2.5 rounded-sm bg-amber-300 inline-block"></span>Midden</span>
+                            <span class="flex items-center gap-1 text-[11px] text-primary-500"><span class="w-2.5 h-2.5 rounded-sm bg-red-400 inline-block"></span>Hoog</span>
+                          </div>
+                          <span class="text-xs text-primary-400">Kans →</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Documentbeheer mockup -->
+                {i === 2 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Documenten: 24 bestanden</span>
+                        <button class="text-xs bg-violet-600 text-white px-2.5 py-1 rounded-lg font-semibold">+ Nieuw</button>
+                      </div>
+                      <div class="divide-y divide-primary-50">
+                        {[
+                          { name: 'Informatiebeveiligingsbeleid', version: 'v2.1', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                          { name: 'Risicobeoordelingsprocedure', version: 'v1.3', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                          { name: 'Toegangsbeleid', version: 'v3.0', status: 'Concept', statusBg: 'bg-amber-100 text-amber-700' },
+                          { name: 'Incidentresponse procedure', version: 'v1.1', status: 'Review', statusBg: 'bg-blue-100 text-blue-700' },
+                          { name: 'Business Continuity Plan', version: 'v2.0', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                        ].map(doc => (
+                          <div class="flex items-center gap-3 px-4 py-3">
+                            <svg class="w-4 h-4 text-violet-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="text-xs font-semibold text-primary-900 truncate">{doc.name}</p>
+                              <p class="text-[11px] text-primary-400">{doc.version}</p>
+                            </div>
+                            <span class:list={['text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0', doc.statusBg]}>{doc.status}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- VvT mockup -->
+                {i === 3 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">VvT: Annex A overzicht</span>
+                        <button class="text-xs bg-indigo-600 text-white px-2.5 py-1 rounded-lg font-semibold">PDF export</button>
+                      </div>
+                      <div class="p-4 space-y-2">
+                        {[
+                          { code: 'A5', name: 'Organisatorische maatregelen', total: 37, done: 37, pct: 100 },
+                          { code: 'A6', name: 'Personeelsmaatregelen', total: 8, done: 6, pct: 75 },
+                          { code: 'A7', name: 'Fysieke maatregelen', total: 14, done: 9, pct: 64 },
+                          { code: 'A8', name: 'Technische maatregelen', total: 34, done: 18, pct: 53 },
+                        ].map(cat => (
+                          <div class="p-3 rounded-xl bg-primary-50/60 border border-primary-100">
+                            <div class="flex items-center justify-between mb-2">
+                              <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">{cat.code}</span>
+                                <span class="text-xs font-semibold text-primary-950">{cat.name}</span>
+                              </div>
+                              <span class="text-xs text-primary-500">{cat.done}/{cat.total}</span>
+                            </div>
+                            <div class="w-full bg-primary-100 rounded-full h-1.5">
+                              <div class:list={['h-1.5 rounded-full', cat.pct === 100 ? 'bg-green-500' : 'bg-indigo-500']} style={`width: ${cat.pct}%`}></div>
+                            </div>
+                          </div>
+                        ))}
+                        <div class="flex items-center justify-between pt-1">
+                          <span class="text-xs text-primary-500">Totaal: 70 van 93 maatregelen</span>
+                          <span class="text-xs font-bold text-indigo-600">75%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Gap Analyse mockup -->
+                {i === 4 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Gap Analyse: Nulmeting</span>
+                        <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">62% compliant</span>
+                      </div>
+                      <div class="p-4 space-y-3">
+                        {[
+                          { label: 'H4 Context', pct: 80, color: 'bg-emerald-500' },
+                          { label: 'H5 Leiderschap', pct: 90, color: 'bg-emerald-500' },
+                          { label: 'H6 Planning', pct: 55, color: 'bg-amber-500' },
+                          { label: 'H7 Ondersteuning', pct: 70, color: 'bg-emerald-400' },
+                          { label: 'H8 Uitvoering', pct: 40, color: 'bg-red-400' },
+                          { label: 'H9 Evaluatie', pct: 60, color: 'bg-amber-400' },
+                          { label: 'H10 Verbetering', pct: 45, color: 'bg-amber-500' },
+                        ].map(item => (
+                          <div>
+                            <div class="flex items-center justify-between mb-1">
+                              <span class="text-xs font-medium text-primary-700">{item.label}</span>
+                              <span class="text-xs text-primary-500">{item.pct}%</span>
+                            </div>
+                            <div class="w-full bg-primary-100 rounded-full h-2">
+                              <div class:list={['h-2 rounded-full', item.color]} style={`width: ${item.pct}%`}></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Audit mockup -->
+                {i === 5 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Audits: 2025</span>
+                        <button class="text-xs bg-teal-600 text-white px-2.5 py-1 rounded-lg font-semibold">+ Audit plannen</button>
+                      </div>
+                      <div class="divide-y divide-primary-50">
+                        {[
+                          { name: 'Interne audit H4-H6', date: '15 jan 2025', status: 'Afgerond', statusBg: 'bg-green-100 text-green-700', findings: 3 },
+                          { name: 'Interne audit H7-H10', date: '28 feb 2025', status: 'Actief', statusBg: 'bg-blue-100 text-blue-700', findings: 1 },
+                          { name: 'Pre-audit certificering', date: '20 apr 2025', status: 'Gepland', statusBg: 'bg-amber-100 text-amber-700', findings: 0 },
+                          { name: 'Certificeringsaudit', date: '12 mei 2025', status: 'Gepland', statusBg: 'bg-amber-100 text-amber-700', findings: 0 },
+                        ].map(audit => (
+                          <div class="flex items-center gap-3 px-4 py-3">
+                            <div class="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center shrink-0">
+                              <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                              <p class="text-xs font-semibold text-primary-900 truncate">{audit.name}</p>
+                              <p class="text-[11px] text-primary-400">{audit.date}{audit.findings > 0 ? ` · ${audit.findings} bevinding${audit.findings > 1 ? 'en' : ''}` : ''}</p>
+                            </div>
+                            <span class:list={['text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0', audit.statusBg]}>{audit.status}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Leveranciers mockup -->
+                {i === 6 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Leveranciers: 12 geregistreerd</span>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full font-semibold">2 kritisch</span>
+                      </div>
+                      <div class="divide-y divide-primary-50">
+                        {[
+                          { name: 'AWS Cloud Services', category: 'Hosting', risk: 'Kritisch', riskBg: 'bg-red-100 text-red-700', cert: 'ISO 27001 ✓' },
+                          { name: 'Microsoft 365', category: 'Software', risk: 'Hoog', riskBg: 'bg-orange-100 text-orange-700', cert: 'ISO 27001 ✓' },
+                          { name: 'Exactonline', category: 'Financieel', risk: 'Midden', riskBg: 'bg-amber-100 text-amber-700', cert: 'SOC 2 ✓' },
+                          { name: 'PostNL', category: 'Logistiek', risk: 'Laag', riskBg: 'bg-green-100 text-green-700', cert: 'n.v.t.' },
+                          { name: 'Bol.com Marketplace', category: 'Sales', risk: 'Midden', riskBg: 'bg-amber-100 text-amber-700', cert: 'n.v.t.' },
+                        ].map(supplier => (
+                          <div class="flex items-center gap-3 px-4 py-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-cyan-50 flex items-center justify-center shrink-0 text-cyan-600 text-xs font-bold">
+                              {supplier.name[0]}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                              <p class="text-xs font-semibold text-primary-900 truncate">{supplier.name}</p>
+                              <p class="text-[11px] text-primary-400">{supplier.category} · {supplier.cert}</p>
+                            </div>
+                            <span class:list={['text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0', supplier.riskBg]}>{supplier.risk}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Incidenten mockup -->
+                {i === 7 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Incidenten & CPAR's</span>
+                        <button class="text-xs bg-rose-600 text-white px-2.5 py-1 rounded-lg font-semibold">+ Nieuw</button>
+                      </div>
+                      <div class="divide-y divide-primary-50">
+                        {[
+                          { title: 'Ongeautoriseerde toegangspoging', type: 'Incident', priority: 'Hoog', prioBg: 'bg-red-100 text-red-700', date: '3 mrt' },
+                          { title: 'Phishing e-mail medewerker', type: 'Incident', priority: 'Midden', prioBg: 'bg-amber-100 text-amber-700', date: '28 feb' },
+                          { title: 'CPAR: toegangsbeleid herschrijven', type: 'CPAR', priority: 'Open', prioBg: 'bg-blue-100 text-blue-700', date: '15 feb' },
+                          { title: 'Wachtwoordbeleid niet nageleefd', type: 'Incident', priority: 'Laag', prioBg: 'bg-green-100 text-green-700', date: '10 feb' },
+                        ].map(item => (
+                          <div class="flex items-start gap-3 px-4 py-3">
+                            <div class:list={['w-1.5 h-1.5 rounded-full shrink-0 mt-2', item.type === 'CPAR' ? 'bg-blue-500' : 'bg-rose-500']}></div>
+                            <div class="flex-1 min-w-0">
+                              <p class="text-xs font-semibold text-primary-900 leading-snug">{item.title}</p>
+                              <p class="text-[11px] text-primary-400 mt-0.5">{item.type} · {item.date}</p>
+                            </div>
+                            <span class:list={['text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0', item.prioBg]}>{item.priority}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Templates mockup -->
+                {i === 9 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Templates: 28 documenten</span>
+                        <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold">Vooraf ingevuld</span>
+                      </div>
+                      <div class="divide-y divide-primary-50">
+                        {[
+                          { name: 'Informatiebeveiligingsbeleid', cat: 'Beleid', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                          { name: 'ISMS Handboek', cat: 'Handboek', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                          { name: 'Risicobeoordeling sjabloon', cat: 'Analyse', status: 'Concept', statusBg: 'bg-amber-100 text-amber-700' },
+                          { name: 'Interne Audit Rapport', cat: 'Audit', status: 'Goedgekeurd', statusBg: 'bg-green-100 text-green-700' },
+                          { name: 'Toegangsbeheer procedure', cat: 'Procedure', status: 'Review', statusBg: 'bg-blue-100 text-blue-700' },
+                        ].map(doc => (
+                          <div class="flex items-center gap-3 px-4 py-2.5">
+                            <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                            <div class="flex-1 min-w-0">
+                              <p class="text-xs font-semibold text-primary-900 truncate">{doc.name}</p>
+                              <p class="text-[11px] text-primary-400">{doc.cat}</p>
+                            </div>
+                            <span class:list={['text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0', doc.statusBg]}>{doc.status}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div class="px-4 py-2.5 bg-green-50/60 border-t border-green-100 text-center">
+                        <span class="text-[11px] text-green-700 font-semibold">28 templates inbegrepen, allemaal vooraf ingevuld</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Kennisbank mockup -->
+                {i === 10 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Kennisbank: 108 artikelen</span>
+                        <span class="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full font-semibold">Doorzoekbaar</span>
+                      </div>
+                      <div class="p-4">
+                        <div class="flex items-center gap-2 mb-4 px-3 py-2 rounded-lg border border-teal-200 bg-teal-50/60">
+                          <svg class="w-3.5 h-3.5 text-teal-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                          <span class="text-xs text-primary-400">Zoek in de kennisbank…</span>
+                        </div>
+                        <div class="space-y-2">
+                          {[
+                            { title: 'Wat is ISO 27001 en waarom is het relevant?', cat: 'ISO 27001', time: '4 min' },
+                            { title: 'Risicoanalyse opstellen conform ISO 27001:2022', cat: 'Risicoanalyse', time: '7 min' },
+                            { title: 'VvT: alle 93 Annex A-maatregelen uitgelegd', cat: 'ISO 27001', time: '10 min' },
+                            { title: 'NIS2: wat verandert er voor jouw sector?', cat: 'NIS2', time: '5 min' },
+                          ].map(a => (
+                            <div class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary-50/50">
+                              <div class="w-7 h-7 rounded-lg bg-teal-50 flex items-center justify-center shrink-0 text-teal-500">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                              </div>
+                              <div class="flex-1 min-w-0">
+                                <p class="text-xs font-semibold text-primary-900 leading-snug truncate">{a.title}</p>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                  <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-100">{a.cat}</span>
+                                  <span class="text-[10px] text-primary-400">{a.time}</span>
+                                </div>
+                              </div>
+                              <svg class="w-3.5 h-3.5 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Directiebeoordeling mockup -->
+                {i === 11 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-primary-700">Directiebeoordeling Q1 2025</span>
+                        <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">In voorbereiding</span>
+                      </div>
+                      <div class="p-4">
+                        <p class="text-[10px] font-semibold uppercase tracking-wide text-primary-400 mb-2">Verplichte inputpunten, clausule 9.3</p>
+                        <div class="grid grid-cols-2 gap-1.5 mb-4">
+                          {[
+                            { label: 'Status actiepunten', done: true },
+                            { label: 'Interne auditresultaten', done: true },
+                            { label: 'Non-conformiteiten', done: true },
+                            { label: 'Prestaties & KPI\'s', done: false },
+                            { label: 'Risicobehandeling', done: false },
+                            { label: 'Verbetermogelijkheden', done: false },
+                          ].map(item => (
+                            <div class:list={['flex items-center gap-1.5 px-2.5 py-2 rounded-lg border text-xs font-medium', item.done ? 'bg-violet-50 border-violet-100 text-violet-800' : 'bg-primary-50/50 border-primary-100 text-primary-400']}>
+                              <div class:list={['w-3.5 h-3.5 rounded-full flex items-center justify-center shrink-0', item.done ? 'bg-violet-500' : 'border-2 border-primary-200']}>
+                                {item.done && <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>}
+                              </div>
+                              <span class="leading-tight">{item.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <p class="text-[10px] font-semibold uppercase tracking-wide text-primary-400 mb-2">Actiepunten</p>
+                        <div class="space-y-1.5">
+                          {[
+                            { action: 'Leveranciersbeleid updaten', owner: 'J. Smit', done: true },
+                            { action: 'Intern audit Q1 afronden', owner: 'L. de Vries', done: false },
+                          ].map(a => (
+                            <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-primary-50/60">
+                              <div class:list={['w-3 h-3 rounded-full shrink-0', a.done ? 'bg-emerald-500' : 'border-2 border-primary-300']}></div>
+                              <span class:list={['flex-1 text-xs font-medium truncate', a.done ? 'line-through text-primary-400' : 'text-primary-900']}>{a.action}</span>
+                              <span class="text-[10px] text-primary-400">{a.owner}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <!-- Dashboard mockup -->
+                {i === 8 && (
+                  <div class="w-full max-w-sm">
+                    <div class="bg-white rounded-2xl shadow-md border border-primary-100 overflow-hidden">
+                      <div class="px-4 py-3 bg-primary-50 border-b border-primary-100">
+                        <span class="text-xs font-semibold text-primary-700">Compliance Dashboard</span>
+                      </div>
+                      <div class="p-4">
+                        <!-- KPI row -->
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                          {[
+                            { label: "Risico's", value: '18', sub: '3 hoog', color: 'text-red-600', bg: 'bg-red-50' },
+                            { label: 'CPAR\'s', value: '7', sub: '2 open', color: 'text-amber-600', bg: 'bg-amber-50' },
+                            { label: 'Audits', value: '4', sub: '1 actief', color: 'text-teal-600', bg: 'bg-teal-50' },
+                          ].map(kpi => (
+                            <div class:list={['rounded-xl p-3 text-center', kpi.bg]}>
+                              <div class:list={['text-lg font-bold', kpi.color]}>{kpi.value}</div>
+                              <div class="text-[10px] font-semibold text-primary-600">{kpi.label}</div>
+                              <div class:list={['text-[10px]', kpi.color]}>{kpi.sub}</div>
+                            </div>
+                          ))}
+                        </div>
+                        <!-- Progress toward cert -->
+                        <div class="mb-3 p-3 rounded-xl bg-primary-50 border border-primary-100">
+                          <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-primary-800">Voortgang certificering</span>
+                            <span class="text-xs font-bold text-primary-700">68%</span>
+                          </div>
+                          <div class="w-full bg-primary-200 rounded-full h-2 mb-1">
+                            <div class="bg-primary-600 h-2 rounded-full" style="width: 68%"></div>
+                          </div>
+                          <p class="text-[10px] text-primary-400">Verwachte certificeringsdatum: mei 2025</p>
+                        </div>
+                        <!-- Mini heatmap -->
+                        <div class="flex items-center justify-between">
+                          <span class="text-[11px] text-primary-500 font-medium">Risicoheatmap</span>
+                          <div class="flex gap-0.5">
+                            {['bg-green-300','bg-green-300','bg-amber-300','bg-amber-300','bg-red-400','bg-red-300','bg-amber-300','bg-green-300','bg-green-200','bg-amber-300','bg-red-500','bg-red-300','bg-amber-400','bg-green-300','bg-green-300'].map(c => (
+                              <div class:list={['w-3.5 h-3.5 rounded-sm', c]}></div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      </div>
+
+      <!-- Next arrow -->
+      <button id="features-next" aria-label="Volgend tabblad" class="shrink-0 w-10 h-10 rounded-full bg-white border border-primary-200 shadow-sm flex items-center justify-center text-primary-500 hover:text-primary-800 hover:shadow-md transition-all disabled:opacity-25 disabled:pointer-events-none">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+      </button>
     </div>
+
   </div>
 </section>
+
+<script>
+  (function () {
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.features-tab'));
+    const panels = Array.from(document.querySelectorAll<HTMLElement>('.features-panel'));
+    const prevBtn = document.getElementById('features-prev') as HTMLButtonElement | null;
+    const nextBtn = document.getElementById('features-next') as HTMLButtonElement | null;
+    let currentIdx = 0;
+
+    // Per-tab active styles (border + text + icon bg/color)
+    const activeStyles: Record<number, { border: string; text: string; iconBg: string; iconColor: string }> = {
+      0: { border: 'border-blue-500',    text: 'text-blue-700',    iconBg: 'bg-blue-50',    iconColor: 'text-blue-600' },
+      1: { border: 'border-amber-500',   text: 'text-amber-700',   iconBg: 'bg-amber-50',   iconColor: 'text-amber-600' },
+      2: { border: 'border-violet-500',  text: 'text-violet-700',  iconBg: 'bg-violet-50',  iconColor: 'text-violet-600' },
+      3: { border: 'border-indigo-500',  text: 'text-indigo-700',  iconBg: 'bg-indigo-50',  iconColor: 'text-indigo-600' },
+      4: { border: 'border-emerald-500', text: 'text-emerald-700', iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600' },
+      5: { border: 'border-teal-500',    text: 'text-teal-700',    iconBg: 'bg-teal-50',    iconColor: 'text-teal-600' },
+      6: { border: 'border-cyan-500',    text: 'text-cyan-700',    iconBg: 'bg-cyan-50',    iconColor: 'text-cyan-600' },
+      7: { border: 'border-rose-500',    text: 'text-rose-700',    iconBg: 'bg-rose-50',    iconColor: 'text-rose-600' },
+      8: { border: 'border-primary-500', text: 'text-primary-700', iconBg: 'bg-primary-50',  iconColor: 'text-primary-600' },
+      9: { border: 'border-green-500',   text: 'text-green-700',   iconBg: 'bg-green-50',   iconColor: 'text-green-600' },
+     10: { border: 'border-teal-500',    text: 'text-teal-700',    iconBg: 'bg-teal-50',    iconColor: 'text-teal-600' },
+     11: { border: 'border-violet-500',  text: 'text-violet-700',  iconBg: 'bg-violet-50',  iconColor: 'text-violet-600' },
+    };
+
+    function activateTab(idx: number) {
+      tabs.forEach((tab, i) => {
+        const s = activeStyles[i];
+        const iconWrap = tab.querySelector('span:first-child') as HTMLElement;
+        const iconInner = iconWrap?.querySelector('span') as HTMLElement;
+
+        if (i === idx) {
+          tab.className = tab.className
+            .replace('border-transparent', '')
+            .replace('text-primary-900/50', '')
+            .replace('hover:text-primary-800', '')
+            .replace('hover:bg-white/70', '')
+            .trim();
+          tab.classList.add(s.border, s.text, 'bg-white');
+          if (iconWrap) {
+            iconWrap.className = iconWrap.className
+              .replace('bg-primary-100/60', '').replace('group-hover:bg-primary-100', '').trim();
+            iconWrap.classList.add(s.iconBg);
+          }
+          if (iconInner) {
+            iconInner.className = iconInner.className
+              .replace('text-primary-400', '').replace('group-hover:text-primary-600', '').trim();
+            iconInner.classList.add(s.iconColor);
+          }
+        } else {
+          // Reset to inactive
+          tab.classList.remove(s.border, s.text, 'bg-white');
+          tab.classList.add('border-transparent', 'text-primary-900/50', 'hover:text-primary-800', 'hover:bg-white/70');
+          if (iconWrap) {
+            iconWrap.classList.remove(s.iconBg);
+            iconWrap.classList.add('bg-primary-100/60', 'group-hover:bg-primary-100');
+          }
+          if (iconInner) {
+            iconInner.classList.remove(s.iconColor);
+            iconInner.classList.add('text-primary-400', 'group-hover:text-primary-600');
+          }
+        }
+      });
+
+      // Show/hide panels with fade
+      panels.forEach((panel, i) => {
+        if (i === idx) {
+          panel.classList.remove('hidden');
+          panel.style.animation = 'featFadeIn 0.2s ease';
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+
+      // Scroll active tab into view
+      tabs[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+
+      // Track current and update arrow states
+      currentIdx = idx;
+      if (prevBtn) prevBtn.disabled = idx === 0;
+      if (nextBtn) nextBtn.disabled = idx === tabs.length - 1;
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => activateTab(i));
+    });
+
+    prevBtn?.addEventListener('click', () => activateTab(Math.max(0, currentIdx - 1)));
+    nextBtn?.addEventListener('click', () => activateTab(Math.min(tabs.length - 1, currentIdx + 1)));
+
+    // Init arrow state
+    if (prevBtn) prevBtn.disabled = true;
+    if (nextBtn) nextBtn.disabled = tabs.length <= 1;
+  })();
+</script>
+
+<style>
+  @keyframes featFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

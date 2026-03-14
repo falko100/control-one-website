@@ -1,94 +1,182 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import TemplatesBlock from '../components/TemplatesBlock.astro';
 import Testimonials from '../components/Testimonials.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
 const features = [
   {
-    title: 'Begeleide Implementatie',
-    subtitle: 'Uw persoonlijke ISO-coach',
-    description: 'Onze implementatiecoach leidt u stap voor stap door elk hoofdstuk van uw ISO-framework. U weet altijd precies waar u staat en wat de volgende stap is.',
+    title: 'Implementatiecoach',
+    subtitle: 'Stapsgewijze implementatiegids',
+    description: 'Onze implementatiecoach leidt je stap voor stap door elk hoofdstuk van je ISO-framework. Je weet altijd precies waar je staat en wat de volgende actie is, van eerste gap tot certificering.',
     details: [
       'Volledige eisenstructuur per framework',
       'Voortgangspercentage per hoofdstuk',
-      'Contextgevoelige hulp en uitleg',
+      'Contextgevoelige uitleg bij elke stap',
       'Automatisch gekoppeld aan documenten en bewijs',
     ],
-    gradient: 'from-primary-600 to-primary-800',
-    iconBg: 'bg-primary-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>`,
+    href: '/coach',
+    gradient: 'from-blue-600 to-blue-800',
+    iconBg: 'bg-blue-500',
+    navBorder: 'border-blue-500',
+    navBg: 'bg-blue-50',
+    navText: 'text-blue-700',
+    checkColor: 'text-blue-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+  },
+  {
+    title: 'Maatregelen',
+    subtitle: '93 Annex A beheersmaatregelen',
+    description: 'Beheer alle 93 beheersmaatregelen uit ISO 27001:2022 Annex A in één overzicht. Markeer toepasselijkheid, registreer de implementatiestatus en exporteer je Verklaring van Toepasselijkheid als PDF.',
+    details: [
+      'Alle 93 Annex A-maatregelen ingebouwd',
+      'Toepasselijkheid per maatregel markeren',
+      'Implementatiestatus per maatregel bijhouden',
+      'Direct exporteerbaar als ondertekende VvT-PDF',
+    ],
+    href: '/maatregelen',
+    gradient: 'from-indigo-500 to-indigo-700',
+    iconBg: 'bg-indigo-500',
+    navBorder: 'border-indigo-500',
+    navBg: 'bg-indigo-50',
+    navText: 'text-indigo-700',
+    checkColor: 'text-indigo-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+  },
+  {
+    title: 'Risicoanalyse',
+    subtitle: 'Risicoregister & risicomatrix',
+    description: 'Identificeer, beoordeel en bewaak risico\'s met een uitgebreid risicoregister. Scoor risico\'s op kans en impact, koppel behandelmaatregelen en volg het risicolandschap in de tijd.',
+    details: [
+      'Kans × impact risicoscoring',
+      'Meerdere risicocontexten (mensen, systemen, netwerk)',
+      'Periodieke risicobeoordelingen met besluitregistratie',
+      'Historische snapshots voor trendanalyse',
+    ],
+    href: '/risicoanalyse',
+    gradient: 'from-amber-500 to-orange-600',
+    iconBg: 'bg-amber-500',
+    navBorder: 'border-amber-500',
+    navBg: 'bg-amber-50',
+    navText: 'text-amber-700',
+    checkColor: 'text-amber-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
+  },
+  {
+    title: 'Leveranciersbeheer',
+    subtitle: 'Vendor management & beoordeling',
+    description: 'Houd je leveranciersrisico\'s onder controle. Beheer certificaten, compliance-documentatie en plan periodieke beoordelingen voor al je externe partijen conform ISO 27001 Annex A.5.19.',
+    details: [
+      'Leveranciersregister met contactinformatie',
+      'Certificaatbeheer met verloopwaarschuwingen',
+      'Periodieke leveranciersbeoordelingen inplannen',
+      'Risicoclassificatie per leverancier',
+    ],
+    href: '/leveranciers',
+    gradient: 'from-violet-500 to-purple-600',
+    iconBg: 'bg-violet-500',
+    navBorder: 'border-violet-500',
+    navBg: 'bg-violet-50',
+    navText: 'text-violet-700',
+    checkColor: 'text-violet-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+  },
+  {
+    title: 'Templates',
+    subtitle: '22+ vooraf ingevulde documenten',
+    description: 'Start met 80% voorsprong met onze Templates. Control One bevat meer dan 22 vooraf ingevulde beleids- en proceduredocumenten, volledig conform ISO 27001:2022 en direct aanpasbaar voor jouw organisatie.',
+    details: [
+      'Informatiebeveiligingsbeleid, DPIA\'s, procedures en meer',
+      'Vooraf ingevuld conform ISO 27001:2022',
+      'Aanpasbaar met jouw bedrijfsnaam en context',
+      'Exporteerbaar als auditklaar PDF-document',
+    ],
+    href: '/templates',
+    gradient: 'from-green-500 to-emerald-700',
+    iconBg: 'bg-green-500',
+    navBorder: 'border-green-500',
+    navBg: 'bg-green-50',
+    navText: 'text-green-700',
+    checkColor: 'text-green-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
   },
   {
     title: 'Documentbeheer',
-    subtitle: 'Alles op één plek',
-    description: 'Centraal beheer van al uw compliance-documenten. Maak beleidsdocumenten, risicoverklaringen en sjablonen — allemaal met versiebeheer en goedkeuringsworkflows.',
+    subtitle: 'Beleid & procedures beheren',
+    description: 'Centraal beheer van al je compliance-documenten. Maak beleidsdocumenten, risicoverklaringen en sjablonen, allemaal met versiebeheer en goedkeuringsworkflows.',
     details: [
       'Versiecontrole met revisiebeheer',
       'Beoordelings- en goedkeuringsworkflows',
       'Sjabloonbibliotheek voor snelle opstart',
       'Automatische koppeling aan framework-eisen',
     ],
-    gradient: 'from-accent-500 to-primary-600',
-    iconBg: 'bg-accent-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>`,
+    href: '/documenten',
+    gradient: 'from-sky-500 to-blue-600',
+    iconBg: 'bg-sky-500',
+    navBorder: 'border-sky-500',
+    navBg: 'bg-sky-50',
+    navText: 'text-sky-700',
+    checkColor: 'text-sky-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
   },
   {
-    title: 'Risicobeheer',
-    subtitle: 'Inzicht in uw risicolandschap',
-    description: 'Identificeer, beoordeel en bewaak risico\'s met een uitgebreid risicoregister. Scoor risico\'s op kans en impact, en houd het risicolandschap in de tijd bij.',
+    title: 'Kennisbank',
+    subtitle: 'ISO kennis direct beschikbaar',
+    description: 'De ingebouwde kennisbank bevat meer dan 100 artikelen, richtlijnen en stappenplannen voor ISO 27001, AVG, NIS2 en meer. Geschreven in begrijpelijk Nederlands, direct toepasbaar in je organisatie.',
     details: [
-      'Kans × impact risicoscoring',
-      'Meerdere risicocontexten (mensen, systemen, netwerk, etc.)',
-      'Periodieke risicobeoordelingen met besluitregistratie',
-      'Historische snapshots voor trendanalyse',
+      '100+ artikelen over ISO 27001, AVG en NIS2',
+      'Contextgevoelig zoeken op norm of onderwerp',
+      'Gekoppeld aan maatregelen en taken in je ISMS',
+      'Altijd actueel bij wijzigingen in wet- en regelgeving',
     ],
-    gradient: 'from-amber-500 to-orange-600',
-    iconBg: 'bg-amber-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path></svg>`,
+    href: '/kennisbank',
+    gradient: 'from-teal-500 to-cyan-700',
+    iconBg: 'bg-teal-500',
+    navBorder: 'border-teal-500',
+    navBg: 'bg-teal-50',
+    navText: 'text-teal-700',
+    checkColor: 'text-teal-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
   },
   {
-    title: 'Interne Audits',
-    subtitle: 'Van scope tot rapportage',
-    description: 'Voer interne audits uit met een compleet audit-traject: van scopedefinitie tot rapportage. Volg afwijkingen en corrigerende maatregelen tot aan afsluiting.',
+    title: 'Auditbeheer',
+    subtitle: 'Intern & extern auditbeheer',
+    description: 'Voer interne en externe audits uit met een compleet audit-traject: van scopedefinitie tot rapportage. Volg afwijkingen en corrigerende maatregelen tot aan afsluiting.',
     details: [
       '7-stappen audit wizard',
-      'Geïntegreerde vragenlijsten',
+      'Geïntegreerde vragenlijsten per norm',
       'Afwijkingen- en CPAR-beheer',
-      'PDF-rapportages voor auditors',
+      'PDF-rapportages klaar voor de auditor',
     ],
+    href: '/audits',
     gradient: 'from-emerald-500 to-teal-600',
     iconBg: 'bg-emerald-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>`,
+    navBorder: 'border-emerald-500',
+    navBg: 'bg-emerald-50',
+    navText: 'text-emerald-700',
+    checkColor: 'text-emerald-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
   },
   {
-    title: 'Leveranciersbeheer',
-    subtitle: 'Grip op externe partijen',
-    description: 'Houd uw leveranciersrisico\'s onder controle. Beheer certificaten, compliance-documentatie en plan periodieke beoordelingen voor al uw externe partijen.',
+    title: 'Directiebeoordeling',
+    subtitle: 'Management reviews & verslagen',
+    description: 'Bereid directiebeoordelingen voor conform ISO 27001 clausule 9.3, leg besluiten en actiepunten vast en genereer direct een gestructureerd verslag, klaar voor je certificerende instantie.',
     details: [
-      'Leveranciersregister met contactinformatie',
-      'Certificaatbeheer met verloopwaarschuwingen',
-      'Periodieke leveranciersbeoordelingen',
-      'Risicoclassificatie per leverancier',
+      'Alle verplichte inputpunten clausule 9.3',
+      'Actiepunten met eigenaar en deadline',
+      'Besluitregistratie en historisch overzicht',
+      'PDF-export klaar voor certificerende instantie',
     ],
-    gradient: 'from-violet-500 to-purple-600',
-    iconBg: 'bg-violet-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>`,
-  },
-  {
-    title: 'Directiebeoordelingen',
-    subtitle: 'Gestructureerd reviewproces',
-    description: 'Structureer uw management reviews met voorgedefinieerde agenda\'s, actiepunten en besluitregistratie. Betrek het hele team bij het compliance-proces.',
-    details: [
-      'Voorgedefinieerde beoordelingssecties',
-      'Actiepunten met verantwoordelijken',
-      'Besluitregistratie en opvolging',
-      'Teamgebaseerde samenwerking',
-    ],
+    href: '/directiebeoordeling',
     gradient: 'from-rose-500 to-pink-600',
     iconBg: 'bg-rose-500',
-    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"></path></svg>`,
+    navBorder: 'border-rose-500',
+    navBg: 'bg-rose-50',
+    navText: 'text-rose-700',
+    checkColor: 'text-rose-500',
+    icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
   },
 ];
 
@@ -96,19 +184,19 @@ const stats = [
   { value: '50%', label: 'Snellere audit-voorbereiding' },
   { value: '100+', label: 'Bedrijven vertrouwen op ons' },
   { value: '3-6', label: 'Maanden tot certificering' },
-  { value: '24/7', label: 'Toegang tot uw compliance-data' },
+  { value: '24/7', label: 'Toegang tot je compliance-data' },
 ];
 ---
 
-<Layout title="Functies — Control One">
+<Layout title="Functies: Control One">
   <Header />
   <main>
+
     <!-- Hero -->
     <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-400/10"></div>
       <div class="absolute top-20 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent-400/10 rounded-full blur-3xl"></div>
-
       <div class="relative max-w-7xl mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center">
           <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-primary-700 bg-primary-100 rounded-full">
@@ -116,15 +204,14 @@ const stats = [
             Platform Functies
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary-950 leading-[1.1]">
-            Alles voor uw
+            Alles voor jouw
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">ISO-compliance</span>
           </h1>
           <p class="mt-6 text-lg sm:text-xl text-primary-900/60 max-w-2xl mx-auto leading-relaxed">
-            Control One biedt een compleet pakket aan tools om uw ISO-implementatie te begeleiden, bewaken en beheren — van eerste stap tot certificering.
+            Control One biedt een compleet pakket aan tools om je ISO-implementatie te begeleiden, bewaken en beheren. Control One dekt elk onderdeel van ISO-compliance, zonder dat je specialist hoeft te zijn.
           </p>
         </div>
-
-        <!-- Stats bar -->
+        <!-- Stats -->
         <div class="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {stats.map(stat => (
             <div class="text-center p-6 rounded-2xl bg-white border border-primary-100 shadow-sm">
@@ -136,55 +223,161 @@ const stats = [
       </div>
     </section>
 
-    <!-- Feature cards -->
+    <!-- Feature showcase: two-column sticky layout -->
     <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 space-y-16">
-        {features.map((feature, i) => (
-          <div class:list={['grid lg:grid-cols-5 gap-8 items-center', i % 2 === 1 && 'direction-rtl']}>
-            <!-- Visual card -->
-            <div class:list={['lg:col-span-2 direction-ltr']}>
-              <div class:list={['relative rounded-3xl p-8 sm:p-10 overflow-hidden bg-gradient-to-br', feature.gradient]}>
-                <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4"></div>
-                <div class="absolute bottom-0 left-0 w-32 h-32 bg-black/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="lg:grid lg:grid-cols-[360px_1fr] lg:gap-12 items-start">
 
-                <div class="relative">
-                  <div class:list={['w-14 h-14 rounded-2xl flex items-center justify-center mb-6', feature.iconBg]}>
-                    <Fragment set:html={feature.icon} />
-                  </div>
-                  <div class="text-white/90 text-sm font-medium uppercase tracking-wider mb-2">{feature.subtitle}</div>
-                  <div class="text-white text-2xl font-bold">{feature.title}</div>
+          <!-- Left: vierkante tegels in 2-koloms grid -->
+          <div class="grid grid-cols-2 gap-3 mb-10 lg:mb-0">
+            {features.map((f, i) => (
+              <button
+                class:list={[
+                  'feat-nav feat-tile flex flex-col items-start p-4 rounded-3xl bg-gradient-to-br text-white cursor-pointer text-left',
+                  f.gradient,
+                  i === 0 && 'feat-tile--active',
+                ]}
+                data-idx={i}
+              >
+                <span class="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center mb-4">
+                  <Fragment set:html={f.icon} />
+                </span>
+                <span class="mt-auto">
+                  <span class="block text-sm font-bold leading-tight">{f.title}</span>
+                  <span class="block text-[10px] text-white/65 mt-1 leading-snug">{f.subtitle}</span>
+                </span>
+              </button>
+            ))}
+          </div>
 
-                  <!-- Decorative dots -->
-                  <div class="mt-8 grid grid-cols-6 gap-2">
-                    {[...Array(18)].map((_, j) => (
-                      <div class:list={['w-2 h-2 rounded-full', j < 12 ? 'bg-white/20' : 'bg-white/10']}></div>
-                    ))}
+          <!-- Right: sticky content panel (always in view, no scrolling) -->
+          <div class="lg:sticky lg:top-28">
+            {features.map((f, i) => (
+              <div data-panel={i} class:list={['feat-panel', i !== 0 && 'hidden']}>
+
+                <!-- Gradient header card -->
+                <div class:list={['relative rounded-3xl overflow-hidden bg-gradient-to-br', f.gradient]}>
+                  <div class="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+                  <div class="absolute bottom-0 left-0 w-52 h-52 bg-black/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+                  <div class="relative p-8 sm:p-10 flex items-start gap-5">
+                    <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                      <Fragment set:html={f.icon} />
+                    </div>
+                    <div>
+                      <p class="text-white/60 text-[11px] font-bold uppercase tracking-widest mb-2">{f.subtitle}</p>
+                      <h2 class="text-white text-2xl sm:text-3xl font-bold leading-tight">{f.title}</h2>
+                      <p class="mt-3 text-white/80 text-sm leading-relaxed max-w-lg">{f.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Content -->
-            <div class="lg:col-span-3 direction-ltr">
-              <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-2">{feature.subtitle}</p>
-              <h2 class="text-2xl sm:text-3xl font-bold text-primary-950 mb-4">{feature.title}</h2>
-              <p class="text-primary-900/60 leading-relaxed mb-8">{feature.description}</p>
-              <div class="grid sm:grid-cols-2 gap-4">
-                {feature.details.map(detail => (
-                  <div class="flex items-start gap-3 p-3 rounded-xl bg-primary-50/50">
-                    <svg class="w-5 h-5 text-primary-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    <span class="text-sm text-primary-900/70">{detail}</span>
-                  </div>
-                ))}
+                <!-- Detail bullets -->
+                <div class="mt-4 grid sm:grid-cols-2 gap-3">
+                  {f.details.map(d => (
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-primary-50/60 border border-primary-100">
+                      <svg class:list={['w-4 h-4 shrink-0 mt-0.5', f.checkColor]} fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span class="text-sm text-primary-900/70 leading-snug">{d}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Actions -->
+                <div class="mt-6 flex items-center gap-4">
+                  <a
+                    href={f.href}
+                    class:list={['inline-flex items-center gap-2 text-sm font-semibold transition-all hover:gap-3', f.navText]}
+                  >
+                    Meer over {f.title}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                  </a>
+                  <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-primary-900 hover:bg-primary-800 rounded-xl transition-all">
+                    Gratis proberen
+                  </a>
+                </div>
+
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+
+        </div>
       </div>
     </section>
 
+    <TemplatesBlock />
     <Testimonials />
     <CTA />
   </main>
   <Footer />
 </Layout>
+
+<script>
+  (function () {
+    const navItems = Array.from(document.querySelectorAll<HTMLButtonElement>('.feat-nav'));
+    const panels   = Array.from(document.querySelectorAll<HTMLElement>('.feat-panel'));
+
+    function activate(idx: number) {
+      navItems.forEach((item, i) => {
+        item.classList.toggle('feat-tile--active', i === idx);
+      });
+      panels.forEach((panel, i) => {
+        if (i === idx) {
+          panel.classList.remove('hidden');
+          panel.style.animation = 'none';
+          void panel.offsetHeight;
+          panel.style.animation = 'featPanelIn 0.25s ease';
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+    }
+
+    navItems.forEach((item, i) => {
+      item.addEventListener('click', () => activate(i));
+    });
+  })();
+</script>
+
+<style>
+  /* ── Vierkante tegels ── */
+  .feat-tile {
+    min-height: 130px;
+    box-shadow:
+      0 4px 14px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    opacity: 0.72;
+    filter: brightness(0.82) saturate(0.88);
+    transition:
+      transform  0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.28s ease,
+      opacity    0.22s ease,
+      filter     0.22s ease;
+  }
+
+  /* Actieve tegel: verhoogd, vol kleur */
+  .feat-tile--active {
+    opacity: 1 !important;
+    filter: brightness(1.06) saturate(1.12) !important;
+    transform: scale(1.04) translateY(-4px) !important;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.28),
+      0  4px 12px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+  }
+
+  /* Hover (niet actief): licht omhoog */
+  .feat-tile:hover:not(.feat-tile--active) {
+    opacity: 0.9;
+    filter: brightness(0.94) saturate(1);
+    transform: scale(1.02) translateY(-2px);
+  }
+
+  /* Rechter paneel fade-in */
+  @keyframes featPanelIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to   { opacity: 1; transform: translateX(0);    }
+  }
+</style>

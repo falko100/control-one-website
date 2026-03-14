@@ -4,27 +4,87 @@
 
 <section class="py-24">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="relative rounded-3xl bg-gradient-to-br from-primary-700 via-primary-800 to-primary-950 px-8 py-16 sm:px-16 sm:py-20 overflow-hidden">
-      <div class="absolute top-0 right-0 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+    <div class="relative rounded-3xl overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);">
 
-      <div class="relative max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-          Klaar om uw ISO-compliance te vereenvoudigen?
-        </h2>
-        <p class="mt-4 text-lg text-primary-200/80">
-          Sluit u aan bij honderden bedrijven die Control One vertrouwen voor hun compliance-traject. Start vandaag nog uw gratis proefperiode.
-        </p>
+      <!-- Subtle depth overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/demo" class="inline-flex items-center px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
-            Gratis Proberen
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-          </a>
-          <a href="/demo" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
-            Neem Contact Op
+      <div class="flex flex-col lg:flex-row items-stretch">
+
+        <!-- ── Left: Content ── -->
+        <div class="relative z-10 flex flex-col justify-center px-10 sm:px-14 py-14 lg:py-16 flex-1">
+
+          <!-- Trust badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 w-fit text-xs font-semibold tracking-widest uppercase text-blue-200 bg-white/10 rounded-full border border-white/20">
+            <span class="w-1.5 h-1.5 bg-blue-200 rounded-full animate-pulse"></span>
+            14 dagen gratis uitproberen
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+            Begin vandaag met<br />je ISO Project
+          </h2>
+          <p class="mt-4 text-lg text-blue-100/90 max-w-md leading-relaxed">
+            Geen consultant nodig. Geen eindeloze spreadsheets. Gewoon een helder platform dat je stap voor stap begeleidt van gap analyse tot certificering.
+          </p>
+
+          <!-- Stat row -->
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/80">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              3 tot 5 maanden naar certificering
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              EU-hosting, AVG-compliant
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-200 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Opzegging op elk moment
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-10 flex flex-col sm:flex-row items-start gap-4">
+            <a href="https://app.control-one.nl/register" class="inline-flex items-center px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-blue-50 rounded-lg transition-all shadow-lg shadow-black/20">
+              Gratis Starten
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+            <a href="/contact" class="inline-flex items-center px-6 py-3 text-base font-semibold text-white hover:text-white border border-white/40 hover:border-white/70 hover:bg-white/10 rounded-lg transition-all">
+              Neem Contact Op
+            </a>
+          </div>
+
+          <!-- Team strip -->
+          <a href="/over-ons#team" class="mt-10 pt-8 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center gap-4 group/team cursor-pointer hover:opacity-90 transition-opacity no-underline">
+            <div class="flex -space-x-4">
+              <img src="/team/portrait-1.webp" alt="Teamlid" class="w-13 h-13 rounded-full object-cover border-2 border-white/50 shadow-md group-hover/team:border-white/80 transition-all" style="object-position: center 15%; filter: brightness(1.4) contrast(1.0);" />
+              <img src="/team/portrait-2.webp" alt="Teamlid" class="w-13 h-13 rounded-full object-cover border-2 border-white/50 shadow-md group-hover/team:border-white/80 transition-all" style="object-position: center 15%; filter: brightness(1.4) contrast(1.0);" />
+              <img src="/team/portrait-3.webp" alt="Teamlid" class="w-13 h-13 rounded-full object-cover border-2 border-white/50 shadow-md group-hover/team:border-white/80 transition-all" style="object-position: center 15%; filter: brightness(1.4) contrast(1.0);" />
+              <img src="/team/portrait-4.webp" alt="Teamlid" class="w-13 h-13 rounded-full object-cover border-2 border-white/50 shadow-md group-hover/team:border-white/80 transition-all" style="object-position: center 15%; filter: brightness(1.4) contrast(1.0);" />
+              <img src="/team/portrait-5.webp" alt="Teamlid" class="w-13 h-13 rounded-full object-cover border-2 border-white/50 shadow-md group-hover/team:border-white/80 transition-all" style="object-position: center 15%; filter: brightness(1.4) contrast(1.0);" />
+            </div>
+            <div>
+              <p class="text-sm text-white font-semibold group-hover/team:underline">Ons team staat voor je klaar</p>
+              <p class="text-xs text-blue-200/80">We reageren binnen 1 werkdag</p>
+            </div>
+            <svg class="w-4 h-4 text-white/50 group-hover/team:text-white/90 group-hover/team:translate-x-1 transition-all ml-1 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </a>
         </div>
+
+        <!-- ── Right: Portrait photo ── -->
+        <div class="hidden lg:block relative w-[340px] xl:w-[400px] shrink-0 overflow-hidden">
+          <!-- Left-edge fade to blend into content -->
+          <div class="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style="background: linear-gradient(to right, #1a3f7a, transparent);"></div>
+          <!-- Bottom fade -->
+          <div class="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none" style="background: linear-gradient(to top, rgba(26,63,122,0.6), transparent);"></div>
+          <img
+            src="/team/portrait-cta.webp"
+            alt="Control One teamlid"
+            class="w-full h-full object-cover"
+            style="object-position: center top; min-height: 420px; filter: brightness(1.35) contrast(0.95) saturate(0.85);"
+          />
+        </div>
+
       </div>
     </div>
   </div>
