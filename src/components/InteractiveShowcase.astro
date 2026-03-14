@@ -75,7 +75,7 @@ const items = [
 ];
 ---
 
-<section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e4b8f 0%, #1a3f7a 60%, #1e4b8f 100%);">
+<section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);">
 
   <!-- Background glow orbs -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -103,7 +103,7 @@ const items = [
       <div id="sc-nav" class="flex items-center gap-1 p-1.5 rounded-2xl border border-white/20 bg-black/20 backdrop-blur-sm overflow-x-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
         {items.map((item, i) => (
           <button
-            class="sc-tab flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0"
+            class="sc-tab flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap shrink-0 text-white/80 hover:text-white"
             data-tab={item.id}
           >
             <span class="sc-tab-icon w-4 h-4 shrink-0 transition-colors duration-200">
@@ -121,6 +121,14 @@ const items = [
       <!-- Outer ring glow -->
       <div class="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
       <div class="absolute -inset-6 rounded-3xl bg-primary-600/10 blur-2xl pointer-events-none"></div>
+
+      <!-- Nav arrows -->
+      <button id="sc-prev" aria-label="Vorige" class="absolute -left-14 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 shadow-lg">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="sc-next" aria-label="Volgende" class="absolute -right-14 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-all duration-200 shadow-lg">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
 
       <!-- Browser frame -->
       <div class="relative rounded-2xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)]">
@@ -218,7 +226,7 @@ const items = [
   aria-label="Sluit vergroting"
 >
   <!-- Backdrop -->
-  <div id="sc-lb-backdrop" class="absolute inset-0 bg-black/90 backdrop-blur-sm"></div>
+  <div id="sc-lb-backdrop" class="absolute inset-0 backdrop-blur-sm" style="background: linear-gradient(135deg, rgba(14,36,112,0.72) 0%, rgba(26,63,122,0.68) 50%, rgba(30,75,143,0.72) 100%);"></div>
 
   <!-- Image container -->
   <div class="relative w-full max-w-6xl mx-auto">
@@ -257,12 +265,12 @@ const items = [
   /* Tab: active */
   .sc-tab.active {
     background: white;
-    color: #0f172a;
+    color: #0f172a !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
   }
   .sc-tab.active .sc-tab-icon,
   .sc-tab.active .sc-tab-label {
-    color: #0f172a;
+    color: #0f172a !important;
   }
 
   /* Screenshot crossfade */
@@ -363,6 +371,24 @@ const items = [
       activate(tab.dataset.tab!);
       isManualClick = false;
     });
+  });
+
+  // Arrow navigation
+  const prevBtn = document.getElementById('sc-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('sc-next') as HTMLButtonElement;
+
+  prevBtn?.addEventListener('click', () => {
+    isManualClick = true;
+    current = (current - 1 + IDS.length) % IDS.length;
+    activate(IDS[current]);
+    isManualClick = false;
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    isManualClick = true;
+    current = (current + 1) % IDS.length;
+    activate(IDS[current]);
+    isManualClick = false;
   });
 
   // Pause auto-advance on hover
