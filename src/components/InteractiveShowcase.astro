@@ -320,6 +320,9 @@ const items = [
     prog.classList.add('running');
   }
 
+  let isManualClick = false;
+  let hovered = false;
+
   function activate(id: string, resetTimer = true) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
     imgs.forEach(img => {
@@ -333,8 +336,8 @@ const items = [
       (d as HTMLElement).style.pointerEvents = on ? '' : 'none';
       (d as HTMLElement).style.position = on ? '' : 'absolute';
     });
-    // Only scroll the tab into view on manual click, never during auto-advance
-    if (resetTimer) {
+    // Only scroll the tab into view on manual click, never on init or auto-advance
+    if (isManualClick) {
       const activeTab = Array.from(tabs).find(t => t.dataset.tab === id);
       activeTab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
@@ -343,7 +346,7 @@ const items = [
     if (resetTimer) {
       current = IDS.indexOf(id);
       if (timer) clearInterval(timer);
-      timer = setInterval(advance, 5000);
+      if (!hovered) timer = setInterval(advance, 5000);
     }
   }
 
@@ -355,7 +358,21 @@ const items = [
   activate(IDS[0]);
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => activate(tab.dataset.tab!));
+    tab.addEventListener('click', () => {
+      isManualClick = true;
+      activate(tab.dataset.tab!);
+      isManualClick = false;
+    });
+  });
+
+  // Pause auto-advance on hover
+  screen.addEventListener('mouseenter', () => {
+    hovered = true;
+    if (timer) { clearInterval(timer); timer = null; }
+  });
+  screen.addEventListener('mouseleave', () => {
+    hovered = false;
+    if (!timer) timer = setInterval(advance, 5000);
   });
 
   // ── Lightbox ──────────────────────────────────────────
