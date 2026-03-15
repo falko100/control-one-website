@@ -63,148 +63,189 @@ const chapters = [
   },
 ];
 
-const annexSections = [
+const annexGroups = [
   {
-    id: 'a5', label: 'A.5', name: 'Organisatorisch', colorClass: 'text-blue-400', count: 37,
+    name: 'ISMS Handboek',
+    dot: 'bg-blue-500',
+    countStyle: 'text-blue-700 bg-blue-50',
     items: [
-      { num: '5.1',  title: 'Beleid voor informatiebeveiliging' },
-      { num: '5.2',  title: 'Rollen en verantwoordelijkheden op het gebied van informatiebeveiliging' },
-      { num: '5.3',  title: 'Functiescheiding' },
-      { num: '5.4',  title: 'Beheersverantwoordelijkheden' },
-      { num: '5.5',  title: 'Contact met autoriteiten' },
-      { num: '5.6',  title: 'Contact met speciale belangengroepen' },
-      { num: '5.7',  title: 'Bedreigingsinformatie' },
-      { num: '5.8',  title: 'Informatiebeveiliging in projectmanagement' },
-      { num: '5.9',  title: 'Inventarisatie van informatie en andere bijbehorende assets' },
-      { num: '5.10', title: 'Aanvaardbaar gebruik van informatie en andere bijbehorende assets' },
-      { num: '5.11', title: 'Teruggave van assets' },
-      { num: '5.12', title: 'Classificatie van informatie' },
-      { num: '5.13', title: 'Labelen van informatie' },
-      { num: '5.14', title: 'Informatieoverdracht' },
-      { num: '5.15', title: 'Toegangsbeveiliging' },
-      { num: '5.16', title: 'Identiteitsbeheer' },
-      { num: '5.17', title: 'Authenticatie-informatie' },
-      { num: '5.18', title: 'Toegangsrechten' },
-      { num: '5.19', title: 'Informatiebeveiliging in leveranciersrelaties' },
-      { num: '5.20', title: 'Aanpak informatiebeveiliging binnen leveranciersovereenkomsten' },
-      { num: '5.21', title: 'Beheer van informatiebeveiliging in de ICT-toeleveringsketen' },
-      { num: '5.22', title: 'Monitoring, beoordeling en wijzigingsbeheer van leveranciersdiensten' },
-      { num: '5.23', title: 'Informatiebeveiliging bij het gebruik van cloud diensten' },
-      { num: '5.24', title: 'Planning en voorbereiding van informatiebeveiligingsincidenten' },
-      { num: '5.25', title: 'Beoordeling en besluit over informatiebeveiligingsgebeurtenissen' },
-      { num: '5.26', title: 'Reactie op informatiebeveiligingsincidenten' },
-      { num: '5.27', title: 'Leren van informatiebeveiligingsincidenten' },
-      { num: '5.28', title: 'Verzameling van bewijs' },
-      { num: '5.29', title: 'Informatiebeveiliging tijdens verstoring' },
-      { num: '5.30', title: 'ICT-gereedheid voor bedrijfscontinuïteit' },
-      { num: '5.31', title: 'Identificatie van wettelijke, statutaire, regelgevende en contractuele vereisten' },
-      { num: '5.32', title: 'Intellectuele eigendomsrechten' },
-      { num: '5.33', title: 'Gegevensbescherming' },
-      { num: '5.34', title: 'Privacy en bescherming van Persoonsgegevens' },
-      { num: '5.35', title: 'Onafhankelijke beoordeling van informatiebeveiliging' },
-      { num: '5.36', title: 'Naleving van beleidslijnen en normen voor informatiebeveiliging' },
-      { num: '5.37', title: 'Gedocumenteerde bedieningsprocedures' },
+      { name: 'ISMS Handboek', sub: 'ISO 27001:2022' },
+      { name: 'Scope document', sub: 'H4.3' },
+      { name: 'Contextanalyse', sub: 'H4.1' },
+      { name: 'Register van belanghebbenden', sub: 'H4.2' },
     ],
   },
   {
-    id: 'a6', label: 'A.6', name: 'Mensen', colorClass: 'text-emerald-400', count: 8,
+    name: 'Beleid',
+    dot: 'bg-emerald-500',
+    countStyle: 'text-emerald-700 bg-emerald-50',
     items: [
-      { num: '6.1', title: 'Screening' },
-      { num: '6.2', title: 'Arbeidsvoorwaarden' },
-      { num: '6.3', title: 'Bewustwording, opleiding en training op het gebied van informatiebeveiliging' },
-      { num: '6.4', title: 'Disciplinair proces' },
-      { num: '6.5', title: 'Verantwoordelijkheden na beëindiging of verandering van dienstverband' },
-      { num: '6.6', title: 'Vertrouwelijkheids- of geheimhoudingsovereenkomsten' },
-      { num: '6.7', title: 'Werken op afstand' },
-      { num: '6.8', title: 'Rapportage van informatiebeveiligingsgebeurtenissen' },
+      { name: 'Informatiebeveiligingsbeleid', sub: 'H5.2' },
+      { name: 'Aanvaardbaar Gebruik Beleid', sub: 'Template' },
+      { name: 'Cloud Services Beleid', sub: 'Template' },
+      { name: 'Draadloos Netwerk Beleid', sub: 'Template' },
+      { name: 'Wachtwoord Beleid', sub: 'Template' },
+      { name: 'Bring Your Own Device Beleid', sub: 'Template' },
+      { name: 'Netwerk Connectie Beleid', sub: 'Template' },
+      { name: 'Social Media Beleid', sub: 'Template' },
     ],
   },
   {
-    id: 'a7', label: 'A.7', name: 'Fysiek', colorClass: 'text-orange-400', count: 14,
+    name: 'Registers & Formulieren',
+    dot: 'bg-indigo-500',
+    countStyle: 'text-indigo-700 bg-indigo-50',
     items: [
-      { num: '7.1',  title: 'Fysieke beveiligingszone' },
-      { num: '7.2',  title: 'Fysieke toegangscontroles' },
-      { num: '7.3',  title: 'Beveiligen van kantoren, kamers en faciliteiten' },
-      { num: '7.4',  title: 'Fysieke beveiligingsmonitoring' },
-      { num: '7.5',  title: 'Bescherming tegen fysieke en omgevingsbedreigingen' },
-      { num: '7.6',  title: 'Werken in beveiligde ruimtes' },
-      { num: '7.7',  title: 'Clear desk, clear screen' },
-      { num: '7.8',  title: 'Plaatsing en Beveiliging van Apparatuur' },
-      { num: '7.9',  title: 'Beveiliging van Bedrijfsmiddelen buiten de Locatie' },
-      { num: '7.10', title: 'Opslagmedia' },
-      { num: '7.11', title: 'Ondersteunende Voorzieningen' },
-      { num: '7.12', title: 'Beveiliging van Bekabeling' },
-      { num: '7.13', title: 'Onderhoud van de apparatuur' },
-      { num: '7.14', title: 'Veilige Verwijdering of Hergebruik van Apparatuur' },
+      { name: 'Functiebeschrijvingen', sub: 'H5.3' },
+      { name: 'Verantwoordelijkheidsmatrix', sub: 'H5.3' },
+      { name: 'Risicobeoordelingsrapport', sub: 'H6.1' },
+      { name: 'Risicobewerkingsplan', sub: 'H6.1' },
+      { name: 'Doelstellingenregister', sub: 'H6.2' },
+      { name: 'Competentiematrix', sub: 'H7.2' },
+      { name: 'Bewustwordingsprogramma', sub: 'H7.3' },
+      { name: 'Documentbeheerbeleid', sub: 'H7.5' },
+      { name: 'Verklaring van Toepasselijkheid', sub: 'H8 / VvT' },
+      { name: 'Auditplan & auditrapport', sub: 'H9.2' },
+      { name: 'KPI-register', sub: 'H9.1' },
+      { name: 'Directiebeoordelingsverslag', sub: 'H9.3' },
+      { name: 'Non-conformiteitenregister', sub: 'H10.1' },
+      { name: 'Corrigerende maatregelenplan', sub: 'H10.1' },
+      { name: 'Verbeterregister', sub: 'H10.2' },
     ],
   },
   {
-    id: 'a8', label: 'A.8', name: 'Technologisch', colorClass: 'text-violet-400', count: 34,
+    name: 'Annex A.5 – Organisatorisch',
+    dot: 'bg-blue-400',
+    countStyle: 'text-blue-700 bg-blue-50',
     items: [
-      { num: '8.1',  title: 'Eindgebruikers apparatuur' },
-      { num: '8.2',  title: 'Speciale toegangsrechten' },
-      { num: '8.3',  title: 'Beperking van toegang tot informatie' },
-      { num: '8.4',  title: 'Toegang tot broncode' },
-      { num: '8.5',  title: 'Beveiligde authenticatie' },
-      { num: '8.6',  title: 'Capaciteitsbeheer' },
-      { num: '8.7',  title: 'Bescherming tegen malware' },
-      { num: '8.8',  title: 'Beheer van technische kwetsbaarheden' },
-      { num: '8.9',  title: 'Configuratiebeheer' },
-      { num: '8.10', title: 'Informatie verwijderen' },
-      { num: '8.11', title: 'Gegevensmaskering' },
-      { num: '8.12', title: 'Preventie van datalekken' },
-      { num: '8.13', title: 'Informatie back-up' },
-      { num: '8.14', title: 'Redundantie van informatieverwerkingsfaciliteiten' },
-      { num: '8.15', title: 'Loggen' },
-      { num: '8.16', title: 'Bewaking van activiteiten' },
-      { num: '8.17', title: 'Kloksynchronisatie' },
-      { num: '8.18', title: 'Gebruik van geprivilegieerde hulpprogramma\'s' },
-      { num: '8.19', title: 'Installatie van software op operationele systemen' },
-      { num: '8.20', title: 'Netwerkbeveiliging' },
-      { num: '8.21', title: 'Beveiliging van netwerkdiensten' },
-      { num: '8.22', title: 'Segregatie in netwerken' },
-      { num: '8.23', title: 'Webfiltering' },
-      { num: '8.24', title: 'Gebruik van cryptografie' },
-      { num: '8.25', title: 'Veilige ontwikkelingslevenscyclus' },
-      { num: '8.26', title: 'Beveiligingsvereisten voor applicaties' },
-      { num: '8.27', title: 'Veilige systeemarchitectuur en engineering principes' },
-      { num: '8.28', title: 'Veilig programmeren' },
-      { num: '8.29', title: 'Beveiligingstesten in ontwikkeling en acceptatie' },
-      { num: '8.30', title: 'Uitbestede ontwikkeling' },
-      { num: '8.31', title: 'Scheiding van ontwikkel-, test- en productieomgevingen' },
-      { num: '8.32', title: 'Wijzigingsbeheer' },
-      { num: '8.33', title: 'Testinformatie' },
-      { num: '8.34', title: 'Bescherming van informatiesystemen tijdens audit en testen' },
-    ],
-  },
-];
-
-const annexExtras = [
-  {
-    id: 'mgmt',
-    title: 'Management Documenten',
-    items: [
-      'Aanvaardbaar Gebruik Beleid',
-      'Cloud Services Beleid',
-      'Draadloos Netwerk Beleid',
-      'Wachtwoord Beleid',
-      'Bring Your Own Device Beleid',
-      'Netwerk Connectie Beleid',
-      'Social Media Beleid',
+      { name: 'Beleid voor informatiebeveiliging', sub: '5.1' },
+      { name: 'Rollen en verantwoordelijkheden IB', sub: '5.2' },
+      { name: 'Functiescheiding', sub: '5.3' },
+      { name: 'Beheersverantwoordelijkheden', sub: '5.4' },
+      { name: 'Contact met autoriteiten', sub: '5.5' },
+      { name: 'Contact met speciale belangengroepen', sub: '5.6' },
+      { name: 'Bedreigingsinformatie', sub: '5.7' },
+      { name: 'IB in projectmanagement', sub: '5.8' },
+      { name: 'Inventarisatie van assets', sub: '5.9' },
+      { name: 'Aanvaardbaar gebruik van assets', sub: '5.10' },
+      { name: 'Teruggave van assets', sub: '5.11' },
+      { name: 'Classificatie van informatie', sub: '5.12' },
+      { name: 'Labelen van informatie', sub: '5.13' },
+      { name: 'Informatieoverdracht', sub: '5.14' },
+      { name: 'Toegangsbeveiliging', sub: '5.15' },
+      { name: 'Identiteitsbeheer', sub: '5.16' },
+      { name: 'Authenticatie-informatie', sub: '5.17' },
+      { name: 'Toegangsrechten', sub: '5.18' },
+      { name: 'IB in leveranciersrelaties', sub: '5.19' },
+      { name: 'IB in leveranciersovereenkomsten', sub: '5.20' },
+      { name: 'IB in ICT-toeleveringsketen', sub: '5.21' },
+      { name: 'Monitoring leveranciersdiensten', sub: '5.22' },
+      { name: 'IB bij gebruik van clouddiensten', sub: '5.23' },
+      { name: 'Planning IB-incidenten', sub: '5.24' },
+      { name: 'Beoordeling IB-gebeurtenissen', sub: '5.25' },
+      { name: 'Reactie op IB-incidenten', sub: '5.26' },
+      { name: 'Leren van IB-incidenten', sub: '5.27' },
+      { name: 'Verzameling van bewijs', sub: '5.28' },
+      { name: 'IB tijdens verstoring', sub: '5.29' },
+      { name: 'ICT-gereedheid bedrijfscontinuïteit', sub: '5.30' },
+      { name: 'Wettelijke & contractuele vereisten', sub: '5.31' },
+      { name: 'Intellectuele eigendomsrechten', sub: '5.32' },
+      { name: 'Gegevensbescherming', sub: '5.33' },
+      { name: 'Privacy & bescherming persoonsgegevens', sub: '5.34' },
+      { name: 'Onafhankelijke beoordeling IB', sub: '5.35' },
+      { name: 'Naleving IB-beleid', sub: '5.36' },
+      { name: 'Gedocumenteerde bedieningsprocedures', sub: '5.37' },
     ],
   },
   {
-    id: 'audit',
-    title: 'Interne Audit',
+    name: 'Annex A.6 – Mensen',
+    dot: 'bg-emerald-400',
+    countStyle: 'text-emerald-700 bg-emerald-50',
     items: [
-      'Gedragscode voor Interne Auditors',
-      'Interne Audit Checklist Vragen – Leverancier',
-      'Interne Audit Checklist Vragen – Proces',
-      'Interne Audit Checklist Vragen – ISMS',
-      'Interne Audit Feedback Formulier',
-      'Interne Audit Rapport Template',
-      'ISMS Auditeren Stap-voor-Stap',
-      'Vaardigheden en kennisvereisten voor ISMS Auditoren',
+      { name: 'Screening', sub: '6.1' },
+      { name: 'Arbeidsvoorwaarden', sub: '6.2' },
+      { name: 'Bewustwording, opleiding en training IB', sub: '6.3' },
+      { name: 'Disciplinair proces', sub: '6.4' },
+      { name: 'Verantwoordelijkheden na einde dienstverband', sub: '6.5' },
+      { name: 'Vertrouwelijkheidsovereenkomsten', sub: '6.6' },
+      { name: 'Werken op afstand', sub: '6.7' },
+      { name: 'Rapportage van IB-gebeurtenissen', sub: '6.8' },
+    ],
+  },
+  {
+    name: 'Annex A.7 – Fysiek',
+    dot: 'bg-orange-400',
+    countStyle: 'text-orange-700 bg-orange-50',
+    items: [
+      { name: 'Fysieke beveiligingszone', sub: '7.1' },
+      { name: 'Fysieke toegangscontroles', sub: '7.2' },
+      { name: 'Beveiligen van kantoren en faciliteiten', sub: '7.3' },
+      { name: 'Fysieke beveiligingsmonitoring', sub: '7.4' },
+      { name: 'Bescherming tegen fysieke bedreigingen', sub: '7.5' },
+      { name: 'Werken in beveiligde ruimtes', sub: '7.6' },
+      { name: 'Clear desk, clear screen', sub: '7.7' },
+      { name: 'Plaatsing en beveiliging van apparatuur', sub: '7.8' },
+      { name: 'Beveiliging van assets buiten locatie', sub: '7.9' },
+      { name: 'Opslagmedia', sub: '7.10' },
+      { name: 'Ondersteunende voorzieningen', sub: '7.11' },
+      { name: 'Beveiliging van bekabeling', sub: '7.12' },
+      { name: 'Onderhoud van apparatuur', sub: '7.13' },
+      { name: 'Veilige verwijdering van apparatuur', sub: '7.14' },
+    ],
+  },
+  {
+    name: 'Annex A.8 – Technologisch',
+    dot: 'bg-violet-500',
+    countStyle: 'text-violet-700 bg-violet-50',
+    items: [
+      { name: 'Eindgebruikers apparatuur', sub: '8.1' },
+      { name: 'Speciale toegangsrechten', sub: '8.2' },
+      { name: 'Beperking van toegang tot informatie', sub: '8.3' },
+      { name: 'Toegang tot broncode', sub: '8.4' },
+      { name: 'Beveiligde authenticatie', sub: '8.5' },
+      { name: 'Capaciteitsbeheer', sub: '8.6' },
+      { name: 'Bescherming tegen malware', sub: '8.7' },
+      { name: 'Beheer van technische kwetsbaarheden', sub: '8.8' },
+      { name: 'Configuratiebeheer', sub: '8.9' },
+      { name: 'Informatie verwijderen', sub: '8.10' },
+      { name: 'Gegevensmaskering', sub: '8.11' },
+      { name: 'Preventie van datalekken', sub: '8.12' },
+      { name: 'Informatie back-up', sub: '8.13' },
+      { name: 'Redundantie van informatieverwerkingsfaciliteiten', sub: '8.14' },
+      { name: 'Loggen', sub: '8.15' },
+      { name: 'Bewaking van activiteiten', sub: '8.16' },
+      { name: 'Kloksynchronisatie', sub: '8.17' },
+      { name: 'Gebruik van geprivilegieerde hulpprogramma\'s', sub: '8.18' },
+      { name: 'Installatie van software', sub: '8.19' },
+      { name: 'Netwerkbeveiliging', sub: '8.20' },
+      { name: 'Beveiliging van netwerkdiensten', sub: '8.21' },
+      { name: 'Segregatie in netwerken', sub: '8.22' },
+      { name: 'Webfiltering', sub: '8.23' },
+      { name: 'Gebruik van cryptografie', sub: '8.24' },
+      { name: 'Veilige ontwikkelingslevenscyclus', sub: '8.25' },
+      { name: 'Beveiligingsvereisten voor applicaties', sub: '8.26' },
+      { name: 'Veilige systeemarchitectuur', sub: '8.27' },
+      { name: 'Veilig programmeren', sub: '8.28' },
+      { name: 'Beveiligingstesten in ontwikkeling', sub: '8.29' },
+      { name: 'Uitbestede ontwikkeling', sub: '8.30' },
+      { name: 'Scheiding van omgevingen', sub: '8.31' },
+      { name: 'Wijzigingsbeheer', sub: '8.32' },
+      { name: 'Testinformatie', sub: '8.33' },
+      { name: 'Bescherming van informatiesystemen bij audit', sub: '8.34' },
+    ],
+  },
+  {
+    name: 'Interne Audit',
+    dot: 'bg-teal-500',
+    countStyle: 'text-teal-700 bg-teal-50',
+    items: [
+      { name: 'ISMS Auditeren Stap-voor-Stap', sub: 'Handleiding' },
+      { name: 'Gedragscode voor Interne Auditors', sub: 'Procedure' },
+      { name: 'Interne Audit Checklist – Leverancier', sub: 'Checklist' },
+      { name: 'Interne Audit Checklist – Proces', sub: 'Checklist' },
+      { name: 'Interne Audit Checklist – ISMS', sub: 'Checklist' },
+      { name: 'Interne Audit Feedback Formulier', sub: 'Template' },
+      { name: 'Interne Audit Rapport Template', sub: 'Template' },
+      { name: 'Kennis Vereisten ISMS Auditoren', sub: 'Template' },
     ],
   },
 ];
@@ -450,105 +491,67 @@ const benefits = [
       </div>
     </section>
 
-    <!-- Annex A (interactive) -->
-    <section class="py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%)">
-      <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <div class="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-800/30 rounded-full blur-[80px]"></div>
-      </div>
-
-      <div class="relative max-w-7xl mx-auto px-6">
+    <!-- Annex A (grouped cards) -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
         <!-- Header -->
         <div class="max-w-3xl mx-auto text-center mb-12">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-accent-400 bg-accent-400/10 rounded-full border border-accent-400/20">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-100">
             Annex A: ISO 27001:2022
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            93 beheersmaatregelen, 4 categorieën
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Alle ISMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-300/75 max-w-xl mx-auto leading-relaxed">
-            Klik op een categorie om alle maatregelen te bekijken. Via de VvT in Control One documenteer je welke maatregelen van toepassing zijn op jouw organisatie.
+          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+            In Control One zijn alle 93 Annex A-maatregelen direct gekoppeld aan je risicobeoordelingsresultaten en vooraf ingevuld door ISO-experts.
           </p>
         </div>
-
-        <!-- Tab buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10">
-          {annexSections.map((sec, i) => (
-            <button
-              data-annex-tab={sec.id}
-              class:list={[
-                'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
-                i === 0
-                  ? 'bg-white text-primary-950 border-transparent shadow-lg'
-                  : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
-              ]}
-            >
-              <span class:list={['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
-                {sec.label}
-              </span>
-              {sec.name}
-              <span class:list={['annex-count text-xs font-semibold px-2 py-0.5 rounded-full', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
-                {sec.count}
-              </span>
-            </button>
-          ))}
-          {annexExtras.map(extra => (
-            <button
-              data-annex-tab={extra.id}
-              class="annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white"
-            >
-              {extra.title}
-              <span class="annex-count text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-primary-400">
-                {extra.items.length}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        <!-- Measure panels -->
-        <div class="min-h-64">
-          {annexSections.map((sec, i) => (
-            <div data-annex-panel={sec.id} class:list={[i !== 0 && 'hidden']}>
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                {sec.items.map(item => (
-                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
-                    <span class:list={['text-xs font-mono font-bold shrink-0 w-9', sec.colorClass]}>
-                      {item.num}
-                    </span>
-                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">
-                      {item.title}
+        <!-- Grouped document cards -->
+        <div class="space-y-6 max-w-5xl mx-auto">
+          {annexGroups.map(group => (
+            <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+              <div class="flex items-center justify-between px-5 py-4 border-b border-primary-100 bg-primary-50/30">
+                <div class="flex items-center gap-2.5">
+                  <span class:list={['w-3 h-3 rounded-full shrink-0', group.dot]}></span>
+                  <span class="text-sm font-bold text-primary-950">{group.name}</span>
+                </div>
+                <span class:list={['text-xs font-semibold px-2.5 py-1 rounded-full', group.countStyle]}>
+                  {group.items.length} templates
+                </span>
+              </div>
+              <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {group.items.map(item => (
+                  <div class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary-50/60 transition-colors group/item">
+                    <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium text-primary-900 truncate leading-snug">{item.name}</p>
+                      <p class="text-xs text-primary-900/40 mt-0.5">{item.sub}</p>
+                    </div>
+                    <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full shrink-0 hidden sm:block">
+                      Vooringevuld
                     </span>
                   </div>
                 ))}
               </div>
             </div>
           ))}
-          {annexExtras.map(extra => (
-            <div data-annex-panel={extra.id} class="hidden">
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                {extra.items.map(item => (
-                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
-                    <svg class="w-4 h-4 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
-
-        <!-- VvT callout -->
-        <div class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-white/5 border border-white/10">
+        <!-- Callout box -->
+        <div class="mt-10 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-primary-950 border border-primary-900">
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div class="w-14 h-14 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
+            <div class="w-12 h-12 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
             </div>
-            <div>
-              <h3 class="text-lg font-bold text-white mb-1">Verklaring van Toepasselijkheid (VvT)</h3>
-              <p class="text-primary-300/75 leading-relaxed">
-                Genereer automatisch je Statement of Applicability op basis van je risicobeoordeling en geïmplementeerde beheersmaatregelen. Exporteer als PDF voor je auditor.
-              </p>
+            <div class="flex-1">
+              <h3 class="text-base font-bold text-white mb-1">Verklaring van Toepasselijkheid (VvT)</h3>
+              <p class="text-primary-300/75 text-sm leading-relaxed">Genereer automatisch je Statement of Applicability op basis van je risicobeoordeling en geïmplementeerde beheersmaatregelen. Exporteer als PDF voor je auditor.</p>
             </div>
+            <a href="https://app.control-one.nl/register" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-xl transition-all shadow-lg whitespace-nowrap">
+              Gratis uitproberen
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -560,31 +563,6 @@ const benefits = [
 </Layout>
 
 <script>
-  // Annex A tab switching
-  const annexBtns = document.querySelectorAll<HTMLButtonElement>('[data-annex-tab]');
-  const annexPanels = document.querySelectorAll<HTMLElement>('[data-annex-panel]');
-
-  function activateAnnexTab(targetId: string) {
-    annexBtns.forEach(btn => {
-      const isActive = btn.dataset.annexTab === targetId;
-      btn.className = [
-        'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
-        isActive
-          ? 'bg-white text-primary-950 border-transparent shadow-lg'
-          : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
-      ].join(' ');
-      const letter = btn.querySelector<HTMLElement>('.annex-letter');
-      const count  = btn.querySelector<HTMLElement>('.annex-count');
-      if (letter) letter.className = ['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
-      if (count)  count.className  = ['annex-count text-xs font-semibold px-2 py-0.5 rounded-full',   isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
-    });
-    annexPanels.forEach(panel => {
-      panel.dataset.annexPanel === targetId ? panel.classList.remove('hidden') : panel.classList.add('hidden');
-    });
-  }
-
-  annexBtns.forEach(btn => btn.addEventListener('click', () => activateAnnexTab(btn.dataset.annexTab!)));
-
   document.querySelectorAll<HTMLElement>('.chapter-card').forEach(card => {
     card.addEventListener('click', () => {
       const body = card.querySelector<HTMLElement>('.chapter-body')!;

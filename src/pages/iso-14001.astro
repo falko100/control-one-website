@@ -63,71 +63,91 @@ const chapters = [
   },
 ];
 
-const emsSections = [
+const emsGroups = [
   {
-    id: 'h4h10',
-    label: 'H4–H10',
-    name: 'Hoofdstukken',
-    colorClass: 'text-green-400',
+    name: 'Handboek',
+    dot: 'bg-blue-500',
+    countStyle: 'text-blue-700 bg-blue-50',
     items: [
-      { num: '4.1',  title: 'Scope document' },
-      { num: '4.2',  title: 'Milieucontextanalyse' },
-      { num: '4.3',  title: 'Register van milieuaspecten' },
-      { num: '4.4',  title: 'Register van belanghebbenden' },
-      { num: '5.1',  title: 'Milieubeleid' },
-      { num: '5.2',  title: 'Verantwoordelijkheidsmatrix' },
-      { num: '5.3',  title: 'Organogram' },
-      { num: '6.1',  title: 'Milieuaspecten en -effectenanalyse' },
-      { num: '6.2',  title: 'Wettelijke vereistenregister' },
-      { num: '6.3',  title: 'Doelstellingenregister' },
-      { num: '7.1',  title: 'Competentiematrix' },
-      { num: '7.2',  title: 'Trainingsregister' },
-      { num: '7.3',  title: 'Communicatieplan' },
-      { num: '7.4',  title: 'Documentbeheerbeleid' },
-      { num: '8.1',  title: 'Operationele beheersprocedures' },
-      { num: '8.2',  title: 'Noodprocedure' },
-      { num: '8.3',  title: 'Afvalverwerkingslog' },
-      { num: '8.4',  title: 'Leveranciersbeoordeling' },
-      { num: '9.1',  title: 'Nalevingsevaluatierapport' },
-      { num: '9.2',  title: 'Auditplan & auditrapport' },
-      { num: '9.3',  title: 'KPI-overzicht' },
-      { num: '9.4',  title: 'Directiebeoordelingsverslag' },
-      { num: '10.1', title: 'Non-conformiteitenregister' },
-      { num: '10.2', title: 'Corrigerende maatregelenplan' },
-      { num: '10.3', title: 'Verbeterregister' },
-    ],
-  },
-];
-
-const emsExtras = [
-  {
-    id: 'algemeen',
-    title: 'Algemeen',
-    items: [
-      'EMS Handboek',
-      'Beheer van Management Systeem Documentatie Procedure',
-      'Document Wijziging Verzoek Formulier',
-      'Beheer van Management Systeem Gegevens Procedure',
-      'Overzicht van Verantwoordelijkheden en autoriteiten',
-      'Documentatiematrix',
-      'Project Planning',
-      'ISO 14001 Checklist',
-      'EMS Beheerd Gegevens Register',
-      'EMS Beheerd Documenten Register',
+      { name: 'EMS Handboek', sub: 'ISO 14001:2015' },
+      { name: 'Documentatiematrix', sub: 'Overzicht' },
+      { name: 'Scope & toepassingsgebied', sub: 'H4 conform' },
     ],
   },
   {
-    id: 'audit',
-    title: 'Interne Audit',
+    name: 'Beleid',
+    dot: 'bg-emerald-500',
+    countStyle: 'text-emerald-700 bg-emerald-50',
     items: [
-      'Auditeren Stap-voor-Stap',
-      'Gedragscode voor Interne Auditors',
-      'Interne Audit Feedback Formulier',
-      'Interne Audit Rapport Template',
-      'Interne Audit Checklist Vragen – EMS',
-      'Interne Audit Checklist Vragen – Milieuaspecten',
-      'Interne Audit Checklist Vragen – Naleving',
-      'Vaardigheden en Kennis Vereisten voor EMS Auditoren',
+      { name: 'Milieubeleid', sub: 'H5.2' },
+      { name: 'Documentbeheerbeleid', sub: 'H7.5' },
+      { name: 'Communicatieplan', sub: 'H7.4' },
+      { name: 'Overzicht Verantwoordelijkheden', sub: 'H5.3' },
+    ],
+  },
+  {
+    name: 'Procedures',
+    dot: 'bg-amber-500',
+    countStyle: 'text-amber-700 bg-amber-50',
+    items: [
+      { name: 'Beheer MS Documentatie Procedure', sub: 'H7.5' },
+      { name: 'Beheer MS Gegevens Procedure', sub: 'H7.5' },
+      { name: 'Operationele beheersprocedures', sub: 'H8.1' },
+      { name: 'Noodprocedure', sub: 'H8.2' },
+      { name: 'Project Planning', sub: 'Template' },
+      { name: 'ISO 14001 Checklist', sub: 'Pre-audit' },
+    ],
+  },
+  {
+    name: 'Registers & Analyses',
+    dot: 'bg-indigo-500',
+    countStyle: 'text-indigo-700 bg-indigo-50',
+    items: [
+      { name: 'Milieucontextanalyse', sub: 'H4.1' },
+      { name: 'Register van milieuaspecten', sub: 'H4.3' },
+      { name: 'Register van belanghebbenden', sub: 'H4.2' },
+      { name: 'Scope document', sub: 'H4.3' },
+      { name: 'Milieuaspecten en -effectenanalyse', sub: 'H6.1' },
+      { name: 'Wettelijke vereistenregister', sub: 'H6.1.3' },
+      { name: 'Doelstellingenregister', sub: 'H6.2' },
+      { name: 'Competentiematrix', sub: 'H7.2' },
+      { name: 'Trainingsregister', sub: 'H7.2' },
+      { name: 'EMS Beheerd Gegevens Register', sub: 'Bijlage' },
+      { name: 'EMS Beheerd Documenten Register', sub: 'Bijlage' },
+    ],
+  },
+  {
+    name: 'Formulieren & Rapporten',
+    dot: 'bg-violet-500',
+    countStyle: 'text-violet-700 bg-violet-50',
+    items: [
+      { name: 'Verantwoordelijkheidsmatrix', sub: 'H5.3' },
+      { name: 'Organogram', sub: 'H5.3' },
+      { name: 'Document Wijziging Verzoek Formulier', sub: 'Template' },
+      { name: 'Afvalverwerkingslog', sub: 'H8.1' },
+      { name: 'Leveranciersbeoordeling', sub: 'H8.4' },
+      { name: 'Nalevingsevaluatierapport', sub: 'H9.1.2' },
+      { name: 'KPI-overzicht', sub: 'H9.1' },
+      { name: 'Directiebeoordelingsverslag', sub: 'H9.3' },
+      { name: 'Non-conformiteitenregister', sub: 'H10.2' },
+      { name: 'Corrigerende maatregelenplan', sub: 'H10.2' },
+      { name: 'Verbeterregister', sub: 'H10.3' },
+    ],
+  },
+  {
+    name: 'Interne Audit',
+    dot: 'bg-teal-500',
+    countStyle: 'text-teal-700 bg-teal-50',
+    items: [
+      { name: 'Auditplan & auditrapport', sub: 'H9.2' },
+      { name: 'Auditeren Stap-voor-Stap', sub: 'Handleiding' },
+      { name: 'Gedragscode voor Interne Auditors', sub: 'Procedure' },
+      { name: 'Interne Audit Feedback Formulier', sub: 'Template' },
+      { name: 'Interne Audit Rapport Template', sub: 'Template' },
+      { name: 'IA Checklist – EMS', sub: 'Checklist' },
+      { name: 'IA Checklist – Milieuaspecten', sub: 'Checklist' },
+      { name: 'IA Checklist – Naleving', sub: 'Checklist' },
+      { name: 'Kennis Vereisten EMS Auditoren', sub: 'Template' },
     ],
   },
 ];
@@ -374,105 +394,67 @@ const benefits = [
       </div>
     </section>
 
-    <!-- EMS Documents (interactive) -->
-    <section class="py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%)">
-      <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <div class="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary-800/30 rounded-full blur-[80px]"></div>
-      </div>
-
-      <div class="relative max-w-7xl mx-auto px-6">
+    <!-- EMS Documents (grouped cards) -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
         <!-- Header -->
         <div class="max-w-3xl mx-auto text-center mb-12">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-green-400 bg-green-400/10 rounded-full border border-green-400/20">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-100">
             EMS Documentatie: ISO 14001:2015
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle EMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-300/75 max-w-xl mx-auto leading-relaxed">
-            Klik op een categorie om alle EMS-documenten te bekijken. Control One koppelt procedures, registraties en beheersmaatregelen direct aan de ISO 14001-clausules.
+          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+            In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 14001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>
-
-        <!-- Tab buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10">
-          {emsSections.map((sec, i) => (
-            <button
-              data-annex-tab={sec.id}
-              class:list={[
-                'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
-                i === 0
-                  ? 'bg-white text-primary-950 border-transparent shadow-lg'
-                  : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
-              ]}
-            >
-              <span class:list={['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
-                {sec.label}
-              </span>
-              {sec.name}
-              <span class:list={['annex-count text-xs font-semibold px-2 py-0.5 rounded-full', i === 0 ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400']}>
-                {sec.items.length}
-              </span>
-            </button>
-          ))}
-          {emsExtras.map(extra => (
-            <button
-              data-annex-tab={extra.id}
-              class="annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white"
-            >
-              {extra.title}
-              <span class="annex-count text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-primary-400">
-                {extra.items.length}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        <!-- Document panels -->
-        <div class="min-h-64">
-          {emsSections.map((sec, i) => (
-            <div data-annex-panel={sec.id} class:list={[i !== 0 && 'hidden']}>
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                {sec.items.map(item => (
-                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
-                    <span class:list={['text-xs font-mono font-bold shrink-0 w-9', sec.colorClass]}>
-                      {item.num}
-                    </span>
-                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">
-                      {item.title}
+        <!-- Grouped document cards -->
+        <div class="space-y-6 max-w-5xl mx-auto">
+          {emsGroups.map(group => (
+            <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+              <div class="flex items-center justify-between px-5 py-4 border-b border-primary-100 bg-primary-50/30">
+                <div class="flex items-center gap-2.5">
+                  <span class:list={['w-3 h-3 rounded-full shrink-0', group.dot]}></span>
+                  <span class="text-sm font-bold text-primary-950">{group.name}</span>
+                </div>
+                <span class:list={['text-xs font-semibold px-2.5 py-1 rounded-full', group.countStyle]}>
+                  {group.items.length} templates
+                </span>
+              </div>
+              <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {group.items.map(item => (
+                  <div class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary-50/60 transition-colors group/item">
+                    <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium text-primary-900 truncate leading-snug">{item.name}</p>
+                      <p class="text-xs text-primary-900/40 mt-0.5">{item.sub}</p>
+                    </div>
+                    <span class="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full shrink-0 hidden sm:block">
+                      Vooringevuld
                     </span>
                   </div>
                 ))}
               </div>
             </div>
           ))}
-          {emsExtras.map(extra => (
-            <div data-annex-panel={extra.id} class="hidden">
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                {extra.items.map(item => (
-                  <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/[0.07] hover:bg-white/[0.08] hover:border-white/15 transition-all group">
-                    <svg class="w-4 h-4 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-                    <span class="text-sm text-primary-300 group-hover:text-white transition-colors leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
-
         <!-- Callout box -->
-        <div class="mt-12 max-w-4xl mx-auto p-8 rounded-3xl bg-white/5 border border-white/10">
+        <div class="mt-10 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-primary-950 border border-primary-900">
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div class="w-14 h-14 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
+            <div class="w-12 h-12 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
             </div>
-            <div>
-              <h3 class="text-lg font-bold text-white mb-1">Milieuaspecten &amp; Nalevingsevaluatie</h3>
-              <p class="text-primary-300/75 leading-relaxed">
-                Registreer alle milieuaspecten en -effecten van je organisatie en koppel ze direct aan beheersmaatregelen. Voer periodieke nalevingsevaluaties uit en genereer overzichtsrapporten als PDF voor je certificeringsauditor.
-              </p>
+            <div class="flex-1">
+              <h3 class="text-base font-bold text-white mb-1">Milieuaspecten &amp; Nalevingsevaluatie</h3>
+              <p class="text-primary-300/75 text-sm leading-relaxed">Registreer alle milieuaspecten en -effecten van je organisatie en koppel ze direct aan beheersmaatregelen. Voer periodieke nalevingsevaluaties uit en genereer overzichtsrapporten als PDF voor je certificeringsauditor.</p>
             </div>
+            <a href="https://app.control-one.nl/register" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-xl transition-all shadow-lg whitespace-nowrap">
+              Gratis uitproberen
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -484,31 +466,6 @@ const benefits = [
 </Layout>
 
 <script>
-  // EMS tab switching
-  const annexBtns = document.querySelectorAll<HTMLButtonElement>('[data-annex-tab]');
-  const annexPanels = document.querySelectorAll<HTMLElement>('[data-annex-panel]');
-
-  function activateAnnexTab(targetId: string) {
-    annexBtns.forEach(btn => {
-      const isActive = btn.dataset.annexTab === targetId;
-      btn.className = [
-        'annex-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all',
-        isActive
-          ? 'bg-white text-primary-950 border-transparent shadow-lg'
-          : 'bg-white/5 text-primary-300 border-white/10 hover:bg-white/10 hover:text-white',
-      ].join(' ');
-      const letter = btn.querySelector<HTMLElement>('.annex-letter');
-      const count  = btn.querySelector<HTMLElement>('.annex-count');
-      if (letter) letter.className = ['annex-letter text-[11px] font-bold px-1.5 py-0.5 rounded-md', isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
-      if (count)  count.className  = ['annex-count text-xs font-semibold px-2 py-0.5 rounded-full',   isActive ? 'bg-primary-100 text-primary-700' : 'bg-white/10 text-primary-400'].join(' ');
-    });
-    annexPanels.forEach(panel => {
-      panel.dataset.annexPanel === targetId ? panel.classList.remove('hidden') : panel.classList.add('hidden');
-    });
-  }
-
-  annexBtns.forEach(btn => btn.addEventListener('click', () => activateAnnexTab(btn.dataset.annexTab!)));
-
   document.querySelectorAll<HTMLElement>('.chapter-card').forEach(card => {
     card.addEventListener('click', () => {
       const body = card.querySelector<HTMLElement>('.chapter-body')!;
