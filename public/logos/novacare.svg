@@ -1,9 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158 36" fill="none">
-  <!-- Icon mark -->
-  <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#db2777"/>
-  <!-- Plus / cross -->
-  <rect x="16" y="9.5" width="4" height="17" rx="2" fill="white"/>
-  <rect x="9.5" y="16" width="17" height="4" rx="2" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 40" fill="none">
+  <defs>
+    <linearGradient id="nc" x1="2" y1="2" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <!-- Circle base -->
+  <circle cx="18" cy="20" r="17" fill="url(#nc)"/>
+  <!-- Top highlight arc -->
+  <path d="M7 12C10 7.5 13.5 5.5 18 5.5C22.5 5.5 26 7.5 29 12" stroke="white" stroke-width="0.8" stroke-opacity="0.2" fill="none" stroke-linecap="round"/>
+  <!-- Heart: bold, clean, well-proportioned -->
+  <path d="M18 29C18 29 7.5 22 7.5 14.5C7.5 11 10.2 8.5 13.5 8.5C15.5 8.5 17.2 9.5 18 11C18.8 9.5 20.5 8.5 22.5 8.5C25.8 8.5 28.5 11 28.5 14.5C28.5 22 18 29 18 29Z" fill="white" fill-opacity="0.95"/>
   <!-- Wordmark -->
-  <text x="44" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a" letter-spacing="-0.4">NovaCare</text>
+  <text x="46" y="16" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#0f172a" letter-spacing="-0.4">NovaCare</text>
+  <text x="46" y="31" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#94a3b8">Zorg</text>
 </svg>

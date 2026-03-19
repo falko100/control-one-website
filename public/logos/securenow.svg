@@ -1,10 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177 36" fill="none">
-  <!-- Icon mark -->
-  <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#6d28d9"/>
-  <!-- Lock -->
-  <rect x="12" y="19" width="12" height="9.5" rx="2.5" fill="white" opacity="0.9"/>
-  <path d="M14.5 19V15.5A3.5 3.5 0 0 1 21.5 15.5V19" stroke="white" stroke-width="1.9" stroke-linecap="round" fill="none"/>
-  <circle cx="18" cy="23.5" r="1.5" fill="#6d28d9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 40" fill="none">
+  <defs>
+    <linearGradient id="sn" x1="2" y1="2" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <!-- Padlock shackle (clean arc) -->
+  <path d="M12 18V13C12 8.58 14.69 5.5 18 5.5C21.31 5.5 24 8.58 24 13V18" stroke="url(#sn)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <!-- Lock body (rounded rectangle) -->
+  <rect x="7" y="17" width="22" height="16.5" rx="4.5" fill="url(#sn)"/>
+  <!-- Keyhole (circle + slit combined) -->
+  <path d="M18 22.5C19.1 22.5 20 23.4 20 24.5C20 25.3 19.5 26 18.8 26.3L19.5 29.5H16.5L17.2 26.3C16.5 26 16 25.3 16 24.5C16 23.4 16.9 22.5 18 22.5Z" fill="white" fill-opacity="0.9"/>
   <!-- Wordmark -->
-  <text x="44" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a" letter-spacing="-0.4">SecureNow</text>
+  <text x="44" y="16" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#0f172a" letter-spacing="-0.4">SecureNow</text>
+  <text x="44" y="31" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#94a3b8">Group</text>
 </svg>
