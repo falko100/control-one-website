@@ -369,97 +369,53 @@ const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0)
 
     <!-- ═══ MAIN ═══ -->
     <div id="faq-main">
-
-      <!-- ── Zoek op onderwerp ── -->
-      <section class="py-16 bg-white border-b border-primary-100">
+      <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
           <h2 class="text-2xl font-bold text-primary-950 mb-8">Zoek op onderwerp</h2>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
             {categories.map(cat => (
               <div class="bg-white rounded-2xl border border-primary-100 shadow-sm overflow-hidden">
+
                 <!-- Card header -->
-                <div class="flex items-center gap-3 px-5 pt-5 pb-4">
-                  <div class="w-9 h-9 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
-                    <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-center gap-3 px-5 py-4 border-b border-primary-100 bg-primary-50/40">
+                  <div class="w-8 h-8 rounded-lg bg-white border border-primary-200 shadow-sm flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
                     </svg>
                   </div>
-                  <a href={`#${cat.id}`} class="text-[0.95rem] font-bold text-primary-950 hover:text-primary-700 underline underline-offset-2 decoration-primary-300 transition-colors leading-snug">
-                    {cat.title}
-                  </a>
+                  <span class="text-sm font-bold text-primary-950 leading-snug flex-1">{cat.title}</span>
+                  <span class="text-xs font-medium text-primary-400">{cat.faqs.length}</span>
                 </div>
-                <!-- Question list -->
-                <div class="px-5 pb-5">
-                  {cat.faqs.map((faq, idx) => (
-                    <a
-                      href={`#q-${cat.id}-${idx}`}
-                      class="faq-topic-link flex items-start gap-2 py-2.5 text-sm text-primary-700 hover:text-primary-950 transition-colors leading-snug border-t border-primary-100 first:border-t-0"
+
+                <!-- Inline expandable questions -->
+                <div class="divide-y divide-primary-100/80">
+                  {cat.faqs.map((faq) => (
+                    <div
+                      class="card-faq-item"
+                      data-q={faq.q.toLowerCase()}
+                      data-a={faq.a.toLowerCase()}
                     >
-                      <span class="mt-1 shrink-0 w-1 h-1 rounded-full bg-primary-300"></span>
-                      {faq.q}
-                    </a>
+                      <button class="card-faq-trigger w-full flex items-start justify-between gap-3 px-5 py-3 text-left hover:bg-primary-50/60 transition-colors group">
+                        <span class="text-sm text-primary-800 leading-snug flex-1 group-hover:text-primary-950 transition-colors">{faq.q}</span>
+                        <span class="card-faq-icon-wrap shrink-0 mt-0.5 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center transition-all duration-300">
+                          <svg class="w-2.5 h-2.5 text-primary-500 card-faq-icon" style="transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"></path>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="card-faq-body" style="max-height:0; overflow:hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);">
+                        <div class="px-5 pb-4 pt-1 bg-primary-50/50 border-t border-primary-100">
+                          <p class="text-sm text-primary-700/80 leading-relaxed">{faq.a}</p>
+                        </div>
+                      </div>
+                    </div>
                   ))}
                 </div>
+
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <!-- ── Accordion sections ── -->
-      <section class="py-20 bg-primary-50/30">
-        <div class="max-w-4xl mx-auto px-6 space-y-16">
-          {categories.map(cat => (
-            <div id={cat.id} class="faq-category scroll-mt-10">
-
-              <!-- Category header -->
-              <div class="flex items-center gap-4 mb-7 pb-5 border-b border-primary-200">
-                <div class="w-11 h-11 rounded-2xl bg-white border border-primary-200 shadow-sm flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
-                  </svg>
-                </div>
-                <div>
-                  <h2 class="text-xl font-bold text-primary-950 leading-tight">{cat.title}</h2>
-                  <p class="text-xs text-primary-900/40 mt-0.5">{cat.faqs.length} vragen</p>
-                </div>
-              </div>
-
-              <!-- Accordion items -->
-              <div class="space-y-2.5">
-                {cat.faqs.map((faq, idx) => (
-                  <div
-                    id={`q-${cat.id}-${idx}`}
-                    class="faq-item border border-primary-200 rounded-2xl overflow-hidden transition-all duration-200 shadow-sm hover:shadow-md bg-white scroll-mt-10"
-                    data-q={faq.q.toLowerCase()}
-                    data-a={faq.a.toLowerCase()}
-                  >
-                    <button class="faq-trigger w-full flex items-start justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-primary-50 transition-colors">
-                      <div class="flex items-start gap-3 flex-1 min-w-0">
-                        {faq.popular && (
-                          <span class="shrink-0 mt-0.5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-700 bg-primary-100 rounded-md border border-primary-200 leading-tight">
-                            Populair
-                          </span>
-                        )}
-                        <span class="font-semibold text-primary-900 text-[0.9rem] leading-snug">{faq.q}</span>
-                      </div>
-                      <span class="faq-icon-wrap shrink-0 w-7 h-7 rounded-full bg-primary-100 flex items-center justify-center mt-0.5 transition-all duration-300">
-                        <svg class="w-3.5 h-3.5 text-primary-600 faq-icon-svg" style="transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"></path>
-                        </svg>
-                      </span>
-                    </button>
-                    <div class="faq-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
-                      <div class="px-6 pb-6 border-t border-primary-100 bg-primary-50/40">
-                        <p class="text-sm text-primary-900/75 leading-relaxed pt-5">{faq.a}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
     </div>
@@ -505,29 +461,27 @@ const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0)
 </Layout>
 
 <script>
-  // ═══ ACCORDION ═══
-  document.querySelectorAll<HTMLElement>('.faq-trigger').forEach(trigger => {
+  // ═══ INLINE CARD ACCORDION ═══
+  document.querySelectorAll<HTMLElement>('.card-faq-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const item = trigger.closest<HTMLElement>('.faq-item')!;
-      const body = item.querySelector<HTMLElement>('.faq-body')!;
-      const iconWrap = item.querySelector<HTMLElement>('.faq-icon-wrap')!;
-      const iconSvg = item.querySelector<HTMLElement>('.faq-icon-svg')!;
+      const item = trigger.closest<HTMLElement>('.card-faq-item')!;
+      const body = item.querySelector<HTMLElement>('.card-faq-body')!;
+      const iconWrap = item.querySelector<HTMLElement>('.card-faq-icon-wrap')!;
+      const icon = item.querySelector<HTMLElement>('.card-faq-icon')!;
       const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
 
       if (isOpen) {
         body.style.maxHeight = '0';
-        iconSvg.style.transform = '';
-        iconWrap.style.backgroundColor = '';
-        item.style.boxShadow = '';
-        item.style.borderColor = '';
+        icon.style.transform = '';
+        iconWrap.classList.remove('bg-primary-700');
+        iconWrap.classList.add('bg-primary-100');
+        icon.style.color = '';
       } else {
         body.style.maxHeight = body.scrollHeight + 'px';
-        iconSvg.style.transform = 'rotate(45deg)';
-        iconWrap.style.backgroundColor = 'var(--color-primary-700, #1e40af)';
-        const iconPath = iconWrap.querySelector('path');
-        if (iconPath) iconPath.style.stroke = 'white';
-        item.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
-        item.style.borderColor = 'var(--color-primary-200, #bfdbfe)';
+        icon.style.transform = 'rotate(45deg)';
+        iconWrap.classList.remove('bg-primary-100');
+        iconWrap.classList.add('bg-primary-700');
+        icon.style.color = 'white';
       }
     });
   });
@@ -542,11 +496,11 @@ const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0)
   const searchReset = document.getElementById('search-reset')!;
   const faqMain = document.getElementById('faq-main')!;
 
-  // Build search index from DOM
+  // Build search index from card items
   interface FaqEntry { question: string; answer: string; ql: string; al: string; }
-  const allFaqs: FaqEntry[] = Array.from(document.querySelectorAll<HTMLElement>('.faq-item')).map(item => {
-    const question = item.querySelector<HTMLElement>('.faq-trigger .font-semibold')?.textContent?.trim() ?? '';
-    const answer = item.querySelector<HTMLElement>('.faq-body p')?.textContent?.trim() ?? '';
+  const allFaqs: FaqEntry[] = Array.from(document.querySelectorAll<HTMLElement>('.card-faq-item')).map(item => {
+    const question = item.querySelector<HTMLElement>('.card-faq-trigger span')?.textContent?.trim() ?? '';
+    const answer = item.querySelector<HTMLElement>('.card-faq-body p')?.textContent?.trim() ?? '';
     return { question, answer, ql: question.toLowerCase(), al: answer.toLowerCase() };
   });
 
@@ -620,33 +574,6 @@ const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0)
   searchInput?.addEventListener('keydown', (e) => { if (e.key === 'Escape') clearSearch(); });
   searchClear?.addEventListener('click', clearSearch);
   searchReset?.addEventListener('click', clearSearch);
-
-  // ═══ TOPIC LINK: scroll to question and auto-open accordion ═══
-  document.querySelectorAll<HTMLAnchorElement>('.faq-topic-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href')?.slice(1);
-      if (!targetId) return;
-      const target = document.getElementById(targetId);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Auto-open the accordion
-      setTimeout(() => {
-        const trigger = target.querySelector<HTMLElement>('.faq-trigger');
-        const body = target.querySelector<HTMLElement>('.faq-body');
-        const iconWrap = target.querySelector<HTMLElement>('.faq-icon-wrap');
-        const iconSvg = target.querySelector<HTMLElement>('.faq-icon-svg');
-        if (body && body.style.maxHeight === '0px' || body?.style.maxHeight === '') {
-          if (body) body.style.maxHeight = body.scrollHeight + 'px';
-          if (iconSvg) iconSvg.style.transform = 'rotate(45deg)';
-          if (iconWrap) iconWrap.style.backgroundColor = 'var(--color-primary-700, #1e40af)';
-          const iconPath = iconWrap?.querySelector('path');
-          if (iconPath) iconPath.style.stroke = 'white';
-          if (target) { target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)'; target.style.borderColor = 'var(--color-primary-200, #bfdbfe)'; }
-        }
-      }, 400);
-    });
-  });
 
   // ═══ SIDEBAR ACTIVE STATE - removed (no sidebar) ═══
   const catNavItems = document.querySelectorAll<HTMLElement>('.cat-nav-item');
