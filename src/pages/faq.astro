@@ -369,44 +369,44 @@ const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0)
 
     <!-- ═══ MAIN ═══ -->
     <div id="faq-main">
-      <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-          <h2 class="text-2xl font-bold text-primary-950 mb-8">Zoek op onderwerp</h2>
+      <section class="py-20 bg-primary-50/40">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-primary-950 mb-10">Zoek op onderwerp</h2>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+          <div class="grid lg:grid-cols-2 gap-6 items-start">
             {categories.map(cat => (
               <div class="bg-white rounded-2xl border border-primary-100 shadow-sm overflow-hidden">
 
                 <!-- Card header -->
-                <div class="flex items-center gap-3 px-5 py-4 border-b border-primary-100 bg-primary-50/40">
-                  <div class="w-8 h-8 rounded-lg bg-white border border-primary-200 shadow-sm flex items-center justify-center shrink-0">
-                    <svg class="w-3.5 h-3.5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex items-center gap-4 px-6 py-5 border-b border-primary-100 bg-primary-50/50">
+                  <div class="w-10 h-10 rounded-xl bg-white border border-primary-200 shadow-sm flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={cat.iconPath}></path>
                     </svg>
                   </div>
-                  <span class="text-sm font-bold text-primary-950 leading-snug flex-1">{cat.title}</span>
-                  <span class="text-xs font-medium text-primary-400">{cat.faqs.length}</span>
+                  <span class="text-base font-bold text-primary-950 leading-snug flex-1">{cat.title}</span>
+                  <span class="text-xs font-semibold text-primary-400 bg-primary-100 px-2.5 py-1 rounded-full">{cat.faqs.length} vragen</span>
                 </div>
 
                 <!-- Inline expandable questions -->
-                <div class="divide-y divide-primary-100/80">
+                <div class="divide-y divide-primary-100">
                   {cat.faqs.map((faq) => (
                     <div
                       class="card-faq-item"
                       data-q={faq.q.toLowerCase()}
                       data-a={faq.a.toLowerCase()}
                     >
-                      <button class="card-faq-trigger w-full flex items-start justify-between gap-3 px-5 py-3 text-left hover:bg-primary-50/60 transition-colors group">
-                        <span class="text-sm text-primary-800 leading-snug flex-1 group-hover:text-primary-950 transition-colors">{faq.q}</span>
-                        <span class="card-faq-icon-wrap shrink-0 mt-0.5 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center transition-all duration-300">
-                          <svg class="w-2.5 h-2.5 text-primary-500 card-faq-icon" style="transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <button class="card-faq-trigger w-full flex items-start justify-between gap-4 px-6 py-4 text-left hover:bg-primary-50/70 transition-colors group">
+                        <span class="text-[0.9375rem] text-primary-800 leading-snug flex-1 group-hover:text-primary-950 transition-colors">{faq.q}</span>
+                        <span class="card-faq-icon-wrap shrink-0 mt-0.5 w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center transition-all duration-300">
+                          <svg class="w-3 h-3 text-primary-500 card-faq-icon" style="transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14"></path>
                           </svg>
                         </span>
                       </button>
-                      <div class="card-faq-body" style="max-height:0; overflow:hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);">
-                        <div class="px-5 pb-4 pt-1 bg-primary-50/50 border-t border-primary-100">
-                          <p class="text-sm text-primary-700/80 leading-relaxed">{faq.a}</p>
+                      <div class="card-faq-body" style="max-height:0; overflow:hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+                        <div class="px-6 pb-5 pt-3 bg-primary-50/60 border-t border-primary-100">
+                          <p class="text-[0.9375rem] text-primary-700/85 leading-relaxed">{faq.a}</p>
                         </div>
                       </div>
                     </div>
