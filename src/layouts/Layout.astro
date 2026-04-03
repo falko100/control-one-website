@@ -91,6 +91,15 @@ const allSchemas: Record<string, unknown>[] = [
     <!-- Google Search Console verificatie -->
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DC727QSZN"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2DC727QSZN');
+    </script>
+
     <!-- Google Tag Manager -->
     {gtmId && (
       <script is:inline define:vars={{ gtmId }}>
