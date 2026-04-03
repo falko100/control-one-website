@@ -157,9 +157,37 @@ const benefits = [
   { title: 'Win nieuwe opdrachten', description: 'ISO 9001-certificering is een vereiste bij steeds meer aanbestedingen en inkoopprocessen.' },
   { title: 'Continue verbetering', description: 'Gebruik de PDCA-cyclus om je kwaliteitsmanagementsysteem voortdurend te verbeteren.' },
 ];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One — ISO 9001 Software',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl/iso-9001',
+  description: 'Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform.',
+  featureList: [
+    'Implementatiecoach voor ISO 9001:2015',
+    'PDCA-cyclus ondersteuning',
+    'Documentbeheer en sjablonen',
+    'Interne audit module',
+    'Gap analyse checklist',
+    'Procesmanagement',
+  ],
+  offers: {
+    '@type': 'Offer',
+    price: '49.00',
+    priceCurrency: 'EUR',
+    url: 'https://control-one.nl/pricing',
+  },
+};
 ---
 
-<Layout title="ISO 9001 Certificering — Kwaliteitsmanagement Software | Control One" description="Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform.">
+<Layout
+  title="ISO 9001 Certificering — Kwaliteitsmanagement Software | Control One"
+  description="Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform."
+  jsonLd={schema}
+>
   <Header />
   <main>
     <!-- Hero -->

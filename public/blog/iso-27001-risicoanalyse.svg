@@ -1,0 +1,83 @@
+<svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="320" rx="16" fill="#f8fbff" stroke="#dbeffe" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="450" y="36" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="700" fill="#02095a" text-anchor="middle">Risicoanalyse: kans × impact matrix</text>
+
+  <!-- Y-axis label -->
+  <text x="28" y="195" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0e2470" transform="rotate(-90,28,195)" text-anchor="middle">Impact →</text>
+
+  <!-- X-axis label -->
+  <text x="540" y="305" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0e2470" text-anchor="middle">Kans →</text>
+
+  <!-- Grid -->
+  <!-- Row 3: High impact -->
+  <rect x="80" y="68" width="120" height="72" rx="4" fill="#fef9c3" stroke="white" stroke-width="2"/>
+  <rect x="204" y="68" width="120" height="72" rx="4" fill="#fed7aa" stroke="white" stroke-width="2"/>
+  <rect x="328" y="68" width="120" height="72" rx="4" fill="#fecaca" stroke="white" stroke-width="2"/>
+  <rect x="452" y="68" width="120" height="72" rx="4" fill="#fecaca" stroke="white" stroke-width="2"/>
+  <rect x="576" y="68" width="120" height="72" rx="4" fill="#f87171" stroke="white" stroke-width="2"/>
+
+  <!-- Row 2: Medium impact -->
+  <rect x="80" y="144" width="120" height="72" rx="4" fill="#d1fae5" stroke="white" stroke-width="2"/>
+  <rect x="204" y="144" width="120" height="72" rx="4" fill="#fef9c3" stroke="white" stroke-width="2"/>
+  <rect x="328" y="144" width="120" height="72" rx="4" fill="#fef9c3" stroke="white" stroke-width="2"/>
+  <rect x="452" y="144" width="120" height="72" rx="4" fill="#fed7aa" stroke="white" stroke-width="2"/>
+  <rect x="576" y="144" width="120" height="72" rx="4" fill="#fecaca" stroke="white" stroke-width="2"/>
+
+  <!-- Row 1: Low impact -->
+  <rect x="80" y="220" width="120" height="72" rx="4" fill="#d1fae5" stroke="white" stroke-width="2"/>
+  <rect x="204" y="220" width="120" height="72" rx="4" fill="#d1fae5" stroke="white" stroke-width="2"/>
+  <rect x="328" y="220" width="120" height="72" rx="4" fill="#fef9c3" stroke="white" stroke-width="2"/>
+  <rect x="452" y="220" width="120" height="72" rx="4" fill="#fef9c3" stroke="white" stroke-width="2"/>
+  <rect x="576" y="220" width="120" height="72" rx="4" fill="#fed7aa" stroke="white" stroke-width="2"/>
+
+  <!-- Y-axis labels -->
+  <text x="68" y="108" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="end">Hoog</text>
+  <text x="68" y="184" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="end">Midden</text>
+  <text x="68" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="end">Laag</text>
+
+  <!-- X-axis labels -->
+  <text x="140" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">Zeer laag</text>
+  <text x="264" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">Laag</text>
+  <text x="388" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">Midden</text>
+  <text x="512" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">Hoog</text>
+  <text x="636" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">Zeer hoog</text>
+
+  <!-- Risk examples as dots -->
+  <!-- Ransomware: high chance, high impact = red -->
+  <circle cx="540" cy="104" r="18" fill="#dc2626" opacity="0.9"/>
+  <text x="540" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">Ransom-</text>
+  <text x="540" y="111" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">ware</text>
+
+  <!-- Phishing: high chance, medium impact = orange -->
+  <circle cx="620" cy="180" r="18" fill="#ea580c" opacity="0.9"/>
+  <text x="620" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">Phishing</text>
+  <text x="620" y="187" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">aanval</text>
+
+  <!-- Data leak: medium chance, high impact = red -->
+  <circle cx="390" cy="104" r="18" fill="#ef4444" opacity="0.9"/>
+  <text x="390" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">Data-</text>
+  <text x="390" y="111" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">lek</text>
+
+  <!-- Power outage: low chance, medium impact = yellow -->
+  <circle cx="264" cy="180" r="18" fill="#ca8a04" opacity="0.9"/>
+  <text x="264" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">Stroom-</text>
+  <text x="264" y="187" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">storing</text>
+
+  <!-- Theft: low chance, low impact = green -->
+  <circle cx="140" cy="256" r="18" fill="#16a34a" opacity="0.9"/>
+  <text x="140" y="252" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">Laptop</text>
+  <text x="140" y="263" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="white" text-anchor="middle">diefstal</text>
+
+  <!-- Legend -->
+  <rect x="730" y="80" width="14" height="14" rx="3" fill="#f87171"/>
+  <text x="750" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#02095a">Kritiek — direct aanpakken</text>
+  <rect x="730" y="108" width="14" height="14" rx="3" fill="#fed7aa"/>
+  <text x="750" y="120" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#02095a">Hoog — plan opstellen</text>
+  <rect x="730" y="136" width="14" height="14" rx="3" fill="#fef9c3"/>
+  <text x="750" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#02095a">Midden — monitoren</text>
+  <rect x="730" y="164" width="14" height="14" rx="3" fill="#d1fae5"/>
+  <text x="750" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#02095a">Laag — accepteren</text>
+</svg>

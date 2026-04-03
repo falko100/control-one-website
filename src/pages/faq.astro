@@ -278,9 +278,28 @@ const categories = [
 ];
 
 const totalQuestions = categories.reduce((sum, cat) => sum + cat.faqs.length, 0);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: categories.flatMap(cat =>
+    cat.faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    }))
+  ),
+};
 ---
 
-<Layout title="Veelgestelde vragen (FAQ) over ISO-compliance | Control One" description="Antwoorden op veelgestelde vragen over ISO-certificering, Control One, risicoanalyse, interne audits en meer. Alles wat je moet weten over ISO-compliance.">
+<Layout
+  title="Veelgestelde vragen (FAQ) over ISO-compliance | Control One"
+  description="Antwoorden op veelgestelde vragen over ISO-certificering, Control One, risicoanalyse, interne audits en meer. Alles wat je moet weten over ISO-compliance."
+  jsonLd={faqSchema}
+>
   <Header />
   <main>
 

@@ -1,0 +1,21 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#3d1f00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <circle cx="1050" cy="80" r="260" fill="#f59e0b" opacity="0.07"/>
+  <g transform="translate(80,120)">
+    <rect width="56" height="56" rx="14" fill="#78350f" opacity="0.5"/>
+    <path d="M28 14 L14 42 L42 42 Z" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="28" y1="28" x2="28" y2="34" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="28" cy="37" r="1.5" fill="#fbbf24"/>
+  </g>
+  <rect x="80" y="196" width="50" height="3" rx="1.5" fill="#fbbf24" opacity="0.6"/>
+  <text x="80" y="240" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#fde68a" letter-spacing="3">ISO 45001</text>
+  <text x="80" y="300" font-family="system-ui,-apple-system,sans-serif" font-size="46" font-weight="800" fill="white" letter-spacing="-1.5">Veilig &amp; Gezond Werken</text>
+  <text x="80" y="350" font-family="system-ui,-apple-system,sans-serif" font-size="22" fill="#fde68a" opacity="0.85">Arbobeheersysteem, gevaaridentificatie en arbowet</text>
+  <text x="1120" y="375" font-family="system-ui,-apple-system,sans-serif" font-size="16" fill="#fbbf24" text-anchor="end" opacity="0.6">control-one.nl/blog</text>
+</svg>

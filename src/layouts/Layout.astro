@@ -4,12 +4,57 @@ import '../styles/global.css'
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  ogType?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = 'Control One — ISO Management Eenvoudig Gemaakt', description = 'Control One helpt bedrijven bij het implementeren, bijhouden en beheren van ISO-compliance met begeleide workflows, risicobeheer, audits en documentbeheer.' } = Astro.props;
+const {
+  title = 'Control One — ISO Management Eenvoudig Gemaakt',
+  description = 'Control One helpt bedrijven bij het implementeren, bijhouden en beheren van ISO-compliance met begeleide workflows, risicobeheer, audits en documentbeheer.',
+  image = '/og-image.svg',
+  ogType = 'website',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = 'https://control-one.nl';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Control One',
+  url: siteUrl,
+  logo: `${siteUrl}/logo.svg`,
+  description: 'Control One is hét Nederlandse platform voor ISO-compliance voor het MKB.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Twekkeler Es 42',
+    postalCode: '7547 SM',
+    addressLocality: 'Enschede',
+    addressCountry: 'NL',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'info@control-one.nl',
+    availableLanguage: 'Dutch',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/control-one',
+  ],
+};
+
+const allSchemas: Record<string, unknown>[] = [
+  organizationSchema,
+  ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []),
+];
 ---
 
 <!doctype html>
@@ -19,6 +64,29 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Robots -->
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Control One" />
+    <meta property="og:locale" content="nl_NL" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- Google Search Console verificatie -->
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
@@ -38,6 +106,13 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet" />
     <title>{title}</title>
+
+    <!-- Structured Data (JSON-LD) -->
+    {allSchemas.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  <!-- Control One Visitor Tracker -->
+  <script src="https://control-one.nl/tracker.js" defer></script>
   </head>
   <body class="bg-white text-primary-950 antialiased">
 

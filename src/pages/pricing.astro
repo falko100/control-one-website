@@ -5,6 +5,71 @@ import Pricing from '../components/Pricing.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
+const pricingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Starter',
+      description: 'ISO-compliance software voor kleine teams tot 5 personen.',
+      price: '49.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '49.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        maxValue: 5,
+        unitText: 'teamleden',
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Team',
+      description: 'ISO-compliance software voor groeiende teams tot 25 personen.',
+      price: '149.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '149.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        maxValue: 25,
+        unitText: 'teamleden',
+      },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Business',
+      description: 'ISO-compliance software voor grotere organisaties tot 100 personen.',
+      price: '299.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '299.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        maxValue: 100,
+        unitText: 'teamleden',
+      },
+    },
+  ],
+};
+
 const featureCategories = [
   {
     label: 'Licentie',
@@ -39,7 +104,11 @@ const featureCategories = [
 ];
 ---
 
-<Layout title="Prijzen — Transparante ISO-software abonnementen | Control One" description="Bekijk de prijzen van Control One. Kies het abonnement dat bij je organisatie past: Starter, Professional of Enterprise. Inclusief 14 dagen gratis proefperiode.">
+<Layout
+  title="Prijzen — Transparante ISO-software abonnementen | Control One"
+  description="Bekijk de prijzen van Control One. Kies het abonnement dat bij je organisatie past: Starter, Professional of Enterprise. Inclusief 14 dagen gratis proefperiode."
+  jsonLd={pricingSchema}
+>
   <Header />
   <main>
     <!-- Hero -->

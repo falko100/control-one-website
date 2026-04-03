@@ -256,9 +256,38 @@ const benefits = [
   { title: 'Win het vertrouwen van klanten', description: 'ISO 27001-certificering is wereldwijd erkend en geeft klanten vertrouwen in je informatiebeveiliging.' },
   { title: 'Verminder beveiligingsincidenten', description: 'Proactieve risicobeoordeling en beheersmaatregelen verminderen de kans op kostbare incidenten.' },
 ];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One — ISO 27001 Software',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl/iso-27001',
+  description: 'Implementeer ISO 27001:2022 zelf met Control One. Volledige dekking van alle hoofdstukken en 93 Annex A-maatregelen. Inclusief coach, risicoanalyse, VvT en auditbeheer.',
+  featureList: [
+    'Implementatiecoach voor ISO 27001:2022',
+    '93 Annex A-maatregelen beheer',
+    'Risicoanalyse en risicomatrix',
+    'Verklaring van Toepasselijkheid (VvT)',
+    'Interne audit module',
+    'Documentbeheer en sjablonen',
+    'Gap analyse checklist',
+  ],
+  offers: {
+    '@type': 'Offer',
+    price: '49.00',
+    priceCurrency: 'EUR',
+    url: 'https://control-one.nl/pricing',
+  },
+};
 ---
 
-<Layout title="ISO 27001 Certificering — Informatiebeveiliging Software | Control One" description="Implementeer ISO 27001:2022 zelf met Control One. Volledige dekking van alle hoofdstukken en 93 Annex A-maatregelen. Inclusief coach, risicoanalyse, VvT en auditbeheer.">
+<Layout
+  title="ISO 27001 Certificering — Informatiebeveiliging Software | Control One"
+  description="Implementeer ISO 27001:2022 zelf met Control One. Volledige dekking van alle hoofdstukken en 93 Annex A-maatregelen. Inclusief coach, risicoanalyse, VvT en auditbeheer."
+  jsonLd={schema}
+>
   <Header />
   <main>
     <!-- Hero -->

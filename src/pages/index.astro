@@ -10,9 +10,65 @@ import Testimonials from '../components/Testimonials.astro';
 import WhyControlOne from '../components/WhyControlOne.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl',
+  description: 'Control One is hét Nederlandse platform voor ISO-compliance. Implementeer ISO 27001, 9001, 14001 en 45001 zelf met onze stapsgewijze coach, sjablonen en tools.',
+  inLanguage: 'nl',
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Starter',
+      price: '49.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '49.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      url: 'https://control-one.nl/pricing',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Team',
+      price: '149.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '149.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      url: 'https://control-one.nl/pricing',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Business',
+      price: '299.00',
+      priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '299.00',
+        priceCurrency: 'EUR',
+        unitCode: 'MON',
+      },
+      url: 'https://control-one.nl/pricing',
+    },
+  ],
+};
 ---
 
-<Layout title="Control One — ISO Compliance Software voor MKB | ISO 27001, 9001, 14001 & 45001" description="Control One is hét Nederlandse platform voor ISO-compliance. Implementeer ISO 27001, 9001, 14001 en 45001 zelf met onze stapsgewijze coach, sjablonen en tools. Gratis starten.">
+<Layout
+  title="Control One — ISO Compliance Software voor MKB | ISO 27001, 9001, 14001 & 45001"
+  description="Control One is hét Nederlandse platform voor ISO-compliance. Implementeer ISO 27001, 9001, 14001 en 45001 zelf met onze stapsgewijze coach, sjablonen en tools. Gratis starten."
+  jsonLd={softwareSchema}
+>
   <Header />
   <main>
     <Hero />

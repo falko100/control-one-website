@@ -1,0 +1,65 @@
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="300" rx="16" fill="#f8fbff" stroke="#dbeffe" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="450" y="36" font-family="system-ui,-apple-system,sans-serif" font-size="15" font-weight="700" fill="#02095a" text-anchor="middle">Kostenvergelijking: consultant vs. zelf implementeren</text>
+
+  <!-- LEFT: Consultant -->
+  <rect x="40" y="56" width="380" height="220" rx="12" fill="white" stroke="#fecaca" stroke-width="1.5"/>
+  <rect x="40" y="56" width="380" height="44" rx="12" fill="#fee2e2"/>
+  <rect x="40" y="84" width="380" height="16" rx="0" fill="#fee2e2"/>
+  <text x="230" y="84" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="700" fill="#dc2626" text-anchor="middle">Externe consultant</text>
+
+  <!-- Bar: consultant -->
+  <rect x="60" y="115" width="300" height="18" rx="4" fill="#fecaca"/>
+  <rect x="60" y="115" width="300" height="18" rx="4" fill="#ef4444"/>
+  <text x="368" y="128" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#dc2626" font-weight="600">€15.000</text>
+  <text x="60" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7f1d1d">Implementatiebegeleiding</text>
+
+  <rect x="60" y="150" width="180" height="18" rx="4" fill="#fecaca"/>
+  <rect x="60" y="150" width="180" height="18" rx="4" fill="#f87171"/>
+  <text x="248" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#dc2626" font-weight="600">€5.000</text>
+  <text x="60" y="145" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7f1d1d">Documentatiepakket</text>
+
+  <rect x="60" y="185" width="100" height="18" rx="4" fill="#fecaca"/>
+  <rect x="60" y="185" width="100" height="18" rx="4" fill="#fca5a5"/>
+  <text x="168" y="198" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#dc2626" font-weight="600">€3.000</text>
+  <text x="60" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7f1d1d">Gap-analyse</text>
+
+  <rect x="40" y="230" width="380" height="46" rx="0" fill="#fef2f2"/>
+  <rect x="40" y="254" width="380" height="22" rx="0 0 12 12" fill="#fef2f2"/>
+  <text x="230" y="258" font-family="system-ui,-apple-system,sans-serif" font-size="20" font-weight="800" fill="#dc2626" text-anchor="middle">€18.000 – €25.000</text>
+  <text x="230" y="276" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#7f1d1d" text-anchor="middle">jaar 1, excl. certificeringskosten</text>
+
+  <!-- RIGHT: Control One -->
+  <rect x="480" y="56" width="380" height="220" rx="12" fill="white" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="480" y="56" width="380" height="44" rx="12" fill="#dcfce7"/>
+  <rect x="480" y="84" width="380" height="16" rx="0" fill="#dcfce7"/>
+  <text x="670" y="84" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="700" fill="#16a34a" text-anchor="middle">Zelf met Control One</text>
+
+  <!-- Bar: self -->
+  <rect x="500" y="115" width="300" height="18" rx="4" fill="#bbf7d0"/>
+  <rect x="500" y="115" width="14" height="18" rx="4" fill="#16a34a"/>
+  <text x="522" y="128" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#15803d" font-weight="600">€1.200 / jaar</text>
+  <text x="500" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#14532d">Platform abonnement (Team)</text>
+
+  <rect x="500" y="150" width="300" height="18" rx="4" fill="#bbf7d0"/>
+  <rect x="500" y="150" width="8" height="18" rx="4" fill="#22c55e"/>
+  <text x="516" y="163" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#15803d" font-weight="600">Inbegrepen</text>
+  <text x="500" y="145" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#14532d">50+ beleid- en proceduretemplates</text>
+
+  <rect x="500" y="185" width="300" height="18" rx="4" fill="#bbf7d0"/>
+  <rect x="500" y="185" width="8" height="18" rx="4" fill="#22c55e"/>
+  <text x="516" y="198" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#15803d" font-weight="600">Inbegrepen</text>
+  <text x="500" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#14532d">Risicoanalyse, VvT &amp; auditbeheer</text>
+
+  <rect x="480" y="230" width="380" height="46" rx="0" fill="#f0fdf4"/>
+  <rect x="480" y="254" width="380" height="22" rx="0 0 12 12" fill="#f0fdf4"/>
+  <text x="670" y="258" font-family="system-ui,-apple-system,sans-serif" font-size="20" font-weight="800" fill="#16a34a" text-anchor="middle">€500 – €2.000 / jaar</text>
+  <text x="670" y="276" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#14532d" text-anchor="middle">volledige begeleide implementatie</text>
+
+  <!-- VS badge -->
+  <circle cx="450" cy="166" r="22" fill="white" stroke="#dbeffe" stroke-width="2"/>
+  <text x="450" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="800" fill="#196bd7" text-anchor="middle">VS</text>
+</svg>

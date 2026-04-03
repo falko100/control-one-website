@@ -162,9 +162,37 @@ const benefits = [
   { title: 'Verbeter werknemerswelzijn', description: 'Betrek medewerkers bij veiligheid en creëer een cultuur van continue verbetering.' },
   { title: 'Verlaag verzuimkosten', description: 'Structureel veiligheidsmanagement leidt tot minder incidenten en lager ziekteverzuim.' },
 ];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One — ISO 45001 Software',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl/iso-45001',
+  description: 'Implementeer ISO 45001:2018 met Control One. Beheer arbeidsrisico\'s, incidenten en veiligheidsmaatregelen. Bescherm medewerkers en voldoe aan de Arbowet.',
+  featureList: [
+    'Implementatiecoach voor ISO 45001:2018',
+    'Gevaren- en risicoregistratie',
+    'Incidentenbeheer en CAPA',
+    'OHSMS documentbeheer en sjablonen',
+    'Interne audit module',
+    'Arbowet compliance',
+  ],
+  offers: {
+    '@type': 'Offer',
+    price: '49.00',
+    priceCurrency: 'EUR',
+    url: 'https://control-one.nl/pricing',
+  },
+};
 ---
 
-<Layout title="ISO 45001 Certificering — Arbo & Veiligheid Software | Control One" description="Implementeer ISO 45001:2018 met Control One. Beheer arbeidsrisico's, incidenten en veiligheidsmaatregelen. Bescherm medewerkers en voldoe aan de Arbowet.">
+<Layout
+  title="ISO 45001 Certificering — Arbo & Veiligheid Software | Control One"
+  description="Implementeer ISO 45001:2018 met Control One. Beheer arbeidsrisico's, incidenten en veiligheidsmaatregelen. Bescherm medewerkers en voldoe aan de Arbowet."
+  jsonLd={schema}
+>
   <Header />
   <main>
     <!-- Hero -->

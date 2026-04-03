@@ -1,0 +1,53 @@
+<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="200" rx="16" fill="#f8fbff" stroke="#dbeffe" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="450" y="32" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="700" fill="#02095a" text-anchor="middle">Realistische tijdlijn naar ISO 27001 certificering</text>
+
+  <!-- Timeline bar base -->
+  <rect x="50" y="70" width="800" height="36" rx="18" fill="#dbeffe"/>
+
+  <!-- Phase 1: Voorbereiding (maanden 1-2) — 160px -->
+  <rect x="50" y="70" width="160" height="36" rx="18" fill="#1563b8"/>
+  <rect x="130" y="70" width="80" height="36" rx="0" fill="#1563b8"/>
+  <text x="130" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="white" text-anchor="middle">Voorbereiding</text>
+
+  <!-- Phase 2: Implementatie (maanden 2-5) — 240px -->
+  <rect x="210" y="70" width="240" height="36" rx="0" fill="#196bd7"/>
+  <text x="330" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="white" text-anchor="middle">Implementatie maatregelen</text>
+
+  <!-- Phase 3: Bewijsperiode (maanden 4-7) — 240px -->
+  <rect x="450" y="70" width="240" height="36" rx="0" fill="#48aeec"/>
+  <text x="570" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="white" text-anchor="middle">Bewijsperiode (min. 3 mnd)</text>
+
+  <!-- Phase 4: Audit (maanden 8-9) — 160px -->
+  <rect x="690" y="70" width="160" height="36" rx="18" fill="#16a34a"/>
+  <rect x="690" y="70" width="80" height="36" rx="0" fill="#16a34a"/>
+  <text x="770" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" font-weight="600" fill="white" text-anchor="middle">Audit + cert.</text>
+
+  <!-- Month markers -->
+  <line x1="50" y1="112" x2="50" y2="124" stroke="#93d2fd" stroke-width="1.5"/>
+  <text x="50" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">M0</text>
+
+  <line x1="210" y1="112" x2="210" y2="124" stroke="#93d2fd" stroke-width="1.5"/>
+  <text x="210" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">M2</text>
+
+  <line x1="450" y1="112" x2="450" y2="124" stroke="#93d2fd" stroke-width="1.5"/>
+  <text x="450" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">M4-5</text>
+
+  <line x1="690" y1="112" x2="690" y2="124" stroke="#93d2fd" stroke-width="1.5"/>
+  <text x="690" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0e2470" text-anchor="middle">M7-8</text>
+
+  <line x1="850" y1="112" x2="850" y2="124" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="850" y="136" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">Cert. ✓</text>
+
+  <!-- Certification badge -->
+  <g transform="translate(812, 50)">
+    <rect width="76" height="28" rx="14" fill="#dcfce7" stroke="#86efac" stroke-width="1"/>
+    <text x="38" y="18" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Gecertificeerd</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="450" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0e2470" text-anchor="middle" opacity="0.65">Fases kunnen overlappen — bewijsperiode start zodra eerste maatregelen zijn geïmplementeerd</text>
+</svg>

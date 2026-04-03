@@ -158,9 +158,37 @@ const benefits = [
   { title: 'Verbeter je duurzaamheidsprofiel', description: 'ISO 14001-certificering versterkt je reputatie bij klanten en stakeholders die waarde hechten aan duurzaamheid.' },
   { title: 'Bespaar kosten', description: 'Efficiënter omgaan met energie, water en afval leidt tot directe kostenbesparingen.' },
 ];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One — ISO 14001 Software',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl/iso-14001',
+  description: 'Implementeer ISO 14001:2015 met Control One. Beheer milieuaspecten, nalevingsevaluaties en EMS-documenten. Van milieubeleid tot continue verbetering in één platform.',
+  featureList: [
+    'Implementatiecoach voor ISO 14001:2015',
+    'Milieuaspecten en -effecten registreren',
+    'Nalevingsevaluaties',
+    'EMS documentbeheer en sjablonen',
+    'Interne audit module',
+    'Doelstellingen en KPI-beheer',
+  ],
+  offers: {
+    '@type': 'Offer',
+    price: '49.00',
+    priceCurrency: 'EUR',
+    url: 'https://control-one.nl/pricing',
+  },
+};
 ---
 
-<Layout title="ISO 14001 Certificering — Milieumanagement Software | Control One" description="Implementeer ISO 14001:2015 met Control One. Beheer milieuaspecten, nalevingsevaluaties en EMS-documenten. Van milieubeleid tot continue verbetering in één platform.">
+<Layout
+  title="ISO 14001 Certificering — Milieumanagement Software | Control One"
+  description="Implementeer ISO 14001:2015 met Control One. Beheer milieuaspecten, nalevingsevaluaties en EMS-documenten. Van milieubeleid tot continue verbetering in één platform."
+  jsonLd={schema}
+>
   <Header />
   <main>
     <!-- Hero -->
