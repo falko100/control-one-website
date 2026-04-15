@@ -1,0 +1,180 @@
+---
+const pains = [
+  'Je wil ISO zelf aanpakken, van begin tot certificering.',
+  'Geen ISO consultants in huis, en dat wil je zo houden.',
+  'Investeren in certificering, niet in consultancy-uren.',
+  'Zelf de regie, maar met ondersteuning wanneer nodig.',
+];
+
+const items = [
+  {
+    title: 'Jouw complete ISO-starterskit',
+    description: 'De centrale plek voor al je beleidsstukken, procedures en registers. Overzichtelijk georganiseerd, altijd up-to-date en audit-ready.',
+    badge: null,
+    color: 'bg-primary-700',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
+  },
+  {
+    title: 'Risicoanalyse, audits en meer',
+    description: 'Voer risicoanalyses uit, beheer je leveranciers, plan interne audits en volg maatregelen op. Alles wat je nodig hebt voor een volwassen managementsysteem.',
+    badge: null,
+    color: 'bg-indigo-600',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`,
+  },
+  {
+    title: 'Vooringevulde templates',
+    description: 'Beleidsstukken, procedures en registers zijn voor meer dan 80% al ingevuld. Jij past aan op jouw organisatie. Maanden werk bespaard.',
+    badge: '80%+ klaar',
+    color: 'bg-amber-500',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>`,
+  },
+  {
+    title: 'Stapsgewijze coach',
+    description: 'Van nulmeting tot audit: de coach laat je altijd zien wat de volgende stap is. In gewone taal, zonder ISO-jargon, op jouw tempo.',
+    badge: null,
+    color: 'bg-primary-600',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>`,
+  },
+  {
+    title: 'Kennisbank',
+    description: 'Alle ISO-kennis die je nodig hebt, direct beschikbaar in het platform. Geen opleiding, geen externe cursus. Jij zoekt, jij vindt.',
+    badge: null,
+    color: 'bg-emerald-600',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
+  },
+  {
+    title: 'Chat consultancy',
+    description: 'Loop je ergens tegenaan? Echte ISO-experts bereikbaar via de chat. Geen callcenter, geen bot. 5 uur gratis inbegrepen in elk abonnement.',
+    badge: '5 uur gratis',
+    color: 'bg-violet-600',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+  },
+];
+
+const convictions = [
+  'Je hoeft geen ISO-expert te zijn. De portal begeleidt je.',
+  'Je begint nooit met een leeg vel. Alles staat klaar.',
+  'ISO-experts staan voor je klaar wanneer je ze nodig hebt.',
+  'Een fractie van de kosten van een externe consultant.',
+];
+
+const outcomes = [
+  'Gecertificeerd in 3 tot 6 maanden',
+  'Zonder externe consultant',
+  'Alles in één platform',
+];
+
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-16 xl:gap-24 items-start">
+
+      <!-- ── Links ── -->
+      <div class="pt-2">
+        <p class="text-sm font-semibold tracking-widest uppercase text-primary-500 mb-5">Jouw startpunt</p>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-[1.15] mb-2">
+          ISO op jouw manier,<br>in jouw tempo.
+        </h2>
+        <p class="text-xl font-semibold text-primary-500 mb-7 leading-snug">
+          Wij zorgen voor het platform. Jij voor het certificaat.
+        </p>
+
+        <p class="text-base text-primary-900/60 leading-relaxed mb-8">
+          Of je nu je kwaliteitsprocessen wil professionaliseren, cybersecurity serieus wil aanpakken, wil verduurzamen of de veiligheid van je mensen beter wil borgen: ISO-certificering is de manier om dat gestructureerd en aantoonbaar te doen.
+        </p>
+
+        <!-- Challenges -->
+        <ul class="space-y-3.5 mb-10">
+          {pains.map(pain => (
+            <li class="flex items-center gap-3.5">
+              <span class="w-4 h-4 rounded-full border-2 border-primary-200 bg-primary-50 flex items-center justify-center shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-400 block"></span>
+              </span>
+              <span class="text-primary-800 text-sm leading-snug">{pain}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Bridge + convictions -->
+        <div class="border-l-4 border-primary-600 pl-5">
+          <p class="text-base font-semibold text-primary-950 leading-snug mb-3">
+            Bij Control One ben je aan het juiste adres.
+          </p>
+          <ul class="space-y-2.5">
+            {convictions.map(c => (
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-sm text-primary-800 leading-snug">{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Rechts: platform visual ── -->
+      <div class="rounded-3xl border border-primary-100 bg-gradient-to-b from-primary-50/60 to-white p-3 shadow-sm">
+        <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+
+          <!-- Browser chrome -->
+          <div class="bg-primary-950 px-4 py-2.5 flex items-center gap-3">
+            <div class="flex gap-1.5 shrink-0">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
+            </div>
+            <div class="flex-1 bg-white/10 rounded-md text-[11px] text-white/40 px-3 py-1 text-center font-medium tracking-wide">
+              app.control-one.nl
+            </div>
+          </div>
+
+          <!-- Section label -->
+          <div class="px-5 pt-4 pb-1">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-primary-400">Dit staat voor je klaar</p>
+          </div>
+
+          <!-- Platform items -->
+          <div class="divide-y divide-primary-100/60">
+            {items.map((item) => (
+              <div class="flex items-start gap-3.5 px-5 py-3.5 hover:bg-primary-50/40 transition-colors">
+                <div class={`w-8 h-8 rounded-lg ${item.color} flex items-center justify-center text-white shrink-0 mt-0.5`}>
+                  <Fragment set:html={item.icon} />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-sm text-primary-950">{item.title}</p>
+                  <p class="text-xs text-primary-600/60 mt-0.5 leading-relaxed">{item.description}</p>
+                </div>
+                {item.badge && (
+                  <span class="shrink-0 self-start mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-bold border border-emerald-200 bg-emerald-50 text-emerald-700 whitespace-nowrap">
+                    {item.badge}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <!-- Outcome bar -->
+          <div class="bg-primary-950 px-5 py-4">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2.5">Jouw eindpunt</p>
+            <div class="flex flex-col gap-1.5">
+              {outcomes.map(o => (
+                <div class="flex items-center gap-2 text-sm text-white font-medium">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  {o}
+                </div>
+              ))}
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
