@@ -1,10 +1,13 @@
 ---
 ---
 
-<section class="relative overflow-hidden bg-white" style="min-height: 88vh;">
+<section class="relative overflow-hidden bg-white pb-0">
 
   <!-- Subtle background tint -->
   <div class="absolute inset-0 bg-gradient-to-b from-primary-50/50 to-primary-50/10 pointer-events-none"></div>
+
+  <!-- Bottom gradient: bridges into the dark InteractiveShowcase below -->
+  <div class="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style="background: linear-gradient(to bottom, transparent 0%, #1a3d6e 100%);"></div>
 
   <!-- Ambient glow orbs -->
   <div class="absolute top-0 left-1/2 w-[700px] h-[700px] bg-accent-400/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -73,7 +76,7 @@
     </div>
 
     <!-- ── Logo marquee ── -->
-    <div class="mt-14 pb-4">
+    <div class="mt-14 pb-44 relative z-10">
       <p class="text-center text-xs font-semibold uppercase tracking-widest text-primary-300 mb-8">Vertrouwd door organisaties in heel Nederland</p>
       <div class="relative overflow-hidden">
         <!-- Edge fades -->
