@@ -113,12 +113,12 @@ const testimonials = [
               <img
                 src={t.photo}
                 alt={t.author}
-                class="w-9 h-9 rounded-full object-cover object-top shrink-0 border-2 border-primary-100"
+                class="w-12 h-12 rounded-full object-cover object-top shrink-0 border-2 border-primary-100"
                 loading="lazy"
               />
             ) : (
               <div class:list={[
-                'w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0',
+                'w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0',
                 t.color,
               ]}>
                 {t.initials}
@@ -126,11 +126,11 @@ const testimonials = [
             )}
             <div class="flex-1 min-w-0">
               <p class:list={[
-                'font-semibold text-sm leading-tight',
+                'font-semibold text-base leading-tight',
                 i === 1 ? 'text-white' : 'text-primary-950',
               ]}>{t.author}</p>
               <p class:list={[
-                'text-[11px] leading-tight mt-0.5',
+                'text-sm leading-tight mt-0.5',
                 i === 1 ? 'text-white/45' : 'text-primary-900/45',
               ]}>{t.role} · {t.company}</p>
             </div>
