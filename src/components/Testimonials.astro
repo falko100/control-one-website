@@ -6,6 +6,9 @@ const testimonials = [
     role: 'Eigenaar',
     company: 'De Digitale Basis',
     framework: 'ISO 27001',
+    photo: '/team/portrait-daan-loohuis.jpg',
+    logo: '/logos/de-digitale-basis.png',
+    logoDark: true,
     initials: 'DL',
     color: 'bg-primary-600',
   },
@@ -15,6 +18,9 @@ const testimonials = [
     role: 'Operations Manager',
     company: 'Brinkman Techniek',
     framework: 'ISO 9001',
+    photo: null,
+    logo: null,
+    logoDark: false,
     initials: 'LH',
     color: 'bg-emerald-600',
   },
@@ -24,6 +30,9 @@ const testimonials = [
     role: 'QHSE Manager',
     company: 'Greenleaf Logistics',
     framework: 'ISO 27001 & 14001',
+    photo: null,
+    logo: null,
+    logoDark: false,
     initials: 'FE',
     color: 'bg-violet-600',
   },
@@ -52,6 +61,32 @@ const testimonials = [
             : 'bg-white border-primary-100 hover:shadow-md hover:border-primary-200 transition-all',
         ]}>
 
+          <!-- Logo + framework row -->
+          <div class="flex items-center justify-between mb-5">
+            {t.logo ? (
+              <img
+                src={t.logo}
+                alt={t.company}
+                class:list={[
+                  'h-6 w-auto object-contain',
+                  i === 1 ? 'brightness-0 invert' : t.logoDark ? 'opacity-70' : '',
+                ]}
+                loading="lazy"
+              />
+            ) : (
+              <span class:list={[
+                'text-xs font-bold tracking-wide',
+                i === 1 ? 'text-white/40' : 'text-primary-400',
+              ]}>{t.company}</span>
+            )}
+            <span class:list={[
+              'text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full shrink-0 ml-2',
+              i === 1
+                ? 'bg-white/10 text-white/60'
+                : 'bg-primary-50 text-primary-500 border border-primary-100',
+            ]}>{t.framework}</span>
+          </div>
+
           <!-- Stars -->
           <div class="flex gap-0.5 mb-5">
             {[1,2,3,4,5].map(() => (
@@ -74,12 +109,21 @@ const testimonials = [
             'mt-6 pt-5 border-t flex items-center gap-3',
             i === 1 ? 'border-white/10' : 'border-primary-100',
           ]}>
-            <div class:list={[
-              'w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0',
-              t.color,
-            ]}>
-              {t.initials}
-            </div>
+            {t.photo ? (
+              <img
+                src={t.photo}
+                alt={t.author}
+                class="w-9 h-9 rounded-full object-cover object-top shrink-0 border-2 border-primary-100"
+                loading="lazy"
+              />
+            ) : (
+              <div class:list={[
+                'w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0',
+                t.color,
+              ]}>
+                {t.initials}
+              </div>
+            )}
             <div class="flex-1 min-w-0">
               <p class:list={[
                 'font-semibold text-sm leading-tight',
@@ -90,12 +134,6 @@ const testimonials = [
                 i === 1 ? 'text-white/45' : 'text-primary-900/45',
               ]}>{t.role} · {t.company}</p>
             </div>
-            <span class:list={[
-              'text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full shrink-0',
-              i === 1
-                ? 'bg-white/10 text-white/60'
-                : 'bg-primary-50 text-primary-500 border border-primary-100',
-            ]}>{t.framework}</span>
           </div>
 
         </div>
