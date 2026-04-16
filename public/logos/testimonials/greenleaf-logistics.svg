@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56">
+  <!-- Leaf shape: pointed oval made with bezier curves, centered at (28,28), ~42×26px -->
+  <!-- Left tip at (7,28), right tip at (49,28), top arc through (28,8), bottom arc through (28,48) -->
+  <path
+    d="M 7,28 C 7,12 49,12 49,28 C 49,44 7,44 7,28 Z"
+    fill="#2d6a4f"
+    stroke="none"
+  />
+  <!-- Leaf center vein / diagonal arrow line from bottom-left to top-right -->
+  <line x1="13" y1="38" x2="43" y2="18" stroke="#74c69d" stroke-width="2" stroke-linecap="round" />
+  <!-- Arrowhead at top-right end -->
+  <polyline
+    points="37,16 43,18 41,24"
+    fill="none"
+    stroke="#74c69d"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Wordmark -->
+  <text
+    x="60"
+    y="29"
+    font-family="'Segoe UI', Arial, sans-serif"
+    font-size="19"
+    font-weight="700"
+    fill="#1a2e1a"
+    dominant-baseline="middle"
+  >Greenleaf</text>
+  <text
+    x="61"
+    y="44"
+    font-family="'Segoe UI', Arial, sans-serif"
+    font-size="9.5"
+    font-weight="400"
+    fill="#2d6a4f"
+    letter-spacing="3"
+    dominant-baseline="middle"
+  >LOGISTICS</text>
+</svg>

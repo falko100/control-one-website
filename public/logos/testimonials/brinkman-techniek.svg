@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56">
+  <!-- Hexagon icon: centered at x=28, y=28, radius=22 -->
+  <!-- Hexagon points (flat-top): computed for radius=22, center=(28,28) -->
+  <!-- Vertices: top(28,6), top-right(47,17), bottom-right(47,39), bottom(28,50), bottom-left(9,39), top-left(9,17) -->
+  <polygon
+    points="28,6 47,17 47,39 28,50 9,39 9,17"
+    fill="none"
+    stroke="#f07a20"
+    stroke-width="2.2"
+    stroke-linejoin="round"
+  />
+  <!-- Horizontal bar cutting through middle third (~y=22 to y=34, centered at y=28) -->
+  <!-- Bar spans from left edge to right edge of hexagon at y=20 and y=36 -->
+  <line x1="9" y1="22" x2="47" y2="22" stroke="#f07a20" stroke-width="1.4" />
+  <line x1="9" y1="34" x2="47" y2="34" stroke="#f07a20" stroke-width="1.4" />
+
+  <!-- Wordmark -->
+  <text
+    x="58"
+    y="29"
+    font-family="'Segoe UI', Arial, sans-serif"
+    font-size="19"
+    font-weight="700"
+    fill="#1a2e4a"
+    dominant-baseline="middle"
+  >Brinkman</text>
+  <text
+    x="59"
+    y="44"
+    font-family="'Segoe UI', Arial, sans-serif"
+    font-size="9.5"
+    font-weight="400"
+    fill="#4a6a8a"
+    letter-spacing="3"
+    dominant-baseline="middle"
+  >TECHNIEK</text>
+</svg>
