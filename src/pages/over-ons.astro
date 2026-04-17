@@ -35,7 +35,42 @@ const features_highlights = [
 ];
 ---
 
-<Layout title="Over Control One — Het team achter de ISO-software" description="Leer het team achter Control One kennen. Gebouwd in Enschede met de missie om ISO-compliance toegankelijk te maken voor elke organisatie in Nederland.">
+<Layout
+  title="Over Control One — Het team achter de ISO-software"
+  description="Leer het team achter Control One kennen. Gebouwd in Enschede met de missie om ISO-compliance toegankelijk te maken voor elke organisatie in Nederland."
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://control-one.nl/#organization',
+      name: 'Control One',
+      url: 'https://control-one.nl',
+      logo: 'https://control-one.nl/logo.svg',
+      image: 'https://control-one.nl/og-image.png',
+      description: 'Nederlands platform voor ISO-compliance management gericht op het MKB. Gevestigd in Enschede.',
+      email: 'info@control-one.nl',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Twekkeler Es 42',
+        postalCode: '7547 SM',
+        addressLocality: 'Enschede',
+        addressRegion: 'Overijssel',
+        addressCountry: 'NL',
+      },
+      areaServed: { '@type': 'Country', name: 'Netherlands' },
+      priceRange: '€€',
+      sameAs: ['https://www.linkedin.com/company/control-one'],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+        { '@type': 'ListItem', position: 2, name: 'Over ons', item: 'https://control-one.nl/over-ons' },
+      ],
+    },
+  ]}
+>
   <Header />
   <main>
 

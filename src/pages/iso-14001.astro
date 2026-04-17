@@ -182,12 +182,61 @@ const schema = {
     url: 'https://control-one.nl/pricing',
   },
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+    { '@type': 'ListItem', position: 3, name: 'ISO 14001', item: 'https://control-one.nl/iso-14001' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is ISO 14001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 14001 is de internationale norm voor een Environmental Management System (EMS). De norm helpt organisaties bij het identificeren van milieuaspecten, het beheersen van milieu-impact en het voldoen aan milieuwetgeving. De huidige versie is ISO 14001:2015.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat zijn milieuaspecten in ISO 14001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Milieuaspecten zijn onderdelen van de activiteiten, producten of diensten van een organisatie die kunnen interacteren met het milieu — zoals energieverbruik, afvalproductie, uitstoot, watergebruik of transport. ISO 14001:2015 vereist dat een organisatie alle milieuaspecten identificeert en de significante aspecten actief beheerst.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is het verschil tussen ISO 14001 en de CSRD?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 14001 is een vrijwillige certificeerbare norm voor milieumanagement binnen de organisatie. De Corporate Sustainability Reporting Directive (CSRD) is een verplichte EU-rapportageregeling voor grote ondernemingen, met rapportage over ESG-prestaties volgens de ESRS-standaarden. ISO 14001 ondersteunt de E-pijler van CSRD-rapportage.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kan ik ISO 14001 combineren met ISO 9001 en ISO 45001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. De drie normen volgen dezelfde High-Level Structure (HLS) en worden vaak samen geïmplementeerd als geïntegreerd kwaliteit-, milieu- en veiligheidssysteem (KAM of QHSE). Control One ondersteunt alle drie en mapt gedeelde beheersmaatregelen automatisch.',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
-  title="ISO 14001 Certificering — Milieumanagement Software | Control One"
+  title="ISO 14001 Software — Milieumanagement | Control One"
   description="Implementeer ISO 14001:2015 met Control One. Beheer milieuaspecten, nalevingsevaluaties en EMS-documenten. Van milieubeleid tot continue verbetering in één platform."
-  jsonLd={schema}
+  jsonLd={[schema, breadcrumbSchema, faqSchema]}
 >
   <Header />
   <main>
@@ -433,7 +482,7 @@ const schema = {
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle EMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
             In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 14001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>

@@ -281,12 +281,69 @@ const schema = {
     url: 'https://control-one.nl/pricing',
   },
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+    { '@type': 'ListItem', position: 3, name: 'ISO 27001', item: 'https://control-one.nl/iso-27001' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is ISO 27001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO/IEC 27001 is de internationale norm voor een Information Security Management System (ISMS). De norm beschrijft hoe een organisatie informatiebeveiliging systematisch opzet, beheert en continu verbetert. De huidige versie is ISO/IEC 27001:2022 met 93 Annex A-maatregelen verdeeld over 4 thema\'s: Organisatorisch, Mensen, Fysiek en Technologisch.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is het verschil tussen ISO 27001:2013 en ISO 27001:2022?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 27001:2022 heeft Annex A teruggebracht van 114 naar 93 beheersmaatregelen, georganiseerd in 4 thema\'s (Organisatorisch, Mensen, Fysiek, Technologisch) in plaats van 14 secties. 11 maatregelen zijn nieuw, waaronder threat intelligence, ICT readiness for business continuity, data leakage prevention en secure coding. Bestaande 2013-certificaten moeten uiterlijk 31 oktober 2025 overgaan naar de 2022-versie.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hoe lang duurt een ISO 27001-implementatie?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Voor het MKB is een realistisch traject 3 tot 6 maanden tot de externe certificeringsaudit (stage 2). De implementatiecoach van Control One splitst dit op in 28 concrete stappen, waardoor organisaties zelfstandig — zonder externe consultant — certificering kunnen behalen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is de Verklaring van Toepasselijkheid (VvT / SoA)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De Verklaring van Toepasselijkheid (VvT) of Statement of Applicability (SoA) is een verplicht document in ISO 27001 dat per Annex A-maatregel vastlegt of deze van toepassing is, met onderbouwing. Control One genereert de VvT automatisch op basis van de status van elke beheersmaatregel in het platform.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat zijn de 4 thema\'s van Annex A in ISO 27001:2022?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De 93 Annex A-maatregelen in ISO 27001:2022 zijn verdeeld over 4 thema\'s: Organisatorisch (37 maatregelen, A.5), Mensen (8 maatregelen, A.6), Fysiek (14 maatregelen, A.7) en Technologisch (34 maatregelen, A.8).',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
-  title="ISO 27001 Certificering — Informatiebeveiliging Software | Control One"
+  title="ISO 27001 Software — Informatiebeveiliging | Control One"
   description="Implementeer ISO 27001:2022 zelf met Control One. Volledige dekking van alle hoofdstukken en 93 Annex A-maatregelen. Inclusief coach, risicoanalyse, VvT en auditbeheer."
-  jsonLd={schema}
+  jsonLd={[schema, breadcrumbSchema, faqSchema]}
 >
   <Header />
   <main>
@@ -531,7 +588,7 @@ const schema = {
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle ISMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
             In Control One zijn alle 93 Annex A-maatregelen direct gekoppeld aan je risicobeoordelingsresultaten en vooraf ingevuld door ISO-experts.
           </p>
         </div>

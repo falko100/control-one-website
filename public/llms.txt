@@ -1,0 +1,51 @@
+# Control One
+
+> Control One is het Nederlandse SaaS-platform voor ISO-compliance voor het MKB. Bedrijven implementeren ISO 27001, ISO 9001, ISO 14001 en ISO 45001 zelfstandig — zonder dure consultants — via een stapsgewijze implementatiecoach, kant-en-klare sjablonen, risicoanalyse, documentbeheer, leveranciersbeheer en auditbeheer in één platform.
+
+Control One is gevestigd in Enschede (Nederland) en wordt aangeboden in het Nederlands. Abonnementen starten bij €134/maand (jaarlijks gefactureerd). Er is een gratis proefperiode beschikbaar.
+
+## Kernfuncties
+
+- [Implementatiecoach](https://control-one.nl/coach): 28-stappen begeleiding voor ISO 27001 met sjablonen, checkvragen en directe koppeling naar documenten en maatregelen.
+- [Risicoanalyse](https://control-one.nl/risicoanalyse): identificeer, beoordeel en behandel risico's met een gestructureerde methodiek (kans × impact-matrix) en gekoppelde maatregelen.
+- [Maatregelen (Annex A)](https://control-one.nl/maatregelen): beheer van de 93 Annex A-maatregelen uit ISO 27001:2022, met status, owner en documentatie.
+- [Documentbeheer](https://control-one.nl/documenten): centraal beheer van beleidsdocumenten, procedures en records met versioning en goedkeuring.
+- [Auditmanagement](https://control-one.nl/audits): plan, voer en rapporteer interne en externe audits, inclusief bevindingen en corrigerende maatregelen.
+- [Leveranciersbeheer](https://control-one.nl/leveranciers): beheer van leveranciersrisico's, verwerkersovereenkomsten en periodieke evaluaties.
+- [Directiebeoordeling](https://control-one.nl/directiebeoordeling): Management Review-module met alle ISO-vereiste input en output.
+- [Templates](https://control-one.nl/templates): kant-en-klare ISO-sjablonen voor beleid, procedures en registers.
+- [Kennisbank](https://control-one.nl/kennisbank): artikelen en uitleg over ISO-normen, begrippen en best practices.
+
+## Frameworks
+
+- [ISO 27001](https://control-one.nl/iso-27001) — Informatiebeveiliging (ISO/IEC 27001:2022, inclusief 93 Annex A-maatregelen)
+- [ISO 9001](https://control-one.nl/iso-9001) — Kwaliteitsmanagement (ISO 9001:2015)
+- [ISO 14001](https://control-one.nl/iso-14001) — Milieumanagement (ISO 14001:2015)
+- [ISO 45001](https://control-one.nl/iso-45001) — Arbo & Veiligheid (ISO 45001:2018)
+- NIS2, SOC 2 en AVG/GDPR zijn gepland.
+
+## Belangrijke pagina's
+
+- [Homepage](https://control-one.nl/): productoverzicht
+- [Functies](https://control-one.nl/features): volledig functieoverzicht
+- [Prijzen](https://control-one.nl/pricing): abonnementen en tarieven
+- [Over ons](https://control-one.nl/over-ons): team en bedrijfsinformatie
+- [Contact](https://control-one.nl/contact): contactgegevens en salesgesprek
+- [FAQ](https://control-one.nl/faq): veelgestelde vragen over ISO-compliance en het platform
+- [Blog](https://control-one.nl/blog): inzichten over ISO-compliance
+- [Vacatures](https://control-one.nl/vacatures): openstaande posities
+- [Roadmap](https://control-one.nl/roadmap): productontwikkeling
+
+## Bedrijfsgegevens
+
+- Naam: Control One
+- Adres: Twekkeler Es 42, 7547 SM Enschede, Nederland
+- Email: info@control-one.nl
+- LinkedIn: https://www.linkedin.com/company/control-one
+- Talen: Nederlands
+- Doelgroep: MKB in Nederland
+
+## Optional
+
+- [Privacybeleid](https://control-one.nl/privacybeleid)
+- [Uitgebreide inhoud voor LLMs](https://control-one.nl/llms-full.txt)

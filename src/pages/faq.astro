@@ -52,7 +52,7 @@ const categories = [
       },
       {
         q: 'In welke talen is het platform beschikbaar?',
-        a: 'Control One is momenteel volledig beschikbaar in het Nederlands. Een Engelse versie is in ontwikkeling voor internationale klanten en organisaties met een internationale scope. Sjablonen en het ISMS-handboek zijn op verzoek beschikbaar in het Engels.',
+        a: 'Control One is volledig beschikbaar in het Nederlands en het Engels. Dat geldt voor het volledige platform, alle sjablonen, het ISMS-handboek en de kennisbank. U kunt als organisatie kiezen in welke taal u werkt, handig voor internationale teams of organisaties met een Engelstalige scope.',
         popular: false,
       },
     ],
@@ -293,12 +293,21 @@ const faqSchema = {
     }))
   ),
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://control-one.nl/faq' },
+  ],
+};
 ---
 
 <Layout
   title="Veelgestelde vragen (FAQ) over ISO-compliance | Control One"
   description="Antwoorden op veelgestelde vragen over ISO-certificering, Control One, risicoanalyse, interne audits en meer. Alles wat je moet weten over ISO-compliance."
-  jsonLd={faqSchema}
+  jsonLd={[faqSchema, breadcrumbSchema]}
 >
   <Header />
   <main>

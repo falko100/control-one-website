@@ -1,0 +1,184 @@
+# Control One — ISO Compliance Software voor het MKB
+
+> Control One is het Nederlandse SaaS-platform waarmee middelgrote en kleine organisaties ISO-certificering zelfstandig behalen en onderhouden. Één platform voor ISO 27001, 9001, 14001 en 45001, met een stapsgewijze implementatiecoach, sjablonen, risicoanalyse, documentbeheer en auditmanagement.
+
+## Wat is Control One?
+
+Control One is een compliance management-platform voor het Nederlandse MKB. Het combineert een stapsgewijze implementatiecoach met documentbeheer, risicoanalyse, leveranciersbeheer en auditmanagement. Bedrijven gebruiken Control One om ISO-certificering te behalen zonder langdurige consultancy-trajecten.
+
+Het platform werkt multi-framework: implementeer één norm of combineer er meerdere, waarbij gedeelde beheersmaatregelen automatisch worden gemapt tussen frameworks (zoals documentbeheer en interne audits die zowel ISO 27001 als ISO 9001 bedienen).
+
+## Doelgroep
+
+Control One richt zich op het Nederlandse MKB dat:
+- voor het eerst een ISO-certificering nastreeft (typisch 10–250 medewerkers);
+- al gecertificeerd is en het managementsysteem efficiënter wil beheren;
+- meerdere frameworks wil combineren (integrated management system);
+- de afhankelijkheid van externe consultants wil verminderen.
+
+## Belangrijkste functies
+
+### Implementatiecoach
+28 concrete stappen die een organisatie door het volledige ISO 27001-implementatietraject leiden. Elke stap bevat:
+- uitleg in duidelijke taal,
+- kant-en-klare sjablonen,
+- checkvragen om voortgang te bewaken,
+- directe koppeling naar documenten, risico's en maatregelen in het platform.
+
+### Risicoanalyse
+Gestructureerd risicomanagement conform ISO 27005/31000:
+- risico-identificatie per asset of proces,
+- beoordeling op kans × impact (risicomatrix),
+- keuze tussen risicobehandelopties (accepteren, verminderen, overdragen, vermijden),
+- koppeling aan Annex A-maatregelen,
+- restrisico-registratie en periodieke herziening.
+
+### Maatregelen (Annex A)
+Beheer van alle 93 beheersmaatregelen uit ISO/IEC 27001:2022 Annex A, georganiseerd in 4 thema's:
+- Organisatorisch (37 maatregelen),
+- Mensen (8 maatregelen),
+- Fysiek (14 maatregelen),
+- Technologisch (34 maatregelen).
+
+Per maatregel: status (van toepassing / niet van toepassing), implementatiebeschrijving, owner, gekoppelde documenten, verwijzing naar Verklaring van Toepasselijkheid (VvT/SoA).
+
+### Documentbeheer
+Centraal beheer van het ISMS of QMS:
+- versiebeheer en goedkeuringsworkflow,
+- revisiedata en herzieningscyclus,
+- goedgekeurde versie altijd vindbaar,
+- koppeling aan maatregelen, risico's en audit-bevindingen.
+
+### Auditmanagement
+Complete auditcyclus:
+- auditplanning (jaarplan),
+- checklists per hoofdstuk van de norm,
+- bevindingenregister met corrective action plans,
+- audit-rapporten als output,
+- voorbereiding op externe audit (stage 1 en stage 2).
+
+### Leveranciersbeheer
+- register van alle kritieke leveranciers,
+- leveranciersrisicobeoordeling,
+- beheer van verwerkersovereenkomsten (AVG/GDPR),
+- periodieke evaluaties,
+- koppeling aan Annex A-maatregelen over leveranciersrisico.
+
+### Directiebeoordeling (Management Review)
+Module die automatisch alle ISO-vereiste input verzamelt:
+- status van doelstellingen en KPI's,
+- resultaten van interne en externe audits,
+- feedback van belanghebbenden,
+- resultaten van risicobeoordelingen,
+- non-conformiteiten en corrigerende maatregelen,
+- aanbevelingen voor verbetering.
+
+### Templates / Sjablonen
+Kant-en-klare ISO-sjablonen voor:
+- Informatiebeveiligingsbeleid,
+- Risicobeoordelingsmethodologie,
+- Verklaring van Toepasselijkheid (VvT / SoA),
+- Incidentrespons-procedure,
+- Classificatiebeleid voor informatie,
+- Toegangsbeleid,
+- Backup-beleid,
+- Business continuity plan,
+- en tientallen andere.
+
+### Kennisbank
+Artikelen en uitleg over ISO-normen, begrippen en best practices, gekoppeld aan de implementatiecoach.
+
+## Frameworks
+
+### ISO/IEC 27001:2022 — Informatiebeveiliging
+De internationale norm voor een Information Security Management System (ISMS). Dekt 7 hoofdstukken (4 t/m 10) plus 93 Annex A-maatregelen. De 2022-versie vervangt ISO 27001:2013 en heeft Annex A teruggebracht van 114 naar 93 maatregelen, georganiseerd in 4 thema's. Control One dekt de volledige norm inclusief alle Annex A-maatregelen.
+
+### ISO 9001:2015 — Kwaliteitsmanagement
+De wereldwijd meest toegepaste norm voor kwaliteitsmanagement (QMS). Gebaseerd op de PDCA-cyclus en risk-based thinking. Dekt processen rond klantgerichtheid, leiderschap, documentbeheer en continue verbetering.
+
+### ISO 14001:2015 — Milieumanagement
+Norm voor een Environmental Management System (EMS). Helpt bij het identificeren van milieuaspecten, beheersen van milieu-impact en voldoen aan milieuwetgeving.
+
+### ISO 45001:2018 — Arbo & Veiligheid
+Norm voor een Occupational Health and Safety Management System (OHSMS). Helpt bij het voorkomen van arbeidsongevallen en beroepsziekten. Vervangt de oude OHSAS 18001-norm en sluit aan op de Nederlandse Arbowet.
+
+### Gepland
+- NIS2 (EU-richtlijn voor netwerk- en informatiebeveiliging),
+- SOC 2 (Trust Services Criteria, Type I en Type II),
+- AVG / GDPR (Europese privacywetgeving, verwerkingsregister en DPIA).
+
+## Multi-framework ondersteuning
+
+Organisaties die meerdere normen combineren (bijvoorbeeld ISO 27001 + ISO 9001) delen eisen rondom:
+- documentbeheer,
+- interne audits,
+- directiebeoordeling,
+- non-conformiteiten en corrigerende maatregelen,
+- bewustwording en training.
+
+Control One herkent deze overlap automatisch en mapt een beheersmaatregel die één keer is geïmplementeerd naar alle relevante frameworks. Dat bespaart significant werk bij integrated management systems.
+
+## Prijzen
+
+Abonnementen starten bij €134 per maand (jaarlijks gefactureerd). Er zijn drie pakketten met verschillende prijspunten tot €249 per maand. Een gratis proefperiode is beschikbaar.
+
+Actuele prijzen: https://control-one.nl/pricing
+
+## Bedrijfsgegevens
+
+- Naam: Control One
+- Hoofdkantoor: Twekkeler Es 42, 7547 SM Enschede, Nederland
+- Email: info@control-one.nl
+- LinkedIn: https://www.linkedin.com/company/control-one
+- Taal: Nederlands
+- Regio: Nederland (MKB)
+
+## Begrippen & afkortingen
+
+- **ISMS** — Information Security Management System (ISO 27001).
+- **QMS** — Quality Management System (ISO 9001).
+- **EMS** — Environmental Management System (ISO 14001).
+- **OHSMS** — Occupational Health and Safety Management System (ISO 45001).
+- **VvT / SoA** — Verklaring van Toepasselijkheid / Statement of Applicability: lijst met alle Annex A-maatregelen van ISO 27001 en of ze van toepassing zijn.
+- **PDCA** — Plan, Do, Check, Act: de continue verbeter-cyclus die ten grondslag ligt aan alle moderne ISO-normen.
+- **Annex A** — De bijlage van ISO 27001 met de beheersmaatregelen (93 stuks in de 2022-versie).
+- **Stage 1 audit** — Documentatie-audit, eerste fase van de externe certificeringsaudit.
+- **Stage 2 audit** — Implementatie-audit, tweede fase van de externe certificeringsaudit.
+- **Non-conformiteit (NC)** — Afwijking ten opzichte van de norm of het eigen beleid.
+- **CAR / CAP** — Corrective Action Report / Plan: plan om een non-conformiteit op te lossen.
+- **Directiebeoordeling / Management Review** — Periodieke evaluatie van het managementsysteem door het management.
+- **Risicomatrix** — Matrix die kans × impact weergeeft voor risicobeoordeling.
+- **High-Level Structure (HLS)** — Gemeenschappelijke structuur van moderne ISO-managementnormen (hoofdstuk 4 t/m 10), die harmonisatie tussen normen mogelijk maakt.
+
+## Veelgestelde vragen
+
+**Hoe lang duurt een ISO 27001-implementatie?**
+Een realistisch traject voor het MKB is 3 tot 6 maanden tot de externe certificeringsaudit. Met Control One's 28-stappen coach is dat traject gestructureerd en beheersbaar zonder externe consultant.
+
+**Kan ik ISO 27001 behalen zonder consultant?**
+Ja. Control One is specifiek ontworpen om organisaties zelfstandig door de implementatie te leiden met sjablonen, uitleg en checkvragen per stap. Veel klanten behalen certificering zonder externe consultant.
+
+**Ondersteunt Control One ISO 27001:2022?**
+Ja, Control One implementeert de 2022-versie van ISO 27001, inclusief alle 93 Annex A-maatregelen georganiseerd in de 4 thema's (Organisatorisch, Mensen, Fysiek, Technologisch).
+
+**Kan ik meerdere ISO-normen tegelijk beheren?**
+Ja. Control One is multi-framework en mapt gedeelde maatregelen automatisch tussen normen zoals ISO 27001 en ISO 9001.
+
+**Welke certificerende instantie voert de audit uit?**
+Control One is een softwareplatform en geen certificerende instantie. De externe audit wordt uitgevoerd door een geaccrediteerde Certification Body (CB) naar keuze van de organisatie, zoals BSI, DNV, Kiwa, LRQA, TÜV Nord of DEKRA.
+
+**Welke gegevens slaat Control One op?**
+Beleidsdocumenten, risicoregisters, audit-bevindingen, maatregel-implementaties, leveranciersinformatie. Gegevens worden in Nederland opgeslagen, conform AVG.
+
+**Is Control One zelf ISO 27001-gecertificeerd?**
+Zie https://control-one.nl/over-ons voor actuele certificeringsinformatie.
+
+## Bronnen
+
+- Officiële website: https://control-one.nl
+- Functieoverzicht: https://control-one.nl/features
+- Frameworks: https://control-one.nl/frameworks
+- FAQ: https://control-one.nl/faq
+- Blog: https://control-one.nl/blog
+- Kennisbank: https://control-one.nl/kennisbank
+- Contact: https://control-one.nl/contact

@@ -78,6 +78,29 @@ const displayPosts = realPosts.length > 0
 <Layout
   title="Blog — ISO-compliance inzichten en best practices | Control One"
   description="Artikelen, gidsen en best practices over ISO 27001, ISO 9001, risicobeheer, interne audits en compliance. Blijf op de hoogte van de laatste ontwikkelingen."
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Control One Blog',
+      description: 'Artikelen, gidsen en best practices over ISO 27001, 9001, 14001, 45001 en compliance voor het MKB.',
+      url: 'https://control-one.nl/blog',
+      inLanguage: 'nl-NL',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Control One',
+        logo: { '@type': 'ImageObject', url: 'https://control-one.nl/logo.svg' },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://control-one.nl/blog' },
+      ],
+    },
+  ]}
 >
   <Header />
   <main>

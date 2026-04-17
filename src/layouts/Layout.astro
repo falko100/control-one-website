@@ -13,7 +13,7 @@ interface Props {
 const {
   title = 'Control One — ISO Management Eenvoudig Gemaakt',
   description = 'Control One helpt bedrijven bij het implementeren, bijhouden en beheren van ISO-compliance met begeleide workflows, risicobeheer, audits en documentbeheer.',
-  image = '/og-image.svg',
+  image = '/og-image.png',
   ogType = 'website',
   noindex = false,
   jsonLd,
@@ -29,22 +29,56 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: 'Control One',
+  legalName: 'Control One B.V.',
+  alternateName: 'Control-One',
   url: siteUrl,
   logo: `${siteUrl}/logo.svg`,
-  description: 'Control One is hét Nederlandse platform voor ISO-compliance voor het MKB.',
+  image: `${siteUrl}/og-image.png`,
+  description: 'Control One is het Nederlandse SaaS-platform voor ISO-compliance voor het MKB. Implementeer ISO 27001, 9001, 14001 en 45001 zelfstandig via een stapsgewijze coach, sjablonen, risicoanalyse, documentbeheer en auditmanagement.',
+  slogan: 'ISO Compliance Software voor het MKB',
+  foundingDate: '2024',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Twekkeler Es 42',
     postalCode: '7547 SM',
     addressLocality: 'Enschede',
+    addressRegion: 'Overijssel',
     addressCountry: 'NL',
   },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Netherlands',
+  },
+  knowsAbout: [
+    'ISO 27001',
+    'ISO/IEC 27001:2022',
+    'ISO 9001',
+    'ISO 14001',
+    'ISO 45001',
+    'Information Security Management System (ISMS)',
+    'Quality Management System (QMS)',
+    'Environmental Management System (EMS)',
+    'Occupational Health and Safety Management',
+    'Risicomanagement',
+    'Informatiebeveiliging',
+    'NIS2',
+    'SOC 2',
+    'AVG',
+    'GDPR',
+    'Annex A controls',
+    'Compliance management',
+    'Interne audits',
+    'Management Review',
+    'PDCA',
+  ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
     email: 'info@control-one.nl',
-    availableLanguage: 'Dutch',
+    availableLanguage: ['Dutch', 'English'],
+    areaServed: 'NL',
   },
   sameAs: [
     'https://www.linkedin.com/company/control-one',
@@ -112,6 +146,9 @@ const allSchemas: Record<string, unknown>[] = [
         })(window,document,'script','dataLayer',gtmId);
       </script>
     )}
+
+    <!-- LLM / AI discovery -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

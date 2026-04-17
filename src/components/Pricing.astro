@@ -69,7 +69,7 @@ const includedFeatures = [
       <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-4">
         Eén platform, ontelbare functies.<br />Kies je teamgrootte.
       </h2>
-      <p class="text-base text-primary-900/55 leading-relaxed mb-8">
+      <p class="text-base text-primary-900/75 leading-relaxed mb-8">
         Elk plan geeft volledige toegang tot het Control One platform, inclusief 1 ISO-framework.
       </p>
 
@@ -77,14 +77,14 @@ const includedFeatures = [
       <div class="inline-flex items-center gap-1 p-1 bg-primary-50 border border-primary-200 rounded-xl">
         <button
           id="toggle-monthly"
-          class="billing-toggle px-5 py-2 text-sm font-semibold rounded-lg transition-all bg-white text-primary-900 shadow-sm border border-primary-200"
+          class="billing-toggle px-5 py-2 text-sm font-semibold rounded-lg transition-all text-primary-600"
           onclick="setBilling('monthly')"
         >
           Per maand
         </button>
         <button
           id="toggle-yearly"
-          class="billing-toggle px-5 py-2 text-sm font-semibold rounded-lg transition-all text-primary-600"
+          class="billing-toggle px-5 py-2 text-sm font-semibold rounded-lg transition-all bg-white text-primary-900 shadow-sm border border-primary-200"
           onclick="setBilling('yearly')"
         >
           Per jaar
@@ -106,7 +106,7 @@ const includedFeatures = [
           <p class="text-xs font-bold uppercase tracking-widest text-accent-600 mb-0.5">Inbegrepen bij elk pakket</p>
           <h3 class="text-base font-bold text-primary-950">5 uur gratis chat consultancy</h3>
           <p class="text-xs font-semibold text-primary-500 mt-0.5">Echte ISO-expert · Geen AI of chatbot</p>
-          <p class="text-sm text-primary-900/55 mt-0.5">Elke beginner heeft wel eens een vraag. Stel ze snel via chat aan één van onze ISO-experts. Jij implementeert, wij staan klaar voor jouw vragen.</p>
+          <p class="text-sm text-primary-900/75 mt-0.5">Elke beginner heeft wel eens een vraag. Stel ze snel via chat aan één van onze ISO-experts. Jij implementeert, wij staan klaar voor jouw vragen.</p>
         </div>
         <div class="shrink-0">
           <span class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-accent-700 bg-white border border-accent-200 rounded-xl shadow-sm">
@@ -154,14 +154,14 @@ const includedFeatures = [
               <div class="flex items-baseline gap-1">
                 <span class="text-2xl font-semibold text-primary-900/40">&euro;</span>
                 <span class="price-display text-5xl font-black text-primary-950 tabular-nums" data-monthly={plan.priceMonthly} data-yearly={plan.priceYearly}>
-                  {plan.priceMonthly}
+                  {plan.priceYearly}
                 </span>
                 <span class="text-sm font-medium text-primary-900/40 ml-0.5">/maand</span>
               </div>
-              <p class="yearly-note text-xs text-emerald-600 font-semibold mt-1 h-4 hidden">
+              <p class="yearly-note text-xs text-emerald-600 font-semibold mt-1 h-4">
                 Jaarlijks gefactureerd · je bespaart €{(plan.priceMonthly - plan.priceYearly) * 12}
               </p>
-              <p class="monthly-note text-xs text-primary-900/35 mt-1">excl. BTW · maandelijks opzegbaar</p>
+              <p class="monthly-note text-xs text-primary-900/35 mt-1 hidden">excl. BTW · maandelijks opzegbaar</p>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ const includedFeatures = [
             <span class="text-xs bg-white text-primary-600 font-semibold border border-primary-200 px-2 py-0.5 rounded-full">Add-on</span>
           </div>
           <h3 class="text-base font-bold text-primary-950">Extra ISO-framework toevoegen</h3>
-          <p class="text-sm text-primary-900/55 mt-0.5">Voeg een tweede, derde of vierde framework toe aan je abonnement. Direct toegang tot alle functies voor dat framework.</p>
+          <p class="text-sm text-primary-900/75 mt-0.5">Voeg een tweede, derde of vierde framework toe aan je abonnement. Direct toegang tot alle functies voor dat framework.</p>
         </div>
         <div class="flex items-center gap-4 shrink-0">
           <div class="text-right">

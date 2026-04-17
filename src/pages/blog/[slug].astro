@@ -27,28 +27,43 @@ const formattedDate = publishDate.toLocaleDateString('nl-NL', {
 
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
+  '@id': `https://control-one.nl/blog/${post.slug}#article`,
   headline: title,
   description: description,
-  image: image ? `https://control-one.nl${image}` : 'https://control-one.nl/og-image.svg',
+  image: image ? `https://control-one.nl${image}` : 'https://control-one.nl/og-image.png',
   datePublished: publishDate.toISOString(),
   dateModified: publishDate.toISOString(),
+  inLanguage: 'nl-NL',
+  articleSection: category,
   author: {
     '@type': 'Organization',
-    name: 'Control One',
-    url: 'https://control-one.nl',
+    '@id': 'https://control-one.nl/#organization',
+    name: author || 'Control One Redactie',
+    url: 'https://control-one.nl/over-ons',
+    description: 'De redactie van Control One bestaat uit ISO-specialisten met ervaring in het implementeren van ISO 27001, 9001, 14001 en 45001 bij Nederlandse MKB-organisaties.',
+    knowsAbout: ['ISO 27001', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'AVG', 'NIS2', 'Informatiebeveiliging', 'Compliance'],
   },
   publisher: {
     '@type': 'Organization',
+    '@id': 'https://control-one.nl/#organization',
     name: 'Control One',
+    url: 'https://control-one.nl',
     logo: {
       '@type': 'ImageObject',
       url: 'https://control-one.nl/logo.svg',
+      width: 512,
+      height: 512,
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': `https://control-one.nl/blog/${post.slug}`,
+  },
+  isPartOf: {
+    '@type': 'Blog',
+    '@id': 'https://control-one.nl/blog#blog',
+    name: 'Control One Blog',
   },
   keywords: keywords?.join(', '),
 };
@@ -67,7 +82,7 @@ const breadcrumbSchema = {
 <Layout
   title={`${title} | Control One Blog`}
   description={description}
-  image={image ?? '/og-image.svg'}
+  image={image ?? '/og-image.png'}
   ogType="article"
   jsonLd={[articleSchema, breadcrumbSchema]}
 >

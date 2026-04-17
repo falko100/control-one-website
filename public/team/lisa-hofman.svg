@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="bg-lisa" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8f4ea" />
+      <stop offset="100%" stop-color="#c8e6cc" />
+    </radialGradient>
+    <clipPath id="circle-clip-lisa">
+      <circle cx="60" cy="60" r="60" />
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="60" fill="url(#bg-lisa)" />
+
+  <!-- Clipped content -->
+  <g clip-path="url(#circle-clip-lisa)">
+    <!-- Shoulders / body — muted teal-green professional top -->
+    <ellipse cx="60" cy="118" rx="38" ry="22" fill="#3a7a5a" />
+    <!-- Neck -->
+    <rect x="53" y="82" width="14" height="18" rx="6" fill="#f4c5a0" />
+
+    <!-- Hair — back layer (sweeps around face) -->
+    <ellipse cx="60" cy="58" rx="26" ry="30" fill="#5c3a1e" />
+    <!-- Hair sides sweeping down -->
+    <ellipse cx="38" cy="70" rx="10" ry="20" fill="#5c3a1e" />
+    <ellipse cx="82" cy="70" rx="10" ry="20" fill="#5c3a1e" />
+
+    <!-- Face oval -->
+    <ellipse cx="60" cy="60" rx="19" ry="22" fill="#f4c5a0" />
+
+    <!-- Hair top — sweeps over the top of face -->
+    <path d="M 36,48 Q 50,28 60,30 Q 70,28 84,48 Q 80,38 60,36 Q 40,38 36,48 Z" fill="#5c3a1e" />
+    <!-- Hair parting highlight -->
+    <path d="M 60,30 Q 62,34 61,40" stroke="#7a5030" stroke-width="1.5" fill="none" stroke-linecap="round" />
+
+    <!-- Eyebrows -->
+    <path d="M 47,52 Q 51,50 55,52" stroke="#5c3a1e" stroke-width="1.6" fill="none" stroke-linecap="round" />
+    <path d="M 65,52 Q 69,50 73,52" stroke="#5c3a1e" stroke-width="1.6" fill="none" stroke-linecap="round" />
+
+    <!-- Eyes -->
+    <ellipse cx="51" cy="57" rx="4" ry="2.8" fill="#fff" />
+    <ellipse cx="69" cy="57" rx="4" ry="2.8" fill="#fff" />
+    <circle cx="51" cy="57" r="2" fill="#3a2010" />
+    <circle cx="69" cy="57" r="2" fill="#3a2010" />
+    <!-- Eye shine -->
+    <circle cx="52.2" cy="56.2" r="0.7" fill="#fff" />
+    <circle cx="70.2" cy="56.2" r="0.7" fill="#fff" />
+
+    <!-- Nose — minimal hint -->
+    <path d="M 59,63 Q 57,68 60,69 Q 63,68 61,63" stroke="#d9a882" stroke-width="1" fill="none" stroke-linecap="round" />
+
+    <!-- Mouth — gentle smile -->
+    <path d="M 53,74 Q 60,79 67,74" stroke="#c8836a" stroke-width="1.6" fill="none" stroke-linecap="round" />
+
+    <!-- Subtle blush -->
+    <ellipse cx="45" cy="66" rx="5" ry="3" fill="#f0a080" opacity="0.25" />
+    <ellipse cx="75" cy="66" rx="5" ry="3" fill="#f0a080" opacity="0.25" />
+  </g>
+
+  <!-- Circle border -->
+  <circle cx="60" cy="60" r="59" fill="none" stroke="#a8d4b0" stroke-width="1.5" />
+</svg>

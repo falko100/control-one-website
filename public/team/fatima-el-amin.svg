@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="bg-fatima" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ede8f4" />
+      <stop offset="100%" stop-color="#c8bde8" />
+    </radialGradient>
+    <clipPath id="circle-clip-fatima">
+      <circle cx="60" cy="60" r="60" />
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="60" fill="url(#bg-fatima)" />
+
+  <!-- Clipped content -->
+  <g clip-path="url(#circle-clip-fatima)">
+    <!-- Shoulders / professional top — deep plum/navy -->
+    <ellipse cx="60" cy="118" rx="40" ry="22" fill="#3a2d5a" />
+
+    <!-- Hijab — outer fabric wrapping around the face and shoulders -->
+    <!-- Large rounded drape that frames the face -->
+    <ellipse cx="60" cy="65" rx="36" ry="44" fill="#4a3878" />
+    <!-- Hijab fabric falling over shoulders -->
+    <ellipse cx="60" cy="90" rx="42" ry="30" fill="#4a3878" />
+    <!-- Inner hijab frame — slightly lighter, close around the face -->
+    <path d="M 36,52 Q 36,32 60,30 Q 84,32 84,52 Q 84,90 60,94 Q 36,90 36,52 Z" fill="#5a46a0" />
+
+    <!-- Neck -->
+    <rect x="54" y="82" width="12" height="14" rx="5" fill="#c8855a" />
+
+    <!-- Face oval — warm brown complexion -->
+    <ellipse cx="60" cy="60" rx="20" ry="23" fill="#c8855a" />
+
+    <!-- Hijab inner edge — frames the face tightly -->
+    <path d="M 40,50 Q 40,30 60,28 Q 80,30 80,50" fill="#5a46a0" stroke="none" />
+    <!-- Forehead coverage from hijab -->
+    <path d="M 40,50 Q 40,44 60,42 Q 80,44 80,50 Q 80,46 60,44 Q 40,46 40,50 Z" fill="#5a46a0" />
+
+    <!-- Eyebrows — defined, dark -->
+    <path d="M 46,52 Q 50.5,49.5 55,51.5" stroke="#3a1a0a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+    <path d="M 65,51.5 Q 69.5,49.5 74,52" stroke="#3a1a0a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+    <!-- Eyes — slightly larger, expressive -->
+    <ellipse cx="51" cy="57" rx="4.5" ry="3" fill="#fff" />
+    <ellipse cx="69" cy="57" rx="4.5" ry="3" fill="#fff" />
+    <circle cx="51" cy="57.5" r="2.2" fill="#1a0a00" />
+    <circle cx="69" cy="57.5" r="2.2" fill="#1a0a00" />
+    <!-- Eye shine -->
+    <circle cx="52.2" cy="56.5" r="0.8" fill="#fff" />
+    <circle cx="70.2" cy="56.5" r="0.8" fill="#fff" />
+
+    <!-- Nose — minimal and clean -->
+    <path d="M 59,63 Q 57,68 60,69.5 Q 63,68 61,63" stroke="#b06a3a" stroke-width="1.1" fill="none" stroke-linecap="round" />
+
+    <!-- Mouth — warm and professional -->
+    <path d="M 53,75 Q 60,81 67,75" stroke="#a0502a" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+    <!-- Subtle shading on face sides for depth -->
+    <ellipse cx="41" cy="62" rx="5" ry="10" fill="#b8704a" opacity="0.2" />
+    <ellipse cx="79" cy="62" rx="5" ry="10" fill="#b8704a" opacity="0.2" />
+  </g>
+
+  <!-- Circle border -->
+  <circle cx="60" cy="60" r="59" fill="none" stroke="#a898d4" stroke-width="1.5" />
+</svg>

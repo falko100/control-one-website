@@ -3,66 +3,185 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+
+const exampleDocs = [
+  { name: 'ISO 27001 Handboek', type: 'Handboek', chapters: 'H4 – H10', interval: '6 maanden', status: 'approved' },
+  { name: 'Beleid voor Informatiebeveiliging', type: 'Beleid', chapters: 'A5.1', interval: '1 jaar', status: 'approved' },
+  { name: 'Risicobeleid', type: 'Beleid', chapters: 'H6', interval: '1 jaar', status: 'approved' },
+  { name: 'Toegangsrechtenbeleid', type: 'Beleid', chapters: 'A5.18', interval: '1 jaar', status: 'approved' },
+  { name: 'Werken op afstand', type: 'Beleid', chapters: 'A6.7', interval: '1 jaar', status: 'draft' },
+  { name: 'Rollen & verantwoordelijkheden IB', type: 'Beleid', chapters: 'A5.2', interval: '1 jaar', status: 'approved' },
+  { name: 'Geheimhoudingsovereenkomst', type: 'Sjabloon', chapters: 'A6.6', interval: '2 jaar', status: 'draft' },
+  { name: 'Procedure incidentmanagement', type: 'Procedure', chapters: 'A5.24 – A5.27', interval: '1 jaar', status: 'approved' },
+];
+
+const statusStyle = {
+  approved: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+  draft: 'bg-amber-50 text-amber-700 border-amber-100',
+};
+const statusLabel = {
+  approved: 'Goedgekeurd',
+  draft: 'Concept',
+};
+const typeStyle = {
+  Handboek: 'bg-primary-600 text-white',
+  Beleid: 'bg-blue-50 text-blue-700 border-blue-100',
+  Procedure: 'bg-violet-50 text-violet-700 border-violet-100',
+  Sjabloon: 'bg-primary-50 text-primary-600 border-primary-100',
+};
 ---
 
-<Layout title="Documentbeheer — ISO-documenten centraal beheren | Control One" description="Beheer al je ISO-documenten op één plek. Versiebeheer, goedkeuringsworkflows en kant-en-klare sjablonen per ISO-clausule. Exporteer als PDF voor je auditor.">
+<Layout
+  title="Documentbeheer — ISO-documenten centraal beheren | Control One"
+  description="Beheer al je ISO-documenten op één plek. Versiebeheer, goedkeuringsworkflows, periodieke reviews en kant-en-klare sjablonen per ISO-clausule."
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+      { '@type': 'ListItem', position: 2, name: 'Portal', item: 'https://control-one.nl/features' },
+      { '@type': 'ListItem', position: 3, name: 'Documentbeheer', item: 'https://control-one.nl/documenten' },
+    ],
+  }}
+>
   <Header />
   <main>
-    <section class="relative pt-32 pb-24 overflow-hidden">
+    <section class="relative pt-32 pb-20 lg:pb-28 overflow-hidden">
       <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
       <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-400/8 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
       <div class="relative max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-violet-400 bg-violet-400/10 rounded-full border border-violet-400/20">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-            Documentbeheer
+        <div class="lg:grid lg:grid-cols-[1fr_1.15fr] lg:gap-12 lg:items-center">
+          <div class="max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-violet-400 bg-violet-400/10 rounded-full border border-violet-400/20">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              Documentbeheer
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+              Alle beleid & procedures<br/><span class="text-violet-400">op één plek beheerd</span>
+            </h1>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Eén centraal register voor handboeken, beleid, procedures en sjablonen. Bewerk in de portal, stel reviewintervallen in, keur documenten goed en exporteer elk document als PDF — versiehistorie en goedkeuringen worden automatisch bijgehouden.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/80">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-violet-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                200+ sjablonen vooraf ingevuld
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-violet-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Ingebouwde editor, geen Word
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-violet-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                NL &amp; EN
+              </div>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg">
+                Gratis uitproberen
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+              <a href="/templates" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-lg transition-all">Bekijk alle templates</a>
+            </div>
           </div>
-          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-            Alle beleid & procedures<br/><span class="text-violet-400">op één plek beheerd</span>
-          </h1>
-          <p class="mt-6 text-lg text-primary-300/80 max-w-xl leading-relaxed">
-            Control One bevat een volledig documentenregister met 22+ vooraf ingevulde beleidsdocumenten en procedures. Bewerk, goedkeur en exporteer direct vanuit de portal.
-          </p>
-          <div class="mt-8 flex gap-4">
-            <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg">
-              Gratis uitproberen
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-            </a>
-            <a href="/templates" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-lg transition-all">Bekijk alle templates</a>
+
+          <!-- Hero afbeelding rechts -->
+          <div class="mt-12 lg:mt-0">
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+              <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-50 border-b border-primary-100">
+                <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
+                <div class="flex-1 min-w-0 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/documenten</div></div>
+              </div>
+              <img src="/screenshots/portal-documents.png" alt="Documentbeheer in Control One" class="w-full" loading="eager" />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-0 bg-white">
-      <div class="max-w-5xl mx-auto px-6 -mt-8">
-        <div class="rounded-2xl overflow-hidden border border-primary-100 shadow-2xl shadow-primary-200/30">
-          <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-50 border-b border-primary-100">
-            <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
-            <div class="flex-1 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center">app.control-one.nl/documenten</div></div>
+    <!-- Inline mockup of document list -->
+    <section class="py-20 bg-primary-50/30">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <p class="text-sm font-semibold tracking-wide uppercase text-violet-600 mb-3">Documentregister</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Elk document met zijn metadata</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Filter op type, clausule of review­status. Elk document heeft een eigen lifecycle: concept, goedkeuring, volgende beoordeling.</p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-primary-100 bg-white shadow-lg shadow-primary-100/40">
+          <div class="flex items-center gap-3 px-5 py-3 bg-primary-50 border-b border-primary-100 text-[10px] font-bold uppercase tracking-wide text-primary-500">
+            <span class="w-48 shrink-0">Naam</span>
+            <span class="w-20 shrink-0">Type</span>
+            <span class="w-28 shrink-0 hidden sm:block">Clausules</span>
+            <span class="w-20 shrink-0 hidden md:block">Review</span>
+            <span class="flex-1 text-right">Status</span>
           </div>
-          <img src="/screenshots/portal-documents.png" alt="Documentbeheer in Control One" class="w-full" />
+          <div class="divide-y divide-primary-100">
+            {exampleDocs.map(d => (
+              <div class="flex items-center gap-3 px-5 py-3 hover:bg-primary-50/40 transition-colors">
+                <p class="w-48 shrink-0 text-sm font-semibold text-primary-900 truncate">{d.name}</p>
+                <span class:list={['w-20 shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded border text-center', typeStyle[d.type]]}>{d.type}</span>
+                <span class="w-28 shrink-0 hidden sm:block text-xs font-mono text-primary-500 truncate">{d.chapters}</span>
+                <span class="w-20 shrink-0 hidden md:block text-xs text-primary-500">{d.interval}</span>
+                <div class="flex-1 text-right">
+                  <span class:list={['text-[10px] font-semibold px-2 py-0.5 rounded border', statusStyle[d.status]]}>{statusLabel[d.status]}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="px-5 py-3 text-[10px] text-primary-400 bg-primary-50/50 border-t border-primary-100">Voorbeeld · in uw portal ziet u alle 33+ documenten standaard, aangevuld met uw eigen uploads.</div>
         </div>
       </div>
     </section>
 
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+    <!-- Document types strip -->
+    <section class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Documenttypes</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Van handboek tot geheimhouding</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { title: '22+ templates vooraf ingevuld', desc: 'Van ISMS-handboek tot leveranciersbeleid: alles staat klaar, geschreven door ISO-experts.' },
-            { title: 'Bewerken in de portal', desc: 'Pas documenten direct aan in de ingebouwde editor. Geen Word, geen e-mailen. Gewoon inloggen en bewerken.' },
-            { title: 'PDF export voor auditors', desc: 'Exporteer elk document als PDF, klaar voor inlevering bij uw certificerende instelling.' },
-            { title: 'Versie- en goedkeuringshistorie', desc: 'Houd bij wie wat wanneer heeft gewijzigd. Elke versie is traceerbaar en aantoonbaar.' },
-            { title: 'Koppeling met Coach & VvT', desc: 'Documenten zijn gekoppeld aan de implementatiestappen en de Verklaring van Toepasselijkheid.' },
-            { title: 'Filter op categorie en status', desc: 'Zoek direct op documenttype, status (concept / goedgekeurd) of ISO-clausule.' },
+            { type: 'Handboeken', count: '1', desc: 'Het centrale ISMS-handboek, opgebouwd uit hoofdstukken H4 t/m H10.' },
+            { type: 'Beleid', count: '20+', desc: 'Beleidsdocumenten per Annex A-maatregel, vooraf ingevuld en aanpasbaar.' },
+            { type: 'Procedures', count: '15+', desc: 'Concrete werkinstructies voor incident, change, toegang en backup.' },
+            { type: 'Sjablonen', count: '200+', desc: 'Overeenkomsten, formulieren en registers voor alle ISO-processen.' },
+          ].map(t => (
+            <div class="p-5 rounded-2xl border border-primary-100 bg-gradient-to-b from-white to-primary-50/30">
+              <p class="text-2xl font-bold text-primary-950">{t.count}</p>
+              <p class="text-sm font-bold text-primary-950 mt-1 mb-1">{t.type}</p>
+              <p class="text-xs text-primary-900/75 leading-relaxed">{t.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-24 bg-primary-50/30">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Documentbeheer dat met u meewerkt</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Geen losse Word-bestanden op een netwerkschijf — een document in Control One is een levend ISMS-artefact.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            { title: '200+ sjablonen vooraf ingevuld', desc: 'Van ISMS-handboek tot leveranciersbeleid tot geheimhoudingsovereenkomst — geschreven door ISO-experts en klaar voor uw organisatie.' },
+            { title: 'Bewerken in de portal', desc: 'Volledige ingebouwde editor met secties, inhoudsopgave en variabele velden. Geen Word, geen versieversmarketing per e-mail.' },
+            { title: 'Versiehistorie per wijziging', desc: 'Elke aanpassing is traceerbaar: wie, wat, wanneer. Ideaal als bewijs tijdens interne en externe audits.' },
+            { title: 'Periodieke reviews', desc: 'Stel per document een reviewinterval in (6 maanden, 1 jaar, 2 jaar). De portal agendeert automatisch de volgende beoordeling.' },
+            { title: 'Goedkeuringsworkflow', desc: 'Leg vast wie een document heeft goedgekeurd en wanneer. Status (concept, goedgekeurd) is altijd direct zichtbaar in de lijst.' },
+            { title: 'Duplicate & hergebruik', desc: 'Maak met één klik een kopie van een beleid en pas het aan voor een aparte entiteit, dochter of framework.' },
+            { title: 'Gekoppeld aan Annex A', desc: 'Elk document verwijst naar één of meerdere Annex A-maatregelen. Zo ziet u per control direct het bijbehorende beleid.' },
+            { title: 'PDF-export voor auditors', desc: 'Exporteer elk document of het hele pakket als PDF, klaar voor inlevering bij uw certificerende instelling.' },
+            { title: 'Nederlands én Engels', desc: 'Elke sjabloon is volledig beschikbaar in NL en EN. Internationale audits of Engelstalige medewerkers? Geen extra vertaalwerk.' },
           ].map(f => (
-            <div class="p-6 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+            <div class="p-6 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/50 transition-all">
               <div class="w-8 h-8 rounded-lg bg-violet-50 flex items-center justify-center text-violet-600 mb-4">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               </div>
               <h3 class="text-sm font-bold text-primary-950 mb-2">{f.title}</h3>
-              <p class="text-sm text-primary-900/55 leading-relaxed">{f.desc}</p>
+              <p class="text-sm text-primary-900/75 leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

@@ -64,12 +64,75 @@ const softwareSchema = {
     },
   ],
 };
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is Control One?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Control One is een Nederlands SaaS-platform waarmee het MKB ISO-compliance (ISO 27001, 9001, 14001, 45001) zelfstandig implementeert en onderhoudt. Het platform combineert een stapsgewijze implementatiecoach, kant-en-klare sjablonen, risicoanalyse, documentbeheer en auditmanagement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hoe lang duurt een ISO 27001-implementatie met Control One?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Een realistisch traject voor het MKB is 3 tot 6 maanden tot de externe certificeringsaudit. De 28-stappen implementatiecoach van Control One structureert het proces zodat organisaties zonder externe consultant certificering kunnen behalen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Welke ISO-normen ondersteunt Control One?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Control One ondersteunt ISO 27001:2022 (informatiebeveiliging), ISO 9001:2015 (kwaliteitsmanagement), ISO 14001:2015 (milieumanagement) en ISO 45001:2018 (arbo & veiligheid). NIS2, SOC 2 en AVG/GDPR zijn gepland.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kan ik meerdere ISO-normen tegelijk beheren?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Control One is multi-framework: implementeer één norm of combineer er meerdere. Gedeelde beheersmaatregelen (zoals documentbeheer, interne audits en management review) worden automatisch gemapt tussen frameworks, wat dubbel werk voorkomt.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Heb ik een externe consultant nodig om ISO 27001 te behalen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nee. Control One is specifiek ontworpen voor zelfstandige implementatie. De 28-stappen coach geeft per stap uitleg, sjablonen en checkvragen. Veel MKB-klanten behalen ISO 27001-certificering zonder externe consultant.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat kost Control One?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Abonnementen starten bij €134 per maand (jaarlijks gefactureerd). Er zijn drie pakketten tot €249 per maand. Een gratis proefperiode is beschikbaar via control-one.nl/pricing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Ondersteunt Control One ISO 27001:2022 met alle 93 Annex A-maatregelen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Control One implementeert de 2022-versie van ISO 27001 met alle 93 Annex A-maatregelen, georganiseerd in de 4 thema\'s: Organisatorisch (37), Mensen (8), Fysiek (14) en Technologisch (34). Elke maatregel heeft status, owner, implementatiebeschrijving en koppeling aan de Verklaring van Toepasselijkheid.',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
-  title="Control One — ISO Compliance Software voor MKB | ISO 27001, 9001, 14001 & 45001"
+  title="Control One — ISO Compliance Software voor het MKB"
   description="Control One is hét Nederlandse platform voor ISO-compliance. Implementeer ISO 27001, 9001, 14001 en 45001 zelf met onze stapsgewijze coach, sjablonen en tools. Gratis starten."
-  jsonLd={softwareSchema}
+  jsonLd={[softwareSchema, faqSchema]}
 >
   <Header />
   <main>

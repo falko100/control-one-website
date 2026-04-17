@@ -78,7 +78,31 @@ const frameworks = [
 ];
 ---
 
-<Layout title="Ondersteunde ISO-frameworks — ISO 27001, 9001, 14001, 45001 | Control One" description="Control One ondersteunt ISO 27001, ISO 9001, ISO 14001 en ISO 45001. Implementeer één of combineer meerdere frameworks met gedeelde documenten en maatregelen.">
+<Layout
+  title="ISO-frameworks — ISO 27001, 9001, 14001, 45001 | Control One"
+  description="Control One ondersteunt ISO 27001, ISO 9001, ISO 14001 en ISO 45001. Implementeer één of combineer meerdere frameworks met gedeelde documenten en maatregelen."
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+        { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Ondersteunde ISO-frameworks',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'ISO 27001 — Informatiebeveiliging', url: 'https://control-one.nl/iso-27001' },
+        { '@type': 'ListItem', position: 2, name: 'ISO 9001 — Kwaliteitsmanagement', url: 'https://control-one.nl/iso-9001' },
+        { '@type': 'ListItem', position: 3, name: 'ISO 14001 — Milieumanagement', url: 'https://control-one.nl/iso-14001' },
+        { '@type': 'ListItem', position: 4, name: 'ISO 45001 — Arbo & Veiligheid', url: 'https://control-one.nl/iso-45001' },
+      ],
+    },
+  ]}
+>
   <Header />
   <main>
     <section class="relative pt-32 pb-24 overflow-hidden">

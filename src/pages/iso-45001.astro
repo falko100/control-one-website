@@ -186,12 +186,61 @@ const schema = {
     url: 'https://control-one.nl/pricing',
   },
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+    { '@type': 'ListItem', position: 3, name: 'ISO 45001', item: 'https://control-one.nl/iso-45001' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is ISO 45001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 45001 is de internationale norm voor een Occupational Health and Safety Management System (OHSMS). De norm helpt organisaties bij het voorkomen van arbeidsongevallen en beroepsziekten door systematisch arbeidsrisico\'s te identificeren en te beheersen. De huidige versie is ISO 45001:2018.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is het verschil tussen ISO 45001 en OHSAS 18001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 45001:2018 heeft OHSAS 18001 per maart 2021 vervangen. Belangrijkste verschillen: ISO 45001 volgt de High-Level Structure (waardoor integratie met ISO 9001 en 14001 eenvoudig is), legt meer nadruk op leiderschapsbetrokkenheid en werknemersparticipatie, en neemt de context van de organisatie en belanghebbenden expliciet mee.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hoe verhoudt ISO 45001 zich tot de Nederlandse Arbowet?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 45001 is een internationale norm, de Arbowet is Nederlandse wetgeving. Een ISO 45001-gecertificeerd managementsysteem helpt bij het aantoonbaar voldoen aan de Arbowet, omdat veel eisen (zoals RI&E, PMO, preventiemedewerker) onderdeel zijn van het managementsysteem. Certificering is echter niet wettelijk verplicht.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is een RI&E en waar past die binnen ISO 45001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De Risico-Inventarisatie en -Evaluatie (RI&E) is een wettelijk verplicht document onder de Arbowet waarin alle arbeidsrisico\'s zijn vastgelegd met een plan van aanpak. In ISO 45001 is de RI&E de basis voor hoofdstuk 6.1 (acties om risico\'s te adresseren) en voedt het de beheersmaatregelen in het veiligheidsmanagementsysteem.',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
-  title="ISO 45001 Certificering — Arbo & Veiligheid Software | Control One"
+  title="ISO 45001 Software — Arbo & Veiligheid | Control One"
   description="Implementeer ISO 45001:2018 met Control One. Beheer arbeidsrisico's, incidenten en veiligheidsmaatregelen. Bescherm medewerkers en voldoe aan de Arbowet."
-  jsonLd={schema}
+  jsonLd={[schema, breadcrumbSchema, faqSchema]}
 >
   <Header />
   <main>
@@ -437,7 +486,7 @@ const schema = {
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle OHSMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
             In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 45001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>

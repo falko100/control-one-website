@@ -181,12 +181,61 @@ const schema = {
     url: 'https://control-one.nl/pricing',
   },
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+    { '@type': 'ListItem', position: 3, name: 'ISO 9001', item: 'https://control-one.nl/iso-9001' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is ISO 9001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ISO 9001 is de internationale norm voor kwaliteitsmanagementsystemen (QMS). De norm stelt eisen aan processen, klantgerichtheid, leiderschap, risicogebaseerd denken en continue verbetering. De huidige versie is ISO 9001:2015 en is toepasbaar op elke organisatie, ongeacht sector of grootte.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is de PDCA-cyclus in ISO 9001?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De PDCA-cyclus (Plan, Do, Check, Act) is het continue verbeter-model dat aan ISO 9001 ten grondslag ligt. Plan: doelen en processen vaststellen. Do: processen uitvoeren. Check: resultaten monitoren. Act: bijsturen op basis van bevindingen. De High-Level Structure van ISO 9001:2015 volgt deze cyclus in de hoofdstukken 4 tot en met 10.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is risicogebaseerd denken in ISO 9001:2015?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Risk-based thinking is een kerneis in ISO 9001:2015: organisaties moeten risico\'s en kansen identificeren die de kwaliteit van producten of diensten kunnen beïnvloeden, en daar maatregelen op nemen. Het vervangt de oude "preventive action" uit ISO 9001:2008 en is geïntegreerd door alle hoofdstukken heen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kan ik ISO 9001 en ISO 27001 combineren?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Beide normen volgen de High-Level Structure en delen eisen rondom documentbeheer, interne audits, directiebeoordeling, non-conformiteiten en corrigerende maatregelen. Control One mapt gedeelde beheersmaatregelen automatisch, waardoor een integrated management system (IMS) efficiënt beheerd kan worden.',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
-  title="ISO 9001 Certificering — Kwaliteitsmanagement Software | Control One"
+  title="ISO 9001 Software — Kwaliteitsmanagement | Control One"
   description="Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform."
-  jsonLd={schema}
+  jsonLd={[schema, breadcrumbSchema, faqSchema]}
 >
   <Header />
   <main>
@@ -433,7 +482,7 @@ const schema = {
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle QMS-documenten in één overzicht
           </h2>
-          <p class="mt-4 text-lg text-primary-900/55 max-w-xl mx-auto leading-relaxed">
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
             In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 9001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>
