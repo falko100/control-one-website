@@ -50,7 +50,7 @@ ISO 27001 en DORA delen een gemeenschappelijk fundament: beide normen sturen op 
 | Logging en monitoring | Annex A 8.15–8.16 |
 | Leveranciersrisicobeheer | Annex A 5.19–5.22 |
 
-> **Tip:** Als uw ISO 27001-scope al uw financiële ICT-diensten omvat, kunt u een groot deel van de DORA-documentatie rechtstreeks hergebruiken. Begin met een gap-analyse om te bepalen wat ontbreekt.
+> **Tip:** Als je ISO 27001-scope al je financiële ICT-diensten omvat, kun je een groot deel van de DORA-documentatie rechtstreeks hergebruiken. Begin met een gap-analyse om te bepalen wat ontbreekt.
 
 ---
 
@@ -72,21 +72,21 @@ Organisaties moeten aantonen dat zij niet overmatig afhankelijk zijn van één I
 
 ---
 
-## Hoe pakt u de combinatie aan?
+## Hoe pakt je de combinatie aan?
 
-De slimste aanpak is een geïntegreerde implementatie: gebruik uw ISO 27001-framework als basis en vul het aan met DORA-specifieke elementen.
+De slimste aanpak is een geïntegreerde implementatie: gebruik je ISO 27001-framework als basis en vul het aan met DORA-specifieke elementen.
 
 **Stap 1: Gap-analyse**
-Breng in kaart welke DORA-verplichtingen nog niet worden afgedekt door uw huidige ISMS. Gebruik de vijf DORA-pijlers als structuur.
+Breng in kaart welke DORA-verplichtingen nog niet worden afgedekt door je huidige ISMS. Gebruik de vijf DORA-pijlers als structuur.
 
 **Stap 2: Documentatie uitbreiden**
 Voeg DORA-specifieke beleidsdocumenten toe, zoals een ICT-derde-partijbeleid, een TLPT-plan en rapportagetemplate voor incidenten aan toezichthouders.
 
 **Stap 3: Processen aanpassen**
-Zorg dat uw incidentresponsproces voldoet aan de DORA-rapportagetermijnen: een initiële notificatie binnen 4 uur na classificatie als ernstig incident, en een eindrapport binnen één maand.
+Zorg dat je incidentresponsproces voldoet aan de DORA-rapportagetermijnen: een initiële notificatie binnen 4 uur na classificatie als ernstig incident, en een eindrapport binnen één maand.
 
 **Stap 4: Leverancierscontracten herzien**
-Controleer of uw ICT-leverancierscontracten de door DORA vereiste clausules bevatten, zoals het recht op audits en afspraken over veerkracht en exitstrategieën.
+Controleer of je ICT-leverancierscontracten de door DORA vereiste clausules bevatten, zoals het recht op audits en afspraken over veerkracht en exitstrategieën.
 
 ---
 
@@ -101,7 +101,7 @@ In Nederland houdt De Nederlandsche Bank (DNB) toezicht op banken en verzekeraar
 ## Veelgestelde vragen
 
 **Geldt DORA ook voor kleine financiële ondernemingen?**
-DORA kent een proportionaliteitsbeginsel. Kleine en niet-complexe instellingen (SNCI's) krijgen een vereenvoudigd ICT-risicobeheerkader, maar zijn niet volledig vrijgesteld. Controleer bij uw toezichthouder of uw organisatie als SNCI kwalificeert.
+DORA kent een proportionaliteitsbeginsel. Kleine en niet-complexe instellingen (SNCI's) krijgen een vereenvoudigd ICT-risicobeheerkader, maar zijn niet volledig vrijgesteld. Controleer bij je toezichthouder of je organisatie als SNCI kwalificeert.
 
 **Kan ik DORA-compliance aantonen met mijn ISO 27001-certificaat?**
 Een ISO 27001-certificaat is een sterke indicator van volwassenheid, maar is op zichzelf geen DORA-compliance bewijs. DORA vereist aanvullende documentatie en processen die buiten de ISO 27001-scope vallen.
@@ -111,4 +111,4 @@ Toezichthouders kunnen corrigerende maatregelen opleggen, boetes uitschrijven en
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u stap voor stap bij zowel ISO 27001 als DORA-compliance — vanuit één geïntegreerd platform.
+Klaar om te starten? [Control One](/prijzen) begeleidt je stap voor stap bij zowel ISO 27001 als DORA-compliance — vanuit één geïntegreerd platform.

@@ -1,6 +1,6 @@
 ---
 title: 'Cybersecurity voor thuiswerkers: beleid en maatregelen'
-description: 'Thuiswerken vergroot het aanvalsoppervlak. Hoe beschermt u uw organisatie zonder productiviteitsverlies?'
+description: 'Thuiswerken vergroot het aanvalsoppervlak. Hoe beschermt je je organisatie zonder productiviteitsverlies?'
 publishDate: 2026-07-03
 category: 'Cybersecurity'
 readTime: '7 min'
@@ -9,7 +9,7 @@ image: '/blog/banner-cybersecurity.svg'
 keywords: ['cybersecurity thuiswerken', 'telewerk beveiliging', 'remote work cybersecurity', 'thuiswerkbeleid beveiliging']
 ---
 
-Thuiswerken is voor miljoenen Nederlandse medewerkers een vast onderdeel van de werkweek geworden. Wat begon als noodmaatregel is inmiddels een structurele werkvorm — en daarmee ook een structurele beveiligingsuitdaging. Thuiswerkers verbinden zich via privénetwerken, werken op persoonlijke apparaten, delen ruimtes met gezinsleden en zijn buiten de beschermde kantooromgeving. Het aanvalsoppervlak van uw organisatie is hiermee aanzienlijk vergroot. Toch hoeft veilig thuiswerken niet te leiden tot productiviteitsverlies als u het goed inricht.
+Thuiswerken is voor miljoenen Nederlandse medewerkers een vast onderdeel van de werkweek geworden. Wat begon als noodmaatregel is inmiddels een structurele werkvorm — en daarmee ook een structurele beveiligingsuitdaging. Thuiswerkers verbinden zich via privénetwerken, werken op persoonlijke apparaten, delen ruimtes met gezinsleden en zijn buiten de beschermde kantooromgeving. Het aanvalsoppervlak van je organisatie is hiermee aanzienlijk vergroot. Toch hoeft veilig thuiswerken niet te leiden tot productiviteitsverlies als je het goed inricht.
 
 ## De specifieke risico's van thuiswerken
 
@@ -80,7 +80,7 @@ Alleen met een actieve VPN-verbinding. Zonder VPN is verkeer op openbare netwerk
 Overweeg een BYOD-beleid met strikte device compliance-vereisten. Alternatieven zijn virtual desktop infrastructure (VDI) of browser-gebaseerde toegang via een beveiligd portaal.
 
 **Moet ik als werkgever de thuisrouter van medewerkers beveiligen?**
-Juridisch is dit complex. Praktisch kunt u medewerkers voorzien van instructies voor basisbeveiliging (wachtwoord wijzigen, firmware updaten) en overweeg het verstrekken van een mobiele hotspot voor werkverkeer.
+Juridisch is dit complex. Praktisch kun je medewerkers voorzien van instructies voor basisbeveiliging (wachtwoord wijzigen, firmware updaten) en overweeg het verstrekken van een mobiele hotspot voor werkverkeer.
 
 **Is een VPN altijd voldoende voor veilig thuiswerken?**
 Een VPN is een essentiële basislaag maar geen complete oplossing. Combineer VPN met MFA, endpoint beheer en bewustzijnstraining voor een adequate bescherming.
@@ -90,4 +90,4 @@ ISO 27001 Annex A-maatregel 6.7 vereist explicit beleid voor telewerken. Een ged
 
 ---
 
-Wilt u uw thuiswerkbeveiliging structureel aanpakken en aansluiten bij ISO 27001 of NEN 7510? Bekijk onze pakketten op [de prijzenpagina](/prijzen) en ontdek hoe Control One u helpt veilig en aantoonbaar verantwoord te werken.
+Wil je je thuiswerkbeveiliging structureel aanpakken en aansluiten bij ISO 27001 of NEN 7510? Bekijk onze pakketten op [de prijzenpagina](/prijzen) en ontdek hoe Control One je helpt veilig en aantoonbaar verantwoord te werken.

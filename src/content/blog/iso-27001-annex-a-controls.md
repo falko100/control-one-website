@@ -15,9 +15,9 @@ keywords:
 draft: false
 ---
 
-**Annex A** van ISO 27001:2022 bevat een referentiecatalogus van 93 beveiligingsmaatregelen — ook wel **controls** genoemd — verdeeld over vier thema's. Voor MKB-organisaties die voor het eerst met ISO 27001 te maken krijgen, kan dit aantal overweldigend lijken. Maar u hoeft niet alle 93 controls te implementeren: de norm vereist dat u beargumenteerd bepaalt welke controls relevant zijn voor uw organisatie.
+**Annex A** van ISO 27001:2022 bevat een referentiecatalogus van 93 beveiligingsmaatregelen — ook wel **controls** genoemd — verdeeld over vier thema's. Voor MKB-organisaties die voor het eerst met ISO 27001 te maken krijgen, kan dit aantal overweldigend lijken. Maar je hoeft niet alle 93 controls te implementeren: de norm vereist dat je beargumenteerd bepaalt welke controls relevant zijn voor je organisatie.
 
-In dit artikel geven we een helder overzicht van de vier thema's, lichten we de meest kritieke controls toe en helpen we u prioriteiten te stellen.
+In dit artikel geven we een helder overzicht van de vier thema's, lichten we de meest kritieke controls toe en helpen we je prioriteiten te stellen.
 
 ## Van 114 naar 93 controls: de update van 2022
 
@@ -34,7 +34,7 @@ Nieuwe controls in ISO 27001:2022 zijn onder andere:
 
 ### Thema 1: Organisatorische controls (5.1 t/m 5.37) — 37 controls
 
-Organisatorische controls hebben betrekking op beleid, governance, risicobeheer en de organisatorische structuur rond informatiebeveiliging. Dit is het fundament van uw ISMS.
+Organisatorische controls hebben betrekking op beleid, governance, risicobeheer en de organisatorische structuur rond informatiebeveiliging. Dit is het fundament van je ISMS.
 
 | Control | Onderwerp |
 |---|---|
@@ -63,7 +63,7 @@ Deze controls richten zich op medewerkers: van screening bij indiensttreding tot
 
 **Bewustwording (6.3)** is voor MKB een van de meest kosteneffectieve maatregelen. Menselijk gedrag is verantwoordelijk voor een groot deel van de beveiligingsincidenten — van het klikken op phishingmails tot het gebruik van zwakke wachtwoorden.
 
-> **Tip:** Voer jaarlijks een nep-phishingtest uit onder uw medewerkers. De resultaten zijn vaak verrassend én vormen een uitstekende basis voor gerichte bewustwordingstraining. Veel e-mailplatforms (zoals Microsoft 365) bieden ingebouwde simulatietools.
+> **Tip:** Voer jaarlijks een nep-phishingtest uit onder je medewerkers. De resultaten zijn vaak verrassend én vormen een uitstekende basis voor gerichte bewustwordingstraining. Veel e-mailplatforms (zoals Microsoft 365) bieden ingebouwde simulatietools.
 
 ### Thema 3: Fysieke controls (7.1 t/m 7.14) — 14 controls
 
@@ -93,18 +93,18 @@ De technologische controls zijn het meest uitgebreid en richten zich op IT-syste
 | 8.24 | Gebruik van cryptografie |
 | 8.28 | Veilig programmeren |
 
-## Hoe bepaalt u welke controls van toepassing zijn?
+## Hoe bepaal je welke controls van toepassing zijn?
 
-ISO 27001 vereist dat u voor elke control in Annex A aangeeft of die van toepassing is op uw organisatie, en zo niet, waarom niet. Dit legt u vast in het **Statement of Applicability (SoA)**.
+ISO 27001 vereist dat je voor elke control in Annex A aangeeft of die van toepassing is op je organisatie, en zo niet, waarom niet. Dit leg je vast in het **Statement of Applicability (SoA)**.
 
 Een control is doorgaans van toepassing als:
-- Uw risicoanalyse een risico identificeert dat door de control wordt beheerst
+- Je risicoanalyse een risico identificeert dat door de control wordt beheerst
 - Wet- of regelgeving de maatregel vereist
 - Contractuele verplichtingen ernaar verwijzen
 
-Een control mag worden uitgesloten als het risico simpelweg niet bestaat (bijv. fysieke bewaking van een serverruimte als u geen eigen servers heeft) of als er een goed gedocumenteerde alternatieve maatregel voor is.
+Een control mag worden uitgesloten als het risico simpelweg niet bestaat (bijv. fysieke bewaking van een serverruimte als je geen eigen servers heeft) of als er een goed gedocumenteerde alternatieve maatregel voor is.
 
-## Prioritering voor MKB: waar begint u?
+## Prioritering voor MKB: waar begint je?
 
 Voor een MKB-organisatie die net begint, raden wij de volgende prioriteringsvolgorde aan:
 
@@ -132,14 +132,14 @@ Voor een MKB-organisatie die net begint, raden wij de volgende prioriteringsvolg
 ## Veelgestelde vragen
 
 **Moeten wij alle 93 controls implementeren?**
-Nee. U moet alle 93 controls beoordelen en documenteren in uw Statement of Applicability. Voor elke relevante control bepaalt u een passende maatregel; irrelevante controls worden gemotiveerd uitgesloten.
+Nee. Je moet alle 93 controls beoordelen en documenteren in je Statement of Applicability. Voor elke relevante control bepaal je een passende maatregel; irrelevante controls worden gemotiveerd uitgesloten.
 
 **Hoe verschilt Annex A van de hoofdtekst van de norm?**
-De hoofdtekst van ISO 27001 (clausules 4–10) beschrijft het managementsysteem zelf: hoe u het opzet, onderhoudt en verbetert. Annex A is een referentielijst van beveiligingsmaatregelen die u selecteert op basis van uw risicoanalyse.
+De hoofdtekst van ISO 27001 (clausules 4–10) beschrijft het managementsysteem zelf: hoe je het opzet, onderhoudt en verbetert. Annex A is een referentielijst van beveiligingsmaatregelen die je selecteert op basis van je risicoanalyse.
 
 **Waar vind ik de volledige beschrijving van elke control?**
-De uitgebreide implementatieguidance voor alle controls staat in ISO 27002:2022. Dit is een apart document dat u aanschaft naast ISO 27001. Control One verwerkt de relevante implementatierichtlijnen direct in uw ISMS-templates.
+De uitgebreide implementatieguidance voor alle controls staat in ISO 27002:2022. Dit is een apart document dat je aanschaft naast ISO 27001. Control One verwerkt de relevante implementatierichtlijnen direct in je ISMS-templates.
 
 ---
 
-Wilt u weten welke van de 93 Annex A controls specifiek van toepassing zijn op uw organisatie? Bekijk hoe Control One u helpt bij het opstellen van een volledig en verdedigbaar Statement of Applicability via onze [prijzenpagina](/prijzen).
+Wil je weten welke van de 93 Annex A controls specifiek van toepassing zijn op je organisatie? Bekijk hoe Control One je helpt bij het opstellen van een volledig en verdedigbaar Statement of Applicability via onze [prijzenpagina](/prijzen).

@@ -1,12 +1,12 @@
 ---
-title: 'Meerdere ISO-normen tegelijk implementeren: zo doet u het'
-description: "Een geïntegreerd managementsysteem voor meerdere normen bespaart 30–40% tijd. Zo pakt u het aan."
+title: 'Meerdere ISO-normen tegelijk implementeren: zo doe je het'
+description: "Een geïntegreerd managementsysteem voor meerdere normen bespaart 30–40% tijd. Zo pakt je het aan."
 publishDate: 2026-06-25
 category: 'Compliance'
 readTime: '8 min'
 author: 'Control One Redactie'
 image: '/blog/banner-compliance.svg'
-imageAlt: 'Meerdere ISO-normen tegelijk implementeren: zo doet u het — Control One'
+imageAlt: 'Meerdere ISO-normen tegelijk implementeren: zo doe je het — Control One'
 keywords:
   - meerdere ISO normen combineren
   - geïntegreerd managementsysteem
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Steeds meer MKB-organisaties werken aan meerdere ISO-certificeringen tegelijk of willen bestaande certificeringen uitbreiden. ISO 9001 voor kwaliteit, ISO 14001 voor milieu, ISO 27001 voor informatiebeveiliging en ISO 45001 voor arbeidsomstandigheden — elk heeft waarde, maar vier separate managementsystemen onderhouden is een organisatorische nachtmerrie. Het alternatief is een **geïntegreerd managementsysteem (IMS)**: één systeem dat meerdere normen bedient. In dit artikel leest u hoe u dat opbouwt en welke winst u daarmee behaalt.
+Steeds meer MKB-organisaties werken aan meerdere ISO-certificeringen tegelijk of willen bestaande certificeringen uitbreiden. ISO 9001 voor kwaliteit, ISO 14001 voor milieu, ISO 27001 voor informatiebeveiliging en ISO 45001 voor arbeidsomstandigheden — elk heeft waarde, maar vier separate managementsystemen onderhouden is een organisatorische nachtmerrie. Het alternatief is een **geïntegreerd managementsysteem (IMS)**: één systeem dat meerdere normen bedient. In dit artikel lees je hoe je dat opbouwt en welke winst je daarmee behaalt.
 
 ## Waarom een geïntegreerd managementsysteem?
 
@@ -50,15 +50,15 @@ Er zijn twee strategieën voor het implementeren van meerdere normen:
 
 **Strategie 1 — Gelijktijdige implementatie**
 
-U implementeert alle gewenste normen tegelijk als één geïntegreerd systeem. Voordeel: maximale efficiëntie, geen dubbel werk, directe integratie. Nadeel: hogere initiële complexiteit en druk op de organisatie.
+Je implementeert alle gewenste normen tegelijk als één geïntegreerd systeem. Voordeel: maximale efficiëntie, geen dubbel werk, directe integratie. Nadeel: hogere initiële complexiteit en druk op de organisatie.
 
 Geschikt voor: organisaties die starten met ISO zonder bestaande certificeringen, organisaties met een sterke kwaliteitsmanager en voldoende managementsupport.
 
 **Strategie 2 — Gefaseerde implementatie**
 
-U begint met één norm (typisch ISO 9001 als fundament) en voegt daarna andere normen toe aan het bestaande systeem. Voordeel: lager initieel risico, organisatie went stap voor stap aan compliance. Nadeel: meer herwerk bij uitbreiding als het initiële systeem niet is voorbereid op integratie.
+Je begint met één norm (typisch ISO 9001 als fundament) en voegt daarna andere normen toe aan het bestaande systeem. Voordeel: lager initieel risico, organisatie went stap voor stap aan compliance. Nadeel: meer herwerk bij uitbreiding als het initiële systeem niet is voorbereid op integratie.
 
-> **Tip:** Als u nu met één norm start maar weet dat u later meerdere normen wilt implementeren, bouw dan direct een IMS-structuur op — zelfs als u slechts één norm invult. Voeg de normen later toe zonder het hele systeem te hoeven herbouwen.
+> **Tip:** Als je nu met één norm start maar weet dat je later meerdere normen wilt implementeren, bouw dan direct een IMS-structuur op — zelfs als je slechts één norm invult. Voeg de normen later toe zonder het hele systeem te hoeven herbouwen.
 
 ## De IMS-architectuur: hoe ziet het eruit?
 
@@ -74,7 +74,7 @@ Een geïntegreerd managementsysteem heeft een gelaagde structuur:
 
 ## De gecombineerde audit: hoe werkt dat?
 
-Als u meerdere normen heeft, kunt u bij uw certificeringsinstantie gecombineerde audits aanvragen. Bij een gecombineerde audit auditeert één auditteam meerdere normen gelijktijdig. Dit scheelt auditdagen en daarmee kosten.
+Als je meerdere normen heeft, kun je bij je certificeringsinstantie gecombineerde audits aanvragen. Bij een gecombineerde audit auditeert één auditteam meerdere normen gelijktijdig. Dit scheelt auditdagen en daarmee kosten.
 
 Een geïntegreerde audit van ISO 9001 en ISO 14001 duurt doorgaans 20–30% minder lang dan twee aparte audits. Bij drie normen kan de besparing oplopen tot 35–40%.
 
@@ -91,16 +91,16 @@ Organisaties die hun IMS goed communiceren naar de werkvloer, ervaren minder wee
 
 **Is er een officieel certificaat voor een geïntegreerd managementsysteem?**
 
-Nee. Er bestaat geen "IMS-certificaat". U ontvangt voor elke norm een apart certificaat, ook als u één geïntegreerd systeem heeft. De certificaten worden wel door dezelfde instantie afgegeven bij gecombineerde audits.
+Nee. Er bestaat geen "IMS-certificaat". Je ontvangt voor elke norm een apart certificaat, ook als je één geïntegreerd systeem heeft. De certificaten worden wel door dezelfde instantie afgegeven bij gecombineerde audits.
 
 **Welke norm implementeer ik als eerste?**
 
-Dat hangt af van uw prioriteiten en klantbehoeften. ISO 9001 is het meest voorkomend als startpunt vanwege de brede toepasbaarheid en de grote overlap met andere normen. ISO 27001 is het meest gevraagd in sectoren met hoge informatieveiligheidseisen (IT, finance, zorg). Laat u leiden door wat uw klanten of de markt van u verwachten.
+Dat hangt af van je prioriteiten en klantbehoeften. ISO 9001 is het meest voorkomend als startpunt vanwege de brede toepasbaarheid en de grote overlap met andere normen. ISO 27001 is het meest gevraagd in sectoren met hoge informatieveiligheidseisen (IT, finance, zorg). Laat je leiden door wat je klanten of de markt van je verwachten.
 
 **Kan ik een bestaand ISO 9001-systeem uitbreiden met ISO 27001?**
 
-Ja, en dit is de meest gangbare route. U bouwt de ISO 27001-eisen (met name de normspecifieke clausule 8-eisen en Annex A-beheersmaatregelen) bovenop uw bestaande kwaliteitsmanagementsysteem. De gedeelde HLS-elementen hoeven niet te worden herbouwd — alleen uitgebreid of aangevuld.
+Ja, en dit is de meest gangbare route. Je bouwt de ISO 27001-eisen (met name de normspecifieke clausule 8-eisen en Annex A-beheersmaatregelen) bovenop je bestaande kwaliteitsmanagementsysteem. De gedeelde HLS-elementen hoeven niet te worden herbouwd — alleen uitgebreid of aangevuld.
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u stap voor stap.
+Klaar om te starten? [Control One](/prijzen) begeleidt je stap voor stap.

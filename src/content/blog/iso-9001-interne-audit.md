@@ -1,6 +1,6 @@
 ---
 title: 'ISO 9001 interne audit uitvoeren'
-description: "Hoe plant, voert u uit en rapporteert u een interne ISO 9001-audit? Inclusief checklist en tips."
+description: "Hoe plant, voert je uit en rapporteer je een interne ISO 9001-audit? Inclusief checklist en tips."
 publishDate: 2026-05-01
 category: 'ISO 9001'
 readTime: '6 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-De interne audit is een van de meest waardevolle — en tegelijkertijd meest onderschatte — instrumenten binnen ISO 9001. Waar de externe certificeringsaudit achteraf toetst of uw systeem voldoet, is de interne audit bedoeld als proactief leerinstrument: het is de spiegel die uw eigen systeem u voorhoudt. Een goed uitgevoerde interne audit geeft richting aan verbeteringen, sterkt het vertrouwen in uw processen en bereidt u optimaal voor op de externe audit. Maar hoe voert u er een goed uit?
+De interne audit is een van de meest waardevolle — en tegelijkertijd meest onderschatte — instrumenten binnen ISO 9001. Waar de externe certificeringsaudit achteraf toetst of je systeem voldoet, is de interne audit bedoeld als proactief leerinstrument: het is de spiegel die je eigen systeem je voorhoudt. Een goed uitgevoerde interne audit geeft richting aan verbeteringen, sterkt het vertrouwen in je processen en bereidt je optimaal voor op de externe audit. Maar hoe voert je er een goed uit?
 
 ## Wat eist ISO 9001 van de interne audit?
 
@@ -25,7 +25,7 @@ Clausule 9.2 van ISO 9001:2015 stelt dat organisaties op geplande tijdstippen in
 - voldoet aan de eisen van ISO 9001
 - effectief is geïmplementeerd en onderhouden
 
-De norm vereist daarnaast een auditprogramma dat rekening houdt met het belang van de processen, de wijzigingen die van invloed zijn op de organisatie en de resultaten van vorige audits. U moet ook zorgen dat auditoren objectief en onpartijdig zijn — in de praktijk betekent dit dat medewerkers niet hun eigen werk mogen auditen.
+De norm vereist daarnaast een auditprogramma dat rekening houdt met het belang van de processen, de wijzigingen die van invloed zijn op de organisatie en de resultaten van vorige audits. Je moet ook zorgen dat auditoren objectief en onpartijdig zijn — in de praktijk betekent dit dat medewerkers niet hun eigen werk mogen auditen.
 
 ## Het auditprogramma opstellen
 
@@ -40,7 +40,7 @@ Een auditprogramma is het jaarplanningsdocument dat beschrijft welke audits wann
 
 Stel het auditprogramma vast aan het begin van het jaar en laat het goedkeuren door het management. Documenteer het programma en bewaar het als bewijs voor de externe audit.
 
-> **Tip:** Plan de interne audit minimaal vier tot zes weken vóór uw externe certificerings- of surveillance-audit. Zo heeft u tijd om bevindingen op te volgen en verbeteringen te implementeren vóór de externe toetsing.
+> **Tip:** Plan de interne audit minimaal vier tot zes weken vóór je externe certificerings- of surveillance-audit. Zo heb je tijd om bevindingen op te volgen en verbeteringen te implementeren vóór de externe toetsing.
 
 ## De audit voorbereiden
 
@@ -58,7 +58,7 @@ Verzamel vooraf relevante documentatie: procesbeschrijvingen, werkprocedures, re
 
 ## De audit uitvoeren
 
-Tijdens de audit verzamelt u bewijs via drie methoden: interviews, observatie en documentbeoordeling. Een goede interne auditor stelt open vragen ("Hoe gaat u te werk wanneer...?"), observeert de praktijk ("Kunt u mij laten zien hoe...?") en beoordeelt registraties ("Heeft u voorbeelden van de afgelopen maand?").
+Tijdens de audit verzamelt je bewijs via drie methoden: interviews, observatie en documentbeoordeling. Een goede interne auditor stelt open vragen ("Hoe ga je te werk wanneer...?"), observeert de praktijk ("Kun je mij laten zien hoe...?") en beoordeelt registraties ("Heb je voorbeelden van de afgelopen maand?").
 
 Noteer bevindingen nauwkeurig. Elk auditbewijs dat afwijkt van de eis — van de norm of van de eigen procedure — is een potentiële nonconformiteit of observatie. Onderscheid hierbij:
 
@@ -68,7 +68,7 @@ Noteer bevindingen nauwkeurig. Elk auditbewijs dat afwijkt van de eis — van de
 
 ## Auditrapport en opvolging
 
-Na de audit stelt u een auditrapport op. Dit rapport bevat minimaal: de scope en datum van de audit, de naam van de auditor, een samenvatting van bevindingen, de geconstateerde nonconformiteiten en de conclusie over de effectiviteit van het geauditeerde gebied.
+Na de audit stel je een auditrapport op. Dit rapport bevat minimaal: de scope en datum van de audit, de naam van de auditor, een samenvatting van bevindingen, de geconstateerde nonconformiteiten en de conclusie over de effectiviteit van het geauditeerde gebied.
 
 Nonconformiteiten worden vervolgens behandeld via de procedure voor corrigerende maatregelen (clausule 10.2). De verantwoordelijke proceseigenaar analyseert de grondoorzaak, bepaalt een corrigerende maatregel en legt een deadline vast. De auditor verifieert na implementatie of de maatregel effectief is geweest.
 
@@ -76,12 +76,12 @@ Nonconformiteiten worden vervolgens behandeld via de procedure voor corrigerende
 
 **Mag ik mijn eigen medewerkers trainen als interne auditor of moet ik iemand extern inschakelen?**
 
-U mag interne medewerkers opleiden als auditor, mits zij niet hun eigen werk auditen. Er zijn kortlopende ISO 9001-audittrainingen (één tot twee dagen) beschikbaar die voldoende basis bieden voor een interne audit. Voor kleine organisaties zonder geschikte interne kandidaten is het inschakelen van een externe interne auditor een goede optie.
+Je mag interne medewerkers opleiden als auditor, mits zij niet hun eigen werk auditen. Er zijn kortlopende ISO 9001-audittrainingen (één tot twee dagen) beschikbaar die voldoende basis bieden voor een interne audit. Voor kleine organisaties zonder geschikte interne kandidaten is het inschakelen van een externe interne auditor een goede optie.
 
 **Hoe lang duurt een interne audit voor een kleine organisatie?**
 
-Voor een organisatie met tien tot twintig medewerkers is een volledige jaarlijkse interne audit doorgaans haalbaar in één werkdag. U kunt de audit ook spreiden over meerdere sessies van twee tot drie uur als dat de dagelijkse operatie minder verstoort.
+Voor een organisatie met tien tot twintig medewerkers is een volledige jaarlijkse interne audit doorgaans haalbaar in één werkdag. Je kunt de audit ook spreiden over meerdere sessies van twee tot drie uur als dat de dagelijkse operatie minder verstoort.
 
 ---
 
-Een goed uitgevoerde interne audit is geen bureaucratische verplichting maar een serieus managementinstrument. Het geeft u zekerheid over de werking van uw QMS en biedt concrete aanknopingspunten voor verbetering. Wilt u ondersteuning bij het opzetten of uitvoeren van uw interne auditprogramma? Bekijk ons aanbod op [/prijzen](/prijzen).
+Een goed uitgevoerde interne audit is geen bureaucratische verplichting maar een serieus managementinstrument. Het geef je zekerheid over de werking van je QMS en biedt concrete aanknopingspunten voor verbetering. Wil je ondersteuning bij het opzetten of uitvoeren van je interne auditprogramma? Bekijk ons aanbod op [/prijzen](/prijzen).

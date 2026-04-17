@@ -1,19 +1,19 @@
 ---
-title: 'ISO 9001 directiebeoordeling: zo doet u het goed'
-description: "De directiebeoordeling is een ISO-verplichting. Hoe maakt u er meer dan een formele vergadering van?"
+title: 'ISO 9001 directiebeoordeling: zo doe je het goed'
+description: "De directiebeoordeling is een ISO-verplichting. Hoe maak je er meer dan een formele vergadering van?"
 publishDate: 2026-05-05
 category: 'ISO 9001'
 readTime: '7 min'
 author: 'Control One Redactie'
 image: '/blog/banner-iso9001.svg'
-imageAlt: 'ISO 9001 directiebeoordeling: zo doet u het goed — Control One'
+imageAlt: 'ISO 9001 directiebeoordeling: zo doe je het goed — Control One'
 keywords: [ISO 9001 directiebeoordeling, management review QMS, directiebeoordeling agenda, clausule 9.3 ISO 9001]
 draft: false
 ---
 
 De **directiebeoordeling** is voor veel organisaties een jaarlijkse verplichting die ze zo snel mogelijk willen afvinken. Een vergadering met een standaardagenda, een handtekening van de directeur, en klaar. Toch is dat een gemiste kans. Clausule 9.3 van ISO 9001 schrijft de directiebeoordeling voor als een strategisch instrument — een moment waarop de hoogste leiding beoordeelt of het **kwaliteitsmanagementsysteem (QMS)** nog steeds passend, toereikend en doeltreffend is.
 
-In dit artikel leest u wat de norm precies vereist, hoe u de vergadering inhoudelijk sterk maakt en hoe u de uitkomsten vertaalt naar concrete verbeteringen.
+In dit artikel lees je wat de norm precies vereist, hoe je de vergadering inhoudelijk sterk maakt en hoe je de uitkomsten vertaalt naar concrete verbeteringen.
 
 ## Wat zegt clausule 9.3 van ISO 9001?
 
@@ -42,7 +42,7 @@ De uitkomsten van de directiebeoordeling moeten leiden tot besluiten over:
 
 Het is niet voldoende om punten te bespreken zonder concrete acties te formuleren. De norm verwacht aantoonbare besluiten.
 
-## Hoe organiseert u een effectieve directiebeoordeling?
+## Hoe organiseert je een effectieve directiebeoordeling?
 
 Een directiebeoordeling die écht waarde toevoegt, begint weken voor de vergadering. De kwaliteitsmanager bereidt de relevante data voor: KPI-rapporten, klachtenanalyses, auditverslagen en een overzicht van openstaande acties.
 
@@ -74,9 +74,9 @@ Het grootste risico is dat de vergadering eindigend in vage afspraken. Elk beslu
 
 ### Eénmaal per jaar en dan niets
 
-Veel organisaties plannen de directiebeoordeling eenmaal per jaar, vlak voor de surveillance-audit. Overweeg een tussentijdse mini-review na zes maanden. Zo voorkomt u verrassingen en houdt u het systeem levendig.
+Veel organisaties plannen de directiebeoordeling eenmaal per jaar, vlak voor de surveillance-audit. Overweeg een tussentijdse mini-review na zes maanden. Zo voorkomt je verrassingen en houdt je het systeem levendig.
 
-## Documentatie: wat bewaart u?
+## Documentatie: wat bewaart je?
 
 ISO 9001 vereist **gedocumenteerde informatie** als bewijs dat de directiebeoordeling heeft plaatsgevonden. Dit zijn minimaal:
 
@@ -85,13 +85,13 @@ ISO 9001 vereist **gedocumenteerde informatie** als bewijs dat de directiebeoord
 - De besluitenlijst met acties, eigenaren en deadlines
 - De onderliggende rapporten en data
 
-In de praktijk volstaat een goed notulenverslag. Sommige organisaties werken met een vast formulier dat de inputpunten structureert. Met een platform als [Control One](/prijzen) kunt u dit volledig digitaal inrichten: KPI-dashboards, auditverslagen en actielijsten zijn direct beschikbaar als input voor de vergadering.
+In de praktijk volstaat een goed notulenverslag. Sommige organisaties werken met een vast formulier dat de inputpunten structureert. Met een platform als [Control One](/prijzen) kun je dit volledig digitaal inrichten: KPI-dashboards, auditverslagen en actielijsten zijn direct beschikbaar als input voor de vergadering.
 
 ## Van directiebeoordeling naar verbetering
 
 De directiebeoordeling is het sluitstuk van de **PDCA-cyclus** op strategisch niveau. De uitkomsten vormen de input voor nieuwe kwaliteitsdoelstellingen en verbeterprojecten. Organisaties die dit goed doen, zien hun QMS langzaam volwassener worden: de doelstellingen worden ambitieuzer, de nonconformiteiten nemen af en de klanttevredenheid stijgt.
 
-Koppel de besluiten uit de directiebeoordeling expliciet aan uw [kwaliteitsbeleid](/iso-9001). Zo toont u tijdens de externe audit aan dat uw systeem niet stilstaat.
+Koppel de besluiten uit de directiebeoordeling expliciet aan je [kwaliteitsbeleid](/iso-9001). Zo toont je tijdens de externe audit aan dat je systeem niet stilstaat.
 
 ## Veelgestelde vragen
 
@@ -109,6 +109,6 @@ Klanttevredenheidsindex, aantal klachten en afhandelingstijd, percentages uitgev
 
 ## Conclusie
 
-De directiebeoordeling is geen bureaucratische verplichting — het is het moment waarop de leiding de koers van het kwaliteitssysteem bepaalt. Door goed voor te bereiden, de juiste vragen te stellen en concrete acties vast te leggen, maakt u van clausule 9.3 een echte motor voor verbetering.
+De directiebeoordeling is geen bureaucratische verplichting — het is het moment waarop de leiding de koers van het kwaliteitssysteem bepaalt. Door goed voor te bereiden, de juiste vragen te stellen en concrete acties vast te leggen, maak je van clausule 9.3 een echte motor voor verbetering.
 
-Wilt u uw directiebeoordeling gestructureerd voorbereiden met automatische KPI-rapporten en een digitale actielijst? Bekijk de mogelijkheden op [Control One](/prijzen) en ontdek hoe u compliance eenvoudiger maakt.
+Wil je je directiebeoordeling gestructureerd voorbereiden met automatische KPI-rapporten en een digitale actielijst? Bekijk de mogelijkheden op [Control One](/prijzen) en ontdek hoe je compliance eenvoudiger maakt.

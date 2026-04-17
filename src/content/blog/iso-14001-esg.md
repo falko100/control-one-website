@@ -1,12 +1,12 @@
 ---
-title: 'ISO 14001 en ESG: de groene schakel voor uw rapportage'
-description: "ISO 14001 levert de data en structuur voor uw ESG-rapportage. Hoe koppelt u de systemen?"
+title: 'ISO 14001 en ESG: de groene schakel voor je rapportage'
+description: "ISO 14001 levert de data en structuur voor je ESG-rapportage. Hoe koppelt je de systemen?"
 publishDate: 2026-05-17
 category: 'ISO 14001'
 readTime: '6 min'
 author: 'Control One Redactie'
 image: '/blog/banner-iso14001.svg'
-imageAlt: 'ISO 14001 en ESG: de groene schakel voor uw rapportage — Control One'
+imageAlt: 'ISO 14001 en ESG: de groene schakel voor je rapportage — Control One'
 keywords:
   - 'ISO 14001 ESG'
   - 'duurzaamheidsrapportage ISO 14001'
@@ -24,7 +24,7 @@ ESG staat voor de drie pijlers van duurzaam ondernemen:
 - **Social (Sociaal)**: arbeidsomstandigheden, diversiteit, mensenrechten in de keten
 - **Governance (Bestuur)**: transparantie, antikorruptie, ethisch leiderschap
 
-Lang was ESG-rapportage voorbehouden aan beursgenoteerde multinationals. Maar door de **Corporate Sustainability Reporting Directive (CSRD)** en de toenemende eisen van grote inkopers sijpelt de rapportageplicht steeds verder door in het MKB. Als u levert aan een grote onderneming die zelf CSRD-plichtig is, kunt u verwachten dat uw klant u om ESG-data vraagt.
+Lang was ESG-rapportage voorbehouden aan beursgenoteerde multinationals. Maar door de **Corporate Sustainability Reporting Directive (CSRD)** en de toenemende eisen van grote inkopers sijpelt de rapportageplicht steeds verder door in het MKB. Als je levert aan een grote onderneming die zelf CSRD-plichtig is, kun je verwachten dat je klant je om ESG-data vraagt.
 
 ## ISO 14001 als fundament van de E in ESG
 
@@ -37,19 +37,19 @@ Het milieupijler van ESG omvat precies de thema's die ISO 14001 systematisch beh
 - Gebruik en uitstoot van gevaarlijke stoffen
 - Biodiversiteitsimpact
 
-Een gecertificeerd ISO 14001-systeem betekent dat u al een gestructureerde inventarisatie heeft gemaakt van uw milieuaspecten, dat u doelstellingen en actieplannen heeft, dat u prestaties monitort en dat u periodiek rapporteert aan het management. Dit is vrijwel exact wat ESG-raamwerken vragen — alleen in een andere structuur gepresenteerd.
+Een gecertificeerd ISO 14001-systeem betekent dat je al een gestructureerde inventarisatie heeft gemaakt van je milieuaspecten, dat je doelstellingen en actieplannen heeft, dat je prestaties monitort en dat je periodiek rapporteert aan het management. Dit is vrijwel exact wat ESG-raamwerken vragen — alleen in een andere structuur gepresenteerd.
 
-> **Tip:** Maak een **mapping-tabel** tussen uw ISO 14001-milieuaspecten en de ESG-indicatoren die uw klanten of financiers opvragen. Zo ziet u direct welke data u al heeft en waar nog gaps zitten. Dat is de basis voor uw ESG-dataverzamelingsplan.
+> **Tip:** Maak een **mapping-tabel** tussen je ISO 14001-milieuaspecten en de ESG-indicatoren die je klanten of financiers opvragen. Zo zie je direct welke data je al heeft en waar nog gaps zitten. Dat is de basis voor je ESG-dataverzamelingsplan.
 
 ## Van ISO 14001-data naar ESG-rapportage
 
-Het vertalen van uw ISO 14001-gegevens naar ESG-rapportage vereist enkele aanvullende stappen:
+Het vertalen van je ISO 14001-gegevens naar ESG-rapportage vereist enkele aanvullende stappen:
 
 **Kwantificeer in erkende eenheden**
-ESG-rapportage werkt met gestandaardiseerde metrics. CO₂-emissies worden uitgedrukt in ton CO₂-equivalent (tCO₂e), energieverbruik in gigajoule (GJ) of megawattuur (MWh), watergebruik in kubieke meter (m³). Zorg dat uw monitoring deze eenheden gebruikt.
+ESG-rapportage werkt met gestandaardiseerde metrics. CO₂-emissies worden uitgedrukt in ton CO₂-equivalent (tCO₂e), energieverbruik in gigajoule (GJ) of megawattuur (MWh), watergebruik in kubieke meter (m³). Zorg dat je monitoring deze eenheden gebruikt.
 
-**Scope uw emissies**
-ESG-raamwerken zoals GRI en TCFD maken onderscheid tussen scope 1 (directe emissies), scope 2 (ingekochte energie) en scope 3 (keten). ISO 14001 richt zich primair op scope 1 en 2 — voor volledige ESG-rapportage dient u ook een eerste schatting van scope 3 te maken.
+**Scope je emissies**
+ESG-raamwerken zoals GRI en TCFD maken onderscheid tussen scope 1 (directe emissies), scope 2 (ingekochte energie) en scope 3 (keten). ISO 14001 richt zich primair op scope 1 en 2 — voor volledige ESG-rapportage dient je ook een eerste schatting van scope 3 te maken.
 
 **Gebruik erkende raamwerken**
 De meest gebruikte ESG-raamwerken zijn GRI (Global Reporting Initiative), TCFD (Task Force on Climate-related Financial Disclosures) en de ESRS-standaarden onder de CSRD. Elk raamwerk heeft eigen indicatoren, maar de onderliggende data die ISO 14001 oplevert is bruikbaar voor allemaal.
@@ -76,14 +76,14 @@ ISO 14001 is een krachtig fundament, maar dekt niet alle ESG-eisen. De sociale (
 ## Veelgestelde vragen
 
 **Mijn klant vraagt om een CO₂-footprint. Heb ik dat als ISO 14001-gecertificeerde organisatie al?**
-ISO 14001 verplicht u energieverbruik en emissies te monitoren als significante milieuaspecten, maar een volledige CO₂-footprint-berekening (scope 1, 2 en 3) is niet standaard onderdeel van de norm. U heeft waarschijnlijk de basisdata voor scope 1 en 2. De omzetting naar een formele footprint-rapportage vraagt een aanvullende stap, maar is met uw bestaande data relatief eenvoudig te maken.
+ISO 14001 verplicht je energieverbruik en emissies te monitoren als significante milieuaspecten, maar een volledige CO₂-footprint-berekening (scope 1, 2 en 3) is niet standaard onderdeel van de norm. Je hebt waarschijnlijk de basisdata voor scope 1 en 2. De omzetting naar een formele footprint-rapportage vraagt een aanvullende stap, maar is met je bestaande data relatief eenvoudig te maken.
 
 **Welk ESG-raamwerk sluit het beste aan op ISO 14001?**
-GRI (Global Reporting Initiative) sluit qua structuur en milieuthema's het beste aan op ISO 14001. De GRI-standaarden voor milieu (GRI 302 Energie, GRI 303 Water, GRI 305 Emissies, GRI 306 Afval) sluiten direct aan op de milieuaspecten die u in uw ISO 14001-systeem registreert.
+GRI (Global Reporting Initiative) sluit qua structuur en milieuthema's het beste aan op ISO 14001. De GRI-standaarden voor milieu (GRI 302 Energie, GRI 303 Water, GRI 305 Emissies, GRI 306 Afval) sluiten direct aan op de milieuaspecten die je in je ISO 14001-systeem registreert.
 
 **Is een ISO 14001-certificaat voldoende voor ESG-rapportage?**
-Nee, maar het is een uitstekend vertrekpunt. Een ISO 14001-certificaat toont aan dat uw milieumanagement systematisch is ingericht en onafhankelijk gecontroleerd. Voor volledige ESG-rapportage zijn aanvullende stappen nodig, met name voor de sociale en governance-pijler en voor scope 3-emissies.
+Nee, maar het is een uitstekend vertrekpunt. Een ISO 14001-certificaat toont aan dat je milieumanagement systematisch is ingericht en onafhankelijk gecontroleerd. Voor volledige ESG-rapportage zijn aanvullende stappen nodig, met name voor de sociale en governance-pijler en voor scope 3-emissies.
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door de implementatie.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door de implementatie.

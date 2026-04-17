@@ -15,17 +15,17 @@ keywords:
 draft: false
 ---
 
-Een van de meest gestelde vragen bij ISO 27001-implementaties: "Welke documenten moet ik eigenlijk hebben?" Het antwoord verrast veel organisaties — zowel positief als negatief. Positief, omdat de lijst korter is dan gevreesd. Negatief, omdat de documenten die er wél op staan, echt aanwezig en actueel moeten zijn. Dit artikel geeft u de volledige lijst van wat ISO 27001 verplicht documenteert, inclusief praktische toelichting.
+Een van de meest gestelde vragen bij ISO 27001-implementaties: "Welke documenten moet ik eigenlijk hebben?" Het antwoord verrast veel organisaties — zowel positief als negatief. Positief, omdat de lijst korter is dan gevreesd. Negatief, omdat de documenten die er wél op staan, echt aanwezig en actueel moeten zijn. Dit artikel geef je de volledige lijst van wat ISO 27001 verplicht documenteert, inclusief praktische toelichting.
 
 ## Wat bedoelt ISO 27001 met "gedocumenteerde informatie"?
 
-ISO 27001 gebruikt de term "gedocumenteerde informatie" voor alles wat u moet vastleggen en bewaren. Dit omvat zowel **documenten** (beleid, procedures, instructies) als **records** (bewijs dat iets is gebeurd, zoals auditverslagen en trainingsregistraties). Het onderscheid is relevant: beleid kunt u aanpassen; een auditverslag is een historisch gegeven dat u niet mag wijzigen.
+ISO 27001 gebruikt de term "gedocumenteerde informatie" voor alles wat je moet vastleggen en bewaren. Dit omvat zowel **documenten** (beleid, procedures, instructies) als **records** (bewijs dat iets is gebeurd, zoals auditverslagen en trainingsregistraties). Het onderscheid is relevant: beleid kun je aanpassen; een auditverslag is een historisch gegeven dat je niet mag wijzigen.
 
-De norm schrijft nergens voor hoe documenten eruit moeten zien, in welk format ze moeten zijn of hoe ze moeten worden genaamd. Een beleidsdocument in Word is even geldig als een pagina in een wiki of een sectie in uw ISMS-platform. Wat telt, is dat de informatie beschikbaar, leesbaar en beheerd is.
+De norm schrijft nergens voor hoe documenten eruit moeten zien, in welk format ze moeten zijn of hoe ze moeten worden genaamd. Een beleidsdocument in Word is even geldig als een pagina in een wiki of een sectie in je ISMS-platform. Wat telt, is dat de informatie beschikbaar, leesbaar en beheerd is.
 
 ## De verplichte documenten per normhoofdstuk
 
-Hieronder vindt u de volledige lijst van documenten die ISO 27001:2022 expliciet vereist, geordend per normhoofdstuk.
+Hieronder vind je de volledige lijst van documenten die ISO 27001:2022 expliciet vereist, geordend per normhoofdstuk.
 
 | Normreferentie | Verplicht document of record |
 |---------------|------------------------------|
@@ -66,11 +66,11 @@ Naast de verplichte lijst zijn er documenten die de norm niet expliciet eist, ma
 
 Het is niet nodig al deze documenten als aparte bestanden te hebben. Een goed ISMS-beleid kan meerdere onderwerpen in één document behandelen. Houd het compact: liever vijftien coherente documenten die medewerkers daadwerkelijk kennen, dan vijftig documenten die niemand leest.
 
-> **Tip:** Begin uw documentatieset met de verplichte lijst uit de tabel hierboven. Voeg pas aanvullende documenten toe wanneer u een Bijlage A-control heeft geselecteerd die documentatie vereist. Zo bouwt u de documentatie op basis van uw risicoanalyse, niet op basis van wat er op internet circuleren als "ISO 27001 documentatiepakketten".
+> **Tip:** Begin je documentatieset met de verplichte lijst uit de tabel hierboven. Voeg pas aanvullende documenten toe wanneer je een Bijlage A-control heeft geselecteerd die documentatie vereist. Zo bouwt je de documentatie op basis van je risicoanalyse, niet op basis van wat er op internet circuleren als "ISO 27001 documentatiepakketten".
 
 ## Documentbeheer: wat de norm verwacht
 
-ISO 27001 vereist ook dat u gedocumenteerde informatie beheert. Dat betekent:
+ISO 27001 vereist ook dat je gedocumenteerde informatie beheert. Dat betekent:
 
 **Versiebeheer.** Elk document heeft een versienummer en een datum. Verouderde versies worden gemarkeerd als vervallen en niet meer actief gebruikt.
 
@@ -86,7 +86,7 @@ ISO 27001 vereist ook dat u gedocumenteerde informatie beheert. Dat betekent:
 
 **Te veel documenten maken.** Meer is niet beter. Een organisatie van 20 medewerkers met 80 beleidsdocumenten heeft geen werkend ISMS — ze heeft een documentarchief. Proportionaliteit is een kernprincipe van ISO 27001.
 
-**Documenten kopiëren zonder aanpassing.** Template-documentatie van internet is een startpunt, geen eindpunt. Elk document moet aansluiten op uw specifieke organisatie, scope en risico's. Een auditor herkent generieke templates onmiddellijk.
+**Documenten kopiëren zonder aanpassing.** Template-documentatie van internet is een startpunt, geen eindpunt. Elk document moet aansluiten op je specifieke organisatie, scope en risico's. Een auditor herkent generieke templates onmiddellijk.
 
 **Geen eigenaar toewijzen.** Elk document heeft een eigenaar die verantwoordelijk is voor actualisering. Zonder eigenaar veroudert documentatie stilzwijgend.
 
@@ -95,13 +95,13 @@ ISO 27001 vereist ook dat u gedocumenteerde informatie beheert. Dat betekent:
 ## FAQ
 
 **Is de Statement of Applicability het moeilijkste document om op te stellen?**
-De SoA wordt vaak als complex ervaren, maar de structuur is eenvoudig: voor elk van de 93 controls in Bijlage A geeft u aan of hij van toepassing is, waarom (of waarom niet), en welke implementatiestatus er is. De inhoudelijke uitdaging zit in de motivatie voor uitsluitingen — die moet consistent zijn met uw risicoanalyse.
+De SoA wordt vaak als complex ervaren, maar de structuur is eenvoudig: voor elk van de 93 controls in Bijlage A geef je aan of hij van toepassing is, waarom (of waarom niet), en welke implementatiestatus er is. De inhoudelijke uitdaging zit in de motivatie voor uitsluitingen — die moet consistent zijn met je risicoanalyse.
 
 **Moeten alle documenten in het Nederlands zijn?**
-ISO 27001 schrijft geen taal voor. De documenten moeten begrijpelijk zijn voor de medewerkers die ze gebruiken. Voor een Nederlandse organisatie met Nederlandstalig personeel is Nederlands de logische keuze; in internationale omgevingen kan Engels gangbaar zijn. De externe auditor moet de documenten kunnen beoordelen — controleer vooraf of uw auditor met uw gekozen taal kan werken.
+ISO 27001 schrijft geen taal voor. De documenten moeten begrijpelijk zijn voor de medewerkers die ze gebruiken. Voor een Nederlandse organisatie met Nederlandstalig personeel is Nederlands de logische keuze; in internationale omgevingen kan Engels gangbaar zijn. De externe auditor moet de documenten kunnen beoordelen — controleer vooraf of je auditor met je gekozen taal kan werken.
 
 ---
 
 Goede documentatie is het fundament onder een controleerbaar ISMS. Wie weet wat verplicht is, wat aanbevolen is en hoe hij het beheert, heeft geen honderden pagina's nodig — maar wel de juiste tientallen.
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door het hele implementatieproces.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door het hele implementatieproces.

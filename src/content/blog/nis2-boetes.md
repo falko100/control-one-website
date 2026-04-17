@@ -1,6 +1,6 @@
 ---
-title: 'NIS2 boetes en sancties: wat riskeert u?'
-description: 'NIS2 kent boetes tot €10 miljoen of 2% omzet. Wanneer worden ze opgelegd en hoe voorkomt u ze?'
+title: 'NIS2 boetes en sancties: wat riskeert je?'
+description: 'NIS2 kent boetes tot €10 miljoen of 2% omzet. Wanneer worden ze opgelegd en hoe voorkomt je ze?'
 publishDate: 2026-06-08
 category: 'Wetgeving'
 readTime: '7 min'
@@ -58,15 +58,15 @@ Naast de zorgplicht introduceert NIS2 ook een meldplicht bij ernstige incidenten
 
 Het bewust niet melden van een ernstig incident is een van de situaties die het hardst worden bestraft. Toezichthouders beschouwen dit als een fundamentele schending van de vertrouwensrelatie die NIS2 beoogt te bevorderen.
 
-## Hoe verkleint u het risico op boetes?
+## Hoe verkleint je het risico op boetes?
 
 De beste bescherming is een aantoonbaar functionerend beveiligingsprogramma. Dat betekent:
 
-**Documenteer alles:** Beleidsdocumenten, risicoanalyses, trainingsrecords en auditrapportages zijn uw bewijs van naleving. Zonder documentatie kunt u geen naleving aantonen, ook al heeft u in de praktijk alles op orde.
+**Documenteer alles:** Beleidsdocumenten, risicoanalyses, trainingsrecords en auditrapportages zijn je bewijs van naleving. Zonder documentatie kun je geen naleving aantonen, ook al heb je in de praktijk alles op orde.
 
-**Implementeer de tien maatregelengebieden:** De zorgplicht uit artikel 21 NIS2 is het primaire toetsingskader. Zorg dat u op elk van de tien gebieden aantoonbare maatregelen heeft genomen.
+**Implementeer de tien maatregelengebieden:** De zorgplicht uit artikel 21 NIS2 is het primaire toetsingskader. Zorg dat je op elk van de tien gebieden aantoonbare maatregelen heeft genomen.
 
-**Train uw bestuur:** Bestuurders moeten begrijpen wat NIS2 van hen verlangt. Organiseer een specifieke sessie voor de directie over cybersecuritygovernance en persoonlijke aansprakelijkheid.
+**Train je bestuur:** Bestuurders moeten begrijpen wat NIS2 van hen verlangt. Organiseer een specifieke sessie voor de directie over cybersecuritygovernance en persoonlijke aansprakelijkheid.
 
 **Oefen incidentrespons:** Een meldprocedure die voor het eerst in werking treedt bij een echt incident, zal de 24-uurs termijn niet halen. Oefen regelmatig met tabletop-scenario's.
 
@@ -89,4 +89,4 @@ Ja. Organisaties kunnen een bestuurlijke boete aanvechten via de reguliere bestu
 
 ---
 
-Wilt u weten hoe uw organisatie er voor staat ten opzichte van de NIS2-verplichtingen? Control One voert gap-analyses uit en begeleidt u naar aantoonbare compliance. Bekijk onze tarieven op [de prijzenpagina](/prijzen).
+Wil je weten hoe je organisatie er voor staat ten opzichte van de NIS2-verplichtingen? Control One voert gap-analyses uit en begeleidt je naar aantoonbare compliance. Bekijk onze tarieven op [de prijzenpagina](/prijzen).

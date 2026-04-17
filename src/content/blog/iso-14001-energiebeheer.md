@@ -1,12 +1,12 @@
 ---
-title: 'Energiebeheer en ISO 14001: verbeter uw footprint'
-description: "Energieverbruik is een key milieuaspect. Hoe integreert u energiebeheer in uw ISO 14001-systeem?"
+title: 'Energiebeheer en ISO 14001: verbeter je footprint'
+description: "Energieverbruik is een key milieuaspect. Hoe integreert je energiebeheer in je ISO 14001-systeem?"
 publishDate: 2026-05-15
 category: 'ISO 14001'
 readTime: '6 min'
 author: 'Control One Redactie'
 image: '/blog/banner-iso14001.svg'
-imageAlt: 'Energiebeheer en ISO 14001: verbeter uw footprint — Control One'
+imageAlt: 'Energiebeheer en ISO 14001: verbeter je footprint — Control One'
 keywords:
   - 'ISO 14001 energiebeheer'
   - 'energieverbruik milieumanagement'
@@ -21,22 +21,22 @@ Energie is voor de meeste organisaties het meest significante milieuaspect. Foss
 
 Energieverbruik is om meerdere redenen een prioritair milieuaspect. Ten eerste is de milieu-impact direct en meetbaar: elke kilowattuur elektriciteit of kubieke meter aardgas heeft een berekende CO₂-equivalent. Ten tweede zijn energiekosten voor veel bedrijven een substantiële kostenpost — verbetering levert dus dubbel resultaat. Ten derde verwachten stakeholders — klanten, investeerders, aanbestedende diensten — steeds vaker transparantie over energieprestaties.
 
-Clausule 6.1.2 van ISO 14001 verplicht u energieverbruik als milieuaspect te identificeren. Clausule 6.2 vraagt u vervolgens concrete **milieudoelstellingen** te formuleren. En clausule 9.1 vereist dat u de prestaties monitort en meet. Samen vormen deze clausules de ruggengraat van een werkend energiebeheerprogramma.
+Clausule 6.1.2 van ISO 14001 verplicht je energieverbruik als milieuaspect te identificeren. Clausule 6.2 vraag je vervolgens concrete **milieudoelstellingen** te formuleren. En clausule 9.1 vereist dat je de prestaties monitort en meet. Samen vormen deze clausules de ruggengraat van een werkend energiebeheerprogramma.
 
 ## ISO 14001 en ISO 50001: de ideale combinatie
 
 ISO 50001 is de specifieke norm voor energiemanagementsystemen. Waar ISO 14001 energiebeheer als onderdeel van het bredere milieusysteem behandelt, biedt ISO 50001 een diepgaander raamwerk met specifieke eisen voor energieanalyse, energieprestatie-indicatoren (EnPI's) en energiebaselines.
 
-De twee normen sluiten naadloos op elkaar aan. Beide gebruiken de HLS-structuur (Plan-Do-Check-Act) en overlappen op meerdere clausules. Organisaties die ISO 14001 al hebben, kunnen ISO 50001 relatief efficiënt toevoegen. Omgekeerd versterkt een ISO 50001-systeem de energiecomponent van uw ISO 14001-systeem aanzienlijk.
+De twee normen sluiten naadloos op elkaar aan. Beide gebruiken de HLS-structuur (Plan-Do-Check-Act) en overlappen op meerdere clausules. Organisaties die ISO 14001 al hebben, kunnen ISO 50001 relatief efficiënt toevoegen. Omgekeerd versterkt een ISO 50001-systeem de energiecomponent van je ISO 14001-systeem aanzienlijk.
 
-> **Tip:** Als energie uw meest significante milieuaspect is, overweeg dan een gecombineerde implementatie van ISO 14001 en ISO 50001. U bespaart implementatietijd en kunt gecombineerde audits laten uitvoeren, wat de certificeringskosten drukt.
+> **Tip:** Als energie je meest significante milieuaspect is, overweeg dan een gecombineerde implementatie van ISO 14001 en ISO 50001. Je bespaart implementatietijd en kunt gecombineerde audits laten uitvoeren, wat de certificeringskosten drukt.
 
 ## Praktische aanpak: van meting tot verbetering
 
 Een effectief energiebeheerprogramma binnen ISO 14001 kent vier stappen:
 
 **Stap 1 — Energieanalyse**
-Breng alle energiestromen in kaart: elektriciteit, gas, stookkolie, warmte, brandstoffen voor voertuigen. Bepaal per stroom het absolute verbruik en — waar mogelijk — het specifieke verbruik (per eenheid product of per m² vloeroppervlak). Zo ontdekt u waar de grootste verliezen zitten.
+Breng alle energiestromen in kaart: elektriciteit, gas, stookkolie, warmte, brandstoffen voor voertuigen. Bepaal per stroom het absolute verbruik en — waar mogelijk — het specifieke verbruik (per eenheid product of per m² vloeroppervlak). Zo ontdekt je waar de grootste verliezen zitten.
 
 **Stap 2 — Basislijn en indicatoren**
 Stel een energiebasislijn vast op basis van historische gegevens, gecorrigeerd voor relevante variabelen (productievolume, buitentemperatuur). Kies energieprestatie-indicatoren die de werkelijke prestatie weerspiegelen, zoals kWh per ton product of kWh per medewerker.
@@ -60,9 +60,9 @@ Meet het energieverbruik frequent — liefst maandelijks of per productieorder. 
 
 ## CO₂-reductie als milieudoelstelling
 
-Steeds meer organisaties vertalen hun energiereductiedoelstellingen door naar een **CO₂-reductiedoelstelling**. Dit sluit aan bij de klimaatdoelstellingen van het Klimaatakkoord en maakt uw milieuprestaties communiceerbaar naar klanten en investeerders.
+Steeds meer organisaties vertalen hun energiereductiedoelstellingen door naar een **CO₂-reductiedoelstelling**. Dit sluit aan bij de klimaatdoelstellingen van het Klimaatakkoord en maak je milieuprestaties communiceerbaar naar klanten en investeerders.
 
-Voor de berekening van uw CO₂-uitstoot gebruikt u emissiefactoren:
+Voor de berekening van je CO₂-uitstoot gebruikt je emissiefactoren:
 - Aardgas: ±1,78 kg CO₂ per m³
 - Elektriciteit (Nederlandse mix): ±0,38 kg CO₂ per kWh (varieert jaarlijks)
 - Diesel: ±2,64 kg CO₂ per liter
@@ -72,7 +72,7 @@ Scope 1 omvat directe emissies (eigen verbrandingsprocessen), scope 2 de indirec
 ## Veelgestelde vragen
 
 **Is energiebeheer verplicht onder ISO 14001?**
-Niet als apart programma, maar als energieverbruik als significant milieuaspect wordt beoordeeld — wat voor de meeste organisaties het geval is — dan verplicht clausule 6.2 u concrete doelstellingen te formuleren en clausule 9.1 vraagt actieve monitoring. In de praktijk betekent dit dat u een werkend energiebeheerprogramma nodig heeft.
+Niet als apart programma, maar als energieverbruik als significant milieuaspect wordt beoordeeld — wat voor de meeste organisaties het geval is — dan verplicht clausule 6.2 je concrete doelstellingen te formuleren en clausule 9.1 vraagt actieve monitoring. In de praktijk betekent dit dat je een werkend energiebeheerprogramma nodig heeft.
 
 **Wat is het verschil tussen ISO 14001 en ISO 50001 voor energiebeheer?**
 ISO 14001 behandelt energie als één van de milieuaspecten en vereist doelstellingen en monitoring. ISO 50001 is specifiek gericht op energie en stelt aanvullende eisen, zoals verplichte energieanalyse, energieprestatie-indicatoren en een systematisch verbeterproces. ISO 50001 gaat dieper maar is ook complexer om te implementeren.
@@ -82,4 +82,4 @@ Bereken de terugverdientijd van concrete maatregelen. Een LED-retrofit in een pr
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door de implementatie.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door de implementatie.

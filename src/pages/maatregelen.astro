@@ -63,7 +63,7 @@ const statusLabel = {
               Alle 93 maatregelen<br/><span class="text-blue-400">overzichtelijk beheerd</span>
             </h1>
             <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
-              Elke ISO 27001:2022 Annex A-maatregel krijgt een eigen pagina met uitleg, status, eigenaar, onderbouwing en gekoppelde documenten. Wijzig de status en uw Verklaring van Toepasselijkheid werkt automatisch mee.
+              Elke ISO 27001:2022 Annex A-maatregel krijgt een eigen pagina met uitleg, status, eigenaar, onderbouwing en gekoppelde documenten. Wijzig de status en je Verklaring van Toepasselijkheid werkt automatisch mee.
             </p>
             <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/80">
               <div class="flex items-center gap-2">
@@ -95,7 +95,7 @@ const statusLabel = {
                 <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
                 <div class="flex-1 min-w-0 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/maatregelen</div></div>
               </div>
-              <img src="/screenshots/portal-maatregelen.png" alt="Maatregelen in Control One" class="w-full" loading="eager" />
+              <img src="/screenshots/portal-maatregelen.png" alt="Maatregelen in Control One" class="w-full" loading="eager" data-lightbox />
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ const statusLabel = {
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center mb-14">
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">4 categorieën, 93 maatregelen</h2>
-          <p class="mt-4 text-lg text-primary-900/75 leading-relaxed">De volledige set Annex A-maatregelen uit ISO 27001:2022 is ingedeeld in vier duidelijke thema's. Per maatregel legt u vast of deze van toepassing is, waarom (of waarom niet), en hoe u deze heeft geïmplementeerd.</p>
+          <p class="mt-4 text-lg text-primary-900/75 leading-relaxed">De volledige set Annex A-maatregelen uit ISO 27001:2022 is ingedeeld in vier duidelijke thema's. Per maatregel leg je vast of deze van toepassing is, waarom (of waarom niet), en hoe je deze heeft geïmplementeerd.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {categories.map(cat => (
@@ -128,7 +128,7 @@ const statusLabel = {
         <div class="max-w-2xl mx-auto text-center mb-10">
           <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Per maatregel</p>
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Status, eigenaar en bewijs op één plek</h2>
-          <p class="mt-4 text-lg text-primary-900/75">Elke maatregel is een eigen werkpagina waarop u de implementatiestatus, onderbouwing en gekoppelde documenten bijhoudt.</p>
+          <p class="mt-4 text-lg text-primary-900/75">Elke maatregel is een eigen werkpagina waarop je de implementatiestatus, onderbouwing en gekoppelde documenten bijhoudt.</p>
         </div>
         <div class="rounded-2xl overflow-hidden border border-primary-100 bg-white shadow-lg shadow-primary-100/40">
           <div class="flex items-center justify-between px-5 py-3 bg-primary-50 border-b border-primary-100">
@@ -159,11 +159,11 @@ const statusLabel = {
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
             { title: 'Uitleg per control', desc: 'Voor elke maatregel een korte toelichting: wat vraagt de norm, waarom en hoe toon je het aan?' },
-            { title: 'Status & eigenaar', desc: 'Per maatregel legt u vast of deze van toepassing is, de implementatiestatus, wie verantwoordelijk is en wanneer de laatste review was.' },
-            { title: 'Onderbouwing vastleggen', desc: 'Schrijf per control in de portal uw motivatie en hoe u de maatregel heeft geïmplementeerd. Deze tekst verschijnt automatisch in de VvT.' },
+            { title: 'Status & eigenaar', desc: 'Per maatregel leg je vast of deze van toepassing is, de implementatiestatus, wie verantwoordelijk is en wanneer de laatste review was.' },
+            { title: 'Onderbouwing vastleggen', desc: 'Schrijf per control in de portal je motivatie en hoe je de maatregel heeft geïmplementeerd. Deze tekst verschijnt automatisch in de VvT.' },
             { title: 'Direct gekoppeld aan documenten', desc: 'Policies, procedures en bewijsstukken zijn direct te koppelen aan een maatregel — één klik tussen beheersmaatregel en documentbeheer.' },
-            { title: 'Gekoppeld aan risicoanalyse', desc: 'Risico\'s verwijzen naar de maatregelen die ze afdekken — u ziet per risico welke controls actief zijn.' },
-            { title: 'Auto-gegenereerde VvT', desc: 'De Verklaring van Toepasselijkheid is geen apart bestand: hij wordt live gegenereerd uit uw maatregelenregister en is direct als PDF te exporteren.' },
+            { title: 'Gekoppeld aan risicoanalyse', desc: 'Risico\'s verwijzen naar de maatregelen die ze afdekken — je ziet per risico welke controls actief zijn.' },
+            { title: 'Auto-gegenereerde VvT', desc: 'De Verklaring van Toepasselijkheid is geen apart bestand: hij wordt live gegenereerd uit je maatregelenregister en is direct als PDF te exporteren.' },
             { title: 'Filter op chapter', desc: 'Spring met één klik tussen A5, A6, A7 en A8. Binnen elk hoofdstuk zijn alle sub-controls meteen zichtbaar.' },
             { title: 'Kennisbankartikelen per maatregel', desc: 'Elke maatregel heeft een bijbehorend kennisbankartikel met praktische uitleg — 93 artikelen in totaal.' },
             { title: 'Auditklaar', desc: 'Tijdens een audit krijgt de auditor één centraal overzicht met status, onderbouwing en bewijs per control.' },
@@ -183,7 +183,7 @@ const statusLabel = {
           </div>
           <div>
             <h3 class="font-bold text-primary-950 mb-1">Automatisch gekoppeld aan de VvT</h3>
-            <p class="text-sm text-primary-900/60 leading-relaxed">Elke maatregel is gekoppeld aan uw Verklaring van Toepasselijkheid. Pas de status of onderbouwing aan en de VvT wordt automatisch bijgewerkt — klaar voor export als PDF.</p>
+            <p class="text-sm text-primary-900/60 leading-relaxed">Elke maatregel is gekoppeld aan je Verklaring van Toepasselijkheid. Pas de status of onderbouwing aan en de VvT wordt automatisch bijgewerkt — klaar voor export als PDF.</p>
           </div>
         </div>
       </div>

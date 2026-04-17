@@ -1,6 +1,6 @@
 ---
-title: 'Zero trust security: wat is het en hoe implementeert u het?'
-description: 'Vertrouw niemand, verifieer altijd. Hoe past u het zero-trust model toe in een MKB-omgeving?'
+title: 'Zero trust security: wat is het en hoe implementeer je het?'
+description: 'Vertrouw niemand, verifieer altijd. Hoe past je het zero-trust model toe in een MKB-omgeving?'
 publishDate: 2026-07-01
 category: 'Cybersecurity'
 readTime: '7 min'
@@ -13,7 +13,7 @@ Het traditionele beveiligingsmodel vertrekt vanuit het idee van een veilige peri
 
 ## Wat zero trust werkelijk betekent
 
-Zero trust is geen product dat u aanschaft. Het is een beveiligingsstrategie gebaseerd op drie kernprincipes:
+Zero trust is geen product dat je aanschaft. Het is een beveiligingsstrategie gebaseerd op drie kernprincipes:
 
 **Verifieer expliciet:** Authenticeer en autoriseer elke toegangsaanvraag op basis van alle beschikbare informatie — identiteit, locatie, apparaatgezondheid, tijdstip, gedrag. Niet één keer bij inloggen, maar continu.
 
@@ -39,9 +39,9 @@ Zero trust klinkt als een enterprise-concept, maar de bouwstenen zijn ook voor M
 
 **Microsegmentatie:** Verdeel het netwerk in kleinere segmenten die van elkaar geïsoleerd zijn. Een aanvaller die één segment binnendringt, kan niet eenvoudig lateraal bewegen naar andere systemen.
 
-**Endpoint verificatie:** Verifieer of een apparaat voldoet aan uw beveiligingsvereisten voordat toegang wordt verleend. Heeft het apparaat bijgewerkte patches? Actieve antivirussoftware? Schijfversleuteling?
+**Endpoint verificatie:** Verifieer of een apparaat voldoet aan je beveiligingsvereisten voordat toegang wordt verleend. Heeft het apparaat bijgewerkte patches? Actieve antivirussoftware? Schijfversleuteling?
 
-> **Tip van Control One:** Begin niet met de volledige zero trust-architectuur tegelijk. Start met MFA voor alle gebruikers en conditional access voor uw meest kritieke applicaties. Dit levert direct risicoreductie op en bouwt het fundament voor verdere implementatie.
+> **Tip van Control One:** Begin niet met de volledige zero trust-architectuur tegelijk. Start met MFA voor alle gebruikers en conditional access voor je meest kritieke applicaties. Dit levert direct risicoreductie op en bouwt het fundament voor verdere implementatie.
 
 ## Implementatie in fasen voor MKB
 
@@ -84,4 +84,4 @@ Nee. Zero trust vult bestaande beveiligingslagen aan — het vervangt ze niet. E
 
 ---
 
-Wilt u weten hoe zero trust past in uw beveiligingsstrategie en ISO 27001-traject? Bekijk onze diensten op [de prijzenpagina](/prijzen) en plan een gesprek met de specialisten van Control One.
+Wil je weten hoe zero trust past in je beveiligingsstrategie en ISO 27001-traject? Bekijk onze diensten op [de prijzenpagina](/prijzen) en plan een gesprek met de specialisten van Control One.

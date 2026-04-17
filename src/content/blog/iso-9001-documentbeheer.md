@@ -1,6 +1,6 @@
 ---
 title: 'Documentbeheer in ISO 9001: wat is verplicht?'
-description: "ISO 9001 stelt eisen aan gedocumenteerde informatie. Wat is verplicht en hoe organiseert u het efficiënt?"
+description: "ISO 9001 stelt eisen aan gedocumenteerde informatie. Wat is verplicht en hoe organiseert je het efficiënt?"
 publishDate: 2026-05-09
 category: 'ISO 9001'
 readTime: '7 min'
@@ -13,16 +13,16 @@ draft: false
 
 Een van de meest gestelde vragen bij ISO 9001-implementaties is: welke documenten zijn nu precies verplicht? De norm spreekt niet meer over "procedures" en "kwaliteitshandboeken" zoals in oudere versies, maar gebruikt de neutrale term **gedocumenteerde informatie**. Dat biedt meer flexibiliteit, maar creëert ook verwarring over wat nu echt verplicht is en wat optioneel.
 
-In dit artikel zetten we de verplichte gedocumenteerde informatie op een rij, bespreken we hoe u uw documentbeheer efficiënt inricht en leggen we uit wat auditoren verwachten.
+In dit artikel zetten we de verplichte gedocumenteerde informatie op een rij, bespreken we hoe je je documentbeheer efficiënt inricht en leggen we uit wat auditoren verwachten.
 
 ## Gedocumenteerde informatie: twee soorten
 
 ISO 9001 maakt onderscheid tussen twee soorten gedocumenteerde informatie:
 
-1. **Documenten** — informatie die u bijhoudt om processen te sturen (procedures, werkinstructies, beleid)
-2. **Records** — informatie die u bewaart als bewijs dat iets heeft plaatsgevonden (auditverslagen, kalibratierecords, klachtenregistraties)
+1. **Documenten** — informatie die je bijhoudt om processen te sturen (procedures, werkinstructies, beleid)
+2. **Records** — informatie die je bewaart als bewijs dat iets heeft plaatsgevonden (auditverslagen, kalibratierecords, klachtenregistraties)
 
-Dit onderscheid is belangrijk: documenten kunt u aanpassen, records zijn historisch en mogen niet worden gewijzigd.
+Dit onderscheid is belangrijk: documenten kun je aanpassen, records zijn historisch en mogen niet worden gewijzigd.
 
 ## Verplichte documenten (door de norm voorgeschreven)
 
@@ -61,7 +61,7 @@ De norm vereist ook bewijs dat specifieke activiteiten hebben plaatsgevonden. Di
 
 ### Maak een documentenmatrix
 
-Maak een overzicht van alle documenten en records in uw QMS: de naam, het versienummer, de eigenaar, de bewaartermijn en de opslaglocatie. Dit is uw **documentenregister** en is zelf een best practice (niet verplicht, maar sterk aanbevolen).
+Maak een overzicht van alle documenten en records in je QMS: de naam, het versienummer, de eigenaar, de bewaartermijn en de opslaglocatie. Dit is je **documentenregister** en is zelf een best practice (niet verplicht, maar sterk aanbevolen).
 
 > **Tip:** Beperk het aantal documenten tot wat echt nodig is. Een QMS met honderd procedures die niemand leest, is minder effectief dan twintig goed gebruikte procedures.
 
@@ -92,7 +92,7 @@ ISO 9001 stelt geen eisen aan de vorm van gedocumenteerde informatie. Papieren m
 - Automatische reminders voor herzieningsdata
 - Eenvoudig delen met auditors
 
-Met [Control One](/prijzen) beheert u alle ISO 9001-documenten en records in één platform. De documentenbibliotheek bijhoudt versies automatisch en u kunt documenteigenaren instellen die een melding krijgen wanneer een document aan herziening toe is.
+Met [Control One](/prijzen) beheert je alle ISO 9001-documenten en records in één platform. De documentenbibliotheek bijhoudt versies automatisch en je kunt documenteigenaren instellen die een melding krijgen wanneer een document aan herziening toe is.
 
 ## Wat controleren auditoren?
 
@@ -112,10 +112,10 @@ Auditoren kijken niet alleen naar de documenten zelf, maar ook naar het *gebruik
 Nee, de 2015-versie schrijft geen kwaliteitshandboek voor. Veel organisaties kiezen er wel voor als samenvattend document, maar het is niet verplicht.
 
 **Hoe lang bewaar ik interne auditverslagen?**
-Een praktische richtlijn is drie jaar, zodat u kunt aantonen dat u over de volledige certificeringscyclus audits heeft uitgevoerd.
+Een praktische richtlijn is drie jaar, zodat je kunt aantonen dat je over de volledige certificeringscyclus audits heeft uitgevoerd.
 
 **Mogen documenten in een andere taal zijn?**
-De norm stelt geen taaleisen. Wel moeten documenten begrijpelijk zijn voor de mensen die ermee werken. In een internationaal team kan dat betekenen dat u documenten in meerdere talen opstelt.
+De norm stelt geen taaleisen. Wel moeten documenten begrijpelijk zijn voor de mensen die ermee werken. In een internationaal team kan dat betekenen dat je documenten in meerdere talen opstelt.
 
 **Wat is het verschil tussen een procedure en een werkinstructie?**
 Een procedure beschrijft het "wat" en "wie" van een proces; een werkinstructie beschrijft het "hoe" op detailniveau. Procedures zijn doorgaans procesgericht, werkinstructies taakvolgorde-gericht.
@@ -124,4 +124,4 @@ Een procedure beschrijft het "wat" en "wie" van een proces; een werkinstructie b
 
 Documentbeheer in ISO 9001 is geen doel op zich — het is een middel om processen te sturen en verbeteringen te borgen. De sleutel is het vinden van de juiste balans: voldoende documentatie om de norm te voldoen en audits te doorstaan, maar niet zoveel dat het systeem onbeheerbaar wordt.
 
-Wilt u uw documentbeheer gestructureerd en digitaal inrichten? Ontdek hoe [Control One](/prijzen) u daarbij helpt.
+Wil je je documentbeheer gestructureerd en digitaal inrichten? Ontdek hoe [Control One](/prijzen) je daarbij helpt.

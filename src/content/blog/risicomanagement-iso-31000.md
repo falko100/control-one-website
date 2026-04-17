@@ -1,6 +1,6 @@
 ---
 title: 'Risicomanagement met ISO 31000: praktische aanpak'
-description: "ISO 31000 biedt een universeel raamwerk voor risicomanagement. Hoe gebruikt u het naast andere ISO-normen?"
+description: "ISO 31000 biedt een universeel raamwerk voor risicomanagement. Hoe gebruikt je het naast andere ISO-normen?"
 publishDate: 2026-06-17
 category: 'Compliance'
 readTime: '8 min'
@@ -15,11 +15,11 @@ keywords:
 draft: false
 ---
 
-Risicomanagement is geen exclusief domein van grote multinationals of financiële instellingen. Elk bedrijf dat ISO 9001, ISO 14001, ISO 27001 of ISO 45001 implementeert, is verplicht om risico's te identificeren, beoordelen en beheersen. Maar hoe pakt u dat gestructureerd aan? **ISO 31000** biedt daarvoor het universele raamwerk. In dit artikel leest u wat ISO 31000 inhoudt, hoe het zich verhoudt tot andere ISO-normen en hoe u het praktisch toepast in uw MKB-organisatie.
+Risicomanagement is geen exclusief domein van grote multinationals of financiële instellingen. Elk bedrijf dat ISO 9001, ISO 14001, ISO 27001 of ISO 45001 implementeert, is verplicht om risico's te identificeren, beoordelen en beheersen. Maar hoe pakt je dat gestructureerd aan? **ISO 31000** biedt daarvoor het universele raamwerk. In dit artikel lees je wat ISO 31000 inhoudt, hoe het zich verhoudt tot andere ISO-normen en hoe je het praktisch toepast in je MKB-organisatie.
 
 ## Wat is ISO 31000?
 
-ISO 31000 is de internationale norm voor risicomanagement. Anders dan ISO 9001 of ISO 27001 is het geen norm waarop u zich kunt certificeren — het is een richtlijn. ISO 31000 beschrijft principes, een raamwerk en een proces voor risicomanagement dat universeel toepasbaar is, ongeacht de sector, het type organisatie of de omvang.
+ISO 31000 is de internationale norm voor risicomanagement. Anders dan ISO 9001 of ISO 27001 is het geen norm waarop je zich kunt certificeren — het is een richtlijn. ISO 31000 beschrijft principes, een raamwerk en een proces voor risicomanagement dat universeel toepasbaar is, ongeacht de sector, het type organisatie of de omvang.
 
 De kern van ISO 31000 is de definitie van risico: **het effect van onzekerheid op doelstellingen**. Dat is bewust breed geformuleerd. Risico's kunnen positief zijn (kansen) of negatief (bedreigingen). ISO 31000 benadert risicomanagement als een integraal onderdeel van besluitvorming, niet als een op zichzelf staand compliance-exercitie.
 
@@ -41,34 +41,34 @@ ISO 31000 is opgebouwd uit drie samenhangende lagen:
 
 ## ISO 31000 en andere ISO-normen: de samenhang
 
-Alle moderne ISO-managementsysteemnormen bevatten eisen voor risicomanagement, maar geven weinig concrete methodologische houvast. ISO 31000 vult die leemte. U kunt ISO 31000 als methodologisch fundament gebruiken voor de risicoprocessen in:
+Alle moderne ISO-managementsysteemnormen bevatten eisen voor risicomanagement, maar geven weinig concrete methodologische houvast. ISO 31000 vult die leemte. Je kunt ISO 31000 als methodologisch fundament gebruiken voor de risicoprocessen in:
 
 - **ISO 27001**: informatiebeveiligingsrisicoanalyse (clausule 6.1) en risicobehandeling
 - **ISO 9001**: risico's en kansen in kwaliteitsmanagement (clausule 6.1)
 - **ISO 14001**: risico's en kansen in milieumanagement (clausule 6.1)
 - **ISO 45001**: gevaren identificatie en risicoanalyse (clausule 6.1)
 
-Door ISO 31000 als overkoepelend raamwerk te gebruiken, creëert u consistentie in uw risicomanagementaanpak over alle normen heen. Dat is een sterke basis voor een geïntegreerd managementsysteem.
+Door ISO 31000 als overkoepelend raamwerk te gebruiken, creëert je consistentie in je risicomanagementaanpak over alle normen heen. Dat is een sterke basis voor een geïntegreerd managementsysteem.
 
-> **Tip:** Maak één risicoregister dat u voor alle normen gebruikt, met een kolom die aangeeft welke norm het risico betreft. Zo voorkomt u dat u voor ISO 27001 een ander register bijhoudt dan voor ISO 9001, en dat risico's dubbel worden beoordeeld of juist over het hoofd worden gezien.
+> **Tip:** Maak één risicoregister dat je voor alle normen gebruikt, met een kolom die aangeeft welke norm het risico betreft. Zo voorkomt je dat je voor ISO 27001 een ander register bijhoudt dan voor ISO 9001, en dat risico's dubbel worden beoordeeld of juist over het hoofd worden gezien.
 
 ## Het risicomanagementproces in de praktijk
 
 Hoe ziet het ISO 31000-proces er in de praktijk uit voor een MKB-organisatie?
 
-**Stap 1 — Context vaststellen**: Wat zijn de interne en externe factoren die van invloed zijn op uw organisatie? Denk aan uw marktsituatie, technologische ontwikkelingen, wetgeving, concurrentie en interne capaciteiten. Dit is vergelijkbaar met de contextanalyse die ook ISO 9001 en ISO 27001 vereisen.
+**Stap 1 — Context vaststellen**: Wat zijn de interne en externe factoren die van invloed zijn op je organisatie? Denk aan je marktsituatie, technologische ontwikkelingen, wetgeving, concurrentie en interne capaciteiten. Dit is vergelijkbaar met de contextanalyse die ook ISO 9001 en ISO 27001 vereisen.
 
-**Stap 2 — Risico's identificeren**: Welke gebeurtenissen of omstandigheden kunnen uw doelstellingen beïnvloeden? Gebruik structureerde technieken zoals brainstormsessies, SWOT-analyse, checklists of scenarioanalyse. Betrek proceseigenaren bij de identificatie — zij kennen de operationele risico's het best.
+**Stap 2 — Risico's identificeren**: Welke gebeurtenissen of omstandigheden kunnen je doelstellingen beïnvloeden? Gebruik structureerde technieken zoals brainstormsessies, SWOT-analyse, checklists of scenarioanalyse. Betrek proceseigenaren bij de identificatie — zij kennen de operationele risico's het best.
 
-**Stap 3 — Risico's analyseren**: Hoe waarschijnlijk is het dat een risico optreedt en wat zijn de gevolgen? U gebruikt doorgaans een kansschaal (1–5) en een impactschaal (1–5). De combinatie geeft de risicoscore: kans x impact.
+**Stap 3 — Risico's analyseren**: Hoe waarschijnlijk is het dat een risico optreedt en wat zijn de gevolgen? Je gebruikt doorgaans een kansschaal (1–5) en een impactschaal (1–5). De combinatie geeft de risicoscore: kans x impact.
 
 **Stap 4 — Risico's evalueren**: Welke risico's zijn acceptabel en welke niet? Stel een risicodrempel vast: boven welke score vereist een risico behandeling?
 
 **Stap 5 — Risico's behandelen**: Kies een behandelingstrategie per risico: vermijden, verminderen, overdragen (bijv. via verzekering) of accepteren. Stel maatregelen vast, wijs een eigenaar toe en stel een deadline.
 
-**Stap 6 — Monitoren en evalueren**: Risico's veranderen. Beoordeel uw risicoregister minimaal jaarlijks, of vaker bij significante wijzigingen in de organisatie of context.
+**Stap 6 — Monitoren en evalueren**: Risico's veranderen. Beoordeel je risicoregister minimaal jaarlijks, of vaker bij significante wijzigingen in de organisatie of context.
 
-## Risicomanagement en de cultuur van uw organisatie
+## Risicomanagement en de cultuur van je organisatie
 
 Een risicoregister opzetten is een technische exercitie. Risicomanagement daadwerkelijk laten werken, is een culturele uitdaging. In organisaties waar risicomanagement leeft, signaleren medewerkers op alle niveaus risicos en kansen en brengen die in via de daarvoor bedoelde kanalen.
 
@@ -81,7 +81,7 @@ Maak risicomanagement bespreekbaar in reguliere vergaderingen, niet alleen in de
 
 **Is ISO 31000 verplicht voor ISO 27001-certificering?**
 
-Nee. ISO 27001 vereist een risicoanalyse en risicobehandeling maar schrijft geen specifieke methode voor. U mag ISO 31000 gebruiken, maar ook andere methoden zoals OCTAVE, CRAMM of een eigen aanpak. ISO 31000 is wel de meest logische en breed erkende keuze.
+Nee. ISO 27001 vereist een risicoanalyse en risicobehandeling maar schrijft geen specifieke methode voor. Je mag ISO 31000 gebruiken, maar ook andere methoden zoals OCTAVE, CRAMM of een eigen aanpak. ISO 31000 is wel de meest logische en breed erkende keuze.
 
 **Hoe lang duurt het om een risicoregister op te stellen?**
 
@@ -89,8 +89,8 @@ Voor een kleine organisatie met beperkte scope is een basisrisicoregister in twe
 
 **Moet ik ook kansen (positieve risico's) vastleggen?**
 
-ISO-normen als 9001 en 27001 vragen expliciet om het identificeren van zowel risico's als kansen. ISO 31000 ondersteunt dit door risico als "het effect van onzekerheid" te definiëren — zowel negatief als positief. Leg kansen dan ook vast in uw risicoregister en beschrijf hoe u ze benut.
+ISO-normen als 9001 en 27001 vragen expliciet om het identificeren van zowel risico's als kansen. ISO 31000 ondersteunt dit door risico als "het effect van onzekerheid" te definiëren — zowel negatief als positief. Leg kansen dan ook vast in je risicoregister en beschrijf hoe je ze benut.
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u stap voor stap.
+Klaar om te starten? [Control One](/prijzen) begeleidt je stap voor stap.

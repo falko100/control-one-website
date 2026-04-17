@@ -1,6 +1,6 @@
 ---
 title: 'High Level Structure: de basis van alle ISO-normen'
-description: "De HLS maakt ISO-normen combineerbaar. Hoe de gemeenschappelijke structuur u helpt bij meerdere certificeringen."
+description: "De HLS maakt ISO-normen combineerbaar. Hoe de gemeenschappelijke structuur je helpt bij meerdere certificeringen."
 publishDate: 2026-06-12
 category: 'Compliance'
 readTime: '7 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Als u met meerdere ISO-normen werkt, ontdekt u al snel dat ze sterk op elkaar lijken. Dat is geen toeval — het is het resultaat van een bewuste keuze door ISO. De **High Level Structure (HLS)**, ook wel bekend als Annex SL, is de gemeenschappelijke architectuur waarop alle moderne ISO-managementsysteemnormen zijn gebaseerd. Dit artikel legt uit hoe de HLS werkt en waarom dit voor uw MKB-organisatie een groot voordeel is.
+Als je met meerdere ISO-normen werkt, ontdekt je al snel dat ze sterk op elkaar lijken. Dat is geen toeval — het is het resultaat van een bewuste keuze door ISO. De **High Level Structure (HLS)**, ook wel bekend als Annex SL, is de gemeenschappelijke architectuur waarop alle moderne ISO-managementsysteemnormen zijn gebaseerd. Dit artikel legt uit hoe de HLS werkt en waarom dit voor je MKB-organisatie een groot voordeel is.
 
 ## Wat is de High Level Structure?
 
@@ -74,11 +74,11 @@ ISO 14001 richt zich op milieuprestaties en duurzaamheidsverplichtingen. Door de
 
 ISO 45001 vervangt de oude OHSAS 18001 en is volledig gebouwd op de HLS. Gezondheid en veiligheid op de werkvloer zijn het centrale thema.
 
-> **Tip:** Implementeer de HLS-clausules 4 tot en met 7 als een gedeeld fundament voor al uw normen. U bespaart direct tientallen procenten aan implementatietijd, omdat u deze elementen maar één keer hoeft in te richten.
+> **Tip:** Implementeer de HLS-clausules 4 tot en met 7 als een gedeeld fundament voor al je normen. Je bespaart direct tientallen procenten aan implementatietijd, omdat je deze elementen maar één keer hoeft in te richten.
 
 ## Hoe helpt de HLS bij een geïntegreerd managementsysteem?
 
-Het grote voordeel van de HLS is dat u een **geïntegreerd managementsysteem (IMS)** kunt opbouwen. In plaats van drie aparte systemen voor kwaliteit, informatiebeveiliging en milieu, werkt u met één samenhangend systeem.
+Het grote voordeel van de HLS is dat je een **geïntegreerd managementsysteem (IMS)** kunt opbouwen. In plaats van drie aparte systemen voor kwaliteit, informatiebeveiliging en milieu, werk je met één samenhangend systeem.
 
 ### Gedeelde documentatie
 
@@ -90,41 +90,41 @@ Veel documenten zijn generiek genoeg om voor meerdere normen te gelden. Denk aan
 - Het interne auditprogramma (clausule 9.2)
 - De directiebeoordeling (clausule 9.3)
 
-Door deze documenten eenmaal op te stellen en voor alle normen te gebruiken, bespaart u aanzienlijk op beheer en onderhoud.
+Door deze documenten eenmaal op te stellen en voor alle normen te gebruiken, bespaart je aanzienlijk op beheer en onderhoud.
 
 ### Gedeelde processen
 
 Ook processen kunnen worden geïntegreerd. Een interne audit die zowel ISO 9001 als ISO 27001 dekt, kost niet twee keer zoveel tijd als een audit voor één norm — in de praktijk is het verschil klein, omdat de auditaanpak identiek is.
 
-## Praktische gevolgen voor uw implementatie
+## Praktische gevolgen voor je implementatie
 
-Als u de HLS begrijpt, verandert uw kijk op ISO-implementatie. U gaat van "meerdere normen" naar "één systeem met norminspecifieke elementen."
+Als je de HLS begrijpt, verandert je kijk op ISO-implementatie. Je gaat van "meerdere normen" naar "één systeem met norminspecifieke elementen."
 
 ### Begin bij de gemeenschappelijke basis
 
-Start uw implementatie altijd met de gemeenschappelijke HLS-clausules. Breng de context van uw organisatie in kaart, stel leiderschap en beleid vast, en bouw een risicobeheersingsproces op. Dit fundament geldt voor alle normen tegelijk.
+Start je implementatie altijd met de gemeenschappelijke HLS-clausules. Breng de context van je organisatie in kaart, stel leiderschap en beleid vast, en bouw een risicobeheersingsproces op. Dit fundament geldt voor alle normen tegelijk.
 
 ### Voeg norminspecifieke eisen toe
 
-Daarna voegt u de specifieke eisen per norm toe. Voor ISO 27001 zijn dat bijvoorbeeld de beheersmaatregelen uit Annex A. Voor ISO 9001 zijn dat de proceseisen rondom productrealisatie.
+Daarna voegt je de specifieke eisen per norm toe. Voor ISO 27001 zijn dat bijvoorbeeld de beheersmaatregelen uit Annex A. Voor ISO 9001 zijn dat de proceseisen rondom productrealisatie.
 
 ### Gebruik software die de HLS ondersteunt
 
-Een goede **compliance software** spiegelt de HLS-structuur. Zo kunt u zien welke elementen voor welke norm gelden, en welke u deelt. Control One is specifiek gebouwd voor MKB-organisaties die meerdere ISO-normen willen beheren vanuit één platform. Bekijk onze [prijzen](/prijzen).
+Een goede **compliance software** spiegelt de HLS-structuur. Zo kun je zien welke elementen voor welke norm gelden, en welke je deelt. Control One is specifiek gebouwd voor MKB-organisaties die meerdere ISO-normen willen beheren vanuit één platform. Bekijk onze [prijzen](/prijzen).
 
 ## Veelgestelde vragen over de High Level Structure
 
 **Geldt de HLS ook voor oudere normen?**
-Oudere normen zoals ISO 9001:2008 of OHSAS 18001 gebruikten de HLS nog niet. Bij herziening worden normen altijd aangepast aan de HLS. Werkt u nog met een oude versie? Dan is upgraden naar de huidige versie verplicht voor certificering.
+Oudere normen zoals ISO 9001:2008 of OHSAS 18001 gebruikten de HLS nog niet. Bij herziening worden normen altijd aangepast aan de HLS. Werk je nog met een oude versie? Dan is upgraden naar de huidige versie verplicht voor certificering.
 
 **Maakt de HLS alle normen hetzelfde?**
 Nee. De structuur en de gemeenschappelijke vereisten zijn hetzelfde, maar elke norm heeft zijn eigen specifieke inhoud. ISO 27001 stelt heel andere technische eisen dan ISO 9001, ook al zien de hoofdstukken er identiek uit.
 
 **Moet ik de HLS kennen om te certificeren?**
-U hoeft de HLS niet uit uw hoofd te kennen, maar het helpt enorm om te begrijpen hoe normen zijn opgebouwd. Het maakt uw implementatie efficiënter en uw systeem onderhoudbaar.
+Je hoeft de HLS niet uit je hoofd te kennen, maar het helpt enorm om te begrijpen hoe normen zijn opgebouwd. Het maak je implementatie efficiënter en je systeem onderhoudbaar.
 
 ## Maak gebruik van de HLS-voordelen
 
-De High Level Structure is een van de slimste dingen die ISO ooit heeft gedaan voor organisaties die meerdere normen willen combineren. Als MKB-bedrijf profiteert u direct van de gedeelde structuur — minder werk, minder verwarring, en één coherent systeem.
+De High Level Structure is een van de slimste dingen die ISO ooit heeft gedaan voor organisaties die meerdere normen willen combineren. Als MKB-bedrijf profiteert je direct van de gedeelde structuur — minder werk, minder verwarring, en één coherent systeem.
 
-Bekijk hoe Control One u helpt met een geïntegreerd managementsysteem op basis van de HLS. Bezoek onze [prijzenpagina](/prijzen) of lees meer over [ISO 27001](/iso-27001) en [ISO 9001](/iso-9001).
+Bekijk hoe Control One je helpt met een geïntegreerd managementsysteem op basis van de HLS. Bezoek onze [prijzenpagina](/prijzen) of lees meer over [ISO 27001](/iso-27001) en [ISO 9001](/iso-9001).

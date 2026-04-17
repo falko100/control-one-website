@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-"Wat kost ISO 27001?" is een van de meest gestelde vragen van MKB-directeuren die serieus nadenken over informatiebeveiliging. Het eerlijke antwoord is: het hangt sterk af van hoe u het aanpakt. De kostenverschillen tussen de goedkoopste en duurste aanpak kunnen oplopen tot een factor tien — voor een vergelijkbaar eindresultaat.
+"Wat kost ISO 27001?" is een van de meest gestelde vragen van MKB-directeuren die serieus nadenken over informatiebeveiliging. Het eerlijke antwoord is: het hangt sterk af van hoe je het aanpakt. De kostenverschillen tussen de goedkoopste en duurste aanpak kunnen oplopen tot een factor tien — voor een vergelijkbaar eindresultaat.
 
 In dit artikel biedt de Control One Redactie een volledig en transparant kostenoverzicht voor **ISO 27001 certificering**, inclusief de onderdelen waarop MKB-organisaties zinvol kunnen besparen.
 
@@ -23,7 +23,7 @@ In dit artikel biedt de Control One Redactie een volledig en transparant kosteno
 
 De totaalkosten van ISO 27001 bestaan uit drie hoofdcomponenten:
 
-1. **Implementatiekosten** — de kosten om uw ISMS op te bouwen (consultant, software, interne uren)
+1. **Implementatiekosten** — de kosten om je ISMS op te bouwen (consultant, software, interne uren)
 2. **Certificeringskosten** — de kosten van de externe audit door een certificeringsinstantie
 3. **Onderhoudskosten** — jaarlijkse surveillance-audits en recertificering na drie jaar
 
@@ -41,29 +41,29 @@ Een extern ISO 27001-adviesbureau rekent in Nederland doorgaans **€125 tot €
 | Middelgroot (25–75 mw.) | 100–160 | €175 | €17.500–€28.000 |
 | Groter MKB (75–250 mw.) | 150–250 | €200 | €30.000–€50.000 |
 
-Dit zijn alleen de advieskosten. Daarboven komen de interne uren van uw medewerkers, die ook niet gratis zijn.
+Dit zijn alleen de advieskosten. Daarboven komen de interne uren van je medewerkers, die ook niet gratis zijn.
 
 ### Self-implementation met software
 
-Een alternatief dat steeds populairder wordt, is het gebruik van een **gespecialiseerd ISMS-platform** zoals Control One. U betaalt een vaste maandelijkse of jaarlijkse softwarevergoeding en voert de implementatie grotendeels zelf uit, met ondersteuning van de software.
+Een alternatief dat steeds populairder wordt, is het gebruik van een **gespecialiseerd ISMS-platform** zoals Control One. Je betaalt een vaste maandelijkse of jaarlijkse softwarevergoeding en voert de implementatie grotendeels zelf uit, met ondersteuning van de software.
 
 Typische kosten voor een MKB-organisatie:
 
 - Softwarelicentie: **€200–€600 per maand** (afhankelijk van organisatiegrootte en platform)
-- Interne uren: lager dan bij een consultant, omdat de software u structureert en begeleidt
+- Interne uren: lager dan bij een consultant, omdat de software je structureert en begeleidt
 - Optioneel: enkele uren externe expert voor specifieke vraagstukken
 
 Over een volledig implementatietraject van 6–9 maanden liggen de softwarekosten tussen €1.200 en €5.400 — een fractie van de consultantkosten.
 
-> **Tip:** Bereken niet alleen de directe kosten, maar ook de indirecte. Een consultant die wekelijks interviews afneemt en documentatie schrijft, kost uw medewerkers ook uren aan voorbereiding en beschikbaarheid. Die uren tellen mee in het totaalplaatje.
+> **Tip:** Bereken niet alleen de directe kosten, maar ook de indirecte. Een consultant die wekelijks interviews afneemt en documentatie schrijft, kost je medewerkers ook uren aan voorbereiding en beschikbaarheid. Die uren tellen mee in het totaalplaatje.
 
 ## Certificeringskosten: wat rekent de certificeringsinstantie?
 
 De externe certificeringsaudit wordt uitgevoerd door een **geaccrediteerde certificeringsinstantie**, zoals Bureau Veritas, SGS, DNV, Lloyd's Register of DEKRA. In Nederland zijn meerdere partijen actief.
 
 De kosten zijn afhankelijk van:
-- De grootte van uw organisatie (medewerkers)
-- De complexiteit van uw ISMS-scope
+- De grootte van je organisatie (medewerkers)
+- De complexiteit van je ISMS-scope
 - De hoeveelheid auditdagen die vereist is
 
 ### Indicatieve auditkosten per organisatiegrootte
@@ -75,12 +75,12 @@ De kosten zijn afhankelijk van:
 | 75–250 medewerkers | 2 dag | 4 dag | €9.000–€16.000 |
 
 De certificering verloopt in twee fasen:
-- **Fase 1 (documentatiereview):** De auditor beoordeelt of uw documentatie gereed is voor een volledige audit
+- **Fase 1 (documentatiereview):** De auditor beoordeelt of je documentatie gereed is voor een volledige audit
 - **Fase 2 (implementatiereview):** De auditor beoordeelt of de controls daadwerkelijk operationeel zijn
 
 ## Jaarlijkse onderhoudskosten
 
-Een ISO 27001-certificaat is drie jaar geldig, maar u moet elk jaar een **surveillance-audit** ondergaan om het certificaat te behouden.
+Een ISO 27001-certificaat is drie jaar geldig, maar je moet elk jaar een **surveillance-audit** ondergaan om het certificaat te behouden.
 
 | Jaar | Type audit | Geschatte kosten (25–75 mw.) |
 |------|-----------|------------------------------|
@@ -105,16 +105,16 @@ De besparing op implementatiekosten loopt op tot **€20.000 of meer** zonder da
 ## Veelgestelde vragen
 
 **Zijn er verborgen kosten die ik over het hoofd zie?**
-Reken ook op kosten voor: interne auditor training (€500–€1.500), eventuele technische maatregelen (firewall, endpoint detection, MFA-tools), en de interne uren van uw ISMS-verantwoordelijke. Niet alle kosten zijn zichtbaar op een factuur.
+Reken ook op kosten voor: interne auditor training (€500–€1.500), eventuele technische maatregelen (firewall, endpoint detection, MFA-tools), en de interne uren van je ISMS-verantwoordelijke. Niet alle kosten zijn zichtbaar op een factuur.
 
 **Kan ik de certificeringsinstantie zelf kiezen?**
-Ja, u bent vrij om elke geaccrediteerde certificeringsinstantie te kiezen. Vergelijk offertes — prijsverschillen van 20 tot 30% zijn normaal voor vergelijkbare audits. Kijk ook naar de sectorervaring van de instelling.
+Ja, je bent vrij om elke geaccrediteerde certificeringsinstantie te kiezen. Vergelijk offertes — prijsverschillen van 20 tot 30% zijn normaal voor vergelijkbare audits. Kijk ook naar de sectorervaring van de instelling.
 
 **Is een goedkopere certificeringsinstantie even betrouwbaar?**
 Zolang de instelling geaccrediteerd is door de Raad voor Accreditatie (RvA) of een gelijkwaardig buitenlands accreditatieorgaan, is het certificaat even geldig. Het accreditatiekeurmerk is doorslaggevend, niet de naamsbekendheid.
 
 ---
 
-ISO 27001 hoeft geen half jaarsalaris te kosten. Met de juiste aanpak — zelf implementeren met gespecialiseerde software — bereikt u hetzelfde doel voor een fractie van de consultantkosten.
+ISO 27001 hoeft geen half jaarsalaris te kosten. Met de juiste aanpak — zelf implementeren met gespecialiseerde software — bereikt je hetzelfde doel voor een fractie van de consultantkosten.
 
-Bekijk onze [prijzen en pakketten](/prijzen) en bereken wat Control One uw organisatie bespaart.
+Bekijk onze [prijzen en pakketten](/prijzen) en bereken wat Control One je organisatie bespaart.

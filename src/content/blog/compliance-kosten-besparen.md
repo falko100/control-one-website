@@ -34,11 +34,11 @@ Een eerste ISO 9001-certificering kost een MKB-bedrijf met tien tot vijftig mede
 
 ## De drie hefbomen voor kostenbesparing
 
-Er zijn drie strategische keuzes die het meeste impact hebben op de totale kosten van uw ISO-traject.
+Er zijn drie strategische keuzes die het meeste impact hebben op de totale kosten van je ISO-traject.
 
 ### 1. Zelf voorbereiden, consultant alleen voor toetsing
 
-De grootste kostenpost is consultantbegeleiding gedurende het hele traject. Een slimmere aanpak: gebruik een consultant alleen voor de cruciale momenten — de gap-analyse aan het begin, de toetsing van uw documentatie halverwege en de voorbereiding op de externe audit. De implementatie zelf voert u intern uit, gefaciliteerd door goede tools en templates.
+De grootste kostenpost is consultantbegeleiding gedurende het hele traject. Een slimmere aanpak: gebruik een consultant alleen voor de cruciale momenten — de gap-analyse aan het begin, de toetsing van je documentatie halverwege en de voorbereiding op de externe audit. De implementatie zelf voert je intern uit, gefaciliteerd door goede tools en templates.
 
 Dit vereist een interne projecteigenaar met voldoende tijd en discipline, maar kan de consultantkosten reduceren van 80–150 uur naar 20–40 uur. Dat scheelt €9.000 tot €27.500 bij een uurtarief van €150–250.
 
@@ -58,7 +58,7 @@ De software kost doorgaans €1.000–€5.000 per jaar, maar bespaart 40–80 i
 
 > **Tip:** Kies compliance software die specifiek is gebouwd voor ISO-managementsystemen, niet een generiek projectmanagementsysteem. De juiste structuur — per clausule, per norm — bespaart tientallen uren aan inrichting.
 
-### 3. Gefaseerde aanpak: certificeer wat u kunt auditen
+### 3. Gefaseerde aanpak: certificeer wat je kunt auditen
 
 Een veelgemaakte fout is het willen certificeren van alle processen en alle locaties tegelijk. Dat vergroot de scope van de audit, verhoogt de certificeringskosten en maakt de implementatie complexer. Een gefaseerde aanpak is goedkoper en minder risicovol:
 
@@ -70,11 +70,11 @@ Een smallere scope bij de eerste audit betekent minder auditdagen en lagere cert
 
 ## Interne vs. externe auditor
 
-Een andere significante besparing zit in de keuze van uw interne auditor. ISO-normen vereisen dat interne audits worden uitgevoerd door een gekwalificeerde auditor die onafhankelijk is van het te auditeren proces. U heeft hiervoor twee opties:
+Een andere significante besparing zit in de keuze van je interne auditor. ISO-normen vereisen dat interne audits worden uitgevoerd door een gekwalificeerde auditor die onafhankelijk is van het te auditeren proces. Je hebt hiervoor twee opties:
 
 **Interne auditor opleiden:** Een eigen medewerker volgt een ISO-auditortraining (twee tot drie dagen, €800–€1.500). Vervolgens voert deze persoon de jaarlijkse interne audits uit. Kosten na de initiële opleiding: alleen interne uren.
 
-**Externe auditor inhuren:** U schakelt een externe partij in voor de interne audits. Kosten: €1.000–€2.500 per auditcyclus, afhankelijk van de norm en omvang.
+**Externe auditor inhuren:** Je schakelt een externe partij in voor de interne audits. Kosten: €1.000–€2.500 per auditcyclus, afhankelijk van de norm en omvang.
 
 Voor de meeste MKB-bedrijven is het opleiden van een interne auditor op termijn goedkoper, en heeft het als extra voordeel dat interne kennis wordt opgebouwd. Nadeel: de interne auditor heeft minder frisse ogen dan een externe partij.
 
@@ -91,4 +91,4 @@ Met de juiste aanpak is ISO-certificering geen kostenpost maar een investering m
 
 ---
 
-Wilt u weten hoe Control One uw ISO-traject kostenefficiënt inricht — met platform, templates en gerichte begeleiding op de momenten die tellen? Bekijk onze pakketten op [de prijzenpagina](/prijzen).
+Wil je weten hoe Control One je ISO-traject kostenefficiënt inricht — met platform, templates en gerichte begeleiding op de momenten die tellen? Bekijk onze pakketten op [de prijzenpagina](/prijzen).

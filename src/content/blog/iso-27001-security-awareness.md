@@ -1,6 +1,6 @@
 ---
 title: 'Security awareness training voor ISO 27001'
-description: "De mens is de grootste risicofactor. Zo bouwt u een effectief bewustzijnsprogramma conform ISO 27001."
+description: "De mens is de grootste risicofactor. Zo bouwt je een effectief bewustzijnsprogramma conform ISO 27001."
 publishDate: 2026-04-17
 category: 'ISO 27001'
 readTime: '6 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Technologie kan veel beveiligen. Firewalls, encryptie, multifactorauthenticatie — het zijn allemaal effectieve lagen. Maar geen enkele technische maatregel beschermt u tegen een medewerker die op een phishing-link klikt, een wachtwoord deelt of een USB-stick in een laptop steekt die hij op de parkeerplaats vond. De mens is en blijft de grootste risicofactor in informatiebeveiliging. ISO 27001 verplicht u dan ook een structureel bewustzijnsprogramma op te zetten.
+Technologie kan veel beveiligen. Firewalls, encryptie, multifactorauthenticatie — het zijn allemaal effectieve lagen. Maar geen enkele technische maatregel beschermt je tegen een medewerker die op een phishing-link klikt, een wachtwoord deelt of een USB-stick in een laptop steekt die hij op de parkeerplaats vond. De mens is en blijft de grootste risicofactor in informatiebeveiliging. ISO 27001 verplicht je dan ook een structureel bewustzijnsprogramma op te zetten.
 
 ## Wat vereist ISO 27001 voor security awareness?
 
@@ -49,9 +49,9 @@ Een effectief jaarprogramma voor een MKB-organisatie ziet er zo uit:
 4. **Rolspecifieke verdieping** voor IT, HR, finance en management
 5. **Onboarding** voor nieuwe medewerkers (eerste week)
 
-> **Tip:** Koppel phishing-simulaties aan directe feedback. Een medewerker die op een gesimuleerde phishing-link klikt, krijgt onmiddellijk een korte uitleg te zien: "U heeft op een phishing-link geklikt. Zo herkent u echte phishing-mails." Dat leert meer dan een e-mail achteraf.
+> **Tip:** Koppel phishing-simulaties aan directe feedback. Een medewerker die op een gesimuleerde phishing-link klikt, krijgt onmiddellijk een korte uitleg te zien: "Je hebt op een phishing-link geklikt. Zo herkent je echte phishing-mails." Dat leert meer dan een e-mail achteraf.
 
-## Hoe bouwt u een effectief bewustzijnsprogramma?
+## Hoe bouwt je een effectief bewustzijnsprogramma?
 
 **Stap 1: breng rollen en risico's in kaart**
 Niet elke medewerker loopt hetzelfde risico. Een receptionist loopt risico via telefonische social engineering; een financieel medewerker is doelwit van CEO-fraude; een IT-beheerder kan slachtoffer zijn van gerichte phishing. Pas de inhoud aan op de rollen.
@@ -60,7 +60,7 @@ Niet elke medewerker loopt hetzelfde risico. Een receptionist loopt risico via t
 E-learning past goed voor basistraining die op een zelf gekozen moment kan worden gevolgd. Klassikale sessies werken beter voor management en voor rolspecifieke verdieping. Phishing-simulaties zijn het meest effectief als aanhaker bij de praktijk.
 
 **Stap 3: meet effectiviteit**
-Registreer wie welke training heeft gevolgd en wanneer. Meet ook het klikpercentage bij phishing-simulaties — niet om medewerkers te bestraffen, maar om te zien of het bewustzijn verbetert. Een daling van het klikpercentage over meerdere simulaties is een aantoonbaar resultaat dat u kunt presenteren aan de auditor.
+Registreer wie welke training heeft gevolgd en wanneer. Meet ook het klikpercentage bij phishing-simulaties — niet om medewerkers te bestraffen, maar om te zien of het bewustzijn verbetert. Een daling van het klikpercentage over meerdere simulaties is een aantoonbaar resultaat dat je kunt presenteren aan de auditor.
 
 **Stap 4: houd het actueel**
 Dreigingen veranderen. Voeg jaarlijks nieuwe scenario's toe die aansluiten bij actuele aanvalstechnieken — deepfake audio, QR-code phishing, AI-gegenereerde phishing-mails. Een programma dat drie jaar oud is en nooit is bijgewerkt, voldoet niet aan de geest van ISO 27001.
@@ -71,7 +71,7 @@ Control 6.3 vereist aantoonbare training. Zorg voor:
 
 - **Trainingsregistraties**: naam medewerker, datum, gevolgde module, voltooiingsstatus
 - **Aanwezigheidslijsten** van klassikale sessies
-- **Exportbestanden** uit uw e-learningplatform met voltooiingsstatus
+- **Exportbestanden** uit je e-learningplatform met voltooiingsstatus
 - **Resultaten van phishing-simulaties** inclusief klikpercentages per simulatie
 
 Bewaar deze registraties minimaal over de bewijsperiode voorafgaand aan de audit. De auditor zal steekproeven nemen en vragen wie de training heeft gevolgd en wanneer.
@@ -79,13 +79,13 @@ Bewaar deze registraties minimaal over de bewijsperiode voorafgaand aan de audit
 ## FAQ
 
 **Mag ik gratis bewustzijnsmateriaal van internet gebruiken voor ISO 27001?**
-Ja, de norm schrijft geen specifieke leverancier of format voor. Gratis materiaal van het NCSC, het Centrum voor Cybersecurity België of andere betrouwbare bronnen is prima bruikbaar. Zorg wel dat het materiaal actueel is en aansluit bij uw risicolandschap, en dat u de trainingsregistraties bijhoudt.
+Ja, de norm schrijft geen specifieke leverancier of format voor. Gratis materiaal van het NCSC, het Centrum voor Cybersecurity België of andere betrouwbare bronnen is prima bruikbaar. Zorg wel dat het materiaal actueel is en aansluit bij je risicolandschap, en dat je de trainingsregistraties bijhoudt.
 
 **Hoe ga ik om met medewerkers die de training niet voltooien?**
-De norm vereist dat alle medewerkers met relevante rollen aantoonbaar training hebben ontvangen. Maak in uw beleid duidelijk dat security awareness training verplicht is. Stel herinneringen in en escaleer indien nodig via de leidinggevende. Documenteer ook de opvolging van niet-voltooiing — dit toont de auditor dat u handhaving serieus neemt.
+De norm vereist dat alle medewerkers met relevante rollen aantoonbaar training hebben ontvangen. Maak in je beleid duidelijk dat security awareness training verplicht is. Stel herinneringen in en escaleer indien nodig via de leidinggevende. Documenteer ook de opvolging van niet-voltooiing — dit toont de auditor dat je handhaving serieus neemt.
 
 ---
 
-Security awareness is de menselijke firewall van uw organisatie. Technische maatregelen stoppen aanvallen die geen menselijke interactie vereisen; een bewuste medewerker stopt de aanvallen die dat wel doen. Investeer in uw mensen en u investeert in de sterkste schakel van uw beveiligingsketen.
+Security awareness is de menselijke firewall van je organisatie. Technische maatregelen stoppen aanvallen die geen menselijke interactie vereisen; een bewuste medewerker stopt de aanvallen die dat wel doen. Investeer in je mensen en je investeert in de sterkste schakel van je beveiligingsketen.
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door het hele implementatieproces.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door het hele implementatieproces.

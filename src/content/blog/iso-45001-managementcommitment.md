@@ -36,7 +36,7 @@ Clausule 5.1 is bijzonder concreet. Het topmanagement moet aantoonbaar leidersch
 
 De term "aantoonbaar" is daarbij cruciaal: de auditor wil zien dat het management niet alleen op papier verantwoordelijk is, maar zich ook daadwerkelijk gedraagt naar die verantwoordelijkheid.
 
-## De veiligheidscultuurladder: waar staat uw organisatie?
+## De veiligheidscultuurladder: waar sta je organisatie?
 
 **Veiligheidscultuur** is de verzameling van waarden, attitudes en gedragingen die bepalen hoe in een organisatie met veiligheid wordt omgegaan. De bekende "Bradley Curve" of veiligheidscultuurladder onderscheidt vier fasen:
 
@@ -47,9 +47,9 @@ De term "aantoonbaar" is daarbij cruciaal: de auditor wil zien dat het managemen
 | Onafhankelijk | Persoonlijk eigenaarschap | "Ik doe het voor mijn eigen veiligheid" |
 | Interdependent | Gezamenlijk eigenaarschap | "We zorgen voor elkaars veiligheid" |
 
-ISO 45001 vraagt van uw organisatie minimaal het niveau "onafhankelijk", met de ambitie te groeien naar "interdependent". Dat vraagt leiderschap dat dit actief stimuleert.
+ISO 45001 vraagt van je organisatie minimaal het niveau "onafhankelijk", met de ambitie te groeien naar "interdependent". Dat vraagt leiderschap dat dit actief stimuleert.
 
-## Hoe toont u als directie concrete betrokkenheid?
+## Hoe toont je als directie concrete betrokkenheid?
 
 Managementcommitment is geen papieren exercitie. Auditoren kijken naar gedrag, niet alleen naar documenten. Concrete manieren om betrokkenheid aan te tonen:
 
@@ -95,4 +95,4 @@ Presenteer de businesscase: verminderd ziekteverzuim, lagere kosten door minder 
 
 ---
 
-Wilt u uw managementsysteem structureel verankeren conform ISO 45001? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One uw directie en medewerkers ondersteunt.
+Wil je je managementsysteem structureel verankeren conform ISO 45001? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One je directie en medewerkers ondersteunt.

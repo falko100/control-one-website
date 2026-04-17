@@ -1,6 +1,6 @@
 ---
 title: 'ISO 45001 en de Arbowet: samenhang en verplichtingen'
-description: 'ISO 45001 en de Nederlandse Arbowet hebben veel overlap. Hoe voldoet u aan beide efficiënt?'
+description: 'ISO 45001 en de Nederlandse Arbowet hebben veel overlap. Hoe voldoet je aan beide efficiënt?'
 publishDate: 2026-05-28
 category: 'ISO 45001'
 readTime: '7 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Veel organisaties behandelen de Nederlandse Arbowet en ISO 45001 als twee afzonderlijke verplichtingen, elk met hun eigen documentatie, procedures en audits. Dat is onnodig ingewikkeld. De overlap tussen beide is groot — en een slimme aanpak maakt het mogelijk om met één geïntegreerd systeem aan beide tegelijk te voldoen. Dit artikel legt uit hoe de Arbowet en ISO 45001 zich tot elkaar verhouden, waar de verschillen zitten en hoe u maximaal profiteert van de samenhang.
+Veel organisaties behandelen de Nederlandse Arbowet en ISO 45001 als twee afzonderlijke verplichtingen, elk met hun eigen documentatie, procedures en audits. Dat is onnodig ingewikkeld. De overlap tussen beide is groot — en een slimme aanpak maakt het mogelijk om met één geïntegreerd systeem aan beide tegelijk te voldoen. Dit artikel legt uit hoe de Arbowet en ISO 45001 zich tot elkaar verhouden, waar de verschillen zitten en hoe je maximaal profiteert van de samenhang.
 
 ## De Arbowet: wettelijk kader voor arbeidsomstandigheden
 
@@ -36,25 +36,25 @@ Zoals de tabel laat zien, heeft elke wettelijke verplichting een directe tegenha
 
 ## Waar liggen de verschillen?
 
-ISO 45001 en de Arbowet zijn niet identiek. Er zijn enkele relevante verschillen die u moet kennen.
+ISO 45001 en de Arbowet zijn niet identiek. Er zijn enkele relevante verschillen die je moet kennen.
 
 **Reikwijdte** — De Arbowet geldt voor alle werkgevers in Nederland, ongeacht sector of omvang. ISO 45001 is vrijwillig — tenzij opdrachtgevers of branches het als eis stellen. De norm geeft geen specifieke sectorale eisen, maar biedt een generiek kader dat per sector wordt ingevuld.
 
-**Detailniveau** — De Arbowet en het Arbobesluit bevatten sectorspecifieke normen en grenswaarden (bijv. voor gevaarlijke stoffen, geluid, machineveiligheid). ISO 45001 verwijst naar wettelijke en andere eisen, maar stelt zelf geen grenswaarden. U dient de wettelijke grenswaarden zelf te identificeren en te integreren in uw systeem.
+**Detailniveau** — De Arbowet en het Arbobesluit bevatten sectorspecifieke normen en grenswaarden (bijv. voor gevaarlijke stoffen, geluid, machineveiligheid). ISO 45001 verwijst naar wettelijke en andere eisen, maar stelt zelf geen grenswaarden. Je dient de wettelijke grenswaarden zelf te identificeren en te integreren in je systeem.
 
 **Handhaving** — De Arbowet wordt gehandhaafd door de NLA via inspecties en boetes. ISO 45001-certificering is geen garantie voor Arbowet-naleving en beschermt niet tegen handhavingsacties. Omgekeerd geldt: Arbowet-naleving leidt niet automatisch tot ISO 45001-certificering.
 
-> **Tip:** Maak in uw OH&S-systeem een expliciete koppeling tussen de clausulen van ISO 45001 en de relevante artikelen van de Arbowet en het Arbobesluit. Dit vergemakkelijkt audits én inspecties van de NLA.
+> **Tip:** Maak in je OH&S-systeem een expliciete koppeling tussen de clausulen van ISO 45001 en de relevante artikelen van de Arbowet en het Arbobesluit. Dit vergemakkelijkt audits én inspecties van de NLA.
 
-## Hoe integreert u beide efficiënt?
+## Hoe integreert je beide efficiënt?
 
 De sleutel tot een efficiënte aanpak is het vermijden van duplicatie. Één systeem, één set procedures, één documentatiestructuur — mits die systeem zowel aan de Arbowet als aan ISO 45001 voldoet. Dat vraagt om een doordachte opzet.
 
-**Stap 1: Identificeer de toepasselijke wet- en regelgeving** — Begin met een inventarisatie van alle wet- en regelgeving die op uw organisatie van toepassing is: Arbowet, Arbobesluit, Arboregeling, sectorale CAO-afspraken, vergunningsvoorwaarden. Dit is ook een expliciete eis van ISO 45001 (clausule 6.1.3).
+**Stap 1: Identificeer de toepasselijke wet- en regelgeving** — Begin met een inventarisatie van alle wet- en regelgeving die op je organisatie van toepassing is: Arbowet, Arbobesluit, Arboregeling, sectorale CAO-afspraken, vergunningsvoorwaarden. Dit is ook een expliciete eis van ISO 45001 (clausule 6.1.3).
 
-**Stap 2: Vertaal wettelijke eisen naar systeemelementen** — Koppel elke wettelijke eis aan het betreffende element van uw OH&S-systeem. De RI&E is uw risicobeoordeling, de preventiemedewerker is uw interne arbodeskundige, het meldprotocol voor arbeidsongevallen is uw incidentprocedure.
+**Stap 2: Vertaal wettelijke eisen naar systeemelementen** — Koppel elke wettelijke eis aan het betreffende element van je OH&S-systeem. De RI&E is je risicobeoordeling, de preventiemedewerker is je interne arbodeskundige, het meldprotocol voor arbeidsongevallen is je incidentprocedure.
 
-**Stap 3: Vul de gaps** — ISO 45001 stelt aanvullende eisen aan onder meer managementcommitment, interne audits, doelstellingen en continue verbetering. Voeg deze elementen toe aan uw bestaande systeem.
+**Stap 3: Vul de gaps** — ISO 45001 stelt aanvullende eisen aan onder meer managementcommitment, interne audits, doelstellingen en continue verbetering. Voeg deze elementen toe aan je bestaande systeem.
 
 **Stap 4: Documenteer de samenhang** — Een compliancematrix — een overzicht van wettelijke en normatieve eisen versus systeemelementen — maakt de samenhang inzichtelijk en aantoonbaar voor auditors en inspecteurs.
 
@@ -82,4 +82,4 @@ De NLA kan boetes opleggen van enkele honderden tot tienduizenden euro's per ove
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door de implementatie.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door de implementatie.

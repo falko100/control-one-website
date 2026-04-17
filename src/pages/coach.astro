@@ -109,10 +109,10 @@ const breadcrumbSchema = {
               Coach
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-              Uw persoonlijke<br/><span class="text-amber-400">ISO-implementatiegids</span>
+              Je persoonlijke<br/><span class="text-amber-400">ISO-implementatiegids</span>
             </h1>
             <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
-              De Coach leidt u langs 28 stappen in een vaste, logische volgorde. Elke stap legt uit wat u moet doen, waarom, en welke documenten, risico's of maatregelen u in de portal bijwerkt — zodat u nooit hoeft te raden waar u bent.
+              De Coach leidt je langs 28 stappen in een vaste, logische volgorde. Elke stap legt uit wat je moet doen, waarom, en welke documenten, risico's of maatregelen je in de portal bijwerkt — zodat je nooit hoeft te raden waar je bent.
             </p>
             <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/80">
               <div class="flex items-center gap-2">
@@ -149,7 +149,7 @@ const breadcrumbSchema = {
                 <div class="flex-1 min-w-0 max-w-[200px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/coach</div></div>
               </div>
               <div class="aspect-[1883/1164] w-full overflow-hidden bg-primary-50">
-                <img src="/screenshots/portal-coach.png" alt="Coach in Control One" class="w-full h-full object-cover object-top" loading="eager" />
+                <img src="/screenshots/portal-coach.png" alt="Coach in Control One" class="w-full h-full object-cover object-top" loading="eager" data-lightbox />
               </div>
             </div>
           </div>
@@ -162,8 +162,8 @@ const breadcrumbSchema = {
       <div class="max-w-5xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center mb-10">
           <p class="text-sm font-semibold tracking-wide uppercase text-amber-600 mb-3">Live voortgang</p>
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">U weet altijd precies waar u staat</h2>
-          <p class="mt-4 text-lg text-primary-900/75">Boven in de Coach ziet u uw voortgang, de huidige fase en welke stap als volgende aan de beurt is. Afgeronde stappen worden automatisch bijgewerkt in uw dashboard.</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Je weet altijd precies waar je staat</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Boven in de Coach zie je je voortgang, de huidige fase en welke stap als volgende aan de beurt is. Afgeronde stappen worden automatisch bijgewerkt in je dashboard.</p>
         </div>
         <div class="rounded-2xl border border-primary-100 bg-gradient-to-b from-primary-50/40 to-white p-6 sm:p-8">
           <div class="flex items-center justify-between mb-3 text-xs font-semibold text-primary-500">
@@ -223,31 +223,79 @@ const breadcrumbSchema = {
     </section>
 
     <!-- What each step contains -->
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-2xl mx-auto text-center mb-14">
-          <p class="text-sm font-semibold tracking-wide uppercase text-amber-600 mb-3">Per stap</p>
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Wat u in elke stap vindt</h2>
-          <p class="mt-4 text-lg text-primary-900/75">Geen ellenlange normtekst — elke stap is geschreven als concreet stappenplan en wijst u door de bijbehorende portaldelen.</p>
+    <section class="relative py-24 bg-gradient-to-b from-white via-primary-50/30 to-white overflow-hidden">
+      <!-- Decorative background blobs -->
+      <div class="absolute top-20 left-0 w-72 h-72 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-20 right-0 w-96 h-96 bg-primary-200/25 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100/70 border border-amber-200/70 mb-4">
+            <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <p class="text-xs font-semibold tracking-wide uppercase text-amber-700">Per stap</p>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Wat je in elke stap vindt</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Geen ellenlange normtekst — elke stap is geschreven als concreet stappenplan en wijst je door de bijbehorende portaldelen.</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {[
-            { title: 'Uitleg in gewone taal', desc: 'Wat vraagt de norm op dit punt, waarom, en hoe ziet het er in de praktijk uit? Zonder ISO-jargon.' },
-            { title: 'Concrete actiepunten', desc: 'Per stap een korte to-do lijst: wat moet u opstellen, goedkeuren of laten tekenen voordat u door kunt.' },
-            { title: 'Directe links naar de portal', desc: 'Stap 13 stuurt u naar de risicoanalyse, stap 14 naar de VvT, stap 20 naar audits — alles één klik weg.' },
-            { title: 'Sjablonen & voorbeelden', desc: 'Elke stap koppelt aan de relevante sjablonen en beleidsdocumenten die u alleen nog hoeft in te vullen.' },
-            { title: 'Als onvolledig markeren', desc: 'Markeer een stap tijdelijk als onvolledig als u nog ergens op wacht — de Coach onthoudt waar u gebleven was.' },
-            { title: 'Volgorde die werkt', desc: 'De stappen zijn zo geordend dat u nooit vastloopt op iets dat pas later volgt. Een logische, vaste route.' },
-            { title: 'Automatische voortgang', desc: 'Ingevulde risico\'s, maatregelen en documenten markeren coach-stappen automatisch als afgerond.' },
-            { title: 'Elk bedrijf is anders', desc: 'Per stap bepaalt u zelf of deze op uw organisatie van toepassing is. Niet van toepassing? Skip en documenteer waarom.' },
-            { title: 'Nederlands én Engels', desc: 'Schakel elk moment tussen NL en EN — zowel de coachteksten als de achterliggende sjablonen zijn volledig tweetalig.' },
-          ].map(f => (
-            <div class="p-6 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
-              <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 mb-4">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            {
+              title: 'Uitleg in gewone taal',
+              desc: 'Wat vraagt de norm op dit punt, waarom, en hoe ziet het er in de praktijk uit? Zonder ISO-jargon.',
+              icon: 'M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25',
+            },
+            {
+              title: 'Concrete actiepunten',
+              desc: 'Per stap een korte to-do lijst: wat je moet opstellen, goedkeuren of laten tekenen voordat je door kunt.',
+              icon: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z',
+            },
+            {
+              title: 'Directe links naar de portal',
+              desc: 'Stap 13 stuur je naar de risicoanalyse, stap 14 naar de VvT, stap 20 naar audits — alles één klik weg.',
+              icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244',
+            },
+            {
+              title: 'Sjablonen & voorbeelden',
+              desc: 'Elke stap koppelt aan de relevante sjablonen en beleidsdocumenten die je alleen nog hoeft in te vullen.',
+              icon: 'M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75',
+            },
+            {
+              title: 'Als onvolledig markeren',
+              desc: 'Markeer een stap tijdelijk als onvolledig als je nog ergens op wacht — de Coach onthoudt waar je gebleven was.',
+              icon: 'M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z',
+            },
+            {
+              title: 'Volgorde die werkt',
+              desc: 'De stappen zijn zo geordend dat je nooit vastloopt op iets dat pas later volgt. Een logische, vaste route.',
+              icon: 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5',
+            },
+            {
+              title: 'Automatische voortgang',
+              desc: 'Ingevulde risico\'s, maatregelen en documenten markeren coach-stappen automatisch als afgerond.',
+              icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+            },
+            {
+              title: 'Elk bedrijf is anders',
+              desc: 'Per stap bepaal je zelf of deze op je organisatie van toepassing is. Niet van toepassing? Skip en documenteer waarom.',
+              icon: 'M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z',
+            },
+            {
+              title: 'Nederlands én Engels',
+              desc: 'Schakel elk moment tussen NL en EN — zowel de coachteksten als de achterliggende sjablonen zijn volledig tweetalig.',
+              icon: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418',
+            },
+          ].map((f, i) => (
+            <div class="group relative p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-xl hover:shadow-amber-100/50 hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 overflow-hidden">
+              <!-- Hover accent bar -->
+              <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <!-- Number badge -->
+              <span class="absolute top-5 right-5 text-xs font-semibold text-amber-500/70 tracking-wider tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+              <!-- Icon chip -->
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/60 border border-amber-200/50 flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={f.icon}/></svg>
               </div>
-              <h3 class="text-sm font-bold text-primary-950 mb-2">{f.title}</h3>
-              <p class="text-sm text-primary-900/75 leading-relaxed">{f.desc}</p>
+              <h3 class="text-base font-bold text-primary-950 mb-2 leading-tight">{f.title}</h3>
+              <p class="text-sm text-primary-900/70 leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

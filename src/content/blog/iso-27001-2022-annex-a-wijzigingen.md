@@ -1,6 +1,6 @@
 ---
 title: 'ISO 27001:2022: Wat is er veranderd in Annex A?'
-description: "De 2022-revisie bracht 93 controls en 4 nieuwe categorieën. Wat veranderde er en wat moet u aanpassen?"
+description: "De 2022-revisie bracht 93 controls en 4 nieuwe categorieën. Wat veranderde er en wat moet je aanpassen?"
 publishDate: 2026-04-03
 category: 'ISO 27001'
 readTime: '7 min'
@@ -15,9 +15,9 @@ keywords:
 draft: false
 ---
 
-In oktober 2022 verscheen de herziene versie van **ISO/IEC 27001**, de internationale standaard voor informatiebeveiliging. De revisie bracht de meest ingrijpende wijziging van Annex A in jaren: van 114 controls verdeeld over 14 domeinen naar 93 controls verdeeld over 4 thematische categorieën. Voor organisaties die al gecertificeerd zijn of bezig zijn met implementatie, roept dit een dringende vraag op: wat moet u nu precies aanpassen?
+In oktober 2022 verscheen de herziene versie van **ISO/IEC 27001**, de internationale standaard voor informatiebeveiliging. De revisie bracht de meest ingrijpende wijziging van Annex A in jaren: van 114 controls verdeeld over 14 domeinen naar 93 controls verdeeld over 4 thematische categorieën. Voor organisaties die al gecertificeerd zijn of bezig zijn met implementatie, roept dit een dringende vraag op: wat moet je nu precies aanpassen?
 
-In dit artikel krijgt u een helder overzicht van alle relevante wijzigingen, wat ze betekenen voor uw **Information Security Management System (ISMS)**, en hoe u de overgang praktisch aanpakt.
+In dit artikel krijg je een helder overzicht van alle relevante wijzigingen, wat ze betekenen voor je **Information Security Management System (ISMS)**, en hoe je de overgang praktisch aanpakt.
 
 ## Van 114 naar 93 controls: hoe zit dat?
 
@@ -44,7 +44,7 @@ De 11 nieuwe controls zijn de meest besproken toevoeging van de 2022-revisie. Ze
 
 ### Technologisch georiënteerde nieuwe controls
 
-**Control 8.23 – Web filtering** verplicht organisaties om het gebruik van externe websites te beheren en te monitoren. Dit gaat verder dan simpelweg verdachte sites blokkeren; u moet aantonen dat u een beleid heeft en dat dit wordt gehandhaafd.
+**Control 8.23 – Web filtering** verplicht organisaties om het gebruik van externe websites te beheren en te monitoren. Dit gaat verder dan simpelweg verdachte sites blokkeren; je moet aantonen dat je een beleid heeft en dat dit wordt gehandhaafd.
 
 **Control 8.28 – Veilige codering** is relevant voor alle organisaties die software ontwikkelen of laten ontwikkelen. Het vereist een gedocumenteerde aanpak voor secure coding practices.
 
@@ -54,40 +54,40 @@ De 11 nieuwe controls zijn de meest besproken toevoeging van de 2022-revisie. Ze
 
 **Control 5.7 – Dreigingsinformatie** schrijft voor dat organisaties actuele informatie over cyberdreigingen verzamelen, analyseren en toepassen. Voor MKB betekent dit minimaal een abonnement op een betrouwbare dreigingsfeed.
 
-**Control 5.30 – ICT-gereedheid voor bedrijfscontinuïteit** sluit aan op de bestaande eisen rondom business continuity, maar legt een specifieke nadruk op de ICT-component van uw BCP.
+**Control 5.30 – ICT-gereedheid voor bedrijfscontinuïteit** sluit aan op de bestaande eisen rondom business continuity, maar legt een specifieke nadruk op de ICT-component van je BCP.
 
-**Control 5.23 – Informatiebeveiliging voor gebruik van clouddiensten** is voor vrijwel elke moderne organisatie direct relevant. U moet uw cloudleveranciers beoordelen en de beveiligingseisen contractueel vastleggen.
+**Control 5.23 – Informatiebeveiliging voor gebruik van clouddiensten** is voor vrijwel elke moderne organisatie direct relevant. Je moet je cloudleveranciers beoordelen en de beveiligingseisen contractueel vastleggen.
 
-## Wat betekent dit voor uw Verklaring van Toepasselijkheid?
+## Wat betekent dit voor je Verklaring van Toepasselijkheid?
 
-Uw **Verklaring van Toepasselijkheid (VvT)**, ook wel Statement of Applicability (SoA) genoemd, moet worden bijgewerkt naar de 2022-structuur. Dat betekent concreet:
+Je **Verklaring van Toepasselijkheid (VvT)**, ook wel Statement of Applicability (SoA) genoemd, moet worden bijgewerkt naar de 2022-structuur. Dat betekent concreet:
 
-1. De mapping van uw huidige controls naar de nieuwe Annex A-nummering documenteren
+1. De mapping van je huidige controls naar de nieuwe Annex A-nummering documenteren
 2. Voor elk van de 11 nieuwe controls beslissen of deze van toepassing is en waarom
 3. Uitsluitingen opnieuw motiveren op basis van de nieuwe categoriestructuur
 
-> **Tip:** Maak voor uzelf een transitiematrix: zet links de oude controls (2013) en rechts de bijbehorende nieuwe controls (2022). Zo ziet u direct wat samengevoegd is en wat nieuw is. Control One genereert deze matrix automatisch binnen het platform.
+> **Tip:** Maak voor jezelf een transitiematrix: zet links de oude controls (2013) en rechts de bijbehorende nieuwe controls (2022). Zo zie je direct wat samengevoegd is en wat nieuw is. Control One genereert deze matrix automatisch binnen het platform.
 
-Meer over het correct invullen van de VvT leest u in ons artikel over de [Verklaring van Toepasselijkheid](/iso-27001).
+Meer over het correct invullen van de VvT lees je in ons artikel over de [Verklaring van Toepasselijkheid](/iso-27001).
 
-## De overgangsperiode: wanneer moet u voldoen?
+## De overgangsperiode: wanneer moet je voldoen?
 
 Organisaties die vóór november 2022 gecertificeerd waren op basis van ISO 27001:2013 hadden tot **31 oktober 2025** de tijd om te transitioneren naar de 2022-versie. Nieuwe certificeringen worden uitsluitend afgegeven op basis van de 2022-versie.
 
-Als u nu met een implementatie begint, werkt u direct met de 2022-versie. U hoeft geen transitietraject te doorlopen, maar u moet wel vertrouwd zijn met de nieuwe structuur vanaf dag één.
+Als je nu met een implementatie begint, werk je direct met de 2022-versie. Je hoeft geen transitietraject te doorlopen, maar je moet wel vertrouwd zijn met de nieuwe structuur vanaf dag één.
 
 ## Praktische aanpak voor MKB
 
-Voor een kleinere organisatie kan de overgang overweldigend lijken. In de praktijk valt het mee, mits u de aanpak structureert.
+Voor een kleinere organisatie kan de overgang overweldigend lijken. In de praktijk valt het mee, mits je de aanpak structureert.
 
 **Stap 1: Gap-analyse uitvoeren**
-Vergelijk uw bestaande controls met de 93 nieuwe controls. Welke zijn al gedekt? Welke zijn nieuw? Gebruik de officiële ISO 27002:2022 als leidraad voor implementatiebegeleiding per control.
+Vergelijk je bestaande controls met de 93 nieuwe controls. Welke zijn al gedekt? Welke zijn nieuw? Gebruik de officiële ISO 27002:2022 als leidraad voor implementatiebegeleiding per control.
 
 **Stap 2: Focus op de 11 nieuwe controls**
-Bepaal voor elk van de 11 nieuwe controls of deze van toepassing is op uw organisatie. Veel organisaties kunnen een deel uitsluiten met een gedocumenteerde motivatie (bijvoorbeeld control 8.28 als u zelf geen software ontwikkelt).
+Bepaal voor elk van de 11 nieuwe controls of deze van toepassing is op je organisatie. Veel organisaties kunnen een deel uitsluiten met een gedocumenteerde motivatie (bijvoorbeeld control 8.28 als je zelf geen software ontwikkelt).
 
 **Stap 3: VvT bijwerken**
-Pas uw Verklaring van Toepasselijkheid aan op de nieuwe structuur. Dit document is het hart van uw ISMS en de basis voor elke audit.
+Pas je Verklaring van Toepasselijkheid aan op de nieuwe structuur. Dit document is het hart van je ISMS en de basis voor elke audit.
 
 **Stap 4: Beleid en procedures aanpassen**
 Pas bestaande beleidsdocumenten aan waar nodig. Nieuwe controls vereisen doorgaans nieuwe procedurebeschrijvingen.
@@ -95,16 +95,16 @@ Pas bestaande beleidsdocumenten aan waar nodig. Nieuwe controls vereisen doorgaa
 ## Veelgestelde vragen
 
 **Moet ik als nieuw gecertificeerde organisatie ook iets doen met de overgangsperiode?**
-Nee. Als u nu begint, implementeert u direct op basis van ISO 27001:2022. De overgangsperiode gold alleen voor organisaties die al gecertificeerd waren op de 2013-versie.
+Nee. Als je nu begint, implementeer je direct op basis van ISO 27001:2022. De overgangsperiode gold alleen voor organisaties die al gecertificeerd waren op de 2013-versie.
 
 **Zijn de 11 nieuwe controls allemaal verplicht?**
-Nee. Net als bij alle Annex A-controls kunt u een control als niet-van-toepassing verklaren, mits u dit in uw VvT gemotiveerd onderbouwt. Een externe auditor zal deze motivaties wel kritisch beoordelen.
+Nee. Net als bij alle Annex A-controls kun je een control als niet-van-toepassing verklaren, mits je dit in je VvT gemotiveerd onderbouwt. Een externe auditor zal deze motivaties wel kritisch beoordelen.
 
 **Wat gebeurt er als ik de nieuwe controls negeer?**
-Als u voor een externe audit gaat, zal de auditor de 2022-versie als referentie gebruiken. Ontbrekende controls zonder motivatie leiden tot afwijkingen (non-conformities) die gecertificeerd worden hersteld voor certificaatverlening.
+Als je voor een externe audit gaat, zal de auditor de 2022-versie als referentie gebruiken. Ontbrekende controls zonder motivatie leiden tot afwijkingen (non-conformities) die gecertificeerd worden hersteld voor certificaatverlening.
 
 ---
 
-De overgang naar ISO 27001:2022 is voor de meeste MKB-organisaties goed te beheren, zeker als u een gestructureerde aanpak hanteert. Control One begeleidt u automatisch door deze transitie, van gap-analyse tot bijgewerkte VvT.
+De overgang naar ISO 27001:2022 is voor de meeste MKB-organisaties goed te beheren, zeker als je een gestructureerde aanpak hanteert. Control One begeleidt je automatisch door deze transitie, van gap-analyse tot bijgewerkte VvT.
 
-Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe u ISO 27001:2022 compliancy bereikt zonder dure consultants.
+Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe je ISO 27001:2022 compliancy bereikt zonder dure consultants.

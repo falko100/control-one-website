@@ -28,7 +28,7 @@ De CRA onderscheidt drie risicocategorieën met oplopende eisen:
 | Klasse I (kritiek) | Wachtwoordbeheerders, firewalls, VPN's | Zelfevaluatie + harmoniseerde norm |
 | Klasse II (hoog kritiek) | Industriële besturingssystemen, hypervisors | Verplichte beoordeling door aangemelde instantie |
 
-> **Tip:** Stel nu al een productveiligheidsregister op met alle digitale elementen in uw portfolio. Wacht niet tot de deadlines naderen — de inventarisatie kost meer tijd dan verwacht, zeker wanneer u producten van derde partijen integreert.
+> **Tip:** Stel nu al een productveiligheidsregister op met alle digitale elementen in je portfolio. Wacht niet tot de deadlines naderen — de inventarisatie kost meer tijd dan verwacht, zeker wanneer je producten van derde partijen integreert.
 
 ## Verplichtingen voor producenten
 
@@ -89,4 +89,4 @@ NIS2 richt zich op de operationele beveiliging van organisaties; de CRA richt zi
 
 ---
 
-Wilt u weten hoe uw softwareproducten of hardware scoren ten opzichte van de CRA-eisen? Control One ondersteunt u bij de gap-analyse en implementatie. Bekijk onze tarieven op [de prijzenpagina](/prijzen).
+Wil je weten hoe je softwareproducten of hardware scoren ten opzichte van de CRA-eisen? Control One ondersteunt je bij de gap-analyse en implementatie. Bekijk onze tarieven op [de prijzenpagina](/prijzen).

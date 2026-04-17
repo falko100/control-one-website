@@ -1,6 +1,6 @@
 ---
 title: 'ISO 27001 Implementeren: Compleet Stappenplan voor MKB (2025)'
-description: "Leer hoe u ISO 27001 stap voor stap implementeert als MKB-bedrijf. Van gap-analyse tot certificering — inclusief kosten, tijdlijn en praktische tips om duizenden euro's te besparen."
+description: "Leer hoe je ISO 27001 stap voor stap implementeert als MKB-bedrijf. Van gap-analyse tot certificering — inclusief kosten, tijdlijn en praktische tips om duizenden euro's te besparen."
 publishDate: 2026-02-01
 category: 'ISO 27001'
 readTime: '12 min'
@@ -19,7 +19,7 @@ draft: false
 
 Informatiebeveiliging is geen luxe meer — het is een voorwaarde om te ondernemen. Klanten eisen het, opdrachtgevers stellen het als eis, en de NIS2-richtlijn maakt het voor steeds meer bedrijven verplicht. **ISO 27001** is daarin de internationale goudstandaard.
 
-Maar laat u niet afschrikken door consultantfacturen van €25.000 of meer. In dit stappenplan legt u het fundament voor een gecertificeerd Information Security Management System (ISMS) — zonder de dure tussenpersoon.
+Maar laat je niet afschrikken door consultantfacturen van €25.000 of meer. In dit stappenplan leg je het fundament voor een gecertificeerd Information Security Management System (ISMS) — zonder de dure tussenpersoon.
 
 ---
 
@@ -47,7 +47,7 @@ Slechts een klein percentage van de Nederlandse organisaties is gecertificeerd v
 | Aanbesteding / tender | Onderscheidend voordeel t.o.v. concurrenten |
 | Cyberverzekeraar | Lagere premie bij gecertificeerd ISMS |
 
-Voor MKB-bedrijven met 10 tot 250 medewerkers is ISO 27001 haalbaar in **5 tot 9 maanden** — mits u gestructureerd te werk gaat.
+Voor MKB-bedrijven met 10 tot 250 medewerkers is ISO 27001 haalbaar in **5 tot 9 maanden** — mits je gestructureerd te werk gaat.
 
 ---
 
@@ -67,8 +67,8 @@ De werkelijke kostenfactoren zijn:
 - Fase 2-audit (implementatietoets): €3.000–€6.000
 - Jaarlijkse surveillance-audits: €1.500–€3.000/jaar
 
-**Wat u zelf kunt doen**
-Met de juiste software en een gestructureerde aanpak vervangt u het overgrote deel van het consultantwerk. Tools zoals Control One bieden begeleide workflows, documentatietemplates en risicobeheer voor een fractie van die kosten.
+**Wat je zelf kunt doen**
+Met de juiste software en een gestructureerde aanpak vervangt je het overgrote deel van het consultantwerk. Tools zoals Control One bieden begeleide workflows, documentatietemplates en risicobeheer voor een fractie van die kosten.
 
 ---
 
@@ -80,7 +80,7 @@ Met de juiste software en een gestructureerde aanpak vervangt u het overgrote de
 
 ISO 27001 slaagt of faalt bij het management. Clausule 5 van de norm eist aantoonbaar leiderschap: de directie moet het beleid vaststellen, resources toewijzen en het ISMS integreren in de bedrijfsstrategie.
 
-**Wat u concreet doet:**
+**Wat je concreet doet:**
 - Stel een Information Security Officer (ISO) aan (intern of gedeeld)
 - Stel een informatiebeveiligingsbeleid op — ondertekend door de directie
 - Definieer het budget en de tijdlijn
@@ -89,29 +89,29 @@ ISO 27001 slaagt of faalt bij het management. Clausule 5 van de norm eist aantoo
 
 ---
 
-### Stap 2: Bepaal de scope van uw ISMS
+### Stap 2: Bepaal de scope van je ISMS
 
-De scope bepaalt welke onderdelen van uw organisatie onder het ISMS vallen. Dit kan uw hele bedrijf zijn, maar ook een specifieke afdeling, dienst of locatie.
+De scope bepaalt welke onderdelen van je organisatie onder het ISMS vallen. Dit kan je hele bedrijf zijn, maar ook een specifieke afdeling, dienst of locatie.
 
 **Vragen om de scope te bepalen:**
 - Welke systemen verwerken gevoelige informatie?
 - Welke processen raken klantdata?
 - Welke locaties of cloudservices zijn relevant?
 
-Leg de scope vast in een scopedocument. Een te brede scope maakt implementatie zwaar; een te smalle scope kan uw certificering minder waardevol maken voor opdrachtgevers.
+Leg de scope vast in een scopedocument. Een te brede scope maakt implementatie zwaar; een te smalle scope kan je certificering minder waardevol maken voor opdrachtgevers.
 
 ---
 
-### Stap 3: Gap-analyse — waar staat u nu?
+### Stap 3: Gap-analyse — waar sta je nu?
 
-Voordat u maatregelen implementeert, brengt u in kaart wat er al is en wat ontbreekt. Dit heet een **gap-analyse** of nulmeting.
+Voordat je maatregelen implementeert, brengt je in kaart wat er al is en wat ontbreekt. Dit heet een **gap-analyse** of nulmeting.
 
 Doorloop alle 93 controls uit Annex A en noteer per control:
 - **Geïmplementeerd** — en aantoonbaar effectief
 - **Gedeeltelijk** — aanwezig maar onvoldoende gedocumenteerd
 - **Ontbreekt** — moet nog worden geïmplementeerd
 
-Een typisch MKB-bedrijf scoort bij aanvang 30–50% van de controls als "aanwezig". De gap-analyse geeft u een prioriteitenlijst voor de rest van de implementatie.
+Een typisch MKB-bedrijf scoort bij aanvang 30–50% van de controls als "aanwezig". De gap-analyse geef je een prioriteitenlijst voor de rest van de implementatie.
 
 ---
 
@@ -121,13 +121,13 @@ Een typisch MKB-bedrijf scoort bij aanvang 30–50% van de controls als "aanwezi
 
 Dit is het **hart van ISO 27001**. De norm eist geen specifieke methode, maar wél een gedocumenteerde, consistente aanpak.
 
-**De basis van uw risicoanalyse:**
+**De basis van je risicoanalyse:**
 
 1. **Inventariseer informatie-assets** — systemen, data, processen, mensen
 2. **Identificeer dreigingen** — ransomware, phishing, insider threats, stroomuitval
 3. **Identificeer kwetsbaarheden** — verouderde software, ontbrekende encryptie, zwakke wachtwoorden
 4. **Bepaal risicoscore** — kans × impact (bijv. 1–5 schaal)
-5. **Bepaal risicobereidheid** — welke risico's accepteert u, welke behandelt u?
+5. **Bepaal risicobereidheid** — welke risico's accepteert je, welke behandelt je?
 6. **Kies behandeloptie** — mitigeren, accepteren, overdragen (verzekering), vermijden
 
 Documenteer alles in een **risicoregister**. Dit document wordt tijdens de audit intensief beoordeeld.
@@ -136,21 +136,21 @@ Documenteer alles in een **risicoregister**. Dit document wordt tijdens de audit
 
 ### Stap 5: Stel de Verklaring van Toepasselijkheid (VvT) op
 
-De **Statement of Applicability (SoA)** — in het Nederlands: Verklaring van Toepasselijkheid — is een verplicht document dat aangeeft welke van de 93 Annex A-controls u toepast en welke niet.
+De **Statement of Applicability (SoA)** — in het Nederlands: Verklaring van Toepasselijkheid — is een verplicht document dat aangeeft welke van de 93 Annex A-controls je toepast en welke niet.
 
-Voor elke control vermeldt u:
+Voor elke control vermeldt je:
 - **Toepasselijk ja/nee**
 - **Reden van uitsluiting** (als niet van toepassing)
 - **Implementatiestatus**
 - **Verwijzing naar bewijs** (beleid, procedure, technische maatregel)
 
-De VvT is het verbindende document tussen uw risicoanalyse en uw daadwerkelijke maatregelen. Een auditor begint hier altijd.
+De VvT is het verbindende document tussen je risicoanalyse en je daadwerkelijke maatregelen. Een auditor begint hier altijd.
 
 ---
 
 ### Stap 6: Implementeer de beveiligingsmaatregelen
 
-Nu gaat u aan de slag met de daadwerkelijke controls. Focus op de maatregelen met de hoogste risicoscore en de meest aantoonbare waarde.
+Nu ga je aan de slag met de daadwerkelijke controls. Focus op de maatregelen met de hoogste risicoscore en de meest aantoonbare waarde.
 
 **Prioritaire controls voor MKB:**
 
@@ -163,13 +163,13 @@ Nu gaat u aan de slag met de daadwerkelijke controls. Focus op de maatregelen me
 | Back-ups | A.8.13 – Back-up | Herstel na ransomware |
 | Bewustwording | A.6.3 – Security awareness | Menselijke factor = grootste risico |
 
-Maak voor elke control **beleid en procedures** die beschrijven hoe uw organisatie dit aanpakt. Technische implementatie alleen is onvoldoende — de documentatie is het bewijs.
+Maak voor elke control **beleid en procedures** die beschrijven hoe je organisatie dit aanpakt. Technische implementatie alleen is onvoldoende — de documentatie is het bewijs.
 
 ---
 
 ### Stap 7: Interne audit en directiebeoordeling
 
-Voordat u een externe certificeringsaudit aanvraagt, doorloopt u twee verplichte interne stappen:
+Voordat je een externe certificeringsaudit aanvraagt, doorloopt je twee verplichte interne stappen:
 
 **Interne audit (clausule 9.2)**
 Een medewerker of externe partij — niet degene die het ISMS heeft gebouwd — toetst of het systeem werkt zoals beschreven. Bevindingen worden vastgelegd in een auditrapport met correctieve acties.
@@ -177,7 +177,7 @@ Een medewerker of externe partij — niet degene die het ISMS heeft gebouwd — 
 **Directiebeoordeling (clausule 9.3)**
 De directie beoordeelt het ISMS formeel: zijn de doelstellingen gehaald, wat zijn de verbeterpunten, welke resources zijn nodig voor het komende jaar? Dit wordt gedocumenteerd in notulen.
 
-> **Bewijsperiode:** de certificeringsinstantie verwacht dat uw ISMS minimaal **3 maanden aantoonbaar in werking** is geweest. Plan uw interne audit dus vroeg genoeg.
+> **Bewijsperiode:** de certificeringsinstantie verwacht dat je ISMS minimaal **3 maanden aantoonbaar in werking** is geweest. Plan je interne audit dus vroeg genoeg.
 
 ---
 
@@ -186,12 +186,12 @@ De directie beoordeelt het ISMS formeel: zijn de doelstellingen gehaald, wat zij
 De certificeringsaudit verloopt in twee fasen:
 
 **Fase 1 — Documentatietoets (Stage 1)**
-De auditor beoordeelt uw documentatie op afstand of op locatie: scope, risicoanalyse, VvT, beleid en procedures. U ontvangt een auditverslag met eventuele tekortkomingen die u vóór fase 2 moet oplossen.
+De auditor beoordeelt je documentatie op afstand of op locatie: scope, risicoanalyse, VvT, beleid en procedures. Je ontvangt een auditverslag met eventuele tekortkomingen die je vóór fase 2 moet oplossen.
 
 **Fase 2 — Implementatietoets (Stage 2)**
-De auditor bezoekt uw organisatie en toetst of de beschreven processen ook in de praktijk worden uitgevoerd. Hij interviewt medewerkers, bekijkt logs en systemen en beoordeelt bewijs.
+De auditor bezoekt je organisatie en toetst of de beschreven processen ook in de praktijk worden uitgevoerd. Hij interviewt medewerkers, bekijkt logs en systemen en beoordeelt bewijs.
 
-Bij goedkeuring ontvangt u het **ISO 27001-certificaat**, geldig voor 3 jaar met jaarlijkse surveillance-audits.
+Bij goedkeuring ontvang je het **ISO 27001-certificaat**, geldig voor 3 jaar met jaarlijkse surveillance-audits.
 
 ---
 
@@ -224,7 +224,7 @@ Bij goedkeuring ontvangt u het **ISO 27001-certificaat**, geldig voor 3 jaar met
 | Flexibiliteit | Hoog | Beperkt |
 | Geschikt voor | MKB 10–250 medewerkers | Grote organisaties, complexe omgevingen |
 
-De voornaamste reden om een consultant in te schakelen is **complexiteit**: als uw informatieomgeving versnipperd is over meerdere locaties, systemen en landen. Voor de meeste Nederlandse MKB-bedrijven is zelfimplementatie met goede software volledig haalbaar.
+De voornaamste reden om een consultant in te schakelen is **complexiteit**: als je informatieomgeving versnipperd is over meerdere locaties, systemen en landen. Voor de meeste Nederlandse MKB-bedrijven is zelfimplementatie met goede software volledig haalbaar.
 
 ---
 
@@ -237,7 +237,7 @@ ISO 27001 is niet wettelijk verplicht voor de meeste bedrijven, maar wordt steed
 Een certificaat is 3 jaar geldig. Jaarlijks vindt een surveillance-audit plaats om te controleren of het ISMS nog steeds effectief functioneert. Na 3 jaar volgt een hercertificeringsaudit.
 
 **Kan ik ISO 27001 combineren met ISO 9001?**
-Ja. Beide normen volgen de **High Level Structure (HLS)**, een gemeenschappelijke opbouw voor managementsysteemnormen. Clausules 4–10 zijn vrijwel identiek. U kunt documentatie combineren, geïntegreerde audits uitvoeren en één managementsysteem opzetten voor beide normen.
+Ja. Beide normen volgen de **High Level Structure (HLS)**, een gemeenschappelijke opbouw voor managementsysteemnormen. Clausules 4–10 zijn vrijwel identiek. Je kunt documentatie combineren, geïntegreerde audits uitvoeren en één managementsysteem opzetten voor beide normen.
 
 **Welke certificeringsinstanties zijn erkend in Nederland?**
 Erkende certificeringsinstanties in Nederland zijn onder andere DEKRA, Bureau Veritas, Lloyd's Register, DNV en BSI. Kies een instantie die geaccrediteerd is door de Raad voor Accreditatie (RvA).
@@ -249,14 +249,14 @@ Er is geen minimumvereiste. Ook een bedrijf van 15 medewerkers kan ISO 27001 hal
 
 ## ISO 27001 implementeren met Control One
 
-Control One is specifiek ontworpen voor MKB-bedrijven die ISO 27001 zelf willen implementeren. Het platform begeleidt u door elke stap:
+Control One is specifiek ontworpen voor MKB-bedrijven die ISO 27001 zelf willen implementeren. Het platform begeleidt je door elke stap:
 
 - **Begeleide risicoanalyse** met vooraf ingevulde dreigingen en assets
-- **Verklaring van Toepasselijkheid** automatisch gegenereerd op basis van uw risicoprofiel
-- **Beleid en procedures** — meer dan 50 kant-en-klare templates aanpasbaar aan uw organisatie
+- **Verklaring van Toepasselijkheid** automatisch gegenereerd op basis van je risicoprofiel
+- **Beleid en procedures** — meer dan 50 kant-en-klare templates aanpasbaar aan je organisatie
 - **Taakbeheer** — toewijzen, bewaken en afsluiten van implementatietaken
 - **Auditbeheer** — interne audits plannen, uitvoeren en documenteren
-- **Dashboarding** — altijd inzicht in uw voortgang richting certificering
+- **Dashboarding** — altijd inzicht in je voortgang richting certificering
 
 [Start gratis met Control One →](/prijzen)
 

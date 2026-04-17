@@ -1,6 +1,6 @@
 ---
 title: 'Risicobeoordeling voor arbeidsomstandigheden (ISO 45001)'
-description: "De risicobeoordeling verbindt gevaren aan passende beheersmaatregelen. Zo doet u het conform ISO 45001."
+description: "De risicobeoordeling verbindt gevaren aan passende beheersmaatregelen. Zo doe je het conform ISO 45001."
 publishDate: 2026-05-26
 category: 'ISO 45001'
 readTime: '7 min'
@@ -15,11 +15,11 @@ keywords:
 draft: false
 ---
 
-Een deugdelijke **risicobeoordeling** is het hart van elk arbobeheersysteem. Zonder een systematische inventarisatie van gevaren weet u niet welke maatregelen u moet nemen, en kunt u ook niet aantonen dat u uw medewerkers adequaat beschermt. ISO 45001 geeft concrete handvatten voor het uitvoeren van een risicobeoordeling — en sluit nauw aan op de Nederlandse **RI&E** (Risico-Inventarisatie en -Evaluatie) die wettelijk verplicht is.
+Een deugdelijke **risicobeoordeling** is het hart van elk arbobeheersysteem. Zonder een systematische inventarisatie van gevaren weet je niet welke maatregelen je moet nemen, en kun je ook niet aantonen dat je je medewerkers adequaat beschermt. ISO 45001 geeft concrete handvatten voor het uitvoeren van een risicobeoordeling — en sluit nauw aan op de Nederlandse **RI&E** (Risico-Inventarisatie en -Evaluatie) die wettelijk verplicht is.
 
 ## Gevaar versus risico: een belangrijk onderscheid
 
-Voordat u begint met beoordelen, is het belangrijk het onderscheid te kennen tussen een **gevaar** en een **risico**:
+Voordat je begint met beoordelen, is het belangrijk het onderscheid te kennen tussen een **gevaar** en een **risico**:
 
 - Een **gevaar** is een bron, situatie of handeling die potentieel schade kan veroorzaken aan personen.
 - Een **risico** is de combinatie van de kans dat een gevaar zich voordoet en de ernst van de mogelijke gevolgen.
@@ -28,10 +28,10 @@ ISO 45001 spreekt in clausule 6.1.2 over het identificeren van gevaren en het be
 
 ## Stap 1 — Gevaren identificeren
 
-De eerste stap is een volledige inventarisatie van alle gevaren in uw organisatie. ISO 45001 vraagt dat u hierbij rekening houdt met:
+De eerste stap is een volledige inventarisatie van alle gevaren in je organisatie. ISO 45001 vraagt dat je hierbij rekening houdt met:
 
 - Routinematige én niet-routinematige activiteiten
-- Activiteiten van externe partijen op uw werkterrein (onderaannemers, bezoekers)
+- Activiteiten van externe partijen op je werkterrein (onderaannemers, bezoekers)
 - Infrastructuur, apparatuur en materialen
 - Menselijk gedrag, capaciteiten en andere menselijke factoren
 - Wijzigingen in de organisatie, processen of activiteiten (ook geplande wijzigingen)
@@ -43,7 +43,7 @@ Methoden voor gevaaridentificatie zijn onder meer: rondgangen door het werk, int
 
 ## Stap 2 — Risico's beoordelen
 
-Na identificatie beoordeelt u elk gevaar op risico. De meest gebruikte methode is de **risicomatrix**, waarbij u kans en ernst schat:
+Na identificatie beoordeelt je elk gevaar op risico. De meest gebruikte methode is de **risicomatrix**, waarbij je kans en ernst schat:
 
 | Kans / Ernst | Gering letsel | Ernstig letsel | Dodelijk / Blijvend |
 |---|---|---|---|
@@ -51,11 +51,11 @@ Na identificatie beoordeelt u elk gevaar op risico. De meest gebruikte methode i
 | Mogelijk | Gemiddeld | Hoog | Kritisch |
 | Waarschijnlijk | Hoog | Kritisch | Kritisch |
 
-Een "Kritisch" risico vereist onmiddellijke actie; een "Laag" risico kunt u accepteren of op langere termijn aanpakken. ISO 45001 schrijft geen specifieke methode voor, maar vraagt wel dat uw aanpak gedocumenteerd, herhaalbaar en consistent is.
+Een "Kritisch" risico vereist onmiddellijke actie; een "Laag" risico kun je accepteren of op langere termijn aanpakken. ISO 45001 schrijft geen specifieke methode voor, maar vraagt wel dat je aanpak gedocumenteerd, herhaalbaar en consistent is.
 
 ## Stap 3 — Beheersmaatregelen bepalen
 
-Voor elk geïdentificeerd risico stelt u beheersmaatregelen vast. ISO 45001 hanteert de **beheersmaatregel hiërarchie** (clausule 8.1.2):
+Voor elk geïdentificeerd risico stel je beheersmaatregelen vast. ISO 45001 hanteert de **beheersmaatregel hiërarchie** (clausule 8.1.2):
 
 1. **Eliminatie** — Verwijder het gevaar volledig (meest effectief)
 2. **Substitutie** — Vervang het gevaar door iets minder gevaarlijks
@@ -63,21 +63,21 @@ Voor elk geïdentificeerd risico stelt u beheersmaatregelen vast. ISO 45001 hant
 4. **Administratieve maatregelen** — Procedures, training, werkinstructies
 5. **Persoonlijke beschermingsmiddelen (PBM)** — Laatste redmiddel (minst effectief)
 
-Het is verleidelijk direct naar PBM te grijpen — helmen, handschoenen, veiligheidsbrillen — maar ISO 45001 vraagt u eerst de hogere niveaus van de hiërarchie te overwegen. PBM beschermt alleen de medewerker als die het daadwerkelijk draagt; eliminatie van het gevaar beschermt altijd iedereen.
+Het is verleidelijk direct naar PBM te grijpen — helmen, handschoenen, veiligheidsbrillen — maar ISO 45001 vraag je eerst de hogere niveaus van de hiërarchie te overwegen. PBM beschermt alleen de medewerker als die het daadwerkelijk draagt; eliminatie van het gevaar beschermt altijd iedereen.
 
 ## Stap 4 — Acties vastleggen en opvolgen
 
-Beheersmaatregelen die nog niet zijn ingevoerd, vertaalt u naar concrete acties met een verantwoordelijke en een deadline. Dit legt u vast in een actieplan of verbeterregister. ISO 45001 vraagt dat u de effectiviteit van beheersmaatregelen evalueert: werken ze daadwerkelijk?
+Beheersmaatregelen die nog niet zijn ingevoerd, vertaalt je naar concrete acties met een verantwoordelijke en een deadline. Dit leg je vast in een actieplan of verbeterregister. ISO 45001 vraagt dat je de effectiviteit van beheersmaatregelen evalueert: werken ze daadwerkelijk?
 
-Gedocumenteerde informatie over de risicobeoordeling is een expliciete eis van de norm. U moet kunnen aantonen dat u een systematische beoordeling heeft uitgevoerd en welke besluiten u daarin heeft genomen.
+Gedocumenteerde informatie over de risicobeoordeling is een expliciete eis van de norm. Je moet kunnen aantonen dat je een systematische beoordeling heeft uitgevoerd en welke besluiten je daarin heeft genomen.
 
 ## Samenhang met de RI&E
 
 De Nederlandse Arbowet verplicht alle werkgevers tot het uitvoeren van een **RI&E** (artikel 5 Arbowet). De RI&E moet worden opgesteld door of in samenwerking met een gecertificeerde arbodienst of arbodeskundige, en moet actueel worden gehouden.
 
-ISO 45001's risicobeoordeling gaat verder dan de wettelijke RI&E: het vraagt een continu proces van identificeren, beoordelen en verbeteren, terwijl de RI&E meer een periodieke momentopname is. Beide kunnen prima naast elkaar functioneren — sterker nog, een goed ISO 45001-systeem maakt uw RI&E automatisch robuuster en actueler.
+ISO 45001's risicobeoordeling gaat verder dan de wettelijke RI&E: het vraagt een continu proces van identificeren, beoordelen en verbeteren, terwijl de RI&E meer een periodieke momentopname is. Beide kunnen prima naast elkaar functioneren — sterker nog, een goed ISO 45001-systeem maak je RI&E automatisch robuuster en actueler.
 
-Meer over de samenhang tussen ISO 45001 en de Arbowet leest u in ons artikel [ISO 45001 en de Arbowet](/blog/iso-45001-arbowet).
+Meer over de samenhang tussen ISO 45001 en de Arbowet lees je in ons artikel [ISO 45001 en de Arbowet](/blog/iso-45001-arbowet).
 
 ## Veelgestelde vragen
 
@@ -92,4 +92,4 @@ Een Taak Risico Analyse (TRA) is een operationeel instrument voor een specifieke
 
 ---
 
-Wilt u uw risicobeoordeling digitaal en conform ISO 45001 inrichten? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One u helpt zonder externe consultants.
+Wil je je risicobeoordeling digitaal en conform ISO 45001 inrichten? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One je helpt zonder externe consultants.

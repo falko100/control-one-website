@@ -1,6 +1,6 @@
 ---
 title: 'Incidentonderzoek conform ISO 45001'
-description: 'Een goed incidentonderzoek voorkomt herhaling. Zo voert u het uit conform ISO 45001.'
+description: 'Een goed incidentonderzoek voorkomt herhaling. Zo voert je het uit conform ISO 45001.'
 publishDate: 2026-05-31
 category: 'ISO 45001'
 readTime: '7 min'
@@ -15,13 +15,13 @@ keywords:
 draft: false
 ---
 
-Elk incident op de werkvloer — of het nu om een arbeidsongeval, een bijna-incident of een gevaarlijke situatie gaat — bevat waardevolle informatie over tekortkomingen in uw arbobeheersysteem. ISO 45001 vereist niet alleen dat u incidenten registreert, maar ook dat u ze systematisch onderzoekt om herhaling te voorkomen. In de praktijk blijft incidentonderzoek vaak beperkt tot het invullen van een formulier. Dat is een gemiste kans en een risico voor uw certificering. In dit artikel leest u hoe u incidentonderzoek uitvoert conform de eisen van ISO 45001.
+Elk incident op de werkvloer — of het nu om een arbeidsongeval, een bijna-incident of een gevaarlijke situatie gaat — bevat waardevolle informatie over tekortkomingen in je arbobeheersysteem. ISO 45001 vereist niet alleen dat je incidenten registreert, maar ook dat je ze systematisch onderzoekt om herhaling te voorkomen. In de praktijk blijft incidentonderzoek vaak beperkt tot het invullen van een formulier. Dat is een gemiste kans en een risico voor je certificering. In dit artikel lees je hoe je incidentonderzoek uitvoert conform de eisen van ISO 45001.
 
 ## Wat verstaat ISO 45001 onder een incident?
 
 ISO 45001 hanteert een brede definitie van "incident": een onbedoelde, werkgerelateerde gebeurtenis die letsel, ziekte of de dood tot gevolg heeft of had kunnen hebben. Dat laatste is cruciaal: ook bijna-incidenten en gevaarlijke situaties waarbij niemand gewond raakte, vallen onder de definitie. De norm gebruikt hiervoor de term "near miss" of "gevaarlijk voorval."
 
-Clausule 10.2 verplicht organisaties om incidenten tijdig te onderzoeken, de oorzaken te bepalen en corrigerende maatregelen te nemen. Clausule 9.1.1 vereist monitoring van incidentcijfers als onderdeel van de prestatiemeting. De combinatie van deze eisen maakt incidentonderzoek tot een integraal onderdeel van uw systeem — niet een administratieve bijzaak.
+Clausule 10.2 verplicht organisaties om incidenten tijdig te onderzoeken, de oorzaken te bepalen en corrigerende maatregelen te nemen. Clausule 9.1.1 vereist monitoring van incidentcijfers als onderdeel van de prestatiemeting. De combinatie van deze eisen maakt incidentonderzoek tot een integraal onderdeel van je systeem — niet een administratieve bijzaak.
 
 ## Stap 1: directe reactie en veiligstellen van de situatie
 
@@ -35,7 +35,7 @@ Stel zo snel mogelijk een onderzoeksteam samen. Voor ernstige incidenten bestaat
 
 Effectief incidentonderzoek vereist een systematische feitenverzameling. Gebruik meerdere bronnen:
 
-- **Getuigenverklaringen:** spreek getuigen zo snel mogelijk en afzonderlijk. Vermijd suggestieve vragen; stel open vragen als "Wat zag u?" en "Wat deed u daarna?"
+- **Getuigenverklaringen:** spreek getuigen zo snel mogelijk en afzonderlijk. Vermijd suggestieve vragen; stel open vragen als "Wat zag je?" en "Wat deed je daarna?"
 - **Fysiek bewijs:** fotografeer de locatie vanuit meerdere hoeken, verzamel kapot gereedschap of defecte materialen.
 - **Documentatie:** raadpleeg werkvergunningen, risicobeoordelingen, onderhoudsregistraties en trainingsrecords.
 - **Camerabeelden:** indien beschikbaar, veiligstellen vóór automatische overschrijving.
@@ -46,7 +46,7 @@ Reconstrueer op basis van deze gegevens de toedracht: wat is er stap voor stap g
 
 De zwakte van oppervlakkig incidentonderzoek is dat het stopt bij de directe oorzaak: "medewerker droeg geen veiligheidsschoenen." ISO 45001 vraagt om dieper te graven: waarom droeg de medewerker geen veiligheidsschoenen? Was er geen instructie? Waren de schoenen niet beschikbaar? Was er normvervaging op de afdeling?
 
-De 5x Waarom-methode is een toegankelijke techniek voor root cause analysis. Stel vijf keer de vraag "waarom?" om van de directe oorzaak door te dringen tot de systeemfactoren. Aanvullend kunt u gebruikmaken van het Ishikawa-diagram (visgraatdiagram) om oorzaken te categoriseren in domeinen als mens, machine, methode, materiaal en omgeving.
+De 5x Waarom-methode is een toegankelijke techniek voor root cause analysis. Stel vijf keer de vraag "waarom?" om van de directe oorzaak door te dringen tot de systeemfactoren. Aanvullend kun je gebruikmaken van het Ishikawa-diagram (visgraatdiagram) om oorzaken te categoriseren in domeinen als mens, machine, methode, materiaal en omgeving.
 
 | Oorzaakniveau | Omschrijving | Voorbeeld |
 |---|---|---|
@@ -57,23 +57,23 @@ De 5x Waarom-methode is een toegankelijke techniek voor root cause analysis. Ste
 
 ## Stap 4: corrigerende maatregelen en follow-up
 
-Op basis van de oorzaakanalyse formuleert u corrigerende maatregelen. Onderscheid directe correcties (de natte vloer droogmaken, schoenen beschikbaar stellen) van structurele systeemverbeteringen (meldingsprocedure herzien, leidinggevenden trainen in het omarmen van incidentmeldingen).
+Op basis van de oorzaakanalyse formuleert je corrigerende maatregelen. Onderscheid directe correcties (de natte vloer droogmaken, schoenen beschikbaar stellen) van structurele systeemverbeteringen (meldingsprocedure herzien, leidinggevenden trainen in het omarmen van incidentmeldingen).
 
-Wijs voor elke maatregel een verantwoordelijke aan en stel een deadline. Bewaken van de implementatie en effectiviteit van maatregelen is een expliciete eis van clausule 10.2. Leg ook vast hoe u controleert of de maatregel heeft gewerkt: minder incidenten van dit type, verhoogde meldingsfrequentie, of een positieve audit-uitkomst.
+Wijs voor elke maatregel een verantwoordelijke aan en stel een deadline. Bewaken van de implementatie en effectiviteit van maatregelen is een expliciete eis van clausule 10.2. Leg ook vast hoe je controleert of de maatregel heeft gewerkt: minder incidenten van dit type, verhoogde meldingsfrequentie, of een positieve audit-uitkomst.
 
 Deel de lessen uit het onderzoek proactief met de bredere organisatie — zonder de getroffen medewerker te stigmatiseren. Een anoniem leermoment is vaak effectiever dan een formele circulaire.
 
 ## Veelgestelde vragen
 
 **Moet ik elk bijna-incident melden bij de Inspectie SZW?**
-Bijna-incidenten hoeft u niet te melden bij de Inspectie SZW, maar arbeidsongevallen waarbij een werknemer langer dan drie werkdagen verzuimt, zijn wél meldingsplichtig. Dodelijke arbeidsongevallen en ernstige arbeidsongevallen moeten direct worden gemeld. Documenteer altijd ook interne bijna-incidenten voor uw ISO 45001-systeem.
+Bijna-incidenten hoef je niet te melden bij de Inspectie SZW, maar arbeidsongevallen waarbij een werknemer langer dan drie werkdagen verzuimt, zijn wél meldingsplichtig. Dodelijke arbeidsongevallen en ernstige arbeidsongevallen moeten direct worden gemeld. Documenteer altijd ook interne bijna-incidenten voor je ISO 45001-systeem.
 
 **Hoe lang moet ik incidentonderzoeksrapporten bewaren?**
-ISO 45001 schrijft geen bewaartermijn voor, maar de Nederlandse Arbowet en eventuele sectorale regelgeving kunnen dat wel doen. Als vuistregel hanteert u ten minste vijf jaar, zodat trendanalyses mogelijk zijn en rapporten beschikbaar zijn bij een arbeidsrechterlijk geschil of inspectie.
+ISO 45001 schrijft geen bewaartermijn voor, maar de Nederlandse Arbowet en eventuele sectorale regelgeving kunnen dat wel doen. Als vuistregel hanteert je ten minste vijf jaar, zodat trendanalyses mogelijk zijn en rapporten beschikbaar zijn bij een arbeidsrechterlijk geschil of inspectie.
 
 **Hoe stimuleer ik medewerkers om bijna-incidenten te melden?**
 De meldingsbereidheid hangt sterk af van de veiligheidscultuur. Zorg dat melden altijd positieve of neutrale gevolgen heeft — nooit disciplinaire. Communiceer openlijk wat er met meldingen gebeurt. Bedank medewerkers die melden en maak de resultaten van onderzoek zichtbaar. Een hoge meldingsfrequentie is een teken van een rijpe veiligheidscultuur, geen teken van een onveilige organisatie.
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door de implementatie.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door de implementatie.

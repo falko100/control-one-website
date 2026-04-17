@@ -92,7 +92,7 @@ const typeStyle = {
                 <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
                 <div class="flex-1 min-w-0 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/documenten</div></div>
               </div>
-              <img src="/screenshots/portal-documents.png" alt="Documentbeheer in Control One" class="w-full" loading="eager" />
+              <img src="/screenshots/portal-documents.png" alt="Documentbeheer in Control One" class="w-full" loading="eager" data-lightbox />
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const typeStyle = {
               </div>
             ))}
           </div>
-          <div class="px-5 py-3 text-[10px] text-primary-400 bg-primary-50/50 border-t border-primary-100">Voorbeeld · in uw portal ziet u alle 33+ documenten standaard, aangevuld met uw eigen uploads.</div>
+          <div class="px-5 py-3 text-[10px] text-primary-400 bg-primary-50/50 border-t border-primary-100">Voorbeeld · in je portal zie je alle 33+ documenten standaard, aangevuld met je eigen uploads.</div>
         </div>
       </div>
     </section>
@@ -161,19 +161,19 @@ const typeStyle = {
     <section class="py-24 bg-primary-50/30">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Documentbeheer dat met u meewerkt</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Documentbeheer dat met je meewerkt</h2>
           <p class="mt-4 text-lg text-primary-900/75">Geen losse Word-bestanden op een netwerkschijf — een document in Control One is een levend ISMS-artefact.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
-            { title: '200+ sjablonen vooraf ingevuld', desc: 'Van ISMS-handboek tot leveranciersbeleid tot geheimhoudingsovereenkomst — geschreven door ISO-experts en klaar voor uw organisatie.' },
+            { title: '200+ sjablonen vooraf ingevuld', desc: 'Van ISMS-handboek tot leveranciersbeleid tot geheimhoudingsovereenkomst — geschreven door ISO-experts en klaar voor je organisatie.' },
             { title: 'Bewerken in de portal', desc: 'Volledige ingebouwde editor met secties, inhoudsopgave en variabele velden. Geen Word, geen versieversmarketing per e-mail.' },
             { title: 'Versiehistorie per wijziging', desc: 'Elke aanpassing is traceerbaar: wie, wat, wanneer. Ideaal als bewijs tijdens interne en externe audits.' },
             { title: 'Periodieke reviews', desc: 'Stel per document een reviewinterval in (6 maanden, 1 jaar, 2 jaar). De portal agendeert automatisch de volgende beoordeling.' },
             { title: 'Goedkeuringsworkflow', desc: 'Leg vast wie een document heeft goedgekeurd en wanneer. Status (concept, goedgekeurd) is altijd direct zichtbaar in de lijst.' },
             { title: 'Duplicate & hergebruik', desc: 'Maak met één klik een kopie van een beleid en pas het aan voor een aparte entiteit, dochter of framework.' },
-            { title: 'Gekoppeld aan Annex A', desc: 'Elk document verwijst naar één of meerdere Annex A-maatregelen. Zo ziet u per control direct het bijbehorende beleid.' },
-            { title: 'PDF-export voor auditors', desc: 'Exporteer elk document of het hele pakket als PDF, klaar voor inlevering bij uw certificerende instelling.' },
+            { title: 'Gekoppeld aan Annex A', desc: 'Elk document verwijst naar één of meerdere Annex A-maatregelen. Zo zie je per control direct het bijbehorende beleid.' },
+            { title: 'PDF-export voor auditors', desc: 'Exporteer elk document of het hele pakket als PDF, klaar voor inlevering bij je certificerende instelling.' },
             { title: 'Nederlands én Engels', desc: 'Elke sjabloon is volledig beschikbaar in NL en EN. Internationale audits of Engelstalige medewerkers? Geen extra vertaalwerk.' },
           ].map(f => (
             <div class="p-6 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/50 transition-all">

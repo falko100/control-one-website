@@ -1,6 +1,6 @@
 ---
 title: 'Een sterk wachtwoordbeleid opstellen'
-description: "Zwakke wachtwoorden zijn verantwoordelijk voor 80% van datalekken. Zo stelt u een effectief beleid op."
+description: "Zwakke wachtwoorden zijn verantwoordelijk voor 80% van datalekken. Zo stel je een effectief beleid op."
 publishDate: 2026-06-26
 category: 'Cybersecurity'
 readTime: '7 min'
@@ -15,9 +15,9 @@ keywords:
 draft: false
 ---
 
-Volgens het Verizon Data Breach Investigations Report is **80% van alle datalekken** te herleiden naar zwakke, gestolen of hergebruikte wachtwoorden. Voor MKB-bedrijven is dat geen abstract statistiek — het is een risico dat dagelijks speelt. Toch ontbreekt in veel organisaties een schriftelijk, gehandhaafd wachtwoordbeleid. De gevolgen kunnen desastreus zijn: één gecompromitteerd account kan een keten van incidenten veroorzaken die uw bedrijfsvoering wekenlang stilleggen.
+Volgens het Verizon Data Breach Investigations Report is **80% van alle datalekken** te herleiden naar zwakke, gestolen of hergebruikte wachtwoorden. Voor MKB-bedrijven is dat geen abstract statistiek — het is een risico dat dagelijks speelt. Toch ontbreekt in veel organisaties een schriftelijk, gehandhaafd wachtwoordbeleid. De gevolgen kunnen desastreus zijn: één gecompromitteerd account kan een keten van incidenten veroorzaken die je bedrijfsvoering wekenlang stilleggen.
 
-In dit artikel leert u hoe u een **sterk wachtwoordbeleid opstelt** dat past bij uw organisatie, aansluit op [ISO 27001](/iso-27001)-vereisten en door uw medewerkers daadwerkelijk wordt nageleefd.
+In dit artikel leer je hoe je een **sterk wachtwoordbeleid opstelt** dat past bij je organisatie, aansluit op [ISO 27001](/iso-27001)-vereisten en door je medewerkers daadwerkelijk wordt nageleefd.
 
 ## Waarom een wachtwoordbeleid onmisbaar is
 
@@ -35,7 +35,7 @@ Een wachtwoordbeleid lost al deze problemen structureel op — niet door technol
 
 ## De kernonderdelen van een effectief wachtwoordbeleid
 
-Een goed **password policy** voor uw organisatie bevat minimaal de volgende elementen:
+Een goed **password policy** voor je organisatie bevat minimaal de volgende elementen:
 
 | Onderdeel | Minimumeis | Aanbeveling |
 |---|---|---|
@@ -50,11 +50,11 @@ Een goed **password policy** voor uw organisatie bevat minimaal de volgende elem
 
 ### Passphrases als alternatief
 
-Een passphrase — een zin van vier of meer willekeurige woorden, zoals `appel-regen-fiets-olifant` — is zowel sterker als makkelijker te onthouden dan een willekeurige reeks tekens. Overweeg passphrases als standaard te promoten in uw beleid.
+Een passphrase — een zin van vier of meer willekeurige woorden, zoals `appel-regen-fiets-olifant` — is zowel sterker als makkelijker te onthouden dan een willekeurige reeks tekens. Overweeg passphrases als standaard te promoten in je beleid.
 
 ## Wachtwoordbeheerders: van nice-to-have naar must-have
 
-Het is onmogelijk om tientallen unieke, sterke wachtwoorden uit uw hoofd te kennen. Een **wachtwoordbeheerder** lost dit op door wachtwoorden veilig op te slaan en automatisch in te vullen. Voor organisaties zijn zakelijke wachtwoordbeheerders de juiste keuze.
+Het is onmogelijk om tientallen unieke, sterke wachtwoorden uit je hoofd te kennen. Een **wachtwoordbeheerder** lost dit op door wachtwoorden veilig op te slaan en automatisch in te vullen. Voor organisaties zijn zakelijke wachtwoordbeheerders de juiste keuze.
 
 ### Populaire zakelijke oplossingen
 
@@ -63,11 +63,11 @@ Het is onmogelijk om tientallen unieke, sterke wachtwoorden uit uw hoofd te kenn
 - **Keeper Security** — sterk in compliance-rapportage
 - **LastPass Teams** — breed bekend, maar gebruik de zakelijke variant
 
-Zorg dat uw beleid het gebruik van een goede wachtwoordbeheerder **verplicht stelt** en dat de organisatie de kosten vergoedt. Medewerkers die zelf moeten betalen, omzeilen het systeem vaker.
+Zorg dat je beleid het gebruik van een goede wachtwoordbeheerder **verplicht stelt** en dat de organisatie de kosten vergoedt. Medewerkers die zelf moeten betalen, omzeilen het systeem vaker.
 
 ### Toegangsbeheer bij vertrek medewerkers
 
-Een onderschat risico: medewerkers die de organisatie verlaten maar nog toegang hebben tot systemen. Uw wachtwoordbeleid moet een **offboarding-procedure** bevatten die accounts binnen 24 uur deactiveert na uitdiensttreding.
+Een onderschat risico: medewerkers die de organisatie verlaten maar nog toegang hebben tot systemen. Je wachtwoordbeleid moet een **offboarding-procedure** bevatten die accounts binnen 24 uur deactiveert na uitdiensttreding.
 
 ## Wachtwoordbeleid en ISO 27001
 
@@ -78,15 +78,15 @@ Specifiek relevant:
 - **A.9.3.1** — Gebruik van geheime authenticatie-informatie: medewerkers moeten instructies krijgen over goed gebruik van wachtwoorden
 - **A.9.4.3** — Systemen voor wachtwoordbeheer: systemen moeten interactieve, kwalitatief goede wachtwoorden afdwingen
 
-Zonder een formeel beleid — schriftelijk vastgelegd, goedgekeurd door directie en gecommuniceerd aan medewerkers — slaagt u niet voor een ISO 27001-audit. Met Control One kunt u dit beleid documenteren, distribueren en de acceptatie bijhouden via ons platform. Bekijk de [prijzen](/prijzen) voor meer informatie.
+Zonder een formeel beleid — schriftelijk vastgelegd, goedgekeurd door directie en gecommuniceerd aan medewerkers — slaagt je niet voor een ISO 27001-audit. Met Control One kun je dit beleid documenteren, distribueren en de acceptatie bijhouden via ons platform. Bekijk de [prijzen](/prijzen) voor meer informatie.
 
-## Implementatie: zo brengt u het beleid tot leven
+## Implementatie: zo brengt je het beleid tot leven
 
 Een document schrijven is één ding — naleving realiseren is een ander. Hier zijn de stappen voor een succesvolle implementatie:
 
 ### Stap 1: Breng het huidige wachtwoordgebruik in kaart
 
-Voer een interne audit uit: welke systemen zijn er, wie heeft toegang, welke wachtwoordregels gelden nu? U kunt dit handmatig doen of een tool zoals Specops Password Auditor gebruiken voor Active Directory-omgevingen.
+Voer een interne audit uit: welke systemen zijn er, wie heeft toegang, welke wachtwoordregels gelden nu? Je kunt dit handmatig doen of een tool zoals Specops Password Auditor gebruiken voor Active Directory-omgevingen.
 
 ### Stap 2: Stel het beleid op en laat het goedkeuren
 
@@ -106,7 +106,7 @@ Wachtwoordbeleid is geen eenmalig document. Evalueer het jaarlijks en pas het aa
 
 ## Veelgemaakte fouten bij wachtwoordbeleid
 
-**Te complexe regels die medewerkers omzeilen:** Als uw beleid te streng is, gaan medewerkers het systeem omzeilen — wachtwoorden opschrijven op post-its, minimale variaties gebruiken (Wachtwoord1, Wachtwoord2). Houd regels eenvoudig en leg uit waarom ze er zijn.
+**Te complexe regels die medewerkers omzeilen:** Als je beleid te streng is, gaan medewerkers het systeem omzeilen — wachtwoorden opschrijven op post-its, minimale variaties gebruiken (Wachtwoord1, Wachtwoord2). Houd regels eenvoudig en leg uit waarom ze er zijn.
 
 **Geen technische handhaving:** Een beleid zonder technische afdwinging is een papieren tijger. Zorg dat systemen de regels daadwerkelijk controleren.
 
@@ -125,4 +125,4 @@ Stel een veilig self-service reset-proces in. Vermijd het resetten via e-mail zo
 
 ---
 
-Een sterk wachtwoordbeleid is de basis van informatiebeveiliging — eenvoudig op te zetten, maar krachtig in effect. Wilt u uw beleid documenteren, laten goedkeuren en naleving automatisch bijhouden? Bekijk hoe Control One dit voor u vereenvoudigt op de [prijzenpagina](/prijzen).
+Een sterk wachtwoordbeleid is de basis van informatiebeveiliging — eenvoudig op te zetten, maar krachtig in effect. Wil je je beleid documenteren, laten goedkeuren en naleving automatisch bijhouden? Bekijk hoe Control One dit voor je vereenvoudigt op de [prijzenpagina](/prijzen).

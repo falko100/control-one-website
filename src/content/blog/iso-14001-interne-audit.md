@@ -1,6 +1,6 @@
 ---
 title: 'ISO 14001 interne audit: praktische handleiding'
-description: "De interne audit toetst of uw milieumanagementsysteem werkt. Zo plant en voert u hem effectief uit."
+description: "De interne audit toetst of je milieumanagementsysteem werkt. Zo plant en voert je hem effectief uit."
 publishDate: 2026-05-19
 category: 'ISO 14001'
 readTime: '6 min'
@@ -15,20 +15,20 @@ keywords:
 draft: false
 ---
 
-De interne audit is een van de meest waardevolle — en tegelijk meest onderschatte — instrumenten binnen een milieumanagementsysteem. Waar veel organisaties de interne audit ervaren als een verplichte exercitie voor de externe certificeerder, is het in werkelijkheid een krachtig verbeterinstrument. Clausule 9.2 van ISO 14001 verplicht u een auditprogramma op te stellen en uit te voeren. Hoe doet u dat effectief, zonder er buitensporig veel tijd aan te besteden?
+De interne audit is een van de meest waardevolle — en tegelijk meest onderschatte — instrumenten binnen een milieumanagementsysteem. Waar veel organisaties de interne audit ervaren als een verplichte exercitie voor de externe certificeerder, is het in werkelijkheid een krachtig verbeterinstrument. Clausule 9.2 van ISO 14001 verplicht je een auditprogramma op te stellen en uit te voeren. Hoe doe je dat effectief, zonder er buitensporig veel tijd aan te besteden?
 
 ## Wat is de interne audit en wat toetst hij?
 
-Een interne audit is een systematische, onafhankelijke en gedocumenteerde beoordeling van uw milieumanagementsysteem. Het doel is vast te stellen of uw EMS:
+Een interne audit is een systematische, onafhankelijke en gedocumenteerde beoordeling van je milieumanagementsysteem. Het doel is vast te stellen of je EMS:
 - Voldoet aan de eisen van ISO 14001 en de eigen interne eisen
 - Effectief is geïmplementeerd en wordt onderhouden
-- Bijdraagt aan de realisatie van uw milieudoelstellingen
+- Bijdraagt aan de realisatie van je milieudoelstellingen
 
 De interne audit toetst dus niet alleen of de documentatie klopt, maar ook of de praktijk overeenstemt met wat op papier staat. Een procedure die niemand kent of gebruikt, is een bevinding waard — ook al is het document perfect opgesteld.
 
 ## Het auditprogramma: plannen op basis van risico
 
-Clausule 9.2.1 schrijft voor dat u een **auditprogramma** opstelt dat rekening houdt met de **milieurelevantie** van de betrokken processen en de resultaten van eerdere audits. In de praktijk betekent dit:
+Clausule 9.2.1 schrijft voor dat je een **auditprogramma** opstelt dat rekening houdt met de **milieurelevantie** van de betrokken processen en de resultaten van eerdere audits. In de praktijk betekent dit:
 
 - Processen en locaties met significante milieuaspecten worden vaker geauditeerd
 - Gebieden waar in een vorige audit tekortkomingen zijn vastgesteld, krijgen extra aandacht
@@ -57,7 +57,7 @@ Competentie kan worden aangetoond door een opleiding tot interne auditor ISO 140
 **Voorbereiding**
 - Stel een auditplan op met scope, doelstelling, datum, te interviewen personen
 - Verzamel relevante documenten: procedures, het aspectenregister, eerdere auditrapportages, monitoringdata, corrigerende maatregelenregisters
-- Stel een checklist op op basis van de ISO 14001-clausules en uw interne eisen
+- Stel een checklist op op basis van de ISO 14001-clausules en je interne eisen
 
 **Uitvoering**
 - Begin met een openingsgesprek: leg doel en aanpak uit aan de geauditeerde afdeling
@@ -82,11 +82,11 @@ Afwijkingen vereisen een corrigerende maatregel met een oorzaakanalyse, een acti
 Voor een kleine organisatie (minder dan 25 medewerkers) met een beperkte scope is een interne audit doorgaans in één dag te voltooien. Voorbereiding kost een halve dag, de feitelijke audit drie tot vier uur, en de rapportage een paar uur. Bij grotere of complexere organisaties kan de audit meerdere dagen beslaan.
 
 **Wat als ik geen afwijkingen vind?**
-Een audit zonder bevindingen is een signaal — maar niet altijd een goed teken. Het kan betekenen dat uw systeem uitstekend functioneert, maar het kan ook betekenen dat de auditor niet diep genoeg heeft gegraven. Stel uw checklist en interviewvragen kritisch op. Een goede auditor vindt altijd verbeterpunten, al zijn het observaties of aanbevelingen.
+Een audit zonder bevindingen is een signaal — maar niet altijd een goed teken. Het kan betekenen dat je systeem uitstekend functioneert, maar het kan ook betekenen dat de auditor niet diep genoeg heeft gegraven. Stel je checklist en interviewvragen kritisch op. Een goede auditor vindt altijd verbeterpunten, al zijn het observaties of aanbevelingen.
 
 **Moet ik de interne audit laten documenteren?**
-Ja, ISO 14001 vereist dat u de resultaten van uw auditprogramma bewaart als **gedocumenteerde informatie** (clausule 9.2.2). Dit omvat het auditprogramma, de auditplannen, de auditrapportages en de opvolging van bevindingen. De externe auditor zal deze documenten opvragen als bewijs dat u aan de normeisen voldoet.
+Ja, ISO 14001 vereist dat je de resultaten van je auditprogramma bewaart als **gedocumenteerde informatie** (clausule 9.2.2). Dit omvat het auditprogramma, de auditplannen, de auditrapportages en de opvolging van bevindingen. De externe auditor zal deze documenten opvragen als bewijs dat je aan de normeisen voldoet.
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u door de implementatie.
+Klaar om te starten? [Control One](/prijzen) begeleidt je door de implementatie.

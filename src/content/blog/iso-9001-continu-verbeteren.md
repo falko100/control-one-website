@@ -1,6 +1,6 @@
 ---
 title: 'Continu verbeteren met ISO 9001: de PDCA-cyclus'
-description: "Plan-Do-Check-Act is de motor van ISO 9001. Hoe maakt u de PDCA-cyclus werkend in uw organisatie?"
+description: "Plan-Do-Check-Act is de motor van ISO 9001. Hoe maak je de PDCA-cyclus werkend in je organisatie?"
 publishDate: 2026-05-11
 category: 'ISO 9001'
 readTime: '6 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Continu verbeteren is geen vrijblijvende ambitie binnen ISO 9001 — het is een expliciete eis. Clausule 10 van ISO 9001:2015 verplicht organisaties om mogelijkheden voor verbetering te identificeren en de nodige maatregelen te treffen. Het instrument dat hieraan ten grondslag ligt, is de PDCA-cyclus: Plan, Do, Check, Act. Maar hoe zorgt u ervoor dat deze cyclus niet slechts op papier bestaat, maar werkelijk de motor wordt van uw kwaliteitsmanagementsysteem?
+Continu verbeteren is geen vrijblijvende ambitie binnen ISO 9001 — het is een expliciete eis. Clausule 10 van ISO 9001:2015 verplicht organisaties om mogelijkheden voor verbetering te identificeren en de nodige maatregelen te treffen. Het instrument dat hieraan ten grondslag ligt, is de PDCA-cyclus: Plan, Do, Check, Act. Maar hoe zorgt je ervoor dat deze cyclus niet slechts op papier bestaat, maar werkelijk de motor wordt van je kwaliteitsmanagementsysteem?
 
 ## Wat is de PDCA-cyclus en hoe werkt zij binnen ISO 9001?
 
@@ -58,11 +58,11 @@ De jaarlijkse of halfjaarlijkse directiebeoordeling is het formele moment om all
 
 ISO 9001 maakt onderscheid tussen twee vormen van verbetering, en dat onderscheid is belangrijk.
 
-**Corrigerende maatregelen (clausule 10.2)** zijn reactief: u reageert op een bestaande nonconformiteit of klacht. Het doel is de afwijking te corrigeren én de grondoorzaak weg te nemen zodat herhaling wordt voorkomen.
+**Corrigerende maatregelen (clausule 10.2)** zijn reactief: je reageert op een bestaande nonconformiteit of klacht. Het doel is de afwijking te corrigeren én de grondoorzaak weg te nemen zodat herhaling wordt voorkomen.
 
-**Continue verbetering (clausule 10.3)** is proactief: u verbetert processen en het QMS ook zonder dat er een probleem is opgetreden. Dit is de hogere standaard die ISO 9001 nastreeft.
+**Continue verbetering (clausule 10.3)** is proactief: je verbetert processen en het QMS ook zonder dat er een probleem is opgetreden. Dit is de hogere standaard die ISO 9001 nastreeft.
 
-In de praktijk gebruiken veel organisaties dezelfde registratie- en opvolgingssystematiek voor beide. Dat is efficiënt, maar zorg ervoor dat u ook verbeterinitiatieven registreert die niet voortkomen uit een klacht of afwijking.
+In de praktijk gebruiken veel organisaties dezelfde registratie- en opvolgingssystematiek voor beide. Dat is efficiënt, maar zorg ervoor dat je ook verbeterinitiatieven registreert die niet voortkomen uit een klacht of afwijking.
 
 > **Tip:** Gebruik een eenvoudig verbeterregister met minimaal vier kolommen: omschrijving van de verbetering, verantwoordelijke, geplande datum en status. Bespreek dit register maandelijks in een kort overleg. Zo blijven verbeteringen zichtbaar en worden ze niet vergeten.
 
@@ -103,4 +103,4 @@ Een verbeterregister of actieoverzicht volstaat in de meeste gevallen. Zorg dat 
 
 ---
 
-Wilt u uw verbeterproces professionaliseren of uw ISO 9001-certificering aanvragen? Bekijk onze diensten en tarieven op [onze prijzenpagina](/prijzen).
+Wil je je verbeterproces professionaliseren of je ISO 9001-certificering aanvragen? Bekijk onze diensten en tarieven op [onze prijzenpagina](/prijzen).

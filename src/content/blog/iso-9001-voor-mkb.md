@@ -15,13 +15,13 @@ keywords:
 draft: false
 ---
 
-Er bestaat een hardnekkig misverstand dat ISO 9001 alleen weggelegd is voor grote organisaties met uitgebreide kwaliteitsafdelingen en diepe zakken. De werkelijkheid is anders. ISO 9001:2015 is uitdrukkelijk ontworpen om schaalbaar te zijn — de norm past zich aan aan de omvang, complexiteit en context van de organisatie. Een MKB-bedrijf met tien medewerkers kan net zo goed certificeerd worden als een multinational, en kan dat doorgaans veel sneller en goedkoper doen. In dit artikel leest u hoe.
+Er bestaat een hardnekkig misverstand dat ISO 9001 alleen weggelegd is voor grote organisaties met uitgebreide kwaliteitsafdelingen en diepe zakken. De werkelijkheid is anders. ISO 9001:2015 is uitdrukkelijk ontworpen om schaalbaar te zijn — de norm past zich aan aan de omvang, complexiteit en context van de organisatie. Een MKB-bedrijf met tien medewerkers kan net zo goed certificeerd worden als een multinational, en kan dat doorgaans veel sneller en goedkoper doen. In dit artikel lees je hoe.
 
 ## Waarom ISO 9001 voor MKB loont
 
 Veel MKB-bedrijven starten hun ISO 9001-traject vanuit een externe prikkel: een grote opdrachtgever stelt het als voorwaarde, een aanbesteding vereist het of een brancheorganisatie raadt het aan. Dat is een legitieme reden — maar het is niet de beste reden.
 
-De beste reden is interne verbetering. ISO 9001 dwingt u na te denken over hoe uw organisatie werkt: welke processen zijn er, wie is waarvoor verantwoordelijk, hoe meet u of u goed werk levert en wat doet u als dat niet zo is? Die vragen zijn voor een bedrijf met vijftien medewerkers net zo relevant als voor een bedrijf met vijftienhonderd.
+De beste reden is interne verbetering. ISO 9001 dwingt je na te denken over hoe je organisatie werkt: welke processen zijn er, wie is waarvoor verantwoordelijk, hoe meet je of je goed werk levert en wat doe je als dat niet zo is? Die vragen zijn voor een bedrijf met vijftien medewerkers net zo relevant als voor een bedrijf met vijftienhonderd.
 
 Concrete voordelen voor MKB:
 
@@ -43,16 +43,16 @@ De kosten van ISO 9001-certificering bestaan uit drie componenten: de implementa
 | Jaarlijkse surveillance-audit | € 1.000 – € 2.500 |
 | Hercertificeringsaudit (elke 3 jaar) | € 1.500 – € 3.500 |
 
-De grootste kostenpost is doorgaans de interne tijd. Zorg dat u die realistisch inplant in de capaciteitsplanning. Een onderschat tijdsbeslag is de meest voorkomende reden waarom implementatietrajecten uitlopen.
+De grootste kostenpost is doorgaans de interne tijd. Zorg dat je die realistisch inplant in de capaciteitsplanning. Een onderschat tijdsbeslag is de meest voorkomende reden waarom implementatietrajecten uitlopen.
 
-> **Tip:** Vraag bij meerdere certificerende instellingen offertes op. De tarieven voor certificeringsaudits variëren aanzienlijk. Kijk niet alleen naar prijs, maar ook naar de reputatie van de instelling en de specifieke ervaring in uw branche.
+> **Tip:** Vraag bij meerdere certificerende instellingen offertes op. De tarieven voor certificeringsaudits variëren aanzienlijk. Kijk niet alleen naar prijs, maar ook naar de reputatie van de instelling en de specifieke ervaring in je branche.
 
-## Hoe pakt u het praktisch aan als MKB?
+## Hoe pakt je het praktisch aan als MKB?
 
-De sleutel voor een effectieve ISO 9001-implementatie in een kleinere organisatie is focus en proportionaliteit. Schrijf niet meer documentatie dan noodzakelijk. ISO 9001:2015 vereist specifieke gedocumenteerde informatie, maar dwingt u niet tot honderden pagina's procedures.
+De sleutel voor een effectieve ISO 9001-implementatie in een kleinere organisatie is focus en proportionaliteit. Schrijf niet meer documentatie dan noodzakelijk. ISO 9001:2015 vereist specifieke gedocumenteerde informatie, maar dwingt je niet tot honderden pagina's procedures.
 
 **Houd het lean:**
-- Gebruik bestaande werkwijzen als basis — documenteer wat u al doet, verbeter wat niet klopt
+- Gebruik bestaande werkwijzen als basis — documenteer wat je al doet, verbeter wat niet klopt
 - Combineer rollen: in een klein bedrijf kan de directeur ook proceseigenaar zijn van meerdere processen
 - Gebruik eenvoudige tools: een gedeelde map in de cloud, een simpele auditchecklist, een Excel-risicoregister
 - Begin met de primaire processen en voeg ondersteunende processen later toe
@@ -61,7 +61,7 @@ De sleutel voor een effectieve ISO 9001-implementatie in een kleinere organisati
 
 In de beginfase zijn de meest kritieke onderdelen voor ISO 9001:
 1. Beleid en doelstellingen (clausule 5 en 6)
-2. Proceskaarten van uw kernprocessen (clausule 4.4)
+2. Proceskaarten van je kernprocessen (clausule 4.4)
 3. Risicoanalyse (clausule 6.1)
 4. Interne auditprocedure en -planning (clausule 9.2)
 5. Procedure voor nonconformiteiten (clausule 10.2)
@@ -90,4 +90,4 @@ In de initiële fase zijn minimaal de directie en de kwaliteitsverantwoordelijke
 
 ---
 
-ISO 9001 is voor MKB-bedrijven een bereikbaar en waardevol kwaliteitsinstrument — mits u het proportioneel en pragmatisch aanpakt. De investering betaalt zich terug in efficiëntere processen, tevreden klanten en nieuwe zakelijke kansen. Wilt u weten wat ISO 9001-begeleiding voor uw organisatie kost? Bekijk ons aanbod op [/prijzen](/prijzen).
+ISO 9001 is voor MKB-bedrijven een bereikbaar en waardevol kwaliteitsinstrument — mits je het proportioneel en pragmatisch aanpakt. De investering betaalt zich terug in efficiëntere processen, tevreden klanten en nieuwe zakelijke kansen. Wil je weten wat ISO 9001-begeleiding voor je organisatie kost? Bekijk ons aanbod op [/prijzen](/prijzen).

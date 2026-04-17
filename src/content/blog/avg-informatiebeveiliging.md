@@ -1,6 +1,6 @@
 ---
 title: 'AVG en informatiebeveiliging: wat is verplicht?'
-description: 'De AVG stelt technische en organisatorische beveiligingseisen. Hoe voldoet u aan artikel 32 GDPR?'
+description: 'De AVG stelt technische en organisatorische beveiligingseisen. Hoe voldoet je aan artikel 32 GDPR?'
 publishDate: 2026-06-04
 category: 'Wetgeving'
 readTime: '7 min'
@@ -9,7 +9,7 @@ image: '/blog/banner-wetgeving.svg'
 keywords: ['AVG informatiebeveiliging', 'GDPR artikel 32', 'technische maatregelen AVG', 'privacy informatiebeveiliging']
 ---
 
-De Algemene Verordening Gegevensbescherming (AVG) is inmiddels ruim zeven jaar van kracht, maar veel organisaties worstelen nog altijd met de concrete beveiligingsverplichtingen. Artikel 32 GDPR vormt de kern: het verplicht verwerkingsverantwoordelijken en verwerkers om passende technische en organisatorische maatregelen te nemen. Wat dat precies inhoudt, legt dit artikel u stap voor stap uit.
+De Algemene Verordening Gegevensbescherming (AVG) is inmiddels ruim zeven jaar van kracht, maar veel organisaties worstelen nog altijd met de concrete beveiligingsverplichtingen. Artikel 32 GDPR vormt de kern: het verplicht verwerkingsverantwoordelijken en verwerkers om passende technische en organisatorische maatregelen te nemen. Wat dat precies inhoudt, legt dit artikel je stap voor stap uit.
 
 ## Wat schrijft artikel 32 AVG precies voor?
 
@@ -22,7 +22,7 @@ Artikel 32 GDPR verplicht organisaties om "passende" beveiliging te implementere
 
 Het woord "passend" is bewust gekozen. De AVG hanteert een risicogebaseerde benadering: hoe gevoeliger de gegevens, hoe strenger de eisen. Voor een huisartsenpraktijk die bijzondere categorieën gezondheidsgegevens verwerkt, gelden andere verwachtingen dan voor een webshop die alleen e-mailadressen bijhoudt.
 
-> **Tip:** Documenteer uw risicoafweging altijd schriftelijk. De Autoriteit Persoonsgegevens verwacht bij een onderzoek dat u kunt aantonen *waarom* u voor bepaalde maatregelen heeft gekozen, niet alleen *dat* u maatregelen heeft genomen.
+> **Tip:** Documenteer je risicoafweging altijd schriftelijk. De Autoriteit Persoonsgegevens verwacht bij een onderzoek dat je kunt aantonen *waarom* je voor bepaalde maatregelen heeft gekozen, niet alleen *dat* je maatregelen heeft genomen.
 
 ## Technische maatregelen: wat valt hieronder?
 
@@ -62,7 +62,7 @@ ISO 27001 biedt hierbij een uitstekend kader. De norm hanteert een vergelijkbare
 ## Veelgestelde vragen
 
 **Geldt artikel 32 AVG ook voor kleine organisaties?**
-Ja. De AVG geldt voor elke organisatie die persoonsgegevens verwerkt, ongeacht de omvang. De invulling van "passende" maatregelen hangt wel af van de risico's en middelen van uw organisatie.
+Ja. De AVG geldt voor elke organisatie die persoonsgegevens verwerkt, ongeacht de omvang. De invulling van "passende" maatregelen hangt wel af van de risico's en middelen van je organisatie.
 
 **Moet ik een FG (Functionaris Gegevensbescherming) aanstellen voor informatiebeveiliging?**
 Een FG is verplicht bij overheidsinstanties, bij grootschalige verwerking van bijzondere categorieën of bij grootschalige monitoring van personen. Voor andere organisaties is het optioneel, maar kan wel zinvol zijn.
@@ -78,4 +78,4 @@ De Autoriteit Persoonsgegevens kan boetes opleggen tot €10 miljoen of 2% van d
 
 ---
 
-Wilt u weten of uw organisatie voldoet aan de beveiligingseisen van de AVG? Control One helpt u met een gap-analyse en een concreet implementatieplan. Bekijk onze diensten en tarieven op [de prijzenpagina](/prijzen).
+Wil je weten of je organisatie voldoet aan de beveiligingseisen van de AVG? Control One helpt je met een gap-analyse en een concreet implementatieplan. Bekijk onze diensten en tarieven op [de prijzenpagina](/prijzen).

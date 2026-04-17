@@ -1,6 +1,6 @@
 ---
 title: 'Incidentresponsplan opstellen: stap voor stap'
-description: 'Een incidentresponsplan beslist het verschil tussen herstel in uren of weken. Zo stelt u er een op.'
+description: 'Een incidentresponsplan beslist het verschil tussen herstel in uren of weken. Zo stel je er een op.'
 publishDate: 2026-07-04
 category: 'Cybersecurity'
 readTime: '7 min'
@@ -9,7 +9,7 @@ image: '/blog/banner-cybersecurity.svg'
 keywords: ['incidentresponsplan opstellen', 'incident response plan', 'cyberincident respons', 'incident response procedure ISO']
 ---
 
-Een cyberincident treft uw organisatie altijd op het slechtste moment. Systemen liggen plat, medewerkers weten niet wat ze moeten doen, het management wil antwoorden en klanten wachten. In die chaos maakt één ding het verschil tussen herstel in uren en herstel in weken: een goed opgesteld en gerepeteerd incidentresponsplan. Toch heeft meer dan de helft van de Nederlandse MKB-organisaties geen schriftelijk plan voor als het misgaat. Dit artikel leidt u stap voor stap door het opstellen van een werkend incidentresponsplan.
+Een cyberincident treft je organisatie altijd op het slechtste moment. Systemen liggen plat, medewerkers weten niet wat ze moeten doen, het management wil antwoorden en klanten wachten. In die chaos maakt één ding het verschil tussen herstel in uren en herstel in weken: een goed opgesteld en gerepeteerd incidentresponsplan. Toch heeft meer dan de helft van de Nederlandse MKB-organisaties geen schriftelijk plan voor als het misgaat. Dit artikel leidt je stap voor stap door het opstellen van een werkend incidentresponsplan.
 
 ## Waarom improviseren tijdens een incident altijd faalt
 
@@ -34,7 +34,7 @@ Een incidentresponsplan elimineert de noodzaak om onder druk na te denken over p
 
 Een compleet incidentresponsplan volgt de levenscyclus van een incident. Elk fase bevat concrete acties, verantwoordelijken en beslissingscriteria:
 
-**Fase 1 — Voorbereiding:** Alles wat u doet voordat een incident plaatsvindt. Opstellen van het plan, trainen van het team, inrichten van tools voor detectie en logging, vastleggen van contactgegevens en communicatiesjablonen.
+**Fase 1 — Voorbereiding:** Alles wat je doet voordat een incident plaatsvindt. Opstellen van het plan, trainen van het team, inrichten van tools voor detectie en logging, vastleggen van contactgegevens en communicatiesjablonen.
 
 **Fase 2 — Detectie en classificatie:** Het moment waarop een incident wordt ontdekt. Definieer wat een incident is (versus een storing) en classificeer de ernst: laag, gemiddeld, hoog, kritiek. De classificatie bepaalt de escalatie.
 
@@ -46,7 +46,7 @@ Een compleet incidentresponsplan volgt de levenscyclus van een incident. Elk fas
 
 **Fase 6 — Evaluatie (lessons learned):** Analyseer het incident binnen 72 uur na afronding. Wat ging goed? Wat ging mis? Welke procesverbeteringen zijn noodzakelijk? Documenteer en verwerk in het plan.
 
-> **Tip van Control One:** Sla uw incidentresponsplan op buiten uw primaire IT-systemen. Als uw netwerk platligt door ransomware, moet u het plan nog steeds kunnen raadplegen. Een papieren exemplaar in de kluis of een kopie op een niet-verbonden systeem is geen overkill — het is basisvoorbereiding.
+> **Tip van Control One:** Sla je incidentresponsplan op buiten je primaire IT-systemen. Als je netwerk platligt door ransomware, moet je het plan nog steeds kunnen raadplegen. Een papieren exemplaar in de kluis of een kopie op een niet-verbonden systeem is geen overkill — het is basisvoorbereiding.
 
 ## Rollen en verantwoordelijkheden
 
@@ -64,14 +64,14 @@ Zorg dat voor elke rol ook een vervanger gedefinieerd is. Incidenten vinden niet
 
 ## Testen en onderhouden van het plan
 
-Een plan dat nooit getest is, faalt op het moment van de waarheid. Test uw incidentresponsplan minimaal jaarlijks met een tabletop-oefening: een gesimuleerd incident waarbij het team beslissingen neemt alsof het echt is, zonder de systemen daadwerkelijk te beïnvloeden.
+Een plan dat nooit getest is, faalt op het moment van de waarheid. Test je incidentresponsplan minimaal jaarlijks met een tabletop-oefening: een gesimuleerd incident waarbij het team beslissingen neemt alsof het echt is, zonder de systemen daadwerkelijk te beïnvloeden.
 
-Pas het plan na elke oefening en na elk echt incident aan op basis van de lessons learned. Een plan uit 2022 dat sindsdien niet is aangepast, sluit niet meer aan bij uw huidige infrastructuur, team en dreigingslandschap.
+Pas het plan na elke oefening en na elk echt incident aan op basis van de lessons learned. Een plan uit 2022 dat sindsdien niet is aangepast, sluit niet meer aan bij je huidige infrastructuur, team en dreigingslandschap.
 
 ## Veelgestelde vragen
 
 **Hoe lang duurt het opstellen van een incidentresponsplan?**
-Een basisdocument voor MKB kunt u in twee tot vier werkdagen opstellen met de juiste begeleiding. De complexiteit neemt toe met de omvang van de organisatie.
+Een basisdocument voor MKB kun je in twee tot vier werkdagen opstellen met de juiste begeleiding. De complexiteit neemt toe met de omvang van de organisatie.
 
 **Is een incidentresponsplan verplicht onder ISO 27001?**
 Ja. Annex A-maatregel 5.26 vereist het management van informatiebeveiligingsincidenten, inclusief gedocumenteerde procedures voor respons. Veel auditors vragen specifiek naar het incidentresponsplan.
@@ -80,11 +80,11 @@ Ja. Annex A-maatregel 5.26 vereist het management van informatiebeveiligingsinci
 Een incidentresponsplan (IRP) richt zich op de technische en operationele respons op een beveiligingsincident. Een Business Continuity Plan (BCP) richt zich op het voortzetten van bedrijfsprocessen bij verstoringen in het algemeen. Ze overlappen en moeten op elkaar aansluiten.
 
 **Moet ik een cyberincident melden bij de Autoriteit Persoonsgegevens?**
-Bij een datalek waarbij persoonsgegevens zijn gelekt of verloren zijn gegaan, bent u onder de AVG verplicht dit binnen 72 uur te melden bij de AP. Uw incidentresponsplan moet dit proces automatisch triggeren.
+Bij een datalek waarbij persoonsgegevens zijn gelekt of verloren zijn gegaan, bent je onder de AVG verplicht dit binnen 72 uur te melden bij de AP. Je incidentresponsplan moet dit proces automatisch triggeren.
 
 **Hoe betrek ik de directie bij het incidentresponsplan?**
 Leg de directie een risicoanalyse voor van de kosten van een niet-gemanaged incident versus de investering in voorbereiding. Betrek hen als beslisser in de tabletop-oefeningen.
 
 ---
 
-Wilt u hulp bij het opstellen van een incidentresponsplan dat past bij uw organisatie en aansluit op ISO 27001? Bekijk onze aanpak en pakketten op [de prijzenpagina](/prijzen) en ontdek hoe Control One u helpt voorbereid te zijn als het misgaat.
+Wil je hulp bij het opstellen van een incidentresponsplan dat past bij je organisatie en aansluit op ISO 27001? Bekijk onze aanpak en pakketten op [de prijzenpagina](/prijzen) en ontdek hoe Control One je helpt voorbereid te zijn als het misgaat.

@@ -1,6 +1,6 @@
 ---
-title: 'NIS2 zorgplicht: concrete maatregelen voor uw organisatie'
-description: 'De NIS2 zorgplicht vertaalt zich naar 10 concrete maatregelengebieden. Wat moet u implementeren?'
+title: 'NIS2 zorgplicht: concrete maatregelen voor je organisatie'
+description: 'De NIS2 zorgplicht vertaalt zich naar 10 concrete maatregelengebieden. Wat moet je implementeren?'
 publishDate: 2026-06-07
 category: 'Wetgeving'
 readTime: '7 min'
@@ -9,7 +9,7 @@ image: '/blog/banner-wetgeving.svg'
 keywords: ['NIS2 zorgplicht', 'NIS2 maatregelen', 'NIS2 beveiligingsmaatregelen', 'NIS2 verplichtingen organisatie']
 ---
 
-De NIS2-richtlijn legt organisaties in essentiële en belangrijke sectoren een uitgebreide zorgplicht op. Die zorgplicht is geen vage verplichting om "iets aan beveiliging te doen" — de richtlijn benoemt tien concrete maatregelengebieden waarop elke betrokken organisatie actie moet ondernemen. Dit artikel neemt u mee door elk van deze gebieden en vertaalt de wetsvereisten naar de praktijk.
+De NIS2-richtlijn legt organisaties in essentiële en belangrijke sectoren een uitgebreide zorgplicht op. Die zorgplicht is geen vage verplichting om "iets aan beveiliging te doen" — de richtlijn benoemt tien concrete maatregelengebieden waarop elke betrokken organisatie actie moet ondernemen. Dit artikel neem je mee door elk van deze gebieden en vertaalt de wetsvereisten naar de praktijk.
 
 ## De tien maatregelengebieden: een overzicht
 
@@ -28,7 +28,7 @@ Artikel 21 van de NIS2-richtlijn somt de verplichte maatregelengebieden op. Same
 | Personeelsbeveiliging | Screening, toegangsbeheer, offboarding | Gemiddeld |
 | Multi-factor authenticatie | MFA voor toegang tot kritieke systemen | Hoog |
 
-> **Tip:** Gebruik de tien maatregelengebieden als kapstok voor uw gap-analyse. Beoordeel voor elk gebied uw huidige volwassenheid en stel prioriteiten op basis van risico. Zo voorkomt u dat u in generieke implementatieprojecten belandt zonder meetbare uitkomsten.
+> **Tip:** Gebruik de tien maatregelengebieden als kapstok voor je gap-analyse. Beoordeel voor elk gebied je huidige volwassenheid en stel prioriteiten op basis van risico. Zo voorkomt je dat je in generieke implementatieprojecten belandt zonder meetbare uitkomsten.
 
 ## Risicobeleid, incidentbeheer en bedrijfscontinuïteit
 
@@ -60,10 +60,10 @@ Een cryptografiebeleid legt vast welke algoritmen en sleutellengtes zijn toegest
 Ja. NIS2 introduceert persoonlijke aansprakelijkheid voor bestuurders. Zij kunnen aansprakelijk worden gesteld als zij de naleving van de zorgplicht structureel verwaarlozen.
 
 **Hoe concreet moet mijn risicobeleid zijn gedocumenteerd?**
-De toezichthouder verwacht een beleid dat specifiek ingaat op uw organisatie, uw systemen en uw dreigingsprofiel. Generieke sjablonen zonder aanpassing volstaan niet.
+De toezichthouder verwacht een beleid dat specifiek ingaat op je organisatie, je systemen en je dreigingsprofiel. Generieke sjablonen zonder aanpassing volstaan niet.
 
 **Moeten alle tien maatregelengebieden volledig zijn geïmplementeerd bij de inwerkingtreding?**
-Ja, in beginsel wel. De wet kent geen officiële overgangstermijn voor de zorgplicht. Prioriteer op basis van risico en documenteer uw aanpak.
+Ja, in beginsel wel. De wet kent geen officiële overgangstermijn voor de zorgplicht. Prioriteer op basis van risico en documenteer je aanpak.
 
 **Hoe verhouden de NIS2-maatregelen zich tot ISO 27001?**
 ISO 27001 dekt veel van de tien NIS2-maatregelengebieden. Een ISO 27001-certificaat is geen wettelijk bewijs van NIS2-compliance, maar het biedt een aanzienlijke voorsprong.
@@ -73,4 +73,4 @@ Gedocumenteerde beleidsstukken, logbestanden van activiteiten, trainingsrecords 
 
 ---
 
-Heeft u ondersteuning nodig bij de implementatie van de NIS2-zorgplicht? Control One biedt begeleiding op maat. Bekijk onze aanpak en tarieven op [de prijzenpagina](/prijzen).
+Heb je ondersteuning nodig bij de implementatie van de NIS2-zorgplicht? Control One biedt begeleiding op maat. Bekijk onze aanpak en tarieven op [de prijzenpagina](/prijzen).

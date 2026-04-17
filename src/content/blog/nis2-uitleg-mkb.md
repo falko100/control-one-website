@@ -1,6 +1,6 @@
 ---
 title: 'NIS2: alles wat MKB moet weten'
-description: 'De NIS2-richtlijn geldt voor meer bedrijven dan u denkt. Valt uw organisatie eronder en wat moet u doen?'
+description: 'De NIS2-richtlijn geldt voor meer bedrijven dan je denkt. Valt je organisatie eronder en wat moet je doen?'
 publishDate: 2026-06-01
 category: 'Wetgeving'
 readTime: '7 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-Veel MKB-ondernemers gaan ervan uit dat Europese cybersecuritywetgeving alleen voor grote multinationals geldt. De NIS2-richtlijn — de opvolger van de oorspronkelijke NIS-richtlijn uit 2016 — doorbreekt die aanname. Duizenden middelgrote Nederlandse bedrijven vallen onder de nieuwe regels, en de gevolgen van niet-naleving zijn aanzienlijk. In dit artikel leest u wat NIS2 inhoudt, hoe u bepaalt of uw organisatie eronder valt en wat u concreet moet doen om te voldoen.
+Veel MKB-ondernemers gaan ervan uit dat Europese cybersecuritywetgeving alleen voor grote multinationals geldt. De NIS2-richtlijn — de opvolger van de oorspronkelijke NIS-richtlijn uit 2016 — doorbreekt die aanname. Duizenden middelgrote Nederlandse bedrijven vallen onder de nieuwe regels, en de gevolgen van niet-naleving zijn aanzienlijk. In dit artikel lees je wat NIS2 inhoudt, hoe je bepaalt of je organisatie eronder valt en wat je concreet moet doen om te voldoen.
 
 ## Wat is NIS2 en waarom is het ingevoerd?
 
@@ -23,7 +23,7 @@ NIS2 staat voor de herziene Netwerk- en Informatiebeveiligingsrichtlijn (EU 2022
 
 NIS2 vergroot de reikwijdte aanzienlijk, stelt concretere beveiligingseisen, introduceert een strakkere meldplicht en geeft toezichthouders meer handhavingsmacht. Nederland heeft de richtlijn omgezet in nationale wetgeving via de Cyberbeveiligingswet.
 
-## Valt uw organisatie onder NIS2?
+## Valt je organisatie onder NIS2?
 
 NIS2 onderscheidt twee categorieën entiteiten: essentiële entiteiten en belangrijke entiteiten. De indeling hangt af van de sector en de bedrijfsomvang.
 
@@ -33,7 +33,7 @@ NIS2 onderscheidt twee categorieën entiteiten: essentiële entiteiten en belang
 | Belangrijke entiteiten | Middelgroot (50–250 fte of 10–50 miljoen euro omzet) | Post, afvalbeheer, chemie, levensmiddelen, digitale aanbieders |
 | Buiten scope | Klein (minder dan 50 fte én minder dan 10 miljoen euro omzet) | Alle sectoren, tenzij kritieke impact |
 
-Let op: ook kleine organisaties kunnen onder NIS2 vallen als zij worden aangemerkt als kritiek voor de maatschappij, ongeacht hun omvang. Dit geldt bijvoorbeeld voor bepaalde zorgaanbieders en leveranciers van kritieke digitale diensten. Als MKB-bedrijf dat actief is in een van de aangewezen sectoren én 50 of meer medewerkers heeft, is de kans groot dat u onder de categorie "belangrijke entiteit" valt.
+Let op: ook kleine organisaties kunnen onder NIS2 vallen als zij worden aangemerkt als kritiek voor de maatschappij, ongeacht hun omvang. Dit geldt bijvoorbeeld voor bepaalde zorgaanbieders en leveranciers van kritieke digitale diensten. Als MKB-bedrijf dat actief is in een van de aangewezen sectoren én 50 of meer medewerkers heeft, is de kans groot dat je onder de categorie "belangrijke entiteit" valt.
 
 ## Wat zijn de concrete verplichtingen?
 
@@ -53,24 +53,24 @@ De handhaving onder NIS2 is beduidend strenger dan onder de oorspronkelijke NIS-
 
 Naast financiële sancties kunnen toezichthouders ook bevelen uitvaardigen om specifieke maatregelen te treffen, de dienstverlening tijdelijk opschorten of — in het uiterste geval — bestuurders persoonlijk aansprakelijk stellen. Dit laatste onderdeel is voor veel directeuren een eye-opener: NIS2 maakt cybersecurity tot een persoonlijke bestuurlijke verantwoordelijkheid.
 
-Het goede nieuws is dat organisaties die al werken met ISO 27001 of een vergelijkbaar ISMS een sterke basis hebben voor NIS2-compliance. Beide kaders overlappen aanzienlijk op het gebied van risicoanalyse, toegangsbeheer, incidentbeheer en leveranciersbeveiliging. Als startpunt raden wij aan een scoping-analyse uit te voeren (valt u eronder?), gevolgd door een gap-analyse (wat ontbreekt er nog?). Documenteer alles zorgvuldig: NIS2-toezichthouders verwachten aantoonbaar bewijs van naleving.
+Het goede nieuws is dat organisaties die al werken met ISO 27001 of een vergelijkbaar ISMS een sterke basis hebben voor NIS2-compliance. Beide kaders overlappen aanzienlijk op het gebied van risicoanalyse, toegangsbeheer, incidentbeheer en leveranciersbeveiliging. Als startpunt raden wij aan een scoping-analyse uit te voeren (valt je eronder?), gevolgd door een gap-analyse (wat ontbreekt er nog?). Documenteer alles zorgvuldig: NIS2-toezichthouders verwachten aantoonbaar bewijs van naleving.
 
 ---
 
 ## Veelgestelde vragen
 
 **Geldt NIS2 ook voor mijn buitenlandse vestigingen?**
-NIS2 is een Europese richtlijn die in alle EU-lidstaten is geïmplementeerd. Uw Nederlandse entiteit valt onder de Nederlandse Cyberbeveiligingswet. Buitenlandse vestigingen vallen onder de wetgeving van het betreffende land. Groepen met vestigingen in meerdere lidstaten moeten mogelijk met meerdere nationale toezichthouders schakelen.
+NIS2 is een Europese richtlijn die in alle EU-lidstaten is geïmplementeerd. Je Nederlandse entiteit valt onder de Nederlandse Cyberbeveiligingswet. Buitenlandse vestigingen vallen onder de wetgeving van het betreffende land. Groepen met vestigingen in meerdere lidstaten moeten mogelijk met meerdere nationale toezichthouders schakelen.
 
 **Wanneer moet ik NIS2-compliant zijn?**
-Nederland heeft de NIS2-richtlijn geïmplementeerd via de Cyberbeveiligingswet. De exacte inwerkingtreding en overgangsperiodes kunt u verifiëren via de website van het NCSC of uw brancheorganisatie. Wacht niet tot de deadline: implementatietrajecten kosten meer tijd dan organisaties doorgaans verwachten.
+Nederland heeft de NIS2-richtlijn geïmplementeerd via de Cyberbeveiligingswet. De exacte inwerkingtreding en overgangsperiodes kun je verifiëren via de website van het NCSC of je brancheorganisatie. Wacht niet tot de deadline: implementatietrajecten kosten meer tijd dan organisaties doorgaans verwachten.
 
 **Kan ik mij laten certificeren voor NIS2?**
 NIS2 kent geen eigen certificering. Wel is ISO 27001-certificering een sterke aantoning van compliance met de beveiligingseisen. Toezichthouders kunnen certificaten meewegen bij hun beoordeling, maar de definitieve naleving toetsen zij op basis van de nationale wetgeving.
 
 **Geldt NIS2 ook voor zzp'ers?**
-In de meeste gevallen niet, omdat zij niet aan de omvangsdrempels voldoen. Als u als zzp'er kritieke diensten levert voor een NIS2-plichtige organisatie, kunt u contractueel worden verplicht tot vergelijkbare maatregelen.
+In de meeste gevallen niet, omdat zij niet aan de omvangsdrempels voldoen. Als je als zzp'er kritieke diensten levert voor een NIS2-plichtige organisatie, kun je contractueel worden verplicht tot vergelijkbare maatregelen.
 
 ---
 
-Wilt u weten of uw organisatie onder NIS2 valt en hoe u efficiënt aan de verplichtingen voldoet? Bekijk onze diensten op [onze prijzenpagina](/prijzen).
+Wil je weten of je organisatie onder NIS2 valt en hoe je efficiënt aan de verplichtingen voldoet? Bekijk onze diensten op [onze prijzenpagina](/prijzen).

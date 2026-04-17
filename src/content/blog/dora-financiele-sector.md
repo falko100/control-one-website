@@ -24,7 +24,7 @@ DORA is een Europese verordening (2022/2554) die rechtstreeks van toepassing is 
 
 Opvallend is dat DORA ook kritieke ICT-derde aanbieders (zogenaamde Critical Third-Party Providers of CTPP's) direct kan aanwijzen en reguleren. Grote cloudleveranciers die essentiële diensten leveren aan de financiële sector, komen daardoor eveneens in het blikveld van de toezichthouder.
 
-> **Tip:** Breng als eerste stap uw volledige ICT-toeleveringsketen in kaart. DORA vereist dat u inzicht heeft in alle kritieke afhankelijkheden, inclusief sub-uitbestedingen van uw directe leveranciers.
+> **Tip:** Breng als eerste stap je volledige ICT-toeleveringsketen in kaart. DORA vereist dat je inzicht heeft in alle kritieke afhankelijkheden, inclusief sub-uitbestedingen van je directe leveranciers.
 
 ## De vijf pijlers van DORA-compliance
 
@@ -80,4 +80,4 @@ Lidstaten stellen de boetes vast. In Nederland kunnen toezichthouders op grond v
 
 ---
 
-Heeft uw organisatie ondersteuning nodig bij de implementatie van DORA? Control One begeleidt financiële instellingen bij compliance-vraagstukken. Bekijk onze aanpak en tarieven op [de prijzenpagina](/prijzen).
+Heb je organisatie ondersteuning nodig bij de implementatie van DORA? Control One begeleidt financiële instellingen bij compliance-vraagstukken. Bekijk onze aanpak en tarieven op [de prijzenpagina](/prijzen).

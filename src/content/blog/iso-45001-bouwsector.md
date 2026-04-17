@@ -30,15 +30,15 @@ Volgens de Inspectie SZW zijn bouwbedrijven nog altijd oververtegenwoordigd in s
 
 ## De kernvereisten van ISO 45001 voor bouwbedrijven
 
-ISO 45001 vraagt uw organisatie om een volledig arbomanagementsysteem in te richten dat voldoet aan de eisen van de norm. Voor bouwbedrijven zijn met name de volgende clausules relevant:
+ISO 45001 vraag je organisatie om een volledig arbomanagementsysteem in te richten dat voldoet aan de eisen van de norm. Voor bouwbedrijven zijn met name de volgende clausules relevant:
 
-**Clausule 6 — Planning:** Identificeer alle gevaren op uw bouwplaatsen systematisch. Denk aan valgevaar, gevaarlijke stoffen, lawaai, trillingen en klimatologische omstandigheden. Beoordeel de risico's en stel beheersmaatregelen vast.
+**Clausule 6 — Planning:** Identificeer alle gevaren op je bouwplaatsen systematisch. Denk aan valgevaar, gevaarlijke stoffen, lawaai, trillingen en klimatologische omstandigheden. Beoordeel de risico's en stel beheersmaatregelen vast.
 
 **Clausule 8 — Operationele beheersing:** Stel procedures op voor specifieke risicovolle werkzaamheden zoals werken op hoogte, grondverzet, gebruik van hijskranen en werken met gevaarlijke stoffen. Zorg dat onderaannemers aan dezelfde eisen voldoen.
 
-**Clausule 9 — Prestatie-evaluatie:** Meet uw veiligheidsprestaties. Hoeveel incidenten? Hoeveel bijna-ongevallen? Welke trend ziet u? Interne audits en managementreviews zijn verplicht.
+**Clausule 9 — Prestatie-evaluatie:** Meet je veiligheidsprestaties. Hoeveel incidenten? Hoeveel bijna-ongevallen? Welke trend zie je? Interne audits en managementreviews zijn verplicht.
 
-> **Tip:** Leg uw gevaaridentificatie projectspecifiek vast. Een intern standaard format voor de "gevaren- en risicoanalyse per project" bespaart tijd en zorgt voor consistentie — ook als wisselende projectleiders verantwoordelijk zijn.
+> **Tip:** Leg je gevaaridentificatie projectspecifiek vast. Een intern standaard format voor de "gevaren- en risicoanalyse per project" bespaart tijd en zorgt voor consistentie — ook als wisselende projectleiders verantwoordelijk zijn.
 
 ## Praktische implementatie: van papier naar bouwplaats
 
@@ -46,10 +46,10 @@ De grootste uitdaging bij ISO 45001 in de bouw is niet de documentatie — het i
 
 Effectieve implementatie in de bouwsector vereist:
 
-1. **Projectgebonden veiligheidsplannen** — Maak per project een V&G-plan (Veiligheid en Gezondheid) dat aansluit op uw ISO 45001-systematiek.
-2. **Toolboxmeetings** — Regelmatige korte veiligheidsgesprekken op de bouwplaats zorgen voor bewustwording. Meer hierover leest u in ons artikel over [toolboxmeetings en ISO 45001](/blog/iso-45001-toolbox).
+1. **Projectgebonden veiligheidsplannen** — Maak per project een V&G-plan (Veiligheid en Gezondheid) dat aansluit op je ISO 45001-systematiek.
+2. **Toolboxmeetings** — Regelmatige korte veiligheidsgesprekken op de bouwplaats zorgen voor bewustwording. Meer hierover lees je in ons artikel over [toolboxmeetings en ISO 45001](/blog/iso-45001-toolbox).
 3. **Bevoegdheden en competenties** — Stel per functie vast welke veiligheidsopleiding vereist is. Leg dit vast en houd het actueel.
-4. **Meldingscultuur** — Maak het melden van bijna-ongevallen eenvoudig en straf het nooit af. Bijna-ongevallen zijn uw meest waardevolle informatiebron.
+4. **Meldingscultuur** — Maak het melden van bijna-ongevallen eenvoudig en straf het nooit af. Bijna-ongevallen zijn je meest waardevolle informatiebron.
 
 ## Gevaren en beheersmaatregelen in de bouw
 
@@ -65,14 +65,14 @@ Effectieve implementatie in de bouwsector vereist:
 
 ## Samenwerking met onderaannemers
 
-ISO 45001 vereist dat uw veiligheidsmanagement zich uitstrekt tot de **leveranciersketen**, inclusief onderaannemers die op uw bouwplaatsen werken. Dit betekent concreet:
+ISO 45001 vereist dat je veiligheidsmanagement zich uitstrekt tot de **leveranciersketen**, inclusief onderaannemers die op je bouwplaatsen werken. Dit betekent concreet:
 
 - Stel contractuele veiligheidseisen aan onderaannemers
 - Beoordeel hun veiligheidsprestaties voor en tijdens de opdracht
 - Zorg dat zij deelnemen aan bouwplaatsintroducties en toolboxmeetings
-- Leg afspraken en controles vast in uw managementsysteem
+- Leg afspraken en controles vast in je managementsysteem
 
-Veel bouwbedrijven integreren ISO 45001 met hun VCA-certificering. Meer over die vergelijking leest u in ons artikel [ISO 45001 vs VCA](/blog/iso-45001-vs-vca).
+Veel bouwbedrijven integreren ISO 45001 met hun VCA-certificering. Meer over die vergelijking lees je in ons artikel [ISO 45001 vs VCA](/blog/iso-45001-vs-vca).
 
 ## De rol van het management
 
@@ -86,14 +86,14 @@ ISO 45001 is expliciet: veiligheid begint bij de directie. Clausule 5 stelt dat 
 ## Veelgestelde vragen
 
 **Is ISO 45001 verplicht voor bouwbedrijven?**
-Nee, ISO 45001 is geen wettelijke verplichting. Wel zijn grotere opdrachtgevers — met name in de publieke sector en industrie — steeds vaker ISO 45001 of een vergelijkbaar systeem gaan eisen. Bovendien moet u sowieso voldoen aan de Arbowet, en ISO 45001 helpt u dat aantoonbaar te doen.
+Nee, ISO 45001 is geen wettelijke verplichting. Wel zijn grotere opdrachtgevers — met name in de publieke sector en industrie — steeds vaker ISO 45001 of een vergelijkbaar systeem gaan eisen. Bovendien moet je sowieso voldoen aan de Arbowet, en ISO 45001 helpt je dat aantoonbaar te doen.
 
 **Hoe lang duurt implementatie van ISO 45001 voor een bouwbedrijf?**
-Afhankelijk van de omvang en de startsituatie rekent u op drie tot twaalf maanden voor een volledige implementatie tot aan certificering. Met de juiste ondersteuning en digitale tools kunt u dit aanzienlijk versnellen.
+Afhankelijk van de omvang en de startsituatie rekent je op drie tot twaalf maanden voor een volledige implementatie tot aan certificering. Met de juiste ondersteuning en digitale tools kun je dit aanzienlijk versnellen.
 
 **Wat kost ISO 45001-certificering voor een bouwbedrijf?**
 De kosten bestaan uit de implementatieinspanning (intern of extern), de certificeringsaudit door een geaccrediteerde instelling, en jaarlijkse surveillance-audits. Kleine bouwbedrijven (< 25 medewerkers) rekenen globaal op €3.000–€8.000 voor het gehele traject.
 
 ---
 
-Wilt u uw bouwbedrijf efficiënt naar ISO 45001-certificering begeleiden? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One het implementatieproces digitaal ondersteunt — zonder dure externe consultants.
+Wil je je bouwbedrijf efficiënt naar ISO 45001-certificering begeleiden? Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe Control One het implementatieproces digitaal ondersteunt — zonder dure externe consultants.

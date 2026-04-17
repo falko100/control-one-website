@@ -1,6 +1,6 @@
 ---
 title: 'De procesaanpak van ISO 9001 uitgelegd'
-description: "De procesaanpak is het fundament van ISO 9001. Hoe identificeert en beheert u processen effectief?"
+description: "De procesaanpak is het fundament van ISO 9001. Hoe identificeert en beheert je processen effectief?"
 publishDate: 2026-04-29
 category: 'ISO 9001'
 readTime: '6 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-De procesaanpak is geen bijzaak binnen ISO 9001 — het is het fundament waarop het gehele kwaliteitsmanagementsysteem rust. ISO 9001:2015 stelt in clausule 4.4 dat de organisatie de processen die nodig zijn voor het QMS moet bepalen, begrijpen en beheersen. Maar wat betekent dat precies in de dagelijkse praktijk? En hoe maakt u van een verzameling losse werkwijzen een coherent, beheersbaar proceslandschap? Dit artikel geeft u een praktische uitleg.
+De procesaanpak is geen bijzaak binnen ISO 9001 — het is het fundament waarop het gehele kwaliteitsmanagementsysteem rust. ISO 9001:2015 stelt in clausule 4.4 dat de organisatie de processen die nodig zijn voor het QMS moet bepalen, begrijpen en beheersen. Maar wat betekent dat precies in de dagelijkse praktijk? En hoe maak je van een verzameling losse werkwijzen een coherent, beheersbaar proceslandschap? Dit artikel geef je een praktische uitleg.
 
 ## Wat is de procesaanpak?
 
@@ -40,13 +40,13 @@ De eerste stap is het identificeren van alle relevante processen. Veel organisat
 | Ondersteunende processen | Maken primaire processen mogelijk | HR, IT, inkoop, facility management |
 | Managementprocessen | Sturen en beheersen de organisatie | Strategiebepaling, managementreview, interne audit |
 
-Begin met het in kaart brengen van uw primaire processen — de processen die de klant direct ervaart. Werk vervolgens de ondersteunende en managementprocessen uit. Een proceslandkaart (ook wel schildpaddiagram of procesarchitectuur genoemd) geeft overzicht van alle processen en hun onderlinge relaties.
+Begin met het in kaart brengen van je primaire processen — de processen die de klant direct ervaart. Werk vervolgens de ondersteunende en managementprocessen uit. Een proceslandkaart (ook wel schildpaddiagram of procesarchitectuur genoemd) geeft overzicht van alle processen en hun onderlinge relaties.
 
-> **Tip:** Beperk het aantal processen in uw proceslandkaart tot het wezenlijk noodzakelijke. Een kaart met vijftig processen is onbeheerbaar. Zeven tot vijftien hoofdprocessen is voor de meeste MKB-organisaties voldoende om het geheel overzichtelijk te houden.
+> **Tip:** Beperk het aantal processen in je proceslandkaart tot het wezenlijk noodzakelijke. Een kaart met vijftig processen is onbeheerbaar. Zeven tot vijftien hoofdprocessen is voor de meeste MKB-organisaties voldoende om het geheel overzichtelijk te houden.
 
 ## Een proceskaart opstellen
 
-Voor elk geïdentificeerd proces stelt u een proceskaart op. Dit hoeft geen ingewikkeld document te zijn — een beknopte beschrijving die de essentie vastlegt is voldoende. Een effectieve proceskaart bevat:
+Voor elk geïdentificeerd proces stel je een proceskaart op. Dit hoeft geen ingewikkeld document te zijn — een beknopte beschrijving die de essentie vastlegt is voldoende. Een effectieve proceskaart bevat:
 
 - **Naam en doel** van het proces
 - **Proceseigenaar** — wie is verantwoordelijk?
@@ -61,7 +61,7 @@ Een schildpaddiagram is een populaire visuele vorm voor proceskaarten: het toont
 
 ## Procesinteracties en proceseigenaarschap
 
-ISO 9001 verwacht niet alleen dat u processen beschrijft, maar ook dat u hun onderlinge verbanden vastlegt. Waar eindigt het ene proces en begint het andere? Wie draagt de output over, aan wie en in welke vorm?
+ISO 9001 verwacht niet alleen dat je processen beschrijft, maar ook dat je hun onderlinge verbanden vastlegt. Waar eindigt het ene proces en begint het andere? Wie draagt de output over, aan wie en in welke vorm?
 
 Procesinteracties zijn cruciaal omdat de meeste kwaliteitsproblemen zich voordoen op de grensvlakken tussen processen — niet binnen de processen zelf. Miscommunicatie bij overdrachten, onduidelijke verantwoordelijkheden op de scheidslijnen tussen afdelingen: dit zijn typische knelpunten die een goed proceslandschap zichtbaar maakt.
 
@@ -83,12 +83,12 @@ Rapporteer KPI-resultaten periodiek en gebruik ze als input voor de managementre
 
 **Moeten alle processen even gedetailleerd worden beschreven?**
 
-Nee. De mate van detail hangt af van het risico en de complexiteit van het proces. Een kernproces dat direct de kwaliteit van uw product bepaalt, verdient meer detail dan een ondersteunend proces zoals kantoorinrichting. Schaal de documentatieomvang naar het belang van het proces.
+Nee. De mate van detail hangt af van het risico en de complexiteit van het proces. Een kernproces dat direct de kwaliteit van je product bepaalt, verdient meer detail dan een ondersteunend proces zoals kantoorinrichting. Schaal de documentatieomvang naar het belang van het proces.
 
 **Hoe vaak moeten proceskaarten worden herzien?**
 
-Minimaal jaarlijks, als onderdeel van de managementreview. Daarnaast worden proceskaarten herzien bij significante wijzigingen in de organisatie, werkwijze of technologie. Leg in uw documentatiebeheerprocedure vast wie wijzigingen mag goedkeuren en hoe versiebeheer wordt toegepast.
+Minimaal jaarlijks, als onderdeel van de managementreview. Daarnaast worden proceskaarten herzien bij significante wijzigingen in de organisatie, werkwijze of technologie. Leg in je documentatiebeheerprocedure vast wie wijzigingen mag goedkeuren en hoe versiebeheer wordt toegepast.
 
 ---
 
-De procesaanpak is niet slechts een ISO 9001-vereiste — het is een krachtig managementinstrument dat zorgt voor consistente kwaliteit, duidelijke verantwoordelijkheden en een gedeelde taal binnen uw organisatie. Wilt u weten hoe Control One u helpt uw proceslandschap te structureren? Bekijk ons aanbod op [/prijzen](/prijzen).
+De procesaanpak is niet slechts een ISO 9001-vereiste — het is een krachtig managementinstrument dat zorgt voor consistente kwaliteit, duidelijke verantwoordelijkheden en een gedeelde taal binnen je organisatie. Wil je weten hoe Control One je helpt je proceslandschap te structureren? Bekijk ons aanbod op [/prijzen](/prijzen).

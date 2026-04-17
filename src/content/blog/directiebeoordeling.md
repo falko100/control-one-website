@@ -1,6 +1,6 @@
 ---
 title: 'Directiebeoordeling voorbereiden en uitvoeren'
-description: "De directiebeoordeling is een ISO-verplichting. Hoe maakt u er meer dan een formele vergadering van?"
+description: "De directiebeoordeling is een ISO-verplichting. Hoe maak je er meer dan een formele vergadering van?"
 publishDate: 2026-06-15
 category: 'Compliance'
 readTime: '7 min'
@@ -15,11 +15,11 @@ keywords:
 draft: false
 ---
 
-De directiebeoordeling staat in elk ISO-managementsysteem beschreven in clausule 9.3. Het is een vergadering waarbij het topmanagement het managementsysteem beoordeelt op geschiktheid, adequaatheid en effectiviteit. In de praktijk ziet deze vergadering er helaas regelmatig uit als een verplicht nummertje: een agenda met standaardpunten, een halfuur vergaderen en een handtekening. Zonde, want de directiebeoordeling is bij uitstek het moment waarop de organisatie als geheel leert en stuurt. In dit artikel leest u hoe u de directiebeoordeling goed voorbereidt en er werkelijk waarde uit haalt.
+De directiebeoordeling staat in elk ISO-managementsysteem beschreven in clausule 9.3. Het is een vergadering waarbij het topmanagement het managementsysteem beoordeelt op geschiktheid, adequaatheid en effectiviteit. In de praktijk ziet deze vergadering er helaas regelmatig uit als een verplicht nummertje: een agenda met standaardpunten, een halfuur vergaderen en een handtekening. Zonde, want de directiebeoordeling is bij uitstek het moment waarop de organisatie als geheel leert en stuurt. In dit artikel lees je hoe je de directiebeoordeling goed voorbereidt en er werkelijk waarde uit haalt.
 
 ## Wat zegt clausule 9.3 precies?
 
-Clausule 9.3 is in alle moderne ISO-normen opgenomen dankzij de High Level Structure. De eisen zijn herkenbaar ongeacht welke norm u toepast. Het topmanagement moet met geplande tussenpozen het managementsysteem beoordelen. De input voor die beoordeling is voorgeschreven; de output eveneens.
+Clausule 9.3 is in alle moderne ISO-normen opgenomen dankzij de High Level Structure. De eisen zijn herkenbaar ongeacht welke norm je toepast. Het topmanagement moet met geplande tussenpozen het managementsysteem beoordelen. De input voor die beoordeling is voorgeschreven; de output eveneens.
 
 **Verplichte inputonderwerpen** (clausule 9.3.2):
 
@@ -72,20 +72,20 @@ Een directiebeoordeling die alleen terugblikt, mist zijn doel. Het management mo
 - Welke risicos vereisen aanvullende maatregelen?
 - Moeten beleidsverklaringen worden herzien?
 
-Leg elk besluit vast met een eigenaar en een deadline. Dit zijn de acties die bij de volgende directiebeoordeling worden gevalueerd. Zo sluit u de PDCA-verbetercyclus op het hoogste managementniveau.
+Leg elk besluit vast met een eigenaar en een deadline. Dit zijn de acties die bij de volgende directiebeoordeling worden gevalueerd. Zo sluit je de PDCA-verbetercyclus op het hoogste managementniveau.
 
 Laat ruimte voor dialoog: een goede directiebeoordeling is geen PowerPoint-presentatie van 45 minuten, maar een discussie waarbij het topmanagement actief bijdraagt aan de beoordeling en de besluitvorming. Het verschil tussen een formalistische en een waardevolle directiebeoordeling zit precies hier.
 
 ## Vastlegging: de notulen als gedocumenteerde informatie
 
-De norm verplicht u de directiebeoordeling vast te leggen als gedocumenteerde informatie. Een auditeur verwacht minimaal:
+De norm verplicht je de directiebeoordeling vast te leggen als gedocumenteerde informatie. Een auditeur verwacht minimaal:
 
 - Datum, aanwezigen en locatie van de vergadering
 - Behandelde inputonderwerpen met samenvatting van de bespreking
 - Besluiten en acties per onderwerp, inclusief eigenaar en deadline
 - Handtekening of goedkeuring van het topmanagement
 
-Bewaart u de notulen systematisch? Certificeerders verwachten dat u de beoordeling van meerdere jaren kunt tonen als onderdeel van uw verbetercyclus. De notulen van de vorige beoordeling zijn tevens de input voor de actieopvolging in de volgende vergadering.
+Bewaart je de notulen systematisch? Certificeerders verwachten dat je de beoordeling van meerdere jaren kunt tonen als onderdeel van je verbetercyclus. De notulen van de vorige beoordeling zijn tevens de input voor de actieopvolging in de volgende vergadering.
 
 ## De directiebeoordeling als motor voor verbetering
 
@@ -98,7 +98,7 @@ Een veelgehoorde klacht is dat het managementsysteem leeft bij de kwaliteitsmana
 
 **Mag de directiebeoordeling in meerdere sessies plaatsvinden?**
 
-Ja. Als het niet praktisch is om alle verplichte onderwerpen in een vergadering te bespreken, mag u de beoordeling over meerdere sessies spreiden, mits u alle verplichte inputonderwerpen behandelt en de output volledig vastlegt.
+Ja. Als het niet praktisch is om alle verplichte onderwerpen in een vergadering te bespreken, mag je de beoordeling over meerdere sessies spreiden, mits je alle verplichte inputonderwerpen behandelt en de output volledig vastlegt.
 
 **Wat als de directeur niet beschikbaar is?**
 
@@ -110,4 +110,4 @@ De norm geeft geen maximumtermijn, maar externe certificeerders verwachten minim
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u stap voor stap.
+Klaar om te starten? [Control One](/prijzen) begeleidt je stap voor stap.

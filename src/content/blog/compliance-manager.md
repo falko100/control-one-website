@@ -1,6 +1,6 @@
 ---
 title: 'De rol van compliance manager in het MKB'
-description: "Moet u een compliance manager aanstellen? Wat doet die rol, wat zijn de taken en hoe organiseert u het?"
+description: "Moet je een compliance manager aanstellen? Wat doet die rol, wat zijn de taken en hoe organiseert je het?"
 publishDate: 2026-06-23
 category: 'Compliance'
 readTime: '7 min'
@@ -15,7 +15,7 @@ keywords:
 draft: false
 ---
 
-"Wie is er verantwoordelijk voor ISO?" is een vraag die in veel MKB-organisaties niet scherp is beantwoord. Soms is het de directeur, soms de kwaliteitsmanager, soms de HR-manager en soms iemand die het "er even bij doet". Dat leidt onvermijdelijk tot fragmentatie: niemand heeft het geheel in beeld en bij een externe audit blijkt het systeem niet goed onderhouden. De oplossing is een duidelijke **compliance manager-rol** — maar hoe organiseert u dat in een MKB zonder grote compliance-afdeling?
+"Wie is er verantwoordelijk voor ISO?" is een vraag die in veel MKB-organisaties niet scherp is beantwoord. Soms is het de directeur, soms de kwaliteitsmanager, soms de HR-manager en soms iemand die het "er even bij doet". Dat leidt onvermijdelijk tot fragmentatie: niemand heeft het geheel in beeld en bij een externe audit blijkt het systeem niet goed onderhouden. De oplossing is een duidelijke **compliance manager-rol** — maar hoe organiseert je dat in een MKB zonder grote compliance-afdeling?
 
 ## Wat doet een compliance manager?
 
@@ -90,7 +90,7 @@ De ISO-normen stellen geen certificeringsverplichting voor de compliance manager
 
 **Mag de directeur ook compliance manager zijn?**
 
-Technisch gezien wel, maar het is niet ideaal. De directeur heeft als topmanagement een bewakings- en beslissingsrol; de compliance manager heeft een uitvoerende en coördinerende rol. Door beide rollen bij dezelfde persoon te beleggen, verliest u de checks and balances die de norm beoogt.
+Technisch gezien wel, maar het is niet ideaal. De directeur heeft als topmanagement een bewakings- en beslissingsrol; de compliance manager heeft een uitvoerende en coördinerende rol. Door beide rollen bij dezelfde persoon te beleggen, verliest je de checks and balances die de norm beoogt.
 
 **Wat als onze compliance manager vertrekt?**
 
@@ -98,4 +98,4 @@ Dat is een van de grootste risico's voor ISO-gecertificeerde organisaties. Zorg 
 
 ---
 
-Klaar om te starten? [Control One](/prijzen) begeleidt u stap voor stap.
+Klaar om te starten? [Control One](/prijzen) begeleidt je stap voor stap.
