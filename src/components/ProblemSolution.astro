@@ -1,181 +1,236 @@
 ---
+// Pain → solution mapping with outcome timeline.
+
 const pains = [
-  'Je wil ISO zelf aanpakken, van begin tot certificering.',
-  'Geen ISO consultants in huis, en dat wil je zo houden.',
-  'Investeren in certificering, niet in consultancy-uren.',
-  'Zelf de regie, maar met ondersteuning wanneer nodig.',
-];
-
-const items = [
   {
-    title: 'Jouw complete ISO-starterskit',
-    description: 'De centrale plek voor al je beleidsstukken, procedures en registers. Overzichtelijk georganiseerd, altijd up-to-date en audit-ready.',
-    badge: null,
-    color: 'bg-primary-700',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
+    quote: 'Waar begin ik concreet?',
+    context: 'Iedereen zegt dat ISO belangrijk is, maar niemand wijst stap 1 aan, laat staan stap 28.',
   },
   {
-    title: 'Risicoanalyse, audits en meer',
-    description: 'Voer risicoanalyses uit, beheer je leveranciers, plan interne audits en volg maatregelen op. Alles wat je nodig hebt voor een volwassen managementsysteem.',
-    badge: null,
-    color: 'bg-indigo-600',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`,
+    quote: 'Ik heb geen tijd om een heel handboek te schrijven.',
+    context: 'Beleid, procedures, registers en logboeken moeten er vóór de audit liggen. De vraag is alleen: waar haal je de basis vandaan?',
   },
   {
-    title: 'Vooringevulde templates',
-    description: 'Beleidsstukken, procedures en registers zijn voor meer dan 80% al ingevuld. Beschikbaar in het Nederlands en Engels. Jij past aan op jouw organisatie.',
-    badge: 'NL & EN',
-    color: 'bg-amber-500',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>`,
+    quote: 'Ik wil niet voor elk stukje ISO een andere tool.',
+    context: 'Risicoanalyse in Excel, documenten in Drive, audits in Word, VvT in nog een ander bestand. Het overzicht raak je zo kwijt.',
   },
   {
-    title: 'Stapsgewijze coach',
-    description: 'Van nulmeting tot audit: de coach laat je altijd zien wat de volgende stap is. In gewone taal, zonder ISO-jargon, op jouw tempo.',
-    badge: null,
-    color: 'bg-primary-600',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>`,
-  },
-  {
-    title: 'Kennisbank',
-    description: 'Alle ISO-kennis die je nodig hebt, direct beschikbaar in het platform. Geen opleiding, geen externe cursus. Jij zoekt, jij vindt.',
-    badge: null,
-    color: 'bg-emerald-600',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
-  },
-  {
-    title: 'Chat consultancy',
-    description: 'Loop je ergens tegenaan? Echte ISO-experts bereikbaar via de chat. Geen callcenter, geen bot. 5 uur gratis inbegrepen in elk abonnement.',
-    badge: '5 uur gratis',
-    color: 'bg-violet-600',
-    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+    quote: 'Een consultant van €1.200 per dag past niet.',
+    context: 'Als MKB wil je niet afhankelijk zijn van externe adviseurs. Je wil het zelf snappen en zelf doen, in je eigen tempo.',
   },
 ];
 
-const convictions = [
-  'Je hoeft geen ISO-expert te zijn. De portal begeleidt je.',
-  'Je begint nooit met een leeg vel. Alles staat klaar.',
-  'ISO-experts staan voor je klaar wanneer je ze nodig hebt.',
-  'Een fractie van de kosten van een externe consultant.',
-  'Volledig beschikbaar in het Nederlands en Engels.',
+const modules = [
+  {
+    num: '01',
+    title: 'Stapsgewijze implementatiecoach',
+    desc: '28 concrete stappen in logische volgorde en in heldere taal. Je weet altijd wat de volgende stap is.',
+    href: '/coach',
+    accent: 'from-primary-500 to-primary-700',
+    iconBg: 'bg-primary-50 border-primary-200 text-primary-700',
+    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
+  },
+  {
+    num: '02',
+    title: '120+ vooringevulde sjablonen',
+    desc: 'Handboek, beleid, procedures en registers: voor circa 80% ingevuld. Aanpassen aan je organisatie en klaar.',
+    href: '/templates',
+    accent: 'from-emerald-500 to-emerald-700',
+    iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+    icon: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75h-2.25m0 0V6.108c0-1.135.845-2.098 1.976-2.192M12 3.375c-.376.023-.75.05-1.124.08',
+  },
+  {
+    num: '03',
+    title: 'Alle modules in één platform',
+    desc: 'Risicoanalyse, VvT, maatregelen, documenten, leveranciers, audits, incidenten en directiebeoordeling. Allemaal naadloos verbonden.',
+    href: '/features',
+    accent: 'from-sky-500 to-sky-700',
+    iconBg: 'bg-sky-50 border-sky-200 text-sky-700',
+    icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z',
+  },
+  {
+    num: '04',
+    title: 'Zelf doen, met experts binnen handbereik',
+    desc: 'Control One is volledig ingericht op zelfstandig werken. Loop je toch vast of wil je even sparren? Onze ISO-experts geven feedback en support via chat.',
+    href: '/pricing',
+    accent: 'from-violet-500 to-violet-700',
+    iconBg: 'bg-violet-50 border-violet-200 text-violet-700',
+    icon: 'M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z',
+  },
 ];
 
-const outcomes = [
-  'Gecertificeerd in 3 tot 6 maanden',
-  'Zonder externe consultant',
-  'Alles in één platform',
+const journey = [
+  { label: 'Vandaag', sub: 'Nulmeting' },
+  { label: 'Maand 1 en 2', sub: 'ISMS opzetten' },
+  { label: 'Maand 3 en 4', sub: 'Documenten & audit' },
+  { label: 'Maand 5 en 6', sub: 'Certificaat' },
 ];
-
 ---
 
-<section class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-16 xl:gap-24 items-start">
+<section class="relative py-24 sm:py-32 overflow-hidden bg-white">
 
-      <!-- ── Links ── -->
-      <div class="pt-2">
-        <p class="text-sm font-semibold tracking-widest uppercase text-primary-500 mb-5">Jouw startpunt</p>
+  <!-- Soft background layer -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top left, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(245,158,11,0.05) 0%, transparent 55%);"></div>
+  <!-- Decorative soft blobs -->
+  <div class="absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full blur-[130px] pointer-events-none opacity-60" style="background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute top-1/3 -right-40 w-[480px] h-[480px] rounded-full blur-[130px] pointer-events-none opacity-60" style="background: radial-gradient(circle, rgba(16,185,129,0.14) 0%, transparent 70%);" aria-hidden="true"></div>
 
-        <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-[1.15] mb-2">
-          ISO op jouw manier,<br>in jouw tempo.
-        </h2>
-        <p class="text-xl font-semibold text-primary-500 mb-7 leading-snug">
-          Wij zorgen voor het platform. Jij voor het certificaat.
-        </p>
+  <div class="relative max-w-7xl mx-auto px-6">
 
-        <p class="text-base text-primary-900/60 leading-relaxed mb-8">
-          Of je nu je kwaliteitsprocessen wil professionaliseren, cybersecurity serieus wil aanpakken, wil verduurzamen of de veiligheid van je mensen beter wil borgen: ISO-certificering is de manier om dat gestructureerd en aantoonbaar te doen.
-        </p>
+    <!-- OPENING HOOK -->
+    <div class="max-w-4xl mx-auto text-center mb-20">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-primary-950">
+        Van nul naar ISO-gecertificeerd,<br>
+        <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">zonder externe consultant.</span>
+      </h2>
+      <p class="mt-6 text-base sm:text-lg text-primary-900/85 leading-[1.6] max-w-xl mx-auto">
+        Alles wat je nodig hebt in één platform: een <span class="text-primary-950 font-bold">stapsgewijze coach, 120+ kant-en-klare sjablonen en ISO-experts binnen handbereik</span>. Van nulmeting tot certificaat in 3 tot 6 maanden.
+      </p>
+    </div>
 
-        <!-- Challenges -->
-        <ul class="space-y-3.5 mb-10">
-          {pains.map(pain => (
-            <li class="flex items-center gap-3.5">
-              <span class="w-4 h-4 rounded-full border-2 border-primary-200 bg-primary-50 flex items-center justify-center shrink-0">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary-400 block"></span>
-              </span>
-              <span class="text-primary-800 text-sm leading-snug">{pain}</span>
-            </li>
+    <!-- PAIN naar SOLUTION MAPPING -->
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-14 mb-20 items-start">
+
+      <!-- LEFT: Pains -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-rose-600/90">De praktijk</p>
+            <h3 class="text-lg sm:text-xl font-bold text-primary-950 leading-tight">Vragen die we vaak horen</h3>
+          </div>
+        </div>
+        <div class="space-y-4">
+          {pains.map((p, i) => (
+            <div class="group relative p-5 sm:p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-md hover:border-rose-200 transition-all">
+              <!-- Number -->
+              <span class="absolute -top-3 -left-3 w-9 h-9 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-bold shadow-md shadow-rose-500/30 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+              <!-- Quote -->
+              <p class="text-primary-950 font-semibold text-base sm:text-lg leading-snug pl-7 sm:pl-8">"{p.quote}"</p>
+              <!-- Context -->
+              <p class="text-primary-700/80 text-sm mt-2 leading-relaxed pl-7 sm:pl-8">{p.context}</p>
+              <!-- Arrow (mobile only shows at bottom) -->
+              <div class="lg:hidden mt-3 pl-7 sm:pl-8 flex items-center gap-1.5 text-[11px] font-semibold text-primary-600">
+                <span>Zo lossen we dat op</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+              </div>
+            </div>
           ))}
-        </ul>
-
-        <!-- Bridge + convictions -->
-        <div class="border-l-4 border-primary-600 pl-5">
-          <p class="text-base font-semibold text-primary-950 leading-snug mb-3">
-            Bij Control One ben je aan het juiste adres.
-          </p>
-          <ul class="space-y-2.5">
-            {convictions.map(c => (
-              <li class="flex items-center gap-2.5">
-                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-sm text-primary-800 leading-snug">{c}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 
-      <!-- ── Rechts: platform visual ── -->
-      <div class="rounded-3xl border border-primary-100 bg-gradient-to-b from-primary-50/60 to-white p-3 shadow-sm">
-        <div class="rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
-
-          <!-- Browser chrome -->
-          <div class="bg-primary-950 px-4 py-2.5 flex items-center gap-3">
-            <div class="flex gap-1.5 shrink-0">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
-            </div>
-            <div class="flex-1 bg-white/10 rounded-md text-[11px] text-white/40 px-3 py-1 text-center font-medium tracking-wide">
-              app.control-one.nl
-            </div>
+      <!-- RIGHT: Matched modules -->
+      <div class="lg:sticky lg:top-8">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full bg-primary-50 border border-primary-200 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M4.5 12.75l6 6 9-13.5"/></svg>
           </div>
-
-          <!-- Section label -->
-          <div class="px-5 pt-4 pb-1">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-primary-400">Dit staat voor je klaar</p>
+          <div>
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary-700/90">Onze aanpak</p>
+            <h3 class="text-lg sm:text-xl font-bold text-primary-950 leading-tight">Hoe Control One dat oplost</h3>
           </div>
-
-          <!-- Platform items -->
-          <div class="divide-y divide-primary-100/60">
-            {items.map((item) => (
-              <div class="flex items-start gap-3.5 px-5 py-3.5 hover:bg-primary-50/40 transition-colors">
-                <div class={`w-8 h-8 rounded-lg ${item.color} flex items-center justify-center text-white shrink-0 mt-0.5`}>
-                  <Fragment set:html={item.icon} />
+        </div>
+        <div class="space-y-4">
+          {modules.map(m => (
+            <a href={m.href} class="group relative block p-5 sm:p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:border-primary-200 hover:-translate-y-0.5 transition-all overflow-hidden">
+              <!-- Left accent bar -->
+              <div class={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b ${m.accent}`}></div>
+              <div class="relative flex items-start gap-4">
+                <div class={`w-12 h-12 shrink-0 rounded-xl border flex items-center justify-center ${m.iconBg} group-hover:scale-110 transition-transform`}>
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={m.icon}/></svg>
                 </div>
                 <div class="flex-1 min-w-0">
-                  <p class="font-semibold text-sm text-primary-950">{item.title}</p>
-                  <p class="text-xs text-primary-600/60 mt-0.5 leading-relaxed">{item.description}</p>
+                  <div class="flex items-baseline gap-2.5 flex-wrap">
+                    <span class="text-[10px] font-bold text-primary-500 tabular-nums tracking-[0.15em]">{m.num}</span>
+                    <h3 class="text-primary-950 font-bold text-base sm:text-lg leading-tight">{m.title}</h3>
+                  </div>
+                  <p class="text-primary-700/80 text-sm mt-1.5 leading-relaxed">{m.desc}</p>
                 </div>
-                {item.badge && (
-                  <span class="shrink-0 self-start mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-bold border border-emerald-200 bg-emerald-50 text-emerald-700 whitespace-nowrap">
-                    {item.badge}
-                  </span>
-                )}
+                <svg class="w-5 h-5 text-primary-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all self-center shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- JOURNEY / OUTCOME TIMELINE -->
+    <div class="relative p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-primary-50 via-white to-emerald-50/60 border border-primary-100 shadow-sm overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-primary-300/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-center">
+        <div class="max-w-sm">
+          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-emerald-700 mb-3">Jouw tijdlijn</p>
+          <p class="text-2xl sm:text-3xl font-bold text-primary-950 leading-tight">
+            Van nulmeting tot <span class="text-emerald-700">certificaat</span><br>in 3 tot 6 maanden.
+          </p>
+          <p class="mt-3 text-sm text-primary-700/90 leading-relaxed">
+            Geen jarenlang traject, geen doorlopende consultancykosten. Eén platform, één route, één doel.
+          </p>
+        </div>
+
+        <!-- Horizontal timeline -->
+        <div class="relative">
+          <!-- Line -->
+          <div class="absolute top-4 left-4 right-4 h-0.5 bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-500"></div>
+          <div class="grid grid-cols-4 gap-1 sm:gap-3">
+            {journey.map((j, i) => (
+              <div class="relative flex flex-col items-center text-center">
+                <div class={`relative z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-bold tabular-nums ${
+                  i === journey.length - 1
+                    ? 'bg-emerald-500 border-emerald-400 text-white shadow-lg shadow-emerald-500/40'
+                    : i === 0
+                    ? 'bg-primary-950 border-primary-950 text-white'
+                    : 'bg-white border-primary-300 text-primary-700'
+                }`}>
+                  {i === journey.length - 1 ? (
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                  ) : (
+                    i + 1
+                  )}
+                </div>
+                <p class="mt-3 text-xs sm:text-sm font-bold text-primary-950 leading-tight">{j.label}</p>
+                <p class="text-[10px] sm:text-xs text-primary-600 mt-0.5 leading-tight">{j.sub}</p>
               </div>
             ))}
           </div>
-
-          <!-- Outcome bar -->
-          <div class="bg-primary-950 px-5 py-4">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-2.5">Jouw eindpunt</p>
-            <div class="flex flex-col gap-1.5">
-              {outcomes.map(o => (
-                <div class="flex items-center gap-2 text-sm text-white font-medium">
-                  <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                  </svg>
-                  {o}
-                </div>
-              ))}
-            </div>
-          </div>
-
-
         </div>
       </div>
 
+      <!-- Outcome stats -->
+      <div class="relative mt-8 pt-8 border-t border-primary-100 grid sm:grid-cols-3 gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="text-primary-950 font-bold text-sm">3 tot 6 maanden</p>
+            <p class="text-xs text-primary-600">Van nulmeting tot certificaat</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent-50 border border-accent-200 flex items-center justify-center text-accent-700 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m0 0l6 6 8-8-6-6-8 8z"/></svg>
+          </div>
+          <div>
+            <p class="text-primary-950 font-bold text-sm">Geen consultantkosten</p>
+            <p class="text-xs text-primary-600">Zelf de regie, met directe support</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <div>
+            <p class="text-primary-950 font-bold text-sm">Eén platform</p>
+            <p class="text-xs text-primary-600">Alle ISO-modules verbonden</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>

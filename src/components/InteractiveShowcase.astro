@@ -112,7 +112,7 @@ const items = [
     <div class="relative mx-auto rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.22),0_0_0_1px_rgba(0,0,0,0.06)]" style="max-width: 1040px;">
 
       <!-- ── Shell header: tab nav ── -->
-      <div class="bg-[#1e2d45] px-4 pt-4 pb-0">
+      <div class="bg-gradient-to-b from-primary-100/70 to-slate-100 px-4 pt-4 pb-0 border-b border-primary-200/40">
 
         <!-- Window controls -->
         <div class="flex items-center gap-1.5 mb-3 px-1">
@@ -126,7 +126,7 @@ const items = [
           <div id="sc-nav" class="flex items-end gap-0">
             {items.map((item, i) => (
               <button
-                class="sc-tab flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-all duration-200 whitespace-nowrap shrink-0 rounded-t-lg text-white/35 hover:text-white/65 border-t border-l border-r border-transparent"
+                class="sc-tab flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-all duration-200 whitespace-nowrap shrink-0 rounded-t-lg text-primary-700/60 hover:text-primary-900 border-t border-l border-r border-transparent"
                 data-tab={item.id}
               >
                 <span class="sc-tab-icon w-3.5 h-3.5 shrink-0">
@@ -193,35 +193,35 @@ const items = [
         </div>
       </div>
 
-      <!-- ── Description strip: dark, connected to shell ── -->
-      <div class="sc-desc-container bg-[#1e2d45] border-t border-white/[0.08]" style="position: relative; min-height: 100px;">
+      <!-- ── Description strip: light, connected to shell ── -->
+      <div class="sc-desc-container bg-gradient-to-br from-primary-50/60 via-white to-primary-50/60 border-t border-primary-100" style="position: relative; min-height: 100px;">
         {items.map((item, i) => (
           <div
             class="sc-desc"
             data-tab={item.id}
             style={i !== 0 ? 'opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; right: 0;' : ''}
           >
-            <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.07]">
+            <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-primary-100">
               <!-- Kolom 1 -->
               <div class="flex items-start gap-4 px-7 py-6">
-                <div class="w-9 h-9 rounded-lg bg-primary-500/20 border border-primary-400/20 flex items-center justify-center text-primary-300 shrink-0 mt-0.5">
+                <div class="w-9 h-9 rounded-lg bg-primary-100 border border-primary-200 flex items-center justify-center text-primary-700 shrink-0 mt-0.5">
                   <Fragment set:html={item.icon} />
                 </div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-white leading-snug">{item.headline}</p>
-                  <p class="text-xs text-white/45 mt-1 leading-relaxed">{item.description}</p>
+                  <p class="text-sm font-semibold text-primary-950 leading-snug">{item.headline}</p>
+                  <p class="text-xs text-primary-700/80 mt-1 leading-relaxed">{item.description}</p>
                 </div>
               </div>
               <!-- Kolom 2 -->
               <div class="flex items-start gap-4 px-7 py-6">
-                <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-400/20 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                <div class="w-9 h-9 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold text-white leading-snug">{item.headline2}</p>
-                  <p class="text-xs text-white/45 mt-1 leading-relaxed">{item.description2}</p>
+                  <p class="text-sm font-semibold text-primary-950 leading-snug">{item.headline2}</p>
+                  <p class="text-xs text-primary-700/80 mt-1 leading-relaxed">{item.description2}</p>
                 </div>
               </div>
             </div>
@@ -271,23 +271,23 @@ const items = [
 <style>
   /* Tab: inactive */
   .sc-tab {
-    color: rgba(255,255,255,0.45);
+    color: rgba(14, 36, 112, 0.55);
     background: transparent;
     border-color: transparent;
   }
   .sc-tab:hover {
-    color: rgba(255,255,255,0.75);
-    background: rgba(255,255,255,0.08);
+    color: rgba(14, 36, 112, 0.95);
+    background: rgba(14, 36, 112, 0.04);
   }
   /* Tab: active — looks like an open browser tab */
   .sc-tab.active {
     background: #f8fafc;
-    color: #1e3a5f !important;
-    border-color: rgba(255,255,255,0.12) !important;
+    color: #0e2470 !important;
+    border-color: rgba(14, 36, 112, 0.08) !important;
   }
   .sc-tab.active .sc-tab-icon,
   .sc-tab.active .sc-tab-label {
-    color: #1e3a5f !important;
+    color: #0e2470 !important;
   }
 
   /* Screenshot crossfade */

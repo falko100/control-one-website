@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import OfficeGallery from '../components/OfficeGallery.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
@@ -99,118 +100,27 @@ const features_highlights = [
 
     <!-- Missie -->
     <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Onze missie</p>
-            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-6">
-              ISO zonder consultant. Zonder chaos.
-            </h2>
-            <div class="text-primary-900/60 leading-relaxed space-y-4 text-base">
-              <p>
-                ISO-certificering is voor veel organisaties een groeiende noodzaak: klanten vragen ernaar, aanbestedingen eisen het, en de risico's worden groter. Maar het traject staat bekend als complex, tijdrovend en duur.
-              </p>
-              <p>
-                Dat hoeft niet zo te zijn. Control One is gebouwd vanuit de overtuiging dat een goede structuur, duidelijke begeleiding en de juiste tools meer waard zijn dan een externe consultant. Met onze implementatiecoach, kant-en-klare sjablonen, kennisbank en geïntegreerde tools doe je het gewoon zelf, op je eigen tempo.
-              </p>
-              <p>
-                Van risicoanalyse tot Verklaring van Toepasselijkheid, van interne audit tot leveranciersbeoordeling: alles zit in één platform, logisch geordend langs de PDCA-cyclus.
-              </p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <!-- 2012 Opgericht -->
-              <div class="relative p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:shadow-primary-100/60 hover:-translate-y-0.5 transition-all overflow-hidden">
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 to-primary-700"></div>
-                <div class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center mb-3">
-                  <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                </div>
-                <div class="text-4xl font-bold text-primary-950 mb-1 tracking-tight">2012</div>
-                <div class="text-sm text-primary-900/70 leading-snug">Opgericht in Enschede</div>
-              </div>
-              <!-- 4 Frameworks -->
-              <div class="relative p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:shadow-accent-200/40 hover:-translate-y-0.5 transition-all overflow-hidden">
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent-400 to-accent-500"></div>
-                <div class="w-10 h-10 rounded-xl bg-accent-50 flex items-center justify-center mb-3">
-                  <svg class="w-5 h-5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V6zM4 14a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2zM3 20h18"/></svg>
-                </div>
-                <div class="text-4xl font-bold text-primary-950 mb-1 tracking-tight">4</div>
-                <div class="text-sm text-primary-900/70 leading-snug">ISO-frameworks ondersteund</div>
-              </div>
-              <!-- 100% AVG -->
-              <div class="relative p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:shadow-emerald-200/40 hover:-translate-y-0.5 transition-all overflow-hidden">
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-3">
-                  <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
-                <div class="text-4xl font-bold text-primary-950 mb-1 tracking-tight">100%</div>
-                <div class="text-sm text-primary-900/70 leading-snug">Nederlands & AVG-compliant</div>
-              </div>
-              <!-- NL EU-hosting -->
-              <div class="relative p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:shadow-sky-200/40 hover:-translate-y-0.5 transition-all overflow-hidden">
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-400 to-sky-600"></div>
-                <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center mb-3">
-                  <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                </div>
-                <div class="text-4xl font-bold text-primary-950 mb-1 tracking-tight">NL</div>
-                <div class="text-sm text-primary-900/70 leading-snug">EU-hosting, geen Amerikaanse cloud</div>
-              </div>
-            </div>
-
-            <!-- Frameworks -->
-            <div class="p-6 rounded-2xl border border-primary-100 bg-primary-50/40">
-              <p class="text-xs font-semibold uppercase tracking-wide text-primary-500 mb-4">Ondersteunde frameworks</p>
-              <div class="space-y-3">
-                {features_highlights.map(f => (
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
-                      <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div>
-                      <span class="text-sm font-semibold text-primary-950">{f.label}</span>
-                      <span class="text-sm text-primary-900/50">: {f.description}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Onze missie</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-6">
+          ISO zonder consultant. Zonder chaos.
+        </h2>
+        <div class="text-primary-900/60 leading-relaxed space-y-4 text-base">
+          <p>
+            ISO-certificering is voor veel organisaties een groeiende noodzaak: klanten vragen ernaar, aanbestedingen eisen het, en de risico's worden groter. Maar het traject staat bekend als complex, tijdrovend en duur.
+          </p>
+          <p>
+            Dat hoeft niet zo te zijn. Control One is gebouwd vanuit de overtuiging dat een goede structuur, duidelijke begeleiding en de juiste tools meer waard zijn dan een externe consultant. Met onze implementatiecoach, kant-en-klare sjablonen, kennisbank en geïntegreerde tools doe je het gewoon zelf, op je eigen tempo.
+          </p>
+          <p>
+            Van risicoanalyse tot Verklaring van Toepasselijkheid, van interne audit tot leveranciersbeoordeling: alles zit in één platform, logisch geordend langs de PDCA-cyclus.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Kantoor foto gallery -->
-    <section class="py-0 bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6 pb-16">
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
-          <!-- Large main photo spanning 2 rows -->
-          <div class="row-span-2 rounded-2xl overflow-hidden" style="min-height: 400px;">
-            <img src="/team/office-1.webp" alt="Team Control One samenwerkt" class="w-full h-full object-cover" style="min-height: 400px;" />
-          </div>
-          <!-- Top right -->
-          <div class="rounded-2xl overflow-hidden">
-            <img src="/team/office-2.webp" alt="Ontwikkelaar Control One" class="w-full h-full object-cover" style="height: 196px;" />
-          </div>
-          <!-- Middle right -->
-          <div class="rounded-2xl overflow-hidden hidden lg:block">
-            <img src="/team/office-3.webp" alt="Team aan het werk" class="w-full h-full object-cover" style="height: 196px;" />
-          </div>
-          <!-- Bottom spanning - meeting photo with text overlay -->
-          <div class="relative rounded-2xl overflow-hidden col-span-1 lg:col-span-2">
-            <img src="/team/office-4.webp" alt="Overleg Control One" class="w-full object-cover" style="height: 196px;" />
-            <div class="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-950/40 to-transparent"></div>
-            <div class="absolute inset-0 flex items-center px-7">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-1">Ons kantoor</p>
-                <h2 class="text-lg sm:text-xl font-bold text-white leading-snug">Gebouwd in Twente,<br/>innovatie voor heel Nederland</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <OfficeGallery />
 
     <!-- Team portretfoto's -->
     <section id="team" class="py-24 bg-gradient-to-b from-primary-50/30 to-white">

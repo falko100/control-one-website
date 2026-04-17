@@ -1,0 +1,33 @@
+---
+// Kantoor foto gallery — gedeeld tussen homepage en over-ons
+---
+
+<section class="py-0 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+      <!-- Large main photo spanning 2 rows -->
+      <div class="row-span-2 rounded-2xl overflow-hidden" style="min-height: 400px;">
+        <img src="/team/office-1.webp" alt="Team Control One samenwerkt" class="w-full h-full object-cover" style="min-height: 400px;" />
+      </div>
+      <!-- Top right -->
+      <div class="rounded-2xl overflow-hidden">
+        <img src="/team/office-2.webp" alt="Ontwikkelaar Control One" class="w-full h-full object-cover" style="height: 196px;" />
+      </div>
+      <!-- Middle right -->
+      <div class="rounded-2xl overflow-hidden hidden lg:block">
+        <img src="/team/office-3.webp" alt="Team aan het werk" class="w-full h-full object-cover" style="height: 196px;" />
+      </div>
+      <!-- Bottom spanning - meeting photo with text overlay -->
+      <div class="relative rounded-2xl overflow-hidden col-span-1 lg:col-span-2">
+        <img src="/team/office-4.webp" alt="Overleg Control One" class="w-full object-cover" style="height: 196px;" />
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-950/40 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center px-7">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-accent-400 mb-1">Ons kantoor</p>
+            <h2 class="text-lg sm:text-xl font-bold text-white leading-snug">Gebouwd in Twente,<br />innovatie voor heel Nederland</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
