@@ -36,7 +36,7 @@ const statusLabel = {
 
 <Layout
   title="Annex A Maatregelen — ISO 27001 Beheersmaatregelen | Control One"
-  description="Beheer alle 93 Annex A-beheersmaatregelen van ISO 27001:2022. Wijs eigenaren toe, monitor implementatiestatus en genereer de Verklaring van Toepasselijkheid automatisch."
+  description="Beheer alle 93 Annex A-beheersmaatregelen van ISO 27001:2022. Wijs eigenaren toe, monitor implementatiestatus en vul je Verklaring van Toepasselijkheid per maatregel in."
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -63,7 +63,7 @@ const statusLabel = {
               Alle 93 maatregelen<br/><span class="text-blue-400">overzichtelijk beheerd</span>
             </h1>
             <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
-              Elke ISO 27001:2022 Annex A-maatregel krijgt een eigen pagina met uitleg, status, eigenaar, onderbouwing en gekoppelde documenten. Wijzig de status en je Verklaring van Toepasselijkheid werkt automatisch mee.
+              Elke ISO 27001:2022 Annex A-maatregel krijgt een eigen pagina met uitleg, status, eigenaar, onderbouwing en gekoppelde documenten. Je VvT-tabel toont dezelfde data per maatregel: één plek om in te vullen en te beheren.
             </p>
             <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/80">
               <div class="flex items-center gap-2">
@@ -72,7 +72,7 @@ const statusLabel = {
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-blue-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                Auto-gegenereerde VvT
+                Interactieve VvT-tabel
               </div>
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-blue-300/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -160,10 +160,10 @@ const statusLabel = {
           {[
             { title: 'Uitleg per control', desc: 'Voor elke maatregel een korte toelichting: wat vraagt de norm, waarom en hoe toon je het aan?' },
             { title: 'Status & eigenaar', desc: 'Per maatregel leg je vast of deze van toepassing is, de implementatiestatus, wie verantwoordelijk is en wanneer de laatste review was.' },
-            { title: 'Onderbouwing vastleggen', desc: 'Schrijf per control in de portal je motivatie en hoe je de maatregel heeft geïmplementeerd. Deze tekst verschijnt automatisch in de VvT.' },
+            { title: 'Onderbouwing vastleggen', desc: 'Schrijf per control in de portal je motivatie en hoe je de maatregel heeft geïmplementeerd. Deze tekst is direct zichtbaar in je VvT-overzicht.' },
             { title: 'Direct gekoppeld aan documenten', desc: 'Policies, procedures en bewijsstukken zijn direct te koppelen aan een maatregel — één klik tussen beheersmaatregel en documentbeheer.' },
             { title: 'Gekoppeld aan risicoanalyse', desc: 'Risico\'s verwijzen naar de maatregelen die ze afdekken — je ziet per risico welke controls actief zijn.' },
-            { title: 'Auto-gegenereerde VvT', desc: 'De Verklaring van Toepasselijkheid is geen apart bestand: hij wordt live gegenereerd uit je maatregelenregister en is direct als PDF te exporteren.' },
+            { title: 'Interactieve VvT-tabel', desc: 'De Verklaring van Toepasselijkheid is geen apart bestand: hij deelt dezelfde data als je maatregelenregister en is direct als PDF te exporteren.' },
             { title: 'Filter op chapter', desc: 'Spring met één klik tussen A5, A6, A7 en A8. Binnen elk hoofdstuk zijn alle sub-controls meteen zichtbaar.' },
             { title: 'Kennisbankartikelen per maatregel', desc: 'Elke maatregel heeft een bijbehorend kennisbankartikel met praktische uitleg — 93 artikelen in totaal.' },
             { title: 'Auditklaar', desc: 'Tijdens een audit krijgt de auditor één centraal overzicht met status, onderbouwing en bewijs per control.' },
@@ -182,8 +182,8 @@ const statusLabel = {
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-primary-950 mb-1">Automatisch gekoppeld aan de VvT</h3>
-            <p class="text-sm text-primary-900/60 leading-relaxed">Elke maatregel is gekoppeld aan je Verklaring van Toepasselijkheid. Pas de status of onderbouwing aan en de VvT wordt automatisch bijgewerkt — klaar voor export als PDF.</p>
+            <h3 class="font-bold text-primary-950 mb-1">Gekoppeld aan je VvT</h3>
+            <p class="text-sm text-primary-900/60 leading-relaxed">Elke maatregel is gekoppeld aan je Verklaring van Toepasselijkheid. Pas de status of onderbouwing aan en je ziet dit direct terug in de VvT. Altijd klaar voor export als PDF.</p>
           </div>
         </div>
       </div>

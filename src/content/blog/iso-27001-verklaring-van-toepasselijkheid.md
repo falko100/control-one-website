@@ -113,6 +113,6 @@ ISO 27001 vereist dit niet expliciet, maar auditoren zien een directiehandtekeni
 
 ---
 
-De Verklaring van Toepasselijkheid is het document waarmee je aantoont dat je ISMS doordacht en risicogebaseerd is ingericht. Met Control One genereert je een volledig ingevulde VvT op basis van je risicoanalyse — klaar voor externe audit.
+De Verklaring van Toepasselijkheid is het document waarmee je aantoont dat je ISMS doordacht en risicogebaseerd is ingericht. In Control One vul je de VvT in via een interactieve tabel, gekoppeld aan je risicoanalyse, en exporteer je hem als PDF voor de externe audit.
 
 Bekijk onze [prijzen en pakketten](/prijzen) en start vandaag nog met je ISO 27001-implementatie.

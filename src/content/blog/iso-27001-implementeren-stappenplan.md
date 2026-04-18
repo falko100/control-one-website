@@ -252,7 +252,7 @@ Er is geen minimumvereiste. Ook een bedrijf van 15 medewerkers kan ISO 27001 hal
 Control One is specifiek ontworpen voor MKB-bedrijven die ISO 27001 zelf willen implementeren. Het platform begeleidt je door elke stap:
 
 - **Begeleide risicoanalyse** met vooraf ingevulde dreigingen en assets
-- **Verklaring van Toepasselijkheid** automatisch gegenereerd op basis van je risicoprofiel
+- **Verklaring van Toepasselijkheid** als interactieve tabel, gekoppeld aan je risicoanalyse en exporteerbaar als PDF
 - **Beleid en procedures** — meer dan 50 kant-en-klare templates aanpasbaar aan je organisatie
 - **Taakbeheer** — toewijzen, bewaken en afsluiten van implementatietaken
 - **Auditbeheer** — interne audits plannen, uitvoeren en documenteren

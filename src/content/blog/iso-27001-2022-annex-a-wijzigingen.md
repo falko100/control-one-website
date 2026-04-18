@@ -105,6 +105,6 @@ Als je voor een externe audit gaat, zal de auditor de 2022-versie als referentie
 
 ---
 
-De overgang naar ISO 27001:2022 is voor de meeste MKB-organisaties goed te beheren, zeker als je een gestructureerde aanpak hanteert. Control One begeleidt je automatisch door deze transitie, van gap-analyse tot bijgewerkte VvT.
+De overgang naar ISO 27001:2022 is voor de meeste MKB-organisaties goed te beheren, zeker als je een gestructureerde aanpak hanteert. Control One begeleidt je stap voor stap door deze transitie, van gap-analyse tot bijgewerkte VvT.
 
 Bekijk onze [prijzen en pakketten](/prijzen) en ontdek hoe je ISO 27001:2022 compliancy bereikt zonder dure consultants.
