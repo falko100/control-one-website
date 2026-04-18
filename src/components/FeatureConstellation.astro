@@ -1,0 +1,670 @@
+---
+// ── Feature data (12 features, hero = coach) ──
+const features = [
+  {
+    id: 'coach',
+    category: 'Stapsgewijze implementatiegids',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    title: 'Implementatiecoach',
+    short: 'De implementatiecoach leidt je stap voor stap door elk hoofdstuk van je ISO-framework. Je weet altijd waar je staat en wat de volgende actie is, van gap-analyse tot certificering.',
+    bullets: [
+      'Volledige eisenstructuur per framework',
+      'Voortgangspercentage per hoofdstuk',
+      'Contextgevoelige uitleg bij elke stap',
+      'Gekoppeld aan documenten & bewijs',
+    ],
+    accent: 'blue',
+    tags: ['28 stappen', 'PDCA'],
+    href: '/coach',
+  },
+  {
+    id: 'risico',
+    category: 'Risicoregister & risicomatrix',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
+    title: 'Risicoanalyse',
+    short: "Identificeer, beoordeel en bewaak risico's met een volledig risicoregister. Scoor op kans en impact, koppel behandelmaatregelen en volg het risicolandschap in de tijd.",
+    bullets: [
+      'Configureerbare 5×5 risicomatrix',
+      "Meerdere risicocontexten (mensen, systemen, netwerk)",
+      'Periodieke beoordelingen met besluitregistratie',
+      'Historische snapshots voor trendanalyse',
+    ],
+    accent: 'amber',
+    tags: ['5×5 matrix', 'Snapshots'],
+    href: '/risicoanalyse',
+  },
+  {
+    id: 'vvt',
+    category: '93 Annex A beheersmaatregelen',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
+    title: 'Verklaring van Toepasselijkheid',
+    short: 'Beheer alle 93 beheersmaatregelen uit ISO 27001:2022 Annex A. Markeer toepasselijkheid, registreer de implementatiestatus en exporteer je VvT als ondertekende PDF.',
+    bullets: [
+      'Alle 93 Annex A-maatregelen ingebouwd',
+      'Toepasselijkheid per maatregel markeren',
+      'Implementatiestatus bijhouden per maatregel',
+      'Direct exporteerbaar als VvT-PDF',
+    ],
+    accent: 'indigo',
+    tags: ['93 maatregelen', 'PDF'],
+    href: '/maatregelen',
+  },
+  {
+    id: 'documenten',
+    category: 'Beleid & procedures beheren',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
+    title: 'Documentbeheer',
+    short: 'Centraal beheer van al je compliance-documenten. Maak beleidsdocumenten, risicoverklaringen en sjablonen, met versiebeheer en goedkeuringsworkflows per clausule.',
+    bullets: [
+      'Versiecontrole met revisiebeheer',
+      'Beoordelings- en goedkeuringsworkflows',
+      'Sjabloonbibliotheek voor snelle opstart',
+      'Automatisch gekoppeld aan framework-eisen',
+    ],
+    accent: 'violet',
+    tags: ['Versies', 'NL & EN'],
+    href: '/documenten',
+  },
+  {
+    id: 'templates',
+    category: '120+ vooraf ingevulde documenten',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
+    title: 'Templates',
+    short: 'Start met 80% voorsprong. 120+ vooraf ingevulde beleidsdocumenten, procedures en DPIA\'s, volledig conform ISO 27001:2022 en direct aanpasbaar aan jouw organisatie.',
+    bullets: [
+      'Beleid, DPIA\'s, procedures en meer',
+      'Vooraf ingevuld conform ISO 27001:2022',
+      'Aanpasbaar met je bedrijfsnaam en context',
+      'Exporteerbaar als auditklaar PDF in NL & EN',
+    ],
+    accent: 'green',
+    tags: ['120+ docs', 'NL & EN'],
+    href: '/templates',
+  },
+  {
+    id: 'gap',
+    category: 'Nulmeting & pre-audit',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
+    title: 'Gap Analyse',
+    short: 'Breng snel in kaart waar je staat. 150 gerichte vragen langs alle ISO-clausules en Annex A-categorieën, met automatische scoring en een concrete actielijst als resultaat.',
+    bullets: [
+      '150 gestructureerde vragen per framework',
+      'Scoring op clausule- en categorie-niveau',
+      'Direct gekoppelde actielijst per gap',
+      'Vergelijk nulmeting en pre-audit naast elkaar',
+    ],
+    accent: 'emerald',
+    tags: ['150 vragen', 'Scoring'],
+    href: '/coach',
+  },
+  {
+    id: 'audit',
+    category: 'Intern & extern auditbeheer',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+    title: 'Audit Management',
+    short: 'Voer interne en externe audits uit met een compleet traject: van scopedefinitie tot rapportage. Volg afwijkingen en corrigerende maatregelen tot aan afsluiting.',
+    bullets: [
+      '7-stappen audit wizard',
+      'Geïntegreerde vragenlijsten per norm',
+      'Afwijkingen- en CPAR-beheer',
+      'PDF-rapportages klaar voor de auditor',
+    ],
+    accent: 'teal',
+    tags: ['CPAR', 'Wizard'],
+    href: '/audits',
+  },
+  {
+    id: 'leveranciers',
+    category: 'Vendor management & beoordeling',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+    title: 'Leveranciersbeheer',
+    short: "Houd je leveranciersrisico's onder controle. Beheer certificaten, compliance-documentatie en plan periodieke beoordelingen voor al je externe partijen conform ISO 27001 Annex A.5.19.",
+    bullets: [
+      'Leveranciersregister met contactinformatie',
+      'Certificaatbeheer met verloopwaarschuwingen',
+      'Periodieke beoordelingen inplannen',
+      'Risicoclassificatie per leverancier',
+    ],
+    accent: 'cyan',
+    tags: ['A.5.19', 'Classificatie'],
+    href: '/leveranciers',
+  },
+  {
+    id: 'incidenten',
+    category: 'Incidenten & continue verbetering',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
+    title: "Incidenten & CPAR's",
+    short: "Registreer beveiligingsincidenten, afwijkingen en klachten, en doorloop het vierstaps PDCA-verbeterproces tot en met verificatie. Volledige audittrail op elk moment beschikbaar.",
+    bullets: [
+      'Prioriteiten, categorieën en eigenaars',
+      'Vierstaps-verbeterproces (PDCA)',
+      'Gekoppeld aan risico- en maatregelenbeheer',
+      'Volledige audittrail per bevinding',
+    ],
+    accent: 'rose',
+    tags: ['CPAR', 'PDCA'],
+    href: '/audits',
+  },
+  {
+    id: 'dashboard',
+    category: 'Realtime compliance-inzicht',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>`,
+    title: 'Dashboard & Inzicht',
+    short: "Jouw compliance-status in één oogopslag. Realtime widgets voor risico's, audits, documentvervaldata en voortgang naar certificering, afgestemd op je rol.",
+    bullets: [
+      'Realtime widgets per rol en framework',
+      'Risico-heatmap met drilldown',
+      'Vervaldatumwaarschuwingen voor documenten',
+      'Exporteerbare management-rapportages',
+    ],
+    accent: 'primary',
+    tags: ['Heatmap', 'KPI\'s'],
+    href: '/features',
+  },
+  {
+    id: 'kennisbank',
+    category: 'ISO kennis direct beschikbaar',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
+    title: 'Kennisbank',
+    short: 'De ingebouwde kennisbank bevat 100+ artikelen, richtlijnen en stappenplannen voor ISO 27001, AVG en NIS2. Geschreven in begrijpelijk Nederlands, direct toepasbaar.',
+    bullets: [
+      '100+ artikelen over ISO, AVG en NIS2',
+      'Contextgevoelig zoeken op norm of onderwerp',
+      'Gekoppeld aan maatregelen en taken in je ISMS',
+      'Altijd actueel bij wijzigingen in regelgeving',
+    ],
+    accent: 'sky',
+    tags: ['100+ artikelen', 'NL'],
+    href: '/kennisbank',
+  },
+  {
+    id: 'directie',
+    category: 'Management reviews & verslagen',
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
+    title: 'Directiebeoordeling',
+    short: 'Bereid directiebeoordelingen voor conform ISO 27001 clausule 9.3, leg besluiten en actiepunten vast en genereer direct een gestructureerd verslag voor je certificerende instantie.',
+    bullets: [
+      'Alle verplichte inputpunten clausule 9.3',
+      'Actiepunten met eigenaar en deadline',
+      'Besluitregistratie en historisch overzicht',
+      'PDF-export klaar voor certificerende instantie',
+    ],
+    accent: 'fuchsia',
+    tags: ['Clausule 9.3', 'PDF'],
+    href: '/directiebeoordeling',
+  },
+];
+
+// ── Accent color mapping (avoids Tailwind purge issues with dynamic classes) ──
+const accents: Record<string, { iconBg: string; iconColor: string }> = {
+  blue:    { iconBg: 'bg-blue-50',    iconColor: 'text-blue-600' },
+  amber:   { iconBg: 'bg-amber-50',   iconColor: 'text-amber-600' },
+  indigo:  { iconBg: 'bg-indigo-50',  iconColor: 'text-indigo-600' },
+  violet:  { iconBg: 'bg-violet-50',  iconColor: 'text-violet-600' },
+  green:   { iconBg: 'bg-green-50',   iconColor: 'text-green-600' },
+  emerald: { iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600' },
+  teal:    { iconBg: 'bg-teal-50',    iconColor: 'text-teal-600' },
+  cyan:    { iconBg: 'bg-cyan-50',    iconColor: 'text-cyan-600' },
+  rose:    { iconBg: 'bg-rose-50',    iconColor: 'text-rose-600' },
+  primary: { iconBg: 'bg-primary-50', iconColor: 'text-primary-600' },
+  sky:     { iconBg: 'bg-sky-50',     iconColor: 'text-sky-600' },
+  fuchsia: { iconBg: 'bg-fuchsia-50', iconColor: 'text-fuchsia-600' },
+};
+
+// ── Polar → percent coords for absolute positioning ──
+const polar = (r: number, deg: number) => {
+  const rad = (deg * Math.PI) / 180;
+  return {
+    x: +(50 + r * Math.cos(rad)).toFixed(2),
+    y: +(50 + r * Math.sin(rad)).toFixed(2),
+  };
+};
+
+// ── Bubble positions around the center (5 inner + 6 outer = 11) ──
+// Inner ring r=36, outer ring r=50 — gives ≥ 20px edge-to-edge clearance
+// between neighbouring inner/outer bubbles even with the float animation.
+const constellation = [
+  { f: features[1],  pos: polar(36, -90) },   // risico
+  { f: features[2],  pos: polar(36, -18) },   // vvt
+  { f: features[3],  pos: polar(36,  54) },   // documenten
+  { f: features[4],  pos: polar(36, 126) },   // templates
+  { f: features[5],  pos: polar(36, 198) },   // gap
+  { f: features[6],  pos: polar(50, -60) },   // audit
+  { f: features[7],  pos: polar(50,   0) },   // leveranciers
+  { f: features[8],  pos: polar(50,  60) },   // incidenten
+  { f: features[9],  pos: polar(50, 120) },   // dashboard
+  { f: features[10], pos: polar(50, 180) },   // kennisbank
+  { f: features[11], pos: polar(50, 240) },   // directie
+];
+
+// Hex stroke colors per accent, for line highlighting
+const accentStroke: Record<string, string> = {
+  blue: '#3b82f6', amber: '#f59e0b', indigo: '#6366f1', violet: '#8b5cf6',
+  green: '#22c55e', emerald: '#10b981', teal: '#14b8a6', cyan: '#06b6d4',
+  rose: '#f43f5e', primary: '#2563eb', sky: '#0ea5e9', fuchsia: '#d946ef',
+};
+---
+
+<section
+  id="constellation"
+  class="relative flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 pt-24 pb-8 bg-gradient-to-b from-slate-50 via-white to-slate-50"
+  style="min-height: 100vh;"
+>
+
+  <!-- Twinkling stars -->
+  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+    <div class="constellation-star absolute top-[14%] left-[10%] w-1 h-1 rounded-full bg-blue-400" style="--delay: 0s;"></div>
+    <div class="constellation-star absolute top-[22%] right-[16%] w-1 h-1 rounded-full bg-violet-400" style="--delay: 1.2s;"></div>
+    <div class="constellation-star absolute top-[55%] left-[5%] w-1.5 h-1.5 rounded-full bg-indigo-300" style="--delay: 2.4s;"></div>
+    <div class="constellation-star absolute top-[48%] right-[6%] w-1 h-1 rounded-full bg-sky-400" style="--delay: 0.8s;"></div>
+    <div class="constellation-star absolute bottom-[24%] left-[22%] w-1 h-1 rounded-full bg-primary-400" style="--delay: 3s;"></div>
+    <div class="constellation-star absolute bottom-[16%] right-[28%] w-1.5 h-1.5 rounded-full bg-blue-300" style="--delay: 1.8s;"></div>
+    <div class="constellation-star absolute top-[70%] left-[12%] w-1 h-1 rounded-full bg-fuchsia-300" style="--delay: 2.1s;"></div>
+    <div class="constellation-star absolute top-[30%] right-[30%] w-0.5 h-0.5 rounded-full bg-blue-500" style="--delay: 0.4s;"></div>
+  </div>
+
+  <!-- Compact header -->
+  <div class="relative text-center mb-8 sm:mb-12">
+    <p class="text-[11px] sm:text-sm font-semibold tracking-widest uppercase text-primary-600 mb-2">Alles wat je nodig hebt</p>
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-950 tracking-tight leading-tight">
+      Eén platform,<br /><span
+        class="bg-clip-text text-transparent"
+        style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+      >oneindig</span> veel functies
+    </h2>
+  </div>
+
+  <!-- Constellation container: fits within viewport, stays square -->
+  <div
+    class="relative w-full aspect-square"
+    style="max-width: min(680px, calc(100vh - 240px), 92vw);"
+  >
+
+    <!-- Orbital rings -->
+    <svg class="absolute inset-0 w-full h-full constellation-ring-inner" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="36" fill="none" stroke="#cbd5e1" stroke-width="0.15" stroke-dasharray="0.6 0.9" />
+    </svg>
+    <svg class="absolute inset-0 w-full h-full constellation-ring-outer" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="50" fill="none" stroke="#cbd5e1" stroke-width="0.15" stroke-dasharray="0.6 0.9" />
+    </svg>
+
+    <!-- Connecting lines (center → each bubble) -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" aria-hidden="true">
+      {constellation.map(({ f, pos }) => (
+        <line
+          x1="50" y1="50" x2={pos.x} y2={pos.y}
+          stroke="#e2e8f0" stroke-width="0.08" stroke-dasharray="0.4 0.6"
+          class="constellation-line"
+          data-line={f.id}
+          data-stroke={accentStroke[f.accent]}
+        />
+      ))}
+    </svg>
+
+    <!-- Center hub wrapper (zero-sized anchor point) -->
+    <div id="hub-wrap" class="hub-wrap absolute left-1/2 top-1/2 z-20">
+      <!-- Pulsing halos: hide when hub expands.
+           Centering is handled by the pulse keyframe's translate(-50%, -50%);
+           do NOT add Tailwind -translate-x/y-1/2 here (Tailwind 4 uses the
+           `translate` CSS property which would stack with the animation's
+           `transform` and double-shift the halos off-center). -->
+      <div class="hub-halos absolute top-0 left-0 pointer-events-none">
+        <div class="w-[210px] h-[210px] sm:w-[220px] sm:h-[220px] rounded-full bg-blue-400/15 constellation-pulse absolute"></div>
+        <div class="w-[180px] h-[180px] sm:w-[190px] sm:h-[190px] rounded-full bg-blue-400/25 constellation-pulse absolute" style="animation-delay: 1.2s;"></div>
+      </div>
+
+      <!-- Hub (morphs from circle → rounded rectangle on hover) -->
+      <div
+        id="hub"
+        class="hub absolute -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl overflow-hidden"
+      >
+        <!-- Default panel: Control One favicon -->
+        <div class="hub-panel absolute inset-0 flex flex-col items-center justify-center opacity-100 transition-opacity duration-300" data-panel="default">
+          <img src="/favicon.svg" alt="Control One" class="w-16 h-16 sm:w-20 sm:h-20 select-none drop-shadow-sm" draggable="false" />
+          <p
+            class="mt-2 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase bg-clip-text text-transparent"
+            style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+          >
+            Control One
+          </p>
+        </div>
+
+        <!-- Dynamic per-feature panels -->
+        {features.map(f => (
+          <div
+            class="hub-panel absolute inset-0 flex flex-col opacity-0 pointer-events-none transition-opacity duration-300"
+            data-panel={f.id}
+          >
+            <!-- Top accent bar (color per feature) -->
+            <div
+              class="absolute top-0 left-0 right-0 h-1 z-10"
+              style={`background: linear-gradient(90deg, ${accentStroke[f.accent]} 0%, ${accentStroke[f.accent]}80 100%);`}
+            ></div>
+
+            <div class="relative flex flex-col h-full p-4 sm:p-5">
+              <!-- Header: icon + category + title -->
+              <div class="flex items-start gap-3 mb-2">
+                <div class={`shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${accents[f.accent].iconBg} ${accents[f.accent].iconColor} flex items-center justify-center shadow-sm`}>
+                  <Fragment set:html={f.icon.replace('w-6 h-6', 'w-6 h-6 sm:w-7 sm:h-7')} />
+                </div>
+                <div class="min-w-0 flex-1 pt-0.5">
+                  <div class={`text-[9px] sm:text-[10px] font-bold tracking-[0.1em] uppercase ${accents[f.accent].iconColor} mb-0.5 truncate`}>{f.category}</div>
+                  <h4 class="text-sm sm:text-[15px] font-bold text-primary-950 leading-tight">{f.title}</h4>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-[11px] sm:text-[11.5px] text-primary-900/70 leading-snug mb-2.5">{f.short}</p>
+
+              <!-- Bullets (4, two columns) -->
+              <ul class="grid grid-cols-1 gap-x-3 gap-y-1 mb-2">
+                {f.bullets.slice(0, 4).map(b => (
+                  <li class="flex items-start gap-1.5 text-[11px] text-primary-900/90">
+                    <span class={`shrink-0 w-3.5 h-3.5 rounded-full ${accents[f.accent].iconBg} flex items-center justify-center mt-[1px]`}>
+                      <svg class={`w-2.5 h-2.5 ${accents[f.accent].iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" d="M5 13l4 4L19 7"/></svg>
+                    </span>
+                    <span class="leading-snug">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Divider + tags row -->
+              <div class="mt-auto pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                <div class="flex flex-wrap gap-1">
+                  {f.tags.map(t => (
+                    <span class={`px-1.5 py-0.5 rounded-md text-[10px] font-semibold ${accents[f.accent].iconBg} ${accents[f.accent].iconColor}`}>{t}</span>
+                  ))}
+                </div>
+                <a
+                  href={f.href}
+                  class={`shrink-0 inline-flex items-center gap-0.5 text-[10px] font-semibold ${accents[f.accent].iconColor} hover:underline`}
+                  data-feature-link={f.id}
+                >
+                  Meer
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Feature bubbles -->
+    {constellation.map(({ f, pos }, i) => (
+      <button
+        class="constellation-bubble absolute -translate-x-1/2 -translate-y-1/2 z-10 group focus:outline-none"
+        style={`left: ${pos.x}%; top: ${pos.y}%;`}
+        data-feature={f.id}
+        data-accent={f.accent}
+        aria-label={f.title}
+      >
+        <span
+          class="constellation-bubble-inner flex flex-col items-center relative"
+          style={`--delay: ${(i * 0.35).toFixed(2)}s; --duration: ${6 + (i % 3)}s;`}
+        >
+          <span class={`relative flex items-center justify-center w-[60px] h-[60px] sm:w-[68px] sm:h-[68px] rounded-full bg-white shadow-md border-2 border-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-focus-visible:scale-110 ${accents[f.accent].iconColor}`}>
+            <span class={`flex items-center justify-center w-10 h-10 sm:w-[46px] sm:h-[46px] rounded-xl ${accents[f.accent].iconBg} ${accents[f.accent].iconColor}`}>
+              <Fragment set:html={f.icon.replace('w-6 h-6', 'w-7 h-7')} />
+            </span>
+          </span>
+          <span class="constellation-bubble-title mt-1.5 text-[10px] sm:text-[11px] font-semibold leading-tight text-primary-800 text-center max-w-[110px] whitespace-normal transition-colors duration-200">
+            {f.title}
+          </span>
+        </span>
+      </button>
+    ))}
+  </div>
+
+  <!-- SEO-friendly feature list (hidden, for crawlers & screen readers) -->
+  <div
+    style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;"
+  >
+    <h3>Alle functies van Control One</h3>
+    <ul>
+      {features.map(f => (
+        <li><strong>{f.title}:</strong> {f.short}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  /* ── Twinkling stars ── */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(1); }
+    50%      { opacity: 0.9;  transform: scale(1.4); }
+  }
+  .constellation-star {
+    animation: twinkle 3.2s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0.3;
+  }
+
+  /* ── Sparkle icon ── */
+  @keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+    50%      { transform: scale(1.2) rotate(15deg); opacity: 1; }
+  }
+  .constellation-sparkle {
+    animation: sparkle 2.2s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  /* ── Bubble float (gentle bob) ──
+     Static min edge gap is ~15px (68px bubbles, inner r=36 / outer r=50),
+     so ±5px per bubble still leaves ~5px clearance worst-case — visible
+     movement without neighbours drifting into each other. */
+  @keyframes constellation-float {
+    0%, 100% { transform: translateY(0)    translateX(0); }
+    25%      { transform: translateY(-5px) translateX(2px); }
+    50%      { transform: translateY(-3px) translateX(-3px); }
+    75%      { transform: translateY(3px)  translateX(2px); }
+  }
+  .constellation-bubble-inner {
+    animation: constellation-float var(--duration, 6s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  /* ── Orbital rings slowly rotate ── */
+  @keyframes spin-cw  { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+  @keyframes spin-ccw { from { transform: rotate(0); } to { transform: rotate(-360deg); } }
+  .constellation-ring-inner { animation: spin-cw  80s linear infinite; transform-origin: center; }
+  .constellation-ring-outer { animation: spin-ccw 120s linear infinite; transform-origin: center; }
+
+  /* ── Central pulsing halos ── */
+  @keyframes constellation-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.55; }
+    50%      { transform: translate(-50%, -50%) scale(1.18); opacity: 0.08; }
+  }
+  .constellation-pulse {
+    /* Default centered state — also used during animation-delay and
+       when prefers-reduced-motion disables the animation. */
+    transform: translate(-50%, -50%) scale(1);
+    animation: constellation-pulse 3.5s ease-in-out infinite;
+  }
+
+  /* ── Hub: morphs from circle (default, favicon) to rectangle (hover, info) ── */
+  .hub {
+    width: 160px;
+    height: 160px;
+    border-radius: 9999px;
+    transition:
+      width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      border-radius 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s ease;
+  }
+  .hub-wrap.expanded .hub {
+    width: 340px;
+    height: 290px;
+    border-radius: 20px;
+  }
+  .hub-halos {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+  .hub-wrap.expanded .hub-halos {
+    opacity: 0;
+  }
+
+  /* Smaller hub on narrow screens so it still fits */
+  @media (max-width: 640px) {
+    .hub { width: 130px; height: 130px; }
+    .hub-wrap.expanded .hub { width: 280px; height: 250px; }
+  }
+
+  /* ── Connecting line transitions ── */
+  .constellation-line {
+    transition: stroke 0.25s ease, stroke-width 0.25s ease, stroke-dasharray 0.25s ease;
+  }
+
+  /* ── Dim sibling bubbles when one is focused ── */
+  .constellation-bubble.dimmed .constellation-bubble-inner {
+    opacity: 0.35;
+    transition: opacity 0.3s;
+  }
+
+  /* ── Respect reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .constellation-star,
+    .constellation-sparkle,
+    .constellation-bubble-inner,
+    .constellation-ring-inner,
+    .constellation-ring-outer,
+    .constellation-pulse {
+      animation: none !important;
+    }
+    .constellation-star { opacity: 0.6; }
+    .hub { transition: none; }
+  }
+</style>
+
+<script>
+  const hubWrap = document.getElementById('hub-wrap');
+  const hubPanels = document.querySelectorAll<HTMLElement>('.hub-panel');
+  const bubbles = document.querySelectorAll<HTMLElement>('.constellation-bubble');
+  const lines = document.querySelectorAll<SVGLineElement>('.constellation-line');
+
+  const showPanel = (id: string) => {
+    hubPanels.forEach(p => {
+      const active = p.dataset.panel === id;
+      p.classList.toggle('opacity-100', active);
+      p.classList.toggle('opacity-0', !active);
+      p.classList.toggle('pointer-events-none', !active);
+    });
+  };
+
+  const setExpanded = (expanded: boolean) => {
+    if (!hubWrap) return;
+    hubWrap.classList.toggle('expanded', expanded);
+  };
+
+  const setActiveLine = (id: string | null) => {
+    lines.forEach(l => {
+      if (id && l.dataset.line === id) {
+        const hex = l.dataset.stroke || '#2563eb';
+        l.setAttribute('stroke', hex);
+        l.setAttribute('stroke-width', '0.25');
+        l.setAttribute('stroke-dasharray', '0');
+      } else {
+        l.setAttribute('stroke', '#e2e8f0');
+        l.setAttribute('stroke-width', '0.08');
+        l.setAttribute('stroke-dasharray', '0.4 0.6');
+      }
+    });
+  };
+
+  const dimOthers = (id: string | null) => {
+    bubbles.forEach(b => {
+      if (id && b.dataset.feature !== id) b.classList.add('dimmed');
+      else b.classList.remove('dimmed');
+    });
+  };
+
+  const resetState = () => {
+    showPanel('default');
+    setExpanded(false);
+    setActiveLine(null);
+    dimOthers(null);
+  };
+
+  const activateBubble = (id: string) => {
+    showPanel(id);
+    setExpanded(true);
+    setActiveLine(id);
+    dimOthers(id);
+  };
+
+  let selected: string | null = null;
+  let hovered: string | null = null;
+  let collapseTimer: number | null = null;
+
+  const cancelCollapse = () => {
+    if (collapseTimer !== null) {
+      clearTimeout(collapseTimer);
+      collapseTimer = null;
+    }
+  };
+
+  const scheduleCollapse = () => {
+    cancelCollapse();
+    collapseTimer = window.setTimeout(() => {
+      if (!selected && !hovered) resetState();
+    }, 120);
+  };
+
+  bubbles.forEach(b => {
+    const id = b.dataset.feature!;
+
+    b.addEventListener('mouseenter', () => {
+      cancelCollapse();
+      hovered = id;
+      if (!selected) activateBubble(id);
+    });
+    b.addEventListener('mouseleave', () => {
+      if (hovered === id) hovered = null;
+      if (!selected) scheduleCollapse();
+    });
+    b.addEventListener('focus', () => {
+      if (!selected) activateBubble(id);
+    });
+    b.addEventListener('blur', () => {
+      if (!selected) resetState();
+    });
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (selected === id) {
+        selected = null;
+        resetState();
+      } else {
+        selected = id;
+        activateBubble(id);
+      }
+    });
+  });
+
+  // Keep the hub expanded while the mouse is inside it (so the user can click Meer)
+  const hub = document.getElementById('hub');
+  if (hub) {
+    hub.addEventListener('mouseenter', () => {
+      cancelCollapse();
+      hovered = hovered ?? '__hub__';
+    });
+    hub.addEventListener('mouseleave', () => {
+      if (hovered === '__hub__') hovered = null;
+      if (!selected) scheduleCollapse();
+    });
+  }
+
+  // Click outside the constellation clears any pinned selection
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('.constellation-bubble') && !target.closest('#hub')) {
+      if (selected) {
+        selected = null;
+        resetState();
+      }
+    }
+  });
+</script>
