@@ -177,7 +177,18 @@ const contactOptions = [
 
             <!-- Right: form -->
             <div class="lg:col-span-3 bg-white px-10 py-12">
-              <form class="space-y-5">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/contact/bedankt"
+                class="space-y-5"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="hidden">
+                  <label>Laat dit veld leeg: <input name="bot-field" /></label>
+                </p>
                 <div class="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label for="name" class="block text-xs font-semibold uppercase tracking-wide text-primary-500 mb-2">Naam</label>
