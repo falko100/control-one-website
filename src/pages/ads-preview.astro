@@ -1,0 +1,1139 @@
+---
+// Ads Preview — alle Google Ads banners in upload-klare formaten.
+// Deze pagina is uitsluitend voor interne export. Niet voor SEO.
+
+// Banner registry: elke banner heeft name, width, height, category.
+const banners = [
+  // RDA Marketing — SQUARE 1:1 (1200×1200)
+  { name: 'rda-square-a-zonder-consultant',  w: 1200, h: 1200, variant: 'square',    concept: 'A' },
+  { name: 'rda-square-b-28-stappen',         w: 1200, h: 1200, variant: 'square',    concept: 'B' },
+  { name: 'rda-square-c-4-normen',           w: 1200, h: 1200, variant: 'square',    concept: 'C' },
+  { name: 'rda-square-d-gratis-1min',        w: 1200, h: 1200, variant: 'square',    concept: 'D' },
+
+  // RDA Marketing — LANDSCAPE 1.91:1 (1200×628)
+  { name: 'rda-landscape-a-zonder-consultant', w: 1200, h: 628, variant: 'landscape', concept: 'A' },
+  { name: 'rda-landscape-b-28-stappen',        w: 1200, h: 628, variant: 'landscape', concept: 'B' },
+  { name: 'rda-landscape-c-4-normen',          w: 1200, h: 628, variant: 'landscape', concept: 'C' },
+  { name: 'rda-landscape-d-gratis-1min',       w: 1200, h: 628, variant: 'landscape', concept: 'D' },
+
+  // RDA Marketing — PORTRAIT 4:5 (960×1200)
+  { name: 'rda-portrait-a-zonder-consultant', w: 960, h: 1200, variant: 'portrait', concept: 'A' },
+  { name: 'rda-portrait-b-28-stappen',        w: 960, h: 1200, variant: 'portrait', concept: 'B' },
+  { name: 'rda-portrait-d-gratis-1min',       w: 960, h: 1200, variant: 'portrait', concept: 'D' },
+
+  // Logo assets
+  { name: 'logo-square-1200x1200',        w: 1200, h: 1200, variant: 'logo-square' },
+  { name: 'logo-landscape-1200x300',      w: 1200, h: 300,  variant: 'logo-landscape' },
+
+  // Classic uploaded display
+  { name: 'banner-300x250-zonder-consultant', w: 300, h: 250, variant: 'medium-rectangle', concept: 'A' },
+  { name: 'banner-300x250-28-stappen',        w: 300, h: 250, variant: 'medium-rectangle', concept: 'B' },
+  { name: 'banner-300x250-gratis-1min',       w: 300, h: 250, variant: 'medium-rectangle', concept: 'D' },
+  { name: 'banner-728x90-zonder-consultant',  w: 728, h: 90,  variant: 'leaderboard',      concept: 'A' },
+  { name: 'banner-728x90-28-stappen',         w: 728, h: 90,  variant: 'leaderboard',      concept: 'B' },
+  { name: 'banner-728x90-gratis-1min',        w: 728, h: 90,  variant: 'leaderboard',      concept: 'D' },
+  { name: 'banner-320x50-zonder-consultant',  w: 320, h: 50,  variant: 'mobile-banner' },
+  { name: 'banner-160x600-vertical',          w: 160, h: 600, variant: 'wide-skyscraper' },
+  { name: 'banner-300x600-halfpage',          w: 300, h: 600, variant: 'half-page' },
+  { name: 'banner-970x250-billboard',         w: 970, h: 250, variant: 'billboard' },
+];
+---
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Control One — Google Ads Preview</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-deep:     #02095a;
+      --c-deeper:   #030a4a;
+      --c-primary:  #1563b8;
+      --c-primary2: #196bd7;
+      --c-primary3: #2d8dda;
+      --c-accent:   #6fd0f0;
+      --c-accent2:  #01a2e8;
+      --c-white:    #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'TikTok Sans', system-ui, sans-serif; background: #f4f6fb; color: #0f172a; -webkit-font-smoothing: antialiased; }
+    body { padding: 40px 40px 120px; }
+    h1.preview-title { font-size: 28px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 8px; }
+    p.preview-sub { color: #64748b; margin-bottom: 40px; font-size: 14px; }
+    .ad-section { margin-bottom: 56px; }
+    .ad-section-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #475569; margin-bottom: 4px; }
+    .ad-section-desc { font-size: 12px; color: #94a3b8; margin-bottom: 16px; }
+    .ad-wrapper { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; align-items: flex-start; }
+    .ad-label { font-size: 11px; font-weight: 600; color: #475569; font-family: ui-monospace, monospace; }
+    .ad-dims { color: #94a3b8; font-weight: 400; }
+
+    /* === BANNER SHELL === */
+    .ad-banner {
+      position: relative;
+      overflow: hidden;
+      font-family: 'TikTok Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      line-height: 1;
+    }
+
+    /* Dark theme */
+    .bg-dark {
+      background:
+        radial-gradient(ellipse at 110% -10%, rgba(111,208,240,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at -10% 110%, rgba(21,99,184,0.35) 0%, transparent 60%),
+        linear-gradient(135deg, #02095a 0%, #0a1a7a 50%, #02095a 100%);
+    }
+    /* Light theme */
+    .bg-light {
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(111,208,240,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 0% 100%, rgba(21,99,184,0.10) 0%, transparent 60%),
+        linear-gradient(135deg, #ffffff 0%, #eef4fb 100%);
+    }
+    /* Accent theme (deep blue with accent highlight) */
+    .bg-accent {
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(111,208,240,0.35) 0%, transparent 55%),
+        linear-gradient(135deg, #1563b8 0%, #02095a 100%);
+    }
+
+    /* Common text styles */
+    .hl   { font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1.02; }
+    .hl-d { font-weight: 800; color: #02095a; letter-spacing: -0.02em; line-height: 1.02; }
+    .sub  { font-weight: 500; color: rgba(255,255,255,0.75); line-height: 1.35; }
+    .sub-d{ font-weight: 500; color: rgba(2,9,90,0.65); line-height: 1.35; }
+    .eyebrow   { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6fd0f0; }
+    .eyebrow-d { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1563b8; }
+
+    .chip {
+      display: inline-flex; align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .chip-d {
+      display: inline-flex; align-items: center;
+      border: 1px solid rgba(2,9,90,0.12);
+      background: rgba(2,9,90,0.04);
+      border-radius: 999px;
+      font-weight: 600;
+      color: #02095a;
+    }
+
+    /* Logo inline — we inline to guarantee exact rendering */
+    .logo-inline {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Brand mark (checkmark-in-cube) as SVG */
+    .brandmark {
+      display: inline-block;
+    }
+
+    /* Screenshot-safe: lock each banner pixel-perfect */
+    .ad-banner, .ad-banner * { transform: translateZ(0); }
+
+    /* Ring visual (step grid) */
+    .step-dots { display: flex; gap: 6px; }
+    .step-dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: rgba(111,208,240, 0.85);
+      box-shadow: 0 0 10px rgba(111,208,240,0.6);
+    }
+    .step-dot.faint { background: rgba(255,255,255,0.25); box-shadow: none; }
+
+    /* Framework badge blocks */
+    .fw-grid { display: grid; gap: 8px; }
+
+    /* Trust rule for minimum banners */
+    .iso-list {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      font-weight: 700; color: rgba(255,255,255,0.92);
+    }
+    .iso-dot {
+      width: 6px; height: 6px; border-radius: 999px;
+      background: #6fd0f0;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* Prevent scrollbars from showing up in large banners */
+    .ad-banner { isolation: isolate; }
+
+    /* ===== USP CHIP — "Start Gratis in 1 Minuut" ===== */
+    .usp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(111,208,240,0.26), rgba(111,208,240,0.06));
+      border: 1px solid rgba(111,208,240,0.5);
+      box-shadow: 0 0 24px rgba(111,208,240,0.18);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.005em;
+    }
+    .usp .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: #6fd0f0;
+      box-shadow: 0 0 12px #6fd0f0, 0 0 4px #ffffff;
+    }
+    .usp-d {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1563b8, #01a2e8);
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(21,99,184,0.28);
+      letter-spacing: -0.005em;
+    }
+    .usp-d .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: #ffffff;
+    }
+    /* Big attention-grabbing USP for Concept D */
+    .usp-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1563b8 0%, #01a2e8 100%);
+      color: #ffffff;
+      font-weight: 800;
+      box-shadow:
+        0 20px 48px rgba(1,162,232,0.35),
+        0 0 0 1px rgba(255,255,255,0.14) inset;
+      letter-spacing: -0.01em;
+    }
+    .usp-hero .dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 0 14px #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<h1 class="preview-title">Control One — Google Ads Banners</h1>
+<p class="preview-sub">
+  Elke banner is pixel-perfect gerenderd op de exacte upload-afmetingen van Google Ads.
+  Hieronder staan {banners.length} formaten. Gebruik <code>scripts/export-ads.mjs</code> om PNG's te exporteren naar <code>public/ads-export/</code>.
+</p>
+
+<!-- ============================================================= -->
+<!-- RDA MARKETING SQUARE 1:1 — 1200×1200                            -->
+<!-- ============================================================= -->
+<section class="ad-section">
+  <p class="ad-section-title">RDA Marketing Image · Square (1:1)</p>
+  <p class="ad-section-desc">Aanbevolen 1200×1200 · Verplicht voor Responsive Display Ads</p>
+
+  <!-- CONCEPT A: zonder consultant -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-square-a-zonder-consultant.png <span class="ad-dims">· 1200×1200</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-square-a-zonder-consultant" style="width:1200px;height:1200px;">
+      <!-- Logo top-left -->
+      <div style="position:absolute;top:72px;left:72px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:72px;width:auto;" />
+      </div>
+      <!-- Badge eyebrow — USP -->
+      <div style="position:absolute;top:72px;right:72px;">
+        <span class="usp" style="font-size:18px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <!-- Main headline block -->
+      <div style="position:absolute;left:72px;top:360px;right:72px;">
+        <h2 class="hl" style="font-size:128px;letter-spacing:-0.03em;line-height:0.98;">
+          ISO behalen<br/>zonder<br/>consultant.
+        </h2>
+        <p class="sub" style="margin-top:36px;font-size:28px;max-width:820px;">
+          Control One begeleidt je stap voor stap tot certificaat. Start gratis, geen creditcard.
+        </p>
+      </div>
+      <!-- Framework row bottom -->
+      <div style="position:absolute;bottom:96px;left:72px;right:72px;">
+        <div class="iso-list" style="font-size:22px;letter-spacing:0.02em;">
+          <span><span class="iso-dot"></span>ISO 27001</span>
+          <span><span class="iso-dot"></span>ISO 9001</span>
+          <span><span class="iso-dot"></span>ISO 14001</span>
+          <span><span class="iso-dot"></span>ISO 45001</span>
+        </div>
+        <div style="margin-top:18px;height:2px;background:linear-gradient(to right, rgba(111,208,240,0.6), transparent);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT B: 28 stappen -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-square-b-28-stappen.png <span class="ad-dims">· 1200×1200</span></span>
+    <div class="ad-banner bg-light" data-name="rda-square-b-28-stappen" style="width:1200px;height:1200px;">
+      <!-- Logo -->
+      <div style="position:absolute;top:72px;left:72px;">
+        <img src="/logo.svg" alt="Control One" style="height:72px;width:auto;" />
+      </div>
+      <!-- Eyebrow — USP -->
+      <div style="position:absolute;top:72px;right:72px;">
+        <span class="usp-d" style="font-size:18px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <!-- Headline -->
+      <div style="position:absolute;left:72px;top:320px;right:72px;">
+        <h2 class="hl-d" style="font-size:180px;letter-spacing:-0.04em;line-height:0.9;">
+          28 stappen.<br/>
+          <span style="background:linear-gradient(90deg,#1563b8,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">Nul twijfel.</span>
+        </h2>
+        <p class="sub-d" style="margin-top:40px;font-size:28px;max-width:820px;">
+          De coach die je stap voor stap naar certificaat leidt. Probeer 14 dagen gratis, geen creditcard.
+        </p>
+      </div>
+      <!-- Step dots visual -->
+      <div style="position:absolute;bottom:120px;left:72px;right:72px;">
+        <div style="display:grid;grid-template-columns:repeat(28,1fr);gap:8px;max-width:960px;">
+          {Array.from({length:28}).map((_,i) => (
+            <div style={`height:14px;border-radius:6px;background:${i<24?'linear-gradient(90deg,#1563b8,#01a2e8)':'rgba(2,9,90,0.12)'};`}></div>
+          ))}
+        </div>
+        <div style="margin-top:22px;display:flex;justify-content:space-between;font-size:16px;font-weight:600;color:rgba(2,9,90,0.55);">
+          <span>Gap analyse</span>
+          <span>Risicoanalyse</span>
+          <span>Documenten</span>
+          <span>Audit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT C: 4 normen 1 platform -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-square-c-4-normen.png <span class="ad-dims">· 1200×1200</span></span>
+    <div class="ad-banner bg-accent" data-name="rda-square-c-4-normen" style="width:1200px;height:1200px;">
+      <!-- Logo -->
+      <div style="position:absolute;top:72px;left:72px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:72px;width:auto;" />
+      </div>
+      <!-- USP top-right -->
+      <div style="position:absolute;top:72px;right:72px;">
+        <span class="usp" style="font-size:18px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <!-- Headline -->
+      <div style="position:absolute;left:72px;top:260px;right:72px;">
+        <p class="eyebrow" style="font-size:18px;">Multi-framework platform</p>
+        <h2 class="hl" style="margin-top:22px;font-size:156px;letter-spacing:-0.03em;line-height:0.94;">
+          4 normen.<br/>
+          1 platform.
+        </h2>
+      </div>
+      <!-- Framework cards 2x2 — typografisch -->
+      <div style="position:absolute;bottom:80px;left:72px;right:72px;">
+        <div class="fw-grid" style="grid-template-columns:1fr 1fr;gap:24px;">
+          <div style="position:relative;padding:36px 32px;border-radius:24px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:32px;bottom:32px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:16px;">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:6px;font-size:84px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+              <div style="margin-top:14px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:14px;font-size:18px;font-weight:700;color:#fff;">Informatiebeveiliging</div>
+              <div style="margin-top:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:0.01em;">93 controls · Annex A</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:36px 32px;border-radius:24px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:32px;bottom:32px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:16px;">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:6px;font-size:84px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+              <div style="margin-top:14px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:14px;font-size:18px;font-weight:700;color:#fff;">Kwaliteitsmanagement</div>
+              <div style="margin-top:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:0.01em;">7 principes · PDCA</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:36px 32px;border-radius:24px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:32px;bottom:32px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:16px;">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:6px;font-size:84px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+              <div style="margin-top:14px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:14px;font-size:18px;font-weight:700;color:#fff;">Milieumanagement</div>
+              <div style="margin-top:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:0.01em;">Lifecycle · EMS</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:36px 32px;border-radius:24px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:32px;bottom:32px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:16px;">
+              <div style="font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:6px;font-size:84px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+              <div style="margin-top:14px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:14px;font-size:18px;font-weight:700;color:#fff;">Arbo &amp; veiligheid</div>
+              <div style="margin-top:4px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:0.01em;">OH&amp;S · Risk-based</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT D: Start Gratis in 1 Minuut -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-square-d-gratis-1min.png <span class="ad-dims">· 1200×1200</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-square-d-gratis-1min" style="width:1200px;height:1200px;">
+      <!-- Logo -->
+      <div style="position:absolute;top:72px;left:72px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:72px;width:auto;" />
+      </div>
+      <div style="position:absolute;top:86px;right:72px;">
+        <span class="eyebrow" style="font-size:16px;">ISO Compliance · MKB</span>
+      </div>
+
+      <!-- Big USP headline -->
+      <div style="position:absolute;left:72px;top:310px;right:72px;">
+        <p class="eyebrow" style="font-size:20px;color:#6fd0f0;">Start nu</p>
+        <h2 class="hl" style="margin-top:24px;font-size:176px;letter-spacing:-0.04em;line-height:0.92;">
+          Gratis.<br/>
+          <span style="background:linear-gradient(90deg,#6fd0f0,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">In 1 minuut.</span>
+        </h2>
+        <p class="sub" style="margin-top:48px;font-size:30px;max-width:960px;">
+          Geen creditcard. Geen salesgesprek. Direct aan de slag met je gap analyse.
+        </p>
+      </div>
+
+      <!-- Benefit row with checkmarks -->
+      <div style="position:absolute;bottom:140px;left:72px;right:72px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+          <div style="padding:24px;border-radius:18px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);">
+            <div style="font-size:28px;font-weight:800;color:#6fd0f0;">✓</div>
+            <div style="margin-top:8px;font-size:18px;font-weight:700;color:#fff;">14 dagen gratis</div>
+            <div style="margin-top:4px;font-size:14px;color:rgba(255,255,255,0.6);">Alle functies</div>
+          </div>
+          <div style="padding:24px;border-radius:18px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);">
+            <div style="font-size:28px;font-weight:800;color:#6fd0f0;">✓</div>
+            <div style="margin-top:8px;font-size:18px;font-weight:700;color:#fff;">Geen creditcard</div>
+            <div style="margin-top:4px;font-size:14px;color:rgba(255,255,255,0.6);">Vrijblijvend</div>
+          </div>
+          <div style="padding:24px;border-radius:18px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);">
+            <div style="font-size:28px;font-weight:800;color:#6fd0f0;">✓</div>
+            <div style="margin-top:8px;font-size:18px;font-weight:700;color:#fff;">Self-service</div>
+            <div style="margin-top:4px;font-size:14px;color:rgba(255,255,255,0.6);">Meteen starten</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:absolute;bottom:72px;left:72px;right:72px;">
+        <div class="iso-list" style="font-size:18px;letter-spacing:0.04em;">
+          <span><span class="iso-dot"></span>ISO 27001</span>
+          <span><span class="iso-dot"></span>ISO 9001</span>
+          <span><span class="iso-dot"></span>ISO 14001</span>
+          <span><span class="iso-dot"></span>ISO 45001</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- RDA MARKETING LANDSCAPE 1.91:1 — 1200×628                      -->
+<!-- ============================================================= -->
+<section class="ad-section">
+  <p class="ad-section-title">RDA Marketing Image · Landscape (1.91:1)</p>
+  <p class="ad-section-desc">Aanbevolen 1200×628 · Dekt in-feed, Gmail, Discover</p>
+
+  <!-- A -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-landscape-a-zonder-consultant.png <span class="ad-dims">· 1200×628</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-landscape-a-zonder-consultant" style="width:1200px;height:628px;">
+      <div style="position:absolute;top:40px;left:56px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:44px;" />
+      </div>
+      <div style="position:absolute;left:56px;top:170px;right:440px;">
+        <p class="eyebrow" style="font-size:13px;">ISO compliance platform</p>
+        <h2 class="hl" style="margin-top:16px;font-size:80px;line-height:0.98;">
+          ISO behalen<br/>zonder consultant.
+        </h2>
+        <p class="sub" style="margin-top:22px;font-size:20px;max-width:640px;">
+          Stap voor stap naar certificering. Start in 1 minuut, geen creditcard.
+        </p>
+        <div style="margin-top:22px;"><span class="usp" style="font-size:15px;"><span class="dot"></span>Start Gratis in 1 Minuut</span></div>
+      </div>
+      <!-- Side visual: typographic ISO cards -->
+      <div style="position:absolute;right:56px;top:140px;width:360px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="position:relative;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:14px;">
+            <div style="width:3px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:0;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap;">Informatie-<br/>beveiliging</div>
+          </div>
+          <div style="position:relative;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:14px;">
+            <div style="width:3px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:0;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap;">Kwaliteits-<br/>management</div>
+          </div>
+          <div style="position:relative;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:14px;">
+            <div style="width:3px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:0;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap;">Milieu-<br/>management</div>
+          </div>
+          <div style="position:relative;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:14px;">
+            <div style="width:3px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:0;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#fff;text-align:right;white-space:nowrap;">Arbo &amp;<br/>veiligheid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-landscape-b-28-stappen.png <span class="ad-dims">· 1200×628</span></span>
+    <div class="ad-banner bg-light" data-name="rda-landscape-b-28-stappen" style="width:1200px;height:628px;">
+      <div style="position:absolute;top:40px;left:56px;">
+        <img src="/logo.svg" alt="Control One" style="height:44px;" />
+      </div>
+      <div style="position:absolute;left:56px;top:160px;right:56px;">
+        <p class="eyebrow-d" style="font-size:13px;">Implementatiecoach</p>
+        <h2 class="hl-d" style="margin-top:14px;font-size:120px;line-height:0.94;">
+          28 stappen. <span style="background:linear-gradient(90deg,#1563b8,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">Nul twijfel.</span>
+        </h2>
+        <p class="sub-d" style="margin-top:18px;font-size:20px;max-width:780px;">
+          Van gap analyse tot audit. Start Gratis in 1 Minuut — geen creditcard.
+        </p>
+      </div>
+      <div style="position:absolute;top:40px;right:56px;">
+        <span class="usp-d" style="font-size:15px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;bottom:54px;left:56px;right:56px;">
+        <div style="display:grid;grid-template-columns:repeat(28,1fr);gap:6px;">
+          {Array.from({length:28}).map((_,i) => (
+            <div style={`height:8px;border-radius:3px;background:${i<24?'linear-gradient(90deg,#1563b8,#01a2e8)':'rgba(2,9,90,0.12)'};`}></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-landscape-c-4-normen.png <span class="ad-dims">· 1200×628</span></span>
+    <div class="ad-banner bg-accent" data-name="rda-landscape-c-4-normen" style="width:1200px;height:628px;">
+      <div style="position:absolute;top:40px;left:56px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:44px;" />
+      </div>
+      <div style="position:absolute;left:56px;top:140px;right:56px;">
+        <p class="eyebrow" style="font-size:14px;">Multi-framework</p>
+        <h2 class="hl" style="margin-top:18px;font-size:108px;line-height:0.94;">
+          4 normen. 1 platform.
+        </h2>
+        <p class="sub" style="margin-top:18px;font-size:20px;">
+          ISO 27001 · 9001 · 14001 · 45001. Start Gratis in 1 Minuut.
+        </p>
+      </div>
+      <div style="position:absolute;top:40px;right:56px;">
+        <span class="usp" style="font-size:15px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;bottom:36px;left:56px;right:56px;">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+          <div style="position:relative;padding:20px 18px;border-radius:16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:16px;bottom:16px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:2px;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+              <div style="margin-top:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);">Informatiebeveiliging</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:20px 18px;border-radius:16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:16px;bottom:16px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:2px;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+              <div style="margin-top:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);">Kwaliteit</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:20px 18px;border-radius:16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:16px;bottom:16px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:2px;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+              <div style="margin-top:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);">Milieu</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:20px 18px;border-radius:16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:16px;bottom:16px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:2px;font-size:42px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+              <div style="margin-top:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);">Arbo &amp; veiligheid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT D: Start Gratis in 1 Minuut -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-landscape-d-gratis-1min.png <span class="ad-dims">· 1200×628</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-landscape-d-gratis-1min" style="width:1200px;height:628px;">
+      <div style="position:absolute;top:40px;left:56px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:44px;" />
+      </div>
+      <div style="position:absolute;left:56px;top:150px;right:480px;">
+        <p class="eyebrow" style="font-size:14px;color:#6fd0f0;">Start direct</p>
+        <h2 class="hl" style="margin-top:14px;font-size:108px;line-height:0.92;letter-spacing:-0.03em;">
+          Gratis.<br/>
+          <span style="background:linear-gradient(90deg,#6fd0f0,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">In 1 minuut.</span>
+        </h2>
+        <p class="sub" style="margin-top:22px;font-size:20px;">
+          Geen creditcard. Direct aan de slag.
+        </p>
+      </div>
+
+      <!-- Benefits right side -->
+      <div style="position:absolute;right:56px;top:150px;width:380px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="padding:18px 20px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:14px;">
+            <div style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:18px;font-weight:800;">✓</div>
+            <div><div style="font-size:18px;font-weight:700;color:#fff;">14 dagen gratis</div><div style="font-size:12px;color:rgba(255,255,255,0.6);">Alle functies</div></div>
+          </div>
+          <div style="padding:18px 20px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:14px;">
+            <div style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:18px;font-weight:800;">✓</div>
+            <div><div style="font-size:18px;font-weight:700;color:#fff;">Geen creditcard</div><div style="font-size:12px;color:rgba(255,255,255,0.6);">Vrijblijvend</div></div>
+          </div>
+          <div style="padding:18px 20px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:14px;">
+            <div style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:18px;font-weight:800;">✓</div>
+            <div><div style="font-size:18px;font-weight:700;color:#fff;">Self-service</div><div style="font-size:12px;color:rgba(255,255,255,0.6);">Zelf aan de slag</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:absolute;bottom:40px;left:56px;right:56px;">
+        <div style="height:2px;background:linear-gradient(to right, rgba(111,208,240,0.5), transparent);margin-bottom:16px;"></div>
+        <div class="iso-list" style="font-size:14px;">
+          <span><span class="iso-dot"></span>ISO 27001</span>
+          <span><span class="iso-dot"></span>ISO 9001</span>
+          <span><span class="iso-dot"></span>ISO 14001</span>
+          <span><span class="iso-dot"></span>ISO 45001</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- RDA MARKETING PORTRAIT 4:5 — 960×1200                          -->
+<!-- ============================================================= -->
+<section class="ad-section">
+  <p class="ad-section-title">RDA Marketing Image · Portrait (4:5)</p>
+  <p class="ad-section-desc">Aanbevolen 960×1200 · Mobile feed &amp; Discover</p>
+
+  <!-- A -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-portrait-a-zonder-consultant.png <span class="ad-dims">· 960×1200</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-portrait-a-zonder-consultant" style="width:960px;height:1200px;">
+      <div style="position:absolute;top:56px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:52px;" />
+        <span class="usp" style="font-size:15px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;left:56px;top:300px;right:56px;">
+        <p class="eyebrow" style="font-size:13px;">ISO Compliance</p>
+        <h2 class="hl" style="margin-top:20px;font-size:120px;line-height:0.96;letter-spacing:-0.03em;">
+          ISO behalen<br/>zonder<br/>consultant.
+        </h2>
+        <p class="sub" style="margin-top:32px;font-size:22px;">
+          Stap voor stap naar certificaat. Gratis starten, geen creditcard.
+        </p>
+      </div>
+      <div style="position:absolute;bottom:90px;left:56px;right:56px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="position:relative;padding:26px 24px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:24px;bottom:24px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:14px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:4px;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+              <div style="margin-top:10px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:10px;font-size:14px;font-weight:700;color:#fff;">Informatiebeveiliging</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:26px 24px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:24px;bottom:24px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:14px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:4px;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+              <div style="margin-top:10px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:10px;font-size:14px;font-weight:700;color:#fff;">Kwaliteitsmanagement</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:26px 24px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:24px;bottom:24px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:14px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:4px;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+              <div style="margin-top:10px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:10px;font-size:14px;font-weight:700;color:#fff;">Milieumanagement</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:26px 24px;border-radius:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:24px;bottom:24px;width:3px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:14px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);">ISO</div>
+              <div style="margin-top:4px;font-size:64px;font-weight:800;letter-spacing:-0.05em;line-height:0.95;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+              <div style="margin-top:10px;height:1px;background:linear-gradient(to right,rgba(111,208,240,0.4),transparent);"></div>
+              <div style="margin-top:10px;font-size:14px;font-weight:700;color:#fff;">Arbo &amp; veiligheid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-portrait-b-28-stappen.png <span class="ad-dims">· 960×1200</span></span>
+    <div class="ad-banner bg-light" data-name="rda-portrait-b-28-stappen" style="width:960px;height:1200px;">
+      <div style="position:absolute;top:56px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
+        <img src="/logo.svg" alt="Control One" style="height:52px;" />
+        <span class="usp-d" style="font-size:15px;"><span class="dot"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;left:56px;top:260px;right:56px;">
+        <p class="eyebrow-d" style="font-size:13px;">Implementatiecoach</p>
+        <h2 class="hl-d" style="margin-top:18px;font-size:140px;line-height:0.92;letter-spacing:-0.03em;">
+          28 stappen.<br/>
+          <span style="background:linear-gradient(90deg,#1563b8,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">Nul twijfel.</span>
+        </h2>
+        <p class="sub-d" style="margin-top:32px;font-size:22px;">
+          De ISO-coach die je meteen aan het werk zet. 14 dagen gratis, geen creditcard.
+        </p>
+      </div>
+      <!-- Timeline: certificeringsreis -->
+      <div style="position:absolute;bottom:90px;left:56px;right:56px;">
+        <div style="position:relative;height:140px;">
+          <!-- Rail background -->
+          <div style="position:absolute;top:26px;left:30px;right:30px;height:4px;border-radius:2px;background:rgba(2,9,90,0.10);"></div>
+          <!-- Rail progress (gradient) -->
+          <div style="position:absolute;top:26px;left:30px;width:calc((100% - 60px) * 0.82);height:4px;border-radius:2px;background:linear-gradient(90deg,#1563b8,#01a2e8);box-shadow:0 0 18px rgba(1,162,232,0.35);"></div>
+
+          <!-- Milestones -->
+          <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;">
+            <!-- 1. Start -->
+            <div style="display:flex;flex-direction:column;align-items:center;width:140px;">
+              <div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#1563b8,#01a2e8);border:4px solid #ffffff;box-shadow:0 8px 18px rgba(21,99,184,0.28);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;letter-spacing:-0.01em;">✓</div>
+              <div style="margin-top:16px;font-size:16px;font-weight:800;color:#02095a;letter-spacing:-0.01em;">Start</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:rgba(2,9,90,0.55);">Dag 1</div>
+            </div>
+            <!-- 2. Gap analyse -->
+            <div style="display:flex;flex-direction:column;align-items:center;width:140px;">
+              <div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#1563b8,#01a2e8);border:4px solid #ffffff;box-shadow:0 8px 18px rgba(21,99,184,0.28);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;">✓</div>
+              <div style="margin-top:16px;font-size:16px;font-weight:800;color:#02095a;letter-spacing:-0.01em;">Gap analyse</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:rgba(2,9,90,0.55);">Week 1</div>
+            </div>
+            <!-- 3. Implementatie -->
+            <div style="display:flex;flex-direction:column;align-items:center;width:140px;">
+              <div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#1563b8,#01a2e8);border:4px solid #ffffff;box-shadow:0 8px 18px rgba(21,99,184,0.28);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;">✓</div>
+              <div style="margin-top:16px;font-size:16px;font-weight:800;color:#02095a;letter-spacing:-0.01em;">Implementatie</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:rgba(2,9,90,0.55);">Week 2–8</div>
+            </div>
+            <!-- 4. Interne audit -->
+            <div style="display:flex;flex-direction:column;align-items:center;width:140px;">
+              <div style="width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#1563b8,#01a2e8);border:4px solid #ffffff;box-shadow:0 8px 18px rgba(21,99,184,0.28);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;">✓</div>
+              <div style="margin-top:16px;font-size:16px;font-weight:800;color:#02095a;letter-spacing:-0.01em;">Interne audit</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:rgba(2,9,90,0.55);">Week 9–10</div>
+            </div>
+            <!-- 5. Certificaat -->
+            <div style="display:flex;flex-direction:column;align-items:center;width:140px;">
+              <div style="width:56px;height:56px;border-radius:999px;background:#ffffff;border:4px solid #01a2e8;box-shadow:0 10px 24px rgba(1,162,232,0.45),0 0 0 8px rgba(1,162,232,0.10);display:flex;align-items:center;justify-content:center;color:#01a2e8;font-size:22px;font-weight:800;">★</div>
+              <div style="margin-top:16px;font-size:16px;font-weight:800;color:#02095a;letter-spacing:-0.01em;">Certificaat</div>
+              <div style="margin-top:4px;font-size:12px;font-weight:600;color:#01a2e8;">3–6 maanden</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT D: Start Gratis in 1 Minuut -->
+  <div class="ad-wrapper">
+    <span class="ad-label">rda-portrait-d-gratis-1min.png <span class="ad-dims">· 960×1200</span></span>
+    <div class="ad-banner bg-dark" data-name="rda-portrait-d-gratis-1min" style="width:960px;height:1200px;">
+      <div style="position:absolute;top:56px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:52px;" />
+        <span class="eyebrow" style="font-size:13px;">ISO · MKB</span>
+      </div>
+
+      <div style="position:absolute;left:56px;top:240px;right:56px;">
+        <p class="eyebrow" style="font-size:15px;color:#6fd0f0;">Start direct</p>
+        <h2 class="hl" style="margin-top:22px;font-size:140px;line-height:0.9;letter-spacing:-0.04em;">
+          Gratis.<br/>
+          <span style="background:linear-gradient(90deg,#6fd0f0,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">In 1 minuut.</span>
+        </h2>
+        <p class="sub" style="margin-top:32px;font-size:22px;">
+          Geen creditcard. Geen salesgesprek. Direct aan de slag met je gap analyse.
+        </p>
+      </div>
+
+      <div style="position:absolute;bottom:100px;left:56px;right:56px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="padding:18px 22px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:16px;">
+            <div style="flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:20px;font-weight:800;">✓</div>
+            <div style="font-size:22px;font-weight:700;color:#fff;">14 dagen gratis alle functies</div>
+          </div>
+          <div style="padding:18px 22px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:16px;">
+            <div style="flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:20px;font-weight:800;">✓</div>
+            <div style="font-size:22px;font-weight:700;color:#fff;">Geen creditcard vereist</div>
+          </div>
+          <div style="padding:18px 22px;border-radius:16px;background:rgba(111,208,240,0.08);border:1px solid rgba(111,208,240,0.3);display:flex;align-items:center;gap:16px;">
+            <div style="flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:rgba(111,208,240,0.2);display:flex;align-items:center;justify-content:center;color:#6fd0f0;font-size:20px;font-weight:800;">✓</div>
+            <div style="font-size:22px;font-weight:700;color:#fff;">Self-service onboarding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- LOGO ASSETS                                                    -->
+<!-- ============================================================= -->
+<section class="ad-section">
+  <p class="ad-section-title">Logo assets</p>
+  <p class="ad-section-desc">Square 1:1 + Landscape 4:1 · Verplicht voor RDA &amp; Demand Gen</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">logo-square-1200x1200.png <span class="ad-dims">· 1200×1200</span></span>
+    <div class="ad-banner" data-name="logo-square-1200x1200" style="width:1200px;height:1200px;background:#ffffff;display:flex;align-items:center;justify-content:center;">
+      <img src="/logo.svg" alt="Control One" style="width:720px;height:auto;" />
+    </div>
+  </div>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">logo-landscape-1200x300.png <span class="ad-dims">· 1200×300</span></span>
+    <div class="ad-banner" data-name="logo-landscape-1200x300" style="width:1200px;height:300px;background:#ffffff;display:flex;align-items:center;justify-content:center;">
+      <img src="/logo.svg" alt="Control One" style="width:820px;height:auto;" />
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- CLASSIC UPLOADED DISPLAY BANNERS                               -->
+<!-- ============================================================= -->
+<section class="ad-section">
+  <p class="ad-section-title">Classic uploaded display · Medium Rectangle 300×250</p>
+  <p class="ad-section-desc">~40% van alle display impressions</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-300x250-zonder-consultant.png <span class="ad-dims">· 300×250</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-300x250-zonder-consultant" style="width:300px;height:250px;">
+      <div style="position:absolute;top:14px;left:14px;"><img src="/logo-footer.svg" alt="Control One" style="height:16px;" /></div>
+      <div style="position:absolute;left:14px;top:56px;right:14px;">
+        <h3 class="hl" style="font-size:24px;line-height:1.02;letter-spacing:-0.02em;">ISO behalen<br/>zonder consultant.</h3>
+        <p class="sub" style="margin-top:8px;font-size:11px;">Stap voor stap naar certificaat.</p>
+      </div>
+      <div style="position:absolute;bottom:40px;left:14px;right:14px;">
+        <span class="usp" style="font-size:10px;padding:6px 10px;"><span class="dot" style="width:5px;height:5px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+        <div style="font-size:9px;font-weight:600;color:rgba(111,208,240,0.9);letter-spacing:0.05em;">ISO 27001 · 9001 · 14001 · 45001</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-300x250-28-stappen.png <span class="ad-dims">· 300×250</span></span>
+    <div class="ad-banner bg-light" data-name="banner-300x250-28-stappen" style="width:300px;height:250px;">
+      <div style="position:absolute;top:14px;left:14px;"><img src="/logo.svg" alt="Control One" style="height:16px;" /></div>
+      <div style="position:absolute;left:14px;top:56px;right:14px;">
+        <h3 class="hl-d" style="font-size:28px;line-height:1.0;letter-spacing:-0.02em;">
+          28 stappen.<br/>
+          <span style="background:linear-gradient(90deg,#1563b8,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">Nul twijfel.</span>
+        </h3>
+        <p class="sub-d" style="margin-top:8px;font-size:11px;">De coach die je naar certificaat leidt.</p>
+      </div>
+      <div style="position:absolute;bottom:36px;left:14px;right:14px;">
+        <span class="usp-d" style="font-size:10px;padding:6px 10px;"><span class="dot" style="width:5px;height:5px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+        <div style="display:grid;grid-template-columns:repeat(28,1fr);gap:2px;">
+          {Array.from({length:28}).map((_,i) => (
+            <div style={`height:3px;border-radius:1.5px;background:${i<24?'linear-gradient(90deg,#1563b8,#01a2e8)':'rgba(2,9,90,0.12)'};`}></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Concept D — Start Gratis in 1 Minuut (300×250) -->
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-300x250-gratis-1min.png <span class="ad-dims">· 300×250</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-300x250-gratis-1min" style="width:300px;height:250px;">
+      <div style="position:absolute;top:14px;left:14px;"><img src="/logo-footer.svg" alt="Control One" style="height:16px;" /></div>
+      <div style="position:absolute;left:14px;top:56px;right:14px;">
+        <p class="eyebrow" style="font-size:9px;color:#6fd0f0;">Start direct</p>
+        <h3 class="hl" style="margin-top:8px;font-size:34px;line-height:0.94;letter-spacing:-0.03em;">
+          Gratis.<br/>
+          <span style="background:linear-gradient(90deg,#6fd0f0,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">In 1 minuut.</span>
+        </h3>
+      </div>
+      <div style="position:absolute;bottom:36px;left:14px;right:14px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.85);">
+          <span style="color:#6fd0f0;font-weight:800;">✓</span><span>Geen creditcard</span>
+          <span style="color:#6fd0f0;font-weight:800;margin-left:8px;">✓</span><span>Self-service</span>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:14px;left:14px;right:14px;">
+        <div style="font-size:9px;font-weight:600;color:rgba(111,208,240,0.9);letter-spacing:0.05em;">ISO 27001 · 9001 · 14001 · 45001</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="ad-section-title" style="margin-top:40px;">Leaderboard 728×90</p>
+  <p class="ad-section-desc">Desktop header</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-728x90-zonder-consultant.png <span class="ad-dims">· 728×90</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-728x90-zonder-consultant" style="width:728px;height:90px;">
+      <div style="position:absolute;top:50%;left:20px;transform:translateY(-50%);">
+        <img src="/logo-footer.svg" alt="Control One" style="height:22px;" />
+      </div>
+      <div style="position:absolute;top:50%;left:190px;right:220px;transform:translateY(-50%);">
+        <h3 class="hl" style="font-size:22px;line-height:1.05;letter-spacing:-0.02em;">ISO behalen zonder consultant.</h3>
+        <p class="sub" style="margin-top:3px;font-size:11px;">Stap voor stap. 27001 · 9001 · 14001 · 45001.</p>
+      </div>
+      <div style="position:absolute;top:50%;right:30px;transform:translateY(-50%);">
+        <span class="usp" style="font-size:12px;padding:8px 14px;"><span class="dot" style="width:6px;height:6px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-728x90-28-stappen.png <span class="ad-dims">· 728×90</span></span>
+    <div class="ad-banner bg-light" data-name="banner-728x90-28-stappen" style="width:728px;height:90px;">
+      <div style="position:absolute;top:50%;left:20px;transform:translateY(-50%);">
+        <img src="/logo.svg" alt="Control One" style="height:22px;" />
+      </div>
+      <div style="position:absolute;top:50%;left:190px;right:220px;transform:translateY(-50%);">
+        <h3 class="hl-d" style="font-size:22px;line-height:1.05;letter-spacing:-0.02em;">28 stappen. <span style="background:linear-gradient(90deg,#1563b8,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">Nul twijfel.</span></h3>
+        <p class="sub-d" style="margin-top:2px;font-size:11px;">De ISO-coach voor het MKB.</p>
+      </div>
+      <div style="position:absolute;top:50%;right:20px;transform:translateY(-50%);">
+        <span class="usp-d" style="font-size:12px;padding:8px 14px;"><span class="dot" style="width:6px;height:6px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Concept D — Start Gratis in 1 Minuut (728×90) -->
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-728x90-gratis-1min.png <span class="ad-dims">· 728×90</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-728x90-gratis-1min" style="width:728px;height:90px;">
+      <div style="position:absolute;top:50%;left:20px;transform:translateY(-50%);">
+        <img src="/logo-footer.svg" alt="Control One" style="height:22px;" />
+      </div>
+      <div style="position:absolute;top:50%;left:180px;right:230px;transform:translateY(-50%);">
+        <h3 class="hl" style="font-size:26px;line-height:1;letter-spacing:-0.02em;">
+          Gratis. <span style="background:linear-gradient(90deg,#6fd0f0,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent;">In 1 minuut.</span>
+        </h3>
+        <p class="sub" style="margin-top:3px;font-size:11px;">Geen creditcard · 14 dagen alle functies</p>
+      </div>
+      <div style="position:absolute;top:50%;right:20px;transform:translateY(-50%);">
+        <span class="usp" style="font-size:12px;padding:8px 14px;"><span class="dot" style="width:6px;height:6px;"></span>Start direct</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="ad-section-title" style="margin-top:40px;">Mobile Banner 320×50</p>
+  <p class="ad-section-desc">Mobile sticky header/footer</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-320x50-zonder-consultant.png <span class="ad-dims">· 320×50</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-320x50-zonder-consultant" style="width:320px;height:50px;">
+      <div style="position:absolute;top:50%;left:12px;transform:translateY(-50%);">
+        <img src="/logo-footer.svg" alt="Control One" style="height:16px;" />
+      </div>
+      <div style="position:absolute;top:50%;left:118px;right:12px;transform:translateY(-50%);">
+        <h3 class="hl" style="font-size:13px;line-height:1.1;letter-spacing:-0.01em;">ISO zonder consultant.</h3>
+        <p class="sub" style="margin-top:1px;font-size:9px;color:#6fd0f0;font-weight:700;">▸ Start Gratis in 1 Minuut</p>
+      </div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:3px;background:linear-gradient(180deg,#6fd0f0,#1563b8);"></div>
+    </div>
+  </div>
+
+  <p class="ad-section-title" style="margin-top:40px;">Wide Skyscraper 160×600</p>
+  <p class="ad-section-desc">Desktop sidebar vertical</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-160x600-vertical.png <span class="ad-dims">· 160×600</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-160x600-vertical" style="width:160px;height:600px;">
+      <div style="position:absolute;top:16px;left:16px;right:16px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:18px;" />
+      </div>
+      <div style="position:absolute;left:16px;top:54px;right:16px;">
+        <span class="usp" style="font-size:9px;padding:5px 9px;"><span class="dot" style="width:4px;height:4px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;left:16px;top:110px;right:16px;">
+        <h3 class="hl" style="font-size:26px;line-height:1.0;letter-spacing:-0.02em;">
+          ISO<br/>behalen<br/>zonder<br/>consultant.
+        </h3>
+      </div>
+      <div style="position:absolute;left:16px;bottom:16px;right:16px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="position:relative;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:7px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:22px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:7px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:22px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:7px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:22px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:7px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:22px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="ad-section-title" style="margin-top:40px;">Half Page 300×600</p>
+  <p class="ad-section-desc">Desktop sidebar premium</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-300x600-halfpage.png <span class="ad-dims">· 300×600</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-300x600-halfpage" style="width:300px;height:600px;">
+      <div style="position:absolute;top:24px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:22px;" />
+      </div>
+      <div style="position:absolute;left:24px;top:72px;right:24px;">
+        <span class="usp" style="font-size:11px;padding:7px 12px;"><span class="dot" style="width:6px;height:6px;"></span>Start Gratis in 1 Minuut</span>
+        <h3 class="hl" style="margin-top:16px;font-size:40px;line-height:0.95;letter-spacing:-0.02em;">
+          4 normen.<br/>1 platform.
+        </h3>
+        <p class="sub" style="margin-top:12px;font-size:13px;">Alles voor ISO-certificering op één plek. Geen creditcard.</p>
+      </div>
+      <div style="position:absolute;left:24px;bottom:24px;right:24px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:10px;">
+            <div style="width:2px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:1px;font-size:26px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;color:#fff;text-align:right;">Info-<br/>beveiliging</span>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:10px;">
+            <div style="width:2px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:1px;font-size:26px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;color:#fff;text-align:right;">Kwaliteits-<br/>management</span>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:10px;">
+            <div style="width:2px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:1px;font-size:26px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;color:#fff;text-align:right;">Milieu-<br/>management</span>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;gap:10px;">
+            <div style="width:2px;align-self:stretch;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:1px;font-size:26px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;color:#fff;text-align:right;">Arbo &amp;<br/>veiligheid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="ad-section-title" style="margin-top:40px;">Billboard 970×250</p>
+  <p class="ad-section-desc">Desktop top-of-page premium</p>
+
+  <div class="ad-wrapper">
+    <span class="ad-label">banner-970x250-billboard.png <span class="ad-dims">· 970×250</span></span>
+    <div class="ad-banner bg-dark" data-name="banner-970x250-billboard" style="width:970px;height:250px;">
+      <div style="position:absolute;top:28px;left:36px;">
+        <img src="/logo-footer.svg" alt="Control One" style="height:30px;" />
+      </div>
+      <div style="position:absolute;top:32px;right:380px;">
+        <span class="usp" style="font-size:13px;padding:8px 14px;"><span class="dot" style="width:7px;height:7px;"></span>Start Gratis in 1 Minuut</span>
+      </div>
+      <div style="position:absolute;left:36px;top:86px;right:380px;">
+        <h3 class="hl" style="font-size:52px;line-height:0.98;letter-spacing:-0.02em;">
+          ISO behalen<br/>zonder consultant.
+        </h3>
+        <p class="sub" style="margin-top:10px;font-size:14px;">Gratis starten · geen creditcard · direct aan de slag.</p>
+      </div>
+      <div style="position:absolute;right:36px;top:36px;bottom:36px;width:320px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;height:100%;">
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:30px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">27001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:30px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">9001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:30px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">14001</div>
+            </div>
+          </div>
+          <div style="position:relative;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);overflow:hidden;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,#6fd0f0,#01a2e8);border-radius:999px;"></div>
+            <div style="padding-left:8px;">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(111,208,240,0.85);line-height:1;">ISO</div>
+              <div style="margin-top:2px;font-size:30px;font-weight:800;letter-spacing:-0.04em;line-height:1;background:linear-gradient(180deg,#ffffff 30%,#6fd0f0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;">45001</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

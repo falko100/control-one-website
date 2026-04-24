@@ -275,9 +275,78 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right: iMac mockup -->
-          <div class="hidden lg:block flex-shrink-0">
-            <img src="/images/imac-mockup.png" alt="Control One platform op iMac" style="width: 560px; max-width: 100%;" loading="eager" />
+          <!-- Right: norm structure card -->
+          <div class="hidden lg:block flex-shrink-0 w-[520px] max-w-full">
+            <div class="relative rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md p-7 shadow-2xl shadow-black/40 overflow-hidden">
+              <div class="absolute -top-16 -right-16 w-56 h-56 bg-green-400/30 rounded-full blur-3xl pointer-events-none"></div>
+
+              <!-- Header -->
+              <div class="relative flex items-start gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12 21V3m0 18c-4.418 0-8-4.03-8-9s3.582-9 8-9m0 18c4.418 0 8-4.03 8-9s-3.582-9-8-9"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-[10px] font-bold tracking-widest uppercase text-green-400/80">Internationale norm</p>
+                  <p class="mt-0.5 text-lg font-bold text-white tracking-tight">ISO 14001:2015</p>
+                  <p class="text-sm text-primary-200/70">Environmental Management System</p>
+                </div>
+              </div>
+
+              <!-- Hoofdstukken 4–10 -->
+              <div class="relative mb-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Hoofdstukken 4–10</span>
+                  <span class="text-[10px] text-primary-300/60">7 clausules</span>
+                </div>
+                <div class="grid grid-cols-7 gap-2">
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">4</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">5</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">6</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">7</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">8</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">9</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-[13px] font-bold text-white/90">10</div>
+                </div>
+              </div>
+
+              <!-- Key EMS elements -->
+              <div class="relative mb-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Kernelementen EMS</span>
+                  <span class="text-[10px] font-bold text-green-400">4 pijlers</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Milieuaspecten</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Identificeer & beoordeel</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Lifecycle-denken</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Ketenperspectief</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Wettelijke naleving</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Compliance tracker</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Noodvoorbereiding</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Incidentprocedures</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coverage badge -->
+              <div class="relative pt-5 border-t border-white/10 flex items-center gap-2.5">
+                <div class="w-5 h-5 rounded-full bg-green-400/20 border border-green-400/40 flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-semibold text-white">100% gedekt door Control One</span>
+              </div>
+            </div>
           </div>
 
         </div>

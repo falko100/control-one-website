@@ -1,0 +1,117 @@
+[
+  {
+    "name": "rda-square-a-zonder-consultant",
+    "px": "1200×1200",
+    "kb": "871.0"
+  },
+  {
+    "name": "rda-square-b-28-stappen",
+    "px": "1200×1200",
+    "kb": "731.8"
+  },
+  {
+    "name": "rda-square-c-4-normen",
+    "px": "1200×1200",
+    "kb": "865.4"
+  },
+  {
+    "name": "rda-square-d-gratis-1min",
+    "px": "1200×1200",
+    "kb": "888.5"
+  },
+  {
+    "name": "rda-landscape-a-zonder-consultant",
+    "px": "1200×628",
+    "kb": "524.2"
+  },
+  {
+    "name": "rda-landscape-b-28-stappen",
+    "px": "1200×628",
+    "kb": "426.9"
+  },
+  {
+    "name": "rda-landscape-c-4-normen",
+    "px": "1200×628",
+    "kb": "470.8"
+  },
+  {
+    "name": "rda-landscape-d-gratis-1min",
+    "px": "1200×628",
+    "kb": "507.2"
+  },
+  {
+    "name": "rda-portrait-a-zonder-consultant",
+    "px": "960×1200",
+    "kb": "747.8"
+  },
+  {
+    "name": "rda-portrait-b-28-stappen",
+    "px": "960×1200",
+    "kb": "636.7"
+  },
+  {
+    "name": "rda-portrait-d-gratis-1min",
+    "px": "960×1200",
+    "kb": "725.3"
+  },
+  {
+    "name": "logo-square-1200x1200",
+    "px": "1200×1200",
+    "kb": "28.8"
+  },
+  {
+    "name": "logo-landscape-1200x300",
+    "px": "1200×300",
+    "kb": "27.5"
+  },
+  {
+    "name": "banner-300x250-zonder-consultant",
+    "px": "300×250",
+    "kb": "69.4"
+  },
+  {
+    "name": "banner-300x250-28-stappen",
+    "px": "300×250",
+    "kb": "65.2"
+  },
+  {
+    "name": "banner-300x250-gratis-1min",
+    "px": "300×250",
+    "kb": "64.3"
+  },
+  {
+    "name": "banner-728x90-zonder-consultant",
+    "px": "728×90",
+    "kb": "61.2"
+  },
+  {
+    "name": "banner-728x90-28-stappen",
+    "px": "728×90",
+    "kb": "55.3"
+  },
+  {
+    "name": "banner-728x90-gratis-1min",
+    "px": "728×90",
+    "kb": "58.4"
+  },
+  {
+    "name": "banner-320x50-zonder-consultant",
+    "px": "320×50",
+    "kb": "17.9"
+  },
+  {
+    "name": "banner-160x600-vertical",
+    "px": "160×600",
+    "kb": "90.1"
+  },
+  {
+    "name": "banner-300x600-halfpage",
+    "px": "300×600",
+    "kb": "159.9"
+  },
+  {
+    "name": "banner-970x250-billboard",
+    "px": "970×250",
+    "kb": "200.3"
+  }
+]

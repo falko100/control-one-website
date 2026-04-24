@@ -279,9 +279,78 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right: iMac mockup -->
-          <div class="hidden lg:block flex-shrink-0">
-            <img src="/images/imac-mockup.png" alt="Control One platform op iMac" style="width: 560px; max-width: 100%;" loading="eager" />
+          <!-- Right: norm structure card -->
+          <div class="hidden lg:block flex-shrink-0 w-[520px] max-w-full">
+            <div class="relative rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md p-7 shadow-2xl shadow-black/40 overflow-hidden">
+              <div class="absolute -top-16 -right-16 w-56 h-56 bg-amber-400/30 rounded-full blur-3xl pointer-events-none"></div>
+
+              <!-- Header -->
+              <div class="relative flex items-start gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-[10px] font-bold tracking-widest uppercase text-amber-400/80">Internationale norm</p>
+                  <p class="mt-0.5 text-lg font-bold text-white tracking-tight">ISO 45001:2018</p>
+                  <p class="text-sm text-primary-200/70">Occupational Health &amp; Safety</p>
+                </div>
+              </div>
+
+              <!-- Hoofdstukken 4–10 -->
+              <div class="relative mb-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Hoofdstukken 4–10</span>
+                  <span class="text-[10px] text-primary-300/60">7 clausules</span>
+                </div>
+                <div class="grid grid-cols-7 gap-2">
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">4</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">5</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">6</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">7</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">8</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">9</div>
+                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-[13px] font-bold text-white/90">10</div>
+                </div>
+              </div>
+
+              <!-- Key OHSMS elements -->
+              <div class="relative mb-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Kernelementen OH&amp;S</span>
+                  <span class="text-[10px] font-bold text-amber-400">4 pijlers</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Gevaaridentificatie</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Systematisch &amp; continu</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Risicobeoordeling</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Beheershiërarchie</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Participatie</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Werknemers &amp; overleg</div>
+                  </div>
+                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
+                    <div class="text-[11px] font-bold text-white/90">Incidentonderzoek</div>
+                    <div class="text-[10px] text-primary-300/70 mt-0.5">Leren &amp; verbeteren</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coverage badge -->
+              <div class="relative pt-5 border-t border-white/10 flex items-center gap-2.5">
+                <div class="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-semibold text-white">100% gedekt door Control One</span>
+              </div>
+            </div>
           </div>
 
         </div>
