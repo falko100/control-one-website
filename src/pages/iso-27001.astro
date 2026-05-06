@@ -382,76 +382,58 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right: norm structure card -->
-          <div class="hidden lg:block flex-shrink-0 w-[520px] max-w-full">
-            <div class="relative rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md p-7 shadow-2xl shadow-black/40 overflow-hidden">
-              <div class="absolute -top-16 -right-16 w-56 h-56 bg-accent-400/30 rounded-full blur-3xl pointer-events-none"></div>
+          <!-- Right: product visual (browser-chrome screenshot) -->
+          <div class="flex-shrink-0 w-full lg:w-[620px] max-w-full">
+            <div class="relative">
+              <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-tr from-accent-400/25 via-primary-500/15 to-accent-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
+              <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 bg-primary-950">
+                <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/90 border-b border-white/5">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                      app.control-one.nl / iso-27001 / coach
+                    </div>
+                  </div>
+                  <div class="w-10 sm:w-14"></div>
+                </div>
+                <img
+                  src="/screenshots/portal-coach.png"
+                  alt="Control One implementatiecoach: stap-voor-stap naar ISO 27001 certificering"
+                  width="1600"
+                  height="1000"
+                  class="w-full block bg-white object-cover object-top"
+                  style="aspect-ratio: 16 / 9;"
+                  fetchpriority="high"
+                  data-lightbox
+                />
+              </div>
 
-              <!-- Header -->
-              <div class="relative flex items-start gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+              <div class="hidden md:flex absolute -left-3 lg:-left-6 top-12 lg:top-16 px-3.5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-2xl border border-white/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-accent-100 text-accent-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                   </svg>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-[10px] font-bold tracking-widest uppercase text-accent-400/80">Internationale norm</p>
-                  <p class="mt-0.5 text-lg font-bold text-white tracking-tight">ISO/IEC 27001:2022</p>
-                  <p class="text-sm text-primary-200/70">Information Security Management System</p>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Live</p>
+                  <p class="mt-1 text-xs font-bold text-primary-950 leading-none">Implementatiecoach</p>
                 </div>
               </div>
 
-              <!-- Hoofdstukken 4–10 -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Hoofdstukken 4–10</span>
-                  <span class="text-[10px] text-primary-300/60">7 clausules</span>
-                </div>
-                <div class="grid grid-cols-7 gap-2">
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">4</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">5</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">6</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">7</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">8</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">9</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-[13px] font-bold text-white/90">10</div>
-                </div>
-              </div>
-
-              <!-- Annex A -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Annex A · Beheersmaatregelen</span>
-                  <span class="text-[10px] font-bold text-accent-400">93 totaal</span>
-                </div>
-                <div class="grid grid-cols-4 gap-2">
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3 text-center">
-                    <div class="text-xl font-bold text-white leading-none">37</div>
-                    <div class="text-[9px] uppercase tracking-widest text-primary-300/70 mt-1.5">Org.</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3 text-center">
-                    <div class="text-xl font-bold text-white leading-none">8</div>
-                    <div class="text-[9px] uppercase tracking-widest text-primary-300/70 mt-1.5">Mensen</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3 text-center">
-                    <div class="text-xl font-bold text-white leading-none">14</div>
-                    <div class="text-[9px] uppercase tracking-widest text-primary-300/70 mt-1.5">Fysiek</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3 text-center">
-                    <div class="text-xl font-bold text-white leading-none">34</div>
-                    <div class="text-[9px] uppercase tracking-widest text-primary-300/70 mt-1.5">Tech.</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Coverage badge -->
-              <div class="relative pt-5 border-t border-white/10 flex items-center gap-2.5">
-                <div class="w-5 h-5 rounded-full bg-accent-400/20 border border-accent-400/40 flex items-center justify-center shrink-0">
-                  <svg class="w-3 h-3 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="hidden md:flex absolute -bottom-4 right-3 lg:-bottom-5 lg:right-8 px-3.5 py-2.5 rounded-2xl bg-primary-950 shadow-2xl ring-1 ring-accent-400/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-accent-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-primary-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
-                <span class="text-sm font-semibold text-white">100% gedekt door Control One</span>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-accent-400/80 leading-none">Normdekking</p>
+                  <p class="mt-1 text-xs font-bold text-white leading-none">100% ISO 27001:2022</p>
+                </div>
               </div>
             </div>
           </div>
@@ -485,6 +467,76 @@ const faqSchema = {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zo werkt het in de portal -->
+    <section class="py-24 bg-gradient-to-b from-white to-primary-50/40">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-accent-600 mb-3">Het platform</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Zo werkt ISO 27001 in Control One
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            Vier modules waarmee je je ISMS implementeert, beheert en aantoonbaar maakt richting auditor of certificeerder.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-dashboard.png" alt="Control One ISMS-dashboard met openstaande maatregelen en auditvoortgang" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Dashboard</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Dashboard &amp; rapportage</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Real-time inzicht in ISMS-status, openstaande Annex A controls en auditvoortgang. Direct exporteerbaar voor de directiebeoordeling.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-risks.png" alt="Risicoanalyse en informatiebeveiligingsrisico's in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-accent-700 shadow">Module · Risicoanalyse</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Risicoanalyse</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Identificeer informatiebeveiligingsrisico's, kwantificeer impact en kans, en koppel maatregelen direct aan Annex A controls.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-soa.png" alt="Verklaring van Toepasselijkheid met alle 93 Annex A controls in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · VvT</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Verklaring van Toepasselijkheid</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Beheer alle 93 Annex A controls in één overzicht: van toepassing of gemotiveerd uitgesloten, met directe link naar het bijbehorende beleid.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-audits.png" alt="Interne audit module met auditplan en bevindingen voor ISO 27001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Audits</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Interne audits</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Plan audits volgens H9.2, gebruik per-Annex-A checklists en lever auditrapporten op die certificeerders verwachten.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/demo" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-xl transition-all shadow-lg">
+            Bekijk de live demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -661,6 +713,51 @@ const faqSchema = {
             In Control One zijn alle 93 Annex A-maatregelen direct gekoppeld aan je risicobeoordelingsresultaten en vooraf ingevuld door ISO-experts.
           </p>
         </div>
+
+        <!-- Visual: documenten in de portal -->
+        <div class="max-w-4xl mx-auto mb-16 px-2 sm:px-4">
+          <div class="relative">
+            <div class="absolute -inset-6 sm:-inset-8 bg-gradient-to-tr from-accent-400/15 via-primary-500/10 to-accent-400/10 rounded-[40px] blur-3xl pointer-events-none"></div>
+            <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-primary-900/10 bg-primary-950">
+              <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/95 border-b border-white/5">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                </div>
+                <div class="flex-1 flex justify-center">
+                  <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                    app.control-one.nl / iso-27001 / documenten
+                  </div>
+                </div>
+                <div class="w-10 sm:w-14"></div>
+              </div>
+              <img src="/screenshots/portal-documents.png" alt="Documentenbibliotheek in Control One met alle ISO 27001 templates per Annex A control" class="w-full h-auto block bg-white" loading="lazy" width="1600" height="1000" data-lightbox />
+            </div>
+            <div class="hidden sm:flex absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-2xl bg-white shadow-2xl ring-1 ring-primary-100 items-center gap-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-accent-100 text-accent-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Templates</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">93 Annex A controls</p>
+                </div>
+              </div>
+              <span class="w-px h-8 bg-primary-100"></span>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Status</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">100% vooringevuld</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Grouped document cards -->
         <div class="space-y-6 max-w-5xl mx-auto">
           {annexGroups.map(group => (

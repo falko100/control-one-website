@@ -275,76 +275,58 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right: norm structure card -->
-          <div class="hidden lg:block flex-shrink-0 w-[520px] max-w-full">
-            <div class="relative rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md p-7 shadow-2xl shadow-black/40 overflow-hidden">
-              <div class="absolute -top-16 -right-16 w-56 h-56 bg-green-400/30 rounded-full blur-3xl pointer-events-none"></div>
+          <!-- Right: product visual (browser-chrome screenshot) -->
+          <div class="flex-shrink-0 w-full lg:w-[620px] max-w-full">
+            <div class="relative">
+              <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-tr from-green-400/25 via-primary-500/15 to-green-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
+              <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 bg-primary-950">
+                <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/90 border-b border-white/5">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                      app.control-one.nl / iso-14001 / coach
+                    </div>
+                  </div>
+                  <div class="w-10 sm:w-14"></div>
+                </div>
+                <img
+                  src="/screenshots/portal-coach.png"
+                  alt="Control One implementatiecoach: stap-voor-stap naar ISO 14001 certificering"
+                  width="1600"
+                  height="1000"
+                  class="w-full block bg-white object-cover object-top"
+                  style="aspect-ratio: 16 / 9;"
+                  fetchpriority="high"
+                  data-lightbox
+                />
+              </div>
 
-              <!-- Header -->
-              <div class="relative flex items-start gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12 21V3m0 18c-4.418 0-8-4.03-8-9s3.582-9 8-9m0 18c4.418 0 8-4.03 8-9s-3.582-9-8-9"/>
+              <div class="hidden md:flex absolute -left-3 lg:-left-6 top-12 lg:top-16 px-3.5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-2xl border border-white/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-green-100 text-green-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                   </svg>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-[10px] font-bold tracking-widest uppercase text-green-400/80">Internationale norm</p>
-                  <p class="mt-0.5 text-lg font-bold text-white tracking-tight">ISO 14001:2015</p>
-                  <p class="text-sm text-primary-200/70">Environmental Management System</p>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Live</p>
+                  <p class="mt-1 text-xs font-bold text-primary-950 leading-none">Implementatiecoach</p>
                 </div>
               </div>
 
-              <!-- Hoofdstukken 4–10 -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Hoofdstukken 4–10</span>
-                  <span class="text-[10px] text-primary-300/60">7 clausules</span>
-                </div>
-                <div class="grid grid-cols-7 gap-2">
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">4</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">5</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">6</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">7</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">8</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">9</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-[13px] font-bold text-white/90">10</div>
-                </div>
-              </div>
-
-              <!-- Key EMS elements -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Kernelementen EMS</span>
-                  <span class="text-[10px] font-bold text-green-400">4 pijlers</span>
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Milieuaspecten</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Identificeer & beoordeel</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Lifecycle-denken</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Ketenperspectief</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Wettelijke naleving</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Compliance tracker</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Noodvoorbereiding</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Incidentprocedures</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Coverage badge -->
-              <div class="relative pt-5 border-t border-white/10 flex items-center gap-2.5">
-                <div class="w-5 h-5 rounded-full bg-green-400/20 border border-green-400/40 flex items-center justify-center shrink-0">
-                  <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="hidden md:flex absolute -bottom-4 right-3 lg:-bottom-5 lg:right-8 px-3.5 py-2.5 rounded-2xl bg-primary-950 shadow-2xl ring-1 ring-green-400/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-green-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-primary-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
-                <span class="text-sm font-semibold text-white">100% gedekt door Control One</span>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-green-400/80 leading-none">Normdekking</p>
+                  <p class="mt-1 text-xs font-bold text-white leading-none">100% ISO 14001:2015</p>
+                </div>
               </div>
             </div>
           </div>
@@ -379,6 +361,76 @@ const faqSchema = {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zo werkt het in de portal -->
+    <section class="py-24 bg-gradient-to-b from-white to-primary-50/40">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-green-600 mb-3">Het platform</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Zo werkt ISO 14001 in Control One
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            Vier modules waarmee je je EMS implementeert, beheert en aantoonbaar maakt richting auditor of toezichthouder.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-dashboard.png" alt="Control One EMS-dashboard met milieuprestaties en KPI's" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Dashboard</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Dashboard &amp; rapportage</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Real-time inzicht in milieuprestaties, doelstellingen en compliance-status. Direct exporteerbaar voor de directiebeoordeling.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-risks.png" alt="Milieuaspecten en risicobeoordeling in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-green-700 shadow">Module · Milieuaspecten</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Milieuaspecten &amp; risico's</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Identificeer significante milieuaspecten, beoordeel risico's en koppel beheersmaatregelen direct aan ISO 14001 H6.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-vendors.png" alt="Leveranciers en uitbestede processen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · Keten</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Leveranciers &amp; uitbesteed werk</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Beheer leveranciers en uitbestede processen conform H8.1 en borg dat milieu-eisen worden nageleefd in de hele keten.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-audits.png" alt="Interne audit module met auditplan en bevindingen voor ISO 14001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Audits</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Interne audits</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Plan audits, gebruik kant-en-klare checklists per clausule en lever auditrapporten op die direct aansluiten op H9.2.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/demo" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-green-400 hover:bg-green-300 rounded-xl transition-all shadow-lg">
+            Bekijk de live demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -555,6 +607,51 @@ const faqSchema = {
             In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 14001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>
+
+        <!-- Visual: documenten in de portal -->
+        <div class="max-w-4xl mx-auto mb-16 px-2 sm:px-4">
+          <div class="relative">
+            <div class="absolute -inset-6 sm:-inset-8 bg-gradient-to-tr from-green-400/15 via-primary-500/10 to-green-400/10 rounded-[40px] blur-3xl pointer-events-none"></div>
+            <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-primary-900/10 bg-primary-950">
+              <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/95 border-b border-white/5">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                </div>
+                <div class="flex-1 flex justify-center">
+                  <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                    app.control-one.nl / iso-14001 / documenten
+                  </div>
+                </div>
+                <div class="w-10 sm:w-14"></div>
+              </div>
+              <img src="/screenshots/portal-documents.png" alt="Documentenbibliotheek in Control One met alle ISO 14001 templates per clausule" class="w-full h-auto block bg-white" loading="lazy" width="1600" height="1000" data-lightbox />
+            </div>
+            <div class="hidden sm:flex absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-2xl bg-white shadow-2xl ring-1 ring-primary-100 items-center gap-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-green-100 text-green-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Templates</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">38 voor ISO 14001</p>
+                </div>
+              </div>
+              <span class="w-px h-8 bg-primary-100"></span>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Status</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">100% vooringevuld</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Grouped document cards -->
         <div class="space-y-6 max-w-5xl mx-auto">
           {emsGroups.map(group => (

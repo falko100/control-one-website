@@ -17,6 +17,93 @@ const upcomingAudits = [
   { name: 'Interne audit A5 — Organisatorisch', type: 'Intern', status: 'Uitgevoerd', date: '13-04-2026', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
   { name: 'Hercertificering ISO 27001', type: 'Extern', status: 'Concept', date: 'Q3 2026', statusColor: 'bg-primary-50 text-primary-700 border-primary-100' },
 ];
+
+// 6-stap wizard die elke interne audit in Control One doorloopt
+const auditWizardSteps = [
+  { num: '01', label: 'Auditor', desc: 'Naam en functie van de auditor (intern of extern), inclusief check op onafhankelijkheid.' },
+  { num: '02', label: 'Audit Details', desc: 'Scope, datum, audittype, en de clausules of Annex A-controls die in deze ronde aan bod komen.' },
+  { num: '03', label: 'Non-conformiteiten', desc: 'Major & minor afwijkingen registreren, gekoppeld aan de exacte normvereiste of maatregel.' },
+  { num: '04', label: 'CPAR', desc: 'Vanuit elke non-conformiteit direct een CPAR (Corrective Preventive Action Request) starten.' },
+  { num: '05', label: 'Aanbevelingen', desc: 'Verbetermogelijkheden vastleggen die geen non-conformiteit zijn, maar wel waarde toevoegen aan het ISMS.' },
+  { num: '06', label: 'Beoordelaar', desc: 'Naam en akkoord van de auditbeoordelaar — daarmee gaat de status van Concept naar Uitgevoerd.' },
+];
+
+// CPAR-workflow met 4 stappen, identiek aan portal
+const cparSteps = [
+  { num: '1', title: 'Details', short: 'Beschrijving van de afwijking, bron (audit / incident / klacht), en eigenaar.' },
+  { num: '2', title: 'Plan (Analyse)', short: 'Root cause analyse met 5-Why of vergelijkbare methode, plus voorgestelde acties.' },
+  { num: '3', title: 'Uitvoeren', short: 'Concrete actie, verslaglegging en aanwijzing van de verificateur.' },
+  { num: '4', title: 'Verificatie', short: 'Verificatie of de actie het probleem heeft opgelost en de CPAR daadwerkelijk gesloten kan worden.' },
+];
+
+// 4 tabs zoals zichtbaar in de portal
+const auditTabs = [
+  { name: 'Dashboard', desc: 'Overview met openstaande CPAR\'s, audits in behandeling en non-conformiteiten dashboard met donut.' },
+  { name: 'Auditbeleid', desc: 'Bewerkbaar auditbeleid conform clausule 9.2 — uitgangspunten, onafhankelijkheid, frequentie, rapportage.' },
+  { name: 'Intern', desc: 'Lijst van interne audits met titel, status (Concept / Uitgevoerd) en aanmaakdatum.' },
+  { name: 'Extern', desc: 'Externe audits van certificeerders, inclusief volgende audit, ingeplande datum en CPAR\'s die eruit voortkomen.' },
+];
+
+// Concreet voorbeeld van een afgeronde audit
+const sampleAudit = {
+  title: 'Interne audit A5 — Organisatorische maatregelen',
+  status: 'Uitgevoerd',
+  date: '13-04-2026',
+  auditor: { name: 'Mark de Vries', role: 'ISMS Manager (intern)' },
+  beoordelaar: 'Falko Schoklé',
+  scope: 'Annex A.5 — alle 37 organisatorische controls. Inclusief beleid, governance, assets, leveranciers, incidenten en compliance.',
+  findings: [
+    { type: 'Major', clause: 'A5.15', text: 'Toegangsbeleid niet centraal vastgelegd voor de productieomgeving.' },
+    { type: 'Minor', clause: 'A5.7', text: 'Threat intelligence-bron is gedefinieerd, maar review-cadans ontbreekt.' },
+    { type: 'Minor', clause: 'A5.30', text: 'BCP testdraai gedocumenteerd, maar zonder evaluatie achteraf.' },
+  ],
+  recommendations: [
+    'Threat intelligence kwartaalreview opnemen in directiebeoordeling.',
+    'Owner-veld toevoegen aan asset-register voor cloudcomponenten.',
+  ],
+  linkedCpars: [
+    { id: 'CPAR-IA-0014', label: 'Centraal toegangsbeleid productie', status: 'Goedgekeurd' },
+    { id: 'CPAR-IA-0015', label: 'Review-frequentie threat intel', status: 'Concept' },
+  ],
+};
+
+// Jaarplanning Q1-Q4 — typische ISO 27001 verdeling
+const auditCalendar = [
+  {
+    quarter: 'Q1',
+    months: 'Jan – Mrt',
+    audits: [
+      { name: 'Hoofdstuk 4 + 5 — Context & Leiderschap', type: 'Intern' },
+      { name: 'Annex A.5 — Organisatorisch', type: 'Intern' },
+    ],
+  },
+  {
+    quarter: 'Q2',
+    months: 'Apr – Jun',
+    audits: [
+      { name: 'Hoofdstuk 6 — Planning & Risico\'s', type: 'Intern' },
+      { name: 'Annex A.6 — Mensen', type: 'Intern' },
+      { name: 'Coddin B.V. — Periodieke audit', type: 'Extern' },
+    ],
+  },
+  {
+    quarter: 'Q3',
+    months: 'Jul – Sep',
+    audits: [
+      { name: 'Hoofdstuk 7 + 8 — Ondersteuning & Uitvoering', type: 'Intern' },
+      { name: 'Annex A.7 — Fysiek', type: 'Intern' },
+    ],
+  },
+  {
+    quarter: 'Q4',
+    months: 'Okt – Dec',
+    audits: [
+      { name: 'Hoofdstuk 9 + 10 — Evaluatie & Verbetering', type: 'Intern' },
+      { name: 'Annex A.8 — Technologisch', type: 'Intern' },
+      { name: 'Directiebeoordeling 2026', type: 'Review' },
+    ],
+  },
+];
 ---
 
 <Layout
@@ -160,8 +247,315 @@ const upcomingAudits = [
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- Audit dashboard tabs structuur -->
     <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-3">Audit dashboard</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Vier tabs, één overzicht</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Het auditdashboard in Control One verdeelt je werk over vier duidelijke tabs. Eén klik en je zit in het juiste overzicht.</p>
+        </div>
+
+        <!-- Browser-chrome card with tab visual -->
+        <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden border border-primary-100 shadow-2xl shadow-primary-100/40 bg-white">
+          <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-50 border-b border-primary-100">
+            <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
+            <div class="flex-1 flex justify-center"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 truncate max-w-[260px]">app.control-one.nl / audits</div></div>
+            <div class="w-14"></div>
+          </div>
+          <!-- Tab strip mockup -->
+          <div class="flex flex-wrap gap-2 px-5 py-3 bg-primary-50/60 border-b border-primary-100 text-xs font-semibold">
+            <span class="px-3 py-1.5 rounded-md bg-white border border-primary-200 text-primary-700 shadow-sm flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              Dashboard
+            </span>
+            <span class="px-3 py-1.5 rounded-md text-primary-500 hover:bg-white transition flex items-center gap-1.5">Auditbeleid</span>
+            <span class="px-3 py-1.5 rounded-md bg-orange-100 text-orange-700 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              Intern
+            </span>
+            <span class="px-3 py-1.5 rounded-md text-primary-500 hover:bg-white transition flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+              Extern
+            </span>
+          </div>
+          <!-- Tab content cards -->
+          <div class="grid sm:grid-cols-2 gap-4 p-5">
+            {auditTabs.map(t => (
+              <div class="p-4 rounded-xl border border-primary-100 bg-primary-50/30 hover:bg-primary-50/60 transition-colors">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-orange-600 mb-1">Tab</p>
+                <p class="text-sm font-bold text-primary-950 mb-1.5">{t.name}</p>
+                <p class="text-xs text-primary-900/65 leading-relaxed">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-stap audit wizard -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-3">Audit-flow</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Zes stappen voor elke interne audit</h2>
+          <p class="mt-4 text-lg text-primary-900/75">De portal leidt je auditor stap-voor-stap door een gestructureerde wizard. Geen Word-templates, geen losse Excel-sheets — alles vastgelegd, gekoppeld en exporteerbaar.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {auditWizardSteps.map((s, i) => (
+            <div class="relative p-6 rounded-2xl border border-orange-100 bg-white hover:shadow-lg hover:shadow-orange-100/40 transition-all">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-orange-300/40">{s.num}</div>
+                <h3 class="text-base font-bold text-primary-950">{s.label}</h3>
+              </div>
+              <p class="text-sm text-primary-900/65 leading-relaxed">{s.desc}</p>
+              {i < 5 && (
+                <svg class="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-orange-300 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- Status flow -->
+        <div class="mt-12 max-w-3xl mx-auto p-6 rounded-2xl bg-primary-50 border border-primary-100">
+          <p class="text-xs font-bold uppercase tracking-widest text-primary-600 mb-3">Status-flow</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-primary-100 text-primary-700 border border-primary-200">
+              <span class="w-2 h-2 rounded-full bg-primary-400"></span>
+              Concept
+            </span>
+            <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              In behandeling
+            </span>
+            <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Uitgevoerd
+            </span>
+            <span class="ml-auto text-xs text-primary-500">Gevolgd door eventuele CPAR's</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CPAR 4-stap workflow -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-3">CPAR-workflow</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Van bevinding naar verificatie</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Elke non-conformiteit uit een audit wordt automatisch een CPAR (Corrective Preventive Action Request). De portal dwingt een vaste vier-stappen flow af, zodat geen actie blijft hangen.</p>
+        </div>
+
+        <!-- Vertical 4-step timeline -->
+        <div class="max-w-3xl mx-auto">
+          <ol class="relative border-l-2 border-orange-200 pl-8 space-y-8">
+            {cparSteps.map(s => (
+              <li class="relative">
+                <div class="absolute -left-[42px] top-0 w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-orange-300/40 ring-4 ring-white">{s.num}</div>
+                <div class="p-5 rounded-2xl bg-orange-50/40 border border-orange-100">
+                  <p class="text-[11px] font-bold uppercase tracking-widest text-orange-700 mb-1">Stap {s.num}</p>
+                  <h3 class="text-lg font-bold text-primary-950 mb-1.5">{s.title}</h3>
+                  <p class="text-sm text-primary-900/70 leading-relaxed">{s.short}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="mt-10 max-w-3xl mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary-950 to-primary-900 text-white">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-400 text-primary-950 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold mb-1">Eén CPAR-overzicht over alle bronnen</h3>
+              <p class="text-sm text-primary-200/80 leading-relaxed">Het CPAR-overzicht telt acties uit interne audits, externe audits én incidenten samen. Per status (Concept · Goedgekeurd · Uitgevoerd · Afgekeurd) zie je hoeveel openstaan, met directe link naar de bronbevinding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concrete audit voorbeeld -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-3">Voorbeeld</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Eén interne audit van dichtbij</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Zo ziet een afgeronde audit eruit in de portal: scope, auditor, bevindingen, aanbevelingen en gekoppelde CPAR's — allemaal op één pagina.</p>
+        </div>
+
+        <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden border border-primary-100 bg-white shadow-2xl shadow-primary-100/40">
+          <!-- Header -->
+          <div class="px-6 py-5 bg-gradient-to-r from-primary-50 to-orange-50/40 border-b border-primary-100 flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-orange-600 mb-1">Audit-detail</p>
+              <h3 class="text-lg font-bold text-primary-950">{sampleAudit.title}</h3>
+              <p class="text-xs text-primary-500 mt-1">Uitgevoerd op {sampleAudit.date}</p>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              {sampleAudit.status}
+            </span>
+          </div>
+
+          <!-- Meta grid -->
+          <div class="grid sm:grid-cols-3 gap-0 border-b border-primary-100 divide-y sm:divide-y-0 sm:divide-x divide-primary-100">
+            <div class="px-6 py-4">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1">Auditor</p>
+              <p class="text-sm font-semibold text-primary-950">{sampleAudit.auditor.name}</p>
+              <p class="text-xs text-primary-500">{sampleAudit.auditor.role}</p>
+            </div>
+            <div class="px-6 py-4">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1">Beoordelaar</p>
+              <p class="text-sm font-semibold text-primary-950">{sampleAudit.beoordelaar}</p>
+              <p class="text-xs text-primary-500">Onafhankelijk</p>
+            </div>
+            <div class="px-6 py-4">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1">Scope</p>
+              <p class="text-sm text-primary-900/75 leading-relaxed">{sampleAudit.scope}</p>
+            </div>
+          </div>
+
+          <!-- Findings + Recommendations + CPARs -->
+          <div class="grid lg:grid-cols-3 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-primary-100">
+            <!-- Non-conformiteiten -->
+            <div class="px-6 py-5">
+              <div class="flex items-center justify-between mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500">Non-conformiteiten</p>
+                <span class="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-full">{sampleAudit.findings.length}</span>
+              </div>
+              <ul class="space-y-3">
+                {sampleAudit.findings.map(f => (
+                  <li class="text-xs leading-relaxed">
+                    <div class="flex items-center gap-1.5 mb-1">
+                      <span class:list={['text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border', f.type === 'Major' ? 'bg-red-50 text-red-700 border-red-100' : 'bg-amber-50 text-amber-700 border-amber-100']}>{f.type}</span>
+                      <span class="text-[10px] font-mono font-semibold text-primary-600">{f.clause}</span>
+                    </div>
+                    <p class="text-primary-900/70">{f.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Aanbevelingen -->
+            <div class="px-6 py-5">
+              <div class="flex items-center justify-between mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500">Aanbevelingen</p>
+                <span class="text-[10px] font-bold text-primary-700 bg-primary-50 border border-primary-100 px-2 py-0.5 rounded-full">{sampleAudit.recommendations.length}</span>
+              </div>
+              <ul class="space-y-3">
+                {sampleAudit.recommendations.map(r => (
+                  <li class="flex items-start gap-2 text-xs leading-relaxed">
+                    <svg class="w-3.5 h-3.5 text-primary-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    <span class="text-primary-900/70">{r}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Gekoppelde CPAR's -->
+            <div class="px-6 py-5 bg-orange-50/30">
+              <div class="flex items-center justify-between mb-3">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-orange-700">Gekoppelde CPAR's</p>
+                <span class="text-[10px] font-bold text-orange-700 bg-white border border-orange-200 px-2 py-0.5 rounded-full">{sampleAudit.linkedCpars.length}</span>
+              </div>
+              <ul class="space-y-2.5">
+                {sampleAudit.linkedCpars.map(c => (
+                  <li class="p-2.5 rounded-lg bg-white border border-orange-100">
+                    <div class="flex items-center justify-between gap-2 mb-0.5">
+                      <p class="text-[10px] font-mono font-bold text-orange-700">{c.id}</p>
+                      <span class:list={['text-[9px] font-semibold px-1.5 py-0.5 rounded border', c.status === 'Goedgekeurd' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' : 'bg-primary-50 text-primary-600 border-primary-100']}>{c.status}</span>
+                    </div>
+                    <p class="text-xs text-primary-900/75 leading-snug">{c.label}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="px-6 py-3.5 bg-primary-50/40 border-t border-primary-100 flex items-center justify-between gap-3 flex-wrap">
+            <p class="text-[11px] text-primary-500">Inclusief auditrapport-export als PDF voor je certificeerder of directie.</p>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-primary-700">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              Exporteren als PDF
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jaarplanning auditprogramma Q1-Q4 -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-orange-600 mb-3">Jaarplanning</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Het complete auditprogramma in één oogopslag</h2>
+          <p class="mt-4 text-lg text-primary-900/75">Verdeel interne audits gespreid over het jaar: één hoofdstuk of Annex A-categorie per kwartaal. Externe audits en de directiebeoordeling staan tussen je interne audits ingepland.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          {auditCalendar.map((q, i) => (
+            <div class:list={[
+              'relative p-5 rounded-2xl border bg-white flex flex-col gap-4',
+              i === 1 ? 'border-orange-200 shadow-lg shadow-orange-100/40 ring-1 ring-orange-200/40' : 'border-primary-100 hover:shadow-md hover:shadow-primary-100/40 transition-all',
+            ]}>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class:list={['text-[10px] font-bold uppercase tracking-widest', i === 1 ? 'text-orange-600' : 'text-primary-500']}>{q.months}</p>
+                  <p class="text-3xl font-bold text-primary-950 mt-0.5">{q.quarter}</p>
+                </div>
+                {i === 1 && (
+                  <span class="text-[9px] font-bold uppercase tracking-widest text-white bg-orange-500 px-2 py-1 rounded-md shadow-sm">Nu</span>
+                )}
+              </div>
+              <div class="space-y-2">
+                {q.audits.map(a => (
+                  <div class:list={[
+                    'p-2.5 rounded-lg border text-xs leading-snug',
+                    a.type === 'Extern' ? 'bg-blue-50 border-blue-100' :
+                    a.type === 'Review' ? 'bg-emerald-50 border-emerald-100' :
+                    'bg-primary-50/50 border-primary-100'
+                  ]}>
+                    <div class="flex items-center gap-1.5 mb-1">
+                      <span class:list={[
+                        'text-[8px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded',
+                        a.type === 'Extern' ? 'bg-blue-100 text-blue-700' :
+                        a.type === 'Review' ? 'bg-emerald-100 text-emerald-700' :
+                        'bg-primary-100 text-primary-700'
+                      ]}>{a.type}</span>
+                    </div>
+                    <p class="text-primary-900/80 font-medium">{a.name}</p>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-auto pt-3 border-t border-primary-100/60 flex items-center justify-between text-[10px] text-primary-500">
+                <span>{q.audits.length} {q.audits.length === 1 ? 'audit' : 'audits'}</span>
+                <span class="font-semibold">{q.audits.filter(a => a.type === 'Intern').length} intern</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 max-w-3xl mx-auto p-5 rounded-2xl bg-primary-50/60 border border-primary-100 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-sm font-bold text-primary-950 mb-0.5">Auditprogramma synct met je directiebeoordeling</p>
+            <p class="text-xs text-primary-900/70 leading-relaxed">De portal voedt automatisch de inputpunten "Interne en externe audits" en "Corrigerende en preventieve maatregelen" in je volgende directiebeoordeling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-24 bg-primary-50/30">
       <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Alles van auditplan tot -rapport</h2>

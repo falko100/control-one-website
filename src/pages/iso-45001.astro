@@ -279,76 +279,64 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right: norm structure card -->
-          <div class="hidden lg:block flex-shrink-0 w-[520px] max-w-full">
-            <div class="relative rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md p-7 shadow-2xl shadow-black/40 overflow-hidden">
-              <div class="absolute -top-16 -right-16 w-56 h-56 bg-amber-400/30 rounded-full blur-3xl pointer-events-none"></div>
+          <!-- Right: product visual (browser-chrome screenshot) -->
+          <div class="flex-shrink-0 w-full lg:w-[620px] max-w-full">
+            <div class="relative">
+              <!-- Glow backdrop -->
+              <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-tr from-amber-400/25 via-primary-500/15 to-amber-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
 
-              <!-- Header -->
-              <div class="relative flex items-start gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+              <!-- Browser-chrome card -->
+              <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 bg-primary-950">
+                <!-- Top bar -->
+                <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/90 border-b border-white/5">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                      app.control-one.nl / iso-45001 / risico's
+                    </div>
+                  </div>
+                  <div class="w-10 sm:w-14"></div>
+                </div>
+                <!-- Screenshot -->
+                <img
+                  src="/screenshots/portal-risks.png"
+                  alt="Control One — gevaaridentificatie en risicobeoordeling voor ISO 45001"
+                  width="1600"
+                  height="1000"
+                  class="w-full h-auto block bg-white"
+                  fetchpriority="high"
+                  data-lightbox
+                />
+              </div>
+
+              <!-- Floating module pill — top left -->
+              <div class="hidden md:flex absolute -left-3 lg:-left-6 top-12 lg:top-16 px-3.5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-2xl border border-white/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
                   </svg>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-[10px] font-bold tracking-widest uppercase text-amber-400/80">Internationale norm</p>
-                  <p class="mt-0.5 text-lg font-bold text-white tracking-tight">ISO 45001:2018</p>
-                  <p class="text-sm text-primary-200/70">Occupational Health &amp; Safety</p>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Live</p>
+                  <p class="mt-1 text-xs font-bold text-primary-950 leading-none">Gevaaridentificatie</p>
                 </div>
               </div>
 
-              <!-- Hoofdstukken 4–10 -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Hoofdstukken 4–10</span>
-                  <span class="text-[10px] text-primary-300/60">7 clausules</span>
-                </div>
-                <div class="grid grid-cols-7 gap-2">
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">4</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">5</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">6</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">7</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">8</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-base font-bold text-white/90">9</div>
-                  <div class="aspect-square rounded-lg border border-white/15 bg-white/[0.06] flex items-center justify-center text-[13px] font-bold text-white/90">10</div>
-                </div>
-              </div>
-
-              <!-- Key OHSMS elements -->
-              <div class="relative mb-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-[10px] font-bold tracking-widest uppercase text-primary-200/70">Kernelementen OH&amp;S</span>
-                  <span class="text-[10px] font-bold text-amber-400">4 pijlers</span>
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Gevaaridentificatie</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Systematisch &amp; continu</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Risicobeoordeling</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Beheershiërarchie</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Participatie</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Werknemers &amp; overleg</div>
-                  </div>
-                  <div class="rounded-lg border border-white/15 bg-white/[0.06] p-3">
-                    <div class="text-[11px] font-bold text-white/90">Incidentonderzoek</div>
-                    <div class="text-[10px] text-primary-300/70 mt-0.5">Leren &amp; verbeteren</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Coverage badge -->
-              <div class="relative pt-5 border-t border-white/10 flex items-center gap-2.5">
-                <div class="w-5 h-5 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center shrink-0">
-                  <svg class="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <!-- Floating coverage badge — bottom right -->
+              <div class="hidden md:flex absolute -bottom-4 right-3 lg:-bottom-5 lg:right-8 px-3.5 py-2.5 rounded-2xl bg-primary-950 shadow-2xl ring-1 ring-amber-400/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-primary-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
-                <span class="text-sm font-semibold text-white">100% gedekt door Control One</span>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-amber-400/80 leading-none">Normdekking</p>
+                  <p class="mt-1 text-xs font-bold text-white leading-none">100% ISO 45001:2018</p>
+                </div>
               </div>
             </div>
           </div>
@@ -383,6 +371,120 @@ const faqSchema = {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zo werkt het in de portal -->
+    <section class="py-24 bg-gradient-to-b from-white to-primary-50/40">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-amber-600 mb-3">Het platform</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Zo werkt ISO 45001 in Control One
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            Vier modules waarmee je je OHSMS implementeert, beheert en aantoonbaar maakt richting auditor of toezichthouder.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+          <!-- Card 1: Dashboard -->
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img
+                src="/screenshots/portal-dashboard.png"
+                alt="Control One dashboard met OHSMS-voortgang en KPI's"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="800"
+                height="500"
+                data-lightbox
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">
+                Module · Dashboard
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Dashboard &amp; rapportage</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Real-time inzicht in incidenten, openstaande maatregelen en auditvoortgang. Direct exporteerbaar voor de directiebeoordeling.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Gevaren & Risico's -->
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img
+                src="/screenshots/portal-risks.png"
+                alt="Risicobeoordeling en gevaaridentificatie in Control One"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="800"
+                height="500"
+                data-lightbox
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">
+                Module · Risico's
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Gevaren &amp; risicobeoordeling</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Identificeer gevaren per locatie of taak, beoordeel risico's volgens de beheershiërarchie en koppel beheersmaatregelen direct aan ISO 45001 H6.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Aannemers & Leveranciers -->
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img
+                src="/screenshots/portal-vendors.png"
+                alt="Aannemers- en leveranciersbeheer in Control One"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="800"
+                height="500"
+                data-lightbox
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-emerald-700 shadow">
+                Module · Aannemers
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Aannemers &amp; leveranciers</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Beheer aannemers en leveranciers op de werkvloer, registreer hun veiligheidscertificaten en koppel ze aan jouw OH&amp;S-procedures conform H8.1.4.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Audits -->
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img
+                src="/screenshots/portal-audits.png"
+                alt="Interne audit module met auditplan en bevindingen"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                width="800"
+                height="500"
+                data-lightbox
+              />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">
+                Module · Audits
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Interne audits</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Plan audits, gebruik kant-en-klare checklists per clausule en lever auditrapporten op die direct aansluiten op H9.2 van de norm.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/demo" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-lg">
+            Bekijk de live demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -559,6 +661,64 @@ const faqSchema = {
             In Control One zijn alle documenten direct gekoppeld aan de bijbehorende ISO 45001-clausules en vooraf ingevuld door ISO-experts.
           </p>
         </div>
+
+        <!-- Visual: documenten in de portal -->
+        <div class="max-w-4xl mx-auto mb-16 px-2 sm:px-4">
+          <div class="relative">
+            <!-- Soft glow -->
+            <div class="absolute -inset-6 sm:-inset-8 bg-gradient-to-tr from-amber-400/15 via-primary-500/10 to-emerald-400/10 rounded-[40px] blur-3xl pointer-events-none"></div>
+
+            <!-- Browser-chrome card -->
+            <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-primary-900/10 bg-primary-950">
+              <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/95 border-b border-white/5">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                </div>
+                <div class="flex-1 flex justify-center">
+                  <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                    app.control-one.nl / iso-45001 / documenten
+                  </div>
+                </div>
+                <div class="w-10 sm:w-14"></div>
+              </div>
+              <img
+                src="/screenshots/portal-documents.png"
+                alt="Documentenbibliotheek in Control One met alle ISO 45001 templates per clausule"
+                class="w-full h-auto block bg-white"
+                loading="lazy"
+                width="1600"
+                height="1000"
+                data-lightbox
+              />
+            </div>
+
+            <!-- Floating stat pill — bottom -->
+            <div class="hidden sm:flex absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-2xl bg-white shadow-2xl ring-1 ring-primary-100 items-center gap-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Templates</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">47 voor ISO 45001</p>
+                </div>
+              </div>
+              <span class="w-px h-8 bg-primary-100"></span>
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Status</p>
+                  <p class="mt-1 text-sm font-bold text-primary-950 leading-none">100% vooringevuld</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Grouped document cards -->
         <div class="space-y-6 max-w-5xl mx-auto">
           {ohmsGroups.map(group => (

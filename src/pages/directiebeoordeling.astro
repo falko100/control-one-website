@@ -10,6 +10,37 @@ const exampleReviews = [
   { num: 'MR-0002', subject: 'Directiebeoordeling Q4 2025', date: '16 feb 2026', status: 'Goedgekeurd', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
   { num: 'MR-0001', subject: 'Eerste directiebeoordeling ISO 27001', date: '16 feb 2026', status: 'Uitgevoerd', color: 'bg-primary-50 text-primary-600 border-primary-100' },
 ];
+
+// 17 standaard secties zoals in de portal (uit Control One database)
+const reviewSections = [
+  { num: 1, name: 'Acties vorige vergadering', desc: 'Status van besluiten en actiepunten uit de vorige directiebeoordeling.', group: 'input' },
+  { num: 2, name: 'Wijzigingen externe/interne context', desc: 'Veranderingen in markt, regelgeving, organisatie en stakeholders sinds de laatste review.', group: 'input' },
+  { num: 3, name: 'Prestaties ISMS', desc: 'Samenvatting van KPI\'s, doelstellingen en operationele resultaten.', group: 'input' },
+  { num: 4, name: 'Risico-identificatie en behandeling', desc: 'Nieuwe risico\'s, behandelde risico\'s en restrisico\'s — direct uit het risicoregister.', group: 'input' },
+  { num: 5, name: 'Interne en externe audits', desc: 'Resultaten van interne audits, surveillance-audits en externe certificeringsaudits.', group: 'input' },
+  { num: 6, name: 'Corrigerende en preventieve maatregelen', desc: 'CPAR-status: openstaand, in behandeling, afgerond — automatisch gevuld.', group: 'input' },
+  { num: 7, name: 'Informatiebeveiligingsincidenten', desc: 'Geregistreerde incidenten, lessons learned en patroonanalyse.', group: 'input' },
+  { num: 8, name: 'Paraatheid en noodsituaties', desc: 'Resultaten van BCP/DR-tests en aanpassingen aan noodprocedures.', group: 'input' },
+  { num: 9, name: 'Nalevingsverplichtingen', desc: 'Wettelijke en contractuele verplichtingen — actuele status en wijzigingen.', group: 'input' },
+  { num: 10, name: 'Bewustzijn en communicatie', desc: 'Trainingen, awareness-campagnes en communicatie-effectiviteit.', group: 'input' },
+  { num: 11, name: 'Wijzigingen ISMS', desc: 'Voorgestelde of doorgevoerde wijzigingen in scope, beleid of structuur.', group: 'output' },
+  { num: 12, name: 'Training, ontwikkeling en middelen', desc: 'Beoordeling van capaciteit, kennis en budget voor het ISMS.', group: 'output' },
+  { num: 13, name: 'Voortdurende verbetering', desc: 'Verbeterinitiatieven, lessons learned en innovatie-acties.', group: 'output' },
+  { num: 14, name: 'Risico\'s en kansen', desc: 'Strategische risico\'s en kansen die uit de beoordeling naar voren komen.', group: 'output' },
+  { num: 15, name: 'Beleid, doelstellingen en KPI\'s', desc: 'Bevestiging of aanpassing van beleid, doelstellingen en KPI\'s voor de komende periode.', group: 'output' },
+  { num: 16, name: 'Bijzondere onderwerpen', desc: 'Specifieke agendapunten relevant voor deze beoordelingscyclus.', group: 'output' },
+  { num: 17, name: 'W.v.t.t.k.', desc: 'Wat verder ter tafel komt — open ruimte voor inbreng buiten agenda.', group: 'output' },
+];
+
+// Auto-vulling van inputpunten uit andere portal-modules
+const autoFillSources = [
+  { section: 'Risico-identificatie', source: 'Risicoanalyse', icon: 'risk' },
+  { section: 'Audits', source: 'Audits-module', icon: 'audit' },
+  { section: 'CPAR\'s', source: 'CPAR-overzicht', icon: 'cpar' },
+  { section: 'Incidenten', source: 'Beveiligingsincidenten', icon: 'incident' },
+  { section: 'Maatregelen-status', source: 'Maatregelen + VvT', icon: 'control' },
+  { section: 'Leveranciers', source: 'Leveranciersbeoordelingen', icon: 'vendor' },
+];
 ---
 
 <Layout
@@ -178,6 +209,80 @@ const exampleReviews = [
                   <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <span class="text-xs font-medium text-primary-800">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- 17 standaard secties -->
+        <div class="mt-24">
+          <div class="max-w-2xl mx-auto text-center mb-12">
+            <p class="text-sm font-semibold tracking-wide uppercase text-indigo-600 mb-3">Vaste structuur</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">17 secties, conform clausule 9.3</h2>
+            <p class="mt-4 text-lg text-primary-900/75">Iedere directiebeoordeling in Control One volgt dezelfde gestandaardiseerde structuur. Tien input-secties (de stand van zaken) en zeven output-secties (besluiten en acties).</p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <!-- Input secties -->
+            <div class="rounded-2xl border border-blue-100 bg-white overflow-hidden">
+              <div class="px-5 py-3.5 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
+                <p class="text-sm font-bold text-blue-900">Input-secties (1–10)</p>
+                <span class="text-[10px] font-bold text-blue-700 bg-white border border-blue-200 px-2 py-0.5 rounded-full">Stand van zaken</span>
+              </div>
+              <ul class="divide-y divide-primary-100">
+                {reviewSections.filter(s => s.group === 'input').map(s => (
+                  <li class="px-5 py-3.5 hover:bg-blue-50/30 transition-colors flex items-start gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-blue-100 text-blue-700 text-xs font-bold shrink-0">{s.num}</span>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-semibold text-primary-950">{s.name}</p>
+                      <p class="text-xs text-primary-900/60 mt-0.5 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Output secties -->
+            <div class="rounded-2xl border border-emerald-100 bg-white overflow-hidden">
+              <div class="px-5 py-3.5 bg-emerald-50 border-b border-emerald-100 flex items-center justify-between">
+                <p class="text-sm font-bold text-emerald-900">Output-secties (11–17)</p>
+                <span class="text-[10px] font-bold text-emerald-700 bg-white border border-emerald-200 px-2 py-0.5 rounded-full">Besluiten &amp; acties</span>
+              </div>
+              <ul class="divide-y divide-primary-100">
+                {reviewSections.filter(s => s.group === 'output').map(s => (
+                  <li class="px-5 py-3.5 hover:bg-emerald-50/30 transition-colors flex items-start gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-emerald-100 text-emerald-700 text-xs font-bold shrink-0">{s.num}</span>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-semibold text-primary-950">{s.name}</p>
+                      <p class="text-xs text-primary-900/60 mt-0.5 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto-vulling -->
+        <div class="mt-24 max-w-5xl mx-auto">
+          <div class="max-w-2xl mx-auto text-center mb-10">
+            <p class="text-sm font-semibold tracking-wide uppercase text-indigo-600 mb-3">Automatisch gevoed</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Inputpunten vullen zichzelf</h2>
+            <p class="mt-4 text-lg text-primary-900/75">Geen losse Excel-sheets samenvoegen. Control One trekt de inputpunten direct uit de modules waar de data leeft.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {autoFillSources.map(s => (
+              <div class="p-5 rounded-2xl border border-primary-100 bg-gradient-to-br from-white to-indigo-50/40">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-indigo-600">Sectie</p>
+                    <p class="text-sm font-bold text-primary-950 truncate">{s.section}</p>
+                  </div>
+                </div>
+                <p class="text-xs text-primary-900/65"><span class="text-indigo-700 font-semibold">Bron: </span>{s.source}</p>
               </div>
             ))}
           </div>
