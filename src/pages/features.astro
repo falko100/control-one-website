@@ -6,6 +6,7 @@ import FeaturePillars from '../components/FeaturePillars.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import CompleetPakket from '../components/CompleetPakket.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const softwareSchema = {
@@ -99,6 +100,18 @@ const breadcrumbSchema = {
 
     <!-- 5-stappen implementatiepad -->
     <HowItWorks />
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Portal"
+      title="Benieuwd hoe het hele platform werkt?"
+      description="Loop door een interactieve rondleiding en zie alle modules in actie: van risicoanalyse tot audits en directiebeoordeling. Geen account nodig."
+      ctaText="Bekijk de live demo"
+      urlPath="dashboard"
+      accentBg="bg-primary-500"
+      accentText="text-blue-300"
+      variant="portal"
+    />
 
     <!-- Wat krijg je naast de tools: coach, kennisbank, sjablonen, chat consultancy -->
     <CompleetPakket />

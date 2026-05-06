@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 // Risk matrix data for inline visual (5x5)
@@ -215,6 +216,18 @@ const riskToCparFlow = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Risicoanalyse"
+      title="Benieuwd hoe je risico's beoordeelt in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe je dreigingen scoort op de 5x5 matrix, behandelstrategieën kiest en risico's koppelt aan maatregelen en CPAR's."
+      ctaText="Bekijk de live demo"
+      urlPath="risico / matrix"
+      accentBg="bg-red-500"
+      accentText="text-red-300"
+      variant="risico"
+    />
 
     <!-- 4 treatment strategies -->
     <section class="py-24 bg-white">

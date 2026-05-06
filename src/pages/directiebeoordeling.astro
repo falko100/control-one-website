@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const exampleReviews = [
@@ -185,6 +186,18 @@ const autoFillSources = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Directiebeoordeling"
+      title="Benieuwd hoe directiebeoordelingen werken in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe input automatisch wordt verzameld, output direct doorvloeit naar acties en je hele review-cyclus traceerbaar blijft."
+      ctaText="Bekijk de live demo"
+      urlPath="directiebeoordeling / MR-0003"
+      accentBg="bg-indigo-500"
+      accentText="text-indigo-300"
+      variant="directie"
+    />
 
     <!-- Input items grid -->
     <section class="py-24 bg-white">

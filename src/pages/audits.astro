@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const auditTypes = [
@@ -340,6 +341,18 @@ const auditCalendar = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Audit module"
+      title="Benieuwd hoe de Audit module eruitziet?"
+      description="Stap door een interactieve rondleiding en zie precies hoe je een interne audit plant, uitvoert en bevindingen omzet in CPAR's. Geen account nodig."
+      ctaText="Bekijk de live demo"
+      urlPath="audit / intern"
+      accentBg="bg-orange-500"
+      accentText="text-orange-300"
+      variant="audit"
+    />
 
     <!-- CPAR 4-stap workflow -->
     <section class="py-24 bg-white">

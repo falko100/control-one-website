@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const phases = [
@@ -221,6 +222,18 @@ const breadcrumbSchema = {
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Coach"
+      title="Benieuwd hoe de Coach je begeleidt?"
+      description="Stap door een interactieve rondleiding en zie precies hoe de coach je per fase door de 28 stappen leidt — met checkvragen, sjablonen en directe portal-koppelingen."
+      ctaText="Bekijk de live demo"
+      urlPath="coach / fase-2"
+      accentBg="bg-amber-500"
+      accentText="text-amber-300"
+      variant="coach"
+    />
 
     <!-- Concrete coach-stap voorbeeld -->
     <section class="py-24 bg-white">

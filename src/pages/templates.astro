@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const templateCategories = [
@@ -273,6 +274,18 @@ const benefits = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Templates"
+      title="Benieuwd hoe templates werken in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe je sjablonen kiest, aanpast en publiceert als levend document binnen je managementsysteem."
+      ctaText="Bekijk de live demo"
+      urlPath="documenten / templates"
+      accentBg="bg-emerald-500"
+      accentText="text-emerald-300"
+      variant="templates"
+    />
 
     <!-- ── Document catalogue ── -->
     <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">

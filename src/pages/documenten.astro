@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const exampleDocs = [
@@ -219,6 +220,18 @@ const docLifecycle = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Documenten"
+      title="Benieuwd hoe documentbeheer werkt in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe je versies bewaakt, reviewmomenten plant en documenten direct koppelt aan ISO-clausules en maatregelen."
+      ctaText="Bekijk de live demo"
+      urlPath="documenten / handboek"
+      accentBg="bg-violet-500"
+      accentText="text-violet-300"
+      variant="documenten"
+    />
 
     <!-- Concreet document voorbeeld -->
     <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">

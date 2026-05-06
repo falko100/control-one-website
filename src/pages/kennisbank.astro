@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 // Based on the actual portal kennisbank structure
@@ -207,9 +208,25 @@ const langStats = [
             </div>
           ))}
         </div>
+      </div>
+    </section>
 
-        <!-- Sample artikel -->
-        <div class="mt-24 max-w-2xl mx-auto text-center mb-12">
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Kennisbank"
+      title="Benieuwd hoe de Kennisbank werkt in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe je per maatregel direct uitleg, voorbeelden en sjablonen vindt zonder de portal te verlaten."
+      ctaText="Bekijk de live demo"
+      urlPath="kennisbank / artikel"
+      accentBg="bg-teal-500"
+      accentText="text-teal-300"
+      variant="kennisbank"
+    />
+
+    <!-- Sample artikel + extra content -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
           <p class="text-sm font-semibold tracking-wide uppercase text-teal-600 mb-3">Voorbeeld</p>
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Eén kennisbankartikel van dichtbij</h2>
           <p class="mt-4 text-lg text-primary-900/75">Iedere uitleg volgt dezelfde structuur: korte intro, waarom-en-wat, stappenplan, voorbeelden en gerelateerde artikelen of sjablonen.</p>

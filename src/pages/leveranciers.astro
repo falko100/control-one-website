@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
+import DemoCta from '../components/DemoCta.astro';
 import Footer from '../components/Footer.astro';
 
 const exampleVendors = [
@@ -177,6 +178,18 @@ const vendorTabs = [
         </div>
       </div>
     </section>
+
+    <!-- Mid-page Demo CTA -->
+    <DemoCta
+      module="Leveranciers"
+      title="Benieuwd hoe je leveranciers beheert in de portal?"
+      description="Stap door een interactieve rondleiding en zie hoe je leveranciers classificeert, certificaten bewaakt en risico's per partner koppelt aan je managementsysteem."
+      ctaText="Bekijk de live demo"
+      urlPath="leveranciers / register"
+      accentBg="bg-cyan-500"
+      accentText="text-cyan-300"
+      variant="leveranciers"
+    />
 
     <!-- Concrete leverancier voorbeeld -->
     <section class="py-24 bg-white">
