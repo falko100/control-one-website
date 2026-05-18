@@ -1,5 +1,17 @@
 name: Dagelijkse blog publicatie
 
+# Triggert elke nacht een Netlify build-hook zodat geplande blog-posts
+# (met publishDate vandaag of in het verleden) automatisch verschijnen.
+#
+# Setup (eenmalig):
+#   1. Netlify: Site settings → Build & deploy → Build hooks → "Add build hook"
+#      Geef het een naam (bv. "GitHub daily cron") en branch "main".
+#   2. Kopieer de hook-URL (vorm: https://api.netlify.com/build_hooks/abc123…).
+#   3. GitHub repo → Settings → Secrets and variables → Actions →
+#      "New repository secret" met naam NETLIFY_BUILD_HOOK_URL en de URL als waarde.
+#
+# Daarna draait deze workflow elke nacht en de site rebuildt zichzelf.
+
 on:
   # Elke dag om 00:05 CET (23:05 UTC)
   schedule:
@@ -8,61 +20,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
-    name: Build & Deploy
+  trigger-netlify-build:
+    name: Trigger Netlify build hook
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build site
-        run: npm run build
+      - name: POST naar Netlify build hook
         env:
-          PUBLIC_GTM_ID: ${{ secrets.PUBLIC_GTM_ID }}
-          PUBLIC_GSC_VERIFICATION: ${{ secrets.PUBLIC_GSC_VERIFICATION }}
-
-      # ----------------------------------------------------------------
-      # Kies hieronder uw deployment provider en verwijder de rest
-      # ----------------------------------------------------------------
-
-      # OPTIE 1: Vercel
-      # - name: Deploy to Vercel
-      #   uses: amondnet/vercel-action@v25
-      #   with:
-      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
-      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-      #     vercel-args: '--prod'
-      #     working-directory: .
-
-      # OPTIE 2: Netlify
-      # - name: Deploy to Netlify
-      #   uses: nwtgck/actions-netlify@v3
-      #   with:
-      #     publish-dir: './dist'
-      #     production-deploy: true
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     deploy-message: "Dagelijkse publicatie ${{ github.run_id }}"
-      #   env:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-      # OPTIE 3: SSH/FTP naar eigen server
-      # - name: Deploy via rsync
-      #   uses: burnett01/rsync-deployments@7.0.1
-      #   with:
-      #     switches: -avzr --delete
-      #     path: dist/
-      #     remote_path: ${{ secrets.REMOTE_PATH }}
-      #     remote_host: ${{ secrets.REMOTE_HOST }}
-      #     remote_user: ${{ secrets.REMOTE_USER }}
-      #     remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "::error::Secret NETLIFY_BUILD_HOOK_URL is niet ingesteld."
+            echo "Zie de comment bovenaan dit bestand voor setup-instructies."
+            exit 1
+          fi
+          echo "Triggering Netlify build…"
+          response=$(curl -sS -X POST -w "\nHTTP %{http_code}" "$HOOK_URL")
+          echo "$response"
+          # Netlify build hook geeft 200 of 202 bij succes
+          code=$(echo "$response" | tail -1 | awk '{print $2}')
+          if [ "$code" != "200" ] && [ "$code" != "202" ]; then
+            echo "::error::Netlify hook gaf HTTP $code terug"
+            exit 1
+          fi
+          echo "✓ Netlify build getriggerd"
