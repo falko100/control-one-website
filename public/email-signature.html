@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Control One — e-mailhandtekening</title>
+<meta name="robots" content="noindex">
+<style>
+  /* alleen voor de preview-pagina — niet in de handtekening zelf */
+  body { background: #f5f6f8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 40px 24px; color: #0e2470; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .preview { background: #ffffff; border: 1px solid #e4e7ec; border-radius: 12px; padding: 32px; margin: 24px 0; box-shadow: 0 6px 20px -8px rgba(14,36,112,0.12); }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { font-size: 14px; color: #5a6378; margin: 0 0 24px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: #5a6378; margin: 32px 0 8px; }
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 18px; }
+  .tabs button { font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 6px; border: 1px solid #d6dae3; background: #ffffff; color: #1e3a6f; cursor: pointer; }
+  .tabs button.active { background: #1e3a6f; color: #ffffff; border-color: #1e3a6f; }
+  pre { background: #0e2470; color: #d9e3fb; padding: 18px; border-radius: 10px; overflow-x: auto; font-size: 12px; line-height: 1.55; }
+  .copy { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #1e3a6f; background: #eaf0ff; border: 1px solid #cdd9f5; padding: 6px 12px; border-radius: 6px; cursor: pointer; margin-bottom: 12px; }
+  .hint { font-size: 13px; color: #5a6378; line-height: 1.55; }
+  .hint code { background: #eef0f5; padding: 1px 6px; border-radius: 4px; font-size: 12px; }
+  ol { padding-left: 22px; }
+  ol li { margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Control One — e-mailhandtekening</h1>
+  <p class="sub">Kopieer onderstaande handtekening en plak hem in je mail-client.</p>
+
+  <h2>Voorbeeld</h2>
+  <div class="preview" id="preview-host">
+    <!-- ↓↓↓ SIGNATURE START ↓↓↓ -->
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0e2470;line-height:1.45;">
+      <tr>
+        <td style="padding:0;vertical-align:top;border-right:2px solid #1e3a6f;padding-right:18px;">
+          <a href="https://control-one.nl/" style="text-decoration:none;display:inline-block;">
+            <img src="https://control-one.nl/logo.svg" alt="Control One" width="150" height="24" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+          </a>
+          <div style="margin-top:10px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#1e3a6f;">ISO Compliance Software</div>
+          <div style="margin-top:4px;font-size:10px;color:#5a6378;letter-spacing:0.04em;">27001 &middot; 9001 &middot; 14001 &middot; 45001</div>
+        </td>
+        <td style="padding:0 0 0 18px;vertical-align:top;">
+          <div style="font-size:16px;font-weight:700;color:#0e2470;line-height:1.2;">Oscar de Boer</div>
+          <div style="font-size:13px;color:#5a6378;margin-top:2px;">Founder &middot; Control One</div>
+
+          <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;margin-top:12px;font-size:13px;color:#0e2470;">
+            <tr>
+              <td style="padding:2px 10px 2px 0;vertical-align:middle;width:14px;font-size:12px;font-weight:700;color:#1e3a6f;letter-spacing:0.05em;">E</td>
+              <td style="padding:2px 0;vertical-align:middle;">
+                <a href="mailto:oscar@control-one.nl" style="color:#0e2470;text-decoration:none;">oscar@control-one.nl</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:2px 10px 2px 0;vertical-align:middle;width:14px;font-size:12px;font-weight:700;color:#1e3a6f;letter-spacing:0.05em;">T</td>
+              <td style="padding:2px 0;vertical-align:middle;">
+                <a href="tel:+31612345678" style="color:#0e2470;text-decoration:none;">+31 6 12 34 56 78</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:2px 10px 2px 0;vertical-align:middle;width:14px;font-size:12px;font-weight:700;color:#1e3a6f;letter-spacing:0.05em;">W</td>
+              <td style="padding:2px 0;vertical-align:middle;">
+                <a href="https://control-one.nl/" style="color:#0e2470;text-decoration:none;">control-one.nl</a>
+              </td>
+            </tr>
+          </table>
+
+          <div style="margin-top:14px;">
+            <a href="https://control-one.nl/demo/" style="display:inline-block;background:#1e3a6f;color:#ffffff;text-decoration:none;font-size:12px;font-weight:600;padding:8px 14px;border-radius:6px;letter-spacing:0.02em;">
+              &#9658; &nbsp;Plan een live demo
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:14px 0 0 0;">
+          <div style="border-top:1px solid #e4e7ec;padding-top:10px;font-size:11px;color:#8a93a6;line-height:1.5;">
+            Dit bericht en bijlagen zijn vertrouwelijk. Niet de juiste ontvanger? Verwijder dit bericht en informeer ons.
+          </div>
+        </td>
+      </tr>
+    </table>
+    <!-- ↑↑↑ SIGNATURE END ↑↑↑ -->
+  </div>
+
+  <h2>HTML-broncode</h2>
+  <button class="copy" onclick="copyHTML()">&#128203; Kopieer HTML naar klembord</button>
+  <pre id="code"></pre>
+
+  <h2>Installatie</h2>
+  <p class="hint"><b>Gmail (web)</b> &mdash; klik bovenaan "Kopieer voorbeeld" terwijl je het zichtbare voorbeeld selecteert. Ga in Gmail naar <code>Instellingen &rsaquo; Algemeen &rsaquo; Handtekening</code> &rsaquo; <i>Nieuwe maken</i> &rsaquo; plak.</p>
+  <p class="hint"><b>Outlook (Mac / Windows)</b> &mdash; <code>Voorkeuren &rsaquo; Handtekeningen &rsaquo; +</code>, plak hier het voorbeeld.</p>
+  <p class="hint"><b>Apple Mail</b> &mdash; <code>Mail &rsaquo; Instellingen &rsaquo; Handtekeningen &rsaquo; +</code>, plak en vink <i>Standaard-fontmatch</i> uit zodat de opmaak behouden blijft.</p>
+  <p class="hint"><b>Tip</b> &mdash; selecteer het voorbeeld hierboven (Cmd+A / Ctrl+A in dat blok) en kopieer met Cmd+C. Plak in je client &mdash; dat houdt de opmaak intact. Of gebruik de HTML-knop voor de pure broncode.</p>
+
+</div>
+
+<script>
+  // Vul de codeblok met de markup van de handtekening
+  const host = document.getElementById('preview-host');
+  const html = host.innerHTML.trim().replace(/^\s*<!-- ↓↓↓ SIGNATURE START ↓↓↓ -->\s*/, '').replace(/\s*<!-- ↑↑↑ SIGNATURE END ↑↑↑ -->\s*$/, '');
+  document.getElementById('code').textContent = html;
+  function copyHTML() {
+    navigator.clipboard.writeText(html).then(() => {
+      const b = event.currentTarget; const t = b.textContent; b.textContent = '✓ Gekopieerd'; setTimeout(() => b.textContent = t, 1500);
+    });
+  }
+</script>
+</body>
+</html>
