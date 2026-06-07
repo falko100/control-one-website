@@ -1,69 +1,98 @@
 ---
-// Pain → solution mapping with outcome timeline.
+// Title "Van nul naar ISO-gecertificeerd, zonder externe consultant" blijft hier.
+// Body is gewisseld met InteractiveShowcase → toont nu de portal browser-chrome.
 
-const pains = [
+const items = [
   {
-    quote: 'Waar begin ik concreet?',
-    context: 'Iedereen zegt dat ISO belangrijk is, maar niemand wijst stap 1 aan, laat staan stap 28.',
+    id: 'dashboard',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"></path></svg>`,
+    label: 'Dashboard',
+    headline: 'Alles in één oogopslag',
+    description: 'Realtime compliance-overzicht met voortgang per framework, openstaande acties en risicostatus. Altijd weten waar je organisatie staat.',
+    headline2: 'Direct actie ondernemen',
+    description2: 'Via het dashboard navigeer je in één klik naar elk onderdeel. Openstaande taken, naderende deadlines en recente wijzigingen staan altijd bovenaan.',
+    screenshot: '/screenshots/portal-dashboard.png',
   },
   {
-    quote: 'Ik heb geen tijd om een heel handboek te schrijven.',
-    context: 'Beleid, procedures, registers en logboeken moeten er vóór de audit liggen. De vraag is alleen: waar haal je de basis vandaan?',
+    id: 'coach',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
+    label: 'Implementatiecoach',
+    headline: 'Stap voor stap naar certificering',
+    description: '28 begeleide stappen door de volledige PDCA-cyclus. Elke stap legt uit wat ISO vereist en wat je moet doen.',
+    headline2: 'Geen ISO-kennis nodig',
+    description2: 'De coach legt elke stap uit in gewone taal, met voorbeelden en sjablonen. Je weet altijd precies wat er van je verwacht wordt en wat de volgende stap is.',
+    screenshot: '/screenshots/portal-coach.png',
   },
   {
-    quote: 'Ik wil niet voor elk stukje ISO een andere tool.',
-    context: 'Risicoanalyse in Excel, documenten in Drive, audits in Word, VvT in nog een ander bestand. Het overzicht raak je zo kwijt.',
+    id: 'risks',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path></svg>`,
+    label: 'Risicoanalyse',
+    headline: "Risico's begrijpen en beheersen",
+    description: "Volledig risicoregister met configureerbare 5x5 risicomatrix, kans- en impactscoring en behandelingsopties.",
+    headline2: "Risico's direct koppelen aan maatregelen",
+    description2: "Elke geïdentificeerde dreiging wordt verbonden aan de bijbehorende Annex A controls en behandelplannen. Zo ontstaat een aantoonbaar en sluitend systeem.",
+    screenshot: '/screenshots/portal-risks.png',
   },
   {
-    quote: 'Een consultant van €1.200 per dag past niet.',
-    context: 'Als MKB wil je niet afhankelijk zijn van externe adviseurs. Je wil het zelf snappen en zelf doen, in je eigen tempo.',
-  },
-];
-
-const modules = [
-  {
-    num: '01',
-    title: 'Stapsgewijze implementatiecoach',
-    desc: '28 concrete stappen in logische volgorde en in heldere taal. Je weet altijd wat de volgende stap is.',
-    href: '/coach',
-    accent: 'from-primary-500 to-primary-700',
-    iconBg: 'bg-primary-50 border-primary-200 text-primary-700',
-    icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
+    id: 'documents',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path></svg>`,
+    label: 'Documentbeheer',
+    headline: 'Alle documenten op één plek',
+    description: 'Gecentraliseerd documentbeheer met versiebeheer, goedkeuringsworkflows en sjablonen per ISO-clausule.',
+    headline2: '80%+ al vooringevuld',
+    description2: 'Onze sjablonen zijn specifiek per ISO-clausule opgesteld en bevatten kant-en-klare teksten. Jij past aan op jouw organisatie — en bent binnen no time klaar.',
+    screenshot: '/screenshots/portal-documents.png',
   },
   {
-    num: '02',
-    title: '120+ vooringevulde sjablonen',
-    desc: 'Handboek, beleid, procedures en registers: voor circa 80% ingevuld. Aanpassen aan je organisatie en klaar.',
-    href: '/templates',
-    accent: 'from-emerald-500 to-emerald-700',
-    iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-700',
-    icon: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75h-2.25m0 0V6.108c0-1.135.845-2.098 1.976-2.192M12 3.375c-.376.023-.75.05-1.124.08',
+    id: 'audits',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>`,
+    label: 'Audits',
+    headline: 'Interne en externe audits beheren',
+    description: 'Plan audits, registreer bevindingen en koppel non-conformiteiten aan corrigerende maatregelen.',
+    headline2: 'Altijd audit-ready',
+    description2: 'Het systeem houdt bij welke documenten, maatregelen en risico zijn up-to-date. Geen verrassingen tijdens de certificeringsaudit — je weet precies waar je staat.',
+    screenshot: '/screenshots/portal-audits.png',
   },
   {
-    num: '03',
-    title: 'Alle modules in één platform',
-    desc: 'Risicoanalyse, VvT, maatregelen, documenten, leveranciers, audits, incidenten en directiebeoordeling. Allemaal naadloos verbonden.',
-    href: '/features',
-    accent: 'from-sky-500 to-sky-700',
-    iconBg: 'bg-sky-50 border-sky-200 text-sky-700',
-    icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z',
+    id: 'vendors',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>`,
+    label: 'Leveranciers',
+    headline: "Grip op je leveranciersrisico's",
+    description: "Registreer leveranciers, classificeer op risiconiveau, volg ISO-certificaten en plan periodieke beoordelingen.",
+    headline2: 'ISO vereist aantoonbaar leveranciersbeheer',
+    description2: 'Met overzichtelijke risicoclassificaties en automatische herinneringen voor beoordelingen voldoe je moeiteloos aan deze ISO-eis — zonder extra administratie.',
+    screenshot: '/screenshots/portal-vendors.png',
   },
   {
-    num: '04',
-    title: 'Zelf doen, met experts binnen handbereik',
-    desc: 'Control One is volledig ingericht op zelfstandig werken. Loop je toch vast of wil je even sparren? Onze ISO-experts geven feedback en support via chat.',
-    href: '/pricing',
-    accent: 'from-violet-500 to-violet-700',
-    iconBg: 'bg-violet-50 border-violet-200 text-violet-700',
-    icon: 'M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z',
+    id: 'soa',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"></path></svg>`,
+    label: 'Verklaring van Toepasselijkheid',
+    headline: 'De VvT altijd compleet en actueel',
+    description: 'Vul je Verklaring van Toepasselijkheid in via een interactieve tabel, gekoppeld aan je risicoanalyse. Exporteer als PDF voor de audit.',
+    headline2: 'Kernvereiste voor ISO 27001',
+    description2: 'Je legt per Annex A-maatregel vast of die van toepassing is en onderbouwt je keuze. Gekoppeld aan je risicoanalyse en controls, exporteerbaar als PDF voor je auditor.',
+    screenshot: '/screenshots/portal-soa.png',
   },
-];
-
-const journey = [
-  { label: 'Vandaag', sub: 'Nulmeting' },
-  { label: 'Maand 1 en 2', sub: 'ISMS opzetten' },
-  { label: 'Maand 3 en 4', sub: 'Documenten & audit' },
-  { label: 'Maand 5 en 6', sub: 'Certificaat' },
+  {
+    id: 'maatregelen',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path></svg>`,
+    label: 'Maatregelen',
+    headline: 'Beheersmaatregelen volledig onder controle',
+    description: 'Registreer en monitor alle ISO-maatregelen, wijs eigenaren toe en volg de implementatiestatus.',
+    headline2: '93 Annex A controls, overzichtelijk beheerd',
+    description2: 'Wijs per maatregel een eigenaar aan, stel implementatiedeadlines in en monitor de voortgang. Direct gekoppeld aan je risicoanalyse en audits.',
+    screenshot: '/screenshots/portal-maatregelen.png',
+  },
+  {
+    id: 'directie',
+    icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"></path></svg>`,
+    label: 'Directiebeoordeling',
+    headline: 'Management reviews gestructureerd vastleggen',
+    description: 'Leg directiebeoordelingen vast conform ISO-eisen. Documenteer input, output, besluiten en actiepunten.',
+    headline2: 'Verplicht én vaak onderschat',
+    description2: 'De directiebeoordeling is een ISO-vereiste die de basis vormt voor continue verbetering. Ons platform maakt het eenvoudig, aantoonbaar en klaar voor de auditor.',
+    screenshot: '/screenshots/portal-directie.png',
+  },
 ];
 ---
 
@@ -77,8 +106,8 @@ const journey = [
 
   <div class="relative max-w-7xl mx-auto px-6">
 
-    <!-- OPENING HOOK -->
-    <div class="max-w-4xl mx-auto text-center mb-20">
+    <!-- OPENING HOOK (titel blijft hier) -->
+    <div class="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
       <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-primary-950">
         Van nul naar ISO-gecertificeerd,<br>
         <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">zonder externe consultant.</span>
@@ -88,149 +117,345 @@ const journey = [
       </p>
     </div>
 
-    <!-- PAIN naar SOLUTION MAPPING -->
-    <div class="grid lg:grid-cols-2 gap-6 lg:gap-14 mb-20 items-start">
+    <!-- ── BODY (gewisseld) ── Portal showcase: browser-chrome + tabs ── -->
+    <div class="relative mx-auto" style="max-width: 1040px;">
 
-      <!-- LEFT: Pains -->
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
-          </div>
-          <div>
-            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-rose-600/90">De praktijk</p>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-950 leading-tight">Vragen die we vaak horen</h3>
-          </div>
-        </div>
-        <div class="space-y-4">
-          {pains.map((p, i) => (
-            <div class="group relative p-5 sm:p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-md hover:border-rose-200 transition-all">
-              <!-- Number -->
-              <span class="absolute -top-3 -left-3 w-9 h-9 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-bold shadow-md shadow-rose-500/30 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
-              <!-- Quote -->
-              <p class="text-primary-950 font-semibold text-base sm:text-lg leading-snug pl-7 sm:pl-8">"{p.quote}"</p>
-              <!-- Context -->
-              <p class="text-primary-700/80 text-sm mt-2 leading-relaxed pl-7 sm:pl-8">{p.context}</p>
-              <!-- Arrow (mobile only shows at bottom) -->
-              <div class="lg:hidden mt-3 pl-7 sm:pl-8 flex items-center gap-1.5 text-[11px] font-semibold text-primary-600">
-                <span>Zo lossen we dat op</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <!-- Nav arrows: outside the visual on lg+, inside on mobile -->
+      <button id="sc-prev" aria-label="Vorige" class="absolute left-3 lg:-left-14 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white border border-slate-200 flex items-center justify-center text-slate-600 transition-all duration-200 shadow-md backdrop-blur-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="sc-next" aria-label="Volgende" class="absolute right-3 lg:-right-14 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white border border-slate-200 flex items-center justify-center text-slate-600 transition-all duration-200 shadow-md backdrop-blur-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
 
-      <!-- RIGHT: Matched modules -->
-      <div class="lg:sticky lg:top-8">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-primary-50 border border-primary-200 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          </div>
-          <div>
-            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-primary-700/90">Onze aanpak</p>
-            <h3 class="text-lg sm:text-xl font-bold text-primary-950 leading-tight">Hoe Control One dat oplost</h3>
-          </div>
-        </div>
-        <div class="space-y-4">
-          {modules.map(m => (
-            <a href={m.href} class="group relative block p-5 sm:p-6 rounded-2xl bg-white border border-primary-100 shadow-sm hover:shadow-lg hover:border-primary-200 hover:-translate-y-0.5 transition-all overflow-hidden">
-              <!-- Left accent bar -->
-              <div class={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b ${m.accent}`}></div>
-              <div class="relative flex items-start gap-4">
-                <div class={`w-12 h-12 shrink-0 rounded-xl border flex items-center justify-center ${m.iconBg} group-hover:scale-110 transition-transform`}>
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={m.icon}/></svg>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex items-baseline gap-2.5 flex-wrap">
-                    <span class="text-[10px] font-bold text-primary-500 tabular-nums tracking-[0.15em]">{m.num}</span>
-                    <h3 class="text-primary-950 font-bold text-base sm:text-lg leading-tight">{m.title}</h3>
-                  </div>
-                  <p class="text-primary-700/80 text-sm mt-1.5 leading-relaxed">{m.desc}</p>
-                </div>
-                <svg class="w-5 h-5 text-primary-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all self-center shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
+    <!-- Platform shell -->
+    <div class="relative rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.22),0_0_0_1px_rgba(0,0,0,0.06)]">
 
-    <!-- JOURNEY / OUTCOME TIMELINE -->
-    <div class="relative p-7 sm:p-10 rounded-3xl bg-gradient-to-br from-primary-50 via-white to-emerald-50/60 border border-primary-100 shadow-sm overflow-hidden">
-      <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-primary-300/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <!-- ── Shell header: tab nav ── -->
+      <div class="bg-gradient-to-b from-primary-100/70 to-slate-100 px-4 pt-4 pb-0 border-b border-primary-200/40">
 
-      <div class="relative grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-center">
-        <div class="max-w-sm">
-          <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-emerald-700 mb-3">Jouw tijdlijn</p>
-          <p class="text-2xl sm:text-3xl font-bold text-primary-950 leading-tight">
-            Van nulmeting tot <span class="text-emerald-700">certificaat</span><br>in 3 tot 6 maanden.
-          </p>
-          <p class="mt-3 text-sm text-primary-700/90 leading-relaxed">
-            Geen jarenlang traject, geen doorlopende consultancykosten. Eén platform, één route, één doel.
-          </p>
+        <!-- Window controls -->
+        <div class="flex items-center gap-1.5 mb-3 px-1">
+          <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+          <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+          <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
         </div>
 
-        <!-- Horizontal timeline -->
-        <div class="relative">
-          <!-- Line -->
-          <div class="absolute top-4 left-4 right-4 h-0.5 bg-gradient-to-r from-primary-400 via-accent-400 to-emerald-500"></div>
-          <div class="grid grid-cols-4 gap-1 sm:gap-3">
-            {journey.map((j, i) => (
-              <div class="relative flex flex-col items-center text-center">
-                <div class={`relative z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-bold tabular-nums ${
-                  i === journey.length - 1
-                    ? 'bg-emerald-500 border-emerald-400 text-white shadow-lg shadow-emerald-500/40'
-                    : i === 0
-                    ? 'bg-primary-950 border-primary-950 text-white'
-                    : 'bg-white border-primary-300 text-primary-700'
-                }`}>
-                  {i === journey.length - 1 ? (
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-                  ) : (
-                    i + 1
-                  )}
-                </div>
-                <p class="mt-3 text-xs sm:text-sm font-bold text-primary-950 leading-tight">{j.label}</p>
-                <p class="text-[10px] sm:text-xs text-primary-600 mt-0.5 leading-tight">{j.sub}</p>
-              </div>
+        <!-- URL bar + tabs row -->
+        <div class="flex items-end gap-0 overflow-x-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+          <div id="sc-nav" class="flex items-end gap-0">
+            {items.map((item) => (
+              <button
+                class="sc-tab flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-all duration-200 whitespace-nowrap shrink-0 rounded-t-lg text-primary-700/60 hover:text-primary-900 border-t border-l border-r border-transparent"
+                data-tab={item.id}
+              >
+                <span class="sc-tab-icon w-3.5 h-3.5 shrink-0">
+                  <Fragment set:html={item.icon} />
+                </span>
+                <span class="sc-tab-label">{item.label}</span>
+              </button>
             ))}
           </div>
         </div>
       </div>
 
-      <!-- Outcome stats -->
-      <div class="relative mt-8 pt-8 border-t border-primary-100 grid sm:grid-cols-3 gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div>
-            <p class="text-primary-950 font-bold text-sm">3 tot 6 maanden</p>
-            <p class="text-xs text-primary-600">Van nulmeting tot certificaat</p>
+      <!-- ── Browser bar ── -->
+      <div class="flex items-center gap-3 px-4 py-2.5 bg-[#f8fafc] border-b border-slate-200">
+        <div class="flex gap-2 text-slate-300 shrink-0">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-1.5 shadow-sm" style="width: min(320px, 100%);">
+            <svg class="w-3 h-3 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            <span class="text-xs text-slate-400 font-mono">app.control-one.nl</span>
           </div>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-accent-50 border border-accent-200 flex items-center justify-center text-accent-700 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m0 0l6 6 8-8-6-6-8 8z"/></svg>
-          </div>
-          <div>
-            <p class="text-primary-950 font-bold text-sm">Geen consultantkosten</p>
-            <p class="text-xs text-primary-600">Zelf de regie, met directe support</p>
+        <div class="w-12 shrink-0 hidden sm:block"></div>
+      </div>
+
+      <!-- ── Screenshot area ── -->
+      <div
+        id="sc-screen"
+        class="relative bg-[#f1f5f9] overflow-hidden cursor-zoom-in group"
+        style="height: 520px;"
+        title="Klik om te vergroten"
+      >
+        {items.map((item, i) => (
+          <img
+            src={item.screenshot}
+            alt={`Control One: ${item.label}`}
+            class="sc-img absolute inset-0 w-full h-full object-cover object-top"
+            style={i !== 0 ? 'opacity: 0; pointer-events: none;' : 'opacity: 1;'}
+            data-tab={item.id}
+          />
+        ))}
+
+        <!-- Zoom hint -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+          <div class="flex items-center gap-2 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full text-white text-xs font-medium shadow-lg">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            Klik om te vergroten
           </div>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-          </div>
-          <div>
-            <p class="text-primary-950 font-bold text-sm">Eén platform</p>
-            <p class="text-xs text-primary-600">Alle ISO-modules verbonden</p>
-          </div>
+
+        <!-- Progress bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-slate-200/60">
+          <div id="sc-progress" class="h-full bg-gradient-to-r from-primary-500 to-primary-400 rounded-full" style="width: 0%;"></div>
         </div>
       </div>
-    </div>
+
+      <!-- ── Description strip: light, connected to shell ── -->
+      <div class="sc-desc-container bg-gradient-to-br from-primary-50/60 via-white to-primary-50/60 border-t border-primary-100" style="position: relative; min-height: 100px;">
+        {items.map((item, i) => (
+          <div
+            class="sc-desc"
+            data-tab={item.id}
+            style={i !== 0 ? 'opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; right: 0;' : ''}
+          >
+            <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-primary-100">
+              <!-- Kolom 1 -->
+              <div class="flex items-start gap-4 px-7 py-6">
+                <div class="w-9 h-9 rounded-lg bg-primary-100 border border-primary-200 flex items-center justify-center text-primary-700 shrink-0 mt-0.5">
+                  <Fragment set:html={item.icon} />
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold text-primary-950 leading-snug">{item.headline}</p>
+                  <p class="text-xs text-primary-700/80 mt-1 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+              <!-- Kolom 2 -->
+              <div class="flex items-start gap-4 px-7 py-6">
+                <div class="w-9 h-9 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+                  </svg>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold text-primary-950 leading-snug">{item.headline2}</p>
+                  <p class="text-xs text-primary-700/80 mt-1 leading-relaxed">{item.description2}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div><!-- end platform shell -->
+    </div><!-- end outside-nav wrapper -->
 
   </div>
 </section>
+
+<!-- ── Lightbox overlay ── -->
+<div
+  id="sc-lightbox"
+  class="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-8"
+  style="display: none;"
+  aria-label="Sluit vergroting"
+>
+  <!-- Backdrop -->
+  <div id="sc-lb-backdrop" class="absolute inset-0 backdrop-blur-sm" style="background: linear-gradient(135deg, rgba(14,36,112,0.72) 0%, rgba(26,63,122,0.68) 50%, rgba(30,75,143,0.72) 100%);"></div>
+
+  <!-- Image container -->
+  <div class="relative w-full max-w-6xl mx-auto">
+    <!-- Close button -->
+    <button
+      id="sc-lb-close"
+      class="absolute -top-12 right-0 flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
+      aria-label="Sluiten"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      Sluiten (Esc)
+    </button>
+
+    <!-- Screenshot -->
+    <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10">
+      <img
+        id="sc-lb-img"
+        src=""
+        alt="Portal schermafbeelding vergroot"
+        class="w-full h-auto block"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Tab: inactive */
+  .sc-tab {
+    color: rgba(14, 36, 112, 0.55);
+    background: transparent;
+    border-color: transparent;
+  }
+  .sc-tab:hover {
+    color: rgba(14, 36, 112, 0.95);
+    background: rgba(14, 36, 112, 0.04);
+  }
+  /* Tab: active — looks like an open browser tab */
+  .sc-tab.active {
+    background: #f8fafc;
+    color: #0e2470 !important;
+    border-color: rgba(14, 36, 112, 0.08) !important;
+  }
+  .sc-tab.active .sc-tab-icon,
+  .sc-tab.active .sc-tab-label {
+    color: #0e2470 !important;
+  }
+
+  /* Screenshot crossfade */
+  .sc-img {
+    transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Progress bar fill animation */
+  @keyframes sc-fill {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+  #sc-progress.running {
+    animation: sc-fill 3s linear forwards;
+  }
+  .sc-desc {
+    transition: opacity 0.35s ease;
+  }
+
+  /* Lightbox show/hide */
+  #sc-lightbox.open {
+    display: flex !important;
+  }
+  #sc-lightbox {
+    animation: lb-in 0.2s ease;
+  }
+  @keyframes lb-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Hide scrollbar on tab nav */
+  #sc-nav::-webkit-scrollbar { display: none; }
+</style>
+
+<script>
+  const tabs   = document.querySelectorAll<HTMLElement>('.sc-tab');
+  const imgs   = document.querySelectorAll<HTMLImageElement>('.sc-img');
+  const descs  = document.querySelectorAll<HTMLElement>('.sc-desc');
+  const prog   = document.getElementById('sc-progress') as HTMLElement;
+  const screen = document.getElementById('sc-screen') as HTMLElement;
+  const lb     = document.getElementById('sc-lightbox') as HTMLElement;
+  const lbImg  = document.getElementById('sc-lb-img') as HTMLImageElement;
+  const lbClose  = document.getElementById('sc-lb-close') as HTMLButtonElement;
+  const lbBack   = document.getElementById('sc-lb-backdrop') as HTMLElement;
+
+  const IDS = Array.from(tabs).map(t => t.dataset.tab!);
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | null = null;
+
+  // ── Tab switching ──────────────────────────────────────
+  function startProgress() {
+    prog.classList.remove('running');
+    void prog.offsetWidth;
+    prog.classList.add('running');
+  }
+
+  let isManualClick = false;
+  let hovered = false;
+
+  function activate(id: string, resetTimer = true) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
+    imgs.forEach(img => {
+      const on = img.dataset.tab === id;
+      img.style.opacity = on ? '1' : '0';
+      img.style.pointerEvents = on ? 'auto' : 'none';
+    });
+    descs.forEach(d => {
+      const on = d.dataset.tab === id;
+      (d as HTMLElement).style.opacity = on ? '1' : '0';
+      (d as HTMLElement).style.pointerEvents = on ? '' : 'none';
+      (d as HTMLElement).style.position = on ? '' : 'absolute';
+    });
+    // Only scroll the tab into view on manual click, never on init or auto-advance
+    if (isManualClick) {
+      const activeTab = Array.from(tabs).find(t => t.dataset.tab === id);
+      activeTab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+    startProgress();
+
+    if (resetTimer) {
+      current = IDS.indexOf(id);
+      if (timer) clearInterval(timer);
+      if (!hovered) timer = setInterval(advance, 3000);
+    }
+  }
+
+  function advance() {
+    current = (current + 1) % IDS.length;
+    activate(IDS[current], false);
+  }
+
+  activate(IDS[0]);
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      isManualClick = true;
+      activate(tab.dataset.tab!);
+      isManualClick = false;
+    });
+  });
+
+  // Arrow navigation
+  const prevBtn = document.getElementById('sc-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('sc-next') as HTMLButtonElement;
+
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isManualClick = true;
+    current = (current - 1 + IDS.length) % IDS.length;
+    activate(IDS[current]);
+    isManualClick = false;
+  });
+
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isManualClick = true;
+    current = (current + 1) % IDS.length;
+    activate(IDS[current]);
+    isManualClick = false;
+  });
+
+  // Pause auto-advance on hover over entire shell
+  const shell = screen.closest('.relative.rounded-3xl') as HTMLElement;
+  const hoverTarget = shell ?? screen;
+
+  hoverTarget.addEventListener('mouseenter', () => {
+    hovered = true;
+    if (timer) { clearInterval(timer); timer = null; }
+  });
+  hoverTarget.addEventListener('mouseleave', () => {
+    hovered = false;
+    if (!timer) timer = setInterval(advance, 3000);
+  });
+
+  // ── Lightbox ──────────────────────────────────────────
+  function openLightbox() {
+    const activeImg = Array.from(imgs).find(img => img.style.opacity === '1');
+    if (!activeImg) return;
+    lbImg.src = activeImg.src;
+    lbImg.alt = activeImg.alt;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    setTimeout(() => { lbImg.src = ''; }, 200);
+  }
+
+  screen.addEventListener('click', openLightbox);
+  lbClose.addEventListener('click', closeLightbox);
+  lbBack.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
