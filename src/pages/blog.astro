@@ -9,58 +9,7 @@ const now = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
 const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.publishDate <= now);
 const posts = allPosts.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
-// Placeholder posts shown when no content collection posts exist for a category
-const placeholderPosts = [
-  {
-    slug: null,
-    title: 'ISO 27001:2022: Wat is er veranderd?',
-    excerpt: 'De 2022-versie van ISO 27001 brengt belangrijke wijzigingen in Annex A. We leggen uit wat er veranderd is en wat het voor je organisatie betekent.',
-    date: '15 februari 2026',
-    category: 'ISO 27001',
-    readTime: '5 min',
-  },
-  {
-    slug: null,
-    title: 'De complete gids voor risicobeoordeling',
-    excerpt: 'Een risicobeoordeling is de kern van elk ISMS. Leer hoe je risico\'s identificeert, beoordeelt en behandelt met praktische voorbeelden.',
-    date: '8 februari 2026',
-    category: 'Risicobeheer',
-    readTime: '8 min',
-  },
-  {
-    slug: null,
-    title: 'NIS2: wat Nederlandse bedrijven moeten weten',
-    excerpt: 'De NIS2-richtlijn stelt nieuwe eisen aan cybersecurity. Valt je organisatie onder de richtlijn en wat moet je doen om compliant te worden?',
-    date: '1 februari 2026',
-    category: 'Wetgeving',
-    readTime: '6 min',
-  },
-  {
-    slug: null,
-    title: '5 veelgemaakte fouten bij ISO-implementatie',
-    excerpt: 'Van te veel documentatie tot gebrek aan managementbetrokkenheid: ontdek de vijf meest voorkomende fouten en hoe je ze vermijdt.',
-    date: '25 januari 2026',
-    category: 'Best practices',
-    readTime: '4 min',
-  },
-  {
-    slug: null,
-    title: 'Interne audit: tips voor een effectieve aanpak',
-    excerpt: 'Een interne audit is meer dan een checklist afvinken. Ontdek hoe je waardevolle inzichten haalt uit je auditprogramma.',
-    date: '18 januari 2026',
-    category: 'Audits',
-    readTime: '7 min',
-  },
-  {
-    slug: null,
-    title: 'ISO 9001 en ISO 27001 combineren: zo doe je dat',
-    excerpt: 'Veel organisaties implementeren meerdere ISO-normen. Leer hoe je overlap benut en dubbel werk voorkomt met een geïntegreerde aanpak.',
-    date: '10 januari 2026',
-    category: 'Multi-framework',
-    readTime: '6 min',
-  },
-];
-
+// Normaliseer naar een licht render-object
 const realPosts = posts.map((post) => ({
   slug: post.slug,
   title: post.data.title,
@@ -70,14 +19,98 @@ const realPosts = posts.map((post) => ({
   readTime: post.data.readTime,
 }));
 
-const displayPosts = realPosts.length > 0
-  ? [...realPosts, ...placeholderPosts]
-  : placeholderPosts;
+// Topic clusters — elk cluster groepeert artikelen voor pillar→cluster SEO-structuur.
+// `key` is het anker-ID + slug-onderdeel, `category` matcht frontmatter exact.
+const clusters = [
+  {
+    key: 'iso-27001',
+    title: 'ISO 27001 — Informatiebeveiliging',
+    description: 'Implementatie, controls, audits en certificering voor het ISMS.',
+    category: 'ISO 27001',
+    pillar: '/iso-27001',
+    accent: 'from-blue-500 to-blue-700',
+    chipBg: 'bg-blue-50 text-blue-700 border-blue-100',
+  },
+  {
+    key: 'iso-9001',
+    title: 'ISO 9001 — Kwaliteitsmanagement',
+    description: 'Processen, klantgerichtheid, continue verbetering en auditing.',
+    category: 'ISO 9001',
+    pillar: '/iso-9001',
+    accent: 'from-emerald-500 to-emerald-700',
+    chipBg: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+  },
+  {
+    key: 'iso-14001',
+    title: 'ISO 14001 — Milieumanagement',
+    description: 'Milieubeleid, energie, afval en duurzaamheidsrapportage.',
+    category: 'ISO 14001',
+    pillar: '/iso-14001',
+    accent: 'from-green-500 to-green-700',
+    chipBg: 'bg-green-50 text-green-700 border-green-100',
+  },
+  {
+    key: 'iso-45001',
+    title: 'ISO 45001 — Arbo & Veiligheid',
+    description: 'Arbeidsveiligheid, gevaren identificeren en incidentbeheer.',
+    category: 'ISO 45001',
+    pillar: '/iso-45001',
+    accent: 'from-amber-500 to-amber-700',
+    chipBg: 'bg-amber-50 text-amber-700 border-amber-100',
+  },
+  {
+    key: 'wetgeving',
+    title: 'Wetgeving & Privacy',
+    description: 'NIS2, AVG, DORA en andere Europese compliance-verplichtingen.',
+    category: 'Wetgeving',
+    pillar: '/frameworks',
+    accent: 'from-violet-500 to-violet-700',
+    chipBg: 'bg-violet-50 text-violet-700 border-violet-100',
+  },
+  {
+    key: 'cybersecurity',
+    title: 'Cybersecurity',
+    description: 'Phishing, MFA, patching, backup-strategie en zero-trust.',
+    category: 'Cybersecurity',
+    pillar: '/iso-27001',
+    accent: 'from-red-500 to-red-700',
+    chipBg: 'bg-red-50 text-red-700 border-red-100',
+  },
+  {
+    key: 'compliance',
+    title: 'Compliance & best practices',
+    description: 'Implementatie-aanpak, audits, KPI’s en bewijslast.',
+    category: 'Compliance',
+    pillar: '/frameworks',
+    accent: 'from-primary-500 to-primary-700',
+    chipBg: 'bg-primary-50 text-primary-700 border-primary-100',
+  },
+  {
+    key: 'mkb-groei',
+    title: 'MKB & Groei',
+    description: 'Klanten overtuigen, aanbestedingen winnen en schaalbaar groeien.',
+    category: 'MKB & Groei',
+    pillar: '/iso-aanbestedingen',
+    accent: 'from-cyan-500 to-cyan-700',
+    chipBg: 'bg-cyan-50 text-cyan-700 border-cyan-100',
+  },
+];
+
+// Groepeer posts per cluster (op basis van frontmatter `category`)
+const clusterGroups = clusters
+  .map((cluster) => ({
+    ...cluster,
+    posts: realPosts.filter((p) => p.category === cluster.category),
+  }))
+  .filter((c) => c.posts.length > 0);
+
+const totalPublished = realPosts.length;
+const latest = realPosts.slice(0, 3);
 ---
 
 <Layout
   title="Blog — ISO-compliance inzichten en best practices | Control One"
-  description="Artikelen, gidsen en best practices over ISO 27001, ISO 9001, risicobeheer, interne audits en compliance. Blijf op de hoogte van de laatste ontwikkelingen."
+  description="Artikelen, gidsen en best practices over ISO 27001, ISO 9001, ISO 14001, ISO 45001, NIS2 en compliance voor het Nederlandse MKB."
   jsonLd={[
     {
       '@context': 'https://schema.org',
@@ -104,7 +137,8 @@ const displayPosts = realPosts.length > 0
 >
   <Header />
   <main>
-    <section class="relative pt-32 pb-24 overflow-hidden">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800"></div>
       <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
 
@@ -119,69 +153,123 @@ const displayPosts = realPosts.length > 0
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-300">compliance</span>
           </h1>
           <p class="mt-6 text-lg text-primary-300/80 max-w-2xl mx-auto leading-relaxed">
-            Artikelen, gidsen en best practices over ISO-compliance, informatiebeveiliging en kwaliteitsmanagement.
+            {totalPublished} artikelen, gidsen en best practices over ISO 27001, 9001, 14001, 45001, NIS2 en cybersecurity voor het Nederlandse MKB.
           </p>
+
+          <!-- Jump-nav: één link per cluster, ankers voor crawlers en gebruikers -->
+          <nav class="mt-10 flex flex-wrap items-center justify-center gap-2" aria-label="Onderwerpen">
+            {clusterGroups.map((c) => (
+              <a
+                href={`#${c.key}`}
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white/80 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-colors"
+              >
+                {c.title.split(' — ')[0]}
+                <span class="text-white/40 tabular-nums">{c.posts.length}</span>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </section>
 
-    <section class="py-24 bg-white">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="grid gap-8">
-          {displayPosts.map((post, i) => (
-            post.slug ? (
+    <!-- Featured: laatste 3 artikelen overall -->
+    {latest.length > 0 && (
+      <section class="py-16 bg-white border-b border-primary-100">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex items-end justify-between mb-8">
+            <div>
+              <p class="text-xs font-semibold tracking-widest uppercase text-primary-500 mb-2">Nieuwste artikelen</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-primary-950 tracking-tight">Recent geplaatst</h2>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latest.map((post) => (
               <a
                 href={`/blog/${post.slug}`}
-                class:list={[
-                  'group p-6 sm:p-8 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all block',
-                  i === 0 && 'border-primary-200 shadow-md',
-                ]}
+                class="group block p-6 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/50 hover:-translate-y-0.5 transition-all"
               >
-                <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                  <span class="inline-flex px-3 py-1 text-xs font-medium rounded-full bg-primary-50 text-primary-600 w-fit">
+                <div class="flex items-center gap-2 mb-4">
+                  <span class="inline-flex px-2.5 py-1 text-[11px] font-medium rounded-full bg-primary-50 text-primary-600">
                     {post.category}
                   </span>
-                  <div class="flex items-center gap-3 text-sm text-primary-900/40">
-                    <span>{post.date}</span>
-                    <span>·</span>
-                    <span>{post.readTime} leestijd</span>
-                  </div>
+                  <span class="text-xs text-primary-900/40">{post.readTime}</span>
                 </div>
-                <h2 class="text-xl sm:text-2xl font-bold text-primary-950 mb-3 group-hover:text-primary-700 transition-colors">
+                <h3 class="text-base font-bold text-primary-950 leading-snug mb-2 group-hover:text-primary-700 transition-colors">
                   {post.title}
-                </h2>
-                <p class="text-primary-900/60 leading-relaxed">{post.excerpt}</p>
-                <div class="mt-4 flex items-center gap-1.5 text-sm font-medium text-primary-600 group-hover:text-primary-800 transition-colors">
-                  Lees artikel
-                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                  </svg>
-                </div>
+                </h3>
+                <p class="text-sm text-primary-900/60 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                <p class="mt-4 text-xs text-primary-900/40">{post.date}</p>
               </a>
-            ) : (
-              <article class:list={[
-                'group p-6 sm:p-8 rounded-2xl border border-primary-100 opacity-60',
-              ]}>
-                <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                  <span class="inline-flex px-3 py-1 text-xs font-medium rounded-full bg-primary-50 text-primary-600 w-fit">
-                    {post.category}
-                  </span>
-                  <div class="flex items-center gap-3 text-sm text-primary-900/40">
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Cluster-secties: één <section> per norm/topic -->
+    <div class="bg-slate-50 py-20">
+      <div class="max-w-6xl mx-auto px-6 space-y-20">
+        {clusterGroups.map((cluster) => (
+          <section id={cluster.key} class="scroll-mt-28">
+
+            <!-- Cluster header met link naar pillar -->
+            <div class="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+              <div class="max-w-2xl">
+                <div class={`inline-flex items-center gap-2 px-2.5 py-1 mb-3 text-[11px] font-semibold tracking-wide uppercase rounded-full border ${cluster.chipBg}`}>
+                  <span class="tabular-nums">{cluster.posts.length}</span> artikel{cluster.posts.length === 1 ? '' : 'en'}
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-primary-950 tracking-tight leading-tight">
+                  {cluster.title}
+                </h2>
+                <p class="mt-2 text-base text-primary-900/65 leading-relaxed">{cluster.description}</p>
+              </div>
+              <a
+                href={cluster.pillar}
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors whitespace-nowrap"
+              >
+                Pillar bekijken
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+
+            <!-- Posts in cluster -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {cluster.posts.map((post) => (
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="group block p-5 rounded-xl border border-primary-100 bg-white hover:shadow-md hover:border-primary-200 hover:-translate-y-0.5 transition-all"
+                >
+                  <div class="flex items-center gap-2 text-xs text-primary-900/50 mb-3">
                     <span>{post.date}</span>
                     <span>·</span>
-                    <span>{post.readTime} leestijd</span>
+                    <span>{post.readTime}</span>
                   </div>
-                </div>
-                <h2 class="text-xl sm:text-2xl font-bold text-primary-950 mb-3">
-                  {post.title}
-                </h2>
-                <p class="text-primary-900/60 leading-relaxed">{post.excerpt}</p>
-              </article>
-            )
-          ))}
-        </div>
+                  <h3 class="text-sm sm:text-base font-bold text-primary-950 leading-snug group-hover:text-primary-700 transition-colors mb-2">
+                    {post.title}
+                  </h3>
+                  <p class="text-sm text-primary-900/60 leading-relaxed line-clamp-2">{post.excerpt}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
-    </section>
+    </div>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
