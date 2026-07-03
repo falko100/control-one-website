@@ -24,6 +24,7 @@ const vacatures = [
       'Affiniteit met clean code en testbaar schrijven',
       'Zelfstandig en resultaatgericht',
     ],
+    salary: { min: 3500, max: 5500, unit: 'MONTH' },
   },
   {
     title: 'ISO-consultant (Parttime)',
@@ -37,6 +38,7 @@ const vacatures = [
       'In staat om complexe normen helder uit te leggen',
       'Bij voorkeur ervaring als lead auditor of implementatieconsultant',
     ],
+    salary: { min: 45, max: 65, unit: 'HOUR' },
   },
   {
     title: 'Sales Development Representative',
@@ -50,6 +52,7 @@ const vacatures = [
       'Proactief en communicatief sterk',
       'Ervaring met een CRM-systeem is een pré',
     ],
+    salary: { min: 2800, max: 3800, unit: 'MONTH' },
   },
 ];
 
@@ -66,6 +69,16 @@ const jobSchemas = vacatures.map(v => ({
   datePosted: today,
   validThrough,
   employmentType: v.type.toLowerCase().includes('parttime') ? 'PART_TIME' : 'FULL_TIME',
+  baseSalary: {
+    '@type': 'MonetaryAmount',
+    currency: 'EUR',
+    value: {
+      '@type': 'QuantitativeValue',
+      minValue: v.salary.min,
+      maxValue: v.salary.max,
+      unitText: v.salary.unit,
+    },
+  },
   hiringOrganization: {
     '@type': 'Organization',
     name: 'Control One',
