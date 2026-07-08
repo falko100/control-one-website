@@ -1,0 +1,463 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const uurbasisVoorbeelden = [
+  {
+    title: 'Interne audit',
+    desc: 'Een onafhankelijke interne audit door een ervaren auditor, inclusief bevindingen en rapport in je portal.',
+    icon: 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: 'Pre-audit check',
+    desc: 'Vlak voor je certificeringsaudit alles nog één keer kritisch laten doorlopen door een expert.',
+    icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    title: 'Risicoanalyse-sessie',
+    desc: 'Samen met je team risico\'s en kansen identificeren en beoordelen in een begeleide werksessie.',
+    icon: 'M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z',
+  },
+  {
+    title: 'Directiebeoordeling begeleiden',
+    desc: 'De jaarlijkse management review voorbereiden en voorzitten, zodat alle verplichte punten aan bod komen.',
+    icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+  },
+  {
+    title: 'Documentreview',
+    desc: 'Je beleid, procedures en handboek laten toetsen op volledigheid en aansluiting op de norm.',
+    icon: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z',
+  },
+  {
+    title: 'Sparren met een expert',
+    desc: 'Een uur videobellen over een specifiek vraagstuk: scope, uitsluitingen, leveranciers of een lastige maatregel.',
+    icon: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z',
+  },
+];
+
+const pakketStappen = [
+  {
+    num: '01',
+    title: 'Kennismaking',
+    desc: 'We bespreken je organisatie, de norm die je wilt behalen en hoeveel je zelf wilt (en kunt) oppakken.',
+  },
+  {
+    num: '02',
+    title: 'Inschatting',
+    desc: 'Samen maken we een realistische inschatting van de implementatie: welke onderdelen doe jij, waar helpen wij.',
+  },
+  {
+    num: '03',
+    title: 'Vaste pakketprijs',
+    desc: 'Op basis van de inschatting ontvang je één vaste prijs voor het hele traject. Geen verrassingen achteraf.',
+  },
+  {
+    num: '04',
+    title: 'Samen uitvoeren',
+    desc: 'We werken in jouw Control One portal, volgens de coach. Alles wat we samen bouwen blijft van jou.',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'Is consultancy verplicht bij Control One?',
+    a: 'Nee, absoluut niet. Control One is juist gebouwd zodat je ISO-certificering zelfstandig behaalt, zonder externe consultant. Consultancy is een optionele aanvulling voor wie op onderdelen extra expertise of capaciteit wil.',
+  },
+  {
+    q: 'Kan ik later alsnog consultancy bijschakelen?',
+    a: 'Ja. Je kunt op elk moment in je traject een losse sessie of begeleiding aanvragen. Bijvoorbeeld alleen een interne audit aan het einde, of een sparsessie halverwege. Je zit nergens aan vast.',
+  },
+  {
+    q: 'Wat kost consultancy?',
+    a: 'Inzet op uurbasis en implementatiepakketten zijn maatwerk. Na een korte kennismaking ontvang je een heldere prijsopgave vooraf: een uurtarief voor losse inzet of één vaste pakketprijs voor een volledig traject.',
+  },
+  {
+    q: 'Werkt de consultant in mijn portal?',
+    a: 'Ja. Alle begeleiding gebeurt in jouw eigen Control One omgeving. Documenten, risicoanalyses en audits die we samen opstellen staan direct op de juiste plek en blijven volledig van jou.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'ISO Consultancy',
+  serviceType: 'ISO-implementatie begeleiding',
+  provider: {
+    '@type': 'Organization',
+    name: 'Control One',
+    url: 'https://control-one.nl',
+  },
+  areaServed: 'NL',
+  description: 'Optionele consultancy naast het Control One platform: inzet op uurbasis (zoals interne audits) of implementatiepakketten met vaste prijs.',
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      price: '0',
+      priceCurrency: 'EUR',
+      description: 'Prijs op aanvraag',
+    },
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Consultancy', item: 'https://control-one.nl/consultancy' },
+  ],
+};
+---
+
+<Layout
+  title="Consultancy — Optionele begeleiding bij je ISO-traject | Control One"
+  description="Zelf implementeren blijft de basis. Maar wil je op onderdelen persoonlijke begeleiding? Kies optionele consultancy op uurbasis of een implementatiepakket met vaste prijs."
+  jsonLd={[serviceSchema, faqSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="relative pt-32 pb-20 lg:pb-28 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-400/8 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="lg:grid lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:items-center">
+          <div class="max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-emerald-300 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+              Consultancy · 100% optioneel
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+              Zelf doen blijft de basis.<br/><span class="text-emerald-300">Hulp als jij dat wilt.</span>
+            </h1>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Met Control One implementeer je ISO zelfstandig, dat verandert niet. Maar wil je op onderdelen een ervaren expert naast je? Dan bieden we optionele begeleiding: los op uurbasis of als volledig implementatiepakket met vaste prijs.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/80">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-300/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Geen verplichting
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-300/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Op elk moment bij te schakelen
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-300/90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Altijd in jouw eigen portal
+              </div>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg">
+                Plan een kennismaking
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+              <a href="/pricing" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-lg transition-all">Liever volledig zelf? Bekijk de pakketten</a>
+            </div>
+          </div>
+
+          <!-- Hero sfeerfoto rechts -->
+          <div class="mt-12 lg:mt-0">
+            <div class="relative">
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+                <img src="/team/office-4.webp" alt="Overleg met een Control One consultant" class="w-full object-cover" style="min-height: 320px; max-height: 420px;" loading="eager" />
+              </div>
+              <div class="absolute -bottom-5 left-6 right-6 sm:left-10 sm:right-auto bg-white rounded-xl border border-primary-100 shadow-xl px-5 py-4 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-primary-950">Precies zoveel hulp als jij wilt</p>
+                  <p class="text-xs text-primary-500">Van één sparsessie tot een volledig traject</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZELF DOEN BLIJFT DE BASIS ===== -->
+    <section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Eerst dit</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Ons platform staat <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">op zichzelf</span></h2>
+          <p class="mt-4 text-lg text-primary-900/75">
+            Control One is gebouwd zodat je zonder externe consultant certificering behaalt. De coach, sjablonen en tools zijn daarvoor compleet. Consultancy verandert daar niets aan. Het is er alleen voor wie er behoefte aan heeft.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="p-7 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-primary-950 mb-2">Zelfstandig blijft de norm</h3>
+            <p class="text-sm text-primary-900/70 leading-relaxed">De 28-stappen coach leidt je door de volledige implementatie. De meeste klanten behalen certificering volledig op eigen kracht.</p>
+          </div>
+          <div class="p-7 rounded-2xl border border-emerald-100 bg-emerald-50/30 hover:shadow-lg hover:shadow-emerald-100/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m6-6H6"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-primary-950 mb-2">Consultancy is een optie, geen voorwaarde</h3>
+            <p class="text-sm text-primary-900/70 leading-relaxed">Je abonnement blijft hetzelfde, met of zonder begeleiding. Je schakelt hulp alleen in wanneer jij dat zelf wilt.</p>
+          </div>
+          <div class="p-7 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-primary-950 mb-2">Jij houdt de regie</h3>
+            <p class="text-sm text-primary-900/70 leading-relaxed">Alle begeleiding gebeurt in jouw portal, op jouw tempo. Wat we samen bouwen is en blijft van jou.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DE TWEE OPTIES ===== -->
+    <section class="py-24 bg-primary-50/30">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Twee vormen</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Kies wat bij je <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">traject past</span></h2>
+          <p class="mt-4 text-lg text-primary-900/75">Van een enkele sessie tot een volledig begeleid traject. Beide vormen zijn maatwerk, met een heldere prijsopgave vooraf.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- Optie 1: Uurbasis -->
+          <div class="relative bg-white rounded-3xl border border-primary-100 shadow-lg shadow-primary-100/40 overflow-hidden flex flex-col">
+            <div class="px-8 pt-8 pb-6 border-b border-primary-100">
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center shadow-md shadow-primary-300/40">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-primary-600 bg-primary-50 border border-primary-200 px-2.5 py-1 rounded-full">Optie 1</span>
+              </div>
+              <h3 class="text-2xl font-bold text-primary-950">Inzet op uurbasis</h3>
+              <p class="mt-3 text-sm text-primary-900/70 leading-relaxed">
+                Voor losse onderdelen waar je even een expert bij wilt. Zoals een interne audit, of begeleiding bij een specifiek onderdeel van je implementatie. Je betaalt alleen de uren die je afneemt.
+              </p>
+            </div>
+            <div class="px-8 py-6 flex-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-4">Typische inzet</p>
+              <ul class="space-y-3">
+                {['Interne audit door een onafhankelijke auditor', 'Begeleiding bij specifieke onderdelen', 'Sparren over scope, risico\'s of maatregelen', 'Review van documenten of je risicoanalyse'].map(item => (
+                  <li class="flex items-start gap-2.5 text-sm text-primary-800/80">
+                    <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="px-8 py-6 bg-primary-50/50 border-t border-primary-100 flex items-center justify-between gap-4 flex-wrap">
+              <div>
+                <p class="text-sm font-bold text-primary-950">Uurtarief op aanvraag</p>
+                <p class="text-xs text-primary-500">Vooraf duidelijk, geen minimum afname</p>
+              </div>
+              <a href="/contact" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-xl transition-all shadow-sm shadow-primary-700/20 whitespace-nowrap">
+                Vraag aan
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Optie 2: Implementatiepakket -->
+          <div class="relative bg-white rounded-3xl border border-emerald-200 shadow-lg shadow-emerald-100/50 ring-1 ring-emerald-200/50 overflow-hidden flex flex-col">
+            <div class="px-8 pt-8 pb-6 border-b border-primary-100">
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white flex items-center justify-center shadow-md shadow-emerald-300/40">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">Optie 2</span>
+              </div>
+              <h3 class="text-2xl font-bold text-primary-950">Implementatiepakket</h3>
+              <p class="mt-3 text-sm text-primary-900/70 leading-relaxed">
+                Voor een volledig implementatietraject stellen we op maat een pakket samen. We maken vooraf samen een inschatting van de implementatie en je ontvangt op basis daarvan één vaste pakketprijs. Zekerheid vooraf, een duidelijk afgebakende opdracht.
+              </p>
+            </div>
+            <div class="px-8 py-6 flex-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-4">Wat je krijgt</p>
+              <ul class="space-y-3">
+                {['Volledig traject van gap-analyse tot certificeringsaudit', 'Vaste prijs op basis van een gezamenlijke inschatting', 'Duidelijke verdeling: wat doe jij, wat doen wij', 'Begeleiding in je eigen Control One portal'].map(item => (
+                  <li class="flex items-start gap-2.5 text-sm text-primary-800/80">
+                    <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="px-8 py-6 bg-emerald-50/50 border-t border-emerald-100 flex items-center justify-between gap-4 flex-wrap">
+              <div>
+                <p class="text-sm font-bold text-primary-950">Vaste pakketprijs op maat</p>
+                <p class="text-xs text-primary-500">Na een vrijblijvende inschatting samen</p>
+              </div>
+              <a href="/contact" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-all shadow-sm shadow-emerald-600/20 whitespace-nowrap">
+                Plan een intake
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VOORBEELDEN UURBASIS ===== -->
+    <section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Op uurbasis</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Waar je een expert <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">voor inschakelt</span></h2>
+          <p class="mt-4 text-lg text-primary-900/75">Zes voorbeelden van losse inzet. Elk uit te voeren als eenmalige sessie, precies waar jouw traject erom vraagt.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {uurbasisVoorbeelden.map(v => (
+            <div class="p-6 rounded-2xl border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 hover:border-primary-200 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={v.icon}/></svg>
+              </div>
+              <h3 class="text-sm font-bold text-primary-950 mb-2">{v.title}</h3>
+              <p class="text-sm text-primary-900/70 leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SFEERFOTO STRIP ===== -->
+    <section class="py-0 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 pb-8">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="row-span-2 rounded-2xl overflow-hidden" style="min-height: 400px;">
+            <img src="/team/office-6.webp" alt="Consultant en klant werken samen in de portal" class="w-full h-full object-cover" style="min-height: 400px;" loading="lazy" />
+          </div>
+          <div class="rounded-2xl overflow-hidden">
+            <img src="/team/office-7.webp" alt="Werksessie bij Control One" class="w-full h-full object-cover" style="height: 196px;" loading="lazy" />
+          </div>
+          <div class="rounded-2xl overflow-hidden hidden lg:block">
+            <img src="/team/office-3.webp" alt="Team aan het werk" class="w-full h-full object-cover" style="height: 196px;" loading="lazy" />
+          </div>
+          <div class="relative rounded-2xl overflow-hidden col-span-1 lg:col-span-2">
+            <img src="/team/office-5.webp" alt="Overleg over een ISO-traject" class="w-full object-cover" style="height: 196px;" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-950/40 to-transparent"></div>
+            <div class="absolute inset-0 flex items-center px-7">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-1">Persoonlijke begeleiding</p>
+                <h2 class="text-lg sm:text-xl font-bold text-white leading-snug">Experts die de portal<br />door en door kennen</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOE EEN IMPLEMENTATIEPAKKET WERKT ===== -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Implementatiepakket</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Zo komen we tot <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">een vaste prijs</span></h2>
+          <p class="mt-4 text-lg text-primary-900/75">Geen open einde, geen uurtje-factuurtje. In vier stappen weet je precies waar je aan toe bent.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          {pakketStappen.map((s, i) => (
+            <div class="relative p-6 rounded-2xl border border-emerald-100 bg-white hover:shadow-lg hover:shadow-emerald-100/40 transition-all">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-emerald-300/40">{s.num}</div>
+                <h3 class="text-base font-bold text-primary-950">{s.title}</h3>
+              </div>
+              <p class="text-sm text-primary-900/65 leading-relaxed">{s.desc}</p>
+              {i < 3 && (
+                <svg class="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-emerald-300 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 max-w-3xl mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary-950 to-primary-900 text-white">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-400 text-primary-950 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold mb-1">Zekerheid vooraf, voor beide kanten</h3>
+              <p class="text-sm text-primary-200/80 leading-relaxed">Een vaste pakketprijs geeft jou budgetzekerheid en ons een duidelijk afgebakende opdracht. Verandert je scope onderweg? Dan bespreken we dat eerst. Nooit een verrassing op de factuur.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Veelgestelde vragen</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Goed om te <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">weten</span></h2>
+        </div>
+        <div class="space-y-4">
+          {faqItems.map(f => (
+            <details class="group rounded-2xl border border-primary-100 bg-white open:shadow-lg open:shadow-primary-100/40 transition-all">
+              <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+                <h3 class="text-sm sm:text-base font-bold text-primary-950">{f.q}</h3>
+                <svg class="w-5 h-5 text-primary-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-5 -mt-1">
+                <p class="text-sm text-primary-900/70 leading-relaxed">{f.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONSULTANCY CTA ===== -->
+    <section class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="relative rounded-3xl overflow-hidden" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);">
+          <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 px-10 sm:px-14 py-14 lg:py-16 lg:grid lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 w-fit text-xs font-semibold tracking-widest uppercase text-emerald-300 bg-white/10 rounded-full border border-white/20">
+                <span class="w-1.5 h-1.5 bg-emerald-300 rounded-full animate-pulse"></span>
+                Vrijblijvende kennismaking
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+                Even sparren over<br />jouw traject?
+              </h2>
+              <p class="mt-4 text-lg text-blue-100/90 max-w-md leading-relaxed">
+                Vertel ons waar je staat en wat je zelf wilt oppakken. Dan hoor je eerlijk of consultancy iets toevoegt, of dat je het prima zelf redt met de portal.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-lg transition-all shadow-lg">
+                  Neem contact op
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+                <a href="/pricing" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-lg transition-all">Bekijk de pakketten</a>
+              </div>
+            </div>
+            <div class="hidden lg:block">
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/30">
+                <img src="/team/office-2.webp" alt="Control One team" class="w-full h-full object-cover" style="max-height: 300px;" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
