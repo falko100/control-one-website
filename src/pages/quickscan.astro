@@ -209,7 +209,10 @@ const breadcrumbSchema = {
                 <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">Persoonlijk advies</span>
               </div>
               <div class="p-6">
-                <p class="text-sm font-bold text-primary-950 mb-1">Certificeringsgereedheid</p>
+                <div class="flex items-center justify-between mb-1">
+                  <p class="text-sm font-bold text-primary-950">Jouw startpositie</p>
+                  <p class="text-xs font-semibold text-primary-500">42% staat al</p>
+                </div>
                 <div class="h-3 rounded-full bg-primary-100 overflow-hidden mb-4">
                   <div class="h-full rounded-full" style="width: 42%; background: linear-gradient(90deg, #196bd7, #01a2e8);"></div>
                 </div>
@@ -329,6 +332,7 @@ const breadcrumbSchema = {
               <p id="r-route-uitleg" class="mt-4 text-sm text-primary-900/70 leading-relaxed"></p>
             </div>
             <div class="shrink-0 flex flex-col items-center self-center">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary-500 mb-3">Jouw startpositie</p>
               <div class="relative w-36 h-36">
                 <svg class="w-36 h-36 -rotate-90" viewBox="0 0 120 120">
                   <defs>
@@ -342,10 +346,11 @@ const breadcrumbSchema = {
                 </svg>
                 <div class="absolute inset-0 flex flex-col items-center justify-center">
                   <p class="text-3xl font-bold text-primary-950 leading-none"><span id="r-readiness">0</span>%</p>
-                  <p class="mt-1 text-[10px] font-bold uppercase tracking-widest text-primary-400">gereed</p>
+                  <p class="mt-1 text-[10px] font-bold uppercase tracking-widest text-primary-400">staat al</p>
                 </div>
               </div>
-              <p id="r-readiness-label" class="mt-2 text-xs font-medium text-primary-500 text-center max-w-[180px]"></p>
+              <p id="r-readiness-label" class="mt-2.5 text-xs font-semibold text-primary-700 text-center max-w-[190px]"></p>
+              <p class="mt-1 text-[11px] text-primary-400 text-center max-w-[190px] leading-relaxed">Zoveel van een certificeerbaar managementsysteem heb je al staan. De rest bouw je op tijdens het traject.</p>
             </div>
           </div>
         </div>
