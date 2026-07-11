@@ -1,0 +1,745 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Vragen met opties. Elke optie heeft een key die in de scoring gebruikt wordt.
+const vragen = [
+  {
+    id: 'norm',
+    vraag: 'Welke norm wil je behalen?',
+    toelichting: 'Twijfel je? Kies dan "Weet ik nog niet", de scan helpt je verder.',
+    opties: [
+      { key: '27001', label: 'ISO 27001', sub: 'Informatiebeveiliging' },
+      { key: '9001', label: 'ISO 9001', sub: 'Kwaliteitsmanagement' },
+      { key: '14001', label: 'ISO 14001', sub: 'Milieumanagement' },
+      { key: '45001', label: 'ISO 45001', sub: 'Arbo & veiligheid' },
+      { key: 'meerdere', label: 'Meerdere normen', sub: 'Bijvoorbeeld 27001 + 9001' },
+      { key: 'onbekend', label: 'Weet ik nog niet', sub: 'Ik oriënteer me nog' },
+    ],
+  },
+  {
+    id: 'aanleiding',
+    vraag: 'Wat is de belangrijkste aanleiding?',
+    toelichting: 'Kies wat het meest speelt. Dit bepaalt mede het advies.',
+    opties: [
+      { key: 'klant', label: 'Klanten of tenders vragen erom', sub: 'Zonder certificaat doe ik niet mee' },
+      { key: 'wetgeving', label: 'Wet- en regelgeving', sub: 'Zoals NIS2 of contractuele eisen' },
+      { key: 'professionaliseren', label: 'Professionaliseren en groeien', sub: 'Meer grip op processen en risico\'s' },
+      { key: 'onderhoud', label: 'Bestaand certificaat onderhouden', sub: 'Of overstappen van huidige tooling' },
+      { key: 'orientatie', label: 'Ik oriënteer me breed', sub: 'Nog geen concrete verplichting' },
+    ],
+  },
+  {
+    id: 'deadline',
+    vraag: 'Wanneer wil je gecertificeerd zijn?',
+    toelichting: 'Een realistische deadline bepaalt het tempo van je traject.',
+    opties: [
+      { key: 'kort', label: 'Binnen 3 maanden', sub: 'Er is haast bij' },
+      { key: 'middel', label: 'Binnen 3 tot 6 maanden', sub: 'Het meest gekozen tempo' },
+      { key: 'lang', label: 'Binnen 6 tot 12 maanden', sub: 'Ruim de tijd' },
+      { key: 'geen', label: 'Geen harde deadline', sub: 'Zorgvuldigheid boven snelheid' },
+    ],
+  },
+  {
+    id: 'grootte',
+    vraag: 'Hoe groot is je organisatie?',
+    toelichting: 'Aantal medewerkers binnen de beoogde scope.',
+    opties: [
+      { key: 'xs', label: '1 tot 10 medewerkers', sub: '' },
+      { key: 's', label: '11 tot 50 medewerkers', sub: '' },
+      { key: 'm', label: '51 tot 100 medewerkers', sub: '' },
+      { key: 'l', label: 'Meer dan 100 medewerkers', sub: '' },
+    ],
+  },
+  {
+    id: 'status',
+    vraag: 'Waar sta je nu?',
+    toelichting: 'Wees eerlijk, dit is je nulmeting.',
+    opties: [
+      { key: 'niets', label: 'We beginnen bij nul', sub: 'Nog geen beleid of documentatie' },
+      { key: 'los', label: 'Losse documenten en afspraken', sub: 'Maar geen samenhangend systeem' },
+      { key: 'deels', label: 'Deels ingericht systeem', sub: 'Beleid en processen staan er grotendeels' },
+      { key: 'cert', label: 'Al gecertificeerd', sub: 'Onderhoud of overstap van tooling' },
+    ],
+  },
+  {
+    id: 'maatregelen',
+    vraag: 'In hoeverre zijn er al concrete maatregelen genomen?',
+    toelichting: 'Denk aan afspraken en maatregelen rond kwaliteit, veiligheid of informatiebeveiliging.',
+    opties: [
+      { key: 'nauwelijks', label: 'Nog nauwelijks', sub: 'We doen het vooral op gevoel' },
+      { key: 'basis', label: 'De basis staat', sub: 'Een aantal maatregelen is geregeld, maar niet vastgelegd' },
+      { key: 'groot', label: 'Grotendeels ingericht', sub: 'Maatregelen zijn bewust gekozen en gedocumenteerd' },
+      { key: 'volwassen', label: 'Volwassen en geborgd', sub: 'We evalueren en verbeteren periodiek' },
+    ],
+  },
+  {
+    id: 'bewustwording',
+    vraag: 'Hoe leeft het onderwerp bij je collega\'s?',
+    toelichting: 'Certificering slaagt alleen als het team meedoet, niet alleen de trekker.',
+    opties: [
+      { key: 'nauwelijks', label: 'Nauwelijks', sub: 'Het speelt vooral bij het management' },
+      { key: 'klein', label: 'Bij een kleine groep', sub: 'Enkele direct betrokkenen kennen het belang' },
+      { key: 'breed', label: 'Redelijk breed', sub: 'De meeste collega\'s kennen de basisafspraken' },
+      { key: 'sterk', label: 'Sterk', sub: 'Het is onderdeel van hoe we werken' },
+    ],
+  },
+  {
+    id: 'procesmatig',
+    vraag: 'Hoe gestructureerd werken jullie met processen?',
+    toelichting: 'Elke ISO-norm draait om procesmatig werken: vastleggen, meten en verbeteren.',
+    opties: [
+      { key: 'weinig', label: 'Weinig vastgelegd', sub: 'Kennis zit vooral in de hoofden van collega\'s' },
+      { key: 'deels', label: 'Deels beschreven', sub: 'De belangrijkste processen staan op papier, maar niet actueel' },
+      { key: 'gevolgd', label: 'Beschreven en nageleefd', sub: 'Processen zijn vastgelegd en worden gevolgd' },
+      { key: 'continu', label: 'We verbeteren continu', sub: 'We meten, evalueren en stellen processen bij' },
+    ],
+  },
+  {
+    id: 'verantwoordelijke',
+    vraag: 'Is er iemand verantwoordelijk voor het traject?',
+    toelichting: 'Elke succesvolle implementatie heeft een duidelijke trekker.',
+    opties: [
+      { key: 'ja_tijd', label: 'Ja, met voldoende tijd', sub: 'Het traject is een van de hoofdtaken' },
+      { key: 'ja_erbij', label: 'Ja, naast andere taken', sub: 'Het moet er tussendoor' },
+      { key: 'nee', label: 'Nog niet', sub: 'Dat moeten we nog beleggen' },
+    ],
+  },
+  {
+    id: 'tijd',
+    vraag: 'Hoeveel tijd kan je team per week vrijmaken?',
+    toelichting: 'Gemiddeld, voor de duur van het traject.',
+    opties: [
+      { key: 'min', label: 'Minder dan 2 uur', sub: '' },
+      { key: 'laag', label: '2 tot 4 uur', sub: '' },
+      { key: 'mid', label: '4 tot 8 uur', sub: '' },
+      { key: 'hoog', label: 'Meer dan 8 uur', sub: '' },
+    ],
+  },
+  {
+    id: 'aanpak',
+    vraag: 'Hoe wil je het traject het liefst aanpakken?',
+    toelichting: 'Er is geen fout antwoord, elke route leidt naar certificering.',
+    opties: [
+      { key: 'zelf', label: 'Volledig zelf', sub: 'Met een goed platform als basis' },
+      { key: 'vangnet', label: 'Zelf, met hulp op afroep', sub: 'Een expert kunnen inschakelen als het nodig is' },
+      { key: 'begeleid', label: 'Het liefst begeleid', sub: 'Samen met een consultant door het traject' },
+      { key: 'weetniet', label: 'Weet ik nog niet', sub: 'Daarvoor doe ik deze scan' },
+    ],
+  },
+  {
+    id: 'ervaring',
+    vraag: 'Hoeveel ISO-ervaring heeft je team?',
+    toelichting: 'Ervaring versnelt, maar is geen voorwaarde.',
+    opties: [
+      { key: 'geen', label: 'Geen ervaring', sub: 'ISO is nieuw voor ons' },
+      { key: 'beetje', label: 'Een beetje', sub: 'We kennen de basis of hebben ermee gewerkt' },
+      { key: 'veel', label: 'Ervaren', sub: 'We hebben eerder een norm geïmplementeerd' },
+    ],
+  },
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Quickscan', item: 'https://control-one.nl/quickscan' },
+  ],
+};
+---
+
+<Layout
+  title="Gratis ISO Quickscan — In 2 minuten weten waar je staat | Control One"
+  description="Doe de gratis ISO quickscan: 12 vragen, direct resultaat. Ontdek welke aanpak past bij jouw organisatie, hoe lang certificering duurt en wat het kost. Voor ISO 27001, 9001, 14001 en 45001."
+  jsonLd={[breadcrumbSchema]}
+>
+  <Header />
+  <main>
+
+    <!-- ===== HERO / INTRO ===== -->
+    <section id="qs-intro" class="relative pt-32 pb-20 lg:pb-28 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="lg:grid lg:grid-cols-[1.1fr_1fr] lg:gap-14 lg:items-center">
+          <div class="max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-accent-400 bg-accent-400/10 rounded-full border border-accent-400/20">
+              <span class="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></span>
+              Gratis quickscan · 3 minuten
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+              Waar sta jij op weg<br/><span class="text-accent-400">naar ISO-certificering?</span>
+            </h1>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Beantwoord 12 korte vragen en ontvang direct een persoonlijk advies: welke aanpak past bij jouw organisatie, welk abonnement, hoe lang het traject duurt en waar je moet beginnen.
+            </p>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 text-base font-medium text-white/90 max-w-xl">
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Direct resultaat op je scherm
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Gratis ISO Startgids (pdf)
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Voor alle vier de ISO-normen
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Geen account nodig
+              </div>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <button id="qs-start" class="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-xl transition-all shadow-lg cursor-pointer">
+                Start de quickscan
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Preview-kaart rechts -->
+          <div class="mt-12 lg:mt-0 hidden lg:block">
+            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40 bg-white">
+              <div class="px-6 py-4 bg-primary-50 border-b border-primary-100 flex items-center justify-between">
+                <p class="text-xs font-bold uppercase tracking-widest text-primary-500">Voorbeeld resultaat</p>
+                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">Persoonlijk advies</span>
+              </div>
+              <div class="p-6">
+                <p class="text-sm font-bold text-primary-950 mb-1">Certificeringsgereedheid</p>
+                <div class="h-3 rounded-full bg-primary-100 overflow-hidden mb-4">
+                  <div class="h-full rounded-full" style="width: 42%; background: linear-gradient(90deg, #196bd7, #01a2e8);"></div>
+                </div>
+                <div class="space-y-2.5">
+                  <div class="flex items-center justify-between text-sm"><span class="text-primary-500">Aanbevolen route</span><span class="font-semibold text-primary-950">Zelfstandig met vangnet</span></div>
+                  <div class="flex items-center justify-between text-sm"><span class="text-primary-500">Passend abonnement</span><span class="font-semibold text-primary-950">Team · € 199/mnd</span></div>
+                  <div class="flex items-center justify-between text-sm"><span class="text-primary-500">Verwachte doorlooptijd</span><span class="font-semibold text-primary-950">3 tot 5 maanden</span></div>
+                  <div class="flex items-center justify-between text-sm"><span class="text-primary-500">Tijdsinvestering</span><span class="font-semibold text-primary-950">4 tot 8 uur per week</span></div>
+                </div>
+                <div class="mt-5 pt-5 border-t border-primary-100">
+                  <p class="text-xs font-bold uppercase tracking-widest text-primary-500 mb-3">Aanbevelingen</p>
+                  <ul class="space-y-2.5">
+                    <li class="flex items-start gap-2.5 text-[13px] text-primary-900/75 leading-snug">
+                      <span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </span>
+                      Start met de gap-analyse als nulmeting
+                    </li>
+                    <li class="flex items-start gap-2.5 text-[13px] text-primary-900/75 leading-snug">
+                      <span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </span>
+                      Beschrijf eerst je vijf belangrijkste processen
+                    </li>
+                    <li class="flex items-start gap-2.5 text-[13px] text-primary-900/75 leading-snug">
+                      <span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                      </span>
+                      Plan de interne audit als los begeleidingsmoment
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WIZARD ===== -->
+    <section id="qs-wizard" class="hidden pt-36 pb-20 bg-primary-50/40 min-h-[70vh]">
+      <div class="max-w-3xl mx-auto px-6">
+
+        <!-- Progress -->
+        <div class="mb-8">
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-xs font-bold uppercase tracking-widest text-primary-500">Vraag <span id="qs-stepnr">1</span> van {vragen.length}</p>
+            <p class="text-xs font-semibold text-primary-400"><span id="qs-pct">0</span>% compleet</p>
+          </div>
+          <div class="h-2 rounded-full bg-primary-100 overflow-hidden">
+            <div id="qs-bar" class="h-full rounded-full transition-all duration-500" style="width: 4%; background: linear-gradient(90deg, #196bd7, #01a2e8);"></div>
+          </div>
+        </div>
+
+        <!-- Vraag-panels -->
+        {vragen.map((v, i) => (
+          <div class="qs-panel bg-white rounded-3xl border border-primary-100 shadow-xl shadow-primary-100/40 p-8 sm:p-10" data-step={i} data-qid={v.id} style={i === 0 ? '' : 'display:none'}>
+            <h2 class="text-2xl sm:text-3xl font-bold text-primary-950 tracking-tight">{v.vraag}</h2>
+            <p id={v.id === 'maatregelen' ? 'qs-toel-maatregelen' : undefined} class="mt-2 text-sm text-primary-500">{v.toelichting}</p>
+            <div class="mt-7 grid sm:grid-cols-2 gap-3">
+              {v.opties.map(o => (
+                <button
+                  class="qs-optie text-left p-5 rounded-2xl border-2 border-primary-100 hover:border-primary-400 hover:bg-primary-50/50 transition-all cursor-pointer group"
+                  data-key={o.key}
+                >
+                  <span class="flex items-start gap-3">
+                    <span class="qs-radio w-5 h-5 rounded-full border-2 border-primary-300 shrink-0 mt-0.5 flex items-center justify-center transition-all">
+                      <span class="qs-dot w-2.5 h-2.5 rounded-full bg-primary-600 opacity-0 transition-opacity"></span>
+                    </span>
+                    <span>
+                      <span class="block text-sm font-bold text-primary-950">{o.label}</span>
+                      {o.sub && <span class="block text-xs text-primary-500 mt-0.5">{o.sub}</span>}
+                    </span>
+                  </span>
+                </button>
+              ))}
+            </div>
+            <div class="mt-8 flex items-center justify-between">
+              <button class="qs-prev inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors cursor-pointer" style={i === 0 ? 'visibility:hidden' : ''}>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                Vorige
+              </button>
+              <button class="qs-next inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-xl transition-all shadow-sm disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer" disabled>
+                {i === vragen.length - 1 ? 'Bekijk mijn resultaat' : 'Volgende'}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== RESULTAAT ===== -->
+    <section id="qs-result" class="hidden pt-36 pb-20 bg-primary-50/40">
+      <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-center mb-10 r-anim">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-200">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            Scan afgerond · jouw resultaat
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Dit past bij <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">jouw organisatie</span></h2>
+        </div>
+
+        <!-- Route-badge + readiness -->
+        <div class="relative bg-white rounded-3xl border border-primary-100 shadow-xl shadow-primary-100/40 overflow-hidden mb-8 r-anim" style="animation-delay: .08s">
+          <div class="absolute top-0 left-0 right-0 h-1.5" style="background: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);"></div>
+          <div class="p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center gap-8 sm:gap-10">
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary-500 mb-3">Aanbevolen route</p>
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 text-white shadow-lg shadow-primary-500/25" style="background: linear-gradient(135deg, #196bd7, #01a2e8);">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="r-route-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <p id="r-route" class="text-2xl font-bold text-primary-950"></p>
+              </div>
+              <p id="r-route-uitleg" class="mt-4 text-sm text-primary-900/70 leading-relaxed"></p>
+            </div>
+            <div class="shrink-0 flex flex-col items-center self-center">
+              <div class="relative w-36 h-36">
+                <svg class="w-36 h-36 -rotate-90" viewBox="0 0 120 120">
+                  <defs>
+                    <linearGradient id="qs-donut-grad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#196bd7"/>
+                      <stop offset="100%" stop-color="#01a2e8"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="#e9effb" stroke-width="11"/>
+                  <circle id="r-donut" cx="60" cy="60" r="52" fill="none" stroke="url(#qs-donut-grad)" stroke-width="11" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" style="transition: stroke-dashoffset 1.2s cubic-bezier(.22, 1, .36, 1);"/>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <p class="text-3xl font-bold text-primary-950 leading-none"><span id="r-readiness">0</span>%</p>
+                  <p class="mt-1 text-[10px] font-bold uppercase tracking-widest text-primary-400">gereed</p>
+                </div>
+              </div>
+              <p id="r-readiness-label" class="mt-2 text-xs font-medium text-primary-500 text-center max-w-[180px]"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advies-grid -->
+        <div class="grid sm:grid-cols-3 gap-5 mb-8 r-anim" style="animation-delay: .16s">
+          <div class="bg-white rounded-2xl border border-primary-100 p-6 shadow-sm">
+            <div class="w-9 h-9 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Passend abonnement</p>
+            <p id="r-abonnement" class="text-lg font-bold text-primary-950"></p>
+            <p id="r-abonnement-sub" class="text-xs text-primary-500 mt-1"></p>
+          </div>
+          <div class="bg-white rounded-2xl border border-primary-100 p-6 shadow-sm">
+            <div class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Verwachte doorlooptijd</p>
+            <p id="r-tijdlijn" class="text-lg font-bold text-primary-950"></p>
+            <p id="r-tijdlijn-sub" class="text-xs text-primary-500 mt-1"></p>
+          </div>
+          <div class="bg-white rounded-2xl border border-primary-100 p-6 shadow-sm">
+            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Tijdsinvestering</p>
+            <p id="r-inzet" class="text-lg font-bold text-primary-950"></p>
+            <p class="text-xs text-primary-500 mt-1">voor de trekker van het traject</p>
+          </div>
+        </div>
+
+        <!-- Persoonlijke aanbevelingen -->
+        <div class="bg-white rounded-3xl border border-primary-100 shadow-lg shadow-primary-100/30 p-8 sm:p-10 mb-8 r-anim" style="animation-delay: .24s">
+          <h3 class="text-lg font-bold text-primary-950 mb-5">Onze aanbevelingen voor jou</h3>
+          <ul id="r-tips" class="space-y-4"></ul>
+        </div>
+
+        <!-- CTA's -->
+        <div id="r-ctas" class="flex flex-wrap gap-4 justify-center mb-14 r-anim" style="animation-delay: .32s"></div>
+
+        <!-- Download-blok (soft gate) -->
+        <div class="relative rounded-3xl overflow-hidden r-anim" style="animation-delay: .4s; background: linear-gradient(135deg, #1a2f6e 0%, #2554a0 55%, #2d5fa8 100%);">
+          <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-emerald-400/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+          <div class="relative px-8 sm:px-12 py-10 lg:py-12 lg:grid lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:items-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-3">Gratis download</p>
+              <h3 class="text-2xl font-bold text-white">Download de ISO Startgids en overtuig ook je collega's</h3>
+              <p class="mt-3 text-sm text-primary-100/80 leading-relaxed">Alles uit deze scan, uitgewerkt in één gids van 10 pagina's. Ook geschikt om intern te delen met je management.</p>
+              <ul class="mt-5 space-y-3">
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-emerald-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Het complete stappenplan: vijf fasen van nulmeting tot audit</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-emerald-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>10 praktijktips en 5 valkuilen uit onze eigen trajecten</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-emerald-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>De business case waarmee je je management overtuigt, inclusief kostenvergelijking</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 lg:mt-0">
+              <form id="qs-leadform" class="bg-white/[0.08] border border-white/15 rounded-2xl p-6 backdrop-blur">
+                <div class="space-y-3">
+                  <div>
+                    <label for="lead-name" class="block text-xs font-semibold text-primary-200 mb-1">Naam</label>
+                    <input id="lead-name" name="name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="Je naam" />
+                  </div>
+                  <div>
+                    <label for="lead-email" class="block text-xs font-semibold text-primary-200 mb-1">Zakelijk e-mailadres</label>
+                    <input id="lead-email" name="email" type="email" required class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="naam@bedrijf.nl" />
+                  </div>
+                  <div>
+                    <label for="lead-company" class="block text-xs font-semibold text-primary-200 mb-1">Bedrijfsnaam <span class="text-primary-300/60 font-normal">(optioneel)</span></label>
+                    <input id="lead-company" name="company" type="text" class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="Bedrijf B.V." />
+                  </div>
+                </div>
+                <button type="submit" class="mt-5 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-xl transition-all shadow-lg cursor-pointer">
+                  Ontvang de Startgids
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </button>
+                <p class="mt-3 text-[11px] text-primary-300/70 leading-relaxed">Je ontvangt geen nieuwsbrief. We gebruiken je gegevens alleen om eventueel eenmalig contact op te nemen over je scan.</p>
+              </form>
+              <div id="qs-downloads" class="hidden bg-white rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <p class="text-sm font-bold text-primary-950">Bedankt! Je download staat klaar.</p>
+                </div>
+                <div class="space-y-2.5">
+                  <a href="/downloads/control-one-iso-startgids.pdf" download class="flex items-center gap-3 p-3.5 rounded-xl border border-primary-100 hover:border-primary-300 hover:bg-primary-50/50 transition-all">
+                    <svg class="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    <span class="text-sm font-semibold text-primary-900">De ISO Startgids <span class="font-normal text-primary-500">· pdf, 10 pagina's</span></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-center text-sm text-primary-500">
+          <button id="qs-restart" class="underline underline-offset-2 hover:text-primary-700 cursor-pointer">Scan opnieuw doen</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- Verborgen statisch Netlify-form zodat Netlify de velden registreert -->
+    <form name="quickscan" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="norm" />
+      <input type="text" name="aanleiding" />
+      <input type="text" name="deadline" />
+      <input type="text" name="grootte" />
+      <input type="text" name="status" />
+      <input type="text" name="maatregelen" />
+      <input type="text" name="bewustwording" />
+      <input type="text" name="procesmatig" />
+      <input type="text" name="verantwoordelijke" />
+      <input type="text" name="tijd" />
+      <input type="text" name="aanpak" />
+      <input type="text" name="ervaring" />
+      <input type="text" name="advies_route" />
+      <input type="text" name="advies_abonnement" />
+      <input type="text" name="advies_tijdlijn" />
+      <input type="text" name="readiness" />
+    </form>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes qs-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+  }
+  #qs-result .r-anim { opacity: 0; }
+  #qs-result.qs-show .r-anim { animation: qs-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both; }
+</style>
+
+<script>
+  // ===== State =====
+  const antwoorden: Record<string, string> = {};
+  const labels: Record<string, string> = {};
+  let stap = 0;
+
+  const intro = document.getElementById('qs-intro')!;
+  const wizard = document.getElementById('qs-wizard')!;
+  const result = document.getElementById('qs-result')!;
+  const panels = [...document.querySelectorAll<HTMLElement>('.qs-panel')];
+  const totaal = panels.length;
+
+  // ===== Navigatie =====
+  const maatregelenToelichting: Record<string, string> = {
+    '27001': 'Denk aan toegangsbeheer, back-ups, wachtwoordbeleid en vastgelegde beveiligingsafspraken.',
+    '9001': 'Denk aan werkinstructies, klachtafhandeling, leveranciersbeoordeling en kwaliteitscontroles.',
+    '14001': 'Denk aan afvalscheiding, energiemonitoring en het naleven van milieuwetgeving.',
+    '45001': 'Denk aan een actuele RI&E, veiligheidsinstructies en incidentregistratie.',
+    'meerdere': 'Denk aan maatregelen op de gebieden van de normen die je wilt combineren.',
+    'onbekend': 'Denk aan afspraken en maatregelen rond kwaliteit, veiligheid of informatiebeveiliging.',
+  };
+
+  function toonStap(i: number) {
+    const toel = document.getElementById('qs-toel-maatregelen');
+    if (toel && antwoorden.norm) toel.textContent = maatregelenToelichting[antwoorden.norm] ?? maatregelenToelichting.onbekend;
+    panels.forEach((p, idx) => { p.style.display = idx === i ? '' : 'none'; });
+    document.getElementById('qs-stepnr')!.textContent = String(i + 1);
+    const pct = Math.round((i / totaal) * 100);
+    document.getElementById('qs-pct')!.textContent = String(pct);
+    (document.getElementById('qs-bar') as HTMLElement).style.width = Math.max(4, pct) + '%';
+    window.scrollTo({ top: wizard.offsetTop - 80, behavior: 'smooth' });
+  }
+
+  document.getElementById('qs-start')?.addEventListener('click', () => {
+    intro.classList.add('hidden');
+    wizard.classList.remove('hidden');
+    toonStap(0);
+  });
+
+  panels.forEach((panel, i) => {
+    const qid = panel.dataset.qid!;
+    const nextBtn = panel.querySelector<HTMLButtonElement>('.qs-next')!;
+    const prevBtn = panel.querySelector<HTMLButtonElement>('.qs-prev')!;
+
+    panel.querySelectorAll<HTMLButtonElement>('.qs-optie').forEach(opt => {
+      opt.addEventListener('click', () => {
+        panel.querySelectorAll('.qs-optie').forEach(o => {
+          o.classList.remove('border-primary-600', 'bg-primary-50');
+          o.querySelector('.qs-dot')?.classList.add('opacity-0');
+          o.querySelector('.qs-radio')?.classList.remove('border-primary-600');
+        });
+        opt.classList.add('border-primary-600', 'bg-primary-50');
+        opt.querySelector('.qs-dot')?.classList.remove('opacity-0');
+        opt.querySelector('.qs-radio')?.classList.add('border-primary-600');
+        antwoorden[qid] = opt.dataset.key!;
+        labels[qid] = opt.querySelector('.text-sm')?.textContent?.trim() ?? opt.dataset.key!;
+        nextBtn.disabled = false;
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (i < totaal - 1) { stap = i + 1; toonStap(stap); }
+      else berekenResultaat();
+    });
+    prevBtn.addEventListener('click', () => { if (i > 0) { stap = i - 1; toonStap(stap); } });
+  });
+
+  document.getElementById('qs-restart')?.addEventListener('click', () => window.location.reload());
+
+  // ===== Scoring & advies =====
+  function berekenResultaat() {
+    const a = antwoorden;
+
+    // Zelfredzaamheid 0-100
+    let score = 50;
+    score += { min: -20, laag: -8, mid: 8, hoog: 16 }[a.tijd] ?? 0;
+    score += { ja_tijd: 14, ja_erbij: 4, nee: -14 }[a.verantwoordelijke] ?? 0;
+    score += { geen: -10, beetje: 4, veel: 14 }[a.ervaring] ?? 0;
+    score += { zelf: 12, vangnet: 4, begeleid: -16, weetniet: 0 }[a.aanpak] ?? 0;
+    score += { niets: -6, los: 0, deels: 8, cert: 12 }[a.status] ?? 0;
+    score += { weinig: -5, deels: 0, gevolgd: 5, continu: 7 }[a.procesmatig] ?? 0;
+    score += { nauwelijks: -3, klein: 0, breed: 2, sterk: 4 }[a.bewustwording] ?? 0;
+    if (a.deadline === 'kort' && (a.status === 'niets' || a.status === 'los')) score -= 12;
+
+    // Route
+    let route: 'zelf' | 'vangnet' | 'begeleid';
+    if (a.aanpak === 'begeleid') route = 'begeleid';
+    else if (score >= 68) route = 'zelf';
+    else if (score >= 42) route = 'vangnet';
+    else route = 'begeleid';
+
+    const routeTeksten = {
+      zelf: {
+        titel: 'Zelfstandig met de portal',
+        uitleg: 'Jouw organisatie heeft de tijd, het eigenaarschap en de basis om het traject volledig zelf te doen. De online implementatiecoach leidt je stap voor stap van gap-analyse tot certificeringsaudit, met alle sjablonen en tools die je nodig hebt.',
+      },
+      vangnet: {
+        titel: 'Zelfstandig met vangnet',
+        uitleg: 'Je kunt het grootste deel prima zelf met de portal. Voor specifieke onderdelen, zoals de interne audit of een lastige scope-keuze, is losse begeleiding op uurbasis een slim vangnet. Zo houd je de kosten laag en de kennis in huis.',
+      },
+      begeleid: {
+        titel: 'Begeleid implementatietraject',
+        uitleg: 'Gezien je tijdlijn, capaciteit of voorkeur raden we een begeleid traject aan: samen met een consultant, in jouw eigen portal, met een vaste pakketprijs na een gezamenlijke inschatting. Jij houdt de regie, wij bewaken het tempo.',
+      },
+    } as const;
+
+    // Abonnement
+    const abo = {
+      xs: { naam: 'Starter', sub: '€ 149 per maand · tot 5 teamleden' },
+      s: { naam: 'Team', sub: '€ 199 per maand · tot 25 teamleden' },
+      m: { naam: 'Business', sub: '€ 249 per maand · tot 100 teamleden' },
+      l: { naam: 'Enterprise', sub: 'Maatwerk · onbeperkt gebruikers' },
+    }[a.grootte] ?? { naam: 'Team', sub: '€ 199 per maand' };
+
+    // Tijdlijn
+    let tijdlijn = '3 tot 5 maanden';
+    let tijdlijnSub = 'het MKB-gemiddelde';
+    if (a.status === 'deels' || a.status === 'cert') { tijdlijn = '2 tot 4 maanden'; tijdlijnSub = 'je hebt al een voorsprong'; }
+    if ((a.status === 'niets' || a.status === 'los') && (a.tijd === 'min' || a.tijd === 'laag')) { tijdlijn = '5 tot 9 maanden'; tijdlijnSub = 'met de huidige capaciteit'; }
+    if (route === 'begeleid') { tijdlijn = '3 tot 5 maanden'; tijdlijnSub = 'met begeleiding op tempo'; }
+
+    // Inzet
+    const inzet = route === 'begeleid' ? '2 tot 4 uur per week' : '4 tot 8 uur per week';
+
+    // Readiness
+    let readiness = { niets: 10, los: 25, deels: 45, cert: 65 }[a.status] ?? 20;
+    readiness += { nauwelijks: 0, basis: 5, groot: 10, volwassen: 14 }[a.maatregelen] ?? 0;
+    readiness += { nauwelijks: 0, klein: 2, breed: 5, sterk: 7 }[a.bewustwording] ?? 0;
+    readiness += { weinig: 0, deels: 2, gevolgd: 5, continu: 7 }[a.procesmatig] ?? 0;
+    if (a.verantwoordelijke === 'ja_tijd') readiness += 5;
+    if (a.verantwoordelijke === 'ja_erbij') readiness += 2;
+    if (a.ervaring === 'veel') readiness += 4;
+    if (a.ervaring === 'beetje') readiness += 2;
+    readiness = Math.min(95, Math.max(5, readiness));
+    const readinessLabel = readiness < 30 ? 'Een frisse start, met een duidelijk pad' : readiness < 55 ? 'De basis is er, nu structureren' : readiness < 75 ? 'Goed op weg naar certificering' : 'Bijna klaar voor de audit';
+
+    // Tips
+    const tips: string[] = [];
+    if (a.norm === 'onbekend') tips.push('Twijfel je over de norm? ISO 27001 (informatiebeveiliging) en ISO 9001 (kwaliteit) zijn de meest gevraagde. De aanleiding bepaalt de keuze: vragen klanten om veilige data of om aantoonbare kwaliteit?');
+    if (a.norm === 'meerdere') tips.push('Meerdere normen combineren is slim: ze delen dezelfde structuur, dus documentbeheer, audits en de directiebeoordeling stel je maar één keer op. Begin met de norm waar de meeste druk op staat.');
+    if (a.aanleiding === 'klant') tips.push('Vraag je klant of tender welke norm en scope precies vereist zijn. Een te brede scope maakt het traject onnodig zwaar.');
+    if (a.procesmatig === 'weinig') tips.push('Begin met het beschrijven van je vijf belangrijkste processen. Kort en praktisch is genoeg: wie doet wat, wanneer en waarmee. Dat is meteen de ruggengraat van je managementsysteem.');
+    if (a.bewustwording === 'nauwelijks' || a.bewustwording === 'klein') tips.push('Plan vroeg in het traject een korte bewustwordingssessie voor het hele team. De auditor spreekt tijdens de audit ook gewone collega\'s, niet alleen de trekker.');
+    if (a.maatregelen === 'groot' || a.maatregelen === 'volwassen') tips.push('Je hebt al veel maatregelen staan. De winst zit in het aantoonbaar maken: koppel wat je al doet aan de normeisen, dan zie je direct wat er nog mist.');
+    if (a.verantwoordelijke === 'nee') tips.push('Beleg als eerste stap het eigenaarschap: wijs één trekker aan met mandaat en tijd. Dat is de belangrijkste succesfactor van elk traject.');
+    if (a.deadline === 'kort') tips.push('Binnen 3 maanden certificeren is ambitieus. Plan direct de certificerende instelling in, die hebben vaak wachttijden van 4 tot 8 weken.');
+    if (a.status === 'niets' || a.status === 'los') tips.push('Start met de gap-analyse van 150 checkvragen als nulmeting. In één middag weet je precies waar de grootste gaten zitten.');
+    if (a.status === 'cert') tips.push('Bij een overstap importeer je bestaande documenten in de portal en koppel je ze aan de normeisen. Zo behoud je wat goed is en zie je direct wat mist.');
+    if (route === 'vangnet') tips.push('Denk aan de interne audit als los onderdeel: die mag je formeel niet volledig over je eigen werk uitvoeren. Een externe auditor op uurbasis lost dat netjes op.');
+    if (route === 'begeleid') tips.push('Plan een vrijblijvende kennismaking. We maken samen een inschatting van het traject en je ontvangt vooraf één vaste pakketprijs. Geen verrassingen achteraf.');
+    const fallbackTips = [
+      'Elk abonnement bevat 5 uur gratis chat-consultancy met een ISO-expert. Gebruik die voor je lastigste vragen.',
+      'Betrek je team vanaf het begin en verdeel taken in de portal. Zo voorkom je dat het traject op één persoon leunt.',
+      'Gebruik de documentsjablonen in de portal als startpunt en pas ze aan naar jouw organisatie. Dat scheelt weken schrijfwerk.',
+    ];
+    for (const f of fallbackTips) {
+      if (tips.length >= 3) break;
+      tips.push(f);
+    }
+
+    // Render
+    document.getElementById('r-route')!.textContent = routeTeksten[route].titel;
+    document.getElementById('r-route-uitleg')!.textContent = routeTeksten[route].uitleg;
+    document.getElementById('r-abonnement')!.textContent = abo.naam;
+    document.getElementById('r-abonnement-sub')!.textContent = abo.sub;
+    document.getElementById('r-tijdlijn')!.textContent = tijdlijn;
+    document.getElementById('r-tijdlijn-sub')!.textContent = tijdlijnSub;
+    document.getElementById('r-inzet')!.textContent = inzet;
+    document.getElementById('r-readiness')!.textContent = String(readiness);
+    document.getElementById('r-readiness-label')!.textContent = readinessLabel;
+
+    // Route-icoon: bliksem (zelf), schild (vangnet), personen (begeleid)
+    const iconPaths = {
+      zelf: 'M13 10V3L4 14h7v7l9-11h-7z',
+      vangnet: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+      begeleid: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+    } as const;
+    document.getElementById('r-route-icon')!.setAttribute('d', iconPaths[route]);
+
+    const tipsUl = document.getElementById('r-tips')!;
+    tipsUl.innerHTML = tips.slice(0, 3).map(t =>
+      `<li class="flex items-start gap-3 text-sm text-primary-900/75 leading-relaxed">
+        <span class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span>${t}</span>
+      </li>`
+    ).join('');
+
+    // CTA's per route
+    const primair = route === 'begeleid'
+      ? `<a href="/contact" class="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-all shadow-lg">Plan een vrijblijvende kennismaking <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>`
+      : `<a href="https://app.control-one.nl/register" class="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-white bg-primary-700 hover:bg-primary-800 rounded-xl transition-all shadow-lg">Start 14 dagen gratis <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>`;
+    const secundair = route === 'zelf'
+      ? `<a href="/pricing" class="inline-flex items-center px-7 py-3.5 text-sm font-semibold text-primary-700 bg-white border border-primary-200 hover:border-primary-400 rounded-xl transition-all">Bekijk de abonnementen</a>`
+      : route === 'vangnet'
+        ? `<a href="/consultancy" class="inline-flex items-center px-7 py-3.5 text-sm font-semibold text-primary-700 bg-white border border-primary-200 hover:border-primary-400 rounded-xl transition-all">Bekijk losse begeleiding</a>`
+        : `<a href="https://app.control-one.nl/register" class="inline-flex items-center px-7 py-3.5 text-sm font-semibold text-primary-700 bg-white border border-primary-200 hover:border-primary-400 rounded-xl transition-all">Of start eerst zelf, 14 dagen gratis</a>`;
+    document.getElementById('r-ctas')!.innerHTML = primair + secundair;
+
+    // Bewaar advies voor het leadform
+    (window as any).__qsAdvies = {
+      route: routeTeksten[route].titel,
+      abonnement: abo.naam,
+      tijdlijn,
+      readiness: String(readiness),
+    };
+
+    wizard.classList.add('hidden');
+    result.classList.remove('hidden');
+    result.classList.add('qs-show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const omtrek = 326.7;
+    setTimeout(() => {
+      (document.getElementById('r-donut') as unknown as SVGCircleElement).style.strokeDashoffset = String(omtrek * (1 - readiness / 100));
+    }, 350);
+  }
+
+  // ===== Leadform → Netlify Forms =====
+  document.getElementById('qs-leadform')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const advies = (window as any).__qsAdvies ?? {};
+    const data: Record<string, string> = {
+      'form-name': 'quickscan',
+      name: (document.getElementById('lead-name') as HTMLInputElement).value,
+      email: (document.getElementById('lead-email') as HTMLInputElement).value,
+      company: (document.getElementById('lead-company') as HTMLInputElement).value,
+      norm: labels.norm ?? '', aanleiding: labels.aanleiding ?? '', deadline: labels.deadline ?? '',
+      grootte: labels.grootte ?? '', status: labels.status ?? '',
+      maatregelen: labels.maatregelen ?? '', bewustwording: labels.bewustwording ?? '', procesmatig: labels.procesmatig ?? '',
+      verantwoordelijke: labels.verantwoordelijke ?? '',
+      tijd: labels.tijd ?? '', aanpak: labels.aanpak ?? '', ervaring: labels.ervaring ?? '',
+      advies_route: advies.route ?? '', advies_abonnement: advies.abonnement ?? '',
+      advies_tijdlijn: advies.tijdlijn ?? '', readiness: advies.readiness ?? '',
+    };
+    const knop = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    knop.disabled = true;
+    knop.textContent = 'Versturen...';
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      });
+    } catch (_) { /* download alsnog vrijgeven */ }
+    form.classList.add('hidden');
+    document.getElementById('qs-downloads')!.classList.remove('hidden');
+  });
+</script>
