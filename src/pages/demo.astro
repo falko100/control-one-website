@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 
 ---
@@ -48,7 +47,76 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <CTA />
+    <!-- PERSOONLIJKE DEMO AANVRAGEN -->
+    <section class="py-24 bg-primary-50/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="relative rounded-3xl overflow-hidden" style="background: linear-gradient(135deg, #1a2f6e 0%, #2554a0 55%, #2d5fa8 100%);">
+          <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-accent-400/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+          <div class="relative px-8 sm:px-12 py-10 lg:py-14 lg:grid lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:items-center">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-accent-400 mb-3">Persoonlijke demo</p>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Toch nog vragen? Plan een demo en krijg persoonlijk advies</h2>
+              <p class="mt-4 text-sm text-primary-100/80 leading-relaxed max-w-md">In een half uur nemen we je mee door de portal en kijken we samen naar jouw situatie.</p>
+              <ul class="mt-6 space-y-3">
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>30 minuten, online, op een moment dat jou past</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Antwoord op al je vragen</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Persoonlijk advies voor je ISO-traject</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-sm text-primary-100/90">
+                  <svg class="w-4 h-4 text-accent-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Uitleg over de Control One portal en al zijn mogelijkheden</span>
+                </li>
+              </ul>
+              <div class="mt-7 flex items-center gap-4">
+                <div class="flex -space-x-3">
+                  <img src="/falko.jpg" alt="Teamlid" class="w-11 h-11 rounded-full object-cover border-2 border-white/50 shadow-md" style="object-position: center 15%;" />
+                  <img src="/team/portrait-2.webp" alt="Teamlid" class="w-11 h-11 rounded-full object-cover border-2 border-white/50 shadow-md" style="object-position: center 15%;" />
+                  <img src="/team/portrait-3.webp" alt="Teamlid" class="w-11 h-11 rounded-full object-cover border-2 border-white/50 shadow-md" style="object-position: center 15%;" />
+                </div>
+                <p class="text-sm text-primary-100/80">Je plant direct met ons eigen team</p>
+              </div>
+            </div>
+            <div class="mt-8 lg:mt-0">
+              <form name="demo-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/bedankt" class="bg-white/[0.08] border border-white/15 rounded-2xl p-6 backdrop-blur">
+                <input type="hidden" name="form-name" value="demo-aanvraag" />
+                <p class="hidden"><label>Niet invullen: <input name="bot-field" /></label></p>
+                <div class="space-y-3">
+                  <div>
+                    <label for="demo-name" class="block text-xs font-semibold text-primary-200 mb-1">Naam</label>
+                    <input id="demo-name" name="name" type="text" required class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="Je naam" />
+                  </div>
+                  <div>
+                    <label for="demo-email" class="block text-xs font-semibold text-primary-200 mb-1">Zakelijk e-mailadres</label>
+                    <input id="demo-email" name="email" type="email" required class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="naam@bedrijf.nl" />
+                  </div>
+                  <div>
+                    <label for="demo-company" class="block text-xs font-semibold text-primary-200 mb-1">Bedrijfsnaam</label>
+                    <input id="demo-company" name="company" type="text" class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="Bedrijf B.V." />
+                  </div>
+                  <div>
+                    <label for="demo-phone" class="block text-xs font-semibold text-primary-200 mb-1">Telefoonnummer <span class="text-primary-300/60 font-normal">(optioneel)</span></label>
+                    <input id="demo-phone" name="phone" type="tel" class="w-full px-4 py-2.5 rounded-xl bg-white/90 border border-white/20 text-primary-950 text-sm outline-none focus:ring-2 focus:ring-accent-400/60" placeholder="06 12345678" />
+                  </div>
+                </div>
+                <button type="submit" class="mt-5 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-500 hover:text-white rounded-xl transition-all shadow-lg cursor-pointer">
+                  Plan mijn persoonlijke demo
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </button>
+                <p class="mt-3 text-[11px] text-primary-300/70 leading-relaxed">We nemen binnen één werkdag contact op om een moment te plannen. Geen nieuwsbrief, geen verplichtingen.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
   <Footer />
