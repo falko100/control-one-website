@@ -1,0 +1,210 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const artikelen = await getCollection('kennisbank', ({ data }) => !data.draft);
+  return artikelen.map(a => ({
+    params: { norm: a.data.norm, slug: a.slug },
+    props: { artikel: a },
+  }));
+}
+
+const { artikel } = Astro.props;
+const { Content, headings } = await artikel.render();
+const d = artikel.data;
+
+const normLabels: Record<string, string> = {
+  'iso-27001': 'ISO 27001', 'iso-9001': 'ISO 9001', 'iso-14001': 'ISO 14001', 'iso-45001': 'ISO 45001', 'algemeen': 'Algemeen',
+};
+const categorieLabels: Record<string, string> = {
+  normeisen: 'Normeis', stappenplannen: 'Stappenplan', begrippen: 'Begrip',
+  vragen: 'Veelgestelde vraag', vergelijkingen: 'Vergelijking', sjablonen: 'Document & sjabloon',
+};
+
+const toc = headings.filter(h => h.depth === 2);
+const bijgewerkt = d.updatedDate ?? d.publishDate;
+const datumFmt = (dt: Date) => dt.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+// Gerelateerde artikelen: eerst frontmatter, aanvullen met zelfde norm+categorie
+const alle = await getCollection('kennisbank', ({ data }) => !data.draft);
+const expliciet = d.gerelateerd
+  .map(slug => alle.find(a => a.slug === slug))
+  .filter((a): a is NonNullable<typeof a> => Boolean(a));
+const aanvulling = alle
+  .filter(a => a.slug !== artikel.slug && !d.gerelateerd.includes(a.slug) && a.data.norm === d.norm)
+  .slice(0, Math.max(0, 3 - expliciet.length));
+const gerelateerd = [...expliciet, ...aanvulling].slice(0, 3);
+
+// Control One-blok: koppel norm/categorie aan relevante feature-verwijzing
+const coBlok: Record<string, { tekst: string; href: string; label: string }> = {
+  normeisen: { tekst: 'In de portal zie je per normeis welke maatregelen, documenten en bewijsstukken eraan gekoppeld zijn, met de status erbij.', href: '/maatregelen', label: 'Bekijk maatregelenbeheer' },
+  stappenplannen: { tekst: 'De implementatiecoach in de portal vertaalt dit stappenplan naar concrete stappen met uitleg, sjablonen en voortgang.', href: '/coach', label: 'Bekijk de implementatiecoach' },
+  begrippen: { tekst: 'In de portal staat bij elk onderdeel uitleg in gewone taal, precies op het moment dat je het nodig hebt.', href: '/features', label: 'Bekijk alle functies' },
+  vragen: { tekst: 'Benieuwd hoe dit voor jouw organisatie uitpakt? De gratis quickscan geeft in 3 minuten een persoonlijk advies.', href: '/quickscan', label: 'Doe de gratis quickscan' },
+  vergelijkingen: { tekst: 'In de portal beheer je meerdere normen in één omgeving; overlappende onderdelen stel je maar één keer op.', href: '/frameworks', label: 'Bekijk alle frameworks' },
+  sjablonen: { tekst: 'Dit document staat als vooringevuld sjabloon in de portal klaar: jij past alleen aan wat uniek is voor jouw organisatie.', href: '/templates', label: 'Bekijk de sjablonen' },
+};
+const blok = coBlok[d.categorie];
+
+// Structured data: Article + BreadcrumbList + FAQPage
+const url = `https://control-one.nl/kennis/${d.norm}/${artikel.slug}/`;
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.title,
+    description: d.description,
+    datePublished: d.publishDate.toISOString(),
+    dateModified: bijgewerkt.toISOString(),
+    inLanguage: 'nl-NL',
+    author: { '@type': 'Organization', name: 'Control One', url: 'https://control-one.nl' },
+    publisher: { '@type': 'Organization', name: 'Control One', url: 'https://control-one.nl' },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Kennisbank', item: 'https://control-one.nl/kennis/' },
+      { '@type': 'ListItem', position: 2, name: normLabels[d.norm], item: `https://control-one.nl/kennis/${d.norm}/` },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
+if (d.faq.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map(f => ({
+      '@type': 'Question',
+      name: f.vraag,
+      acceptedAnswer: { '@type': 'Answer', text: f.antwoord },
+    })),
+  });
+}
+---
+
+<Layout title={`${d.title} | ISO Kennisbank Control One`} description={d.description} jsonLd={jsonLd}>
+  <Header />
+  <main>
+
+    <!-- ARTIKEL-HEADER -->
+    <section class="relative pt-32 pb-10 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
+      <div class="relative max-w-4xl mx-auto px-6">
+        <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+          <a href="/kennis/" class="hover:text-white transition-colors">Kennisbank</a>
+          <span class="mx-2">/</span>
+          <a href={`/kennis/${d.norm}/`} class="hover:text-white transition-colors">{normLabels[d.norm]}</a>
+        </nav>
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="text-[11px] font-bold uppercase tracking-widest text-primary-950 bg-accent-400 rounded-full px-3 py-1">{categorieLabels[d.categorie]}</span>
+          <span class="text-[11px] font-semibold text-white/80 bg-white/10 border border-white/20 rounded-full px-3 py-1">{normLabels[d.norm]}</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">{d.title}</h1>
+        <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-white/70">
+          <span class="inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            {d.readTime} leestijd
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            Bijgewerkt op {datumFmt(bijgewerkt)}
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTIKEL-BODY -->
+    <section class="py-12 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:grid lg:grid-cols-[1fr_220px] lg:gap-12">
+
+        <article>
+          <!-- Direct antwoord (GEO answer block) -->
+          <div class="rounded-2xl border border-primary-100 bg-primary-50/50 p-6 mb-9">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-2">Direct antwoord</p>
+            <p class="text-primary-950 leading-relaxed font-medium">{d.tldr}</p>
+          </div>
+
+          <div class="prose prose-primary max-w-none
+            prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-primary-950
+            prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:scroll-mt-28
+            prose-p:text-primary-900/75 prose-p:leading-relaxed
+            prose-li:text-primary-900/75
+            prose-strong:text-primary-950
+            prose-a:text-primary-600 prose-a:font-semibold hover:prose-a:text-primary-800
+            prose-table:text-sm prose-th:text-primary-950 prose-td:text-primary-900/75">
+            <Content />
+          </div>
+
+          <!-- Control One-blok -->
+          <div class="mt-12 rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #1a2f6e 0%, #2554a0 55%, #2d5fa8 100%);">
+            <div class="p-7 sm:flex sm:items-center sm:justify-between sm:gap-6">
+              <div>
+                <p class="text-[11px] font-bold uppercase tracking-widest text-accent-400 mb-2">Zo werkt dit in Control One</p>
+                <p class="text-sm text-primary-100/90 leading-relaxed max-w-lg">{blok.tekst}</p>
+              </div>
+              <a href={blok.href} class="mt-5 sm:mt-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-xl transition-all shadow-md shrink-0 whitespace-nowrap">
+                {blok.label}
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          {d.faq.length > 0 && (
+            <div class="mt-12">
+              <h2 class="text-2xl font-bold text-primary-950 tracking-tight mb-5">Veelgestelde vragen</h2>
+              <div class="space-y-3">
+                {d.faq.map(f => (
+                  <details class="group rounded-2xl border border-primary-100 bg-white open:bg-primary-50/40 transition-colors">
+                    <summary class="flex items-center justify-between gap-4 cursor-pointer px-5 py-4 text-[15px] font-semibold text-primary-950 list-none [&::-webkit-details-marker]:hidden">
+                      {f.vraag}
+                      <svg class="w-4 h-4 text-primary-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <p class="px-5 pb-4 text-sm text-primary-900/75 leading-relaxed">{f.antwoord}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Gerelateerd -->
+          {gerelateerd.length > 0 && (
+            <div class="mt-12">
+              <h2 class="text-2xl font-bold text-primary-950 tracking-tight mb-5">Gerelateerde artikelen</h2>
+              <div class="grid sm:grid-cols-3 gap-4">
+                {gerelateerd.map(g => (
+                  <a href={`/kennis/${g.data.norm}/${g.slug}/`} class="group rounded-2xl border border-primary-100 hover:border-primary-300 p-5 transition-all hover:shadow-md">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-primary-400 mb-1.5">{normLabels[g.data.norm]}</p>
+                    <p class="text-sm font-bold text-primary-950 group-hover:text-primary-700 transition-colors leading-snug">{g.data.title}</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+
+        <!-- Sticky TOC (desktop) -->
+        {toc.length >= 3 && (
+          <aside class="hidden lg:block">
+            <div class="sticky top-28">
+              <p class="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">Op deze pagina</p>
+              <nav class="space-y-2 border-l border-primary-100">
+                {toc.map(h => (
+                  <a href={`#${h.slug}`} class="block pl-4 -ml-px border-l border-transparent text-[13px] text-primary-900/60 hover:text-primary-700 hover:border-primary-400 transition-colors leading-snug">{h.text}</a>
+                ))}
+              </nav>
+            </div>
+          </aside>
+        )}
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

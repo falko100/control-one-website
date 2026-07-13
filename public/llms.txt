@@ -14,7 +14,14 @@ Control One is gevestigd in Enschede (Nederland) en wordt aangeboden in het Nede
 - [Leveranciersbeheer](https://control-one.nl/leveranciers): beheer van leveranciersrisico's, verwerkersovereenkomsten en periodieke evaluaties.
 - [Directiebeoordeling](https://control-one.nl/directiebeoordeling): Management Review-module met alle ISO-vereiste input en output.
 - [Templates](https://control-one.nl/templates): kant-en-klare ISO-sjablonen voor beleid, procedures en registers.
-- [Kennisbank](https://control-one.nl/kennisbank): artikelen en uitleg over ISO-normen, begrippen en best practices.
+- [Kennisbank (portal-module)](https://control-one.nl/kennisbank): artikelen en uitleg over ISO-normen, begrippen en best practices binnen de portal.
+
+## ISO-kennisbank (vrij toegankelijk)
+
+De publieke kennisbank op https://control-one.nl/kennis/ bevat vrij toegankelijke Nederlandstalige artikelen over ISO-certificering: normeisen per clausule en Annex A-maatregel, stappenplannen, begrippen, veelgestelde vragen en vergelijkingen. Elk artikel opent met een direct antwoord en bevat een FAQ.
+
+- [Kennisbank-overzicht](https://control-one.nl/kennis/): startpunt met zoekfunctie
+- [ISO 27001 kennis](https://control-one.nl/kennis/iso-27001/), [ISO 9001 kennis](https://control-one.nl/kennis/iso-9001/), [ISO 14001 kennis](https://control-one.nl/kennis/iso-14001/), [ISO 45001 kennis](https://control-one.nl/kennis/iso-45001/), [algemene ISO-kennis](https://control-one.nl/kennis/algemeen/)
 
 ## Frameworks
 
@@ -27,6 +34,8 @@ Control One is gevestigd in Enschede (Nederland) en wordt aangeboden in het Nede
 ## Belangrijke pagina's
 
 - [Homepage](https://control-one.nl/): productoverzicht
+- [Quickscan](https://control-one.nl/quickscan): gratis zelftest van 12 vragen met persoonlijk certificeringsadvies (route, abonnement, doorlooptijd)
+- [Consultancy](https://control-one.nl/consultancy): optionele persoonlijke begeleiding, op uurbasis of met vaste pakketprijs
 - [Functies](https://control-one.nl/features): volledig functieoverzicht
 - [Prijzen](https://control-one.nl/pricing): abonnementen en tarieven
 - [Over ons](https://control-one.nl/over-ons): team en bedrijfsinformatie
