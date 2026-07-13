@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
 import BlogClusterSection from '../components/BlogClusterSection.astro';
+import KennisClusterSection from '../components/KennisClusterSection.astro';
 import Footer from '../components/Footer.astro';
 
 const chapters = [
@@ -711,6 +712,8 @@ const faqSchema = {
     </section>
 
     <BlogClusterSection category="ISO 9001" normLabel="ISO 9001" />
+
+    <KennisClusterSection norm="iso-9001" normLabel="ISO 9001" uitgelicht={['wat-is-iso-9001', 'iso-9001-checklist', 'wat-kost-iso-9001-certificering', 'kwaliteitshandboek-schrijven', 'klanttevredenheid-meten', 'is-iso-9001-verplicht']} bgClass="bg-white" />
 
     <CTA />
   </main>

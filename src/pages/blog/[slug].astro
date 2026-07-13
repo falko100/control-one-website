@@ -8,8 +8,55 @@ export async function getStaticPaths() {
   // Voeg 1 dag toe zodat posts op de publicatiedatum zelf altijd zichtbaar zijn (tijdzone-correctie)
   const now = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
   const posts = await getCollection('blog', ({ data }) => !data.draft && data.publishDate <= now);
+  const kennisbank = await getCollection('kennisbank', ({ data }) => !data.draft);
+
+  // Blogcategorie → kennisbank-norm (voor scoring-bonus en fallback)
+  const categorieNorm: Record<string, string | null> = {
+    'ISO 27001': 'iso-27001',
+    'ISO 9001': 'iso-9001',
+    'ISO 14001': 'iso-14001',
+    'ISO 45001': 'iso-45001',
+    'Cybersecurity': 'iso-27001',
+  };
+
+  const tokenize = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').split(/[\s-]+/).filter((w) => w.length > 3);
 
   return posts.map((post) => {
+    // Naslagwerk uit de kennisbank: score op woordoverlap titel/keywords + norm-bonus
+    const norm = categorieNorm[post.data.category] ?? null;
+    const postTokens = new Set([
+      ...tokenize(post.data.title),
+      ...(post.data.keywords ?? []).flatMap((k) => tokenize(k)),
+    ]);
+    const scored = kennisbank
+      .map((kb) => {
+        const titleTokens = tokenize(kb.data.title);
+        const kwTokens = kb.data.keywords.flatMap((k) => tokenize(k));
+        let score = 0;
+        for (const t of titleTokens) if (postTokens.has(t)) score += 2;
+        for (const t of kwTokens) if (postTokens.has(t)) score += 1;
+        if (norm && kb.data.norm === norm) score += 2;
+        return { kb, score };
+      })
+      .filter((x) => x.score > 2)
+      .sort((a, b) => b.score - a.score);
+    // Fallback: vul aan met de pijler van de eigen norm
+    const naslagEntries = scored.slice(0, 3).map((x) => x.kb);
+    if (naslagEntries.length < 3 && norm) {
+      for (const slug of [`wat-is-${norm.replace('-', '-')}`, `wat-is-${norm}`]) {
+        const pijler = kennisbank.find((kb) => kb.slug === slug);
+        if (pijler && !naslagEntries.includes(pijler)) naslagEntries.push(pijler);
+        if (naslagEntries.length >= 3) break;
+      }
+    }
+    const naslag = naslagEntries.slice(0, 3).map((kb) => ({
+      href: `/kennis/${kb.data.norm}/${kb.slug}/`,
+      title: kb.data.title,
+      description: kb.data.description,
+      categorie: kb.data.categorie,
+      readTime: kb.data.readTime,
+    }));
     // Bouw "Gerelateerde artikelen" — zelfde categorie, exclusief huidig artikel, max 4
     const sameCategory = posts
       .filter((p) => p.slug !== post.slug && p.data.category === post.data.category)
@@ -33,12 +80,12 @@ export async function getStaticPaths() {
 
     return {
       params: { slug: post.slug },
-      props: { post, related: relatedLite },
+      props: { post, related: relatedLite, naslag },
     };
   });
 }
 
-const { post, related } = Astro.props;
+const { post, related, naslag } = Astro.props;
 const { Content } = await post.render();
 
 const { title, description, publishDate, category, readTime, author, image, imageAlt, keywords } = post.data;
@@ -324,6 +371,38 @@ const breadcrumbSchema = {
               </a>
             </div>
           </div>
+
+          <!-- Naslagwerk uit de kennisbank -->
+          {naslag.length > 0 && (
+            <section class="mt-16" aria-labelledby="naslag-heading">
+              <div class="flex items-end justify-between mb-6">
+                <h2 id="naslag-heading" class="text-xl sm:text-2xl font-bold text-primary-950 tracking-tight">
+                  Naslagwerk uit de kennisbank
+                </h2>
+                <a href="/kennis/" class="text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors hidden sm:inline-flex items-center gap-1">
+                  Naar de kennisbank
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4">
+                {naslag.map((n) => (
+                  <a
+                    href={n.href}
+                    class="group block p-5 rounded-xl border border-teal-100 bg-teal-50/40 hover:border-teal-200 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 text-xs mb-2">
+                      <span class="px-2 py-0.5 rounded-full bg-teal-100/80 text-teal-700 font-medium capitalize">{n.categorie}</span>
+                      <span class="text-primary-900/40">{n.readTime}</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-primary-950 leading-snug group-hover:text-teal-700 transition-colors mb-1">
+                      {n.title}
+                    </h3>
+                    <p class="text-sm text-primary-900/60 leading-relaxed line-clamp-2">{n.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
 
           <!-- Gerelateerde artikelen -->
           {related.length > 0 && (

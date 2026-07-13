@@ -1,4 +1,4 @@
-# Control One — ISO Compliance Software voor het MKB
+# Control One - ISO Compliance Software voor het MKB
 
 > Control One is het Nederlandse SaaS-platform waarmee middelgrote en kleine organisaties ISO-certificering zelfstandig behalen en onderhouden. Één platform voor ISO 27001, 9001, 14001 en 45001, met een stapsgewijze implementatiecoach, sjablonen, risicoanalyse, documentbeheer en auditmanagement.
 
@@ -90,16 +90,16 @@ Artikelen en uitleg over ISO-normen, begrippen en best practices, gekoppeld aan 
 
 ## Frameworks
 
-### ISO/IEC 27001:2022 — Informatiebeveiliging
+### ISO/IEC 27001:2022 - Informatiebeveiliging
 De internationale norm voor een Information Security Management System (ISMS). Dekt 7 hoofdstukken (4 t/m 10) plus 93 Annex A-maatregelen. De 2022-versie vervangt ISO 27001:2013 en heeft Annex A teruggebracht van 114 naar 93 maatregelen, georganiseerd in 4 thema's. Control One dekt de volledige norm inclusief alle Annex A-maatregelen.
 
-### ISO 9001:2015 — Kwaliteitsmanagement
+### ISO 9001:2015 - Kwaliteitsmanagement
 De wereldwijd meest toegepaste norm voor kwaliteitsmanagement (QMS). Gebaseerd op de PDCA-cyclus en risk-based thinking. Dekt processen rond klantgerichtheid, leiderschap, documentbeheer en continue verbetering.
 
-### ISO 14001:2015 — Milieumanagement
+### ISO 14001:2015 - Milieumanagement
 Norm voor een Environmental Management System (EMS). Helpt bij het identificeren van milieuaspecten, beheersen van milieu-impact en voldoen aan milieuwetgeving.
 
-### ISO 45001:2018 — Arbo & Veiligheid
+### ISO 45001:2018 - Arbo & Veiligheid
 Norm voor een Occupational Health and Safety Management System (OHSMS). Helpt bij het voorkomen van arbeidsongevallen en beroepsziekten. Vervangt de oude OHSAS 18001-norm en sluit aan op de Nederlandse Arbowet.
 
 ### Gepland
@@ -135,20 +135,20 @@ Actuele prijzen: https://control-one.nl/pricing
 
 ## Begrippen & afkortingen
 
-- **ISMS** — Information Security Management System (ISO 27001).
-- **QMS** — Quality Management System (ISO 9001).
-- **EMS** — Environmental Management System (ISO 14001).
-- **OHSMS** — Occupational Health and Safety Management System (ISO 45001).
-- **VvT / SoA** — Verklaring van Toepasselijkheid / Statement of Applicability: lijst met alle Annex A-maatregelen van ISO 27001 en of ze van toepassing zijn.
-- **PDCA** — Plan, Do, Check, Act: de continue verbeter-cyclus die ten grondslag ligt aan alle moderne ISO-normen.
-- **Annex A** — De bijlage van ISO 27001 met de beheersmaatregelen (93 stuks in de 2022-versie).
-- **Stage 1 audit** — Documentatie-audit, eerste fase van de externe certificeringsaudit.
-- **Stage 2 audit** — Implementatie-audit, tweede fase van de externe certificeringsaudit.
-- **Non-conformiteit (NC)** — Afwijking ten opzichte van de norm of het eigen beleid.
-- **CAR / CAP** — Corrective Action Report / Plan: plan om een non-conformiteit op te lossen.
-- **Directiebeoordeling / Management Review** — Periodieke evaluatie van het managementsysteem door het management.
-- **Risicomatrix** — Matrix die kans × impact weergeeft voor risicobeoordeling.
-- **High-Level Structure (HLS)** — Gemeenschappelijke structuur van moderne ISO-managementnormen (hoofdstuk 4 t/m 10), die harmonisatie tussen normen mogelijk maakt.
+- **ISMS** - Information Security Management System (ISO 27001).
+- **QMS** - Quality Management System (ISO 9001).
+- **EMS** - Environmental Management System (ISO 14001).
+- **OHSMS** - Occupational Health and Safety Management System (ISO 45001).
+- **VvT / SoA** - Verklaring van Toepasselijkheid / Statement of Applicability: lijst met alle Annex A-maatregelen van ISO 27001 en of ze van toepassing zijn.
+- **PDCA** - Plan, Do, Check, Act: de continue verbeter-cyclus die ten grondslag ligt aan alle moderne ISO-normen.
+- **Annex A** - De bijlage van ISO 27001 met de beheersmaatregelen (93 stuks in de 2022-versie).
+- **Stage 1 audit** - Documentatie-audit, eerste fase van de externe certificeringsaudit.
+- **Stage 2 audit** - Implementatie-audit, tweede fase van de externe certificeringsaudit.
+- **Non-conformiteit (NC)** - Afwijking ten opzichte van de norm of het eigen beleid.
+- **CAR / CAP** - Corrective Action Report / Plan: plan om een non-conformiteit op te lossen.
+- **Directiebeoordeling / Management Review** - Periodieke evaluatie van het managementsysteem door het management.
+- **Risicomatrix** - Matrix die kans × impact weergeeft voor risicobeoordeling.
+- **High-Level Structure (HLS)** - Gemeenschappelijke structuur van moderne ISO-managementnormen (hoofdstuk 4 t/m 10), die harmonisatie tussen normen mogelijk maakt.
 
 ## Veelgestelde vragen
 

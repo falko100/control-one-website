@@ -1,0 +1,102 @@
+---
+// Toont gecureerde topartikelen uit de kennisbank voor een norm. Pillar→cluster
+// linking voor SEO: elke ISO-landingspagina linkt naar zijn kennisbank-silo,
+// en de artikelen linken via breadcrumbs en gerelateerd terug omhoog.
+import { getCollection } from 'astro:content';
+
+interface Props {
+  /** Norm-waarde uit het kennisbank-schema (bv. "iso-27001") */
+  norm: 'iso-27001' | 'iso-9001' | 'iso-14001' | 'iso-45001';
+  /** Korte label voor de norm — gebruikt in de h2 ("Verdiep je in X") */
+  normLabel: string;
+  /** Gecureerde slugs die als eerste getoond worden */
+  uitgelicht?: string[];
+  /** Maximaal aantal artikelen om te tonen (default 6) */
+  limit?: number;
+  /** Tailwind achtergrondkleur van de sectie (default bg-white) */
+  bgClass?: string;
+}
+
+const { norm, normLabel, uitgelicht = [], limit = 6, bgClass = 'bg-white' } = Astro.props;
+
+const categorieLabels: Record<string, string> = {
+  normeisen: 'Normeisen',
+  stappenplannen: 'Stappenplan',
+  begrippen: 'Begrip',
+  vragen: 'Vraag & antwoord',
+  vergelijkingen: 'Vergelijking',
+  sjablonen: 'Sjabloon',
+};
+
+const alle = await getCollection('kennisbank', ({ data }) => !data.draft && data.norm === norm);
+const bySlug = new Map(alle.map((a) => [a.slug, a]));
+
+// Eerst de gecureerde slugs (in opgegeven volgorde), daarna aanvullen uit dezelfde norm
+const curated = uitgelicht.map((s) => bySlug.get(s)).filter(Boolean);
+const rest = alle.filter((a) => !uitgelicht.includes(a.slug));
+const artikelen = [...curated, ...rest].slice(0, limit);
+const totaal = alle.length;
+---
+
+{artikelen.length > 0 && (
+  <section class={`relative py-20 sm:py-24 ${bgClass} overflow-hidden`}>
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Sectie-header -->
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-semibold tracking-widest uppercase text-primary-500 mb-3">Kennisbank</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-primary-950 leading-[1.1]">
+          Verdiep je in <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">{normLabel}</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-primary-900/70 leading-relaxed">
+          Vrij toegankelijk naslagwerk: elke normeis, elk begrip en elk stappenplan uitgelegd. Zonder account, zonder verkooppraatje.
+        </p>
+      </div>
+
+      <!-- Artikelen grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+        {artikelen.map((artikel) => (
+          <a
+            href={`/kennis/${norm}/${artikel.slug}/`}
+            class="group block p-5 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/40 hover:border-primary-200 hover:-translate-y-0.5 transition-all"
+          >
+            <div class="flex items-center gap-2 text-xs text-primary-900/50 mb-3">
+              <span class="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-medium">{categorieLabels[artikel.data.categorie] ?? artikel.data.categorie}</span>
+              <span>{artikel.data.readTime}</span>
+            </div>
+            <h3 class="text-base font-bold text-primary-950 leading-snug mb-2 group-hover:text-primary-700 transition-colors">
+              {artikel.data.title}
+            </h3>
+            <p class="text-sm text-primary-900/60 leading-relaxed line-clamp-3">{artikel.data.description}</p>
+            <div class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-primary-600 group-hover:text-primary-800 transition-colors">
+              Lees artikel
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Link naar de norm-silo in de kennisbank -->
+      <div class="mt-10 flex justify-center">
+        <a
+          href={`/kennis/${norm}/`}
+          class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-700 bg-white hover:bg-primary-50 border border-primary-200 rounded-xl transition-colors shadow-sm"
+        >
+          Alle {totaal} {normLabel}-artikelen in de kennisbank
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
