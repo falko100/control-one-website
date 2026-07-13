@@ -45,19 +45,19 @@ const testimonials = [
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <div class="max-w-2xl mx-auto text-center mb-14">
-      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Ervaringen</p>
+    <div class="max-w-2xl mx-auto text-center mb-14" data-reveal="0">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 mb-3">Ervaringen</p>
       <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
         Organisaties die <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">zelf de regie pakken</span>
       </h2>
-      <p class="mt-4 text-lg text-primary-900/60">
+      <p class="mt-4 text-lg text-primary-900/70 leading-relaxed">
         Van informatiebeveiliging tot kwaliteitsmanagement: onze klanten behalen certificering op eigen kracht, zonder dure consultants.
       </p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {testimonials.map((t, i) => (
-        <div class:list={[
+        <div data-reveal={i * 110} class:list={[
           'rounded-2xl border p-7 flex flex-col shadow-sm',
           i === 1
             ? 'bg-primary-950 border-primary-800 shadow-xl shadow-primary-950/20'

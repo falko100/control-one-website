@@ -5,12 +5,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
     title: 'Implementatiecoach',
-    description: 'Geen lege database, maar een gestructureerde coach die je bij de hand neemt. Elke stap legt uit wat ISO vereist, waarom het ertoe doet en wat je concreet moet doen.',
+    description: 'Een online coach die je stap voor stap door het hele traject leidt, in gewone taal.',
     bullets: [
-      '28 begeleide stappen langs de volledige PDCA-cyclus',
-      'Elke stap met ISO-uitleg, actiepunten en best practices',
-      'Voortgangsregistratie: je ziet altijd precies waar je staat',
-      'Direct gekoppeld aan je risico\'s, documenten en audits',
+      '28 stappen van nulmeting tot audit',
+      'Elke stap met uitleg en concrete actiepunten',
+      'Je ziet altijd precies waar je staat',
     ],
     tags: ['28 stappen', 'PDCA-cyclus', 'ISO-uitleg'],
     iconBg: 'bg-blue-50', iconColor: 'text-blue-600',
@@ -22,12 +21,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>`,
     title: 'Risicoanalyse',
-    description: 'Volledig risicoregister met een configureerbare 5×5 risicomatrix, kans- en impactscoring, behandelingsopties en historische snapshots voor trendanalyse.',
+    description: 'Breng risico\'s in kaart, scoor ze op kans en impact en kies per risico een aanpak.',
     bullets: [
-      'Configureerbare 5×5 matrix met kans- en impactscoring',
-      'Behandelingsopties: accepteren, mitigeren, overdragen of vermijden',
-      'Historische snapshots voor trendanalyse over meerdere periodes',
-      'Directe koppeling met Annex A-maatregelen en CPAR\'s',
+      'Overzichtelijke risicomatrix met kans en impact',
+      'Vier duidelijke behandelopties per risico',
+      'Automatisch gekoppeld aan je maatregelen',
     ],
     tags: ['5×5 matrix', 'Behandelingsplan', 'Snapshots'],
     iconBg: 'bg-amber-50', iconColor: 'text-amber-600',
@@ -39,13 +37,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>`,
     title: 'Documentbeheer',
-    description: 'Gecentraliseerd beheer van al je beleidsdocumenten, procedures en richtlijnen. Met versiebeheer, goedkeuringsworkflows en kant-en-klare sjablonen per ISO-clausule.',
+    description: 'Al je beleid en procedures op één plek, met versiebeheer en goedkeuringen.',
     bullets: [
-      'Gecentraliseerd beheer van alle beleidsdocumenten en procedures',
-      'Versiebeheer met wijzigingshistorie en goedkeuringsworkflows',
-      'Kant-en-klare sjablonen per ISO-clausule, direct bewerkbaar',
-      'Exporteer elk document als PDF voor je auditor',
-      'Alle sjablonen en interface beschikbaar in het Nederlands en Engels',
+      'Sjablonen per ISO-onderdeel, direct bewerkbaar',
+      'Versiebeheer en goedkeuringsworkflow',
+      'PDF-export voor je auditor, in NL en EN',
     ],
     tags: ['Versiebeheer', 'Workflows', 'Sjablonen', 'NL & EN'],
     iconBg: 'bg-violet-50', iconColor: 'text-violet-600',
@@ -57,12 +53,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>`,
     title: 'Verklaring van Toepasselijkheid',
-    description: 'Hét kernstuk van ISO 27001: alle 93 Annex A-maatregelen in één overzicht. Leg per maatregel vast of deze van toepassing is en exporteer direct als PDF voor je auditor.',
+    description: 'Het kernstuk van ISO 27001: alle 93 maatregelen in één overzicht, klaar voor de auditor.',
     bullets: [
-      'Alle 93 Annex A-maatregelen (A5–A8) in één gestructureerd overzicht',
-      'Per maatregel: van toepassing, implementatiestatus en eigenaar vastleggen',
-      'Exporteer de VvT direct als auditklaar PDF, in minuten gereed',
-      'Koppeling aan risicobehandelingsplan en beheermaatregelen',
+      'Alle 93 maatregelen in één lijst',
+      'Status en eigenaar per maatregel',
+      'In minuten als PDF gereed',
     ],
     tags: ['93 maatregelen', 'PDF-export', 'Annex A'],
     iconBg: 'bg-indigo-50', iconColor: 'text-indigo-600',
@@ -74,12 +69,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>`,
     title: 'Gap Analyse Checklist',
-    description: '150 gerichte vragen langs alle ISO-clausules en Annex A-categorieën. Voer een nulmeting uit bij de start, een pre-audit check vlak voor de audit en periodieke herbeoordelingen.',
+    description: '150 vragen die precies laten zien waar je staat en wat er nog moet gebeuren.',
     bullets: [
-      '150 vragen langs alle ISO-clausules (H4–H10) en Annex A',
-      'Nulmeting bij de start, pre-audit check vlak voor certificering',
-      'Rapportage per clausule met automatische score en prioriteiten',
-      'Voortgangsvergelijking tussen meerdere meetmomenten',
+      'Nulmeting bij de start van je traject',
+      'Pre-audit check vlak voor certificering',
+      'Automatische score en prioriteiten',
     ],
     tags: ['150 vragen', 'Pre-audit check', 'Nulmeting'],
     iconBg: 'bg-emerald-50', iconColor: 'text-emerald-600',
@@ -91,12 +85,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
     title: 'Audit Management',
-    description: 'Beheer interne en externe audits in één module. Plan audits, registreer bevindingen, koppel non-conformiteiten aan CPAR\'s en volg de voortgang tot afronding.',
+    description: 'Plan audits, leg bevindingen vast en volg verbeteracties tot ze zijn afgerond.',
     bullets: [
-      'Plan interne en externe audits met 7-stappen wizard',
-      'Registreer bevindingen direct per auditpunt tijdens de audit',
-      'Koppel non-conformiteiten automatisch aan CPAR\'s',
-      'Volg de voortgang van alle acties tot volledige afronding',
+      'Interne en externe audits in één module',
+      'Bevindingen direct per auditpunt vastgelegd',
+      'Verbeteracties automatisch opgevolgd',
     ],
     tags: ['7-stappen wizard', 'Bevindingen', 'CPAR-koppeling'],
     iconBg: 'bg-teal-50', iconColor: 'text-teal-600',
@@ -108,12 +101,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
     title: 'Leveranciersbeheer',
-    description: 'Registreer leveranciers, classificeer ze op risico, volg ISO-certificaten en plan periodieke beoordelingen. Dashboards geven je direct inzicht in jouw leverancierslandschap.',
+    description: 'Registreer leveranciers, classificeer ze op risico en volg hun certificaten.',
     bullets: [
-      'Registreer alle leveranciers met contactgegevens en scope',
-      'Classificeer op risico: kritisch, hoog, midden of laag',
-      'Volg ISO-certificaten en plan periodieke beoordelingscycli',
-      'Dashboard met classificatietrends en vervaldatumwaarschuwingen',
+      'Risicoclassificatie per leverancier',
+      'Certificaten en vervaldatums bewaakt',
+      'Periodieke beoordelingen automatisch ingepland',
     ],
     tags: ['Risicoklassificatie', 'Certificaatbeheer', 'Beoordelingscycli'],
     iconBg: 'bg-cyan-50', iconColor: 'text-cyan-600',
@@ -125,12 +117,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
     title: "Incidenten & CPAR's",
-    description: "Registreer beveiligingsincidenten met prioriteit, type en verantwoordelijke. Maak vanuit incidenten of audits direct CPAR's aan en doorloop het vierstaps-verbeterproces.",
+    description: "Leg incidenten vast en zet ze om in verbeteracties die je aantoonbaar afrondt.",
     bullets: [
-      'Registreer incidenten met prioriteit, type en verantwoordelijke',
-      "Maak vanuit incidenten of audits direct CPAR's aan",
-      'Doorloop het vierstaps-verbeterproces (plan, do, check, act)',
-      'Incidentlog met tijdlijn en volledige audittrail',
+      'Incidenten met prioriteit en verantwoordelijke',
+      'Van incident direct naar verbeteractie',
+      'Volledige tijdlijn als bewijs voor de auditor',
     ],
     tags: ['Prioriteiten', 'Vierstaps-proces', 'Incidentlog'],
     iconBg: 'bg-rose-50', iconColor: 'text-rose-600',
@@ -142,12 +133,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg>`,
     title: 'Dashboard & Inzicht',
-    description: "Realtime compliance-dashboard met widgets voor risico's, leveranciers, CPAR's, audits en voortgang richting certificering. Met heatmap zie je direct waar actie nodig is.",
+    description: "Eén dashboard met je risico's, audits, acties en voortgang richting certificering.",
     bullets: [
-      "Realtime widgets voor risico's, CPAR's, audits en leveranciers",
-      'Visuele risicoheatmap: zie direct waar actie nodig is',
-      'Voortgangsmeter richting certificering per ISO-clausule',
-      'Vervaldatumwaarschuwingen voor audits en certificaten',
+      'Realtime voortgang per onderdeel',
+      'Heatmap toont direct waar actie nodig is',
+      'Waarschuwingen voor deadlines en vervaldatums',
     ],
     tags: ['Heatmap', 'Realtime widgets', 'Voortgang'],
     iconBg: 'bg-primary-50', iconColor: 'text-primary-600',
@@ -159,14 +149,13 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>`,
     title: 'Templates',
-    description: 'Meer dan 28 volledig vooraf ingevulde documenten, beleidsstukken en procedures, opgesteld door ISO-experts. Je vult alleen aan wat uniek is voor jouw organisatie.',
+    description: 'Vooraf ingevulde documenten, opgesteld door ISO-experts. Jij vult alleen aan wat uniek is voor jouw organisatie.',
     bullets: [
-      '28+ templates: beleid, procedures, handboeken en auditrapporten',
-      'Volledig vooraf ingevuld met ISO-kennis en best practices',
-      'Versiegeschiedenis en goedkeuringsworkflow per document',
-      'Direct exporteerbaar als auditklare PDF',
+      '120+ sjablonen: handboek, beleid en procedures',
+      'Circa 80% is al voor je ingevuld',
+      'Beschikbaar in het Nederlands en Engels',
     ],
-    tags: ['28+ documenten', 'Vooraf ingevuld', 'PDF-export'],
+    tags: ['120+ sjablonen', 'Vooraf ingevuld', 'NL & EN'],
     iconBg: 'bg-green-50', iconColor: 'text-green-600',
     tagStyle: 'bg-green-50 text-green-700 border-green-100',
     borderActive: 'border-green-500', textActive: 'text-green-700', bgActive: 'bg-green-50/30',
@@ -177,12 +166,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
     title: 'Kennisbank',
-    description: 'Meer dan 100 artikelen, richtlijnen en stappenplannen voor ISO 27001, AVG, NIS2 en meer, in begrijpelijk Nederlands, direct toepasbaar en gekoppeld aan je ISMS.',
+    description: 'Uitleg over elke normeis in begrijpelijk Nederlands, altijd binnen handbereik.',
     bullets: [
-      '100+ artikelen over ISO 27001, AVG, NIS2 en aanverwante normen',
-      'Contextgevoelig zoeken in gewone taal, geen ISO-jargon',
-      'Gekoppeld aan maatregelen, templates en coach-stappen in je ISMS',
-      'Altijd actueel bij wijzigingen in wet- en regelgeving',
+      '100+ artikelen en stappenplannen',
+      'Zoeken in gewone taal, geen jargon',
+      'Ook over AVG en aanverwante wetgeving',
     ],
     tags: ['100+ artikelen', 'ISO & AVG & NIS2', 'Coach-integratie'],
     iconBg: 'bg-teal-50', iconColor: 'text-teal-600',
@@ -195,12 +183,11 @@ const features = [
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
     tabIcon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>`,
     title: 'Directiebeoordeling',
-    description: 'Bereid directiebeoordelingen voor met alle verplichte inputpunten conform ISO 9.3. Leg besluiten en actiepunten vast en exporteer een kant-en-klaar verslag voor je auditor.',
+    description: 'Bereid de directiebeoordeling voor met alle verplichte punten en exporteer het verslag.',
     bullets: [
-      'Alle verplichte inputpunten conform ISO 27001 clausule 9.3',
-      'Notulen, besluiten en actiepunten in één gestructureerd overzicht',
-      'Actiepunten direct doorgezet als taken met eigenaar en deadline',
-      'PDF-export van het volledige verslag, auditklaar in één klik',
+      'Alle verplichte inputpunten staan klaar',
+      'Besluiten en acties direct vastgelegd',
+      'Kant-en-klaar verslag voor de auditor',
     ],
     tags: ['Clausule 9.3', 'PDF-export', 'Actiepunten'],
     iconBg: 'bg-violet-50', iconColor: 'text-violet-600',
@@ -220,16 +207,16 @@ const extraFeatures = [
 ];
 ---
 
-<section id="functies" class="py-24 bg-slate-50">
+<section id="functies" class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Section header -->
-    <div class="max-w-2xl mx-auto text-center mb-12">
-      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Alles wat je nodig hebt</p>
+    <div class="max-w-2xl mx-auto text-center mb-12" data-reveal="0">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 mb-3">Alles wat je nodig hebt</p>
       <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
         Eén platform,<br /><span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">oneindig veel functies</span>
       </h2>
-      <p class="mt-4 text-lg text-primary-900/60">
+      <p class="mt-4 text-lg text-primary-900/70 leading-relaxed">
         Van de eerste gap analyse tot aan de certificeringsaudit: Control One dekt elk onderdeel van ISO-compliance, zonder dat je specialist hoeft te zijn.
       </p>
     </div>
@@ -757,6 +744,11 @@ const extraFeatures = [
         ))}
       </div>
 
+      <!-- Auto-advance progressbalk -->
+      <div class="h-1 bg-primary-100/60">
+        <div id="features-progress" class="h-full bg-gradient-to-r from-primary-500 to-primary-400 rounded-full" style="width: 0%;"></div>
+      </div>
+
       </div>
 
       <!-- Next arrow -->
@@ -774,7 +766,18 @@ const extraFeatures = [
     const panels = Array.from(document.querySelectorAll<HTMLElement>('.features-panel'));
     const prevBtn = document.getElementById('features-prev') as HTMLButtonElement | null;
     const nextBtn = document.getElementById('features-next') as HTMLButtonElement | null;
+    const prog = document.getElementById('features-progress') as HTMLElement;
+    const tabBar = document.getElementById('features-tab-bar') as HTMLElement;
     let currentIdx = 0;
+    let hovered = false;
+
+    // Beeldwissel is gekoppeld aan animationend van de progressbalk, net als de portal-showcase.
+    function startProgress() {
+      prog.classList.remove('running');
+      void prog.offsetWidth;
+      prog.classList.add('running');
+      prog.classList.toggle('paused', hovered);
+    }
 
     // Per-tab active styles (border + text + icon bg/color)
     const activeStyles: Record<number, { border: string; text: string; iconBg: string; iconColor: string }> = {
@@ -841,13 +844,15 @@ const extraFeatures = [
         }
       });
 
-      // Scroll active tab into view
-      tabs[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      // Scroll de tab-balk horizontaal naar de actieve tab, zonder de pagina te verschuiven
+      const t = tabs[idx];
+      if (t && tabBar) tabBar.scrollTo({ left: t.offsetLeft - tabBar.clientWidth / 2 + t.clientWidth / 2, behavior: 'smooth' });
 
       // Track current and update arrow states
       currentIdx = idx;
       if (prevBtn) prevBtn.disabled = idx === 0;
       if (nextBtn) nextBtn.disabled = idx === tabs.length - 1;
+      startProgress();
     }
 
     tabs.forEach((tab, i) => {
@@ -857,9 +862,18 @@ const extraFeatures = [
     prevBtn?.addEventListener('click', () => activateTab(Math.max(0, currentIdx - 1)));
     nextBtn?.addEventListener('click', () => activateTab(Math.min(tabs.length - 1, currentIdx + 1)));
 
-    // Init arrow state
+    // Auto-advance: wissel naar de volgende tab zodra de balk vol is
+    prog.addEventListener('animationend', () => activateTab((currentIdx + 1) % tabs.length));
+
+    // Pauzeer bij hover over de hele kaart
+    const kaart = prog.closest('.rounded-3xl') as HTMLElement;
+    kaart?.addEventListener('mouseenter', () => { hovered = true; prog.classList.add('paused'); });
+    kaart?.addEventListener('mouseleave', () => { hovered = false; prog.classList.remove('paused'); });
+
+    // Init arrow state + start de balk
     if (prevBtn) prevBtn.disabled = true;
     if (nextBtn) nextBtn.disabled = tabs.length <= 1;
+    startProgress();
   })();
 </script>
 
@@ -867,6 +881,16 @@ const extraFeatures = [
   @keyframes featFadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes features-fill {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+  #features-progress.running {
+    animation: features-fill 3s linear forwards;
+  }
+  #features-progress.paused {
+    animation-play-state: paused;
   }
   .scrollbar-none::-webkit-scrollbar { display: none; }
   .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }

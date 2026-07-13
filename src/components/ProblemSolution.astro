@@ -18,7 +18,7 @@ const items = [
     icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
     label: 'Implementatiecoach',
     headline: 'Stap voor stap naar certificering',
-    description: '28 begeleide stappen door de volledige PDCA-cyclus. Elke stap legt uit wat ISO vereist en wat je moet doen.',
+    description: '28 begeleide stappen van nulmeting tot audit. Elke stap legt uit wat ISO vraagt en wat jij moet doen.',
     headline2: 'Geen ISO-kennis nodig',
     description2: 'De coach legt elke stap uit in gewone taal, met voorbeelden en sjablonen. Je weet altijd precies wat er van je verwacht wordt en wat de volgende stap is.',
     screenshot: '/screenshots/portal-coach.png',
@@ -28,9 +28,9 @@ const items = [
     icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path></svg>`,
     label: 'Risicoanalyse',
     headline: "Risico's begrijpen en beheersen",
-    description: "Volledig risicoregister met configureerbare 5x5 risicomatrix, kans- en impactscoring en behandelingsopties.",
+    description: "Breng al je risico's in kaart en scoor ze op kans en impact in een overzichtelijke matrix.",
     headline2: "Risico's direct koppelen aan maatregelen",
-    description2: "Elke geïdentificeerde dreiging wordt verbonden aan de bijbehorende Annex A controls en behandelplannen. Zo ontstaat een aantoonbaar en sluitend systeem.",
+    description2: "Elk risico koppel je direct aan de maatregelen die het afdekken. Zo ontstaat een aantoonbaar en sluitend systeem.",
     screenshot: '/screenshots/portal-risks.png',
   },
   {
@@ -40,7 +40,7 @@ const items = [
     headline: 'Alle documenten op één plek',
     description: 'Gecentraliseerd documentbeheer met versiebeheer, goedkeuringsworkflows en sjablonen per ISO-clausule.',
     headline2: '80%+ al vooringevuld',
-    description2: 'Onze sjablonen zijn specifiek per ISO-clausule opgesteld en bevatten kant-en-klare teksten. Jij past aan op jouw organisatie — en bent binnen no time klaar.',
+    description2: 'Onze sjablonen bevatten kant-en-klare teksten per ISO-onderdeel. Jij past ze aan op jouw organisatie en bent binnen no time klaar.',
     screenshot: '/screenshots/portal-documents.png',
   },
   {
@@ -48,9 +48,9 @@ const items = [
     icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path></svg>`,
     label: 'Audits',
     headline: 'Interne en externe audits beheren',
-    description: 'Plan audits, registreer bevindingen en koppel non-conformiteiten aan corrigerende maatregelen.',
+    description: 'Plan audits, leg bevindingen vast en volg verbeteracties tot ze zijn afgerond.',
     headline2: 'Altijd audit-ready',
-    description2: 'Het systeem houdt bij welke documenten, maatregelen en risico zijn up-to-date. Geen verrassingen tijdens de certificeringsaudit — je weet precies waar je staat.',
+    description2: 'De portal houdt bij wat actueel is en wat aandacht nodig heeft. Geen verrassingen tijdens de certificeringsaudit: je weet precies waar je staat.',
     screenshot: '/screenshots/portal-audits.png',
   },
   {
@@ -60,7 +60,7 @@ const items = [
     headline: "Grip op je leveranciersrisico's",
     description: "Registreer leveranciers, classificeer op risiconiveau, volg ISO-certificaten en plan periodieke beoordelingen.",
     headline2: 'ISO vereist aantoonbaar leveranciersbeheer',
-    description2: 'Met overzichtelijke risicoclassificaties en automatische herinneringen voor beoordelingen voldoe je moeiteloos aan deze ISO-eis — zonder extra administratie.',
+    description2: 'Met overzichtelijke risicoclassificaties en automatische herinneringen voldoe je moeiteloos aan deze ISO-eis, zonder extra administratie.',
     screenshot: '/screenshots/portal-vendors.png',
   },
   {
@@ -79,7 +79,7 @@ const items = [
     label: 'Maatregelen',
     headline: 'Beheersmaatregelen volledig onder controle',
     description: 'Registreer en monitor alle ISO-maatregelen, wijs eigenaren toe en volg de implementatiestatus.',
-    headline2: '93 Annex A controls, overzichtelijk beheerd',
+    headline2: 'Alle 93 maatregelen overzichtelijk beheerd',
     description2: 'Wijs per maatregel een eigenaar aan, stel implementatiedeadlines in en monitor de voortgang. Direct gekoppeld aan je risicoanalyse en audits.',
     screenshot: '/screenshots/portal-maatregelen.png',
   },
@@ -96,7 +96,7 @@ const items = [
 ];
 ---
 
-<section class="relative py-24 sm:py-32 overflow-hidden bg-white">
+<section class="relative py-24 overflow-hidden bg-white">
 
   <!-- Soft background layer -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top left, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(245,158,11,0.05) 0%, transparent 55%);"></div>
@@ -107,13 +107,14 @@ const items = [
   <div class="relative max-w-7xl mx-auto px-6">
 
     <!-- OPENING HOOK (titel blijft hier) -->
-    <div class="max-w-4xl mx-auto text-center mb-16 sm:mb-20">
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-primary-950">
+    <div class="max-w-4xl mx-auto text-center mb-16 sm:mb-20" data-reveal="0">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 mb-3">De portal</p>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-primary-950">
         Van nul naar ISO-gecertificeerd,<br>
         <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">zonder externe consultant.</span>
       </h2>
-      <p class="mt-6 text-base sm:text-lg text-primary-900/85 leading-[1.6] max-w-xl mx-auto">
-        Alles wat je nodig hebt in één platform: een <span class="text-primary-950 font-bold">stapsgewijze coach, 120+ kant-en-klare sjablonen en ISO-experts binnen handbereik</span>. Van nulmeting tot certificaat in 3 tot 6 maanden.
+      <p class="mt-4 text-lg text-primary-900/70 leading-relaxed max-w-xl mx-auto">
+        Alles wat je nodig hebt in één platform: een <span class="text-primary-950 font-bold">stapsgewijze coach, 120+ kant-en-klare sjablonen en ISO-experts binnen handbereik</span>. Van nulmeting tot certificaat in 3 tot 5 maanden.
       </p>
     </div>
 
@@ -316,6 +317,9 @@ const items = [
   #sc-progress.running {
     animation: sc-fill 3s linear forwards;
   }
+  #sc-progress.paused {
+    animation-play-state: paused;
+  }
   .sc-desc {
     transition: opacity 0.35s ease;
   }
@@ -349,19 +353,21 @@ const items = [
 
   const IDS = Array.from(tabs).map(t => t.dataset.tab!);
   let current = 0;
-  let timer: ReturnType<typeof setInterval> | null = null;
 
   // ── Tab switching ──────────────────────────────────────
+  // De beeldwissel is gekoppeld aan het animationend-event van de progressbalk,
+  // zodat balk en beelden altijd synchroon lopen.
   function startProgress() {
     prog.classList.remove('running');
     void prog.offsetWidth;
     prog.classList.add('running');
+    prog.classList.toggle('paused', hovered);
   }
 
   let isManualClick = false;
   let hovered = false;
 
-  function activate(id: string, resetTimer = true) {
+  function activate(id: string) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === id));
     imgs.forEach(img => {
       const on = img.dataset.tab === id;
@@ -380,18 +386,15 @@ const items = [
       activeTab?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
     startProgress();
-
-    if (resetTimer) {
-      current = IDS.indexOf(id);
-      if (timer) clearInterval(timer);
-      if (!hovered) timer = setInterval(advance, 3000);
-    }
+    current = IDS.indexOf(id);
   }
 
   function advance() {
     current = (current + 1) % IDS.length;
-    activate(IDS[current], false);
+    activate(IDS[current]);
   }
+
+  prog.addEventListener('animationend', () => advance());
 
   activate(IDS[0]);
 
@@ -429,11 +432,11 @@ const items = [
 
   hoverTarget.addEventListener('mouseenter', () => {
     hovered = true;
-    if (timer) { clearInterval(timer); timer = null; }
+    prog.classList.add('paused');
   });
   hoverTarget.addEventListener('mouseleave', () => {
     hovered = false;
-    if (!timer) timer = setInterval(advance, 3000);
+    prog.classList.remove('paused');
   });
 
   // ── Lightbox ──────────────────────────────────────────

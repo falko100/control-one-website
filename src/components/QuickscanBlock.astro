@@ -2,14 +2,14 @@
 // Homepage-element dat verwijst naar /quickscan: links de propositie, rechts een mockup van het resultaatscherm.
 ---
 
-<section class="relative py-24 overflow-hidden" style="background: linear-gradient(180deg, #eff8ff 0%, #f8fbff 100%);">
+<section class="relative py-24 overflow-hidden border-t border-primary-100/60" style="background: linear-gradient(180deg, #eff8ff 0%, #f8fbff 100%);">
   <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
 
   <div class="relative max-w-7xl mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
       <!-- Copy -->
-      <div>
+      <div data-reveal="0">
         <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 mb-3">Gratis quickscan</p>
         <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight leading-tight">
           Waar sta jij op weg naar <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">certificering?</span>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- Mockup resultaatscherm -->
-      <div class="relative max-w-md mx-auto w-full lg:max-w-none">
+      <div class="relative max-w-md mx-auto w-full lg:max-w-none" data-reveal="140">
         <div class="absolute -top-8 -right-8 w-64 h-64 bg-primary-400/15 rounded-full blur-3xl pointer-events-none"></div>
         <a href="/quickscan" class="relative block bg-white rounded-3xl border border-primary-100 shadow-2xl shadow-primary-900/10 overflow-hidden transition-transform duration-300 hover:-translate-y-1 lg:rotate-1 lg:hover:rotate-0">
           <div class="h-1.5" style="background: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);"></div>
