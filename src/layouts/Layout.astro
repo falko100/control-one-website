@@ -85,7 +85,22 @@ const organizationSchema = {
   ],
 };
 
+// WebSite-schema: dit is het signaal dat Google gebruikt om de sitenaam in de
+// zoekresultaten te bepalen (de regel boven de titel). Zonder dit valt Google
+// terug op het kale domein (control-one.nl).
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: 'Control One',
+  alternateName: 'Control One - ISO Compliance Software',
+  url: siteUrl,
+  publisher: { '@id': `${siteUrl}/#organization` },
+  inLanguage: 'nl-NL',
+};
+
 const allSchemas: Record<string, unknown>[] = [
+  websiteSchema,
   organizationSchema,
   ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []),
 ];
