@@ -122,12 +122,13 @@ const uitgelicht = artikelen.filter(a => a.data.categorie === 'vragen').slice(0,
           {Object.entries(categorieLabels).map(([key, label]) => {
             const count = artikelen.filter(a => a.data.categorie === key).length;
             return (
-              <div class="rounded-2xl border border-primary-100 bg-primary-50/40 p-5 flex items-center justify-between">
+              <a href={`/kennis/type/${key}/`} class="group rounded-2xl border border-primary-100 bg-primary-50/40 hover:bg-white hover:border-primary-300 p-5 flex items-center justify-between transition-all hover:shadow-md">
                 <div>
-                  <p class="font-bold text-primary-950">{label}</p>
+                  <p class="font-bold text-primary-950 group-hover:text-primary-700 transition-colors">{label}</p>
                   <p class="text-sm text-primary-900/50">{count} artikelen</p>
                 </div>
-              </div>
+                <svg class="w-5 h-5 text-primary-300 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
             );
           })}
         </div>

@@ -1,0 +1,263 @@
+---
+// Propositie-samenvatting (bento). Testversie voor /test-propositie.
+// Mini-UI-kaartjes in de stijl van Features.astro, met interactieve hovers.
+// Huisstijlregel: geen em dashes.
+---
+
+<section class="prop-sec">
+  <div class="blob" style="top:-9rem;left:-9rem;width:32rem;height:32rem;background:radial-gradient(circle,rgba(59,130,246,.16),transparent 70%)"></div>
+  <div class="blob" style="bottom:-9rem;right:-8rem;width:30rem;height:30rem;background:radial-gradient(circle,rgba(1,162,232,.14),transparent 70%)"></div>
+
+  <div class="inner">
+    <p class="eyebrow" data-reveal="0">Het complete ISO&#8209;platform</p>
+    <h2 data-reveal="60">Alles voor jouw ISO&#8209;certificering,<br><span class="grad">op één plek.</span></h2>
+    <p class="sub" data-reveal="120">Een stapsgewijze coach, kant-en-klare sjablonen en alle ISO-tools in één systeem. <b>Jij houdt de regie, Control One begeleidt je van nulmeting tot certificaat</b>, en de kennis blijft in je eigen organisatie.</p>
+
+    <div class="bento" data-reveal="160">
+
+      <!-- ANCHOR -->
+      <a class="tile a" href="/features">
+        <div><span class="kick">In de portal</span><h3>Al je dashboards en overzichten op één plek</h3></div>
+        <div class="stage">
+          <div class="win">
+            <div class="winbar"><div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="url"><span>app.control-one.nl</span></div></div>
+            <div class="winbody">
+              <img src="/screenshots/dashboard-full.jpg" alt="Control One portal dashboard" loading="lazy" />
+              <span class="cl cl-l" style="top:20%;left:3%"><i style="background:#2563eb"></i>Coach: altijd je volgende stap<span class="cltip">De implementatiecoach houdt bij welke van de 28 stappen af is en vertelt je precies wat je nu moet doen.</span></span>
+              <span class="cl cl-r" style="top:40%;right:3%"><i style="background:#f59e0b"></i>Risico's en leveranciers in beeld<span class="cltip">Je risicomatrix en leveranciersrisico's staan direct op het dashboard, met status en prioriteit.</span></span>
+              <span class="cl cl-l" style="top:52%;left:3%"><i style="background:#7c3aed"></i>Corrigerende acties (CPAR's)<span class="cltip">Non-conformiteiten worden corrigerende en preventieve acties die je aantoonbaar afrondt.</span></span>
+              <span class="cl cl-r" style="top:64%;right:3%"><i style="background:#0891b2"></i>Deadlines en voortgang bewaakt<span class="cltip">Interne audits, leveranciersreviews en risico's met hun status en openstaande punten.</span></span>
+              <span class="cl cl-l cl-up" style="bottom:8%;left:3%"><i style="background:#059669"></i>Live voortgang naar certificering<span class="cltip">Zie realtime per norm hoe ver je bent op weg naar de certificeringsaudit.</span></span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- TEMPLATES (hover = details) -->
+      <a class="tile b" href="/templates">
+        <p class="th">120+ sjablonen, 80% vooringevuld</p>
+        <p class="td">Beleid, procedures en registers, kant-en-klaar per ISO-clausule.</p>
+        <div class="panel"><div class="card">
+          <div class="chead"><span class="ct">Templates &middot; 120+ documenten</span><span class="pill pl-green">Vooraf ingevuld</span></div>
+          <div class="crow"><span class="cicon" style="background:#eef2ff;color:var(--p600)"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.6a3.4 3.4 0 00-3.4-3.4h-1.5A1.1 1.1 0 0113.5 7.1v-1.5a3.4 3.4 0 00-3.4-3.4H8.25m2.25 0H5.6c-.6 0-1.1.5-1.1 1.1v17.3c0 .6.5 1.1 1.1 1.1h12.8c.6 0 1.1-.5 1.1-1.1V11.3a9 9 0 00-9-9z"/></svg></span><div class="cbody"><p class="cname">ISMS Handboek</p><p class="csub">Handboek &middot; 42 pagina's</p><p class="cdetail">12 hoofdstukken, gebaseerd op ISO 27001:2022. Direct bewerkbaar in Word.</p></div><span class="pill pl-green">Goedgekeurd</span></div>
+          <div class="crow"><span class="cicon" style="background:#ecfdf5;color:var(--em)"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.6a3.4 3.4 0 00-3.4-3.4h-1.5A1.1 1.1 0 0113.5 7.1v-1.5a3.4 3.4 0 00-3.4-3.4H8.25m2.25 0H5.6c-.6 0-1.1.5-1.1 1.1v17.3c0 .6.5 1.1 1.1 1.1h12.8c.6 0 1.1-.5 1.1-1.1V11.3a9 9 0 00-9-9z"/></svg></span><div class="cbody"><p class="cname">Informatiebeveiligingsbeleid</p><p class="csub">Beleid &middot; 8 pagina's</p><p class="cdetail">Dekt clausule 5.1. Beschikbaar in NL en EN, met versiebeheer.</p></div><span class="pill pl-green">Goedgekeurd</span></div>
+          <div class="crow"><span class="cicon" style="background:#fff7ed;color:#b45309"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.6a3.4 3.4 0 00-3.4-3.4h-1.5A1.1 1.1 0 0113.5 7.1v-1.5a3.4 3.4 0 00-3.4-3.4H8.25m2.25 0H5.6c-.6 0-1.1.5-1.1 1.1v17.3c0 .6.5 1.1 1.1 1.1h12.8c.6 0 1.1-.5 1.1-1.1V11.3a9 9 0 00-9-9z"/></svg></span><div class="cbody"><p class="cname">Risicobeheer procedure</p><p class="csub">Procedure &middot; 9 pagina's</p><p class="cdetail">Sluit direct aan op de risicomodule, met voorbeeldrisico's.</p></div><span class="pill pl-amber">Concept</span></div>
+          <div class="cfoot" style="background:#f0fdf4;color:#15803d;border-top:1px solid #dcfce7">Beweeg over een document voor meer details</div>
+        </div></div>
+      </a>
+
+      <!-- WAAROM CONTROL ONE (propositie) -->
+      <a class="tile c" href="/features">
+        <p class="th">Certificeren doe je zelf, wij begeleiden</p>
+        <p class="td">Wij maken ISO-certificering zelf-doenbaar: volledige begeleiding, in gewone taal, en de kennis blijft in je eigen team.</p>
+        <div class="panel"><div class="valgrid">
+          <div class="valcell"><span class="vicon vb"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.44 60.44 0 00-.491 6.347A48.63 48.63 0 0112 20.9a48.63 48.63 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.9 59.9 0 0112 3.5a59.9 59.9 0 0110.399 5.84c-.896.25-1.783.52-2.658.814m-15.482 0A50.7 50.7 0 0112 13.5a50.7 50.7 0 017.74-3.34M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.68A55.38 55.38 0 0112 8.44"/></svg></span><p class="vt">Geen voorkennis nodig</p><p class="vs">De coach begeleidt je stap voor stap.</p><span class="valtip">Elke van de 28 coach-stappen legt uit wát je doet en waaróm, met voorbeelden en kant-en-klare sjablonen.</span></div>
+          <div class="valcell"><span class="vicon vc"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg></span><p class="vt">Al 80% vooringevuld</p><p class="vs">Jij vult alleen aan wat uniek is voor jouw organisatie.</p><span class="valtip">Sjablonen, ISMS-handboek en risicoanalyse zijn op basis van jarenlange ISO-ervaring al grotendeels ingevuld. Jij past alleen je eigen situatie aan.</span></div>
+          <div class="valcell"><span class="vicon vg"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.03 5.91c-.563-.096-1.159.027-1.563.431L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg></span><p class="vt">Jij houdt de regie</p><p class="vs">En de kennis blijft in je bedrijf.</p><span class="valtip">Geen consultant die na het traject met de kennis vertrekt. Je bouwt zelf een systeem dat je blijft begrijpen en onderhouden.</span></div>
+          <div class="valcell"><span class="vicon va"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><p class="vt">Auditklaar in 3 tot 5 maanden</p><p class="vs">Van nulmeting tot certificaat.</p><span class="valtip">Een realistische doorlooptijd voor het MKB, van de eerste nulmeting tot en met de externe certificeringsaudit.</span></div>
+        </div></div>
+        <p class="valfoot">Werkt voor ISO 27001, 9001, 14001 en 45001</p>
+      </a>
+
+      <!-- TOOLS / risk matrix (hover = voorbeeldrisico's) -->
+      <a class="tile d" href="/risicoanalyse">
+        <p class="th">Van risico tot audit: één samenhangend systeem</p>
+        <div class="panel"><div class="card card-open">
+          <div class="chead"><span class="ct">Risicomatrix &middot; 18 risico's</span><span class="pill pl-red">3 hoog</span></div>
+          <div class="rmwrap">
+            <div class="rmgrid">
+              <div class="rmhead"></div><div class="rmhead">1</div><div class="rmhead">2</div><div class="rmhead">3</div><div class="rmhead">4</div><div class="rmhead">5</div>
+              <div class="rmax">5</div><div class="rmcell am1"></div><div class="rmcell or hot">1<span class="rtip"><b>Verhoogd risico</b>Uitval van een leverancier</span></div><div class="rmcell rd1 hot">2<span class="rtip"><b>Hoog risico</b>Datalek klantgegevens &middot; Verlies van back-ups</span></div><div class="rmcell rd2"></div><div class="rmcell rd2"></div>
+              <div class="rmax">4</div><div class="rmcell g2"></div><div class="rmcell am1 hot">1<span class="rtip"><b>Middenrisico</b>Geen bewustwordingstraining</span></div><div class="rmcell am2 hot">3<span class="rtip"><b>Middenrisico</b>Zwakke wachtwoorden &middot; Phishing &middot; Onvolledig toegangsbeheer</span></div><div class="rmcell or hot">1<span class="rtip"><b>Verhoogd risico</b>Ontbrekend incidentproces</span></div><div class="rmcell rd1 hot">1<span class="rtip"><b>Hoog risico</b>Uitval van een kritieke leverancier</span></div>
+              <div class="rmax">3</div><div class="rmcell g1 hot">1<span class="rtip"><b>Laag risico</b>Verouderde documentatie</span></div><div class="rmcell g2"></div><div class="rmcell am1 hot">2<span class="rtip"><b>Middenrisico</b>Verouderde software &middot; Onvoldoende logging</span></div><div class="rmcell am2 hot">2<span class="rtip"><b>Middenrisico</b>Ongecontroleerde wijzigingen</span></div><div class="rmcell or"></div>
+              <div class="rmax">2</div><div class="rmcell g1 hot">1<span class="rtip"><b>Laag risico</b>Late software-update</span></div><div class="rmcell g1 hot">1<span class="rtip"><b>Laag risico</b>Onvolledig logboek</span></div><div class="rmcell g2 hot">1<span class="rtip"><b>Laag risico</b>Kleine procesafwijking</span></div><div class="rmcell am1"></div><div class="rmcell am2"></div>
+              <div class="rmax">1</div><div class="rmcell g1 hot">1<span class="rtip"><b>Laag risico</b>Ontbrekende back-uptest</span></div><div class="rmcell g1"></div><div class="rmcell g1"></div><div class="rmcell g2"></div><div class="rmcell am1"></div>
+            </div>
+            <div class="rmleg"><span><i class="g2"></i>Laag</span><span><i class="am2"></i>Midden</span><span><i class="rd2"></i>Hoog</span><span style="margin-left:auto">Kans &rarr;</span></div>
+          </div>
+        </div></div>
+      </a>
+
+      <!-- COACH steps (verticale tijdlijn) -->
+      <a class="tile e" href="/coach">
+        <p class="th">Een coach die je stap voor stap begeleidt</p>
+        <div class="panel"><div class="card card-open">
+          <div class="chead"><span class="ct">Implementatiecoach</span><span class="pill" style="background:var(--p600);color:#fff;font-size:.74rem;padding:.28rem .75rem">11% gereed</span></div>
+          <div class="steps">
+            <div class="step done"><span class="snum done"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span class="slabel">Context van de organisatie</span><span class="steptip">Breng in kaart wat je organisatie doet en welke eisen er gelden.</span></div>
+            <div class="step done"><span class="snum done"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span class="slabel">Scopebepaling</span><span class="steptip">Bepaal welke onderdelen onder je ISO-scope vallen.</span></div>
+            <div class="step active"><span class="snum active">3</span><span class="slabel">Gap analyse uitvoeren</span><span class="sactive">Actief</span><span class="steptip">Meet waar je nu staat ten opzichte van de norm.</span></div>
+            <div class="step todo"><span class="snum todo">4</span><span class="slabel">Risicobeoordeling opzetten</span><span class="steptip">Breng risico's in kaart en scoor ze op kans en impact.</span></div>
+            <div class="step todo"><span class="snum todo">5</span><span class="slabel">Beleid en VvT opstellen</span><span class="steptip">Leg beleid vast en bepaal welke maatregelen van toepassing zijn.</span></div>
+            <div class="step todo"><span class="snum todo">6</span><span class="slabel">Interne audit uitvoeren</span><span class="steptip">Toets zelf of alles werkt, vóór de externe audit.</span></div>
+          </div>
+          <div class="pbar"><div class="ptrack"><div class="pfill" style="width:11%"></div></div><p class="pnote">3 van 28 afgerond &middot; beweeg over een stap voor uitleg</p></div>
+        </div></div>
+      </a>
+
+      <!-- CONSULTANCY (mini-kaart, 2 opties) -->
+      <a class="tile f" href="/consultancy">
+        <p class="th">Zelf doen, hulp binnen handbereik</p>
+        <p class="td">Je implementeert zelf in de portal. Wil je toch ondersteuning, dan kies je uit twee opties.</p>
+        <div class="panel"><div class="card">
+          <div class="fphoto"><img src="/images/consultancy-overleg.jpg" alt="Overleg met een Control One consultant" loading="lazy" /><span class="fphoto-lbl">Onze eigen ISO-consultants</span><span class="fphoto-badge">Optioneel</span></div>
+          <div class="crow"><span class="cicon" style="background:#eef2ff;color:var(--p600)"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M22 12a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></span><div class="cbody"><p class="cname">Losse uren</p><p class="csub">Begeleiding of review op specifieke onderdelen</p></div><span class="pill pl-teal">Op uurbasis</span></div>
+          <div class="crow"><span class="cicon" style="background:#ecfeff;color:var(--acc)"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7A11.96 11.96 0 013.6 6 12 12 0 003 9.75c0 5.6 3.82 10.29 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.31-.21-2.57-.6-3.75h-.15c-3.2 0-6.1-1.25-8.25-3.29z"/></svg></span><div class="cbody"><p class="cname">Volledig traject</p><p class="csub">Van gap-analyse tot certificeringsaudit</p></div><span class="pill pl-green">Vaste prijs</span></div>
+          <div class="crow" style="background:#f0fdf4"><span class="cicon" style="background:#dcfce7;color:#15803d"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></span><div class="cbody"><p class="cname">5 uur gratis consultancy</p><p class="csub">Inbegrepen bij je abonnement</p></div><span class="pill pl-green">Gratis</span></div>
+          <div class="cfoot" style="background:#eff6ff;color:var(--p700);border-top:1px solid #dbeafe">Beide vormen ín je eigen Control One portal</div>
+        </div></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .prop-sec{
+    --p50:#eff8ff;--p100:#dbeffe;--p200:#bfe3fe;--p300:#93d2fd;--p500:#2d8dda;
+    --p600:#196bd7;--p700:#1563b8;--p800:#1237a1;--p900:#0e2470;--p950:#02095a;
+    --acc:#01a2e8;--acc4:#6fd0f0;--em:#059669;
+    --slate:#475569;--slate2:#64748b;--line:#e7eef6;--soft:#f4f8fd;
+    background:#fff;position:relative;overflow:hidden;padding:6rem 1.5rem;color:var(--p950);
+  }
+  .prop-sec *{box-sizing:border-box}
+  .blob{position:absolute;border-radius:9999px;filter:blur(130px);pointer-events:none;opacity:.5}
+  .inner{position:relative;max-width:1160px;margin:0 auto}
+  .eyebrow{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--p600);margin:0 0 .7rem;text-align:center}
+  .prop-sec h2{font-size:2.35rem;line-height:1.1;font-weight:700;letter-spacing:-.02em;text-align:center;margin:0 auto;max-width:46rem;text-wrap:balance}
+  .grad{background:linear-gradient(90deg,#0e2470,#196bd7 55%,#01a2e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{margin:1.1rem auto 0;max-width:41rem;text-align:center;font-size:1.06rem;line-height:1.6;color:rgba(15,23,42,.72)}
+  .sub b{color:var(--p950);font-weight:700}
+
+  .bento{display:grid;gap:1rem;margin-top:3rem;grid-template-columns:repeat(12,1fr);
+    grid-template-areas:"a a a a a a a b b b b b" "a a a a a a a c c c c c" "d d d d e e e e f f f f";}
+  @media(max-width:880px){.bento{grid-template-columns:1fr;grid-template-areas:"a" "b" "c" "d" "e" "f"}.prop-sec h2{font-size:1.85rem}}
+  .tile{border:1px solid var(--line);border-radius:1.15rem;padding:1.4rem;background:#fff;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:box-shadow .18s,border-color .18s}
+  a.tile:hover{box-shadow:0 16px 40px rgba(2,9,90,.13);border-color:var(--p300)}
+  a.tile.a:hover{box-shadow:0 30px 66px rgba(14,36,112,.36)}
+  .th{font-size:1.02rem;font-weight:700;color:var(--p950);margin:0 0 .3rem;line-height:1.25}
+  .td{font-size:.87rem;line-height:1.5;color:var(--slate);margin:0}
+  .td b{color:var(--p800)}
+
+  .panel{background:var(--soft);border:1px solid #e8f0fa;border-radius:.9rem;padding:.85rem;margin-top:.95rem;flex:1;display:flex;align-items:center;justify-content:center}
+  .card{width:100%;background:#fff;border:1px solid var(--p100);border-radius:.85rem;overflow:hidden;box-shadow:0 8px 20px rgba(2,9,90,.08)}
+  .card-open{overflow:visible}
+  .chead{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem .75rem;background:var(--p50);border-bottom:1px solid var(--p100);border-radius:.85rem .85rem 0 0}
+  .ct{font-size:.72rem;font-weight:700;color:var(--p700)}
+  .pill{font-size:.62rem;font-weight:700;border-radius:9999px;padding:.14rem .5rem;white-space:nowrap}
+  .pl-green{background:#dcfce7;color:#15803d}.pl-amber{background:#fef3c7;color:#b45309}
+  .pl-blue{background:#dbeafe;color:#1d4ed8}.pl-red{background:#fee2e2;color:#b91c1c}
+  .pl-teal{background:#ccfbf1;color:#0f766e}
+  .crow{display:flex;align-items:center;gap:.6rem;padding:.5rem .75rem;border-top:1px solid #f4f7fb;transition:background .15s}
+  .crow:first-child{border-top:none}
+  .cicon{width:1.35rem;height:1.35rem;border-radius:.4rem;flex:none;display:flex;align-items:center;justify-content:center}
+  .cicon svg{width:.85rem;height:.85rem}
+  .cbody{flex:1;min-width:0}
+  .cname{font-size:.72rem;font-weight:700;color:#1e293b;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .csub{font-size:.62rem;color:#94a3b8;font-weight:600;margin-top:.05rem}
+  .cfoot{padding:.45rem .75rem;text-align:center;font-size:.64rem;font-weight:700}
+
+  /* consultancy fotobanner */
+  .tile.f .panel{align-items:stretch}
+  .tile.f .card{display:flex;flex-direction:column}
+  .fphoto{position:relative;flex:1;min-height:150px;overflow:hidden}
+  .fphoto img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+  .fphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,9,90,0) 35%,rgba(2,9,90,.55) 100%)}
+  .fphoto-lbl{position:absolute;left:.75rem;bottom:.5rem;z-index:2;color:#fff;font-size:.72rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .fphoto-badge{position:absolute;top:.55rem;right:.6rem;z-index:2;font-size:.6rem;font-weight:700;color:var(--p800);background:rgba(255,255,255,.92);border-radius:9999px;padding:.14rem .5rem}
+
+  /* templates hover detail = zwevende pop-up (geen uitklap) */
+  .tile.b .card{overflow:visible}
+  .tile.b .crow{position:relative}
+  .tile.b .crow:hover{background:#f4f9ff;cursor:pointer;z-index:5}
+  .cdetail{position:absolute;left:.6rem;bottom:100%;margin-bottom:.4rem;width:min(240px,86%);background:#fff;border:1px solid var(--p200);border-radius:.55rem;box-shadow:0 16px 34px rgba(2,9,90,.24);padding:.6rem .7rem;font-size:.62rem;color:var(--slate);font-weight:600;line-height:1.4;opacity:0;visibility:hidden;transform:translateY(5px);transition:opacity .15s,transform .15s;pointer-events:none;z-index:40}
+  .cdetail::after{content:"";position:absolute;top:100%;left:1.4rem;border:6px solid transparent;border-top-color:#fff}
+  .tile.b .crow:hover .cdetail{opacity:1;visibility:visible;transform:none}
+
+  .a{grid-area:a;background:linear-gradient(158deg,#123f8f 0%,#1560c4 55%,#0f88d8 100%);border:none;color:#fff;gap:1.1rem;box-shadow:0 26px 60px rgba(14,36,112,.30);justify-content:flex-start}
+  .a .kick{font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--acc4)}
+  .a h3{font-size:1.5rem;line-height:1.16;font-weight:700;margin:.45rem 0 0;color:#fff;letter-spacing:-.01em;max-width:26rem}
+  .stage{position:relative;margin-top:1.15rem;flex:1;display:flex;align-items:flex-end}
+  .win{width:100%;background:#fff;border-radius:.7rem;overflow:hidden;box-shadow:0 20px 44px rgba(2,9,90,.34);border:1px solid rgba(255,255,255,.5)}
+  .winbar{display:flex;align-items:center;gap:.8rem;padding:.5rem .7rem;background:#f1f5f9;border-bottom:1px solid #e2e8f0}
+  .dots{display:flex;gap:.32rem}.dots i{width:.55rem;height:.55rem;border-radius:9999px;display:block}
+  .url{flex:1;display:flex;justify-content:center}
+  .url span{font-size:.68rem;color:#64748b;font-family:ui-monospace,monospace;background:#fff;border:1px solid #e2e8f0;border-radius:.4rem;padding:.16rem .7rem}
+  .winbody{position:relative}
+  .win img{display:block;width:100%;height:auto}
+  .cl{position:absolute;display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.97);border:1px solid #e2e8f0;border-radius:9999px;padding:.32rem .7rem;box-shadow:0 8px 20px rgba(2,9,90,.22);font-size:.66rem;font-weight:700;color:var(--p900);white-space:nowrap;z-index:5;backdrop-filter:blur(2px);cursor:pointer}
+  .cl i{width:.5rem;height:.5rem;border-radius:9999px;flex:none}
+  .cl:hover{z-index:30}
+  .cltip{position:absolute;top:130%;width:220px;background:var(--p900);color:#fff;border-radius:.55rem;padding:.55rem .65rem;font-size:.62rem;font-weight:600;line-height:1.4;box-shadow:0 14px 30px rgba(2,9,90,.4);opacity:0;visibility:hidden;transition:opacity .15s;pointer-events:none;white-space:normal;text-align:left;z-index:30}
+  .cl-l .cltip{left:0}
+  .cl-r .cltip{right:0}
+  .cl-up .cltip{top:auto;bottom:130%}
+  .cl:hover .cltip{opacity:1;visibility:visible}
+  @media(max-width:520px){.cl{font-size:.58rem;padding:.24rem .5rem}.cltip{width:180px}}
+
+  .b{grid-area:c}.c{grid-area:b}.d{grid-area:d}.e{grid-area:e}.f{grid-area:f}
+
+  .pbar{padding:.55rem .75rem}
+  .ptrack{height:6px;border-radius:9999px;background:var(--p100);overflow:hidden}
+  .pfill{height:100%;border-radius:9999px;background:var(--p600)}
+  .pnote{font-size:.62rem;color:var(--slate2);font-weight:600;margin-top:.35rem}
+
+  /* coach verticale tijdlijn */
+  .tile.e .panel{align-items:stretch}
+  .tile.e .card{display:flex;flex-direction:column}
+  .steps{padding:.4rem .2rem;flex:1;display:flex;flex-direction:column}
+  .step{position:relative;flex:1;display:flex;align-items:center;gap:.6rem;padding:.42rem .55rem;border-radius:.5rem;margin:.1rem .35rem}
+  .step::before{content:"";position:absolute;left:1.25rem;top:-.2rem;bottom:-.2rem;width:2px;background:var(--p200);z-index:0}
+  .step:first-child::before{top:50%}
+  .step:last-child::before{bottom:50%}
+  .step.done::before{background:var(--p600)}
+  .step.active{background:#eff6ff;border:1px solid #bfdbfe}
+  .step.todo{background:#f8fafc}
+  .snum{position:relative;width:1.4rem;height:1.4rem;border-radius:9999px;flex:none;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;z-index:1}
+  .snum.done,.snum.active{background:var(--p600);color:#fff}
+  .snum.todo{background:var(--p100);color:var(--p600)}
+  .snum svg{width:.78rem;height:.78rem}
+  .slabel{font-size:.76rem;font-weight:600;color:#334155;line-height:1.15}
+  .step.done .slabel{color:#94a3b8}
+  .step.active .slabel{font-weight:700;color:var(--p950)}
+  .sactive{margin-left:auto;font-size:.62rem;font-weight:700;color:var(--p600)}
+  .step:hover{cursor:pointer;background:#f4f9ff}
+  .steptip{position:absolute;left:.4rem;bottom:114%;width:200px;background:#fff;border:1px solid var(--p200);border-radius:.55rem;box-shadow:0 16px 34px rgba(2,9,90,.24);padding:.5rem .6rem;font-size:.62rem;color:var(--slate);font-weight:600;line-height:1.4;opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s,transform .15s;pointer-events:none;z-index:40}
+  .steptip::after{content:"";position:absolute;top:100%;left:1rem;border:6px solid transparent;border-top-color:#fff}
+  .step:hover .steptip{opacity:1;visibility:visible;transform:none}
+
+  .nchips{display:flex;gap:.22rem;flex-wrap:wrap;justify-content:flex-end}
+  .nchip{font-size:.56rem;font-weight:700;color:var(--p700);background:var(--p50);border:1px solid var(--p200);border-radius:.3rem;padding:.08rem .3rem}
+
+  /* propositie 2x2 waarde-blok (tile c) */
+  .tile.c .panel{align-items:stretch}
+  .valgrid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;width:100%;height:100%;grid-auto-rows:1fr}
+  .valcell{position:relative;background:#fff;border:1px solid var(--p100);border-radius:.7rem;padding:.85rem;box-shadow:0 6px 16px rgba(2,9,90,.06);display:flex;flex-direction:column;justify-content:center}
+  .valcell:hover{cursor:pointer;border-color:var(--p300)}
+  .valtip{position:absolute;left:50%;bottom:104%;transform:translateX(-50%) translateY(5px);width:min(210px,92%);background:var(--p900);color:#fff;border-radius:.55rem;padding:.55rem .65rem;font-size:.62rem;font-weight:600;line-height:1.4;box-shadow:0 16px 34px rgba(2,9,90,.36);opacity:0;visibility:hidden;transition:opacity .15s,transform .15s;pointer-events:none;z-index:40;text-align:left}
+  .valtip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--p900)}
+  .valcell:hover .valtip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .vicon{width:1.9rem;height:1.9rem;border-radius:.5rem;display:flex;align-items:center;justify-content:center;margin-bottom:.55rem}
+  .vicon svg{width:1.05rem;height:1.05rem}
+  .vb{background:#eef2ff;color:var(--p600)}.vc{background:#ecfeff;color:var(--acc)}.vg{background:#ecfdf5;color:var(--em)}.va{background:#fff7ed;color:#d97706}
+  .vt{font-size:.82rem;font-weight:700;color:var(--p950);margin:0;line-height:1.2}
+  .vs{font-size:.66rem;color:var(--slate2);font-weight:600;margin:.22rem 0 0;line-height:1.3}
+  .valfoot{margin:.85rem 0 0;text-align:center;font-size:.7rem;font-weight:700;color:var(--p600)}
+
+  /* risk matrix + hover tooltip */
+  .rmwrap{padding:.7rem .75rem}
+  .rmgrid{display:grid;grid-template-columns:auto repeat(5,1fr);gap:2px}
+  .rmhead{font-size:.54rem;color:#94a3b8;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center}
+  .rmcell{position:relative;aspect-ratio:1;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#334155}
+  .rmcell.rd1,.rmcell.rd2{color:#9f1239}
+  .rmcell.hot{cursor:pointer}
+  .rmcell.hot:hover{outline:2px solid var(--p700);outline-offset:1px;z-index:20}
+  .rmax{font-size:.54rem;color:#94a3b8;font-weight:700;display:flex;align-items:center;justify-content:flex-end;padding-right:2px}
+  .rmleg{display:flex;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.56rem;color:var(--slate2);font-weight:600}
+  .rmleg i{width:.55rem;height:.55rem;border-radius:2px;display:inline-block;margin-right:.2rem;vertical-align:-1px}
+  .g1{background:#cdefda}.g2{background:#e8f7ee}.am1{background:#fbeecd}.am2{background:#f8e2b0}.or{background:#f8d8bd}.rd1{background:#f6cfcf}.rd2{background:#f0b9b9}
+  .rtip{position:absolute;bottom:120%;left:50%;transform:translateX(-50%);width:172px;background:var(--p900);color:#fff;border-radius:.5rem;padding:.5rem .6rem;font-size:.6rem;font-weight:600;line-height:1.4;box-shadow:0 12px 26px rgba(2,9,90,.4);opacity:0;visibility:hidden;transition:opacity .15s;z-index:40;pointer-events:none;text-align:left;text-shadow:none}
+  .rtip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--p900)}
+  .rtip b{display:block;color:var(--acc4);font-weight:700;margin-bottom:.2rem;font-size:.56rem;text-transform:uppercase;letter-spacing:.04em}
+  .rmcell.hot:hover .rtip{opacity:1;visibility:visible}
+</style>

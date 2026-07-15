@@ -11,6 +11,7 @@ export default defineConfig({
       filter: (page) => ![
         'https://control-one.nl/hero1/',
         'https://control-one.nl/test-fotos/',
+        'https://control-one.nl/test-propositie/',
       ].includes(page),
     }),
   ],

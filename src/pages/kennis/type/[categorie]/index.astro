@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  return ['normeisen', 'stappenplannen', 'begrippen', 'vragen', 'vergelijkingen', 'sjablonen']
+    .map(categorie => ({ params: { categorie } }));
+}
+
+const { categorie } = Astro.params;
+
+const catInfo: Record<string, { label: string; sub: string; intro: string }> = {
+  normeisen: { label: 'Normeisen', sub: 'De norm per clausule', intro: 'De eisen per norm, uitgelegd: elke clausule en alle 93 Annex A-maatregelen van ISO 27001, plus de clausules van ISO 9001, 14001 en 45001.' },
+  stappenplannen: { label: 'Stappenplannen', sub: 'Zo pak je het aan', intro: 'Concrete how-to-gidsen: zo voer je de belangrijkste onderdelen van je managementsysteem stap voor stap uit.' },
+  begrippen: { label: 'Begrippen', sub: 'Het ISO-woordenboek', intro: 'Alle vaktermen kort en helder uitgelegd, van ISMS tot poka yoke. Ideaal als naslagwerk tijdens je traject.' },
+  vragen: { label: 'Veelgestelde vragen', sub: 'Directe antwoorden', intro: 'Directe antwoorden op de vragen die iedereen stelt over ISO-certificering: kosten, doorlooptijd, verplichtingen en keuzes.' },
+  vergelijkingen: { label: 'Vergelijkingen', sub: 'Keuzehulpen', intro: 'Normen en opties naast elkaar gezet, zodat je een onderbouwde keuze maakt tussen normen, aanpakken en instrumenten.' },
+  sjablonen: { label: 'Documenten & sjablonen', sub: 'De verplichte documenten', intro: 'Zo stel je de verplichte documenten op: beleid, registers en procedures, met precies wat erin moet.' },
+};
+
+const normLabels: Record<string, string> = {
+  'iso-27001': 'ISO 27001', 'iso-9001': 'ISO 9001', 'iso-14001': 'ISO 14001',
+  'iso-45001': 'ISO 45001', 'algemeen': 'Algemeen',
+};
+const normVolgorde = ['iso-27001', 'iso-9001', 'iso-14001', 'iso-45001', 'algemeen'];
+
+const info = catInfo[categorie!];
+const artikelen = (await getCollection('kennisbank', ({ data }) => !data.draft && data.categorie === categorie))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'nl'));
+
+const perNorm = normVolgorde
+  .map(key => ({ key, label: normLabels[key], items: artikelen.filter(a => a.data.norm === key) }))
+  .filter(n => n.items.length > 0);
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Kennisbank', item: 'https://control-one.nl/kennis/' },
+    { '@type': 'ListItem', position: 2, name: info.label, item: `https://control-one.nl/kennis/type/${categorie}/` },
+  ],
+};
+---
+
+<Layout
+  title={`${info.label} — ISO-kennisbank | Control One`}
+  description={`${info.intro} ${artikelen.length} vrij toegankelijke artikelen.`}
+  jsonLd={breadcrumbSchema}
+>
+  <Header />
+  <main>
+
+    <!-- HERO -->
+    <section class="relative pt-32 pb-14 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
+      <div class="relative max-w-7xl mx-auto px-6">
+        <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+          <a href="/kennis/" class="hover:text-white transition-colors">Kennisbank</a>
+          <span class="mx-2">/</span>
+          <span class="text-white/90">{info.label}</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">{info.label} <span class="text-accent-400">in de kennisbank</span></h1>
+        <p class="mt-4 text-lg text-white/90 max-w-2xl leading-relaxed">{info.intro}</p>
+        <p class="mt-3 text-sm text-white/70">{artikelen.length} artikelen</p>
+      </div>
+    </section>
+
+    <!-- ARTIKELEN PER NORM -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        {perNorm.length === 0 && (
+          <p class="text-primary-900/60">De eerste artikelen van dit type verschijnen binnenkort. Bekijk intussen de <a href="/kennis/" class="text-primary-600 font-semibold hover:underline">volledige kennisbank</a>.</p>
+        )}
+        <div class="space-y-14">
+          {perNorm.map(n => (
+            <div>
+              <h2 class="text-xl font-bold text-primary-950 tracking-tight mb-5 flex items-center gap-3">
+                <a href={`/kennis/${n.key}/`} class="hover:text-primary-700 transition-colors">{n.label}</a>
+                <span class="text-xs font-semibold text-primary-400 bg-primary-50 border border-primary-100 rounded-full px-2.5 py-0.5">{n.items.length}</span>
+              </h2>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {n.items.map(a => (
+                  <a href={`/kennis/${a.data.norm}/${a.slug}/`} class="group bg-white rounded-2xl border border-primary-100 hover:border-primary-300 p-5 transition-all hover:shadow-md flex flex-col">
+                    <h3 class="text-[15px] font-bold text-primary-950 group-hover:text-primary-700 transition-colors leading-snug">{a.data.title}</h3>
+                    <p class="mt-1.5 text-sm text-primary-900/55 leading-relaxed line-clamp-2">{a.data.description}</p>
+                    <span class="mt-3 text-xs text-primary-400 mt-auto pt-2">{a.data.readTime} leestijd</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- terug naar hub -->
+        <div class="mt-14 pt-8 border-t border-primary-100/60">
+          <a href="/kennis/" class="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+            Terug naar de kennisbank
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 border-t border-primary-100/60" style="background: linear-gradient(180deg, #eff8ff 0%, #f8fbff 100%);">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-bold text-primary-950 tracking-tight">Zelf aan de slag met ISO?</h2>
+        <p class="mt-2 text-primary-900/70">De portal begeleidt je stap voor stap, met alle sjablonen en de implementatiecoach.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="/quickscan" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-500 hover:text-white rounded-xl transition-all shadow-md">Doe de gratis quickscan</a>
+          <a href="/frameworks" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-primary-700 bg-white border border-primary-200 hover:border-primary-400 rounded-xl transition-all">Bekijk de normen</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
