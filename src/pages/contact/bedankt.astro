@@ -35,3 +35,15 @@ import Footer from '../../components/Footer.astro';
   </main>
   <Footer />
 </Layout>
+
+<!-- Conversie-event per formulier: contact.astro post naar ?van=contact, demo.astro naar ?van=demo.
+     Zonder param (direct bezoek of oude link) vuurt er bewust géén event, zodat de telling zuiver blijft. -->
+<script is:inline>
+  (function () {
+    var van = new URLSearchParams(window.location.search).get('van');
+    var events = { contact: 'contact_submit', demo: 'demo_submit' };
+    if (van && events[van] && typeof window.gtag === 'function') {
+      window.gtag('event', events[van]);
+    }
+  })();
+</script>

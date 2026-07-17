@@ -743,6 +743,7 @@ const breadcrumbSchema = {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data).toString(),
       });
+      if (typeof (window as any).gtag === 'function') (window as any).gtag('event', 'quickscan_submit');
     } catch (_) { /* download alsnog vrijgeven */ }
     form.classList.add('hidden');
     document.getElementById('qs-downloads')!.classList.remove('hidden');
