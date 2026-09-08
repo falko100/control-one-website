@@ -193,7 +193,7 @@ const allSchemas: Record<string, unknown>[] = [
     <!-- Global image lightbox -->
     <div
       id="lightbox"
-      class="fixed inset-0 z-[100] hidden items-center justify-center bg-primary-950/40 backdrop-blur-md p-4 sm:p-8 cursor-zoom-out opacity-0 transition-opacity duration-200"
+      class="fixed inset-0 z-[100] hidden items-start justify-center bg-primary-950/80 backdrop-blur-md p-4 sm:p-8 cursor-zoom-out opacity-0 transition-opacity duration-200"
       role="dialog"
       aria-modal="true"
       aria-label="Afbeelding vergroot weergeven"
@@ -206,12 +206,14 @@ const allSchemas: Record<string, unknown>[] = [
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
-      <img
-        id="lightbox-img"
-        src=""
-        alt=""
-        class="max-w-[96vw] max-h-[92vh] rounded-xl shadow-2xl ring-1 ring-white/10 object-contain cursor-default"
-      />
+      <div id="lightbox-scroll" class="max-h-[92vh] max-w-[96vw] overflow-y-auto overscroll-contain rounded-xl shadow-2xl ring-1 ring-white/10 cursor-default">
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="block w-auto h-auto max-w-[min(96vw,940px)]"
+        />
+      </div>
     </div>
 
     <script is:inline>
@@ -248,7 +250,7 @@ const allSchemas: Record<string, unknown>[] = [
         });
 
         lightbox.addEventListener('click', (e) => {
-          if (e.target === lightboxImg) return;
+          if (e.target !== lightbox) return;
           close();
         });
         closeBtn.addEventListener('click', close);
