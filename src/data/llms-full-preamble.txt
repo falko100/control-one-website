@@ -102,8 +102,13 @@ Norm voor een Environmental Management System (EMS). Helpt bij het identificeren
 ### ISO 45001:2018 - Arbo & Veiligheid
 Norm voor een Occupational Health and Safety Management System (OHSMS). Helpt bij het voorkomen van arbeidsongevallen en beroepsziekten. Vervangt de oude OHSAS 18001-norm en sluit aan op de Nederlandse Arbowet.
 
+### NEN 7510 - Informatiebeveiliging in de zorg
+De Nederlandse norm voor informatiebeveiliging in de zorg (NEN 7510-1:2024), uitgelijnd op ISO/IEC 27001:2022. Vult de norm aan met 12 zorgspecifieke beheersmaatregelen (eigen annexgroep A9): toegang op basis van behandelrelatie, logging van dossierinzage (NEN 7513), noodtoegang, veilige uitwisseling (NEN 7512), beveiliging van medische apparatuur en melding van datalekken. Wettelijk verankerd via onder meer de Wabvpz; toezicht door IGJ en AP.
+
+### NIS2 - Cyberbeveiligingswet
+De Europese richtlijn (EU) 2022/2555 voor netwerk- en informatiebeveiliging, in Nederland ingevoerd met de Cyberbeveiligingswet (van kracht sinds 15 augustus 2026). Geen certificering maar wetgeving met toezicht. Kent drie kernverplichtingen: registratie bij het NCSC, een zorgplicht met de tien maatregelcategorieen van artikel 21, en een meldplicht voor significante incidenten (24 uur, 72 uur, 1 maand). De maatregelen zijn gemapt op ISO 27001:2022.
+
 ### Gepland
-- NIS2 (EU-richtlijn voor netwerk- en informatiebeveiliging),
 - SOC 2 (Trust Services Criteria, Type I en Type II),
 - AVG / GDPR (Europese privacywetgeving, verwerkingsregister en DPIA).
 
