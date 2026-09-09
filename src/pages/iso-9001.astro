@@ -26,8 +26,8 @@ const chapters = [
   {
     number: '6',
     title: 'Planning',
-    description: "Identificeer risico's en kansen die van invloed zijn op het behalen van je kwaliteitsdoelstellingen. Stel meetbare doelstellingen vast, maak concrete actieplannen en wijs de benodigde resources toe.",
-    vereist: "Risico's en kansen identificeren, kwaliteitsdoelstellingen vaststellen en wijzigingen plannen.",
+    description: "Identificeer risico's en kansen die van invloed zijn op het behalen van je kwaliteitsdoelstellingen. In de 2026-versie is clausule 6.1 opgesplitst: 6.1.2 gaat over acties om risico's aan te pakken, 6.1.3 over acties om kansen na te streven. Beide zijn nu apart aantoonbaar.",
+    vereist: "Risico's en kansen apart identificeren en behandelen (6.1.2 en 6.1.3), kwaliteitsdoelstellingen vaststellen en wijzigingen plannen.",
     documenten: ['Risicoregister', 'CPAR-formulier', 'Doelstellingenregister'],
     platform: 'Risicobeheermodule met behandelingsplan, CPAR-workflow en voortgangsregistratie van kwaliteitsdoelstellingen.',
   },
@@ -58,8 +58,8 @@ const chapters = [
   {
     number: '10',
     title: 'Verbetering',
-    description: 'Pak afwijkingen aan en streef naar continue verbetering van je QMS.',
-    vereist: 'Non-conformiteiten identificeren, corrigerende maatregelen treffen en continue verbetering documenteren.',
+    description: 'Pak afwijkingen aan en streef naar continue verbetering van je QMS. In de 2026-versie is de losse clausule 10.3 over continue verbetering opgegaan in 10.1, waardoor verbetering als een geheel wordt beoordeeld in plaats van als losse eis.',
+    vereist: 'Non-conformiteiten identificeren, corrigerende maatregelen treffen en continue verbetering aantonen binnen 10.1.',
     documenten: ['Non-conformiteitenregister', 'Corrigerende maatregelenplan', 'Klantfeedbackformulier'],
     platform: 'CPAR-beheer met vierstaps-verbeterproces, klantfeedbackregistratie en verbeterdashboard.',
   },
@@ -71,7 +71,7 @@ const qmsGroups = [
     dot: 'bg-blue-500',
     countStyle: 'text-blue-700 bg-blue-50',
     items: [
-      { name: 'Kwaliteitshandboek', sub: 'ISO 9001:2015' },
+      { name: 'Kwaliteitshandboek', sub: 'ISO 9001:2026' },
       { name: 'Documentatie Matrix', sub: 'Overzicht' },
       { name: 'Scope & toepassingsgebied', sub: 'H4 conform' },
     ],
@@ -167,9 +167,9 @@ const schema = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   url: 'https://control-one.nl/iso-9001',
-  description: 'Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform.',
+  description: 'Behaal ISO 9001:2026 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform.',
   featureList: [
-    'Implementatiecoach voor ISO 9001:2015',
+    'Implementatiecoach voor ISO 9001:2026',
     'PDCA-cyclus ondersteuning',
     'Documentbeheer en sjablonen',
     'Interne audit module',
@@ -203,7 +203,23 @@ const faqSchema = {
       name: 'Wat is ISO 9001?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ISO 9001 is de internationale norm voor kwaliteitsmanagementsystemen (QMS). De norm stelt eisen aan processen, klantgerichtheid, leiderschap, risicogebaseerd denken en continue verbetering. De huidige versie is ISO 9001:2015 en is toepasbaar op elke organisatie, ongeacht sector of grootte.',
+        text: 'ISO 9001 is de internationale norm voor kwaliteitsmanagementsystemen (QMS). De norm stelt eisen aan processen, klantgerichtheid, leiderschap, risicogebaseerd denken en continue verbetering. De huidige versie is ISO 9001:2026 en is toepasbaar op elke organisatie, ongeacht sector of grootte.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat is er veranderd in ISO 9001:2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De zesde editie is een verfijning, geen herstructurering. Clausule 6.1 is opgesplitst in 6.1.2 (acties om risico\'s aan te pakken) en 6.1.3 (acties om kansen na te streven), waardoor beide apart aantoonbaar moeten zijn. De losse clausule 10.3 over continue verbetering is opgegaan in 10.1. Daarnaast is de terminologie rond het bijhouden en bewaren van gedocumenteerde informatie verduidelijkt. De structuur van hoofdstuk 4 tot en met 10 blijft ongewijzigd.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Moet ik direct over naar ISO 9001:2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nee. Certificerende instellingen moeten zelf eerst geaccrediteerd worden voor de nieuwe versie, wat 9 tot 12 maanden duurt, dus de eerste 2026-certificaten worden pas rond augustus 2027 afgegeven. De transitietermijn loopt tot september 2029. Begin je nu met implementeren, dan bouw je je kwaliteitsmanagementsysteem meteen op de 2026-versie op en hoef je later niets over te doen.',
       },
     },
     {
@@ -211,15 +227,15 @@ const faqSchema = {
       name: 'Wat is de PDCA-cyclus in ISO 9001?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'De PDCA-cyclus (Plan, Do, Check, Act) is het continue verbeter-model dat aan ISO 9001 ten grondslag ligt. Plan: doelen en processen vaststellen. Do: processen uitvoeren. Check: resultaten monitoren. Act: bijsturen op basis van bevindingen. De High-Level Structure van ISO 9001:2015 volgt deze cyclus in de hoofdstukken 4 tot en met 10.',
+        text: 'De PDCA-cyclus (Plan, Do, Check, Act) is het continue verbeter-model dat aan ISO 9001 ten grondslag ligt. Plan: doelen en processen vaststellen. Do: processen uitvoeren. Check: resultaten monitoren. Act: bijsturen op basis van bevindingen. De High-Level Structure van ISO 9001:2026 volgt deze cyclus in de hoofdstukken 4 tot en met 10.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Wat is risicogebaseerd denken in ISO 9001:2015?',
+      name: 'Wat is risicogebaseerd denken in ISO 9001:2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Risk-based thinking is een kerneis in ISO 9001:2015: organisaties moeten risico\'s en kansen identificeren die de kwaliteit van producten of diensten kunnen beïnvloeden, en daar maatregelen op nemen. Het vervangt de oude "preventive action" uit ISO 9001:2008 en is geïntegreerd door alle hoofdstukken heen.',
+        text: 'Risk-based thinking is een kerneis in ISO 9001:2026: organisaties moeten risico\'s en kansen identificeren die de kwaliteit van producten of diensten kunnen beïnvloeden, en daar maatregelen op nemen. Het vervangt de oude "preventive action" uit ISO 9001:2008 en is geïntegreerd door alle hoofdstukken heen.',
       },
     },
     {
@@ -236,7 +252,7 @@ const faqSchema = {
 
 <Layout
   title="ISO 9001 Software — Kwaliteitsmanagement | Control One"
-  description="Behaal ISO 9001:2015 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform."
+  description="Behaal ISO 9001:2026 certificering met Control One. Stapsgewijze begeleiding door alle hoofdstukken, PDCA-cyclus, documentbeheer en interne audits in één platform."
   jsonLd={[schema, breadcrumbSchema, faqSchema]}
 >
   <Header />
@@ -262,6 +278,15 @@ const faqSchema = {
             <p class="mt-2 text-xl sm:text-2xl font-medium text-primary-200">
               Quality Management System
             </p>
+
+            <!-- Aankondiging nieuwe normversie -->
+            <div class="mt-6 inline-flex items-start gap-3 px-4 py-3 rounded-xl bg-emerald-400/10 border border-emerald-400/30 backdrop-blur-sm">
+              <span class="mt-0.5 shrink-0 text-[10px] font-bold uppercase tracking-widest text-primary-950 bg-emerald-400 px-2 py-1 rounded-md">Nieuw</span>
+              <p class="text-sm text-white/90 leading-relaxed">
+                Control One draait op <strong class="font-semibold text-white">ISO 9001:2026</strong>, de zesde editie van de norm. Inclusief de nieuwe clausules 6.1.2 en 6.1.3 en de herziene structuur van hoofdstuk 10.
+              </p>
+            </div>
+
             <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
               Implementeer een QMS volgens de internationale norm voor kwaliteitsmanagement. Control One begeleidt je van contextanalyse tot continue verbetering, stap voor stap.
             </p>
@@ -328,7 +353,7 @@ const faqSchema = {
                 </div>
                 <div>
                   <p class="text-[9px] font-bold uppercase tracking-widest text-emerald-400/80 leading-none">Normdekking</p>
-                  <p class="mt-1 text-xs font-bold text-white leading-none">100% ISO 9001:2015</p>
+                  <p class="mt-1 text-xs font-bold text-white leading-none">100% ISO 9001:2026</p>
                 </div>
               </div>
             </div>
@@ -363,6 +388,58 @@ const faqSchema = {
                 <p class="text-xs text-primary-900/50 leading-relaxed">{b.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wat verandert er in ISO 9001:2026 -->
+    <section class="py-24 bg-primary-50/40 border-y border-primary-100/70">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-emerald-600 mb-3">Zesde editie</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">Wat verandert er in <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">ISO 9001:2026?</span></h2>
+          <p class="mt-4 text-lg text-primary-900/75">De herziening is een verfijning, geen breuk. De structuur van hoofdstuk 4 tot en met 10 blijft staan, maar op drie punten wordt de norm explicieter.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            {
+              label: 'Clausule 6.1',
+              title: "Risico's en kansen uit elkaar",
+              desc: "Waar 6.1 eerst één eis was, komen er nu twee subclausules: 6.1.2 voor acties om risico's aan te pakken en 6.1.3 voor acties om kansen na te streven. Je moet beide apart kunnen aantonen.",
+            },
+            {
+              label: 'Clausule 10',
+              title: 'Verbetering als geheel',
+              desc: 'De losse clausule 10.3 over continue verbetering gaat op in 10.1. Verbetering wordt daarmee als samenhangend geheel beoordeeld in plaats van als aparte eis aan het eind.',
+            },
+            {
+              label: 'Terminologie',
+              title: 'Scherpere begrippen',
+              desc: 'Verouderde termen rond het bijhouden en bewaren van gedocumenteerde informatie zijn vervangen door eenduidiger taal, zodat minder discussie ontstaat over wat je precies moet vastleggen.',
+            },
+          ].map(item => (
+            <div class="p-6 rounded-2xl bg-white border border-primary-100 hover:shadow-lg hover:shadow-primary-100/50 transition-all">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2">{item.label}</p>
+              <h3 class="text-base font-bold text-primary-950 mb-2">{item.title}</h3>
+              <p class="text-sm text-primary-900/70 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Transitietermijn -->
+        <div class="mt-12 max-w-4xl mx-auto rounded-2xl bg-white border border-primary-100 p-7 sm:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-5">
+            <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-primary-950">Je hoeft niet te wachten, en niet te haasten</h3>
+              <p class="mt-2 text-sm text-primary-900/75 leading-relaxed">
+                Certificerende instellingen moeten zelf eerst geaccrediteerd worden voor de nieuwe versie, wat 9 tot 12 maanden duurt. De eerste 2026-certificaten worden daarom pas rond <strong class="text-primary-950">augustus 2027</strong> afgegeven, en de transitietermijn loopt tot <strong class="text-primary-950">september 2029</strong>. Begin je nu, dan bouw je je managementsysteem meteen op de nieuwste versie op en hoef je later niets over te doen.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -583,7 +660,7 @@ const faqSchema = {
               <div class="text-4xl font-bold mb-1">100%</div>
               <div class="text-emerald-200 text-sm font-semibold mb-4">Normdekking</div>
               <p class="text-emerald-300/80 text-sm leading-relaxed">
-                Control One dekt alle 7 hoofdstukken en alle vereisten van ISO 9001:2015, inclusief CPAR-beheer en klanttevredenheidsmeting.
+                Control One dekt alle 7 hoofdstukken en alle vereisten van ISO 9001:2026, inclusief CPAR-beheer en klanttevredenheidsmeting.
               </p>
             </div>
             <a href="/demo" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white transition-colors">
@@ -602,7 +679,7 @@ const faqSchema = {
         <!-- Header -->
         <div class="max-w-3xl mx-auto text-center mb-12">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-100">
-            QMS Documentatie: ISO 9001:2015
+            QMS Documentatie: ISO 9001:2026
           </div>
           <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
             Alle QMS-documenten <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">in één overzicht</span>
