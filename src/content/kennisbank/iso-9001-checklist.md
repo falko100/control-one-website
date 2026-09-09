@@ -15,7 +15,7 @@ faq:
     antwoord: "Met een platform en een bestaande, redelijk geordende bedrijfsvoering: 3 tot 5 maanden naast het gewone werk. De doorlooptijd zit vooral in het laten draaien van de cyclus: je hebt minimaal één interne audit, één directiebeoordeling en enkele maanden registraties nodig voordat de certificeringsaudit iets te toetsen heeft."
 ---
 
-Deze checklist loopt alle eisen van ISO 9001:2015 af. Gebruik hem als gap-analyse vooraf en als laatste controle vóór de certificeringsaudit: elk vinkje vraagt om bewijs, niet alleen om een ja.
+Deze checklist loopt alle eisen van ISO 9001:2026 af. Gebruik hem als gap-analyse vooraf en als laatste controle vóór de certificeringsaudit: elk vinkje vraagt om bewijs, niet alleen om een ja.
 
 ## Clausule 4: Context
 
@@ -32,7 +32,7 @@ Deze checklist loopt alle eisen van ISO 9001:2015 af. Gebruik hem als gap-analys
 
 ## Clausule 6: Planning
 
-- Risico- en kansenregister, herleidbaar tot context en stakeholders, met acties en eigenaren
+- Risico- en kansenregister, herleidbaar tot context en stakeholders, met acties en eigenaren. Sinds de 2026-versie zijn risico's (6.1.2) en kansen (6.1.3) apart aantoonbaar, dus leg beide expliciet vast
 - Meetbare kwaliteitsdoelstellingen met plan (wat, wie, wanneer, middelen, evaluatie)
 - Werkwijze voor het planmatig doorvoeren van systeemwijzigingen
 
