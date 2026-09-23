@@ -93,8 +93,8 @@ Artikelen en uitleg over ISO-normen, begrippen en best practices, gekoppeld aan 
 ### ISO/IEC 27001:2022 - Informatiebeveiliging
 De internationale norm voor een Information Security Management System (ISMS). Dekt 7 hoofdstukken (4 t/m 10) plus 93 Annex A-maatregelen. De 2022-versie vervangt ISO 27001:2013 en heeft Annex A teruggebracht van 114 naar 93 maatregelen, georganiseerd in 4 thema's. Control One dekt de volledige norm inclusief alle Annex A-maatregelen.
 
-### ISO 9001:2015 - Kwaliteitsmanagement
-De wereldwijd meest toegepaste norm voor kwaliteitsmanagement (QMS). Gebaseerd op de PDCA-cyclus en risk-based thinking. Dekt processen rond klantgerichtheid, leiderschap, documentbeheer en continue verbetering.
+### ISO 9001:2026 - Kwaliteitsmanagement
+De wereldwijd meest toegepaste norm voor kwaliteitsmanagement (QMS). Gebaseerd op de PDCA-cyclus en risk-based thinking. Dekt processen rond klantgerichtheid, leiderschap, documentbeheer en continue verbetering. Control One ondersteunt de zesde editie (ISO 9001:2026), die ISO 9001:2015 opvolgt. Wijzigingen ten opzichte van 2015: clausule 6.1 is gesplitst in 6.1.2 (acties om risico's aan te pakken) en 6.1.3 (acties om kansen na te streven), de losse clausule 10.3 over continue verbetering is opgegaan in 10.1, en de terminologie rond het bijhouden en bewaren van gedocumenteerde informatie is verduidelijkt. De structuur van hoofdstuk 4 tot en met 10 blijft ongewijzigd. Certificerende instellingen moeten zelf eerst geaccrediteerd worden voor de nieuwe versie, dus de eerste 2026-certificaten komen rond augustus 2027; de IAF-transitietermijn loopt tot september 2029.
 
 ### ISO 14001:2015 - Milieumanagement
 Norm voor een Environmental Management System (EMS). Helpt bij het identificeren van milieuaspecten, beheersen van milieu-impact en voldoen aan milieuwetgeving.
