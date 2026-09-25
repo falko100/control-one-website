@@ -1,0 +1,158 @@
+---
+// ── Galerij van portalmodules die nergens anders op de site in beeld komen ──
+// De losse featurepagina's tonen de grote modules. Dit raster laat zien wat er
+// daarnaast nog in de portal zit, met een opname per module. Elke tegel opent
+// de opname in de lightbox, net als de andere screenshots op de site.
+
+type Module = {
+  titel: string;
+  tekst: string;
+  shot: string;
+  alt: string;
+};
+
+const modules: Module[] = [
+  {
+    titel: 'Doelstellingen',
+    tekst: 'Meetbare doelen met streefwaarde, huidige waarde en voortgang per doel.',
+    shot: '/screenshots/portal-doelstellingen.png',
+    alt: 'Kwaliteitsdoelstellingen in Control One met streefwaarde, huidige waarde en voortgang',
+  },
+  {
+    titel: 'Risicoregister',
+    tekst: 'Elk risico met context, dreiging, eigenaar en score, voor en na behandeling.',
+    shot: '/screenshots/portal-risicoregister.png',
+    alt: 'Het risicoregister in Control One met context, dreiging en risiconiveau per regel',
+  },
+  {
+    titel: 'Risicobeoordelingen',
+    tekst: 'Periodieke herbeoordeling van je risico’s, met oude en nieuwe inschatting naast elkaar.',
+    shot: '/screenshots/portal-risicobeoordelingen.png',
+    alt: 'Risicobeoordelingen in Control One met de oude en de nieuwe indicatie per risico',
+  },
+  {
+    titel: 'Maatregelenstatus',
+    tekst: 'De voortgang per thema, zodat je ziet waar de implementatie nog achterloopt.',
+    shot: '/screenshots/portal-managementsysteem.png',
+    alt: 'De status van het managementsysteem in Control One, per hoofdstuk uitgesplitst',
+  },
+  {
+    titel: 'CPAR’s',
+    tekst: 'Corrigerende en preventieve acties met bron, categorie en status.',
+    shot: '/screenshots/portal-cpars.png',
+    alt: 'Het CPAR-overzicht in Control One met bron, categorie en status per actie',
+  },
+  {
+    titel: 'Niet-conformiteiten',
+    tekst: 'Afwijkingen uit audits en klachten, met de gekoppelde corrigerende actie.',
+    shot: '/screenshots/portal-nonconformiteiten.png',
+    alt: 'Niet-conformiteiten in Control One met categorie, bron en verantwoordelijke',
+  },
+  {
+    titel: 'Verbeterregister',
+    tekst: 'Verbeterpunten die geen afwijking zijn, met indiener, prioriteit en status.',
+    shot: '/screenshots/portal-verbeterregister.png',
+    alt: 'Het verbeterregister in Control One met indiener, prioriteit en status',
+  },
+  {
+    titel: 'Klachten',
+    tekst: 'Klachten per kanaal, met behandelaar, doorlooptijd en afhandeling.',
+    shot: '/screenshots/portal-klachten.png',
+    alt: 'Het klachtenoverzicht in Control One met kanaal, status en toegewezen behandelaar',
+  },
+  {
+    titel: 'Kansenregister',
+    tekst: 'De kansen naast de risico’s, met omvang, haalbaarheid en streefdatum.',
+    shot: '/screenshots/portal-kansenregister.png',
+    alt: 'Het kansenregister in Control One met omvang, haalbaarheid en status per kans',
+  },
+  {
+    titel: 'Context van de organisatie',
+    tekst: 'Interne en externe issues die je managementsysteem beïnvloeden.',
+    shot: '/screenshots/portal-context.png',
+    alt: 'De contextanalyse in Control One met interne en externe issues per categorie',
+  },
+  {
+    titel: 'Belanghebbenden',
+    tekst: 'Wie er belang heeft, wat zij verwachten en welke eisen je overneemt.',
+    shot: '/screenshots/portal-belanghebbenden.png',
+    alt: 'Het belanghebbendenregister in Control One met behoeften en verwachtingen per partij',
+  },
+  {
+    titel: 'Handboek',
+    tekst: 'Je managementsysteem als lopend document, bewerkbaar in de portal zelf.',
+    shot: '/screenshots/portal-handboek.png',
+    alt: 'Het ISO 27001 handboek in Control One, bewerkbaar met een tekstverwerker in de portal',
+  },
+  {
+    titel: 'Checklists',
+    tekst: 'Terugkerende controles met voortgang per lijst.',
+    shot: '/screenshots/portal-checklist.png',
+    alt: 'Checklists in Control One met de voortgang per lijst',
+  },
+  {
+    titel: 'Training & competenties',
+    tekst: 'Wie welke training heeft gevolgd, hoe lang die geldig is en wat verloopt.',
+    shot: '/screenshots/portal-training.png',
+    alt: 'Training en competenties in Control One met geldigheidsduur per training',
+  },
+  {
+    titel: 'Apparatuur',
+    tekst: 'Middelen met keuringsdatum en onderhoud, inclusief wat er binnenkort verloopt.',
+    shot: '/screenshots/portal-apparatuur.png',
+    alt: 'Het apparatuurregister in Control One met keurings- en onderhoudsdatums',
+  },
+  {
+    titel: 'Kwaliteitscultuur',
+    tekst: 'Activiteiten die de cultuur versterken, met score en verantwoordelijke.',
+    shot: '/screenshots/portal-kwaliteitscultuur.png',
+    alt: 'Kwaliteitscultuuractiviteiten in Control One met type, score en verantwoordelijke',
+  },
+  {
+    titel: 'Kennisbank',
+    tekst: 'Uitleg bij elk onderdeel van de norm, doorzoekbaar vanuit de portal.',
+    shot: '/screenshots/portal-kennisbank.png',
+    alt: 'De kennisbank in Control One, met artikelen gegroepeerd per onderwerp',
+  },
+];
+---
+
+<section class="relative py-20 sm:py-24 bg-gradient-to-b from-white to-primary-50/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+    <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16">
+      <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">In de portal</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+        En daarnaast nog
+        <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);">zeventien registers</span>
+      </h2>
+      <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+        De grote modules staan hierboven. Dit is wat er verder nog in zit, zodat je niet halverwege
+        je traject alsnog een losse spreadsheet nodig hebt.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {modules.map((m) => (
+        <article class="group rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:border-primary-200 transition-all duration-300">
+          <div class="relative aspect-video bg-primary-50 overflow-hidden">
+            <img
+              src={m.shot}
+              alt={m.alt}
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              width="800"
+              height="500"
+              data-lightbox
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-primary-950 text-sm mb-1">{m.titel}</h3>
+            <p class="text-xs text-primary-900/60 leading-relaxed">{m.tekst}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

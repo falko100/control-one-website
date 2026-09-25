@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import FeatureConstellation from '../components/FeatureConstellation.astro';
 import FeaturePillars from '../components/FeaturePillars.astro';
+import PortalModules from '../components/PortalModules.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import CompleetPakket from '../components/CompleetPakket.astro';
 import CTA from '../components/CTA.astro';
@@ -97,6 +98,9 @@ const breadcrumbSchema = {
 
     <!-- Scanbare index van 12 functies, gegroepeerd in 4 pijlers -->
     <FeaturePillars />
+
+    <!-- De registers die niet hun eigen featurepagina hebben, met een opname per module -->
+    <PortalModules />
 
     <!-- 5-stappen implementatiepad -->
     <HowItWorks />
