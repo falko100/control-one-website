@@ -6,8 +6,13 @@ import { maat } from '../lib/schermafbeelding';
 ---
 
 <section class="prop-sec">
-  <div class="blob" style="top:-9rem;left:-9rem;width:32rem;height:32rem;background:radial-gradient(circle,rgba(59,130,246,.16),transparent 70%)"></div>
-  <div class="blob" style="bottom:-9rem;right:-8rem;width:30rem;height:30rem;background:radial-gradient(circle,rgba(1,162,232,.14),transparent 70%)"></div>
+  <!-- De blobs steken bewust buiten de sectie uit. Zonder eigen wrapper telt dat
+       mee voor de scrollbreedte, waardoor de browser bij het focussen van een
+       tegel de hele sectie opzij scrolt en de inhoud verspringt. -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob" style="top:-9rem;left:-9rem;width:32rem;height:32rem;background:radial-gradient(circle,rgba(59,130,246,.16),transparent 70%)"></div>
+    <div class="blob" style="bottom:-9rem;right:-8rem;width:30rem;height:30rem;background:radial-gradient(circle,rgba(1,162,232,.14),transparent 70%)"></div>
+  </div>
 
   <div class="inner">
     <p class="eyebrow" data-reveal="0">Het complete ISO&#8209;platform</p>
@@ -122,6 +127,7 @@ import { maat } from '../lib/schermafbeelding';
     background:#fff;position:relative;overflow:hidden;padding:6rem 1.5rem;color:var(--p950);
   }
   .prop-sec *{box-sizing:border-box}
+  .blobs{position:absolute;inset:0;overflow:hidden;pointer-events:none}
   .blob{position:absolute;border-radius:9999px;filter:blur(130px);pointer-events:none;opacity:.5}
   .inner{position:relative;max-width:1160px;margin:0 auto}
   .eyebrow{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--p600);margin:0 0 .7rem;text-align:center}
