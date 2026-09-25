@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 // Title "Van nul naar ISO-gecertificeerd, zonder externe consultant" blijft hier.
 // Body is gewisseld met InteractiveShowcase → toont nu de portal browser-chrome.
 
@@ -214,7 +215,7 @@ const items = [
       >
         {items.map((item, i) => (
           <img
-            src={item.screenshot}
+            src={item.screenshot} {...maat(item.screenshot)}
             alt={`Control One: ${item.label}`}
             class="sc-img absolute inset-0 w-full h-full object-cover object-top"
             style={i !== 0 ? 'opacity: 0; pointer-events: none;' : 'opacity: 1;'}

@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -305,10 +306,8 @@ const faqSchema = {
                 </div>
                 <!-- Screenshot -->
                 <img
-                  src="/screenshots/portal-risks.png"
+                  src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")}
                   alt="Control One — gevaaridentificatie en risicobeoordeling voor ISO 45001"
-                  width="1600"
-                  height="1000"
                   class="w-full h-auto block bg-white"
                   fetchpriority="high"
                   data-lightbox
@@ -396,12 +395,10 @@ const faqSchema = {
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
               <img
-                src="/screenshots/portal-dashboard.png"
+                src="/screenshots/portal-dashboard.png" {...maat("/screenshots/portal-dashboard.png")}
                 alt="Control One dashboard met OHSMS-voortgang en KPI's"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                width="800"
-                height="500"
                 data-lightbox
               />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">
@@ -418,12 +415,10 @@ const faqSchema = {
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
               <img
-                src="/screenshots/portal-risks.png"
+                src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")}
                 alt="Risicobeoordeling en gevaaridentificatie in Control One"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                width="800"
-                height="500"
                 data-lightbox
               />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">
@@ -440,12 +435,10 @@ const faqSchema = {
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
               <img
-                src="/screenshots/portal-vendors.png"
+                src="/screenshots/portal-vendors.png" {...maat("/screenshots/portal-vendors.png")}
                 alt="Aannemers- en leveranciersbeheer in Control One"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                width="800"
-                height="500"
                 data-lightbox
               />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-emerald-700 shadow">
@@ -462,12 +455,10 @@ const faqSchema = {
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
               <img
-                src="/screenshots/portal-audits.png"
+                src="/screenshots/portal-audits.png" {...maat("/screenshots/portal-audits.png")}
                 alt="Interne audit module met auditplan en bevindingen"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                width="800"
-                height="500"
                 data-lightbox
               />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">
@@ -686,12 +677,10 @@ const faqSchema = {
                 <div class="w-10 sm:w-14"></div>
               </div>
               <img
-                src="/screenshots/portal-documents.png"
+                src="/screenshots/portal-documents.png" {...maat("/screenshots/portal-documents.png")}
                 alt="Documentenbibliotheek in Control One met alle ISO 45001 templates per clausule"
                 class="w-full h-auto block bg-white"
                 loading="lazy"
-                width="1600"
-                height="1000"
                 data-lightbox
               />
             </div>

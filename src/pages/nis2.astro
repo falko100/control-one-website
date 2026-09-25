@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -203,10 +204,8 @@ const faqSchema = {
                   <div class="w-10 sm:w-14"></div>
                 </div>
                 <img
-                  src="/screenshots/portal-coach.png"
+                  src="/screenshots/portal-coach.png" {...maat("/screenshots/portal-coach.png")}
                   alt="Control One implementatiecoach voor NIS2 en de Cyberbeveiligingswet"
-                  width="1600"
-                  height="1000"
                   class="w-full block bg-white object-cover object-top"
                   style="aspect-ratio: 16 / 9;"
                   fetchpriority="high"
@@ -389,7 +388,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-dashboard.png" alt="Dashboard met voortgang op de NIS2-maatregelen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-dashboard.png" {...maat("/screenshots/portal-dashboard.png")} alt="Dashboard met voortgang op de NIS2-maatregelen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Dashboard</span>
             </div>
             <div class="p-6">
@@ -400,7 +399,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-risks.png" alt="Risicoanalyse volgens de all-hazards-benadering in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")} alt="Risicoanalyse volgens de all-hazards-benadering in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-accent-700 shadow">Module · Risicoanalyse</span>
             </div>
             <div class="p-6">
@@ -411,7 +410,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-soa.png" alt="Maatregelenverantwoording per artikel 21-categorie in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-soa.png" {...maat("/screenshots/portal-soa.png")} alt="Maatregelenverantwoording per artikel 21-categorie in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · Verantwoording</span>
             </div>
             <div class="p-6">
@@ -422,7 +421,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-vendors.png" alt="Leveranciersbeheer voor de beveiliging van de toeleveringsketen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-vendors.png" {...maat("/screenshots/portal-vendors.png")} alt="Leveranciersbeheer voor de beveiliging van de toeleveringsketen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Toeleveringsketen</span>
             </div>
             <div class="p-6">
@@ -433,7 +432,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-incidenten.png" alt="Incidentregistratie in Control One met categorie, prioriteit en status per incident" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-incidenten.png" {...maat("/screenshots/portal-incidenten.png")} alt="Incidentregistratie in Control One met categorie, prioriteit en status per incident" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-rose-700 shadow">Module &middot; Incidenten</span>
             </div>
             <div class="p-6">
@@ -444,7 +443,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-directie.png" alt="Directiebeoordeling in Control One met ingediende en goedgekeurde beoordelingen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-directie.png" {...maat("/screenshots/portal-directie.png")} alt="Directiebeoordeling in Control One met ingediende en goedgekeurde beoordelingen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module &middot; Bestuur</span>
             </div>
             <div class="p-6">

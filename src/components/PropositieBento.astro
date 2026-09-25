@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 // Propositie-samenvatting (bento). Testversie voor /test-propositie.
 // Mini-UI-kaartjes in de stijl van Features.astro, met interactieve hovers.
 // Huisstijlregel: geen em dashes.
@@ -22,7 +23,7 @@
           <div class="win">
             <div class="winbar"><div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="url"><span>app.control-one.nl</span></div></div>
             <div class="winbody">
-              <img src="/screenshots/dashboard-full.jpg" alt="Control One portal dashboard" loading="lazy" />
+              <img src="/screenshots/dashboard-full.jpg" {...maat("/screenshots/dashboard-full.jpg")} alt="Control One portal dashboard" loading="lazy" />
               <span class="cl cl-l" style="top:20%;left:3%"><i style="background:#2563eb"></i>Coach: altijd je volgende stap<span class="cltip">De implementatiecoach houdt bij welke van de 28 stappen af is en vertelt je precies wat je nu moet doen.</span></span>
               <span class="cl cl-r" style="top:40%;right:3%"><i style="background:#f59e0b"></i>Risico's en leveranciers in beeld<span class="cltip">Je risicomatrix en leveranciersrisico's staan direct op het dashboard, met status en prioriteit.</span></span>
               <span class="cl cl-l" style="top:52%;left:3%"><i style="background:#7c3aed"></i>Corrigerende acties (CPAR's)<span class="cltip">Non-conformiteiten worden corrigerende en preventieve acties die je aantoonbaar afrondt.</span></span>

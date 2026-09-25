@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -150,7 +151,7 @@ const breadcrumbSchema = {
                 <div class="flex-1 min-w-0 max-w-[200px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/coach</div></div>
               </div>
               <div class="aspect-[1883/1164] w-full overflow-hidden bg-primary-50">
-                <img src="/screenshots/portal-coach.png" alt="Coach in Control One" class="w-full h-full object-cover object-top" loading="eager" data-lightbox />
+                <img src="/screenshots/portal-coach.png" {...maat("/screenshots/portal-coach.png")} alt="Coach in Control One" class="w-full h-full object-cover object-top" loading="eager" data-lightbox />
               </div>
             </div>
           </div>

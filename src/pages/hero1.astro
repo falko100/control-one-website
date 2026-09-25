@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -106,7 +107,7 @@ const screens = [
               {screens.map((s, i) => (
                 <img
                   id={`screen-${i}`}
-                  src={s.src}
+                  src={s.src} {...maat(s.src)}
                   alt={s.label}
                   class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500"
                   style={i === 0 ? 'opacity:1;' : 'opacity:0;'}

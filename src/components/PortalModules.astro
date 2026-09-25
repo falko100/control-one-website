@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 // ── Galerij van portalmodules die nergens anders op de site in beeld komen ──
 // De losse featurepagina's tonen de grote modules. Dit raster laat zien wat er
 // daarnaast nog in de portal zit, met een opname per module. Elke tegel opent
@@ -137,12 +138,10 @@ const modules: Module[] = [
         <article class="group rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:border-primary-200 transition-all duration-300">
           <div class="relative aspect-video bg-primary-50 overflow-hidden">
             <img
-              src={m.shot}
+              src={m.shot} {...maat(m.shot)}
               alt={m.alt}
               class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
-              width="800"
-              height="500"
               data-lightbox
             />
           </div>

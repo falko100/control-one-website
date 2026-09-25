@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -237,10 +238,8 @@ const faqSchema = {
                   <div class="w-10 sm:w-14"></div>
                 </div>
                 <img
-                  src="/screenshots/portal-coach.png"
+                  src="/screenshots/portal-coach.png" {...maat("/screenshots/portal-coach.png")}
                   alt="Control One implementatiecoach: stap voor stap naar NEN 7510"
-                  width="1600"
-                  height="1000"
                   class="w-full block bg-white object-cover object-top"
                   style="aspect-ratio: 16 / 9;"
                   fetchpriority="high"
@@ -324,7 +323,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-coach.png" alt="Implementatiecoach met 36 stappen voor NEN 7510" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-coach.png" {...maat("/screenshots/portal-coach.png")} alt="Implementatiecoach met 36 stappen voor NEN 7510" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Coach</span>
             </div>
             <div class="p-6">
@@ -335,7 +334,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-risks.png" alt="Risicoanalyse met zorgspecifieke risicocontexten in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")} alt="Risicoanalyse met zorgspecifieke risicocontexten in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-accent-700 shadow">Module · Risicoanalyse</span>
             </div>
             <div class="p-6">
@@ -346,7 +345,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-soa.png" alt="Verklaring van Toepasselijkheid inclusief A9-maatregelen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-soa.png" {...maat("/screenshots/portal-soa.png")} alt="Verklaring van Toepasselijkheid inclusief A9-maatregelen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · VvT</span>
             </div>
             <div class="p-6">
@@ -357,7 +356,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-audits.png" alt="Interne audit module met auditvragenlijsten voor NEN 7510" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-audits.png" {...maat("/screenshots/portal-audits.png")} alt="Interne audit module met auditvragenlijsten voor NEN 7510" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Audits</span>
             </div>
             <div class="p-6">

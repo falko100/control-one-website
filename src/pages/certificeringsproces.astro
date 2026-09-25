@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -221,7 +222,7 @@ const faqSchema = {
                 <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
                 <div class="flex-1 min-w-0 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/audits</div></div>
               </div>
-              <img src="/screenshots/portal-audits.png" alt="De interne audit module in Control One" class="w-full" loading="eager" data-lightbox />
+              <img src="/screenshots/portal-audits.png" {...maat("/screenshots/portal-audits.png")} alt="De interne audit module in Control One" class="w-full" loading="eager" data-lightbox />
             </div>
           </div>
         </div>
@@ -326,7 +327,7 @@ const faqSchema = {
                           <span class="w-1.5 h-1.5 rounded-full bg-green-400/60"></span>
                         </div>
                         <div class="max-h-44 overflow-hidden">
-                          <img src={f.shot} alt={f.shotAlt} loading="lazy" class="w-full" data-lightbox />
+                          <img src={f.shot} {...maat(f.shot)} alt={f.shotAlt} loading="lazy" class="w-full" data-lightbox />
                         </div>
                       </div>
                     </div>
@@ -443,7 +444,7 @@ const faqSchema = {
                 <div class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span></div>
                 <div class="flex-1 min-w-0 max-w-[220px] mx-auto"><div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 text-center truncate">app.control-one.nl/directiebeoordeling</div></div>
               </div>
-              <img src="/screenshots/portal-directie.png" alt="De directiebeoordeling in Control One" class="w-full" loading="lazy" data-lightbox />
+              <img src="/screenshots/portal-directie.png" {...maat("/screenshots/portal-directie.png")} alt="De directiebeoordeling in Control One" class="w-full" loading="lazy" data-lightbox />
             </div>
           </div>
         </div>

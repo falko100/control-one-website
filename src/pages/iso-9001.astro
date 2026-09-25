@@ -1,4 +1,5 @@
 ---
+import { maat } from '../lib/schermafbeelding';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CTA from '../components/CTA.astro';
@@ -321,10 +322,8 @@ const faqSchema = {
                   <div class="w-10 sm:w-14"></div>
                 </div>
                 <img
-                  src="/screenshots/portal-coach-9001.png"
+                  src="/screenshots/portal-coach-9001.png" {...maat("/screenshots/portal-coach-9001.png")}
                   alt="De ISO 9001 implementatiecoach in Control One, met de zeven kwaliteitsprincipes en de stappen per clausule"
-                  width="1600"
-                  height="1000"
                   class="w-full block bg-white object-cover object-top"
                   style="aspect-ratio: 16 / 9;"
                   fetchpriority="high"
@@ -463,7 +462,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-dashboard.png" alt="Control One QMS-dashboard met KPI's en directiebeoordeling" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-dashboard.png" {...maat("/screenshots/portal-dashboard.png")} alt="Control One QMS-dashboard met KPI's en directiebeoordeling" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Dashboard</span>
             </div>
             <div class="p-6">
@@ -474,7 +473,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-risks.png" alt="Risico's en kansen volgens ISO 9001 in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")} alt="Risico's en kansen volgens ISO 9001 in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-emerald-700 shadow">Module · Risico's</span>
             </div>
             <div class="p-6">
@@ -485,7 +484,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-vendors.png" alt="Leveranciersbeoordeling in Control One conform H8.4 ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-vendors.png" {...maat("/screenshots/portal-vendors.png")} alt="Leveranciersbeoordeling in Control One conform H8.4 ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · Leveranciers</span>
             </div>
             <div class="p-6">
@@ -496,7 +495,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-audits.png" alt="Interne audit module met auditplan en bevindingen voor ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-audits.png" {...maat("/screenshots/portal-audits.png")} alt="Interne audit module met auditplan en bevindingen voor ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Audits</span>
             </div>
             <div class="p-6">
@@ -507,7 +506,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-processen.png" alt="Processen in Control One met eigenaar, KPI's en status per proces voor ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-processen.png" {...maat("/screenshots/portal-processen.png")} alt="Processen in Control One met eigenaar, KPI's en status per proces voor ISO 9001" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-violet-700 shadow">Module &middot; Processen</span>
             </div>
             <div class="p-6">
@@ -518,7 +517,7 @@ const faqSchema = {
 
           <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
             <div class="relative aspect-video bg-primary-50 overflow-hidden">
-              <img src="/screenshots/portal-klanttevredenheid.png" alt="Klanttevredenheid in Control One met NPS, CSAT en de trend per meting" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="500" data-lightbox />
+              <img src="/screenshots/portal-klanttevredenheid.png" {...maat("/screenshots/portal-klanttevredenheid.png")} alt="Klanttevredenheid in Control One met NPS, CSAT en de trend per meting" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-rose-700 shadow">Module &middot; Klanten</span>
             </div>
             <div class="p-6">
@@ -730,7 +729,7 @@ const faqSchema = {
                 </div>
                 <div class="w-10 sm:w-14"></div>
               </div>
-              <img src="/screenshots/portal-documenten-9001.png" alt="De ISO 9001 documentenbibliotheek in Control One, met beleid, procedures en registers per clausule" class="w-full h-auto block bg-white" loading="lazy" width="1600" height="1000" data-lightbox />
+              <img src="/screenshots/portal-documenten-9001.png" {...maat("/screenshots/portal-documenten-9001.png")} alt="De ISO 9001 documentenbibliotheek in Control One, met beleid, procedures en registers per clausule" class="w-full h-auto block bg-white" loading="lazy" data-lightbox />
             </div>
             <div class="hidden sm:flex absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-3 rounded-2xl bg-white shadow-2xl ring-1 ring-primary-100 items-center gap-4">
               <div class="flex items-center gap-2">
