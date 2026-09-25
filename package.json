@@ -1,7 +1,7 @@
 {
   "name": "control-one-website",
   "type": "module",
-  "version": "0.3.33",
+  "version": "0.3.34",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
