@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Subverwerkers van het Platform (artikel 7 van de verwerkersovereenkomst).
+// Een nieuwe of vervangende subverwerker wordt minimaal 30 dagen vooraf per
+// e-mail aangekondigd aan de beheerders van klanten; pas dan deze lijst aan.
+// Waarden tussen [in te vullen: ...] worden op de pagina gemarkeerd.
+const subprocessors = [
+  {
+    name: '[in te vullen: hostingpartij]',
+    purpose: 'Hosting van het Platform en de database',
+    data: 'Alle gegevens die de Klant in het Platform vastlegt',
+    location: '[in te vullen: land, EU]',
+    basis: 'Niet van toepassing (binnen de EU)',
+  },
+  {
+    name: '[in te vullen: opslagdienst]',
+    purpose: 'Opslag van geüploade bestanden, zoals documenten, rapporten en bijlagen',
+    data: 'Inhoud van geüploade bestanden',
+    location: '[in te vullen: land, EU]',
+    basis: 'Niet van toepassing (binnen de EU)',
+  },
+  {
+    name: '[in te vullen: e-maildienst]',
+    purpose: 'Verzenden van e-mails vanuit het Platform, zoals uitnodigingen, meldingen en herinneringen',
+    data: 'Naam, e-mailadres en de inhoud van de e-mail',
+    location: '[in te vullen: land]',
+    basis: '[in te vullen]',
+  },
+  {
+    name: 'Cloudflare, Inc.',
+    purpose: 'Beveiliging en snelle doorgifte van het verkeer naar het Platform (onder meer TLS en bescherming tegen aanvallen)',
+    data: 'Al het verkeer van en naar het Platform, waaronder IP-adressen',
+    location: 'Wereldwijd netwerk, verkeer uit Nederland loopt via Europese locaties',
+    basis: 'EU-VS Data Privacy Framework en standaardcontractbepalingen',
+  },
+  {
+    name: 'Anthropic, PBC',
+    purpose: 'AI-schrijfhulp en het maken van diagrammen in de documenteditor, alleen wanneer een gebruiker die functie gebruikt',
+    data: 'De tekst van het document waarin de gebruiker werkt en de opdracht die hij geeft',
+    location: 'Verenigde Staten',
+    basis: 'Standaardcontractbepalingen',
+  },
+  {
+    name: 'Google',
+    purpose: 'Inloggen met een Google-account (optioneel) en e-mailverkeer met onze support',
+    data: 'Naam en e-mailadres; de inhoud van e-mails die je aan ons stuurt',
+    location: 'Europese Unie en Verenigde Staten',
+    basis: 'EU-VS Data Privacy Framework en standaardcontractbepalingen',
+  },
+];
+
+const placeholder = (value: string) => value.startsWith('[in te vullen');
+---
+
+<Layout title="Subverwerkers | Control One" description="Overzicht van de subverwerkers die Control One inschakelt voor het leveren van het Control One platform, met doel, gegevens en locatie van de verwerking.">
+  <Header />
+  <main>
+    <section class="pt-32 pb-12">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Juridisch</p>
+        <h1 class="text-4xl font-bold text-primary-950 tracking-tight mb-4">Subverwerkers</h1>
+        <p class="text-primary-900/50 text-sm">Laatst bijgewerkt: 29 september 2026</p>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="space-y-8 text-primary-900/70 leading-relaxed text-sm">
+          <div>
+            <p>Voor het leveren van het Platform schakelt Control One de onderstaande subverwerkers in. Met elke subverwerker hebben wij afspraken gemaakt die minimaal dezelfde bescherming bieden als onze <a href="/verwerkersovereenkomst" class="text-primary-600 hover:underline">verwerkersovereenkomst</a>.</p>
+            <p class="mt-3">Nemen wij een nieuwe subverwerker in gebruik of vervangen wij er een, dan laten wij dat de beheerders van je organisatie minimaal 30 dagen vooraf per e-mail weten. Je kunt dan bezwaar maken, zoals beschreven in artikel 7 van de verwerkersovereenkomst.</p>
+          </div>
+
+          <div class="space-y-4">
+            {subprocessors.map((item) => (
+              <div class="rounded-2xl border border-primary-100 bg-white p-5">
+                <h2 class="text-base font-bold text-primary-950 mb-3">
+                  {placeholder(item.name) ? <mark class="bg-amber-100 text-amber-900 px-1 rounded">{item.name}</mark> : item.name}
+                </h2>
+                <dl class="grid grid-cols-1 sm:grid-cols-[9rem_1fr] gap-x-4 gap-y-2">
+                  <dt class="font-semibold text-primary-900/80">Doel</dt>
+                  <dd>{item.purpose}</dd>
+                  <dt class="font-semibold text-primary-900/80">Gegevens</dt>
+                  <dd>{item.data}</dd>
+                  <dt class="font-semibold text-primary-900/80">Locatie</dt>
+                  <dd>{placeholder(item.location) ? <mark class="bg-amber-100 text-amber-900 px-1 rounded">{item.location}</mark> : item.location}</dd>
+                  <dt class="font-semibold text-primary-900/80">Doorgifte</dt>
+                  <dd>{placeholder(item.basis) ? <mark class="bg-amber-100 text-amber-900 px-1 rounded">{item.basis}</mark> : item.basis}</dd>
+                </dl>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold text-primary-950 mb-3">Geen subverwerkers</h2>
+            <p>Voor betalingen en facturatie werken wij met Mollie en Moneybird. Daarbij verwerken wij de gegevens van je organisatie als klant van Control One, niet de gegevens die je in het Platform vastlegt. Die verwerking valt onder ons <a href="/privacybeleid" class="text-primary-600 hover:underline">privacybeleid</a> en niet onder de verwerkersovereenkomst.</p>
+          </div>
+
+          <div class="pt-4 border-t border-primary-100">
+            <p>Vragen over onze subverwerkers? Mail naar <a href="mailto:privacy@control-one.nl" class="text-primary-600 hover:underline">privacy@control-one.nl</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
