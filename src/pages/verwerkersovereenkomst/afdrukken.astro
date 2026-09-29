@@ -1,0 +1,103 @@
+---
+// Printversie van de verwerkersovereenkomst, alleen bedoeld om de PDF van te
+// maken (scripts/dpa-pdf.sh). Niet in het menu, niet in de sitemap en niet
+// geïndexeerd. De tekst komt uit hetzelfde component als de webpagina.
+import '../../styles/global.css';
+import DpaBody from '../../components/legal/DpaBody.astro';
+import { dpa } from '../../data/dpa';
+
+const site = 'https://control-one.nl';
+
+// Als tekst in plaats van een <style>-blok: Astro zet in een <style>-blok geen
+// waarden in, en zou de regels beperken tot deze pagina, waardoor ze het
+// gedeelde component niet raken.
+const printCss = `
+  @page {
+    size: A4;
+    margin: 18mm 18mm 20mm;
+    @bottom-left {
+      content: 'Verwerkersovereenkomst Control One, versie ${dpa.version}';
+      font-family: 'TikTok Sans', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-right {
+      content: 'Pagina ' counter(page) ' van ' counter(pages);
+      font-family: 'TikTok Sans', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: #fff; }
+  .dpa-print .text-sm { font-size: 10pt; }
+  .dpa-print h2 { break-after: avoid; }
+  .dpa-print p, .dpa-print li { orphans: 3; widows: 3; }
+  .dpa-sign { break-inside: avoid; }
+`;
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Verwerkersovereenkomst Control One, versie {dpa.version}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet" />
+    <style set:html={printCss}></style>
+  </head>
+  <body class="text-primary-900">
+    <main class="dpa-print max-w-3xl mx-auto px-6 py-10 print:p-0">
+      <header class="mb-8 border-b border-primary-100 pb-6">
+        <img src="/logo.svg" alt="Control One" class="h-7 mb-8" />
+        <h1 class="text-3xl font-bold text-primary-950 tracking-tight mb-2">Verwerkersovereenkomst</h1>
+        <p class="text-primary-900/60 text-sm">Versie {dpa.version}, {dpa.date}</p>
+      </header>
+
+      <div class="space-y-6 text-primary-900/80 leading-relaxed text-sm">
+        <div>
+          <h2 class="text-xl font-bold text-primary-950 mb-3">Partijen</h2>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Control One B.V.</strong>, gevestigd aan Twekkeler Es 42, 7547 SM Enschede, KvK-nummer 99763877, hierna: Control One, als verwerker;</li>
+            <li><strong>de Klant</strong>, zoals ingevuld bij de ondertekening aan het einde van dit document, als verwerkingsverantwoordelijke.</li>
+          </ul>
+          <p class="mt-3">Deze verwerkersovereenkomst maakt deel uit van de Overeenkomst tussen Control One en de Klant, zoals omschreven in de algemene voorwaarden op <a href={`${site}/algemene-voorwaarden`} class="text-primary-600">control-one.nl/algemene-voorwaarden</a>. Bij strijdigheid tussen deze verwerkersovereenkomst en de algemene voorwaarden gaat deze verwerkersovereenkomst voor, voor zover het de verwerking van persoonsgegevens betreft. De actuele versie staat op <a href={`${site}/verwerkersovereenkomst`} class="text-primary-600">control-one.nl/verwerkersovereenkomst</a>; de lijst met subverwerkers op <a href={`${site}/subverwerkers`} class="text-primary-600">control-one.nl/subverwerkers</a>.</p>
+        </div>
+
+        <DpaBody base={site} />
+
+        <div class="dpa-sign pt-6 border-t border-primary-100">
+          <h2 class="text-xl font-bold text-primary-950 mb-4">Ondertekening</h2>
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <p class="font-semibold text-primary-950 mb-3">Namens Control One B.V.</p>
+              <dl class="space-y-3">
+                <div><dt class="text-primary-900/60">Naam</dt><dd class="font-medium text-primary-950">{dpa.signatory.name}</dd></div>
+                <div><dt class="text-primary-900/60">Functie</dt><dd class="font-medium text-primary-950">{dpa.signatory.role}</dd></div>
+                <div><dt class="text-primary-900/60">Datum</dt><dd class="font-medium text-primary-950">{dpa.date}</dd></div>
+              </dl>
+            </div>
+            <div>
+              <p class="font-semibold text-primary-950 mb-3">Namens de Klant</p>
+              <dl class="space-y-3">
+                {['Organisatie', 'KvK-nummer', 'Naam', 'Functie', 'Datum'].map((label) => (
+                  <div>
+                    <dt class="text-primary-900/60">{label}</dt>
+                    <dd class="h-6 border-b border-primary-200"></dd>
+                  </div>
+                ))}
+                <div>
+                  <dt class="text-primary-900/60">Handtekening</dt>
+                  <dd class="h-16 border-b border-primary-200"></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

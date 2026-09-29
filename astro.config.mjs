@@ -12,6 +12,7 @@ export default defineConfig({
         'https://control-one.nl/hero1/',
         'https://control-one.nl/test-fotos/',
         'https://control-one.nl/test-propositie/',
+        'https://control-one.nl/verwerkersovereenkomst/afdrukken/',
       ].includes(page),
     }),
   ],

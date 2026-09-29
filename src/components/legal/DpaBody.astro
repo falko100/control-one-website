@@ -1,0 +1,145 @@
+---
+// De tekst van de verwerkersovereenkomst: artikelen en bijlagen. Gedeeld door
+// de webpagina en de printversie waar de PDF van wordt gemaakt, zodat die twee
+// nooit uit elkaar lopen. Wijzig je de tekst, verhoog dan de versie in
+// src/data/dpa.ts en maak de PDF opnieuw (scripts/dpa-pdf.sh).
+
+interface Props {
+  // Leeg op de website; het volledige domein in de PDF, waar een relatieve
+  // link nergens heen gaat.
+  base?: string;
+}
+
+const { base = '' } = Astro.props;
+---
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">1. Partijen en rollen</h2>
+  <p>De Klant is voor de persoonsgegevens die hij in het Platform vastlegt de <strong>verwerkingsverantwoordelijke</strong>. Control One B.V., gevestigd aan Twekkeler Es 42, 7547 SM Enschede, KvK-nummer 99763877, is voor die gegevens <strong>verwerker</strong> in de zin van artikel 28 van de Algemene Verordening Gegevensbescherming (AVG).</p>
+  <p class="mt-3">Begrippen als persoonsgegevens, verwerking, betrokkene, subverwerker en inbreuk in verband met persoonsgegevens hebben de betekenis die de AVG eraan geeft. De begrippen Klant, Platform en Overeenkomst hebben de betekenis uit de algemene voorwaarden.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">2. Onderwerp, aard en doel</h2>
+  <p>Control One verwerkt persoonsgegevens uitsluitend om het Platform te leveren: het opslaan, tonen, bewerken en beschikbaar stellen van de gegevens die de Klant en zijn gebruikers in het Platform invoeren, en de functies die het Platform daarvoor biedt. Welke persoonsgegevens en betrokkenen het betreft, staat in <a href="#bijlage-1" class="text-primary-600 hover:underline">bijlage 1</a>.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">3. Duur</h2>
+  <p>Deze verwerkersovereenkomst geldt zolang de Overeenkomst loopt, en daarna zolang Control One nog persoonsgegevens van de Klant verwerkt.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">4. Instructies van de Klant</h2>
+  <p>Control One verwerkt de persoonsgegevens alleen op basis van schriftelijke instructies van de Klant. De Overeenkomst, deze verwerkersovereenkomst en het gebruik van de functies van het Platform door de Klant en zijn gebruikers gelden als die instructies. Control One verwerkt de gegevens niet voor eigen doeleinden.</p>
+  <p class="mt-3">Is Control One wettelijk verplicht de gegevens anders te verwerken, dan informeert Control One de Klant daar vooraf over, tenzij de wet dat verbiedt. Vindt Control One dat een instructie in strijd is met de AVG, dan laat zij dat de Klant direct weten.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">5. Geheimhouding</h2>
+  <p>Control One zorgt ervoor dat medewerkers en andere personen die toegang hebben tot de persoonsgegevens tot geheimhouding verplicht zijn, en dat zij alleen toegang hebben voor zover dat nodig is voor hun werk.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">6. Beveiliging</h2>
+  <p>Control One neemt passende technische en organisatorische maatregelen om de persoonsgegevens te beveiligen tegen verlies en onrechtmatige verwerking, rekening houdend met de stand van de techniek, de kosten en de risico's voor betrokkenen. De maatregelen staan in <a href="#bijlage-2" class="text-primary-600 hover:underline">bijlage 2</a>. Control One mag de maatregelen aanpassen, zolang het beveiligingsniveau niet omlaag gaat.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">7. Subverwerkers</h2>
+  <p>De Klant geeft Control One algemene toestemming om subverwerkers in te schakelen. De actuele lijst staat op onze pagina <a href={`${base}/subverwerkers`} class="text-primary-600 hover:underline">subverwerkers</a>.</p>
+  <ul class="list-disc pl-6 space-y-1 mt-2">
+    <li>Control One kondigt een nieuwe of vervangende subverwerker minimaal 30 dagen vooraf aan per e-mail aan de beheerders van de Klant.</li>
+    <li>De Klant kan binnen die termijn met redenen bezwaar maken. Partijen zoeken dan samen naar een oplossing. Lukt dat niet, dan mag de Klant de Overeenkomst opzeggen per de datum waarop de subverwerker wordt ingezet.</li>
+    <li>Control One legt subverwerkers ten minste dezelfde verplichtingen op als in deze verwerkersovereenkomst staan, en blijft tegenover de Klant verantwoordelijk voor hun nakoming.</li>
+  </ul>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">8. Doorgifte buiten de EER</h2>
+  <p>Control One geeft persoonsgegevens alleen door naar een land buiten de Europese Economische Ruimte als daar een passende grondslag voor is volgens hoofdstuk V van de AVG, zoals een adequaatheidsbesluit (waaronder het EU-VS Data Privacy Framework) of de standaardcontractbepalingen van de Europese Commissie. Op de pagina <a href={`${base}/subverwerkers`} class="text-primary-600 hover:underline">subverwerkers</a> staat per subverwerker waar de gegevens worden verwerkt en op welke grondslag.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">9. Rechten van betrokkenen</h2>
+  <p>Het Platform biedt de Klant functies om persoonsgegevens in te zien, te wijzigen, te exporteren en te verwijderen, zodat de Klant verzoeken van betrokkenen zelf kan afhandelen. Waar dat niet volstaat, helpt Control One de Klant binnen redelijke grenzen. Ontvangt Control One zelf een verzoek van een betrokkene over gegevens van de Klant, dan stuurt zij dat door naar de Klant en handelt het niet zelf af.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">10. Bijstand aan de Klant</h2>
+  <p>Control One helpt de Klant binnen redelijke grenzen bij het nakomen van zijn verplichtingen op grond van de artikelen 32 tot en met 36 AVG, zoals bij een gegevensbeschermingseffectbeoordeling (DPIA) of een voorafgaande raadpleging van de Autoriteit Persoonsgegevens, met de informatie waarover Control One beschikt.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">11. Inbreuken in verband met persoonsgegevens</h2>
+  <p>Control One informeert de Klant zonder onredelijke vertraging, en in ieder geval binnen 48 uur nadat zij ervan op de hoogte is geraakt, over een inbreuk die de persoonsgegevens van de Klant betreft. Control One geeft daarbij, voor zover bekend, de informatie die de Klant nodig heeft voor een eventuele melding aan de Autoriteit Persoonsgegevens en aan betrokkenen:</p>
+  <ul class="list-disc pl-6 space-y-1 mt-2">
+    <li>de aard van de inbreuk en, waar mogelijk, de categorieën en het geschatte aantal betrokkenen en gegevens;</li>
+    <li>de waarschijnlijke gevolgen;</li>
+    <li>de maatregelen die zijn of worden genomen om de inbreuk aan te pakken en de gevolgen te beperken;</li>
+    <li>een contactpersoon bij Control One.</li>
+  </ul>
+  <p class="mt-3">De Klant beslist of de inbreuk wordt gemeld aan de Autoriteit Persoonsgegevens en aan betrokkenen.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">12. Einde van de Overeenkomst</h2>
+  <p>Na het einde van de Overeenkomst kan de Klant zijn gegevens gedurende 14 dagen exporteren, zoals in de algemene voorwaarden staat. Daarna verwijdert Control One de persoonsgegevens van de Klant binnen 90 dagen, tenzij een wettelijke bewaarplicht dat verhindert. Kopieën in back-ups worden binnen 30 dagen daarna overschreven. Op verzoek bevestigt Control One de verwijdering schriftelijk.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">13. Informatie en audits</h2>
+  <p>Control One stelt de Klant op verzoek de informatie ter beschikking die nodig is om aan te tonen dat zij deze verwerkersovereenkomst nakomt, zoals een beschrijving van de beveiligingsmaatregelen en, zodra beschikbaar, certificaten of rapporten van onafhankelijke audits.</p>
+  <p class="mt-3">Volstaat die informatie aantoonbaar niet, dan mag de Klant een audit laten uitvoeren door een onafhankelijke, tot geheimhouding verplichte deskundige. Zo'n audit wordt minimaal 30 dagen vooraf aangekondigd, vindt hooguit eenmaal per jaar plaats, verstoort de bedrijfsvoering van Control One niet onnodig en komt voor rekening van de Klant. Bij een audit naar aanleiding van een inbreuk vervalt de beperking tot eenmaal per jaar.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">14. Aansprakelijkheid</h2>
+  <p>Voor de aansprakelijkheid van partijen geldt de regeling uit de algemene voorwaarden, voor zover de wet dat toestaat.</p>
+</div>
+
+<div>
+  <h2 class="text-xl font-bold text-primary-950 mb-3">15. Wijzigingen en toepasselijk recht</h2>
+  <p>Control One kan deze verwerkersovereenkomst wijzigen op de manier die de algemene voorwaarden voor wijzigingen beschrijven. Wijzigingen die de bescherming van persoonsgegevens verminderen, gaan niet in zonder instemming van de Klant. Op deze verwerkersovereenkomst is Nederlands recht van toepassing.</p>
+</div>
+
+<div id="bijlage-1" class="pt-4 border-t border-primary-100 scroll-mt-28">
+  <h2 class="text-xl font-bold text-primary-950 mb-3">Bijlage 1: Omschrijving van de verwerking</h2>
+  <p>De Klant bepaalt zelf welke gegevens hij in het Platform vastlegt. Afhankelijk van de modules die hij gebruikt, gaat het om de volgende betrokkenen en gegevens.</p>
+  <h3 class="font-semibold text-primary-950 mt-4 mb-2">Categorieën betrokkenen</h3>
+  <ul class="list-disc pl-6 space-y-1">
+    <li>Gebruikers van het Platform bij de Klant</li>
+    <li>Medewerkers van de Klant</li>
+    <li>Interne en externe auditors</li>
+    <li>Contactpersonen van klanten, leveranciers en andere belanghebbenden van de Klant</li>
+    <li>Personen die betrokken zijn bij klachten, incidenten en afwijkingen</li>
+  </ul>
+  <h3 class="font-semibold text-primary-950 mt-4 mb-2">Categorieën persoonsgegevens</h3>
+  <ul class="list-disc pl-6 space-y-1">
+    <li>Naam, e-mailadres en functie</li>
+    <li>Account- en inloggegevens</li>
+    <li>Contractgegevens, competenties, opleidingen en kwalificaties van medewerkers</li>
+    <li>Toewijzingen van taken, acties en verantwoordelijkheden</li>
+    <li>Gegevens die in beschrijvingen, documenten, bijlagen en rapporten staan, zoals bij incidenten, klachten, audits en directiebeoordelingen</li>
+    <li>Technische gegevens zoals IP-adres en tijdstippen van gebruik</li>
+  </ul>
+  <h3 class="font-semibold text-primary-950 mt-4 mb-2">Bijzondere persoonsgegevens</h3>
+  <p>Het Platform is niet bedoeld voor bijzondere categorieën persoonsgegevens of gegevens over strafrechtelijke veroordelingen. Legt de Klant die toch vast, bijvoorbeeld in de beschrijving van een incident, dan doet hij dat op eigen verantwoordelijkheid. Control One behandelt ze met dezelfde maatregelen als alle andere gegevens.</p>
+</div>
+
+<div id="bijlage-2" class="pt-4 border-t border-primary-100 scroll-mt-28">
+  <h2 class="text-xl font-bold text-primary-950 mb-3">Bijlage 2: Technische en organisatorische maatregelen</h2>
+  <ul class="list-disc pl-6 space-y-1">
+    <li><strong>Scheiding tussen klanten:</strong> de gegevens van elke Klant zijn logisch gescheiden. Gebruikers zien alleen de gegevens van de organisaties waartoe zij toegang hebben gekregen.</li>
+    <li><strong>Toegangsbeheer:</strong> rollen per gebruiker (beheerder, gebruiker, kijker, auditor) die bepalen wie gegevens mag inzien of wijzigen. De Klant beheert zelf wie toegang heeft.</li>
+    <li><strong>Authenticatie:</strong> wachtwoorden worden alleen als versleutelde hash opgeslagen. Inloggen met een Google-account is mogelijk.</li>
+    <li><strong>Versleuteling in transit:</strong> alle verbindingen met het Platform verlopen via HTTPS (TLS).</li>
+    <li><strong>Versleuteling in rust:</strong> opgeslagen gegevens en bestanden zijn versleuteld.</li>
+    <li><strong>Back-ups:</strong> dagelijkse back-ups, zodat gegevens na een storing of incident hersteld kunnen worden.</li>
+    <li><strong>Hosting:</strong> het Platform en de gegevens worden gehost in de Europese Unie. Voor functies van subverwerkers buiten de EU, zie de pagina <a href={`${base}/subverwerkers`} class="text-primary-600 hover:underline">subverwerkers</a>.</li>
+    <li><strong>Veilige ontwikkeling:</strong> wijzigingen worden beoordeeld en getest voordat ze live gaan. Software-updates en beveiligingspatches worden tijdig doorgevoerd.</li>
+    <li><strong>Incidentafhandeling:</strong> beveiligingsincidenten worden onderzocht, vastgelegd en zo nodig gemeld volgens artikel 11.</li>
+    <li><strong>Personeel:</strong> medewerkers met toegang tot gegevens zijn tot geheimhouding verplicht en hebben alleen de toegang die zij voor hun werk nodig hebben.</li>
+  </ul>
+  <p class="mt-3">Meer over hoe wij met beveiliging omgaan lees je op onze <a href={`${base}/beveiliging`} class="text-primary-600 hover:underline">beveiligingspagina</a>.</p>
+</div>
