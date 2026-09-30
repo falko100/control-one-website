@@ -16,7 +16,7 @@ const modules: Module[] = [
   {
     titel: 'Doelstellingen',
     tekst: 'Meetbare doelen met streefwaarde, huidige waarde en voortgang per doel.',
-    shot: '/screenshots/portal-doelstellingen.png',
+    shot: '/screenshots/portal-doelstellingen.jpg',
     alt: 'Kwaliteitsdoelstellingen in Control One met streefwaarde, huidige waarde en voortgang',
   },
   {
@@ -40,7 +40,7 @@ const modules: Module[] = [
   {
     titel: 'CPAR’s',
     tekst: 'Corrigerende en preventieve acties met bron, categorie en status.',
-    shot: '/screenshots/portal-cpars.png',
+    shot: '/screenshots/portal-cpars.jpg',
     alt: 'Het CPAR-overzicht in Control One met bron, categorie en status per actie',
   },
   {
@@ -52,7 +52,7 @@ const modules: Module[] = [
   {
     titel: 'Verbeterregister',
     tekst: 'Verbeterpunten die geen afwijking zijn, met indiener, prioriteit en status.',
-    shot: '/screenshots/portal-verbeterregister.png',
+    shot: '/screenshots/portal-verbeterregister.jpg',
     alt: 'Het verbeterregister in Control One met indiener, prioriteit en status',
   },
   {
@@ -64,7 +64,7 @@ const modules: Module[] = [
   {
     titel: 'Kansenregister',
     tekst: 'De kansen naast de risico’s, met omvang, haalbaarheid en streefdatum.',
-    shot: '/screenshots/portal-kansenregister.png',
+    shot: '/screenshots/portal-kansenregister.jpg',
     alt: 'Het kansenregister in Control One met omvang, haalbaarheid en status per kans',
   },
   {
@@ -117,8 +117,43 @@ const modules: Module[] = [
   },
 ];
 
-// Het scherm dat we op ware grootte tonen, staat al in de lijst hierboven.
-const uitgelicht = modules.find((m) => m.titel === 'Risicoregister') ?? modules[0];
+// De registers die we op ware grootte laten zien. Vers opgenomen uit de portal,
+// zodat de data klopt: zeventien miniaturen naast elkaar waren onleesbaar, en
+// een enkel scherm zegt te weinig over wat er in de registers gebeurt.
+const uitgelicht = [
+  {
+    id: 'doelstellingen',
+    label: 'Doelstellingen',
+    pad: 'doelstellingen',
+    shot: '/screenshots/portal-doelstellingen.jpg',
+    alt: 'Het doelstellingenregister in Control One, met doelwaarde, huidige waarde en voortgang per doel',
+    bijschrift: 'Elk doel met streefwaarde, huidige waarde en voortgang, zodat je ziet wat op koers ligt en wat niet.',
+  },
+  {
+    id: 'cpars',
+    label: 'CPAR\u2019s',
+    pad: 'cpars',
+    shot: '/screenshots/portal-cpars.jpg',
+    alt: 'Het CPAR-register in Control One, met categorie, bron en status per corrigerende actie',
+    bijschrift: 'Corrigerende en preventieve acties, met de bron waar ze vandaan komen en hun status.',
+  },
+  {
+    id: 'kansen',
+    label: 'Kansenregister',
+    pad: 'kansenregister',
+    shot: '/screenshots/portal-kansenregister.jpg',
+    alt: 'Het kansenregister in Control One, met omvang van het voordeel, haalbaarheid en streefdatum',
+    bijschrift: 'De kansen naast je risico\u2019s, met omvang van het voordeel, haalbaarheid en streefdatum.',
+  },
+  {
+    id: 'verbeter',
+    label: 'Verbeterregister',
+    pad: 'verbeterregister',
+    shot: '/screenshots/portal-verbeterregister.jpg',
+    alt: 'Het verbeterregister in Control One, met indiener, prioriteit en status per verbeterpunt',
+    bijschrift: 'Verbeterpunten die geen afwijking zijn, met indiener, prioriteit en status.',
+  },
+];
 ---
 
 <section class="relative py-20 sm:py-24 bg-gradient-to-b from-white to-primary-50/40">
@@ -136,10 +171,23 @@ const uitgelicht = modules.find((m) => m.titel === 'Risicoregister') ?? modules[
       </p>
     </div>
 
-    <!-- Een register op ware grootte. Zeventien schermen naast elkaar werden op
-         280px zo klein dat er niets van te lezen viel; beter een scherm dat je
-         wel kunt bekijken, met de rest als scanbare lijst eronder. -->
-    <div class="max-w-4xl mx-auto mb-12 sm:mb-16">
+    <!-- Vier registers die je zelf kunt doorklikken, elk op ware grootte. -->
+    <div class="max-w-5xl mx-auto mb-12 sm:mb-16">
+
+      <div class="flex flex-wrap justify-center gap-2 mb-5" role="tablist" aria-label="Kies een register">
+        {uitgelicht.map((u, i) => (
+          <button
+            type="button"
+            role="tab"
+            class="pm-tab px-4 py-2.5 rounded-lg text-sm font-semibold border transition-colors"
+            data-pm-tab={u.id}
+            data-pm-pad={u.pad}
+            data-pm-tekst={u.bijschrift}
+            aria-selected={i === 0 ? 'true' : 'false'}
+          >{u.label}</button>
+        ))}
+      </div>
+
       <div class="rounded-2xl overflow-hidden border border-primary-100 shadow-2xl shadow-primary-200/40 bg-white">
         <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-50 border-b border-primary-100">
           <div class="flex gap-1.5">
@@ -148,22 +196,30 @@ const uitgelicht = modules.find((m) => m.titel === 'Risicoregister') ?? modules[
             <span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span>
           </div>
           <div class="flex-1 flex justify-center">
-            <div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 truncate max-w-[240px]">
-              app.control-one.nl / risicoregister
+            <div id="pm-url" class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 truncate max-w-[260px]">
+              app.control-one.nl / doelstellingen
             </div>
           </div>
           <div class="w-10 sm:w-14"></div>
         </div>
-        <img
-          src={uitgelicht.shot} {...maat(uitgelicht.shot)}
-          alt={uitgelicht.alt}
-          class="w-full block cursor-zoom-in"
-          loading="lazy"
-          data-lightbox
-        />
+
+        <div class="relative bg-primary-50" style="aspect-ratio: 1512 / 794;">
+          {uitgelicht.map((u, i) => (
+            <img
+              src={u.shot} {...maat(u.shot)}
+              alt={u.alt}
+              class="pm-img absolute inset-0 w-full h-full object-cover object-top cursor-zoom-in"
+              style={i !== 0 ? 'opacity: 0; pointer-events: none;' : 'opacity: 1;'}
+              data-pm-img={u.id}
+              loading="lazy"
+              data-lightbox
+            />
+          ))}
+        </div>
       </div>
-      <p class="mt-3 text-center text-xs text-primary-900/50">
-        Het risicoregister. Elk register hieronder werkt op dezelfde manier: filteren, sorteren en exporteren.
+
+      <p id="pm-bijschrift" class="mt-3 text-center text-sm text-primary-900/55 max-w-2xl mx-auto">
+        {uitgelicht[0].bijschrift}
       </p>
     </div>
 
@@ -183,3 +239,39 @@ const uitgelicht = modules.find((m) => m.titel === 'Risicoregister') ?? modules[
 
   </div>
 </section>
+
+<style>
+  .pm-tab { border-color: var(--color-primary-100, #dbeffe); color: #1237a1; background: #fff; }
+  .pm-tab:hover { background: #f4f8fd; }
+  .pm-tab[aria-selected='true'] { background: #0e2470; border-color: #0e2470; color: #fff; }
+  .pm-img { transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+</style>
+
+<script>
+  (function () {
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.pm-tab'));
+    const imgs = Array.from(document.querySelectorAll<HTMLElement>('.pm-img'));
+    const url = document.getElementById('pm-url');
+    const bijschrift = document.getElementById('pm-bijschrift');
+    if (!tabs.length || !imgs.length) return;
+
+    // Pad en bijschrift staan als data-attribuut op de knop, zodat de teksten
+    // maar op een plek staan en niet ook nog eens in dit script.
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = tab.dataset.pmTab;
+        if (!id) return;
+
+        tabs.forEach(t => t.setAttribute('aria-selected', String(t === tab)));
+        imgs.forEach(img => {
+          const actief = img.dataset.pmImg === id;
+          img.style.opacity = actief ? '1' : '0';
+          img.style.pointerEvents = actief ? '' : 'none';
+        });
+
+        if (url && tab.dataset.pmPad) url.textContent = 'app.control-one.nl / ' + tab.dataset.pmPad;
+        if (bijschrift && tab.dataset.pmTekst) bijschrift.textContent = tab.dataset.pmTekst;
+      });
+    });
+  })();
+</script>
