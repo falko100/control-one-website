@@ -116,6 +116,9 @@ const modules: Module[] = [
     alt: 'De kennisbank in Control One, met artikelen gegroepeerd per onderwerp',
   },
 ];
+
+// Het scherm dat we op ware grootte tonen, staat al in de lijst hierboven.
+const uitgelicht = modules.find((m) => m.titel === 'Risicoregister') ?? modules[0];
 ---
 
 <section class="relative py-20 sm:py-24 bg-gradient-to-b from-white to-primary-50/40">
@@ -133,23 +136,48 @@ const modules: Module[] = [
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <!-- Een register op ware grootte. Zeventien schermen naast elkaar werden op
+         280px zo klein dat er niets van te lezen viel; beter een scherm dat je
+         wel kunt bekijken, met de rest als scanbare lijst eronder. -->
+    <div class="max-w-4xl mx-auto mb-12 sm:mb-16">
+      <div class="rounded-2xl overflow-hidden border border-primary-100 shadow-2xl shadow-primary-200/40 bg-white">
+        <div class="flex items-center gap-3 px-4 py-2.5 bg-primary-50 border-b border-primary-100">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400/60"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400/60"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-400/60"></span>
+          </div>
+          <div class="flex-1 flex justify-center">
+            <div class="bg-white/80 rounded px-3 py-0.5 text-xs text-primary-400 border border-primary-100 truncate max-w-[240px]">
+              app.control-one.nl / risicoregister
+            </div>
+          </div>
+          <div class="w-10 sm:w-14"></div>
+        </div>
+        <img
+          src={uitgelicht.shot} {...maat(uitgelicht.shot)}
+          alt={uitgelicht.alt}
+          class="w-full block cursor-zoom-in"
+          loading="lazy"
+          data-lightbox
+        />
+      </div>
+      <p class="mt-3 text-center text-xs text-primary-900/50">
+        Het risicoregister. Elk register hieronder werkt op dezelfde manier: filteren, sorteren en exporteren.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 max-w-5xl mx-auto">
       {modules.map((m) => (
-        <article class="group rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:border-primary-200 transition-all duration-300">
-          <div class="relative aspect-video bg-primary-50 overflow-hidden">
-            <img
-              src={m.shot} {...maat(m.shot)}
-              alt={m.alt}
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-              data-lightbox
-            />
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 w-5 h-5 rounded-full bg-accent-400/15 text-accent-500 flex items-center justify-center shrink-0">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <div>
+            <h3 class="font-bold text-primary-950 text-sm leading-snug">{m.titel}</h3>
+            <p class="mt-0.5 text-xs text-primary-900/60 leading-relaxed">{m.tekst}</p>
           </div>
-          <div class="p-4">
-            <h3 class="font-bold text-primary-950 text-sm mb-1">{m.titel}</h3>
-            <p class="text-xs text-primary-900/60 leading-relaxed">{m.tekst}</p>
-          </div>
-        </article>
+        </div>
       ))}
     </div>
 
