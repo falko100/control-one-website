@@ -66,6 +66,16 @@ const frameworks = [
     controls: null,
   },
   {
+    name: 'ISO 42001',
+    subtitle: 'AI-managementsysteem',
+    description: 'Ontwikkel, bied aan of gebruik AI verantwoord, met een register van AI-systemen, impactbeoordelingen en 38 Annex A-maatregelen.',
+    href: '/iso-42001',
+    color: 'from-indigo-500 to-blue-700',
+    status: 'Beschikbaar',
+    chapters: 7,
+    controls: 38,
+  },
+  {
     name: 'SOC 2',
     subtitle: 'Trust Services Criteria',
     description: 'Demonstreer betrouwbaarheid aan klanten met SOC 2 Type I en Type II rapportages.',
@@ -89,8 +99,8 @@ const frameworks = [
 ---
 
 <Layout
-  title="Frameworks — ISO 27001, 9001, 14001, 45001, NEN 7510 & NIS2 | Control One"
-  description="Control One ondersteunt ISO 27001, ISO 9001, ISO 14001, ISO 45001, NEN 7510 en NIS2. Implementeer één of combineer meerdere frameworks met gedeelde documenten en maatregelen."
+  title="Frameworks — ISO 27001, 9001, 14001, 45001, 42001, NEN 7510 & NIS2 | Control One"
+  description="Control One ondersteunt ISO 27001, ISO 9001, ISO 14001, ISO 45001, NEN 7510, NIS2 en ISO 42001. Implementeer één of combineer meerdere frameworks met gedeelde documenten en maatregelen."
   jsonLd={[
     {
       '@context': 'https://schema.org',
@@ -111,6 +121,7 @@ const frameworks = [
         { '@type': 'ListItem', position: 4, name: 'ISO 45001 — Arbo & Veiligheid', url: 'https://control-one.nl/iso-45001' },
         { '@type': 'ListItem', position: 5, name: 'ISO 27001 NEN 7510 — Informatiebeveiliging in de zorg', url: 'https://control-one.nl/nen-7510' },
         { '@type': 'ListItem', position: 6, name: 'NIS2 — Cyberbeveiligingswet', url: 'https://control-one.nl/nis2' },
+        { '@type': 'ListItem', position: 7, name: 'ISO 42001 (AI-managementsysteem)', url: 'https://control-one.nl/iso-42001' },
       ],
     },
   ]}

@@ -1,0 +1,987 @@
+---
+import { maat } from '../lib/schermafbeelding';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const chapters = [
+  {
+    number: '4',
+    title: 'Context van de organisatie',
+    description: 'Breng de interne en externe context in kaart, bepaal welke rol je organisatie heeft ten opzichte van AI en welke eisen belanghebbenden stellen. Leg daarna de scope van je AIMS vast.',
+    vereist: 'Context en belanghebbenden analyseren, je rol ten opzichte van AI bepalen en de scope van het AIMS vaststellen. Sinds het amendement van 2024 bepaal je in 4.1 ook of klimaatverandering een relevant onderwerp is.',
+    documenten: ['Scope van het AIMS', 'Contextanalyse', 'Register van belanghebbenden'],
+    platform: 'Uitleg en praktijktekst bij elke eis, de implementatiecoach en het register van AI-systemen, waarin je per systeem je rol vastlegt: ontwikkelaar, aanbieder, gebruiker of partner.',
+  },
+  {
+    number: '5',
+    title: 'Leiderschap',
+    description: 'Laat zien dat de directie verantwoord AI-gebruik actief stuurt. Stel een AI-beleid vast en wijs rollen en verantwoordelijkheden helder toe.',
+    vereist: 'Betrokkenheid van de directie aantonen, een AI-beleid vaststellen en communiceren, en rollen, verantwoordelijkheden en bevoegdheden toewijzen.',
+    documenten: ['AI-beleid', 'Rollen en verantwoordelijkheden'],
+    platform: 'Template voor het AI-beleid en uitleg met praktijktekst bij elke eis uit hoofdstuk 5.',
+  },
+  {
+    number: '6',
+    title: 'Planning',
+    description: 'Beoordeel AI-risico\'s, beoordeel de impact van je AI-systemen en stel AI-doelstellingen vast. In de Verklaring van Toepasselijkheid leg je vast welke Annex A-maatregelen je toepast.',
+    vereist: 'AI-risicobeoordeling en risicobehandeling, beoordeling van de impact van AI-systemen, een Verklaring van Toepasselijkheid en meetbare AI-doelstellingen.',
+    documenten: ['Risicobeleid', 'AI-risicoanalyse', 'Impactbeoordelingen', 'Verklaring van Toepasselijkheid'],
+    platform: 'AI-risicoanalyse met AI-specifieke risicocontexten, impactbeoordelingen op basis van ISO/IEC 42005 en een VvT voor alle 38 maatregelen met PDF-export.',
+  },
+  {
+    number: '7',
+    title: 'Ondersteuning',
+    description: 'Zorg voor de juiste middelen, competenties en bewustzijn rond AI. Regel de communicatie en beheer je gedocumenteerde informatie.',
+    vereist: 'Middelen beschikbaar stellen, competenties vaststellen en aantonen, bewustzijn creëren, communicatie regelen en gedocumenteerde informatie beheersen.',
+    documenten: ['Training en AI-geletterdheid', 'Documentbeheer'],
+    platform: 'Trainingsmatrix met AI-geletterdheid, documentbeheer en kant-en-klare templates voor je AIMS.',
+  },
+  {
+    number: '8',
+    title: 'Uitvoering',
+    description: 'Beheers je AI-processen over de hele levenscyclus. Voer risicobeoordelingen en impactbeoordelingen uit en houd ze actueel.',
+    vereist: 'Operationele planning en beheersing, AI-risicobeoordeling en risicobehandeling uitvoeren, en impactbeoordelingen van AI-systemen uitvoeren en bijhouden.',
+    documenten: ['Procedures voor de levenscyclus', 'Beleid voor AI-leveranciers', 'Transparantiebeleid', 'Databeleid'],
+    platform: 'Register van AI-systemen met reviewinterval, AI-velden bij leveranciers en een automatische reviewtaak na elke impactbeoordeling.',
+  },
+  {
+    number: '9',
+    title: 'Evaluatie van prestaties',
+    description: 'Monitor en meet hoe je AIMS presteert, voer interne audits uit en bespreek de resultaten in de directiebeoordeling.',
+    vereist: 'Monitoren, meten, analyseren en evalueren, een intern auditprogramma uitvoeren en directiebeoordelingen houden.',
+    documenten: ['Auditprogramma en auditrapport', 'Verslag directiebeoordeling'],
+    platform: 'Interne audits met 8 vragenlijsten (142 vragen), periodieke evaluatie van het register van verplichtingen en de directiebeoordeling.',
+  },
+  {
+    number: '10',
+    title: 'Verbetering',
+    description: 'Pak afwijkingen en incidenten aan met corrigerende maatregelen en verbeter je AIMS continu.',
+    vereist: 'Non-conformiteiten afhandelen, corrigerende maatregelen treffen en de effectiviteit bewaken, en het AIMS continu verbeteren.',
+    documenten: ['Register van non-conformiteiten', 'Corrigerende maatregelen'],
+    platform: 'AI-incidenten leg je vast en koppel je aan het betreffende AI-systeem, zodat je ziet waar het misgaat en wat je moet verbeteren.',
+  },
+];
+
+const annexThemas = [
+  { number: 'A.2', title: 'Beleid rond AI', description: 'Een AI-beleid vaststellen, laten aansluiten op ander beleid en periodiek herzien.' },
+  { number: 'A.3', title: 'Interne organisatie', description: 'Rollen en verantwoordelijkheden voor AI, en een manier om zorgen te melden.' },
+  { number: 'A.4', title: 'Middelen voor AI-systemen', description: 'Zicht op data, tooling, systeem- en rekencapaciteit en menselijke competenties.' },
+  { number: 'A.5', title: 'Impactbeoordeling', description: 'De gevolgen van AI-systemen voor mensen, groepen en de samenleving beoordelen en vastleggen.' },
+  { number: 'A.6', title: 'Levenscyclus van AI-systemen', description: 'Van doelen en ontwerp tot verificatie, inzet, monitoring en technische documentatie.' },
+  { number: 'A.7', title: 'Data voor AI-systemen', description: 'Herkomst, kwaliteit en voorbereiding van de data die je AI-systemen gebruiken.' },
+  { number: 'A.8', title: 'Informatie voor belanghebbenden', description: 'Gebruikers en andere belanghebbenden informeren, ook over incidenten.' },
+  { number: 'A.9', title: 'Gebruik van AI-systemen', description: 'Verantwoord gebruik volgens het beoogde doel, met processen en doelstellingen.' },
+  { number: 'A.10', title: 'Derden en klanten', description: 'Verantwoordelijkheden helder verdelen met leveranciers, partners en klanten.' },
+];
+
+const bijlagen = [
+  { label: 'Annex B', type: 'Normatief', description: 'Implementatierichtlijnen bij de beheersmaatregelen van Annex A.' },
+  { label: 'Annex C', type: 'Informatief', description: 'Mogelijke AI-doelstellingen en risicobronnen.' },
+  { label: 'Annex D', type: 'Informatief', description: 'Toepassing van het AIMS in verschillende domeinen en sectoren.' },
+];
+
+const doelgroepen = [
+  {
+    label: 'Ontwikkelen',
+    title: 'Je ontwikkelt AI',
+    description: 'Je bouwt of traint AI-systemen. ISO 42001 helpt je de hele levenscyclus te beheersen, van data en ontwerp tot verificatie en monitoring.',
+    icon: 'M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5',
+  },
+  {
+    label: 'Aanbieden',
+    title: 'Je biedt AI aan',
+    description: 'Je levert een product of SaaS-dienst met AI, bijvoorbeeld gebouwd op een taalmodel. Je klanten willen weten hoe je met risico\'s, data en transparantie omgaat.',
+    icon: 'M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z',
+  },
+  {
+    label: 'Gebruiken',
+    title: 'Je gebruikt AI',
+    description: 'Je zet vooral AI-tools in je eigen organisatie in. De norm helpt je bij afspraken over aanvaardbaar gebruik, leveranciers, menselijk toezicht en AI-geletterdheid.',
+    icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+  },
+];
+
+const aiActTijdlijn = [
+  {
+    datum: '2 februari 2025',
+    status: 'Van kracht',
+    title: 'Verboden praktijken en AI-geletterdheid',
+    description: 'Verboden AI-praktijken zijn niet meer toegestaan. Wie AI aanbiedt of gebruikt, neemt maatregelen die de AI-geletterdheid van medewerkers ondersteunen: een inspanningsverplichting.',
+  },
+  {
+    datum: '2 augustus 2026',
+    status: 'Van kracht',
+    title: 'Transparantieverplichtingen',
+    description: 'Artikel 50 regelt transparantie, bijvoorbeeld dat mensen weten wanneer ze met een AI-systeem te maken hebben of dat content door AI is gemaakt.',
+  },
+  {
+    datum: '2 december 2027',
+    status: 'Komt eraan',
+    title: 'Hoog risico: bijlage III',
+    description: 'Eisen voor hoog-risico-AI-systemen uit bijlage III, zoals toepassingen in werving en selectie, onderwijs of kredietbeoordeling.',
+  },
+  {
+    datum: '2 augustus 2028',
+    status: 'Komt eraan',
+    title: 'Hoog risico: bijlage I',
+    description: 'Eisen voor AI in producten die onder Europese productwetgeving vallen, zoals medische hulpmiddelen en machines.',
+  },
+];
+
+const certificering = [
+  { stap: 'Stage 1', title: 'Documentbeoordeling', description: 'De auditor beoordeelt je documentatie en of je organisatie klaar is voor de volgende stap.' },
+  { stap: 'Stage 2', title: 'Certificeringsaudit', description: 'De auditor toetst of je AIMS in de praktijk werkt. Gaat dat goed, dan volgt het certificaat.' },
+  { stap: 'Elk jaar', title: 'Surveillance-audit', description: 'Een jaarlijkse controle of je het managementsysteem onderhoudt en verbetert.' },
+  { stap: 'Na 3 jaar', title: 'Hercertificering', description: 'Na drie jaar volgt een hercertificeringsaudit voor een nieuwe certificaatperiode.' },
+];
+
+const templates = [
+  { name: 'AI-beleid', sub: 'Beleid' },
+  { name: 'Risicobeleid', sub: 'Beleid' },
+  { name: 'Procedure impactbeoordeling', sub: 'Procedure' },
+  { name: 'Beleid aanvaardbaar gebruik', sub: 'Beleid' },
+  { name: 'Beleid voor AI-leveranciers', sub: 'Beleid' },
+  { name: 'Transparantiebeleid', sub: 'Beleid' },
+  { name: 'Databeleid', sub: 'Beleid' },
+  { name: 'Procedures voor de levenscyclus', sub: 'Procedures' },
+  { name: 'Auditdocumenten', sub: 'Interne audit' },
+  { name: 'AIMS-handboek', sub: 'Handboek' },
+];
+
+const kerncijfers = [
+  { value: '33', label: 'stappen in de coach' },
+  { value: '38', label: 'Annex A-maatregelen' },
+  { value: '40', label: 'documenttemplates' },
+  { value: '142', label: 'auditvragen in 8 vragenlijsten' },
+  { value: '99', label: 'punten in de gap-analyse' },
+  { value: '34', label: 'kennisbankartikelen' },
+];
+
+const registerVelden = [
+  'Rol per systeem: ontwikkelaar, aanbieder, gebruiker of partner',
+  'Beoogd doel van het systeem',
+  'Risicoklasse onder de AI Act',
+  'Menselijk toezicht',
+  'Leverancier',
+  'Reviewinterval',
+];
+
+const impactPunten = [
+  'Gebaseerd op ISO/IEC 42005',
+  'Negen impactgebieden',
+  'Impact vóór en na maatregelen',
+  'Rekening met DPIA (AVG) en FRIA (AI Act)',
+  'Vastgelegd besluit en PDF-export',
+  'Automatische reviewtaak',
+];
+
+const extraModules = [
+  { title: 'Register van verplichtingen', description: 'AI Act, AVG en andere verplichtingen op een plek, met periodieke evaluatie.' },
+  { title: 'Gap-analyse', description: 'Checklist met 99 punten om te zien waar je nu staat ten opzichte van de norm.' },
+  { title: 'Directiebeoordeling', description: 'Leg vast dat de leiding het AIMS beoordeelt en welke besluiten zij neemt.' },
+  { title: 'Nederlands en Engels', description: 'ISO 42001 in Control One is beschikbaar in het Nederlands en het Engels.' },
+];
+
+const combinaties = [
+  { name: 'ISO 27001', sub: 'Informatiebeveiliging', href: '/iso-27001', description: 'AI-systemen draaien op data en informatiesystemen. Beveiliging en AI-beheer versterken elkaar.' },
+  { name: 'ISO 9001', sub: 'Kwaliteitsmanagement', href: '/iso-9001', description: 'Gebruik je AI in je processen of producten, dan sluit het AIMS aan op je kwaliteitssysteem.' },
+  { name: 'NIS2', sub: 'Cyberbeveiligingswet', href: '/nis2', description: 'Val je onder de Cyberbeveiligingswet, dan beheer je die verplichtingen in dezelfde portal.' },
+];
+
+const benefits = [
+  { title: 'Grip op je AI-systemen', description: 'Een overzicht van alle AI-systemen die je ontwikkelt, aanbiedt of gebruikt, met doel, risico en menselijk toezicht.' },
+  { title: 'Verantwoord en aantoonbaar', description: 'Laat klanten en partners zien dat je AI zorgvuldig inzet, met een certificeerbare internationale norm.' },
+  { title: 'Steun bij de AI Act', description: 'De norm dekt organisatorisch veel van wat de AI Act vraagt, al geeft hij geen vermoeden van conformiteit.' },
+  { title: 'Eén managementsysteem', description: 'Dezelfde structuur als ISO 27001 en ISO 9001, dus je combineert ze in één geïntegreerd managementsysteem.' },
+];
+
+const faqs = [
+  {
+    question: 'Wat is ISO 42001?',
+    answer: 'ISO/IEC 42001:2023 is de internationale norm voor een AI-managementsysteem (AIMS). De norm beschrijft hoe je als organisatie verantwoord omgaat met AI: van beleid, rollen en risicoanalyse tot impactbeoordelingen, de levenscyclus van AI-systemen en continue verbetering. De norm is certificeerbaar en volgt dezelfde Harmonized Structure (hoofdstuk 4 tot en met 10) als ISO 27001 en ISO 9001. Annex A bevat 38 beheersmaatregelen, verdeeld over 9 thema\'s.',
+  },
+  {
+    question: 'Is ISO 42001 verplicht?',
+    answer: 'Nee. ISO 42001 is een vrijwillige norm. Je kiest ervoor om aan klanten, partners of toezichthouders te laten zien dat je AI verantwoord ontwikkelt, aanbiedt of gebruikt. Een klant of opdrachtgever kan certificering wel als eis stellen.',
+  },
+  {
+    question: 'Wat is het verschil tussen ISO 42001 en de AI Act?',
+    answer: 'De AI Act (de Europese AI-verordening) is wetgeving: valt je organisatie eronder, dan moet je eraan voldoen. ISO 42001 is een vrijwillige managementsysteemnorm. ISO 42001 is geen geharmoniseerde norm onder de AI Act en geeft dus geen vermoeden van conformiteit. De norm helpt je wel om verantwoord AI-gebruik te sturen en aan te tonen, en dekt organisatorisch veel van wat de AI Act vraagt, zoals een overzicht van je AI-systemen, risicobeheer, menselijk toezicht en transparantie.',
+  },
+  {
+    question: 'Heb ik ISO 42001 nodig als ik alleen AI-tools gebruik?',
+    answer: 'Niet per se. De norm is ook bedoeld voor organisaties die AI vooral gebruiken, maar of certificering zinvol is, hangt af van wat klanten en opdrachtgevers vragen en hoe groot de rol van AI in je werk is. Gebruik je AI-tools alleen ondersteunend, dan kun je ook beginnen met een gebruiksbeleid, een overzicht van je AI-toepassingen en maatregelen voor AI-geletterdheid. Dat laatste is onder de AI Act sinds 2 februari 2025 een inspanningsverplichting voor iedereen die AI aanbiedt of gebruikt.',
+    link: { href: '/kennis/iso-27001/iso-27001-en-ai-tools/', label: 'Lees ook: AI-tools en ISO 27001' },
+  },
+  {
+    question: 'Hoe lang duurt een ISO 42001-implementatie?',
+    answer: 'Dat hangt vooral af van de omvang van je organisatie, het aantal AI-systemen in de scope en wat je al op orde hebt. Heb je al een managementsysteem zoals ISO 27001 of ISO 9001, dan hergebruik je veel, want de structuur, interne audits en directiebeoordeling zijn hetzelfde. De implementatiecoach van Control One deelt het traject op in 33 stappen, zodat je zelf het tempo bepaalt en steeds ziet waar je staat.',
+  },
+  {
+    question: 'Kan ik ISO 42001 combineren met ISO 27001?',
+    answer: 'Ja. ISO 42001 en ISO 27001 volgen dezelfde Harmonized Structure. Context, leiderschap, planning, ondersteuning, interne audit, directiebeoordeling en verbetering richt je dus in als een geïntegreerd managementsysteem. In Control One beheer je ISO 42001 in dezelfde portal als ISO 27001, ISO 9001 en NIS2.',
+  },
+  {
+    question: 'Wie geeft ISO 42001-certificaten af?',
+    answer: 'Een onafhankelijke, geaccrediteerde certificerende instelling. In Nederland zijn DNV en BSI sinds januari 2025 door de Raad voor Accreditatie (RvA) geaccrediteerd voor ISO 42001. Het traject bestaat uit een stage 1- en een stage 2-audit, daarna volgt elk jaar een surveillance-audit en na drie jaar een hercertificering. Control One geeft zelf geen certificaten af.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Control One: ISO 42001 Software',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://control-one.nl/iso-42001',
+  description: 'Bouw je AI-managementsysteem volgens ISO/IEC 42001:2023 met Control One. Implementatiecoach in 33 stappen, alle 38 Annex A-maatregelen, register van AI-systemen en impactbeoordelingen in een platform.',
+  inLanguage: ['nl', 'en'],
+  featureList: [
+    'Implementatiecoach voor ISO/IEC 42001:2023 in 33 stappen',
+    'Hoofdstuk 4 tot en met 10 en alle 38 Annex A-maatregelen met uitleg en praktijktekst',
+    '40 documenttemplates, waaronder AI-beleid en procedure impactbeoordeling',
+    'Verklaring van Toepasselijkheid met PDF-export',
+    'Register van AI-systemen met rol, beoogd doel, risicoklasse en menselijk toezicht',
+    'Impactbeoordelingen op basis van ISO/IEC 42005',
+    'AI-risicoanalyse en AI-incidenten',
+    'Register van verplichtingen (AI Act, AVG)',
+    'Training en AI-geletterdheid',
+    'Interne audits met 8 vragenlijsten en gap-analyse met 99 punten',
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://control-one.nl' },
+    { '@type': 'ListItem', position: 2, name: 'Frameworks', item: 'https://control-one.nl/frameworks' },
+    { '@type': 'ListItem', position: 3, name: 'ISO 42001', item: 'https://control-one.nl/iso-42001' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.answer,
+    },
+  })),
+};
+
+const gradient = 'background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 50%, #01a2e8 100%);';
+---
+
+<Layout
+  title="ISO 42001 Software voor je AI-managementsysteem | Control One"
+  description="Bouw je AI-managementsysteem volgens ISO 42001 met Control One: coach in 33 stappen, alle 38 Annex A-maatregelen, een register van AI-systemen en impactbeoordelingen."
+  jsonLd={[schema, breadcrumbSchema, faqSchema]}
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          <!-- Left: text content -->
+          <div class="flex-1 max-w-2xl min-w-0">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase text-accent-400 bg-white/10 rounded-full backdrop-blur-sm">
+              <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
+              AI-management
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+              ISO 42001
+            </h1>
+            <p class="mt-2 text-xl sm:text-2xl font-medium text-primary-200 hyphens-auto break-words">
+              Artificial Intelligence Management System
+            </p>
+            <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
+              Richt een AI-managementsysteem in volgens de internationale norm voor verantwoorde AI. Control One begeleidt je van het register van AI-systemen en de impactbeoordeling tot de interne audit, stap voor stap.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center sm:justify-start px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
+                Start met ISO 42001
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+              </a>
+              <a href="/features" class="inline-flex items-center justify-center sm:justify-start px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
+                Bekijk alle functies
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: product visual (browser-chrome screenshot) -->
+          <div class="flex-shrink-0 w-full lg:w-[620px] max-w-full">
+            <div class="relative">
+              <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-tr from-accent-400/25 via-primary-500/15 to-accent-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
+              <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 bg-primary-950">
+                <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/90 border-b border-white/5">
+                  <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+                  </div>
+                  <div class="flex-1 flex justify-center">
+                    <div class="px-3 py-1 rounded-md bg-white/[0.06] border border-white/10 text-[10px] sm:text-[11px] text-white/60 font-mono truncate max-w-[260px] sm:max-w-none">
+                      app.control-one.nl / iso-42001 / coach
+                    </div>
+                  </div>
+                  <div class="w-10 sm:w-14"></div>
+                </div>
+                <img
+                  src="/screenshots/portal-coach.png" {...maat("/screenshots/portal-coach.png")}
+                  alt="Control One implementatiecoach: stap voor stap naar een AI-managementsysteem"
+                  class="w-full block bg-white object-cover object-top"
+                  style="aspect-ratio: 16 / 9;"
+                  fetchpriority="high"
+                  data-lightbox
+                />
+              </div>
+
+              <div class="hidden md:flex absolute -left-3 lg:-left-6 top-12 lg:top-16 px-3.5 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-2xl border border-white/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-accent-100 text-accent-700 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-primary-500 leading-none">Live</p>
+                  <p class="mt-1 text-xs font-bold text-primary-950 leading-none">Implementatiecoach</p>
+                </div>
+              </div>
+
+              <div class="hidden md:flex absolute -bottom-4 right-3 lg:-bottom-5 lg:right-8 px-3.5 py-2.5 rounded-2xl bg-primary-950 shadow-2xl ring-1 ring-accent-400/40 items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-accent-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-primary-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold uppercase tracking-widest text-accent-400/80 leading-none">Annex A</p>
+                  <p class="mt-1 text-xs font-bold text-white leading-none">38 beheersmaatregelen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- What is ISO 42001 -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="min-w-0">
+            <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Wat is ISO 42001?</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight mb-6 break-words">
+              De internationale norm voor <span class="text-transparent bg-clip-text" style={gradient}>verantwoorde AI</span>
+            </h2>
+            <div class="text-primary-900/60 leading-relaxed space-y-4">
+              <p>
+                ISO/IEC 42001:2023 is de internationale norm voor een AI-managementsysteem (AIMS). Je krijgt een systematische aanpak om AI verantwoord te ontwikkelen, aan te bieden of te gebruiken: met beleid, duidelijke rollen, risicoanalyse, impactbeoordelingen en continue verbetering.
+              </p>
+              <p>
+                De norm is certificeerbaar en volgt dezelfde Harmonized Structure (hoofdstuk 4 tot en met 10) als ISO 27001 en ISO 9001. Annex A bevat 38 beheersmaatregelen in 9 thema's. Sinds het amendement van 2024 vraagt hoofdstuk 4.1 ook of klimaatverandering een relevant onderwerp is voor je organisatie.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {benefits.map(b => (
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-100">
+                <h3 class="font-semibold text-primary-950 mb-2 text-sm">{b.title}</h3>
+                <p class="text-xs text-primary-900/50 leading-relaxed">{b.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voor wie -->
+    <section class="py-24 bg-gradient-to-b from-white to-primary-50/40">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Voor wie</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Ontwikkelen, aanbieden <span class="text-transparent bg-clip-text" style={gradient}>of gebruiken</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            ISO 42001 is er voor elke organisatie die met AI werkt. Ook SaaS-bedrijven die bouwen op taalmodellen en organisaties die vooral AI-tools gebruiken.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {doelgroepen.map(d => (
+            <div class="relative p-6 rounded-2xl border border-primary-100 bg-white shadow-sm hover:shadow-md hover:border-primary-200 transition-all">
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={d.icon}></path></svg>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-primary-400 bg-primary-50 px-2 py-1 rounded-full">{d.label}</span>
+              </div>
+              <h3 class="font-semibold text-primary-950 mb-2 leading-snug">{d.title}</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">{d.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Zo werkt het in de portal -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-accent-600 mb-3">Het platform</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Zo werkt ISO 42001 <span class="text-transparent bg-clip-text" style={gradient}>in Control One</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            Alles wat je nodig hebt om je AIMS in te richten, te beheren en aantoonbaar te maken richting auditor, klant of toezichthouder.
+          </p>
+        </div>
+
+        <!-- Kerncijfers -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl mx-auto mb-12">
+          {kerncijfers.map(k => (
+            <div class="p-4 rounded-2xl border border-primary-100 bg-white text-center">
+              <div class="text-2xl sm:text-3xl font-bold text-primary-700">{k.value}</div>
+              <div class="mt-1 text-xs text-primary-900/50 leading-snug">{k.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- AI-specifieke modules -->
+        <div class="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
+          <article class="rounded-3xl border border-primary-100 bg-white p-6 sm:p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-700 bg-indigo-50 px-2 py-1 rounded-full">Module · AI-register</span>
+            </div>
+            <h3 class="font-bold text-primary-950 text-lg mb-1.5">Register van AI-systemen</h3>
+            <p class="text-sm text-primary-900/60 leading-relaxed mb-5">Een centraal overzicht van alle AI-systemen die je ontwikkelt, aanbiedt of gebruikt. Per systeem leg je vast:</p>
+            <ul class="grid sm:grid-cols-2 gap-x-4 gap-y-2">
+              {registerVelden.map(v => (
+                <li class="flex items-start gap-2 text-sm text-primary-900/70">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>{v}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article class="rounded-3xl border border-primary-100 bg-white p-6 sm:p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/></svg>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-amber-700 bg-amber-50 px-2 py-1 rounded-full">Module · Impact</span>
+            </div>
+            <h3 class="font-bold text-primary-950 text-lg mb-1.5">Impactbeoordelingen</h3>
+            <p class="text-sm text-primary-900/60 leading-relaxed mb-5">Beoordeel per AI-systeem de gevolgen voor mensen, groepen en de samenleving, zoals A.5 en hoofdstuk 6 en 8 vragen.</p>
+            <ul class="grid sm:grid-cols-2 gap-x-4 gap-y-2">
+              {impactPunten.map(v => (
+                <li class="flex items-start gap-2 text-sm text-primary-900/70">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>{v}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+
+        <!-- Modules met screenshot -->
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-risks.png" {...maat("/screenshots/portal-risks.png")} alt="Risicoanalyse in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-accent-700 shadow">Module · Risicoanalyse</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">AI-risicoanalyse</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Beoordeel risico's met AI-specifieke risicocontexten en koppel de behandeling aan de beheersmaatregelen van Annex A.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-soa.png" {...maat("/screenshots/portal-soa.png")} alt="Verklaring van Toepasselijkheid in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-amber-700 shadow">Module · VvT</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Verklaring van Toepasselijkheid</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Leg voor alle 38 beheersmaatregelen vast of ze van toepassing zijn, met onderbouwing. Exporteerbaar als PDF voor je auditor.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-vendors.png" {...maat("/screenshots/portal-vendors.png")} alt="Leveranciersbeheer in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-teal-700 shadow">Module · Leveranciers</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Leveranciers met AI-velden</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Leg per leverancier vast of die traint op jouw data, waar de data staat en welke afspraken je hebt gemaakt.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-training.png" {...maat("/screenshots/portal-training.png")} alt="Trainingsoverzicht in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-emerald-700 shadow">Module · Training</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Training en AI-geletterdheid</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Een matrix die laat zien wie welke training heeft gevolgd. Zo maak je zichtbaar welke maatregelen je neemt voor AI-geletterdheid.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-incidenten.png" {...maat("/screenshots/portal-incidenten.png")} alt="Incidentregistratie in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-rose-700 shadow">Module · Incidenten</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">AI-incidenten</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Registreer incidenten en koppel ze aan het AI-systeem waar ze over gaan, zodat je patronen ziet en gericht verbetert.</p>
+            </div>
+          </article>
+
+          <article class="group rounded-3xl border border-primary-100 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-300">
+            <div class="relative aspect-video bg-primary-50 overflow-hidden">
+              <img src="/screenshots/portal-audits.png" {...maat("/screenshots/portal-audits.png")} alt="Interne audit module met auditplan en bevindingen in Control One" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" data-lightbox />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur text-[10px] font-bold uppercase tracking-widest text-primary-700 shadow">Module · Audits</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-primary-950 text-lg mb-1.5">Interne audits</h3>
+              <p class="text-sm text-primary-900/60 leading-relaxed">Acht vragenlijsten met samen 142 vragen voor je interne audit volgens hoofdstuk 9.2, met auditrapporten voor de certificeerder.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Overige modules -->
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {extraModules.map(m => (
+            <div class="p-5 rounded-2xl border border-primary-100 bg-white">
+              <h3 class="text-sm font-semibold text-primary-950 mb-1.5">{m.title}</h3>
+              <p class="text-xs text-primary-900/50 leading-relaxed">{m.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/demo" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-950 bg-accent-400 hover:bg-accent-300 rounded-xl transition-all shadow-lg">
+            Bekijk de live demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Act -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-accent-600 mb-3">ISO 42001 en de AI Act</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Wanneer geldt <span class="text-transparent bg-clip-text" style={gradient}>wat?</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            De AI Act (de Europese AI-verordening) wordt in fases van kracht. Dit zijn de belangrijkste data na de Digital Omnibus, Verordening (EU) 2026/1744.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          {aiActTijdlijn.map((m, i) => (
+            <div class="relative p-6 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50/60 to-white flex flex-col">
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+                <span class:list={[
+                  'text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full',
+                  m.status === 'Van kracht' ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50',
+                ]}>{m.status}</span>
+              </div>
+              <div class="text-lg font-bold text-primary-950">{m.datum}</div>
+              <h3 class="mt-1 font-semibold text-primary-800 mb-2 leading-snug text-sm">{m.title}</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">{m.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Callout: geen vermoeden van conformiteit -->
+        <div class="mt-10 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-primary-950 border border-primary-900">
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-2">Verwant, maar niet hetzelfde</h3>
+              <p class="text-primary-300/75 text-sm leading-relaxed">
+                ISO 42001 is geen geharmoniseerde norm onder de AI Act en geeft geen vermoeden van conformiteit. Met een ISO 42001-certificaat voldoe je dus niet automatisch aan de AI Act. De norm helpt je wel om verantwoord AI-gebruik te sturen en aantoonbaar te maken, en dekt organisatorisch veel van wat de AI Act vraagt. In Control One houd je de AI Act bij in het register van verplichtingen en leg je per AI-systeem de risicoklasse vast.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Normstructuur</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            <span class="text-transparent bg-clip-text" style={gradient}>Hoofdstukken 1 tot en met 10</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60">
+            Control One begeleidt je door elk hoofdstuk met een stapsgewijze coach, uitleg en praktijktekst bij elke eis en een directe koppeling naar je documenten.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+
+          <!-- Hoofdstukken 1 tot en met 3: inleiding -->
+          <div class="relative rounded-2xl border border-dashed border-primary-200 bg-primary-50/50 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between">
+              <div class="w-10 h-10 rounded-xl bg-primary-100 text-primary-500 flex items-center justify-center font-bold text-sm shrink-0">
+                1-3
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-primary-400 bg-primary-100 px-2 py-1 rounded-full">Inleiding</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary-950 mb-1 leading-snug">Inleiding van de norm</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">Hoofdstukken 1 tot en met 3 vormen de algemene inleiding van de norm en bevatten geen implementatievereisten.</p>
+            </div>
+            <ul class="space-y-2 pt-1 border-t border-primary-100">
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
+                <span><strong class="text-primary-800">Toepassingsgebied:</strong> de scope en het doel van de norm.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
+                <span><strong class="text-primary-800">Normatieve verwijzingen:</strong> verwijzingen naar andere normen.</span>
+              </li>
+              <li class="flex items-start gap-2 text-xs text-primary-900/60">
+                <span class="w-5 h-5 rounded-md bg-primary-100 text-primary-500 flex items-center justify-center font-bold shrink-0 mt-0.5">3</span>
+                <span><strong class="text-primary-800">Termen en definities:</strong> verklaringen van gebruikte begrippen.</span>
+              </li>
+            </ul>
+          </div>
+
+          {chapters.map((ch, i) => (
+            <div
+              class:list={[
+                'chapter-card group relative rounded-2xl border bg-white transition-all duration-200 cursor-pointer overflow-hidden',
+                i === 0 ? 'border-primary-200 shadow-md' : 'border-primary-100 hover:border-primary-200 hover:shadow-md hover:shadow-primary-100/50',
+              ]}
+              data-chapter={ch.number}
+            >
+              <!-- Card trigger (always visible) -->
+              <div class="chapter-trigger p-6 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                  <div class:list={[
+                    'w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0',
+                    i === 0 ? 'bg-primary-600 text-white' : 'bg-primary-50 text-primary-600 group-hover:bg-primary-100 transition-colors',
+                  ]}>
+                    {ch.number}
+                  </div>
+                  <span class="chapter-expand-icon w-7 h-7 rounded-full bg-primary-50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-primary-100">
+                    <svg class="w-3.5 h-3.5 text-primary-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 5v14M5 12h14" class="chapter-plus"></path>
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="font-semibold text-primary-950 mb-2 leading-snug">{ch.title}</h3>
+                <p class="text-sm text-primary-900/50 leading-relaxed">{ch.description}</p>
+              </div>
+
+              <!-- Expandable details -->
+              <div class="chapter-body" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);">
+                <div class="px-6 pb-6 border-t border-primary-100 space-y-4 pt-4">
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Wat de norm vereist</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.vereist}</p>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">Sleuteldocumenten</p>
+                    <ul class="space-y-1">
+                      {ch.documenten.map(doc => (
+                        <li class="flex items-center gap-2 text-xs text-primary-900/65">
+                          <svg class="w-3.5 h-3.5 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                          {doc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-widest text-primary-500 mb-1.5">In Control One</p>
+                    <p class="text-xs text-primary-900/65 leading-relaxed">{ch.platform}</p>
+                  </div>
+                  <a href="https://app.control-one.nl/register" class="inline-flex items-center gap-1 text-xs font-semibold text-primary-700 hover:text-primary-900 transition-colors mt-1">
+                    Start met dit hoofdstuk
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+          <!-- Extra card: dekking -->
+          <div class="relative p-6 rounded-2xl bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden flex flex-col justify-between">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="relative">
+              <div class="text-4xl font-bold mb-1">100%</div>
+              <div class="text-primary-200 text-sm font-semibold mb-4">Normdekking</div>
+              <p class="text-primary-300/80 text-sm leading-relaxed">
+                Control One dekt hoofdstuk 4 tot en met 10 en alle 38 Annex A-maatregelen van ISO/IEC 42001:2023, elk met uitleg en praktijktekst.
+              </p>
+            </div>
+            <a href="/demo" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white transition-colors">
+              Bekijk het platform
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Annex A -->
+    <section class="py-24 bg-gradient-to-b from-white to-primary-50/40">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-100">
+            Annex A: ISO/IEC 42001:2023
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            38 beheersmaatregelen <span class="text-transparent bg-clip-text" style={gradient}>in 9 thema's</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
+            In Control One staat elke maatregel klaar met uitleg en praktijktekst, zodat je per maatregel weet wat de norm bedoelt en hoe je het aanpakt.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {annexThemas.map(t => (
+            <div class="flex items-start gap-3 p-4 rounded-2xl border border-primary-100 bg-white hover:border-primary-200 hover:shadow-md transition-all">
+              <span class="shrink-0 mt-0.5 text-[11px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-100 rounded-md px-1.5 py-0.5">{t.number}</span>
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-primary-950 leading-snug">{t.title}</p>
+                <p class="mt-1 text-xs text-primary-900/50 leading-relaxed">{t.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Bijlagen B, C en D -->
+        <div class="mt-8 max-w-5xl mx-auto rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+          <div class="px-5 py-4 border-b border-primary-100 bg-primary-50/30">
+            <span class="text-sm font-bold text-primary-950">De andere bijlagen</span>
+          </div>
+          <div class="p-4 grid md:grid-cols-3 gap-2">
+            {bijlagen.map(b => (
+              <div class="px-3 py-2.5 rounded-xl">
+                <div class="flex flex-wrap items-center gap-2">
+                  <p class="text-sm font-semibold text-primary-900">{b.label}</p>
+                  <span class="text-[10px] font-semibold text-primary-600 bg-primary-50 border border-primary-100 px-2 py-0.5 rounded-full">{b.type}</span>
+                </div>
+                <p class="mt-1 text-xs text-primary-900/50 leading-relaxed">{b.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Callout box: VvT -->
+        <div class="mt-10 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-primary-950 border border-primary-900">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div class="w-12 h-12 rounded-2xl bg-primary-600 text-white flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"></path></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Verklaring van Toepasselijkheid (VvT)</h3>
+              <p class="text-primary-300/75 text-sm leading-relaxed">Leg per Annex A-maatregel vast of die van toepassing is, met onderbouwing en status. Voor alle 38 maatregelen, exporteerbaar als PDF voor je auditor.</p>
+            </div>
+            <a href="https://app.control-one.nl/register" class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-xl transition-all shadow-lg whitespace-nowrap">
+              Gratis uitproberen
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documenten -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 rounded-full border border-emerald-100">
+            AIMS-documentatie
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            40 documenttemplates <span class="text-transparent bg-clip-text" style={gradient}>voor je AIMS</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/75 max-w-xl mx-auto leading-relaxed">
+            Van AI-beleid tot auditdocumenten: je begint niet met een leeg vel, maar met templates die aansluiten op de eisen van ISO 42001.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto rounded-2xl border border-primary-100 bg-white overflow-hidden shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-2 px-5 py-4 border-b border-primary-100 bg-primary-50/30">
+            <div class="flex items-center gap-2.5">
+              <span class="w-3 h-3 rounded-full shrink-0 bg-indigo-500"></span>
+              <span class="text-sm font-bold text-primary-950">Onder andere</span>
+            </div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full text-indigo-700 bg-indigo-50">40 templates</span>
+          </div>
+          <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {templates.map(item => (
+              <div class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-primary-50/60 transition-colors">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-primary-900 leading-snug">{item.name}</p>
+                  <p class="text-xs text-primary-900/40 mt-0.5">{item.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificering -->
+    <section class="py-24 bg-gradient-to-b from-primary-50/50 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">Certificering</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Zo verloopt <span class="text-transparent bg-clip-text" style={gradient}>de certificering</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            Het certificaat komt van een onafhankelijke, geaccrediteerde certificerende instelling. In Nederland zijn DNV en BSI sinds januari 2025 door de RvA geaccrediteerd voor ISO 42001.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          {certificering.map((c, i) => (
+            <div class="relative p-6 rounded-2xl border border-primary-100 bg-white shadow-sm">
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-primary-400 bg-primary-50 px-2 py-1 rounded-full">{c.stap}</span>
+              </div>
+              <h3 class="font-semibold text-primary-950 mb-2 leading-snug">{c.title}</h3>
+              <p class="text-sm text-primary-900/50 leading-relaxed">{c.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="mt-8 max-w-3xl mx-auto text-center text-sm text-primary-900/60 leading-relaxed">
+          Control One bereidt je voor op de audit en ondersteunt je interne audit. Het certificaat zelf geeft de certificerende instelling af, niet Control One.
+          <a href="/certificeringsproces" class="text-primary-600 hover:underline">Lees meer over het certificeringsproces</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Combineren -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mx-auto text-center mb-14">
+          <p class="text-sm font-semibold tracking-wide uppercase text-accent-600 mb-3">Multi-framework</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Combineer met <span class="text-transparent bg-clip-text" style={gradient}>je andere normen</span>
+          </h2>
+          <p class="mt-4 text-lg text-primary-900/60 leading-relaxed">
+            ISO 42001 volgt dezelfde Harmonized Structure als ISO 27001 en ISO 9001. Je bouwt dus een geïntegreerd managementsysteem, in dezelfde portal.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {combinaties.map(c => (
+            <a href={c.href} class="group p-6 rounded-2xl border border-primary-100 bg-white hover:shadow-lg hover:shadow-primary-100/40 hover:border-primary-200 hover:-translate-y-0.5 transition-all flex flex-col">
+              <h3 class="text-lg font-bold text-primary-950">{c.name}</h3>
+              <p class="text-sm text-primary-900/50 mb-3">{c.sub}</p>
+              <p class="text-sm text-primary-900/60 leading-relaxed flex-1">{c.description}</p>
+              <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 group-hover:text-primary-800 transition-colors">
+                Bekijk {c.name}
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-gradient-to-b from-primary-50/40 to-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-sm font-semibold tracking-wide uppercase text-primary-600 mb-3">FAQ</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-primary-950 tracking-tight">
+            Veelgestelde vragen over <span class="text-transparent bg-clip-text" style={gradient}>ISO 42001</span>
+          </h2>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map(faq => (
+            <details class="group border border-primary-100 rounded-xl overflow-hidden bg-white">
+              <summary class="flex items-center justify-between cursor-pointer px-5 sm:px-6 py-5 text-left font-semibold text-primary-950 hover:bg-primary-50/50 transition-colors">
+                {faq.question}
+                <svg class="w-5 h-5 text-primary-400 shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </summary>
+              <div class="px-5 sm:px-6 pb-5 text-sm text-primary-900/60 leading-relaxed border-t border-primary-100 pt-4">
+                <p>{faq.answer}</p>
+                {faq.link && (
+                  <a href={faq.link.href} class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors">
+                    {faq.link.label}
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </a>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const body = card.querySelector<HTMLElement>('.chapter-body')!;
+      const icon = card.querySelector<SVGElement>('.chapter-expand-icon svg')!;
+      const iconWrap = card.querySelector<HTMLElement>('.chapter-expand-icon')!;
+      const isOpen = body.style.maxHeight !== '' && body.style.maxHeight !== '0px';
+
+      if (isOpen) {
+        body.style.maxHeight = '0';
+        icon.style.transform = '';
+        iconWrap.style.backgroundColor = '';
+        card.style.borderColor = '';
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        icon.style.transform = 'rotate(45deg)';
+        iconWrap.style.backgroundColor = 'var(--color-primary-600, #2563eb)';
+        const paths = iconWrap.querySelectorAll('path');
+        paths.forEach(p => (p as SVGPathElement).style.stroke = 'white');
+        card.style.borderColor = 'var(--color-primary-300, #93c5fd)';
+      }
+    });
+  });
+</script>

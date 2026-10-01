@@ -1,6 +1,6 @@
 # Control One
 
-> Control One is het Nederlandse SaaS-platform voor ISO-compliance voor het MKB. Bedrijven implementeren ISO 27001, ISO 9001, ISO 14001, ISO 45001, NEN 7510 en NIS2 zelfstandig, zonder dure consultants, via een stapsgewijze implementatiecoach, kant-en-klare sjablonen, risicoanalyse, documentbeheer, leveranciersbeheer en auditbeheer in één platform.
+> Control One is het Nederlandse SaaS-platform voor ISO-compliance voor het MKB. Bedrijven implementeren ISO 27001, ISO 9001, ISO 14001, ISO 45001, NEN 7510, NIS2 en ISO 42001 zelfstandig, zonder dure consultants, via een stapsgewijze implementatiecoach, kant-en-klare sjablonen, risicoanalyse, documentbeheer, leveranciersbeheer en auditbeheer in één platform.
 
 Control One is gevestigd in Enschede (Nederland) en wordt aangeboden in het Nederlands. Abonnementen starten bij €134/maand (jaarlijks gefactureerd). Er is een gratis proefperiode beschikbaar.
 
@@ -31,6 +31,7 @@ De publieke kennisbank op https://control-one.nl/kennis/ bevat vrij toegankelijk
 - [ISO 45001](https://control-one.nl/iso-45001) — Arbo & Veiligheid (ISO 45001:2018)
 - [NEN 7510](https://control-one.nl/nen-7510) — Informatiebeveiliging in de zorg (NEN 7510-1:2024, uitgelijnd op ISO 27001:2022, met 12 zorgspecifieke A9-maatregelen)
 - [NIS2](https://control-one.nl/nis2) — Cyberbeveiligingswet (EU-richtlijn 2022/2555; wetgeving, geen certificering: registratie, zorgplicht en meldplicht 24 uur / 72 uur / 1 maand)
+- [ISO 42001](https://control-one.nl/iso-42001): AI-managementsysteem (ISO/IEC 42001:2023, certificeerbaar, 38 Annex A-maatregelen in 9 thema's; register van AI-systemen en impactbeoordelingen op basis van ISO/IEC 42005. Geen geharmoniseerde norm onder de AI Act, dus geen vermoeden van conformiteit)
 - SOC 2 en AVG/GDPR zijn gepland.
 
 ## Belangrijke pagina's
