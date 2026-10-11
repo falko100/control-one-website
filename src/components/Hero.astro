@@ -1,96 +1,113 @@
 ---
+import { maat } from '../lib/schermafbeelding';
+
+const shot = '/screenshots/portal-dashboard.png';
+
+const normen = ['ISO 27001', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'NEN 7510', 'NIS2'];
+
+// Drie signalen naast het dashboard. Het volledige scherm is op heroformaat
+// niet te lezen; deze kaartjes wel, en ze dragen de kern van het verhaal.
+const signalen = [
+  { label: 'Coach', labelKleur: 'text-primary-500', titel: 'Stap 11 van 33', balk: 33 },
+  { label: 'Afgerond', labelKleur: 'text-emerald-600', titel: 'ISO 9001', sub: '38 van 38 stappen', subKleur: 'text-emerald-700 font-semibold' },
+  { label: 'Open acties', labelKleur: 'text-primary-500', titel: '9 taken', sub: 'met eigenaar en datum', subKleur: 'text-primary-900/55' },
+];
+
+const vertrouwen = [
+  { tekst: 'Nederlands bedrijf \u00b7 EU-hosting', pad: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+  { tekst: 'Vastgelopen? Vraag het een ISO-expert', pad: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
+  { tekst: 'Zelf implementeren, geen dure consultant', pad: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+  { tekst: 'Platform en templates in Nederlands en Engels', pad: 'M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802' },
+];
 ---
 
 <section class="relative overflow-hidden" style="background: linear-gradient(160deg, #3468b8 0%, #4080cc 50%, #5090d8 100%);">
 
   <!-- Ambient glow orbs -->
-  <div class="absolute top-0 left-1/2 w-[700px] h-[700px] bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-  <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent-400/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- De gloedcirkels steken buiten de sectie uit. Zonder eigen wrapper telt dat
+       mee voor de scrollbreedte, waardoor de browser bij het focussen van een
+       knop de hele hero opzij scrolt en de inhoud verspringt. -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 left-1/2 w-[700px] h-[700px] bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent-400/10 rounded-full blur-3xl"></div>
+  </div>
 
   <div class="relative max-w-7xl mx-auto px-6">
 
-    <!-- ── Centered text + CTA block ── -->
-    <div class="text-center pt-28 sm:pt-36 pb-12 max-w-3xl mx-auto">
+    <!-- ── Tekst, acties en het dashboard ── -->
+    <div class="grid lg:grid-cols-[7fr_8fr] gap-10 lg:gap-14 items-center pt-28 sm:pt-32 pb-10">
 
-      <!-- Headline -->
-      <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.05]">
-        Werken aan impact
-        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-300">van ambitie naar ISO</span>
-      </h1>
+      <!-- Tekst en acties -->
+      <div>
+        <h1 class="text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-[1.05]">
+          Werken aan impact
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-300">van ambitie naar ISO</span>
+        </h1>
 
-      <!-- Subtitle -->
-      <p class="mt-8 text-lg sm:text-xl text-white/95 max-w-2xl mx-auto leading-relaxed">
-        Van risicoanalyse tot certificering: Control One begeleidt jouw organisatie stap voor stap. Alles op één plek, voor iedereen begrijpelijk.
-      </p>
+        <p class="mt-6 text-lg text-white/90 leading-relaxed max-w-lg">
+          Van risicoanalyse tot certificering: Control One begeleidt jouw organisatie stap voor stap. Alles op &eacute;&eacute;n plek, voor iedereen begrijpelijk.
+        </p>
 
-      <!-- CTA buttons -->
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://app.control-one.nl/register" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-full transition-all shadow-xl shadow-black/25">
-          Gratis starten · 14 dagen
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </a>
-        <a href="/quickscan" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-full transition-all shadow-xl shadow-black/25">
-          Doe de gratis quickscan
-        </a>
-        <a href="/demo" class="inline-flex items-center px-8 py-3.5 text-base font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-full transition-all shadow-xl shadow-black/25">
-          Demo
-        </a>
-      </div>
-
-      <!-- ISO norm badges (producten) -->
-      <div class="mt-9 flex flex-wrap items-center justify-center gap-2">
-        <a href="/iso-27001" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">ISO 27001</a>
-        <a href="/iso-9001" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">ISO 9001</a>
-        <a href="/iso-14001" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">ISO 14001</a>
-        <a href="/iso-45001" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">ISO 45001</a>
-        <a href="/nen-7510" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">NEN 7510</a>
-        <a href="/nis2" class="px-3 py-1 text-[11px] font-bold tracking-widest rounded-full border border-white/60 bg-white/20 text-white hover:bg-white/30 hover:border-white transition-colors">NIS2</a>
-      </div>
-
-      <!-- Scheidingslijn -->
-      <div class="mt-6 flex items-center justify-center gap-3">
-        <div class="w-12 border-t border-white/30"></div>
-        <div class="w-1 h-1 rounded-full bg-white/40"></div>
-        <div class="w-12 border-t border-white/30"></div>
-      </div>
-
-      <!-- USPs -->
-      <div class="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white">
-        <!-- Nederlands bedrijf -->
-        <div class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-white/85 shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-          Nederlands bedrijf · EU-hosting
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://app.control-one.nl/register" class="inline-flex items-center px-7 py-3.5 text-base font-semibold text-primary-950 bg-white hover:bg-primary-50 rounded-full transition-all shadow-xl shadow-black/25">
+            Gratis starten &middot; 14 dagen
+          </a>
+          <a href="/quickscan" class="inline-flex items-center px-6 py-3.5 text-base font-semibold text-white border border-white/50 hover:bg-white/10 rounded-full transition-colors">
+            Doe de gratis quickscan
+          </a>
         </div>
-        <!-- ISO-expert in de chat -->
-        <div class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-white/85 shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-          </svg>
-          Vastgelopen? Vraag het een ISO-expert
-        </div>
-        <!-- Geen consultant nodig -->
-        <div class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-white/85 shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-          </svg>
-          Zelf implementeren, geen dure consultant
-        </div>
-        <!-- Talen -->
-        <div class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-white/85 shrink-0" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/>
-          </svg>
-          Platform en templates in het Nederlands en Engels
+
+        <div class="mt-7 flex flex-wrap gap-1.5">
+          {normen.map((n) => (
+            <a href={'/' + n.toLowerCase().replace(/\s+/g, '-')} class="px-2.5 py-1 text-[10px] font-bold tracking-widest rounded-full border border-white/50 bg-white/15 text-white hover:bg-white/30 hover:border-white transition-colors">{n}</a>
+          ))}
         </div>
       </div>
 
-    </div><!-- end text/CTA block -->
+      <!-- Het dashboard, met drie signalen ernaast -->
+      <div class="relative pr-0 lg:pr-24">
+        <div class="rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/20 bg-white">
+          <div class="flex items-center gap-2 px-3 py-2 bg-slate-100 border-b border-slate-200">
+            <span class="w-2 h-2 rounded-full bg-red-400/70"></span>
+            <span class="w-2 h-2 rounded-full bg-amber-400/70"></span>
+            <span class="w-2 h-2 rounded-full bg-green-400/70"></span>
+          </div>
+          <img src={shot} {...maat(shot)} alt="Het dashboard van Control One met voortgang per norm, taken en KPI's" class="w-full block" fetchpriority="high" />
+        </div>
+
+        <div class="mt-4 grid grid-cols-3 gap-2 lg:mt-0 lg:block lg:space-y-3 lg:absolute lg:right-0 lg:top-10 lg:w-48">
+          {signalen.map((sg) => (
+            <div class="rounded-xl bg-white shadow-[0_18px_40px_rgba(0,0,0,0.3)] border border-primary-100 px-3.5 py-3">
+              <p class:list={['text-[10px] font-bold uppercase tracking-widest', sg.labelKleur]}>{sg.label}</p>
+              <p class="text-sm font-bold text-primary-950">{sg.titel}</p>
+              {sg.balk && (
+                <div class="mt-1.5 h-1 rounded-full bg-primary-100 overflow-hidden">
+                  <div class="h-full rounded-full" style={`width:${sg.balk}%;background:#196bd7`}></div>
+                </div>
+              )}
+              {sg.sub && <p class:list={['text-[11px]', sg.subKleur]}>{sg.sub}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertrouwensstrip -->
+    <div class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-white/15 sm:divide-x">
+        {vertrouwen.map((v) => (
+          <div class="flex items-center gap-3 px-5 py-4">
+            <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d={v.pad}/>
+              </svg>
+            </span>
+            <span class="text-sm font-medium text-white leading-snug">{v.tekst}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
     <!-- ── Logo marquee ── -->
     <div class="mt-10 pb-14">
