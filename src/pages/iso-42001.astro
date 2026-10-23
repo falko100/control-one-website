@@ -117,6 +117,12 @@ const aiActTijdlijn = [
     description: 'Artikel 50 regelt transparantie, bijvoorbeeld dat mensen weten wanneer ze met een AI-systeem te maken hebben of dat content door AI is gemaakt.',
   },
   {
+    datum: '2 december 2026',
+    status: 'Komt eraan',
+    title: 'Markering van AI-content voor bestaande systemen',
+    description: 'Generatieve AI-systemen die al voor 2 augustus 2026 op de markt waren, moeten hun output machineleesbaar markeren (artikel 50 lid 2). Nieuwere systemen moesten dat al eerder.',
+  },
+  {
     datum: '2 december 2027',
     status: 'Komt eraan',
     title: 'Hoog risico: bijlage III',
@@ -288,11 +294,18 @@ const gradient = 'background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 5
     <!-- Hero -->
     <section class="relative pt-32 pb-24 overflow-hidden">
       <div class="absolute inset-0" style="background: linear-gradient(135deg, #2d5fa8 0%, #2554a0 60%, #2d5fa8 100%);"></div>
-      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+      <!-- De gloedcirkels steken buiten de sectie uit. Zonder eigen wrapper telt dat
+           mee voor de scrollbreedte, waardoor de browser bij het focussen van een
+           knop de hele sectie opzij scrolt en de inhoud verspringt. -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-400/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+      </div>
 
+      <!-- Twee kolommen pas vanaf xl: de schermafbeelding is 620px breed, dus op
+           1024px hield de tekstkolom nog maar 292px over en brak alles af. -->
       <div class="relative max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div class="flex flex-col xl:flex-row items-center gap-12 xl:gap-16">
 
           <!-- Left: text content -->
           <div class="flex-1 max-w-2xl min-w-0">
@@ -309,21 +322,23 @@ const gradient = 'background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 5
             <p class="mt-6 text-lg text-primary-300/80 leading-relaxed">
               Richt een AI-managementsysteem in volgens de internationale norm voor verantwoorde AI. Control One begeleidt je van het register van AI-systemen en de impactbeoordeling tot de interne audit, stap voor stap.
             </p>
-            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-              <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center sm:justify-start px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
+            <div class="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-4">
+              <a href="https://app.control-one.nl/register" class="inline-flex items-center justify-center sm:justify-start whitespace-nowrap px-6 py-3 text-base font-semibold text-primary-900 bg-white hover:bg-primary-50 rounded-lg transition-all shadow-lg">
                 Start met ISO 42001
                 <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
               </a>
-              <a href="/features" class="inline-flex items-center justify-center sm:justify-start px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
+              <a href="/features" class="inline-flex items-center justify-center sm:justify-start whitespace-nowrap px-6 py-3 text-base font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all">
                 Bekijk alle functies
               </a>
             </div>
           </div>
 
           <!-- Right: product visual (browser-chrome screenshot) -->
-          <div class="flex-shrink-0 w-full lg:w-[620px] max-w-full">
+          <div class="flex-shrink-0 w-full xl:w-[620px] max-w-full">
             <div class="relative">
-              <div class="absolute -inset-6 sm:-inset-10 bg-gradient-to-tr from-accent-400/25 via-primary-500/15 to-accent-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
+              <!-- Zijwaarts niet verder dan de paginamarge (px-6), anders steekt de
+                   gloed buiten de sectie uit en verspringt de inhoud bij focus. -->
+              <div class="absolute -inset-6 sm:-inset-y-10 sm:-inset-x-6 bg-gradient-to-tr from-accent-400/25 via-primary-500/15 to-accent-400/15 rounded-[40px] blur-3xl pointer-events-none"></div>
               <div class="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 bg-primary-950">
                 <div class="flex items-center gap-2 px-3 sm:px-4 py-2.5 bg-primary-900/90 border-b border-white/5">
                   <div class="flex gap-1.5">
@@ -605,22 +620,34 @@ const gradient = 'background-image: linear-gradient(90deg, #0e2470 0%, #196bd7 5
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+        <!-- Een chronologie leest van boven naar beneden. In kolommen naast elkaar
+             werd elke kaart zo smal dat de datums en de statuslabels afbraken. -->
+        <ol class="max-w-3xl mx-auto">
           {aiActTijdlijn.map((m, i) => (
-            <div class="relative p-6 rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50/60 to-white flex flex-col">
-              <div class="flex items-center justify-between gap-3 mb-4">
-                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
-                <span class:list={[
-                  'text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full',
-                  m.status === 'Van kracht' ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50',
-                ]}>{m.status}</span>
+            <li class="relative flex gap-4 sm:gap-6 pb-8 last:pb-0">
+              <!-- Verbindingslijn, niet onder de laatste bol door -->
+              {i < aiActTijdlijn.length - 1 && (
+                <span class="absolute left-4 sm:left-5 top-10 bottom-0 w-px bg-primary-100" aria-hidden="true"></span>
+              )}
+
+              <div class={`relative z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 ${m.status === 'Van kracht' ? 'bg-primary-600 text-white' : 'bg-white text-primary-600 border-2 border-primary-200'}`}>
+                {i + 1}
               </div>
-              <div class="text-lg font-bold text-primary-950">{m.datum}</div>
-              <h3 class="mt-1 font-semibold text-primary-800 mb-2 leading-snug text-sm">{m.title}</h3>
-              <p class="text-sm text-primary-900/50 leading-relaxed">{m.description}</p>
-            </div>
+
+              <div class="flex-1 min-w-0 pt-0.5 sm:pt-1">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <span class="text-base sm:text-lg font-bold text-primary-950">{m.datum}</span>
+                  <span class:list={[
+                    'text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full whitespace-nowrap',
+                    m.status === 'Van kracht' ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50',
+                  ]}>{m.status}</span>
+                </div>
+                <h3 class="mt-1 font-semibold text-primary-800 leading-snug">{m.title}</h3>
+                <p class="mt-1.5 text-sm text-primary-900/55 leading-relaxed">{m.description}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <!-- Callout: geen vermoeden van conformiteit -->
         <div class="mt-10 max-w-5xl mx-auto p-6 sm:p-8 rounded-3xl bg-primary-950 border border-primary-900">
