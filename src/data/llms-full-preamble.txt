@@ -178,9 +178,6 @@ Control One is een softwareplatform en geen certificerende instantie. De externe
 **Welke gegevens slaat Control One op?**
 Beleidsdocumenten, risicoregisters, audit-bevindingen, maatregel-implementaties, leveranciersinformatie. Gegevens worden in Nederland opgeslagen, conform AVG.
 
-**Is Control One zelf ISO 27001-gecertificeerd?**
-Zie https://control-one.nl/over-ons voor actuele certificeringsinformatie.
-
 ## Bronnen
 
 - Officiële website: https://control-one.nl
